@@ -53,21 +53,23 @@ async function loadPosts(site) {
       const wordCount = body.trim().split(/\s+/).filter(Boolean).length;
       const readingMinutes = Math.max(1, Math.round(wordCount / 220));
       const bodyHtml = renderMarkdown(body);
-      const leadBodyHtml = bodyHtml.replace("<p>", '<p class="lead">');
-
       return {
         site,
         slug,
         title: attributes.title || slugToTitle(slug),
+        displayTitle: attributes.displayTitle || attributes.title || slugToTitle(slug),
         date: attributes.date || new Date().toISOString().slice(0, 10),
         description: attributes.description || createExcerpt(body),
         image: attributes.image || "",
         imageAlt: attributes.imageAlt || attributes.title || slugToTitle(slug),
+        articleImage: attributes.articleImage || "",
+        articleImageAlt: attributes.articleImageAlt || attributes.imageAlt || attributes.title || slugToTitle(slug),
+        summary: attributes.summary || "",
         category: attributes.category || "Essay",
         featured: attributes.featured === true,
         wordCount,
         readingMinutes,
-        bodyHtml: leadBodyHtml
+        bodyHtml
       };
     })
   );
@@ -252,6 +254,8 @@ function renderInline(text) {
 
 function renderHome(site, posts) {
   const featured = posts.find((post) => post.featured) || posts[0];
+  const latest = posts[0];
+  const archivePosts = posts.slice(1);
 
   return renderDocument({
     site,
@@ -266,21 +270,19 @@ function renderHome(site, posts) {
       <div class="page-shell">
         ${renderHeader(site)}
         <main class="content">
-          <section class="intro-block">
-            <p class="eyebrow">Writing</p>
+          <section class="home-intro">
             <h1>${escapeHtml(site.name)}</h1>
-            <p class="tagline">${escapeHtml(site.tagline)}</p>
-            <p class="intro">${escapeHtml(site.intro)}</p>
+            <p class="home-intro-copy">${escapeHtml(site.intro)}</p>
+            <p class="home-intro-copy">${escapeHtml(site.about)}</p>
           </section>
 
-          <section class="home-section">
-            <div class="section-heading">
-              <h2>Essays</h2>
-              <a href="${sitePath(site, "/archive/")}" class="inline-link">View archive</a>
+          <section class="home-writing">
+            <div class="home-section-head">
+              <p class="home-label">Writing</p>
+              <a href="${sitePath(site, "/archive/")}" class="inline-link">Archive</a>
             </div>
-            <div class="entry-list">
-              ${posts.map((post) => renderEntryRow(post)).join("")}
-            </div>
+            ${renderHomeFeaturedEntry(latest)}
+            ${archivePosts.length > 0 ? `<div class="home-archive-list">${archivePosts.map((post) => renderHomeArchiveRow(post)).join("")}</div>` : ""}
           </section>
         </main>
         ${renderFooter(site)}
@@ -353,7 +355,7 @@ function renderPost(site, post) {
             </nav>
             <header class="essay-header">
               <p class="eyebrow">${escapeHtml(post.category)}</p>
-              <h1>${escapeHtml(post.title)}</h1>
+              <h1>${renderDisplayTitle(post.displayTitle)}</h1>
               <p class="dek">${escapeHtml(post.description)}</p>
               <div class="meta">
                 <span>${formatDate(post.date)}</span>
@@ -361,6 +363,8 @@ function renderPost(site, post) {
                 <span>${post.wordCount} words</span>
               </div>
             </header>
+            ${renderSummary(post)}
+            ${renderArticleImage(post)}
             <div class="article-body">
               ${post.bodyHtml}
             </div>
@@ -456,7 +460,7 @@ function renderFooter(site) {
   return `
     <footer class="site-footer">
       <p>${escapeHtml(site.footerNote)}</p>
-      <p class="footer-note">Read in sequence from the archive, or subscribe with RSS.</p>
+      <p class="footer-note"><a href="${sitePath(site, "/rss.xml")}">RSS</a></p>
     </footer>
   `;
 }
@@ -488,6 +492,76 @@ function renderEssayCover(post) {
   return `
     <figure class="essay-cover">
       <img src="${escapeAttribute(sitePath(post.site, post.image))}" alt="${escapeAttribute(post.imageAlt)}">
+    </figure>
+  `;
+}
+
+function renderHomeFeaturedEntry(post) {
+  return `
+    <article class="home-featured-entry">
+      <div class="entry-meta">
+        <span>${formatDate(post.date)}</span>
+        <span>${post.readingMinutes} min read</span>
+      </div>
+      <h2 class="home-featured-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
+      <p class="home-featured-description">${escapeHtml(post.description)}</p>
+    </article>
+  `;
+}
+
+function renderHomeArchiveRow(post) {
+  return `
+    <article class="home-archive-row">
+      <div class="home-archive-date">${formatDate(post.date)}</div>
+      <div class="home-archive-copy">
+        <h3><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${escapeHtml(post.title)}</a></h3>
+        <p>${escapeHtml(post.description)}</p>
+      </div>
+    </article>
+  `;
+}
+
+function renderDisplayTitle(title) {
+  const parts = String(title)
+    .split("|")
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  if (parts.length === 0) {
+    return "";
+  }
+
+  return parts.map((part) => renderInline(part)).join("<br>");
+}
+
+function renderSummary(post) {
+  const items = String(post.summary || "")
+    .split("|")
+    .map((item) => item.trim())
+    .filter(Boolean);
+
+  if (items.length === 0) {
+    return "";
+  }
+
+  return `
+    <section class="essay-summary" aria-label="Essay summary">
+      <p class="essay-summary-label">In Brief</p>
+      <ul>
+        ${items.map((item) => `<li>${renderInline(item)}</li>`).join("")}
+      </ul>
+    </section>
+  `;
+}
+
+function renderArticleImage(post) {
+  if (!post.articleImage) {
+    return "";
+  }
+
+  return `
+    <figure class="article-visual">
+      <img src="${escapeAttribute(sitePath(post.site, post.articleImage))}" alt="${escapeAttribute(post.articleImageAlt)}">
     </figure>
   `;
 }
