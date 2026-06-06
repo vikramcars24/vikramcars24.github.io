@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vikramcars24.github.io/sitemap.xml
+Sitemap: https://vikramchopra.in/sitemap.xml

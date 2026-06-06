@@ -3,6 +3,7 @@ import path from "node:path";
 
 const rootDir = process.cwd();
 const distDir = path.join(rootDir, "dist");
+const siteConfigPath = path.join(rootDir, "content", "site.json");
 
 const managedEntries = [
   "index.html",
@@ -14,7 +15,8 @@ const managedEntries = [
   "archive",
   "posts",
   "media",
-  ".nojekyll"
+  ".nojekyll",
+  "CNAME"
 ];
 
 async function main() {
@@ -22,13 +24,17 @@ async function main() {
     await fs.rm(path.join(rootDir, entry), { recursive: true, force: true });
   }
 
-  for (const entry of managedEntries.filter((value) => value !== ".nojekyll")) {
+  for (const entry of managedEntries.filter((value) => value !== ".nojekyll" && value !== "CNAME")) {
     await fs.cp(path.join(distDir, entry), path.join(rootDir, entry), { recursive: true });
   }
 
-  await fs.writeFile(path.join(rootDir, ".nojekyll"), "", "utf8");
+  const site = JSON.parse(await fs.readFile(siteConfigPath, "utf8"));
+  const hostname = new URL(site.domain).hostname;
 
-  console.log("Synced dist/ output into repository root for GitHub Pages.");
+  await fs.writeFile(path.join(rootDir, ".nojekyll"), "", "utf8");
+  await fs.writeFile(path.join(rootDir, "CNAME"), `${hostname}\n`, "utf8");
+
+  console.log(`Synced dist/ output into repository root for GitHub Pages and wrote CNAME for ${hostname}.`);
 }
 
 main().catch((error) => {
