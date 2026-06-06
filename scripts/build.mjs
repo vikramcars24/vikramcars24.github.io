@@ -369,10 +369,13 @@ function renderPost(site, post) {
               <p class="eyebrow">${escapeHtml(post.category)}</p>
               <h1>${renderDisplayTitle(post.displayTitle)}</h1>
               <p class="dek">${escapeHtml(post.description)}</p>
-              <div class="meta">
-                <span>${formatDate(post.date)}</span>
-                <span>${post.readingMinutes} min read</span>
-                <span>${post.wordCount} words</span>
+              <div class="essay-meta-row">
+                <div class="meta">
+                  <span>${formatDate(post.date)}</span>
+                  <span>${post.readingMinutes} min read</span>
+                  <span>${post.wordCount} words</span>
+                </div>
+                <button class="share-button" type="button" data-share-button data-share-url="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`)))}" data-share-title="${escapeAttribute(post.title)}">Share</button>
               </div>
             </header>
             <div class="essay-layout">
@@ -472,29 +475,61 @@ function renderDocument({ site, title, description, pathName, imagePath, imageAl
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
+        const shareButton = document.querySelector("[data-share-button]");
         const themeMeta = document.querySelector('meta[name="theme-color"]');
 
-        if (!button) {
-          return;
+        if (button) {
+          const applyTheme = (theme) => {
+            root.dataset.theme = theme;
+            button.dataset.themeState = theme;
+            button.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+            button.querySelector("[data-theme-label]").textContent = theme === "dark" ? "Light" : "Dark";
+            if (themeMeta) {
+              themeMeta.setAttribute("content", theme === "dark" ? "#12100d" : "#f4ecdf");
+            }
+          };
+
+          applyTheme(root.dataset.theme || "light");
+
+          button.addEventListener("click", () => {
+            const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+            localStorage.setItem(storageKey, nextTheme);
+            applyTheme(nextTheme);
+          });
         }
 
-        const applyTheme = (theme) => {
-          root.dataset.theme = theme;
-          button.dataset.themeState = theme;
-          button.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
-          button.querySelector("[data-theme-label]").textContent = theme === "dark" ? "Light" : "Dark";
-          if (themeMeta) {
-            themeMeta.setAttribute("content", theme === "dark" ? "#12100d" : "#f4ecdf");
-          }
-        };
+        if (shareButton) {
+          shareButton.addEventListener("click", async () => {
+            const url = shareButton.dataset.shareUrl || window.location.href;
+            const title = shareButton.dataset.shareTitle || document.title;
+            const previousLabel = shareButton.textContent;
 
-        applyTheme(root.dataset.theme || "light");
-
-        button.addEventListener("click", () => {
-          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-          localStorage.setItem(storageKey, nextTheme);
-          applyTheme(nextTheme);
-        });
+            try {
+              if (navigator.share) {
+                await navigator.share({ title, url });
+              } else {
+                await navigator.clipboard.writeText(url);
+                shareButton.textContent = "Copied";
+                window.setTimeout(() => {
+                  shareButton.textContent = previousLabel;
+                }, 1600);
+              }
+            } catch (error) {
+              if (error && error.name === "AbortError") {
+                return;
+              }
+              try {
+                await navigator.clipboard.writeText(url);
+                shareButton.textContent = "Copied";
+                window.setTimeout(() => {
+                  shareButton.textContent = previousLabel;
+                }, 1600);
+              } catch (_) {
+                shareButton.textContent = previousLabel;
+              }
+            }
+          });
+        }
       })();
     </script>
   </body>
@@ -510,9 +545,7 @@ function renderHeader(site) {
       </a>
       <div class="site-header-actions">
       <nav class="site-nav" aria-label="Primary">
-        <a href="${sitePath(site, "/")}">Home</a>
         <a href="${sitePath(site, "/archive/")}">Archive</a>
-        <a href="${sitePath(site, "/rss.xml")}">RSS</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -527,7 +560,7 @@ function renderFooter(site) {
   return `
     <footer class="site-footer">
       <p>${escapeHtml(site.footerNote)}</p>
-      <p class="footer-note"><a href="${sitePath(site, "/rss.xml")}">RSS</a></p>
+      <p class="footer-note"><a href="${sitePath(site, "/archive/")}">Archive</a></p>
     </footer>
   `;
 }
