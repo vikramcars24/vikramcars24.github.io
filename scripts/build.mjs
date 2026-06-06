@@ -368,17 +368,19 @@ function renderPost(site, post) {
               <span>/</span>
               <a href="${sitePath(site, "/archive/")}">Archive</a>
             </nav>
-            <header class="essay-header">
-              <p class="eyebrow">${escapeHtml(post.category)}</p>
-              <h1>${escapeHtml(post.title)}</h1>
-              <p class="dek">${escapeHtml(post.description)}</p>
-              <div class="meta">
-                <span>${formatDate(post.date)}</span>
-                <span>${post.readingMinutes} min read</span>
-                <span>${post.wordCount} words</span>
-              </div>
-            </header>
-            ${renderEssayCover(post)}
+            <section class="essay-topper">
+              <header class="essay-header">
+                <p class="eyebrow">${escapeHtml(post.category)}</p>
+                <h1>${escapeHtml(post.title)}</h1>
+                <p class="dek">${escapeHtml(post.description)}</p>
+                <div class="meta">
+                  <span>${formatDate(post.date)}</span>
+                  <span>${post.readingMinutes} min read</span>
+                  <span>${post.wordCount} words</span>
+                </div>
+              </header>
+              ${renderEssayCover(post)}
+            </section>
             <div class="article-body">
               ${post.bodyHtml}
             </div>

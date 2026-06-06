@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "publish:root": "npm run build && node scripts/sync-root.mjs",
     "flatland:pdf": "node scripts/render-flatland-pdf.mjs",
     "slack:download": "node scripts/slack-download-file.mjs",
     "whatsapp:connect": "node scripts/unipile-whatsapp-connect.mjs",
