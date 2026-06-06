@@ -449,10 +449,54 @@ function renderDocument({ site, title, description, pathName, imagePath, imageAl
     ${ogImage ? `<meta name="twitter:image" content="${escapeAttribute(ogImage)}">` : ""}
     ${ogImage && imageAlt ? `<meta name="twitter:image:alt" content="${escapeAttribute(imageAlt)}">` : ""}
     <meta name="theme-color" content="#f4ecdf">
+    <script>
+      (() => {
+        const storageKey = "vikram-theme";
+        const root = document.documentElement;
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const storedTheme = localStorage.getItem(storageKey);
+        const activeTheme = storedTheme === "dark" || storedTheme === "light" ? storedTheme : systemTheme;
+        root.dataset.theme = activeTheme;
+        if (themeMeta) {
+          themeMeta.setAttribute("content", activeTheme === "dark" ? "#12100d" : "#f4ecdf");
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="${sitePath(site, "/styles.css")}">
   </head>
   <body class="${escapeAttribute(bodyClass)}">
     ${content}
+    <script>
+      (() => {
+        const storageKey = "vikram-theme";
+        const root = document.documentElement;
+        const button = document.querySelector("[data-theme-toggle]");
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+        if (!button) {
+          return;
+        }
+
+        const applyTheme = (theme) => {
+          root.dataset.theme = theme;
+          button.dataset.themeState = theme;
+          button.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+          button.querySelector("[data-theme-label]").textContent = theme === "dark" ? "Light" : "Dark";
+          if (themeMeta) {
+            themeMeta.setAttribute("content", theme === "dark" ? "#12100d" : "#f4ecdf");
+          }
+        };
+
+        applyTheme(root.dataset.theme || "light");
+
+        button.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+          localStorage.setItem(storageKey, nextTheme);
+          applyTheme(nextTheme);
+        });
+      })();
+    </script>
   </body>
 </html>`;
 }
@@ -464,11 +508,17 @@ function renderHeader(site) {
         <span class="brand-mark"></span>
         <span>${escapeHtml(site.name)}</span>
       </a>
+      <div class="site-header-actions">
       <nav class="site-nav" aria-label="Primary">
         <a href="${sitePath(site, "/")}">Home</a>
         <a href="${sitePath(site, "/archive/")}">Archive</a>
         <a href="${sitePath(site, "/rss.xml")}">RSS</a>
       </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span class="theme-toggle-mark" aria-hidden="true"></span>
+        <span data-theme-label>Dark</span>
+      </button>
+      </div>
     </header>
   `;
 }
