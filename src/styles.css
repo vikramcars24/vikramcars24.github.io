@@ -340,22 +340,6 @@ pre code {
   line-height: 1.45;
 }
 
-.essay-cover {
-  float: right;
-  width: min(16rem, 30vw);
-  margin: 0.25rem 0 1.5rem 2rem;
-  border: 1px solid var(--line);
-  border-radius: 0.8rem;
-  overflow: hidden;
-  background: #ece7de;
-}
-
-.essay-cover img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-
 .article-body {
   max-width: var(--reading-width);
   margin-top: 1.25rem;
@@ -461,12 +445,6 @@ pre code {
 
   .footer-note {
     text-align: left;
-  }
-
-  .essay-cover {
-    float: none;
-    width: min(14rem, 72vw);
-    margin: 1.1rem auto 1.4rem;
   }
 
   .article-body {

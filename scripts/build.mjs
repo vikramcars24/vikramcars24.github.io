@@ -259,7 +259,9 @@ function renderHome(site, posts) {
     description: site.description,
     pathName: "/",
     imagePath: featured?.image || "",
+    imageAlt: featured?.imageAlt || site.siteTitle,
     bodyClass: "home-page",
+    openGraphType: "website",
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -298,6 +300,7 @@ function renderArchive(site, posts) {
     pathName: "/archive/",
     imagePath: "",
     bodyClass: "archive-page",
+    openGraphType: "website",
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -334,7 +337,10 @@ function renderPost(site, post) {
     description: post.description,
     pathName: `/posts/${post.slug}/`,
     imagePath: post.image,
+    imageAlt: post.imageAlt,
     bodyClass: "post-page",
+    openGraphType: "article",
+    publishedDate: post.date,
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -355,7 +361,6 @@ function renderPost(site, post) {
                 <span>${post.wordCount} words</span>
               </div>
             </header>
-            ${renderEssayCover(post)}
             <div class="article-body">
               ${post.bodyHtml}
             </div>
@@ -375,6 +380,7 @@ function renderNotFound(site) {
     pathName: "/404.html",
     imagePath: "",
     bodyClass: "not-found-page",
+    openGraphType: "website",
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -395,7 +401,7 @@ function renderNotFound(site) {
   });
 }
 
-function renderDocument({ site, title, description, pathName, imagePath, content, bodyClass }) {
+function renderDocument({ site, title, description, pathName, imagePath, imageAlt = "", content, bodyClass, openGraphType = "website", publishedDate = "" }) {
   const canonical = absoluteUrl(site.domain, sitePath(site, pathName));
   const ogImage = imagePath ? absoluteUrl(site.domain, sitePath(site, imagePath)) : "";
 
@@ -408,13 +414,19 @@ function renderDocument({ site, title, description, pathName, imagePath, content
     <meta name="description" content="${escapeAttribute(description)}">
     <link rel="canonical" href="${escapeAttribute(canonical)}">
     <link rel="alternate" type="application/rss+xml" title="${escapeAttribute(site.siteTitle)} RSS" href="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, "/rss.xml")))}">
+    <meta property="og:site_name" content="${escapeAttribute(site.siteTitle)}">
     <meta property="og:title" content="${escapeAttribute(title)}">
     <meta property="og:description" content="${escapeAttribute(description)}">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="${escapeAttribute(openGraphType)}">
     <meta property="og:url" content="${escapeAttribute(canonical)}">
     ${ogImage ? `<meta property="og:image" content="${escapeAttribute(ogImage)}">` : ""}
+    ${ogImage && imageAlt ? `<meta property="og:image:alt" content="${escapeAttribute(imageAlt)}">` : ""}
+    ${publishedDate ? `<meta property="article:published_time" content="${escapeAttribute(`${publishedDate}T12:00:00Z`)}">` : ""}
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeAttribute(title)}">
+    <meta name="twitter:description" content="${escapeAttribute(description)}">
     ${ogImage ? `<meta name="twitter:image" content="${escapeAttribute(ogImage)}">` : ""}
+    ${ogImage && imageAlt ? `<meta name="twitter:image:alt" content="${escapeAttribute(imageAlt)}">` : ""}
     <meta name="theme-color" content="#f4ecdf">
     <link rel="stylesheet" href="${sitePath(site, "/styles.css")}">
   </head>

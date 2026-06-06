@@ -2,8 +2,8 @@
 title: The Paranoid Survive. The Regulated Thrive.
 date: 2026-06-06
 description: The best companies build brakes into their intensity. They do not tear them out.
-image: /media/paranoid-survive-regulated-thrive-cover.png
-imageAlt: Visual cover for The Paranoid Survive. The Regulated Thrive.
+image: /media/paranoid-survive-regulated-thrive-social.png
+imageAlt: Social preview cover for The Paranoid Survive. The Regulated Thrive.
 featured: true
 category: Essay
 ---

@@ -25,7 +25,7 @@ async function main() {
   }
 
   for (const entry of managedEntries.filter((value) => value !== ".nojekyll" && value !== "CNAME")) {
-    await fs.cp(path.join(distDir, entry), path.join(rootDir, entry), { recursive: true });
+    await fs.cp(path.join(distDir, entry), path.join(rootDir, entry), { recursive: true, force: true });
   }
 
   const site = JSON.parse(await fs.readFile(siteConfigPath, "utf8"));
