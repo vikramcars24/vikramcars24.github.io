@@ -52,7 +52,7 @@ async function loadPosts(site) {
       const slug = attributes.slug || file.replace(/\.md$/, "");
       const wordCount = body.trim().split(/\s+/).filter(Boolean).length;
       const readingMinutes = Math.max(1, Math.round(wordCount / 220));
-      const bodyHtml = renderMarkdown(body);
+      const { html: bodyHtml, headings } = renderMarkdown(body);
       return {
         site,
         slug,
@@ -69,7 +69,8 @@ async function loadPosts(site) {
         featured: attributes.featured === true,
         wordCount,
         readingMinutes,
-        bodyHtml
+        bodyHtml,
+        headings
       };
     })
   );
@@ -124,6 +125,7 @@ function coerceValue(value) {
 function renderMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, "").split("\n");
   const blocks = [];
+  const headings = [];
   let index = 0;
 
   while (index < lines.length) {
@@ -152,19 +154,28 @@ function renderMarkdown(markdown) {
     }
 
     if (/^###\s+/.test(line)) {
-      blocks.push(`<h3>${renderInline(line.replace(/^###\s+/, ""))}</h3>`);
+      const text = line.replace(/^###\s+/, "");
+      const id = slugifyHeading(text, headings);
+      headings.push({ level: 3, text: stripFormatting(text), id });
+      blocks.push(`<h3 id="${escapeAttribute(id)}">${renderInline(text)}</h3>`);
       index += 1;
       continue;
     }
 
     if (/^##\s+/.test(line)) {
-      blocks.push(`<h2>${renderInline(line.replace(/^##\s+/, ""))}</h2>`);
+      const text = line.replace(/^##\s+/, "");
+      const id = slugifyHeading(text, headings);
+      headings.push({ level: 2, text: stripFormatting(text), id });
+      blocks.push(`<h2 id="${escapeAttribute(id)}">${renderInline(text)}</h2>`);
       index += 1;
       continue;
     }
 
     if (/^#\s+/.test(line)) {
-      blocks.push(`<h1>${renderInline(line.replace(/^#\s+/, ""))}</h1>`);
+      const text = line.replace(/^#\s+/, "");
+      const id = slugifyHeading(text, headings);
+      headings.push({ level: 1, text: stripFormatting(text), id });
+      blocks.push(`<h1 id="${escapeAttribute(id)}">${renderInline(text)}</h1>`);
       index += 1;
       continue;
     }
@@ -221,7 +232,7 @@ function renderMarkdown(markdown) {
     blocks.push(`<p>${renderInline(paragraphLines.join(" "))}</p>`);
   }
 
-  return blocks.join("\n");
+  return { html: blocks.join("\n"), headings };
 }
 
 function startsNewBlock(line) {
@@ -333,6 +344,7 @@ function renderArchive(site, posts) {
 }
 
 function renderPost(site, post) {
+  const toc = renderTableOfContents(post);
   return renderDocument({
     site,
     title: `${post.title} | ${site.siteTitle}`,
@@ -363,10 +375,15 @@ function renderPost(site, post) {
                 <span>${post.wordCount} words</span>
               </div>
             </header>
-            ${renderSummary(post)}
-            ${renderArticleImage(post)}
-            <div class="article-body">
-              ${post.bodyHtml}
+            <div class="essay-layout">
+              ${toc}
+              <div class="essay-main">
+                ${renderSummary(post)}
+                ${renderArticleImage(post)}
+                <div class="article-body">
+                  ${post.bodyHtml}
+                </div>
+              </div>
             </div>
           </article>
         </main>
@@ -534,6 +551,27 @@ function renderDisplayTitle(title) {
   return parts.map((part) => renderInline(part)).join("<br>");
 }
 
+function renderTableOfContents(post) {
+  const headings = (post.headings || []).filter((heading) => heading.level === 2 || heading.level === 3);
+
+  if (headings.length === 0) {
+    return "";
+  }
+
+  return `
+    <aside class="essay-toc" aria-label="Table of contents">
+      <p class="essay-toc-label">On this page</p>
+      <ol class="essay-toc-list">
+        ${headings
+          .map((heading) => {
+            return `<li class="essay-toc-item essay-toc-level-${heading.level}"><a href="#${escapeAttribute(heading.id)}">${escapeHtml(heading.text)}</a></li>`;
+          })
+          .join("")}
+      </ol>
+    </aside>
+  `;
+}
+
 function renderSummary(post) {
   const items = String(post.summary || "")
     .split("|")
@@ -564,6 +602,28 @@ function renderArticleImage(post) {
       <img src="${escapeAttribute(sitePath(post.site, post.articleImage))}" alt="${escapeAttribute(post.articleImageAlt)}">
     </figure>
   `;
+}
+
+function stripFormatting(text) {
+  return String(text).replace(/[*_`]/g, "").trim();
+}
+
+function slugifyHeading(text, headings) {
+  const base = stripFormatting(text)
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "section";
+
+  let slug = base;
+  let counter = 2;
+
+  while (headings.some((heading) => heading.id === slug)) {
+    slug = `${base}-${counter}`;
+    counter += 1;
+  }
+
+  return slug;
 }
 
 function renderRss(site, posts) {

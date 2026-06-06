@@ -337,7 +337,7 @@ pre code {
 }
 
 .essay {
-  max-width: 58rem;
+  max-width: 72rem;
 }
 
 .essay::after {
@@ -400,6 +400,57 @@ pre code {
 
 .essay-summary li:last-child {
   margin-bottom: 0;
+}
+
+.essay-layout {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.essay-main {
+  min-width: 0;
+}
+
+.essay-toc {
+  position: sticky;
+  top: 1.75rem;
+  padding-top: 0.1rem;
+}
+
+.essay-toc-label {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.essay-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.essay-toc-item {
+  margin: 0 0 0.55rem;
+  line-height: 1.45;
+}
+
+.essay-toc-item a {
+  color: rgba(24, 20, 16, 0.68);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.essay-toc-item a:hover {
+  color: var(--ink);
+}
+
+.essay-toc-level-3 {
+  padding-left: 0.8rem;
 }
 
 .article-visual {
@@ -516,6 +567,16 @@ pre code {
     font-size: 1.16rem;
   }
 
+  .essay-layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .essay-toc {
+    position: static;
+    padding-top: 0;
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -542,6 +603,10 @@ pre code {
 
   .essay-header h1 {
     font-size: clamp(2.5rem, 13vw, 3.7rem);
+  }
+
+  .essay-toc {
+    display: none;
   }
 
   .dek {
