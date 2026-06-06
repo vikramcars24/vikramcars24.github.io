@@ -252,7 +252,6 @@ function renderInline(text) {
 
 function renderHome(site, posts) {
   const featured = posts.find((post) => post.featured) || posts[0];
-  const recent = posts.slice(0, 6);
 
   return renderDocument({
     site,
@@ -265,42 +264,20 @@ function renderHome(site, posts) {
       <div class="page-shell">
         ${renderHeader(site)}
         <main class="content">
-          <section class="hero reveal">
-            <div class="hero-copy">
-              <p class="eyebrow">Writing</p>
-              <h1>${escapeHtml(site.name)}</h1>
-              <p class="tagline">${escapeHtml(site.tagline)}</p>
-              <p class="intro">${escapeHtml(site.intro)}</p>
-            </div>
-            <aside class="hero-aside">
-              <p class="aside-label">Publishing thesis</p>
-              <p class="aside-quote">A sharp home for essays that reward attention, not infinite scrolling.</p>
-            </aside>
+          <section class="intro-block">
+            <p class="eyebrow">Writing</p>
+            <h1>${escapeHtml(site.name)}</h1>
+            <p class="tagline">${escapeHtml(site.tagline)}</p>
+            <p class="intro">${escapeHtml(site.intro)}</p>
           </section>
 
-          <section class="feature reveal delay-1">
+          <section class="home-section">
             <div class="section-heading">
-              <p class="eyebrow">Featured essay</p>
+              <h2>Essays</h2>
               <a href="${sitePath(site, "/archive/")}" class="inline-link">View archive</a>
             </div>
-            ${renderFeaturedPost(featured)}
-          </section>
-
-          <section class="listing reveal delay-2">
-            <div class="section-heading">
-              <p class="eyebrow">Recent writing</p>
-              <p class="section-note">Clean, text-first publishing for essays, notes, and letters.</p>
-            </div>
-            <div class="post-list">
-              ${recent.map(renderPostCard).join("")}
-            </div>
-          </section>
-
-          <section class="about reveal delay-3">
-            <p class="eyebrow">About this site</p>
-            <div class="about-grid">
-              <p>${escapeHtml(site.about)}</p>
-              <p>Expect longer essays when an idea needs room, and shorter notes when a sentence is still alive enough to publish before it hardens into certainty.</p>
+            <div class="entry-list">
+              ${posts.map((post) => renderEntryRow(post)).join("")}
             </div>
           </section>
         </main>
@@ -325,19 +302,19 @@ function renderArchive(site, posts) {
       <div class="page-shell">
         ${renderHeader(site)}
         <main class="content archive-content">
-          <section class="archive-hero reveal">
+          <section class="archive-hero">
             <p class="eyebrow">Archive</p>
             <h1>Published writing</h1>
-            <p class="intro">Every essay lives here in one place, ordered for browsing instead of feeding an algorithm.</p>
+            <p class="intro">Every essay, note, and long-form argument in one place.</p>
           </section>
 
           ${years
-            .map((year, index) => {
+            .map((year) => {
               return `
-                <section class="year-group reveal delay-${Math.min(index + 1, 3)}">
+                <section class="year-group">
                   <div class="year-heading">${year}</div>
-                  <div class="year-posts">
-                    ${postsByYear[year].map(renderArchiveRow).join("")}
+                  <div class="entry-list">
+                    ${postsByYear[year].map((post) => renderEntryRow(post)).join("")}
                   </div>
                 </section>
               `;
@@ -362,25 +339,23 @@ function renderPost(site, post) {
       <div class="page-shell">
         ${renderHeader(site)}
         <main class="content">
-          <article class="essay reveal">
+          <article class="essay">
             <nav class="breadcrumb">
               <a href="${sitePath(site, "/")}">Home</a>
               <span>/</span>
               <a href="${sitePath(site, "/archive/")}">Archive</a>
             </nav>
-            <section class="essay-topper">
-              <header class="essay-header">
-                <p class="eyebrow">${escapeHtml(post.category)}</p>
-                <h1>${escapeHtml(post.title)}</h1>
-                <p class="dek">${escapeHtml(post.description)}</p>
-                <div class="meta">
-                  <span>${formatDate(post.date)}</span>
-                  <span>${post.readingMinutes} min read</span>
-                  <span>${post.wordCount} words</span>
-                </div>
-              </header>
-              ${renderEssayCover(post)}
-            </section>
+            <header class="essay-header">
+              <p class="eyebrow">${escapeHtml(post.category)}</p>
+              <h1>${escapeHtml(post.title)}</h1>
+              <p class="dek">${escapeHtml(post.description)}</p>
+              <div class="meta">
+                <span>${formatDate(post.date)}</span>
+                <span>${post.readingMinutes} min read</span>
+                <span>${post.wordCount} words</span>
+              </div>
+            </header>
+            ${renderEssayCover(post)}
             <div class="article-body">
               ${post.bodyHtml}
             </div>
@@ -404,7 +379,7 @@ function renderNotFound(site) {
       <div class="page-shell">
         ${renderHeader(site)}
         <main class="content">
-          <section class="not-found reveal">
+          <section class="not-found">
             <p class="eyebrow">404</p>
             <h1>That page drifted off.</h1>
             <p class="intro">The writing is still intact. Start again from the homepage or the archive.</p>
@@ -469,63 +444,27 @@ function renderFooter(site) {
   return `
     <footer class="site-footer">
       <p>${escapeHtml(site.footerNote)}</p>
-      <p class="footer-note">Read in sequence from the archive, or subscribe in a feed reader through RSS.</p>
+      <p class="footer-note">Read in sequence from the archive, or subscribe with RSS.</p>
     </footer>
   `;
 }
 
-function renderFeaturedPost(post) {
+function renderEntryRow(post) {
   return `
-    <article class="featured-card">
-      ${renderCardImage(post, "featured-card-image")}
-      <div class="featured-meta">
-        <span>${escapeHtml(post.category)}</span>
-        <span>${formatDate(post.date)}</span>
-        <span>${post.readingMinutes} min read</span>
+    <article class="entry-row">
+      <div class="entry-copy">
+        <div class="entry-meta">
+          <span>${escapeHtml(post.category)}</span>
+          <span>${formatDate(post.date)}</span>
+          <span>${post.readingMinutes} min read</span>
+        </div>
+        <h2 class="entry-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${escapeHtml(post.title)}</a></h2>
+        <p class="entry-description">${escapeHtml(post.description)}</p>
       </div>
-      <h2><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${escapeHtml(post.title)}</a></h2>
-      <p>${escapeHtml(post.description)}</p>
-      <a class="button-link" href="${sitePath(post.site, `/posts/${post.slug}/`)}">Read essay</a>
-    </article>
-  `;
-}
-
-function renderPostCard(post) {
-  return `
-    <article class="post-card">
-      ${renderCardImage(post, "post-card-image")}
-      <div class="post-card-meta">
-        <span>${formatDate(post.date)}</span>
-        <span>${post.readingMinutes} min read</span>
+      <div class="entry-side">
+        <a class="entry-link" href="${sitePath(post.site, `/posts/${post.slug}/`)}">Read essay</a>
       </div>
-      <h3><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${escapeHtml(post.title)}</a></h3>
-      <p>${escapeHtml(post.description)}</p>
     </article>
-  `;
-}
-
-function renderArchiveRow(post) {
-  return `
-    <article class="archive-row">
-      <div class="archive-row-date">${formatShortDate(post.date)}</div>
-      <div class="archive-row-body">
-        <h2><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${escapeHtml(post.title)}</a></h2>
-        <p>${escapeHtml(post.description)}</p>
-      </div>
-      <div class="archive-row-meta">${post.readingMinutes} min</div>
-    </article>
-  `;
-}
-
-function renderCardImage(post, className) {
-  if (!post.image) {
-    return "";
-  }
-
-  return `
-    <a class="${className}" href="${sitePath(post.site, `/posts/${post.slug}/`)}">
-      <img src="${escapeAttribute(sitePath(post.site, post.image))}" alt="${escapeAttribute(post.imageAlt)}">
-    </a>
   `;
 }
 
