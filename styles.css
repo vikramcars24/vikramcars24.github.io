@@ -887,10 +887,58 @@ pre code {
     align-items: flex-start;
   }
 
-  .home-featured-entry,
-  .home-archive-row,
   .entry-row {
     grid-template-columns: 1fr;
+  }
+
+  .home-featured-entry {
+    grid-template-columns: minmax(0, 1fr) 7.5rem;
+    gap: 0.9rem;
+    align-items: start;
+  }
+
+  .home-featured-title {
+    max-width: none;
+    font-size: clamp(1.6rem, 6vw, 2.15rem);
+    margin: 0.3rem 0 0.55rem;
+  }
+
+  .home-featured-description {
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .home-featured-visual {
+    width: 7.5rem;
+    max-width: none;
+  }
+
+  .home-archive-row {
+    grid-template-columns: minmax(0, 1fr) 6.75rem;
+    grid-template-areas:
+      "date thumb"
+      "copy thumb";
+    gap: 0.35rem 0.85rem;
+    align-items: start;
+  }
+
+  .home-archive-date {
+    grid-area: date;
+    font-size: 0.88rem;
+  }
+
+  .home-archive-copy {
+    grid-area: copy;
+  }
+
+  .home-archive-row h3 {
+    font-size: 1.12rem;
+    line-height: 1.16;
+  }
+
+  .home-archive-row p {
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 
   .site-header-actions {
@@ -906,14 +954,18 @@ pre code {
     padding-top: 0;
   }
 
-  .home-featured-visual,
-  .home-archive-visual,
   .entry-thumb {
     width: 100%;
     max-width: 20rem;
   }
 
-  .home-archive-visual,
+  .home-archive-visual {
+    grid-area: thumb;
+    width: 6.75rem;
+    max-width: none;
+    order: initial;
+  }
+
   .entry-thumb {
     order: -1;
   }
