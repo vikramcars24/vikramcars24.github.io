@@ -15,27 +15,20 @@ const CURATED_ESSAY_COLLECTIONS = [
       "the-coming-decade-of-car-ownership-in-india",
       "the-car-is-the-artifact-trust-is-the-product",
       "used-car-ownership-is-a-lending-problem",
-      "the-greenest-car-in-india-is-the-one-already-built"
+      "the-greenest-car-in-india-is-the-one-already-built",
+      "indias-road-deaths-are-a-trust-problem-not-a-traffic-problem"
     ]
   },
   {
     id: "ai-work-company-design",
-    title: "AI, Work, and Company Design",
-    description: "What changes when context gets cheaper, builders close loops directly, and companies have to learn faster than complexity compounds.",
+    title: "Organization, AI, and Company Design",
+    description: "How companies learn, stay steady under pressure, and redesign themselves as context gets cheaper and builders close loops faster.",
     slugs: [
       "scale-is-a-learning-problem",
       "ai-native-is-not-ai-first",
       "builder-is-the-only-role-left",
-      "ai-may-do-for-consumer-what-saas-did-for-software"
-    ]
-  },
-  {
-    id: "institutions-safety-regulation",
-    title: "Institutions, Safety, and Regulation",
-    description: "How high-stakes systems stay trustworthy when pressure is constant, error is costly, and the public consequence is real.",
-    slugs: [
-      "paranoid-survive-regulated-thrive",
-      "indias-road-deaths-are-a-trust-problem-not-a-traffic-problem"
+      "ai-may-do-for-consumer-what-saas-did-for-software",
+      "paranoid-survive-regulated-thrive"
     ]
   }
 ];
@@ -351,7 +344,6 @@ function renderHome(site, posts) {
               <p class="home-label">Writing</p>
               <a href="${sitePath(site, "/archive/")}" class="inline-link">Archive</a>
             </div>
-            <p class="home-writing-intro">The essays so far cluster around a few recurring questions. Grouping them by theme makes the throughlines easier to follow than a flat stream ever could.</p>
             <div class="essay-collections essay-collections-home">
               ${essayCollections.map((collection) => renderEssayCollection(collection, "home", site)).join("")}
             </div>
@@ -384,7 +376,7 @@ function renderArchive(site, posts) {
           <section class="archive-hero">
             <p class="eyebrow">Archive</p>
             <h1>Published writing</h1>
-            <p class="intro">Every essay in one place, grouped by theme so the body of thought reads as a connected set of arguments rather than a dated log.</p>
+            <p class="intro">Essays on mobility, trust, organization, and how companies learn under pressure.</p>
           </section>
 
           <div class="essay-collections essay-collections-archive">

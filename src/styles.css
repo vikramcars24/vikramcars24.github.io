@@ -274,14 +274,6 @@ pre code {
   border-top: 1px solid var(--line);
 }
 
-.home-writing-intro {
-  max-width: 38rem;
-  margin: 0 0 1.6rem;
-  color: color-mix(in srgb, var(--ink) 80%, transparent);
-  font-size: 1rem;
-  line-height: 1.78;
-}
-
 .essay-collections {
   display: grid;
   gap: 2.4rem;
