@@ -528,9 +528,14 @@ pre code {
   color: color-mix(in srgb, var(--ink) 68%, transparent);
   font-size: 0.95rem;
   text-decoration: none;
+  transition: color 140ms ease;
 }
 
 .essay-toc-item a:hover {
+  color: var(--ink);
+}
+
+.essay-toc-item a.is-active {
   color: var(--ink);
 }
 

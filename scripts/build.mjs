@@ -530,6 +530,54 @@ function renderDocument({ site, title, description, pathName, imagePath, imageAl
             }
           });
         }
+
+        const tocLinks = Array.from(document.querySelectorAll(".essay-toc a[href^='#']"));
+        const tocSections = tocLinks
+          .map((link) => {
+            const id = link.getAttribute("href")?.slice(1);
+            const section = id ? document.getElementById(id) : null;
+            return section ? { link, section } : null;
+          })
+          .filter(Boolean);
+
+        if (tocSections.length > 0 && "IntersectionObserver" in window) {
+          let activeId = "";
+
+          const setActive = (id) => {
+            if (!id || id === activeId) {
+              return;
+            }
+
+            activeId = id;
+            for (const item of tocSections) {
+              const isActive = item.section.id === id;
+              item.link.classList.toggle("is-active", isActive);
+              item.link.setAttribute("aria-current", isActive ? "true" : "false");
+            }
+          };
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              const visibleEntries = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top);
+
+              if (visibleEntries.length > 0) {
+                setActive(visibleEntries[0].target.id);
+              }
+            },
+            {
+              rootMargin: "-18% 0px -62% 0px",
+              threshold: [0, 0.2, 0.6, 1]
+            }
+          );
+
+          for (const item of tocSections) {
+            observer.observe(item.section);
+          }
+
+          setActive(tocSections[0].section.id);
+        }
       })();
     </script>
   </body>
@@ -578,7 +626,7 @@ function renderEntryRow(post) {
         <p class="entry-description">${escapeHtml(post.description)}</p>
       </div>
       <div class="entry-side">
-        <a class="entry-link" href="${sitePath(post.site, `/posts/${post.slug}/`)}">Read essay</a>
+        <a class="entry-link" href="${sitePath(post.site, `/posts/${post.slug}/`)}">${entryLinkLabel(post)}</a>
       </div>
     </article>
   `;
@@ -619,6 +667,14 @@ function renderHomeArchiveRow(post) {
       </div>
     </article>
   `;
+}
+
+function entryLinkLabel(post) {
+  const category = String(post.category || "").toLowerCase();
+  if (category.includes("note")) {
+    return "Read notes";
+  }
+  return "Read essay";
 }
 
 function renderDisplayTitle(title) {
