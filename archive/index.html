@@ -73,8 +73,38 @@
       <div class="entry-copy">
         <div class="entry-meta">
           <span>Essay</span>
+          <span>June 8, 2026</span>
+          <span>9 min read</span>
+        </div>
+        <h2 class="entry-title"><a href="/posts/ai-native-is-not-ai-first/">AI-Native Is Not AI-First</a></h2>
+        <p class="entry-description">Most companies are adding AI to old workflows. The deeper shift is organizational: what happens when the cost of carrying context collapses.</p>
+      </div>
+      <div class="entry-side">
+        <a class="entry-link" href="/posts/ai-native-is-not-ai-first/">Read essay</a>
+      </div>
+    </article>
+  
+    <article class="entry-row">
+      <div class="entry-copy">
+        <div class="entry-meta">
+          <span>Essay</span>
+          <span>June 7, 2026</span>
+          <span>15 min read</span>
+        </div>
+        <h2 class="entry-title"><a href="/posts/indias-road-deaths-are-a-trust-problem-not-a-traffic-problem/">India&#39;s Road Deaths Are a Trust Problem, Not a Traffic Problem</a></h2>
+        <p class="entry-description">Road deaths persist not only because drivers make mistakes, but because the system around those mistakes is too opaque and fragmented to stop error from becoming fatal.</p>
+      </div>
+      <div class="entry-side">
+        <a class="entry-link" href="/posts/indias-road-deaths-are-a-trust-problem-not-a-traffic-problem/">Read essay</a>
+      </div>
+    </article>
+  
+    <article class="entry-row">
+      <div class="entry-copy">
+        <div class="entry-meta">
+          <span>Essay</span>
           <span>June 6, 2026</span>
-          <span>5 min read</span>
+          <span>8 min read</span>
         </div>
         <h2 class="entry-title"><a href="/posts/paranoid-survive-regulated-thrive/">The Paranoid Survive. The Regulated Thrive.</a></h2>
         <p class="entry-description">The best companies build brakes into their intensity. They do not tear them out.</p>
@@ -155,6 +185,54 @@
               }
             }
           });
+        }
+
+        const tocLinks = Array.from(document.querySelectorAll(".essay-toc a[href^='#']"));
+        const tocSections = tocLinks
+          .map((link) => {
+            const id = link.getAttribute("href")?.slice(1);
+            const section = id ? document.getElementById(id) : null;
+            return section ? { link, section } : null;
+          })
+          .filter(Boolean);
+
+        if (tocSections.length > 0 && "IntersectionObserver" in window) {
+          let activeId = "";
+
+          const setActive = (id) => {
+            if (!id || id === activeId) {
+              return;
+            }
+
+            activeId = id;
+            for (const item of tocSections) {
+              const isActive = item.section.id === id;
+              item.link.classList.toggle("is-active", isActive);
+              item.link.setAttribute("aria-current", isActive ? "true" : "false");
+            }
+          };
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              const visibleEntries = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top);
+
+              if (visibleEntries.length > 0) {
+                setActive(visibleEntries[0].target.id);
+              }
+            },
+            {
+              rootMargin: "-18% 0px -62% 0px",
+              threshold: [0, 0.2, 0.6, 1]
+            }
+          );
+
+          for (const item of tocSections) {
+            observer.observe(item.section);
+          }
+
+          setActive(tocSections[0].section.id);
         }
       })();
     </script>
