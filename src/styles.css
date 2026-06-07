@@ -276,17 +276,17 @@ pre code {
 
 .home-featured-entry {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
-  gap: 1.5rem;
-  align-items: end;
-  padding-bottom: 0.6rem;
+  grid-template-columns: minmax(0, 1fr) 12rem;
+  gap: 1.15rem;
+  align-items: start;
+  padding-bottom: 0.35rem;
 }
 
 .home-featured-title {
   max-width: 13ch;
   margin: 0.45rem 0 0.75rem;
   font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 3.9rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
   line-height: 0.98;
   letter-spacing: -0.04em;
@@ -302,11 +302,11 @@ pre code {
 }
 
 .home-featured-description {
-  max-width: 32rem;
+  max-width: 30rem;
   margin: 0;
   color: color-mix(in srgb, var(--ink) 84%, transparent);
-  font-size: 1.02rem;
-  line-height: 1.8;
+  font-size: 0.98rem;
+  line-height: 1.72;
 }
 
 .home-featured-visual,
@@ -332,8 +332,9 @@ pre code {
 }
 
 .home-featured-visual {
-  aspect-ratio: 1 / 1;
-  align-self: stretch;
+  width: 12rem;
+  aspect-ratio: 1.4 / 1;
+  justify-self: end;
 }
 
 .home-section-head {
@@ -352,8 +353,8 @@ pre code {
 
 .home-archive-row {
   display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr) 10rem;
-  gap: 1.2rem;
+  grid-template-columns: 7rem minmax(0, 1fr) 8.5rem;
+  gap: 1rem;
   align-items: start;
   padding: 1.15rem 0;
   border-top: 1px solid var(--line);
@@ -385,7 +386,9 @@ pre code {
 }
 
 .home-archive-visual {
-  aspect-ratio: 1.2 / 1;
+  width: 8.5rem;
+  aspect-ratio: 1.45 / 1;
+  justify-self: end;
 }
 
 .home-interviews {
@@ -906,6 +909,7 @@ pre code {
   .home-featured-visual,
   .home-archive-visual,
   .entry-thumb {
+    width: 100%;
     max-width: 20rem;
   }
 

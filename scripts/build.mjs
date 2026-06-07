@@ -706,21 +706,30 @@ function renderHomeArchiveRow(post) {
 }
 
 function renderEntryVisual(post, className) {
-  if (!post.image) {
+  const visualPath = entryVisualPath(post);
+  const altText = post.articleImageAlt || post.imageAlt;
+
+  if (!visualPath) {
     return "";
   }
 
-  const visualPath = entryVisualPath(post.image);
-
   return `
     <a class="${className}" href="${sitePath(post.site, `/posts/${post.slug}/`)}" aria-label="Open ${escapeAttribute(post.title)}">
-      <img src="${escapeAttribute(sitePath(post.site, visualPath))}" alt="${escapeAttribute(post.imageAlt)}" loading="lazy">
+      <img src="${escapeAttribute(sitePath(post.site, visualPath))}" alt="${escapeAttribute(altText)}" loading="lazy">
     </a>
   `;
 }
 
-function entryVisualPath(imagePath) {
-  return imagePath.replace("-preview.", "-cover.");
+function entryVisualPath(post) {
+  if (post.articleImage) {
+    return post.articleImage;
+  }
+
+  if (post.image) {
+    return post.image.replace("-preview.", "-cover.");
+  }
+
+  return "";
 }
 
 function renderHomeInterviewSections(sections) {

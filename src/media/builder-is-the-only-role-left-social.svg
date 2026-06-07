@@ -66,14 +66,13 @@
   </g>
   
   <g>
-    <path d="M 65.195 148.96 L 55.16499999999999 148.96 L 55.16499999999999 787.3868799999999 L 65.195 787.3868799999999"
-          stroke="rgba(186,199,255,0.4)" stroke-width="1.5045" fill="none"/>
-    <text x="75.225" y="282.24" fill="#FFFFFF" opacity="1" font-size="98.294" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.055em">Builder is</text>
-<text x="75.225" y="420.224" fill="#FFFFFF" opacity="1" font-size="98.294" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.055em">the only role</text>
-<text x="75.225" y="558.208" fill="#FFFFFF" opacity="1" font-size="98.294" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="600" letter-spacing="-0.045em">left.</text>
-    <text x="75.225" y="740.3468799999999" fill="#FFFFFF" opacity="0.96" font-size="38.114" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Prestige should move closer to the problem.</text>
-    <text x="75.225" y="850.1068799999999" fill="#FFFFFF" opacity="0.9" font-size="26.078" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400">
-      <tspan x="75.225" dy="0">The durable role is the one that closes loops directly.</tspan>
+    <text x="80.24" y="188.16" fill="rgba(255,255,255,0.72)" font-size="18.054" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">MOBILITY / TRUST</text>
+    <text x="80.24" y="360.64000000000004" fill="#FFFFFF" font-size="90.27" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="normal" font-weight="400" letter-spacing="-0.04em">Builder is</text>
+<text x="80.24" y="498.624" fill="#FFFFFF" font-size="90.27" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="normal" font-weight="400" letter-spacing="-0.04em">the only role</text>
+<text x="80.24" y="636.608" fill="#FFFFFF" font-size="90.27" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="italic" font-weight="400" letter-spacing="-0.04em">left.</text>
+    <text x="80.24" y="813.22752" fill="#FFFFFF" opacity="0.96" font-size="36.108" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Prestige should move closer to the problem.</text>
+    <text x="80.24" y="915.14752" fill="#FFFFFF" opacity="0.84" font-size="24.072" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="80.24" dy="0">The durable role is the one that closes loops directly.</tspan>
     </text>
   </g>
 </svg>

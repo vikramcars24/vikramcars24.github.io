@@ -75,13 +75,13 @@
   </g>
   
   <g>
-    <text x="86.39999999999999" y="81.9" fill="rgba(71,54,254,0.72)" font-size="19.44" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">ORG DESIGN / AI</text>
-    <text x="86.39999999999999" y="138.6" fill="#4736FE" font-size="103.19999999999999" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">The greenest car</text>
-<text x="86.39999999999999" y="245.7" fill="#4736FE" font-size="103.19999999999999" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">in India is the</text>
-<text x="86.39999999999999" y="352.8" fill="#6F5BFF" font-size="103.19999999999999" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.05em">one already built.</text>
-    <text x="86.39999999999999" y="492.03" fill="#4736FE" opacity="0.96" font-size="36" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Reuse works only when trust works.</text>
-    <text x="86.39999999999999" y="555.03" fill="#161616" opacity="0.76" font-size="22.8" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
-      <tspan x="86.39999999999999" dy="0">Battery legibility and transfer rails make climate real.</tspan>
+    <text x="372" y="81.9" text-anchor="start" fill="rgba(71,54,254,0.74)" font-size="16.8" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">CLIMATE / REUSE</text>
+    <text x="372" y="157.5" text-anchor="start" fill="#4736FE" font-size="93.6" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400" letter-spacing="-0.055em">The greenest car</text>
+<text x="372" y="258.3" text-anchor="start" fill="#4736FE" font-size="93.6" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400" letter-spacing="-0.055em">in India is the</text>
+<text x="372" y="359.1" text-anchor="start" fill="#6F5BFF" font-size="93.6" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.055em">one already built.</text>
+    <text x="372" y="484.092" text-anchor="start" fill="#4736FE" opacity="0.96" font-size="33.6" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Reuse works only when trust works.</text>
+    <text x="372" y="540.792" text-anchor="start" fill="#161616" opacity="0.78" font-size="22.8" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="372" dy="0">Battery legibility and transfer rails make climate real.</tspan>
     </text>
   </g>
 </svg>

@@ -26,7 +26,8 @@ const essays = [
     subtitle: "Pre-owned. Transfer-heavy. Trust-led.",
     description: "The market grows when ownership feels survivable, then normal.",
     motif: "ownership-ledger",
-    textMode: "architectural-light",
+    textMode: "editorial-light",
+    eyebrow: "OWNERSHIP / INDIA",
     backgroundMode: "signal-light",
     palette: {
       bgTop: "#F7F4FF",
@@ -48,7 +49,8 @@ const essays = [
     subtitle: "Reuse works only when trust works.",
     description: "Battery legibility and transfer rails make climate real.",
     motif: "battery-passport",
-    textMode: "architectural-light",
+    textMode: "light-poster",
+    eyebrow: "CLIMATE / REUSE",
     backgroundMode: "maker-light",
     palette: {
       bgTop: "#F6F3FF",
@@ -114,7 +116,8 @@ const essays = [
     subtitle: "Prestige should move closer to the problem.",
     description: "The durable role is the one that closes loops directly.",
     motif: "builder-geometry",
-    textMode: "architectural",
+    textMode: "dark-lockup",
+    eyebrow: "MOBILITY / TRUST",
     backgroundMode: "maker-dark",
     palette: {
       bgTop: "#6356FF",
@@ -158,7 +161,7 @@ const essays = [
     subtitle: "Capability compounds when truth moves.",
     description: "The companies that grow wiser do not need to grow heavier.",
     motif: "learning-orbits",
-    textMode: "architectural-light",
+    textMode: "systems-bottom",
     eyebrow: "SYSTEMS / SCALE",
     titleScale: 0.9,
     titleOffsetY: 18,
@@ -321,6 +324,22 @@ function renderMakerDarkBackground(essay, width, height) {
 }
 
 function renderTextBlock(essay, width, height, variant) {
+  if (essay.textMode === "editorial-light") {
+    return renderEditorialLightTextBlock(essay, width, height, variant);
+  }
+
+  if (essay.textMode === "light-poster") {
+    return renderLightPosterTextBlock(essay, width, height, variant);
+  }
+
+  if (essay.textMode === "dark-lockup") {
+    return renderDarkLockupTextBlock(essay, width, height, variant);
+  }
+
+  if (essay.textMode === "systems-bottom") {
+    return renderSystemsBottomTextBlock(essay, width, height, variant);
+  }
+
   if (essay.textMode === "civic") {
     return renderCivicTextBlock(essay, width, height, variant);
   }
@@ -358,6 +377,131 @@ function renderTextBlock(essay, width, height, variant) {
     ${titleLines}
     <text x="${marginX}" y="${subtitleY}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" letter-spacing="0.01em">${escapeXml(essay.subtitle)}</text>
     <text x="${marginX}" y="${descY}" fill="${essay.palette.description}" opacity="0.9" font-size="${descSize}" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="400">
+      <tspan x="${marginX}" dy="0">${escapeXml(essay.description)}</tspan>
+    </text>
+  </g>`;
+}
+
+function renderEditorialLightTextBlock(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const marginX = isPreview ? width * 0.07 : isSocial ? width * 0.08 : width * 0.075;
+  const eyebrowY = isPreview ? height * 0.12 : isSocial ? height * 0.1 : height * 0.12;
+  const titleTop = isPreview ? height * 0.24 : isSocial ? height * 0.17 : height * 0.19;
+  const lineGap = isPreview ? height * 0.16 : isSocial ? height * 0.09 : height * 0.105;
+  const titleSize = isPreview ? width * 0.078 : isSocial ? width * 0.092 : width * 0.08;
+  const subtitleY = titleTop + lineGap * (essay.titleLines.length + 0.28);
+  const descY = subtitleY + (isPreview ? height * 0.09 : isSocial ? height * 0.068 : height * 0.082);
+  const subtitleSize = isPreview ? width * 0.028 : isSocial ? width * 0.036 : width * 0.031;
+  const descSize = isPreview ? width * 0.019 : isSocial ? width * 0.025 : width * 0.022;
+
+  const titleLines = essay.titleLines.map((line, index) => {
+    const y = titleTop + index * lineGap;
+    const fill = index === essay.accentLineIndex ? essay.palette.titleAccent : essay.palette.titlePrimary;
+    const style = index === essay.accentLineIndex ? "italic" : "normal";
+    return `<text x="${marginX}" y="${y}" fill="${fill}" font-size="${titleSize}" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="${style}" font-weight="400" letter-spacing="-0.045em">${escapeXml(line)}</text>`;
+  }).join("\n");
+
+  return `
+  <g>
+    <text x="${marginX}" y="${eyebrowY}" fill="rgba(71,54,254,0.74)" font-size="${subtitleSize * 0.52}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">${escapeXml(essay.eyebrow || "ESSAY")}</text>
+    ${titleLines}
+    <text x="${marginX}" y="${subtitleY}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">${escapeXml(essay.subtitle)}</text>
+    <text x="${marginX}" y="${descY}" fill="${essay.palette.description}" opacity="0.82" font-size="${descSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="${marginX}" dy="0">${escapeXml(essay.description)}</tspan>
+    </text>
+  </g>`;
+}
+
+function renderLightPosterTextBlock(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const centerX = width * (isPreview ? 0.31 : isSocial ? 0.5 : 0.34);
+  const anchor = isSocial ? "middle" : "start";
+  const eyebrowY = isPreview ? height * 0.13 : isSocial ? height * 0.11 : height * 0.13;
+  const titleTop = isPreview ? height * 0.25 : isSocial ? height * 0.18 : height * 0.2;
+  const lineGap = isPreview ? height * 0.16 : isSocial ? height * 0.09 : height * 0.11;
+  const titleSize = isPreview ? width * 0.078 : isSocial ? width * 0.093 : width * 0.082;
+  const subtitleY = titleTop + lineGap * (essay.titleLines.length + 0.24);
+  const descY = subtitleY + (isPreview ? height * 0.09 : isSocial ? height * 0.068 : height * 0.082);
+  const subtitleSize = isPreview ? width * 0.028 : isSocial ? width * 0.036 : width * 0.03;
+  const descSize = isPreview ? width * 0.019 : isSocial ? width * 0.024 : width * 0.021;
+
+  const titleLines = essay.titleLines.map((line, index) => {
+    const y = titleTop + index * lineGap;
+    const fill = index === essay.accentLineIndex ? essay.palette.titleAccent : essay.palette.titlePrimary;
+    const weight = index === essay.accentLineIndex ? "700" : "400";
+    return `<text x="${centerX}" y="${y}" text-anchor="${anchor}" fill="${fill}" font-size="${titleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="${weight}" letter-spacing="-0.055em">${escapeXml(line)}</text>`;
+  }).join("\n");
+
+  return `
+  <g>
+    <text x="${centerX}" y="${eyebrowY}" text-anchor="${anchor}" fill="rgba(71,54,254,0.74)" font-size="${subtitleSize * 0.5}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">${escapeXml(essay.eyebrow || "ESSAY")}</text>
+    ${titleLines}
+    <text x="${centerX}" y="${subtitleY}" text-anchor="${anchor}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">${escapeXml(essay.subtitle)}</text>
+    <text x="${centerX}" y="${descY}" text-anchor="${anchor}" fill="${essay.palette.description}" opacity="0.78" font-size="${descSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="${centerX}" dy="0">${escapeXml(essay.description)}</tspan>
+    </text>
+  </g>`;
+}
+
+function renderDarkLockupTextBlock(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const marginX = isPreview ? width * 0.067 : isSocial ? width * 0.08 : width * 0.075;
+  const eyebrowY = isPreview ? height * 0.14 : isSocial ? height * 0.12 : height * 0.13;
+  const titleTop = isPreview ? height * 0.34 : isSocial ? height * 0.23 : height * 0.26;
+  const lineGap = isPreview ? height * 0.15 : isSocial ? height * 0.088 : height * 0.1;
+  const titleSize = isPreview ? width * 0.072 : isSocial ? width * 0.09 : width * 0.078;
+  const subtitleY = titleTop + lineGap * (essay.titleLines.length + 0.28);
+  const descY = subtitleY + (isPreview ? height * 0.085 : isSocial ? height * 0.065 : height * 0.078);
+  const subtitleSize = isPreview ? width * 0.028 : isSocial ? width * 0.036 : width * 0.03;
+  const descSize = isPreview ? width * 0.019 : isSocial ? width * 0.024 : width * 0.021;
+
+  const titleLines = essay.titleLines.map((line, index) => {
+    const y = titleTop + index * lineGap;
+    const fill = index === essay.accentLineIndex ? essay.palette.titleAccent : essay.palette.titlePrimary;
+    const style = index === essay.accentLineIndex ? "italic" : "normal";
+    return `<text x="${marginX}" y="${y}" fill="${fill}" font-size="${titleSize}" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="${style}" font-weight="400" letter-spacing="-0.04em">${escapeXml(line)}</text>`;
+  }).join("\n");
+
+  return `
+  <g>
+    <text x="${marginX}" y="${eyebrowY}" fill="rgba(255,255,255,0.72)" font-size="${subtitleSize * 0.5}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">${escapeXml(essay.eyebrow || "ESSAY")}</text>
+    ${titleLines}
+    <text x="${marginX}" y="${subtitleY}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">${escapeXml(essay.subtitle)}</text>
+    <text x="${marginX}" y="${descY}" fill="${essay.palette.description}" opacity="0.84" font-size="${descSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="${marginX}" dy="0">${escapeXml(essay.description)}</tspan>
+    </text>
+  </g>`;
+}
+
+function renderSystemsBottomTextBlock(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const marginX = isPreview ? width * 0.07 : isSocial ? width * 0.08 : width * 0.075;
+  const eyebrowY = isPreview ? height * 0.13 : isSocial ? height * 0.11 : height * 0.12;
+  const titleBase = isPreview ? height * 0.57 : isSocial ? height * 0.44 : height * 0.5;
+  const lineGap = isPreview ? height * 0.145 : isSocial ? height * 0.085 : height * 0.1;
+  const titleSize = isPreview ? width * 0.08 : isSocial ? width * 0.094 : width * 0.082;
+  const subtitleY = titleBase + lineGap * (essay.titleLines.length + 0.12);
+  const descY = subtitleY + (isPreview ? height * 0.075 : isSocial ? height * 0.058 : height * 0.07);
+  const subtitleSize = isPreview ? width * 0.026 : isSocial ? width * 0.034 : width * 0.029;
+  const descSize = isPreview ? width * 0.018 : isSocial ? width * 0.023 : width * 0.02;
+
+  const titleLines = essay.titleLines.map((line, index) => {
+    const y = titleBase + index * lineGap;
+    const fill = index === essay.accentLineIndex ? essay.palette.titleAccent : essay.palette.titlePrimary;
+    const weight = index === essay.accentLineIndex ? "700" : "400";
+    return `<text x="${marginX}" y="${y}" fill="${fill}" font-size="${titleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="${weight}" letter-spacing="-0.06em">${escapeXml(line)}</text>`;
+  }).join("\n");
+
+  return `
+  <g>
+    <text x="${marginX}" y="${eyebrowY}" fill="rgba(71,54,254,0.74)" font-size="${subtitleSize * 0.52}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">${escapeXml(essay.eyebrow || "ESSAY")}</text>
+    ${titleLines}
+    <text x="${marginX}" y="${subtitleY}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">${escapeXml(essay.subtitle)}</text>
+    <text x="${marginX}" y="${descY}" fill="${essay.palette.description}" opacity="0.78" font-size="${descSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
       <tspan x="${marginX}" dy="0">${escapeXml(essay.description)}</tspan>
     </text>
   </g>`;

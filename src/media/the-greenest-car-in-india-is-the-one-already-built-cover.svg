@@ -75,13 +75,13 @@
   </g>
   
   <g>
-    <text x="92.79599999999999" y="150.48" fill="rgba(71,54,254,0.72)" font-size="21.669120000000003" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">ORG DESIGN / AI</text>
-    <text x="92.79599999999999" y="238.26" fill="#4736FE" font-size="105.33600000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">The greenest car</text>
-<text x="92.79599999999999" y="373.692" fill="#4736FE" font-size="105.33600000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">in India is the</text>
-<text x="92.79599999999999" y="509.12399999999997" fill="#6F5BFF" font-size="105.33600000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.05em">one already built.</text>
-    <text x="92.79599999999999" y="685.1855999999999" fill="#4736FE" opacity="0.96" font-size="40.128" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Reuse works only when trust works.</text>
-    <text x="92.79599999999999" y="790.5215999999999" fill="#161616" opacity="0.76" font-size="27.587999999999997" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
-      <tspan x="92.79599999999999" dy="0">Battery legibility and transfer rails make climate real.</tspan>
+    <text x="426.36" y="163.02" text-anchor="start" fill="rgba(71,54,254,0.74)" font-size="18.81" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">CLIMATE / REUSE</text>
+    <text x="426.36" y="250.8" text-anchor="start" fill="#4736FE" font-size="102.828" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400" letter-spacing="-0.055em">The greenest car</text>
+<text x="426.36" y="388.74" text-anchor="start" fill="#4736FE" font-size="102.828" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400" letter-spacing="-0.055em">in India is the</text>
+<text x="426.36" y="526.6800000000001" text-anchor="start" fill="#6F5BFF" font-size="102.828" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.055em">one already built.</text>
+    <text x="426.36" y="697.7256" text-anchor="start" fill="#4736FE" opacity="0.96" font-size="37.62" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Reuse works only when trust works.</text>
+    <text x="426.36" y="800.5536" text-anchor="start" fill="#161616" opacity="0.78" font-size="26.334000000000003" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="426.36" dy="0">Battery legibility and transfer rails make climate real.</tspan>
     </text>
   </g>
 </svg>
