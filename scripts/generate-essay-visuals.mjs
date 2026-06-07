@@ -29,6 +29,7 @@ const essays = [
     textMode: "editorial-light",
     eyebrow: "OWNERSHIP / INDIA",
     backgroundMode: "signal-light",
+    sourceMode: "manual-raster",
     palette: {
       bgTop: "#F7F4FF",
       bgMid: "#EFEAFF",
@@ -52,6 +53,7 @@ const essays = [
     textMode: "light-poster",
     eyebrow: "CLIMATE / REUSE",
     backgroundMode: "maker-light",
+    sourceMode: "manual-raster",
     palette: {
       bgTop: "#F6F3FF",
       bgMid: "#F0ECFF",
@@ -74,6 +76,7 @@ const essays = [
     motif: "forensic",
     textMode: "civic",
     backgroundMode: "maker-light",
+    sourceMode: "manual-raster",
     palette: {
       bgTop: "#EBE9FF",
       bgMid: "#F2F1FF",
@@ -96,6 +99,7 @@ const essays = [
     motif: "context-loom",
     textMode: "architectural-light",
     backgroundMode: "signal-light",
+    sourceMode: "manual-raster",
     palette: {
       bgTop: "#F3F1FF",
       bgMid: "#ECE8FF",
@@ -118,6 +122,7 @@ const essays = [
     motif: "builder-geometry",
     textMode: "dark-lockup",
     eyebrow: "MOBILITY / TRUST",
+    sourceMode: "manual-raster",
     backgroundMode: "maker-dark",
     palette: {
       bgTop: "#6356FF",
@@ -134,12 +139,14 @@ const essays = [
   {
     slug: "the-car-is-the-artifact-trust-is-the-product",
     title: "The Car Is the Artifact. Trust Is the Product.",
-    titleLines: ["The car is", "the artifact.", "Trust is the product."],
-    accentLineIndex: 2,
+    titleLines: ["The car is", "the artifact.", "Trust is the", "product."],
+    accentLineIndex: 3,
     subtitle: "Certainty is what compounds in mobility.",
     description: "Ownership becomes a business when trust becomes a system.",
     motif: "trust-stack",
-    textMode: "architectural",
+    textMode: "institutional-dark",
+    eyebrow: "MOBILITY / TRUST",
+    sourceMode: "manual-raster",
     backgroundMode: "maker-dark",
     palette: {
       bgTop: "#5A4DFF",
@@ -167,6 +174,7 @@ const essays = [
     titleOffsetY: 18,
     eyebrowOffsetY: -10,
     backgroundMode: "maker-light",
+    sourceMode: "manual-raster",
     palette: {
       bgTop: "#F6F2FF",
       bgMid: "#EEE9FF",
@@ -184,6 +192,10 @@ const essays = [
 await fs.mkdir(mediaDir, { recursive: true });
 
 for (const essay of essays) {
+  if (essay.sourceMode === "manual-raster") {
+    continue;
+  }
+
   for (const [variant, size] of Object.entries(sizes)) {
     const svg = renderEssayVisual({ essay, variant, ...size });
     const baseName = `${essay.slug}-${variant}`;
@@ -346,6 +358,10 @@ function renderTextBlock(essay, width, height, variant) {
 
   if (essay.textMode === "architectural") {
     return renderArchitecturalTextBlock(essay, width, height, variant);
+  }
+
+  if (essay.textMode === "institutional-dark") {
+    return renderInstitutionalDarkTextBlock(essay, width, height, variant);
   }
 
   if (essay.textMode === "architectural-light") {
@@ -576,6 +592,44 @@ function renderArchitecturalTextBlock(essay, width, height, variant) {
     ${titleLines}
     <text x="${marginX}" y="${subtitleY}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">${escapeXml(essay.subtitle)}</text>
     <text x="${marginX}" y="${descY}" fill="${essay.palette.description}" opacity="0.9" font-size="${descSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400">
+      <tspan x="${marginX}" dy="0">${escapeXml(essay.description)}</tspan>
+    </text>
+  </g>`;
+}
+
+function renderInstitutionalDarkTextBlock(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const marginX = isPreview ? width * 0.067 : isSocial ? width * 0.082 : width * 0.075;
+  const eyebrowY = isPreview ? height * 0.15 : isSocial ? height * 0.105 : height * 0.125;
+  const titleTop = isPreview ? height * 0.22 : isSocial ? height * 0.17 : height * 0.18;
+  const lineGap = isPreview ? height * 0.125 : isSocial ? height * 0.07 : height * 0.084;
+  const titleSize = isPreview ? width * 0.078 : isSocial ? width * 0.088 : width * 0.08;
+  const subtitleY = titleTop + lineGap * (essay.titleLines.length + 0.32);
+  const descY = subtitleY + (isPreview ? height * 0.09 : isSocial ? height * 0.066 : height * 0.078);
+  const subtitleSize = isPreview ? width * 0.028 : isSocial ? width * 0.036 : width * 0.03;
+  const descSize = isPreview ? width * 0.019 : isSocial ? width * 0.024 : width * 0.021;
+
+  const titleLines = essay.titleLines
+    .map((line, index) => {
+      const y = titleTop + index * lineGap;
+      const fill = essay.palette.titlePrimary;
+      if (index === essay.titleLines.length - 1) {
+        return `<text x="${marginX}" y="${y}" fill="${essay.palette.titleAccent}" font-size="${titleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.07em">${escapeXml(line)}</text>`;
+      }
+      const style = index === 2 ? "italic" : "normal";
+      const opacity = index === 2 ? "0.98" : "1";
+      return `<text x="${marginX}" y="${y}" fill="${fill}" opacity="${opacity}" font-size="${titleSize}" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="${style}" font-weight="400" letter-spacing="-0.045em">${escapeXml(line)}</text>`;
+    })
+    .join("\n");
+
+  return `
+  <g>
+    <rect x="${marginX}" y="${eyebrowY - subtitleSize * 1.42}" width="${width * 0.09}" height="${Math.max(5, height * 0.008)}" rx="${Math.max(2.5, height * 0.004)}" fill="rgba(255,255,255,0.9)"/>
+    <text x="${marginX}" y="${eyebrowY}" fill="rgba(255,255,255,0.72)" font-size="${subtitleSize * 0.5}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">${escapeXml(essay.eyebrow || "ESSAY")}</text>
+    ${titleLines}
+    <text x="${marginX}" y="${subtitleY}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">${escapeXml(essay.subtitle)}</text>
+    <text x="${marginX}" y="${descY}" fill="${essay.palette.description}" opacity="0.84" font-size="${descSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
       <tspan x="${marginX}" dy="0">${escapeXml(essay.description)}</tspan>
     </text>
   </g>`;
@@ -1154,43 +1208,264 @@ function renderBuilderGeometryMotif(essay, width, height, variant) {
 function renderTrustStackMotif(essay, width, height, variant) {
   const isPreview = variant === "preview";
   const isSocial = variant === "social";
-  const baseX = width * (isPreview ? 0.58 : isSocial ? 0.1 : 0.1);
-  const baseY = height * (isPreview ? 0.18 : isSocial ? 0.42 : 0.16);
-  const baseW = width * (isPreview ? 0.28 : isSocial ? 0.8 : 0.8);
-  const baseH = height * (isPreview ? 0.56 : isSocial ? 0.4 : 0.66);
-  const layers = [];
-  const layerSpecs = [
-    [0.02, 0.72, 0.92, 0.16, "rgba(255,255,255,0.14)"],
-    [0.08, 0.5, 0.78, 0.14, "rgba(255,255,255,0.18)"],
-    [0.16, 0.3, 0.62, 0.12, "rgba(255,255,255,0.22)"],
-    [0.24, 0.14, 0.46, 0.1, "rgba(255,255,255,0.28)"]
-  ];
-  for (const [x, y, w, h, fill] of layerSpecs) {
-    layers.push(`<rect x="${baseX + baseW * x}" y="${baseY + baseH * y}" width="${baseW * w}" height="${baseH * h}" rx="${Math.max(16, width * 0.01)}" fill="${fill}" stroke="rgba(255,255,255,0.12)" stroke-width="${Math.max(1, width * 0.001)}"/>`);
-  }
-  const nodes = [];
-  const points = [
-    [0.18, 0.8], [0.34, 0.8], [0.5, 0.8], [0.66, 0.8],
-    [0.24, 0.57], [0.44, 0.57], [0.64, 0.57],
-    [0.32, 0.36], [0.54, 0.36],
-    [0.44, 0.19]
-  ];
-  points.forEach(([px, py], index) => {
-    nodes.push(`<circle cx="${baseX + baseW * px}" cy="${baseY + baseH * py}" r="${Math.max(6, width * 0.004)}" fill="${index === points.length - 1 ? "rgba(239,69,35,0.92)" : "rgba(255,255,255,0.86)"}"/>`);
+  const isBlog = variant === "blog";
+  const frameX = width * (isPreview ? 0.57 : isSocial ? 0.1 : isBlog ? 0.18 : 0.18);
+  const frameY = height * (isPreview ? 0.2 : isSocial ? 0.48 : isBlog ? 0.17 : 0.2);
+  const frameW = width * (isPreview ? 0.29 : isSocial ? 0.78 : isBlog ? 0.64 : 0.62);
+  const frameH = height * (isPreview ? 0.56 : isSocial ? 0.33 : isBlog ? 0.58 : 0.54);
+  const cx = frameX + frameW * 0.5;
+  const cy = frameY + frameH * 0.5;
+  const panelRadius = Math.max(18, width * 0.013);
+
+  const backdrop = `
+    <ellipse cx="${frameX + frameW * 0.84}" cy="${frameY + frameH * 0.1}" rx="${frameW * (isSocial ? 0.2 : 0.28)}" ry="${frameH * (isSocial ? 0.2 : 0.24)}" fill="rgba(255,255,255,0.06)"/>
+    <ellipse cx="${frameX + frameW * 0.12}" cy="${frameY + frameH * 0.88}" rx="${frameW * (isSocial ? 0.16 : 0.2)}" ry="${frameH * (isSocial ? 0.14 : 0.18)}" fill="rgba(239,69,35,0.08)"/>
+  `;
+
+  const halo = `
+    <path d="M ${frameX + frameW * 0.18} ${frameY + frameH * 0.7}
+             C ${frameX + frameW * 0.18} ${frameY + frameH * 0.18}, ${frameX + frameW * 0.82} ${frameY + frameH * 0.18}, ${frameX + frameW * 0.82} ${frameY + frameH * 0.7}"
+          stroke="rgba(255,255,255,0.18)"
+          stroke-width="${Math.max(2.2, width * 0.0018)}"
+          stroke-linecap="round"
+          fill="none"
+          filter="url(#softGlow)"/>
+  `;
+
+  const ledgers = [
+    [0.08, 0.78, 0.84, 0.15, "rgba(255,255,255,0.12)"],
+    [0.16, 0.62, 0.68, 0.11, "rgba(255,255,255,0.16)"],
+    [0.24, 0.48, 0.52, 0.09, "rgba(255,255,255,0.2)"]
+  ].map(([x, y, w, h, fill]) => `
+    <rect x="${frameX + frameW * x}" y="${frameY + frameH * y}" width="${frameW * w}" height="${frameH * h}"
+          rx="${panelRadius}"
+          fill="${fill}"
+          stroke="rgba(255,255,255,0.12)"
+          stroke-width="${Math.max(1, width * 0.0011)}"/>
+  `).join("\n");
+
+  const shell = `
+    <rect x="${frameX + frameW * 0.14}" y="${frameY + frameH * 0.18}" width="${frameW * 0.72}" height="${frameH * 0.5}"
+          rx="${panelRadius * 1.2}"
+          fill="rgba(255,255,255,0.06)"
+          stroke="rgba(255,255,255,0.1)"
+          stroke-width="${Math.max(1, width * 0.0011)}"/>
+  `;
+
+  const artifact = renderTrustArtifactPod({
+    x: cx - frameW * (isBlog ? 0.17 : isSocial ? 0.18 : 0.16),
+    y: cy - frameH * (isBlog ? 0.095 : isSocial ? 0.11 : 0.1),
+    w: frameW * (isBlog ? 0.34 : isSocial ? 0.36 : 0.32),
+    h: frameH * (isBlog ? 0.21 : isSocial ? 0.22 : 0.2),
+    width
   });
-  const paths = [
-    [[0.18,0.8],[0.24,0.57]], [[0.34,0.8],[0.24,0.57]], [[0.5,0.8],[0.44,0.57]], [[0.66,0.8],[0.64,0.57]],
-    [[0.24,0.57],[0.32,0.36]], [[0.44,0.57],[0.32,0.36]], [[0.44,0.57],[0.54,0.36]], [[0.64,0.57],[0.54,0.36]],
-    [[0.32,0.36],[0.44,0.19]], [[0.54,0.36],[0.44,0.19]]
-  ].map(([[x1,y1],[x2,y2]], i) => `<path d="M ${baseX + baseW * x1} ${baseY + baseH * y1} L ${baseX + baseW * x2} ${baseY + baseH * y2}" stroke="${i % 3 === 0 ? "rgba(239,69,35,0.72)" : "rgba(255,255,255,0.48)"}" stroke-width="${Math.max(2, width * 0.0014)}" fill="none"/>`);
+
+  const docPill = renderTrustPill({
+    x: frameX + frameW * 0.1,
+    y: frameY + frameH * 0.22,
+    w: frameW * 0.2,
+    h: frameH * 0.13,
+    mode: "document",
+    width
+  });
+  const shieldPill = renderTrustPill({
+    x: frameX + frameW * 0.7,
+    y: frameY + frameH * 0.22,
+    w: frameW * 0.2,
+    h: frameH * 0.13,
+    mode: "shield",
+    width
+  });
+  const trailPill = renderTrustPill({
+    x: frameX + frameW * 0.36,
+    y: frameY + frameH * 0.75,
+    w: frameW * 0.28,
+    h: frameH * 0.11,
+    mode: "trail",
+    width
+  });
+
+  const connectors = `
+    <path d="M ${frameX + frameW * 0.2} ${frameY + frameH * 0.35}
+             C ${frameX + frameW * 0.34} ${frameY + frameH * 0.35}, ${frameX + frameW * 0.38} ${cy - frameH * 0.02}, ${cx - frameW * 0.16} ${cy - frameH * 0.02}"
+          stroke="rgba(255,255,255,0.46)"
+          stroke-width="${Math.max(2, width * 0.0016)}"
+          stroke-linecap="round"
+          fill="none"/>
+    <path d="M ${frameX + frameW * 0.8} ${frameY + frameH * 0.35}
+             C ${frameX + frameW * 0.66} ${frameY + frameH * 0.35}, ${frameX + frameW * 0.62} ${cy - frameH * 0.02}, ${cx + frameW * 0.16} ${cy - frameH * 0.02}"
+          stroke="rgba(239,69,35,0.62)"
+          stroke-width="${Math.max(2, width * 0.0016)}"
+          stroke-linecap="round"
+          fill="none"/>
+    <path d="M ${cx} ${cy + frameH * 0.1} L ${cx} ${frameY + frameH * 0.75}"
+          stroke="rgba(255,255,255,0.34)"
+          stroke-width="${Math.max(2, width * 0.0016)}"
+          stroke-linecap="round"/>
+  `;
+
+  const nodes = `
+    ${renderTrustNode(frameX + frameW * 0.2, frameY + frameH * 0.35, width, "cool")}
+    ${renderTrustNode(frameX + frameW * 0.8, frameY + frameH * 0.35, width, "warm")}
+    ${renderTrustNode(cx, frameY + frameH * 0.75, width, "cool")}
+  `;
+
+  const particles = renderParticles({
+    width,
+    height,
+    count: isBlog ? 34 : isPreview ? 22 : 26,
+    region: [frameX + frameW * 0.16, frameY + frameH * 0.14, frameW * 0.68, frameH * 0.58],
+    colors: ["rgba(255,255,255,0.12)", "rgba(239,69,35,0.14)", "rgba(255,255,255,0.08)"],
+    seed: 811
+  });
+
   return `
   <g>
-    <ellipse cx="${baseX + baseW * 0.74}" cy="${baseY + baseH * 0.18}" rx="${baseW * 0.18}" ry="${baseH * 0.2}" fill="rgba(239,69,35,0.08)"/>
-    <ellipse cx="${baseX + baseW * 0.2}" cy="${baseY + baseH * 0.82}" rx="${baseW * 0.16}" ry="${baseH * 0.16}" fill="rgba(255,255,255,0.08)"/>
-    ${layers.join("\n")}
-    ${paths.join("\n")}
-    ${nodes.join("\n")}
+    ${backdrop}
+    ${halo}
+    ${ledgers}
+    ${shell}
+    ${connectors}
+    ${docPill}
+    ${shieldPill}
+    ${trailPill}
+    ${nodes}
+    ${artifact}
+    ${particles}
   </g>`;
+}
+
+function renderTrustArtifactPod({ x, y, w, h, width }) {
+  const radius = Math.max(14, w * 0.09);
+  const carX = x + w * 0.2;
+  const carY = y + h * 0.56;
+  const carW = w * 0.6;
+  const carH = h * 0.22;
+  return `
+    <g>
+      <ellipse cx="${x + w * 0.5}" cy="${y + h * 0.82}" rx="${w * 0.42}" ry="${h * 0.26}" fill="rgba(239,69,35,0.16)"/>
+      <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${radius}" fill="rgba(255,255,255,0.96)" stroke="rgba(255,255,255,0.22)" stroke-width="${Math.max(1.2, width * 0.0012)}"/>
+      <rect x="${x + w * 0.08}" y="${y + h * 0.16}" width="${w * 0.26}" height="${h * 0.1}" rx="${h * 0.05}" fill="rgba(71,54,254,0.14)"/>
+      <path d="M ${carX} ${carY}
+               C ${carX + carW * 0.08} ${carY - carH * 0.65}, ${carX + carW * 0.24} ${carY - carH * 0.88}, ${carX + carW * 0.38} ${carY - carH * 0.88}
+               L ${carX + carW * 0.64} ${carY - carH * 0.88}
+               C ${carX + carW * 0.79} ${carY - carH * 0.88}, ${carX + carW * 0.92} ${carY - carH * 0.55}, ${carX + carW} ${carY}
+               L ${carX + carW} ${carY + carH * 0.06}
+               L ${carX} ${carY + carH * 0.06} Z"
+            fill="none" stroke="rgba(71,54,254,0.86)" stroke-width="${Math.max(2, width * 0.0017)}" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${carX + carW * 0.24}" cy="${carY + carH * 0.06}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(71,54,254,0.9)"/>
+      <circle cx="${carX + carW * 0.78}" cy="${carY + carH * 0.06}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(71,54,254,0.9)"/>
+      <rect x="${x + w * 0.18}" y="${y + h * 0.76}" width="${w * 0.64}" height="${h * 0.08}" rx="${h * 0.04}" fill="rgba(239,69,35,0.9)"/>
+    </g>
+  `;
+}
+
+function renderTrustModuleCard({ x, y, w, h, type, accent, width }) {
+  const accentFill = accent === "warm" ? "rgba(239,69,35,0.88)" : "rgba(255,255,255,0.92)";
+  const accentBg = accent === "warm" ? "rgba(239,69,35,0.14)" : "rgba(255,255,255,0.12)";
+  const stroke = "rgba(255,255,255,0.16)";
+  const base = `
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${Math.max(12, w * 0.12)}" fill="rgba(255,255,255,0.1)" stroke="${stroke}" stroke-width="${Math.max(1, width * 0.001)}"/>
+    <rect x="${x + w * 0.1}" y="${y + h * 0.16}" width="${w * 0.26}" height="${h * 0.12}" rx="${h * 0.06}" fill="${accentBg}"/>
+  `;
+
+  let interior = "";
+  if (type === "document") {
+    interior = `
+      <rect x="${x + w * 0.14}" y="${y + h * 0.38}" width="${w * 0.52}" height="${h * 0.08}" rx="${h * 0.04}" fill="rgba(255,255,255,0.22)"/>
+      <rect x="${x + w * 0.14}" y="${y + h * 0.54}" width="${w * 0.38}" height="${h * 0.07}" rx="${h * 0.035}" fill="rgba(255,255,255,0.16)"/>
+      <circle cx="${x + w * 0.78}" cy="${y + h * 0.52}" r="${Math.max(5, width * 0.0034)}" fill="${accentFill}"/>
+    `;
+  } else if (type === "shield") {
+    interior = `
+      <path d="M ${x + w * 0.52} ${y + h * 0.34}
+               L ${x + w * 0.68} ${y + h * 0.4}
+               L ${x + w * 0.66} ${y + h * 0.58}
+               C ${x + w * 0.63} ${y + h * 0.72}, ${x + w * 0.56} ${y + h * 0.8}, ${x + w * 0.48} ${y + h * 0.84}
+               C ${x + w * 0.4} ${y + h * 0.8}, ${x + w * 0.33} ${y + h * 0.72}, ${x + w * 0.3} ${y + h * 0.58}
+               L ${x + w * 0.28} ${y + h * 0.4} Z"
+            fill="none" stroke="rgba(255,255,255,0.74)" stroke-width="${Math.max(1.6, width * 0.0014)}" stroke-linejoin="round"/>
+      <path d="M ${x + w * 0.39} ${y + h * 0.58} L ${x + w * 0.46} ${y + h * 0.66} L ${x + w * 0.58} ${y + h * 0.49}"
+            stroke="${accentFill}" stroke-width="${Math.max(2, width * 0.0016)}" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    `;
+  } else if (type === "trail") {
+    interior = `
+      <path d="M ${x + w * 0.18} ${y + h * 0.62} C ${x + w * 0.28} ${y + h * 0.36}, ${x + w * 0.44} ${y + h * 0.38}, ${x + w * 0.56} ${y + h * 0.54} C ${x + w * 0.68} ${y + h * 0.7}, ${x + w * 0.76} ${y + h * 0.56}, ${x + w * 0.82} ${y + h * 0.42}"
+            stroke="rgba(255,255,255,0.54)" stroke-width="${Math.max(1.8, width * 0.0014)}" fill="none" stroke-linecap="round"/>
+      <circle cx="${x + w * 0.18}" cy="${y + h * 0.62}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+      <circle cx="${x + w * 0.56}" cy="${y + h * 0.54}" r="${Math.max(4.4, width * 0.0032)}" fill="${accentFill}"/>
+      <circle cx="${x + w * 0.82}" cy="${y + h * 0.42}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+    `;
+  } else if (type === "service") {
+    interior = `
+      <rect x="${x + w * 0.16}" y="${y + h * 0.42}" width="${w * 0.54}" height="${h * 0.08}" rx="${h * 0.04}" fill="rgba(255,255,255,0.18)"/>
+      <circle cx="${x + w * 0.38}" cy="${y + h * 0.46}" r="${Math.max(6, width * 0.0038)}" fill="${accentFill}"/>
+      <path d="M ${x + w * 0.62} ${y + h * 0.35} L ${x + w * 0.76} ${y + h * 0.64}"
+            stroke="rgba(255,255,255,0.72)" stroke-width="${Math.max(2, width * 0.0016)}" stroke-linecap="round"/>
+      <circle cx="${x + w * 0.68}" cy="${y + h * 0.52}" r="${Math.max(5, width * 0.0034)}" fill="rgba(255,255,255,0.92)"/>
+    `;
+  } else if (type === "network") {
+    interior = `
+      <path d="M ${x + w * 0.18} ${y + h * 0.58} L ${x + w * 0.42} ${y + h * 0.42} L ${x + w * 0.66} ${y + h * 0.58} L ${x + w * 0.84} ${y + h * 0.36}"
+            stroke="rgba(255,255,255,0.56)" stroke-width="${Math.max(1.8, width * 0.0014)}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${x + w * 0.18}" cy="${y + h * 0.58}" r="${Math.max(4.6, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+      <circle cx="${x + w * 0.42}" cy="${y + h * 0.42}" r="${Math.max(4.6, width * 0.0032)}" fill="${accentFill}"/>
+      <circle cx="${x + w * 0.66}" cy="${y + h * 0.58}" r="${Math.max(4.6, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+      <circle cx="${x + w * 0.84}" cy="${y + h * 0.36}" r="${Math.max(4.6, width * 0.0032)}" fill="${accentFill}"/>
+    `;
+  }
+
+  return `<g>${base}${interior}</g>`;
+}
+
+function renderTrustPill({ x, y, w, h, mode, width }) {
+  const base = `
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${Math.max(14, h * 0.45)}" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.16)" stroke-width="${Math.max(1, width * 0.001)}"/>
+  `;
+
+  let interior = "";
+  if (mode === "document") {
+    interior = `
+      <rect x="${x + w * 0.12}" y="${y + h * 0.2}" width="${w * 0.18}" height="${h * 0.11}" rx="${h * 0.05}" fill="rgba(239,69,35,0.16)"/>
+      <rect x="${x + w * 0.12}" y="${y + h * 0.42}" width="${w * 0.44}" height="${h * 0.08}" rx="${h * 0.04}" fill="rgba(255,255,255,0.24)"/>
+      <rect x="${x + w * 0.12}" y="${y + h * 0.58}" width="${w * 0.32}" height="${h * 0.07}" rx="${h * 0.035}" fill="rgba(255,255,255,0.16)"/>
+      <circle cx="${x + w * 0.82}" cy="${y + h * 0.5}" r="${Math.max(5.2, width * 0.0034)}" fill="rgba(239,69,35,0.92)"/>
+    `;
+  } else if (mode === "shield") {
+    interior = `
+      <path d="M ${x + w * 0.52} ${y + h * 0.24}
+               L ${x + w * 0.68} ${y + h * 0.3}
+               L ${x + w * 0.65} ${y + h * 0.52}
+               C ${x + w * 0.62} ${y + h * 0.68}, ${x + w * 0.56} ${y + h * 0.78}, ${x + w * 0.48} ${y + h * 0.84}
+               C ${x + w * 0.4} ${y + h * 0.78}, ${x + w * 0.34} ${y + h * 0.68}, ${x + w * 0.31} ${y + h * 0.52}
+               L ${x + w * 0.28} ${y + h * 0.3} Z"
+            fill="none" stroke="rgba(255,255,255,0.82)" stroke-width="${Math.max(1.6, width * 0.0014)}" stroke-linejoin="round"/>
+      <path d="M ${x + w * 0.42} ${y + h * 0.54} L ${x + w * 0.49} ${y + h * 0.62} L ${x + w * 0.61} ${y + h * 0.47}"
+            stroke="rgba(255,255,255,0.92)" stroke-width="${Math.max(2, width * 0.0016)}" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    `;
+  } else if (mode === "trail") {
+    interior = `
+      <path d="M ${x + w * 0.18} ${y + h * 0.62} L ${x + w * 0.38} ${y + h * 0.46} L ${x + w * 0.58} ${y + h * 0.64} L ${x + w * 0.8} ${y + h * 0.4}"
+            stroke="rgba(255,255,255,0.62)" stroke-width="${Math.max(1.8, width * 0.0014)}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${x + w * 0.18}" cy="${y + h * 0.62}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+      <circle cx="${x + w * 0.38}" cy="${y + h * 0.46}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+      <circle cx="${x + w * 0.58}" cy="${y + h * 0.64}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+      <circle cx="${x + w * 0.8}" cy="${y + h * 0.4}" r="${Math.max(4.4, width * 0.0032)}" fill="rgba(255,255,255,0.92)"/>
+    `;
+  }
+
+  return `<g>${base}${interior}</g>`;
+}
+
+function renderTrustNode(x, y, width, accent) {
+  const fill = accent === "warm" ? "rgba(239,69,35,0.92)" : "rgba(255,255,255,0.94)";
+  const inner = accent === "warm" ? "rgba(239,69,35,0.92)" : "rgba(71,54,254,0.92)";
+  return `
+    <g filter="url(#fineGlow)">
+      <circle cx="${x}" cy="${y}" r="${Math.max(7, width * 0.0044)}" fill="${fill}"/>
+      <circle cx="${x}" cy="${y}" r="${Math.max(3.2, width * 0.0022)}" fill="${inner}"/>
+    </g>
+  `;
 }
 
 function renderLearningOrbitMotif(essay, width, height, variant) {

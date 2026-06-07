@@ -5,6 +5,210 @@
     <link>https://vikramchopra.in</link>
     <description>A home for essays and notes on building companies, making hard decisions, and staying steady under pressure.</description>
     <item>
+      <title>AI May Do for Consumer What SaaS Did for Software</title>
+      <link>https://vikramchopra.in/posts/ai-may-do-for-consumer-what-saas-did-for-software/</link>
+      <guid>https://vikramchopra.in/posts/ai-may-do-for-consumer-what-saas-did-for-software/</guid>
+      <pubDate>Sun, 14 Jun 2026 12:00:00 GMT</pubDate>
+      <description>India&apos;s first clean global startup export was SaaS because software traveled better than service-heavy businesses. AI may create a similar wedge for consumer companies by collapsing the cost of localization, operating context, and cross-market control.</description>
+      <content:encoded><![CDATA[<p>India&#39;s startup imagination has been trained by one global success shape for a long time.</p>
+<p>Software built in India, sold to the world.</p>
+<p>That was not an illusion. It was a real wedge. SaaS was the first category where Indian startups could build world-class companies without having to physically recreate the whole business in every geography. Code traveled. Distribution was digital. Support could be centralized. Product quality mattered more than office location.</p>
+<p>That is why SaaS mattered so much. It was not just a good business model. It was proof that India could produce global companies in a category where geography had started to matter less.</p>
+<p>I think AI may create a similar opening for consumer companies.</p>
+<p>Not because physical reality disappears. Not because logistics stop mattering. Not because local trust, regulation, and service density suddenly become trivial.</p>
+<p>But because AI changes the cost of carrying operating context across a complex consumer system. And that may be enough to reopen a question that used to look much harder: can a consumer company built in India also become a company for the world?</p>
+<h2 id="saas-was-the-first-clean-export-wedge">SaaS was the first clean export wedge</h2>
+<p>The deeper reason SaaS traveled is easy to miss if we narrate it only as founder brilliance or engineering talent.</p>
+<p>SaaS traveled because software is unusually portable.</p>
+<p>You could build the product in Chennai, Bengaluru, Pune, or Delhi and sell it into New York, London, Singapore, or Sydney without rebuilding the whole operating spine each time. The codebase stayed shared. The product stayed shared. The learning loop stayed shared. Geography still mattered, especially for go-to-market, but not in the same crushing way it mattered for local service businesses.</p>
+<p>That gave India an opening.</p>
+<p>The country had engineering talent, operating discipline, and cost advantages. Once software distribution became natively global, Indian companies no longer had to win first by being physically present everywhere. They could win by building strong products and compounding their learning fast enough.</p>
+<p>By 2022, <a href="https://www.bain.com/insights/india-saas-report-2022/">Bain</a> was describing Indian SaaS as second only to the United States in scale and maturity, while noting that only around <code>20%</code> of revenue for Indian SaaS companies was generated from India. That statistic matters because it captured the export logic cleanly. The customer base had already gone global even while much of the company remained built in India.</p>
+<p>That is the world in which companies like Zoho, Freshworks, and many others became imaginable at global scale.</p>
+<p>The point is not the specific logos. The point is the shape of the advantage. SaaS allowed India to export capability without exporting the full operating burden.</p>
+<h2 id="consumer-was-harder-to-export">Consumer was harder to export</h2>
+<p>Consumer companies were a different story. A consumer company does not only ship a product. It ships trust.</p>
+<p>That trust lives in many messy places at once: merchandising, support quality, pricing, fraud control, fulfillment, claims handling, localization, returns, compliance, underwriting, call-center quality, field operations, and post-purchase recourse. The product is not just the app. It is the whole system the customer collides with after pressing the button.</p>
+<p>That has historically made consumer companies much harder to globalize from India.</p>
+<p>If you wanted to enter another market, it often felt like starting another company.</p>
+<p>The catalog had to be relearned. The customer language changed. Service norms changed. Fraud patterns changed. Local paperwork changed. The cost of supervising all that complexity across borders was enormous. And because the complexity was living inside people, meetings, and local managers rather than in a common machine-readable system, the company kept losing coherence as it expanded.</p>
+<p>There was another reason this was hard, especially for Indian companies. India could often compensate for weak automation by throwing more people at the problem. Labor was cheaper. Smart manual work could patch over broken systems for longer. In the short run, that often looked rational. Outside India, that luxury collapsed much faster. The same business had to survive with fewer people, higher labor cost, and far less tolerance for operational mess.</p>
+<p>This is the part many people still underestimate.</p>
+<p>Consumer is not hard only because atoms exist. Consumer is hard because context gets expensive.</p>
+<h2 id="ai-changes-the-cost-of-operating-context">AI changes the cost of operating context</h2>
+<p>This is where AI matters far more than the shallow chatbot version of the story.</p>
+<p>Consumer companies are context-heavy organisms.</p>
+<p>They ingest massive amounts of messy signal: support calls, product exceptions, catalog anomalies, field notes, payment failures, refund paths, inspection outputs, fraud flags, pricing moves, local regulations, conversion drop-offs, and operational incidents. A lot of the company&#39;s complexity comes from converting that mess into decisions quickly enough that the edge does not collapse.</p>
+<p>Historically, that required layers of human translation.</p>
+<p>Someone had to summarize what happened. Someone had to route it. Someone had to escalate it. Someone had to inspect a sample, build a report, and explain the pattern to another team. Another person had to translate the pattern for a local market or a central function. By the time the company acted, the signal was slower, flatter, and often less useful.</p>
+<p>This is no longer a speculative claim. McKinsey&#39;s 2024 work on <a href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/the-promise-of-generative-ai-for-credit-customer-assistance">credit customer assistance</a> and <a href="https://www.mckinsey.com/capabilities/operations/our-insights/gen-ai-in-customer-care-early-successes-and-challenges">customer care</a> describes gen AI already being used to analyze call transcripts and chats, automate note taking and summarization, improve quality control, guide agents in real time, and identify root causes behind recurring failures. In other words, parts of the context layer are already becoming machine-readable at operating scale.</p>
+<p>AI changes the economics underneath that chain.</p>
+<p>It can absorb support transcripts, classify failure modes, translate market-specific language, compare anomalies across regions, assist with documentation, flag pricing outliers, improve underwriting reviews, surface quality deviations, and compress the time between event and decision. It turns more of the company&#39;s operational reality into shared, legible context.</p>
+<p>That does not mean the company becomes automated.</p>
+<p>It means the company becomes more coherent.</p>
+<p>And coherence is what global consumer systems have historically struggled to preserve.</p>
+<p>It also changes a specifically Indian constraint. If the pre-AI way to scale was often &quot;add more people until the process works,&quot; the AI-era way may be &quot;build better systems until the agents work.&quot; That is a very different game. It rewards raw judgment, curiosity, problem decomposition, and the ability to get more out of a cognitive engine than the default user can.</p>
+<h2 id="the-company-can-stay-more-shared-across-markets">The company can stay more shared across markets</h2>
+<p>The real opportunity is not merely that AI makes each function cheaper.</p>
+<p>The real opportunity is that it lets more of the business stay intellectually centralized even while execution remains locally adapted.</p>
+<p>A company can keep one pricing brain, one support memory, one quality ontology, one experimentation loop, one operating dashboard, and one pattern-detection layer while still changing the last mile by market. More of its judgment can live in shared systems instead of only in local managerial muscle.</p>
+<p>This matters because the hardest thing about multi-country consumer execution is not usually copying the UI.</p>
+<p>It is keeping the company from becoming three different companies.</p>
+<p>AI gives you a better chance of avoiding that drift.</p>
+<p>The support lesson from one country can be translated faster into another. The fraud pattern from one market can update the controls in another. The pricing insight from one operating environment can influence the model elsewhere. The company can learn cross-border with more fidelity and at lower managerial cost.</p>
+<p>The company&#39;s judgment loops start living in software and models rather than only in local heroics.</p>
+<p>That is the part that begins to resemble what SaaS gave software. Not the removal of local complexity. The reduction in the penalty for coordinating it.</p>
+<h2 id="ai-may-create-a-new-export-wedge-for-india">AI may create a new export wedge for India</h2>
+<p>The next export from India may not only be software products. It may be AI-native consumer operating systems.</p>
+<p>The categories most likely to benefit are not the simplest ones. They are the ones with enough fragmentation, enough trust work, and enough operational repetition that AI can meaningfully compress the coordination tax:</p>
+<ul><li>mobility</li><li>commerce</li><li>consumer finance</li><li>healthcare access</li><li>education services</li><li>home and field services</li></ul>
+<p>These categories used to look structurally local because the company had to carry too much context manually. AI does not make them universal by default. But it may make them programmable enough that an India-born company can hold the system together across geographies better than before.</p>
+<p>There is a second reason I think India may do unusually well here. Indian companies are already trained on complexity.</p>
+<p>They are used to fragmented supply, inconsistent documentation, multiple languages, messy edge cases, and non-ideal infrastructure. In a pre-AI world, that complexity often looked like a handicap compared with cleaner developed markets. In an AI world, some of it becomes training data. The country that learned to operate through heterogeneity may do well once heterogeneity becomes more machine-readable.</p>
+<p>Indian founders and operators have always had the raw intellect. SaaS gave them one clean lane in which intellect traveled globally through code. Consumer did not, because too much of the company still depended on local people doing local work in local context.</p>
+<p>Agents may change that. If large models are the new cognitive engine, then one of the biggest advantages may belong not only to the people who built the engine, but to the operators who know how to extract the most from it. That is where I think Indian companies could surprise the world. Not by copying Silicon Valley&#39;s AI rhetoric, but by turning raw capability, curiosity, and improvisational systems thinking into working agentic businesses.</p>
+<h2 id="this-is-not-magic">This is not magic</h2>
+<p>It is important not to romanticize this.</p>
+<p>AI will not make physical operations easy.</p>
+<p>It will not remove regulatory differences. It will not manufacture trust where the company has not earned it. It will not fix a bad category thesis. It will not make poor local execution disappear. And it will not save a company that still treats context as something trapped in decks, escalations, and a heroic middle layer.</p>
+<p>The companies that win here will still need:</p>
+<ul><li>real local market understanding</li><li>strong on-ground operators</li><li>category-specific trust rails</li><li>regulatory seriousness</li><li>clean product judgment</li></ul>
+<p>What AI changes is not the need for those things.</p>
+<p>It changes the cost of coordinating them.</p>
+<p>That is enough to matter a lot.</p>
+<h2 id="the-new-question">The new question</h2>
+<p>For years, the exciting global question from India was which software company gets built here and sold everywhere.</p>
+<p>A better question is emerging now: which consumer categories become programmable enough under AI that an India-born company can run them coherently across markets?</p>
+<p>That ambition demands more than great code. It requires systems thinking, trust design, operating discipline, and serious local execution. Consumer categories punish abstraction faster than software ever did.</p>
+<p>But if the shape holds, the prize is larger than another software export story.</p>
+<p>SaaS let India export code. AI may let India export consumer companies built on judgment at scale.</p>
+<h2 id="notes-and-sources">Notes and Sources</h2>
+<p>These notes support the factual claims and clarify which parts of the essay are sourced versus synthetic.</p>
+<h3 id="1-saas-as-india-s-first-large-global-software-wedge">1. SaaS as India&#39;s first large global software wedge</h3>
+<p>The essay&#39;s framing of SaaS as India&#39;s first clean global startup wedge draws on the public India SaaS literature:</p>
+<ul><li><a href="https://www.bain.com/insights/india-saas-report-2021/">India SaaS Report 2021 | Bain &amp; Company</a></li><li><a href="https://www.bain.com/insights/india-saas-report-2022/">India SaaS Report 2022 | Bain &amp; Company</a></li><li><a href="https://saasboomi.org/reports/indias-saas-revolution-exploring-global-opportunities-in-a-dynamic-market/">India&#39;s SaaS Revolution: Exploring global opportunities in a dynamic market | SaaSBoomi</a></li></ul>
+<p>These sources are useful for the structural claim that Indian SaaS became globally credible because software could be built here and distributed internationally with less dependence on local operating infrastructure than consumer businesses require.</p>
+<h3 id="2-ai-as-a-context-compression-layer">2. AI as a context-compression layer</h3>
+<p>The essay&#39;s argument that AI lowers the cost of carrying operating context across a company extends the same organizational logic discussed in <a href="/posts/ai-native-is-not-ai-first/">AI-Native Is Not AI-First</a>. The deeper source tradition for that argument includes:</p>
+<ul><li><a href="https://pubsonline.informs.org/doi/10.1287/inte.4.3.28">Jay R. Galbraith, Organization Design: An Information Processing View</a></li><li><a href="https://www.melconway.com/Home/Committees_Paper.html">Melvin Conway, How Do Committees Invent?</a></li><li><a href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/the-promise-of-generative-ai-for-credit-customer-assistance">McKinsey: The promise of generative AI for credit customer assistance</a></li><li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/gen-ai-in-customer-care-early-successes-and-challenges">McKinsey: Gen AI in customer care: Early successes and challenges</a></li></ul>
+<p>The new claim in this essay is not that AI simply improves internal productivity. It is that lower coordination cost can make cross-market consumer operating systems more exportable than before.</p>
+<h3 id="3-what-is-sourced-and-what-is-argued">3. What is sourced and what is argued</h3>
+<p>What is sourced:</p>
+<ul><li>that Indian SaaS has been studied as a distinct global opportunity</li><li>that generative AI is already being used in customer care and credit operations to compress information-processing work</li><li>that Indian SaaS became globally credible because software could be built here and sold mainly outside India</li></ul>
+<p>What is argued:</p>
+<ul><li>that SaaS mattered because it reduced the penalty of geography</li><li>that consumer companies historically stayed local because operating context was expensive to coordinate</li><li>that AI can lower that coordination tax enough to create a new export wedge for India-born consumer companies</li><li>that some of India&#39;s historical complexity may become an advantage once more of that complexity is machine-readable</li><li>that AI may shift advantage away from labor-heavy manual patchwork and toward judgment, orchestration, and extracting more leverage from agentic systems</li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Used-Car Ownership Is a Lending Problem</title>
+      <link>https://vikramchopra.in/posts/used-car-ownership-is-a-lending-problem/</link>
+      <guid>https://vikramchopra.in/posts/used-car-ownership-is-a-lending-problem/</guid>
+      <pubDate>Fri, 12 Jun 2026 12:00:00 GMT</pubDate>
+      <description>India&apos;s pre-owned car market will not become mass only because used cars are cheaper than new ones. It becomes mass when lending can underwrite messy assets, lower upfront fear, and turn aspiration into manageable monthly ownership.</description>
+      <content:encoded><![CDATA[<p>We still talk about India&#39;s used-car market as if the main unlock were inventory.</p>
+<p>List more cars. Improve discovery. Standardize inspection. Reduce transfer friction. Build trust in pricing. All of that matters. It is still incomplete, because used-car ownership at scale is also a lending problem.</p>
+<p>A market does not become mass merely because the sticker price is lower than new. It becomes mass when ordinary households can bridge the gap between aspiration and liquidity without stepping into a trap. A used car may be affordable in absolute terms and still unreachable in cash terms. That gap between price and payable reality is where the market either widens or stalls.</p>
+<h2 id="affordability-is-not-the-same-as-access">Affordability is not the same as access</h2>
+<p>Pre-owned cars are the natural bridge into ownership in India because they sit where aspiration and budget can still meet. External market evidence points in the same direction. In July 2025, <a href="https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html">Crisil Ratings</a> said used-car volume in India was expected to cross <code>~6 million</code> units, with the used-to-new sales ratio improving to <code>~1.4x</code> from below <code>1.0x</code> five years earlier. Just as important, Crisil tied that structural shift not only to digital adoption and consumer confidence, but also to better access to finance and lender-platform underwriting improvements.</p>
+<p>But affordability by itself does not create access. For many households, the real decision is not whether a car is worth its listed price. It is whether paying for that car empties the family&#39;s cash buffer, whether mobility is being bought by sacrificing the emergency fund, whether the down payment creates a new vulnerability before the ownership journey even begins.</p>
+<p>That is why financing penetration matters so much. One <a href="https://static-cdn.cars24.com/prod/auto-news24-cms/root/2026/02/25/2b7d5141-a889-432d-b8dd-c83cc2fb8eda-gears-of-growth.pdf">2025 used-car market report</a> estimated that around <code>52%</code> of used-car buyers opted for financing in 2025, with non-metro financing adoption even higher at roughly <code>58%</code>. Credit is not some premium convenience layered on after the fact. It is one of the mechanisms by which the category becomes reachable.</p>
+<p>Used cars become mass when the monthly commitment becomes survivable and formal capital can underwrite the asset with enough confidence to show up.</p>
+<p>In practice, that means many buyers start with financing before they settle on the car. The monthly outflow is often the real product. The vehicle choice comes after.</p>
+<p>There is a second layer to this in India that matters a great deal and is easy to miss if you think about lending only as spreadsheet logic. Loan rejection is socially uncomfortable. For many buyers, especially first-time buyers, it is embarrassing to be told in public that they do not qualify, or that they qualify for less than they hoped. So they often do not walk into a showroom and openly discover their budget. They first try to find out, quietly, through an intermediary, whether they will get a loan at all and for how much.</p>
+<p>That creates a strange chicken-and-egg problem. The showroom asks: which car do you want, and what is your budget? The buyer often does not know, because the real budget depends on whether financing is available and at what limit. Until that answer exists, the car search is half-fiction.</p>
+<p>That is why pre-eligibility matters so much. A better system lets the customer privately discover loan eligibility, approximate limit, and monthly affordability online, before the public moment of choosing a car. That does not just improve convenience. It removes shame, fear of judgment, and the emotional cost of trial-and-error borrowing. It turns financing into a source of confidence rather than exposure.</p>
+<h2 id="a-used-car-loan-is-not-a-smaller-new-car-loan">A used-car loan is not a smaller new-car loan</h2>
+<p>The reason this matters so much in India is that used-car lending is structurally harder than many people admit.</p>
+<p>New-car lending sits on a comparatively cleaner foundation. The asset is standardized. The paperwork is cleaner. The dealer chain is clearer. The residual-value assumptions are easier. The condition of the asset has not yet been shaped by prior owners, repair quality, driving behavior, or document gaps. The lender is still underwriting risk, of course, but the asset side of the equation is less ambiguous.</p>
+<p>Used cars are different.</p>
+<p>Every used car has already lived a life. That life leaves traces. Service quality varies. Accident history may be partial. Refurbishment quality may be uneven. The ownership trail may be messy. A prior loan may have existed. The transfer may still depend on procedural follow-through. Even the resale confidence of the next buyer depends on how legible all of this becomes. The lender is not underwriting a factory-fresh product. It is underwriting a history that may or may not be fully visible.</p>
+<p>So a used-car lender is underwriting three things at once:</p>
+<ol><li>the borrower&#39;s ability and willingness to repay</li><li>the truth of the asset</li><li>the reliability of the process around ownership, transfer, and recovery</li></ol>
+<p>If any one of those is weak, the loan gets worse.</p>
+<p>That weakness can show up in different ways. The lender may reject the customer. Or ask for a heavier down payment. Or price the loan expensively. Or slow the process down with manual checks and branch-style friction. Sometimes all four happen at once.</p>
+<p>A used-car loan is not just a credit product. It is an underwriting decision on ambiguity.</p>
+<p>Another way to say this is that the car is one of the most underrated forms of collateral in consumer lending. Most lenders think almost entirely about the borrower. In used cars, the collateral truth often determines whether borrower risk can be priced sensibly in the first place.</p>
+<h2 id="in-india-credit-is-also-a-trust-signal">In India, credit is also a trust signal</h2>
+<p>There is another layer here that matters even more in a first-time ownership market. Good credit is not only money. It is reassurance.</p>
+<p>This is also why used-car lending so often fails in exactly the places where consumer demand exists. Many buyers can carry an EMI, but lenders hesitate when the asset lacks trusted history, standardized valuation, or clean enough documentation. That is exactly why a loan decision becomes more than a borrower-income decision. The lender is trying to decide whether the car itself has become legible enough for formal capital to touch.</p>
+<p>When a serious institution is willing to lend against a particular used car at a rational rate, the buyer is not only receiving capital. The buyer is receiving a signal that the asset has become legible enough to finance. That the valuation is not fantasy. That the paperwork is not hopelessly opaque. That the ownership trail is manageable. That someone with balance-sheet discipline is willing to stand behind the transaction.</p>
+<p>A good loan does not only finance a car. It legitimizes the car.</p>
+<p>This matters disproportionately in India because a large share of buyers are still learning ownership in real time. Their anxiety is not only about getting cheated by a shady seller. It is about whether they are walking into something they will be able to handle after purchase. EMI-based affordability helps, but so does institutional confidence. A clean loan says: this asset is manageable enough for formal capital to touch.</p>
+<p>Of course, bad lending can do the opposite. A poorly explained loan, a fragile approval process, opaque pricing, or a coercive collections experience turns ownership from aspiration into regret. So the point is not more credit at any cost. The point is better credit, built around the actual reality of used-car ownership.</p>
+<h2 id="distribution-is-part-of-underwriting">Distribution is part of underwriting</h2>
+<p>Another idea the market often misses is that good used-car lending is not something stapled onto the end of a transaction.</p>
+<p>It works best when it is embedded into the transaction itself.</p>
+<p>Why? Because the lender is not only seeing an application form. It is seeing intent, asset, valuation, paperwork, and customer behavior in one place. That changes both speed and quality.</p>
+<p>A standalone lender usually receives a file. An embedded lender can see the journey that produced the file.</p>
+<p>That difference matters. It lowers customer acquisition cost, but more importantly it improves underwriting quality. It also makes a better customer journey possible: eligibility can become visible before the showroom conversation hardens into embarrassment. The best financing journeys do not feel like a late-stage push product. They feel like a financing decision that is already legible by the time the buyer is narrowing the car.</p>
+<h2 id="the-real-unlock-is-asset-intelligence">The real unlock is asset intelligence</h2>
+<p>Used-car lending is often described as a question of risk appetite. It is more usefully described as a question of truth quality.</p>
+<p>The core disciplines are not mysterious. They are customer underwriting, car valuation, car liquidation, and vehicle intelligence. If any one of those four is weak, the whole structure becomes more fragile.</p>
+<p>If you want to lend well against pre-owned cars, you need far better asset intelligence than a generic lender usually has:</p>
+<ul><li>inspection quality good enough to make hidden condition more visible</li><li>pricing quality good enough to estimate fair market value instead of relying on broad heuristics</li><li>legal and document checks good enough to flag ownership, loan-status, and compliance risks early</li><li>transfer visibility good enough to reduce procedural uncertainty after sale</li><li>recovery and resale capability good enough to lower loss severity if the loan fails</li></ul>
+<p>The operational answer is straightforward even if the execution is not. Better inspections. Better lien and title verification. Better pricing systems. Better document checks. Better transfer visibility. Better recovery pathways. The more of that truth you can make legible before the loan is written, the less the lender is guessing.</p>
+<p>The collateral is not only metal. It is a stream of facts.</p>
+<p>Once you see that clearly, the used-car lender starts looking less like a classic branch-led NBFC and more like a data-and-operations system attached to a balance sheet.</p>
+<h2 id="the-balance-sheet-matters-the-truth-matters-more">The balance sheet matters. The truth matters more.</h2>
+<p>Many people assume lending advantage begins with cheaper capital.</p>
+<p>That is not wrong. It is just late in the sequence.</p>
+<p>Cheap capital only helps after the lender can describe the asset truthfully enough to avoid scaling mistakes. If valuation is weak, document checks are weak, fraud detection is weak, or recovery is weak, then low cost of funds simply allows errors to compound faster.</p>
+<p>In used cars, the harder problem is not always raising money. It is reducing epistemic error.</p>
+<p>That is why I increasingly think the deepest moat in this category is not the balance sheet alone. It is the quality of the system that turns a messy asset into something financeable.</p>
+<p>And once that system exists, capital becomes more modular. It can sit on the company&#39;s own book. It can sit with financing partners. It can sit inside co-lending structures. The harder and rarer capability is not only supplying money. It is making the asset legible enough that money can arrive with confidence.</p>
+<p>This is also why I think consumer companies can become unusual lenders here. A company sitting close to inspection, pricing, transfer, documentation, dealer liquidity, and recovery does not look at the same car the way a generic lender does. It sees more of the operating truth. In a category like used cars, that difference is enormous.</p>
+<p>The same is true on the supply side of the market. A lot of Indian used-car commerce still runs through small dealers with thin formal records, inconsistent financials, and highly variable inventory turnover. In practice, lenders often underwrite inventory velocity and behavior before they underwrite audited statements. That is another reason this category rewards operating intimacy more than spreadsheet neatness.</p>
+<h2 id="the-capital-model-matters-too">The capital model matters too</h2>
+<p>One more expert point from this category is that not every borrower belongs on the same balance sheet.</p>
+<p>That is where many lending conversations become too simplistic. They assume the lender either keeps the whole book or does not build the book at all.</p>
+<p>In reality, scalable used-car lending often needs tiered capital.</p>
+<p>Some cohorts are clean enough to deserve own-book risk. Some fit co-lending structures. Some should be routed to partner balance sheets with very different risk appetites. The intelligence is not only in saying yes or no. It is in routing each borrower-asset combination to the right kind of capital.</p>
+<p>That is how a lender scales without pretending all money should behave identically.</p>
+<p>The hard part is not raising capital in the abstract. It is creating enough truth around the loan that different pools of capital can trust the part of the book they are meant to fund.</p>
+<h2 id="collections-and-liquidation-are-part-of-underwriting">Collections and liquidation are part of underwriting</h2>
+<p>This is another place the category is often misunderstood.</p>
+<p>Collections are usually described as a cost center. In used-car lending, they are also a source of truth. How a borrower behaves under stress, how early the lender can detect slippage, how quickly it can intervene, and how efficiently it can resolve a broken loan all feed back into what should have been approved, for how much, and at what price.</p>
+<p>Liquidation matters for the same reason. The lender is not recovering abstract cash flows. It is dealing with a depreciating physical asset whose resale outcome depends on condition, documentation, location, and buyer liquidity. If repossession, refurbishment, resale, or transfer are weak, the loan was always riskier than it looked at origination.</p>
+<p>A healthy used-car credit market therefore needs a believable exit path, not just an entry funnel. In more mature markets, various forms of residual-value support or buyback confidence help make that exit path more legible. In India, that layer is still underbuilt. Its absence quietly keeps credit narrower and more expensive than it needs to be.</p>
+<h2 id="lending-helps-create-the-market-it-serves">Lending helps create the market it serves</h2>
+<p>Once lending improves, the whole used-car market starts behaving differently.</p>
+<p>The loop looks something like this:</p>
+<ol><li>Better inspection, pricing, and documentation reduce uncertainty around the asset.</li><li>Lower uncertainty improves approvals and lowers losses.</li><li>Lower losses attract cheaper and larger pools of capital.</li><li>Better financing lowers the upfront cash barrier for buyers.</li><li>More financed buyers increase transaction liquidity and improve price discovery.</li><li>Better price discovery improves collateral confidence for the next loan.</li></ol>
+<p>That is not just a better loan book. It is a market getting built.</p>
+<p>This is why I do not see lending in Indian auto as a side product hanging off transactions. In a mature market, maybe it can be treated that way. In India, especially in pre-owned, lending is part of the infrastructure through which the market becomes more organized, more trusted, and more reachable.</p>
+<p>The useful word here is <code>financeable</code>. Financeability is not what appears after a market matures. It is one of the conditions that helps the market mature at all.</p>
+<h2 id="this-matters-more-in-used-cars-than-in-new">This matters more in used cars than in new</h2>
+<p>In new cars, a meaningful part of the financing system can rely on the manufacturer, the dealer network, and standardized asset behavior to do some of the work.</p>
+<p>Used cars have no such luxury.</p>
+<p>Their diversity is the opportunity and the difficulty at the same time. A used-car market gives India its affordability bridge, but it also demands much better underwriting infrastructure because the asset is no longer uniform.</p>
+<p>The real expert story in this category is not just &quot;EMIs increase conversion.&quot; That is too shallow. The deeper story is that used-car ownership expands when someone learns to underwrite ambiguity better than the market currently does.</p>
+<p>It sits at the intersection of asset truth, process design, capital structure, collections discipline, transfer friction, and consumer trust. And if you solve it well enough, you do not merely earn yield on loans. You widen the door into ownership itself.</p>
+<h2 id="if-we-talk-about-ownership-without-talking-about-lending">If we talk about ownership without talking about lending</h2>
+<p>If we talk about used-car ownership in India only in the language of listings, inspections, transfer, and retail experience, we are still describing the category from one side.</p>
+<p>The other side is whether the customer can actually carry the asset into life without breaking their cash position or overpaying for uncertainty. That is where lending sits.</p>
+<p>Not as an afterthought. Not as a financial accessory. As one of the rails that turns pre-owned mobility from a good idea into a mass behavior.</p>
+<p>Used cars are the affordability bridge. Lending decides how many people actually cross it.</p>
+<h2 id="notes-and-sources">Notes and Sources</h2>
+<p>These notes support the main factual claims and clarify which parts of the essay are direct sourcing versus synthesis.</p>
+<h3 id="1-financing-and-market-structure">1. Financing and market structure</h3>
+<p>The essay&#39;s market framing draws primarily on:</p>
+<ul><li><a href="https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html">Crisil Ratings: Used-car volume to grow 8-10%, over twice as fast as new one</a></li><li><a href="https://static-cdn.cars24.com/prod/auto-news24-cms/root/2026/02/25/2b7d5141-a889-432d-b8dd-c83cc2fb8eda-gears-of-growth.pdf">2025 Indian Used Car Market Report</a></li><li><a href="https://cdn.cars24.com/prod/auto-news24-cms/CARS24-Blog-Images/2025/01/23/c09aec15-acf9-4bc8-9d1f-ec5e3d8241f3-C24-gears-of-growth.pdf">2024 Indian Used Car Market Report</a></li></ul>
+<p>The specific figures used in the essay include:</p>
+<ul><li>around <code>52%</code> financing penetration in 2025</li><li>higher financing adoption in non-metro markets</li><li>the longer-term rise in financing penetration from much lower historical levels</li><li>Crisil&#39;s estimate that used-car sales are expected to cross <code>~6 million</code> units with a used-to-new ratio of <code>~1.4x</code></li></ul>
+<h3 id="2-why-asset-truth-matters-in-used-car-lending">2. Why asset truth matters in used-car lending</h3>
+<p>The essay&#39;s operational argument about inspections, valuation, lien checks, documentation, and transfer visibility is based on public operator material and category practice, including:</p>
+<ul><li><a href="https://www.cars24.com/news/learn-about-cars24/ai-car-valuation-explained/">AI Valuation Explained: Why It Is a Benchmark, Not a Promise</a></li><li><a href="https://www.cars24.com/why-cars24/buy-used-cars-quality/">300-Point Car Inspection | Quality Checks by Cars24 Owned Stock</a></li><li><a href="https://www.cars24.com/article/transparent-used-car-buying-process-at-cars24/">How Cars24 Ensures Transparency Throughout the Used Car Buying Journey</a></li><li><a href="https://www.cars24.com/why-cars24/buy-used-cars-finance/">Financing, Made Easy</a></li></ul>
+<p>These links sit in the notes for traceability. The essay body intentionally keeps the argument at the category level rather than turning any one company into the protagonist.</p>
+<h3 id="3-internal-reference-that-shaped-the-framing">3. Internal reference that shaped the framing</h3>
+<p>An internal lending primer from May 2026 materially shaped the essay&#39;s framing around:</p>
+<ul><li>financing as the first constraint in the car-buying journey, not merely the last step</li><li>embedded distribution as an underwriting advantage</li><li>four core lending disciplines: customer underwriting, car valuation, car liquidation, and vehicle intelligence</li><li>tiered capital routing across own-book, co-lending, and partner-led structures</li><li>collections and liquidation as sources of underwriting truth rather than pure operating costs</li></ul>
+<p>The essay keeps those ideas at the category level and does not use the company itself as the protagonist.</p>
+<h3 id="4-what-is-sourced-and-what-is-argued">4. What is sourced and what is argued</h3>
+<p>What is sourced:</p>
+<ul><li>that used-car financing penetration has risen materially and is now central to purchases</li><li>that used-car sales growth in India is being supported by better access to finance</li><li>that inspection, valuation, verification, and process quality materially affect whether a used car becomes financeable</li></ul>
+<p>What is argued:</p>
+<ul><li>that used-car lending in India is better understood as underwriting ambiguity rather than merely extending credit</li><li>that good lending acts as a trust signal for first-time buyers</li><li>that the deepest moat in used-car lending is asset intelligence more than balance-sheet size alone</li><li>that lending in this category does not only serve the market; it helps create the market</li></ul>]]></content:encoded>
+    </item>
+    <item>
       <title>The Car Is the Artifact. Trust Is the Product.</title>
       <link>https://vikramchopra.in/posts/the-car-is-the-artifact-trust-is-the-product/</link>
       <guid>https://vikramchopra.in/posts/the-car-is-the-artifact-trust-is-the-product/</guid>

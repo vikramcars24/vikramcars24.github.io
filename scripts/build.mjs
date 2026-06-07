@@ -6,6 +6,39 @@ const contentDir = path.join(rootDir, "content");
 const postsDir = path.join(contentDir, "posts");
 const distDir = path.join(rootDir, "dist");
 const assetsDir = path.join(rootDir, "src");
+const CURATED_ESSAY_COLLECTIONS = [
+  {
+    id: "mobility-ownership-trust",
+    title: "Mobility, Ownership, and Trust",
+    description: "How messy assets become trustworthy enough to buy, finance, keep, and use.",
+    slugs: [
+      "the-coming-decade-of-car-ownership-in-india",
+      "the-car-is-the-artifact-trust-is-the-product",
+      "used-car-ownership-is-a-lending-problem",
+      "the-greenest-car-in-india-is-the-one-already-built"
+    ]
+  },
+  {
+    id: "ai-work-company-design",
+    title: "AI, Work, and Company Design",
+    description: "What changes when context gets cheaper, builders close loops directly, and companies have to learn faster than complexity compounds.",
+    slugs: [
+      "scale-is-a-learning-problem",
+      "ai-native-is-not-ai-first",
+      "builder-is-the-only-role-left",
+      "ai-may-do-for-consumer-what-saas-did-for-software"
+    ]
+  },
+  {
+    id: "institutions-safety-regulation",
+    title: "Institutions, Safety, and Regulation",
+    description: "How high-stakes systems stay trustworthy when pressure is constant, error is costly, and the public consequence is real.",
+    slugs: [
+      "paranoid-survive-regulated-thrive",
+      "indias-road-deaths-are-a-trust-problem-not-a-traffic-problem"
+    ]
+  }
+];
 
 async function main() {
   const site = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
@@ -289,8 +322,7 @@ function renderInline(text) {
 
 function renderHome(site, posts) {
   const featured = posts.find((post) => post.featured) || posts[0];
-  const latest = posts[0];
-  const archivePosts = posts.slice(1);
+  const essayCollections = buildEssayCollections(posts);
   const interviews = Array.isArray(site.interviews) ? site.interviews : [];
   const interviewSections = groupBy(interviews, (interview) => interview.section || "Interviews");
   const elsewhere = Array.isArray(site.elsewhere) ? site.elsewhere : [];
@@ -319,8 +351,10 @@ function renderHome(site, posts) {
               <p class="home-label">Writing</p>
               <a href="${sitePath(site, "/archive/")}" class="inline-link">Archive</a>
             </div>
-            ${renderHomeFeaturedEntry(latest)}
-            ${archivePosts.length > 0 ? `<div class="home-archive-list">${archivePosts.map((post) => renderHomeArchiveRow(post)).join("")}</div>` : ""}
+            <p class="home-writing-intro">The essays so far cluster around a few recurring questions. Grouping them by theme makes the throughlines easier to follow than a flat stream ever could.</p>
+            <div class="essay-collections essay-collections-home">
+              ${essayCollections.map((collection) => renderEssayCollection(collection, "home", site)).join("")}
+            </div>
           </section>
 
           ${interviews.length > 0 ? renderHomeInterviewSections(interviewSections) : ""}
@@ -333,8 +367,7 @@ function renderHome(site, posts) {
 }
 
 function renderArchive(site, posts) {
-  const postsByYear = groupBy(posts, (post) => post.date.slice(0, 4));
-  const years = Object.keys(postsByYear).sort((left, right) => right.localeCompare(left));
+  const essayCollections = buildEssayCollections(posts);
 
   return renderDocument({
     site,
@@ -351,21 +384,12 @@ function renderArchive(site, posts) {
           <section class="archive-hero">
             <p class="eyebrow">Archive</p>
             <h1>Published writing</h1>
-            <p class="intro">Every essay, note, and long-form argument in one place.</p>
+            <p class="intro">Every essay in one place, grouped by theme so the body of thought reads as a connected set of arguments rather than a dated log.</p>
           </section>
 
-          ${years
-            .map((year) => {
-              return `
-                <section class="year-group">
-                  <div class="year-heading">${year}</div>
-                  <div class="entry-list">
-                    ${postsByYear[year].map((post) => renderEntryRow(post)).join("")}
-                  </div>
-                </section>
-              `;
-            })
-            .join("")}
+          <div class="essay-collections essay-collections-archive">
+            ${essayCollections.map((collection) => renderEssayCollection(collection, "archive", site)).join("")}
+          </div>
         </main>
         ${renderFooter(site)}
       </div>
@@ -401,7 +425,6 @@ function renderPost(site, post) {
               <p class="dek">${escapeHtml(post.description)}</p>
               <div class="essay-meta-row">
                 <div class="meta">
-                  <span>${formatDate(post.date)}</span>
                   <span>${post.readingMinutes} min read</span>
                   <span>${post.wordCount} words</span>
                 </div>
@@ -645,13 +668,18 @@ function renderFooter(site) {
 }
 
 function renderEntryRow(post) {
+  const meta = post.category && post.category !== "Essay"
+    ? `
+          <span>${escapeHtml(post.category)}</span>
+          <span>${post.readingMinutes} min read</span>
+        `
+    : `<span>${post.readingMinutes} min read</span>`;
+
   return `
     <article class="entry-row">
       <div class="entry-copy">
         <div class="entry-meta">
-          <span>${escapeHtml(post.category)}</span>
-          <span>${formatDate(post.date)}</span>
-          <span>${post.readingMinutes} min read</span>
+          ${meta}
         </div>
         <h2 class="entry-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
         <p class="entry-description">${escapeHtml(post.description)}</p>
@@ -676,32 +704,37 @@ function renderEssayCover(post) {
   `;
 }
 
-function renderHomeFeaturedEntry(post) {
-  return `
-    <article class="home-featured-entry">
-      <div class="home-featured-copy">
-        <div class="entry-meta">
-          <span>${formatDate(post.date)}</span>
-          <span>${post.readingMinutes} min read</span>
-        </div>
-        <h2 class="home-featured-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
-        <p class="home-featured-description">${escapeHtml(post.description)}</p>
-      </div>
-      ${renderEntryVisual(post, "home-featured-visual")}
-    </article>
-  `;
-}
-
 function renderHomeArchiveRow(post) {
   return `
     <article class="home-archive-row">
-      <div class="home-archive-date">${formatDate(post.date)}</div>
       <div class="home-archive-copy">
         <h3><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h3>
         <p>${escapeHtml(post.description)}</p>
       </div>
       ${renderEntryVisual(post, "home-archive-visual")}
     </article>
+  `;
+}
+
+function renderEssayCollection(collection, variant, site) {
+  const count = collection.posts.length;
+  const anchorHref = sitePath(site, `/archive/#${collection.id}`);
+  const title = variant === "archive"
+    ? `<a href="${anchorHref}">${escapeHtml(collection.title)}</a>`
+    : `<a href="${anchorHref}">${escapeHtml(collection.title)}</a>`;
+  const rows = variant === "archive"
+    ? `<div class="entry-list">${collection.posts.map((post) => renderEntryRow(post)).join("")}</div>`
+    : `<div class="home-archive-list">${collection.posts.map((post) => renderHomeArchiveRow(post)).join("")}</div>`;
+
+  return `
+    <section class="essay-collection essay-collection-${variant}"${variant === "archive" ? ` id="${escapeAttribute(collection.id)}"` : ""}>
+      <div class="essay-collection-head">
+        <p class="essay-collection-meta">${count} essay${count === 1 ? "" : "s"}</p>
+        <h2 class="essay-collection-title">${title}</h2>
+        <p class="essay-collection-description">${escapeHtml(collection.description)}</p>
+      </div>
+      ${rows}
+    </section>
   `;
 }
 
@@ -776,7 +809,7 @@ function renderHomeInterviewCard(interview) {
   const title = interview.title || "Interview";
   const host = interview.host || "";
   const description = interview.description || "";
-  const meta = [host, interview.date ? formatDate(interview.date) : ""].filter(Boolean).join(" • ");
+  const meta = [host].filter(Boolean).join(" • ");
   const watchUrl = interview.url || `https://www.youtube.com/watch?v=${videoId}`;
   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
 
@@ -821,7 +854,7 @@ function renderElsewhereSection(items) {
 }
 
 function renderElsewhereRow(item) {
-  const meta = [item.type || "", item.source || "", item.date ? formatDate(item.date) : ""].filter(Boolean).join(" • ");
+  const meta = [item.type || "", item.source || ""].filter(Boolean).join(" • ");
 
   return `
     <article class="elsewhere-row">
@@ -838,6 +871,34 @@ function entryLinkLabel(post) {
     return "Read notes";
   }
   return "Read essay";
+}
+
+function buildEssayCollections(posts) {
+  const postBySlug = new Map(posts.map((post) => [post.slug, post]));
+  const assigned = new Set();
+  const collections = CURATED_ESSAY_COLLECTIONS.map((collection) => {
+    const collectionPosts = collection.slugs
+      .map((slug) => postBySlug.get(slug))
+      .filter(Boolean);
+
+    collectionPosts.forEach((post) => assigned.add(post.slug));
+    return {
+      ...collection,
+      posts: collectionPosts
+    };
+  }).filter((collection) => collection.posts.length > 0);
+
+  const unassignedPosts = posts.filter((post) => !assigned.has(post.slug));
+  if (unassignedPosts.length > 0) {
+    collections.push({
+      id: "more-essays",
+      title: "More Essays",
+      description: "Additional writing that does not yet sit inside one of the main thematic tracks.",
+      posts: unassignedPosts
+    });
+  }
+
+  return collections;
 }
 
 function renderDisplayTitle(title) {

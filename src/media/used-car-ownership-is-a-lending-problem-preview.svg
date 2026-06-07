@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5EBDD"/>
+      <stop offset="1" stop-color="#E8D8C3"/>
+    </linearGradient>
+    <linearGradient id="arc" x1="280" y1="402" x2="918" y2="402" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#174B5A"/>
+      <stop offset="1" stop-color="#B85C36"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1008" cy="118" r="120" fill="#F8F1E6" opacity="0.88"/>
+  <path d="M0 458C68 430 146 416 234 420C318 424 372 452 434 472V630H0V458Z" fill="#172029"/>
+  <path d="M742 474C836 434 920 414 994 418C1086 424 1154 458 1200 490V630H742V474Z" fill="#172029"/>
+  <path d="M283 404C390 335 491 286 601 286C709 286 810 336 918 404" stroke="url(#arc)" stroke-width="16" stroke-linecap="round"/>
+  <path d="M313 410L335 386" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M373 372L391 348" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M441 336L457 312" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M516 309L527 284" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M598 300V275" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M680 308L691 283" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M754 334L770 311" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M822 371L841 347" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <path d="M884 410L906 386" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
+  <rect x="732" y="333" width="70" height="22" rx="11" fill="#172029"/>
+  <rect x="744" y="320" width="30" height="16" rx="5" fill="#172029"/>
+  <circle cx="752" cy="357" r="10" fill="#E8D8C3" stroke="#172029" stroke-width="6"/>
+  <circle cx="784" cy="357" r="10" fill="#E8D8C3" stroke="#172029" stroke-width="6"/>
+  <path d="M109 89H249" stroke="#174B5A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M109 103H229" stroke="#B85C36" stroke-width="5" stroke-linecap="round"/>
+  <text x="109" y="184" fill="#172029" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="-1.2">
+    <tspan x="109" dy="0">Used-Car Ownership</tspan>
+    <tspan x="109" dy="68">Is a Lending Problem</tspan>
+  </text>
+</svg>

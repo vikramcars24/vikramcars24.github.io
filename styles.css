@@ -274,42 +274,74 @@ pre code {
   border-top: 1px solid var(--line);
 }
 
-.home-featured-entry {
+.home-writing-intro {
+  max-width: 38rem;
+  margin: 0 0 1.6rem;
+  color: color-mix(in srgb, var(--ink) 80%, transparent);
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.essay-collections {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 12rem;
-  gap: 1.15rem;
-  align-items: start;
-  padding-bottom: 0.35rem;
+  gap: 2.4rem;
 }
 
-.home-featured-title {
-  max-width: 13ch;
-  margin: 0.45rem 0 0.75rem;
+.essay-collection {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.essay-collection-archive {
+  scroll-margin-top: 1.75rem;
+}
+
+.essay-collection-head {
+  max-width: 40rem;
+}
+
+.essay-collection-meta {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.essay-collection-title {
+  margin: 0 0 0.4rem;
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
   font-weight: 500;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
 }
 
-.home-featured-title a,
+.essay-collection-title a {
+  text-decoration: none;
+}
+
+.essay-collection-description {
+  margin: 0;
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.essay-collection-home + .essay-collection-home {
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.essay-collection-archive + .essay-collection-archive {
+  padding-top: 2.3rem;
+  border-top: 1px solid var(--line);
+}
+
 .home-archive-row h3 a {
   text-decoration: none;
 }
 
-.home-featured-title em {
-  font-style: italic;
-}
-
-.home-featured-description {
-  max-width: 30rem;
-  margin: 0;
-  color: color-mix(in srgb, var(--ink) 84%, transparent);
-  font-size: 0.98rem;
-  line-height: 1.72;
-}
-
-.home-featured-visual,
 .home-archive-visual,
 .entry-thumb {
   display: block;
@@ -322,19 +354,12 @@ pre code {
   box-shadow: 0 12px 34px color-mix(in srgb, var(--shadow) 10%, transparent);
 }
 
-.home-featured-visual img,
 .home-archive-visual img,
 .entry-thumb img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.home-featured-visual {
-  width: 12rem;
-  aspect-ratio: 1.4 / 1;
-  justify-self: end;
 }
 
 .home-section-head {
@@ -353,7 +378,7 @@ pre code {
 
 .home-archive-row {
   display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr) 8.5rem;
+  grid-template-columns: minmax(0, 1fr) 8.5rem;
   gap: 1rem;
   align-items: start;
   padding: 1.15rem 0;
@@ -362,12 +387,6 @@ pre code {
 
 .home-archive-row:first-child {
   border-top: 0;
-}
-
-.home-archive-date {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
 }
 
 .home-archive-row h3 {
@@ -549,21 +568,6 @@ pre code {
 
 .archive-hero h1 {
   font-size: clamp(2.8rem, 6vw, 4.4rem);
-}
-
-.year-group {
-  display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
-  gap: 1.4rem;
-  align-items: start;
-}
-
-.year-heading {
-  padding-top: 1.7rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .entry-list {
@@ -891,40 +895,12 @@ pre code {
     grid-template-columns: 1fr;
   }
 
-  .home-featured-entry {
-    grid-template-columns: minmax(0, 1fr) 7.5rem;
-    gap: 0.9rem;
-    align-items: start;
-  }
-
-  .home-featured-title {
-    max-width: none;
-    font-size: clamp(1.6rem, 6vw, 2.15rem);
-    margin: 0.3rem 0 0.55rem;
-  }
-
-  .home-featured-description {
-    font-size: 0.94rem;
-    line-height: 1.62;
-  }
-
-  .home-featured-visual {
-    width: 7.5rem;
-    max-width: none;
-  }
-
   .home-archive-row {
     grid-template-columns: minmax(0, 1fr) 6.75rem;
     grid-template-areas:
-      "date thumb"
       "copy thumb";
     gap: 0.35rem 0.85rem;
     align-items: start;
-  }
-
-  .home-archive-date {
-    grid-area: date;
-    font-size: 0.88rem;
   }
 
   .home-archive-copy {
@@ -941,6 +917,10 @@ pre code {
     line-height: 1.55;
   }
 
+  .essay-collection-title {
+    font-size: clamp(1.55rem, 5.4vw, 2rem);
+  }
+
   .site-header-actions {
     width: 100%;
     justify-content: space-between;
@@ -948,10 +928,6 @@ pre code {
 
   .essay-meta-row {
     align-items: flex-start;
-  }
-
-  .year-heading {
-    padding-top: 0;
   }
 
   .entry-thumb {
