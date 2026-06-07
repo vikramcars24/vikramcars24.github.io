@@ -166,41 +166,15 @@ SaaS let India export code. AI may let India export consumer companies built on 
 
 ## Notes and Sources
 
-These notes support the factual claims and clarify which parts of the essay are sourced versus synthetic.
-
 ### 1. SaaS as India's first large global software wedge
-
-The essay's framing of SaaS as India's first clean global startup wedge draws on the public India SaaS literature:
 
 - [India SaaS Report 2021 | Bain & Company](https://www.bain.com/insights/india-saas-report-2021/)
 - [India SaaS Report 2022 | Bain & Company](https://www.bain.com/insights/india-saas-report-2022/)
 - [India's SaaS Revolution: Exploring global opportunities in a dynamic market | SaaSBoomi](https://saasboomi.org/reports/indias-saas-revolution-exploring-global-opportunities-in-a-dynamic-market/)
 
-These sources are useful for the structural claim that Indian SaaS became globally credible because software could be built here and distributed internationally with less dependence on local operating infrastructure than consumer businesses require.
-
 ### 2. AI as a context-compression layer
-
-The essay's argument that AI lowers the cost of carrying operating context across a company extends the same organizational logic discussed in [AI-Native Is Not AI-First](/posts/ai-native-is-not-ai-first/). The deeper source tradition for that argument includes:
 
 - [Jay R. Galbraith, Organization Design: An Information Processing View](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
 - [Melvin Conway, How Do Committees Invent?](https://www.melconway.com/Home/Committees_Paper.html)
 - [McKinsey: The promise of generative AI for credit customer assistance](https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/the-promise-of-generative-ai-for-credit-customer-assistance)
 - [McKinsey: Gen AI in customer care: Early successes and challenges](https://www.mckinsey.com/capabilities/operations/our-insights/gen-ai-in-customer-care-early-successes-and-challenges)
-
-The new claim in this essay is not that AI simply improves internal productivity. It is that lower coordination cost can make cross-market consumer operating systems more exportable than before.
-
-### 3. What is sourced and what is argued
-
-What is sourced:
-
-- that Indian SaaS has been studied as a distinct global opportunity
-- that generative AI is already being used in customer care and credit operations to compress information-processing work
-- that Indian SaaS became globally credible because software could be built here and sold mainly outside India
-
-What is argued:
-
-- that SaaS mattered because it reduced the penalty of geography
-- that consumer companies historically stayed local because operating context was expensive to coordinate
-- that AI can lower that coordination tax enough to create a new export wedge for India-born consumer companies
-- that some of India's historical complexity may become an advantage once more of that complexity is machine-readable
-- that AI may shift advantage away from labor-heavy manual patchwork and toward judgment, orchestration, and extracting more leverage from agentic systems

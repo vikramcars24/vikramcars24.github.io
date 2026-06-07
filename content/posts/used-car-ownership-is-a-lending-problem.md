@@ -192,53 +192,13 @@ Used cars are the affordability bridge. Lending decides how many people actually
 
 ### 1. Financing and market structure
 
-The essay's market framing draws primarily on:
-
 - [Crisil Ratings: Used-car volume to grow 8-10%, over twice as fast as new one](https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html)
 - [2025 Indian Used Car Market Report](https://static-cdn.cars24.com/prod/auto-news24-cms/root/2026/02/25/2b7d5141-a889-432d-b8dd-c83cc2fb8eda-gears-of-growth.pdf)
 - [2024 Indian Used Car Market Report](https://cdn.cars24.com/prod/auto-news24-cms/CARS24-Blog-Images/2025/01/23/c09aec15-acf9-4bc8-9d1f-ec5e3d8241f3-C24-gears-of-growth.pdf)
 
-The specific figures used in the essay include:
-
-- around `52%` financing penetration in 2025
-- higher financing adoption in non-metro markets
-- the longer-term rise in financing penetration from much lower historical levels
-- Crisil's estimate that used-car sales are expected to cross `~6 million` units with a used-to-new ratio of `~1.4x`
-
 ### 2. Why asset truth matters in used-car lending
-
-The essay's operational argument about inspections, valuation, lien checks, documentation, and transfer visibility is based on public operator material and category practice, including:
 
 - [AI Valuation Explained: Why It Is a Benchmark, Not a Promise](https://www.cars24.com/news/learn-about-cars24/ai-car-valuation-explained/)
 - [300-Point Car Inspection | Quality Checks by Cars24 Owned Stock](https://www.cars24.com/why-cars24/buy-used-cars-quality/)
 - [How Cars24 Ensures Transparency Throughout the Used Car Buying Journey](https://www.cars24.com/article/transparent-used-car-buying-process-at-cars24/)
 - [Financing, Made Easy](https://www.cars24.com/why-cars24/buy-used-cars-finance/)
-
-These links sit in the notes for traceability. The essay body intentionally keeps the argument at the category level rather than turning any one company into the protagonist.
-
-### 3. Internal reference that shaped the framing
-
-An internal lending primer from May 2026 materially shaped the essay's framing around:
-
-- financing as the first constraint in the car-buying journey, not merely the last step
-- embedded distribution as an underwriting advantage
-- four core lending disciplines: customer underwriting, car valuation, car liquidation, and vehicle intelligence
-- tiered capital routing across own-book, co-lending, and partner-led structures
-- collections and liquidation as sources of underwriting truth rather than pure operating costs
-
-The essay keeps those ideas at the category level and does not use the company itself as the protagonist.
-
-### 4. What is sourced and what is argued
-
-What is sourced:
-
-- that used-car financing penetration has risen materially and is now central to purchases
-- that used-car sales growth in India is being supported by better access to finance
-- that inspection, valuation, verification, and process quality materially affect whether a used car becomes financeable
-
-What is argued:
-
-- that used-car lending in India is better understood as underwriting ambiguity rather than merely extending credit
-- that good lending acts as a trust signal for first-time buyers
-- that the deepest moat in used-car lending is asset intelligence more than balance-sheet size alone
-- that lending in this category does not only serve the market; it helps create the market

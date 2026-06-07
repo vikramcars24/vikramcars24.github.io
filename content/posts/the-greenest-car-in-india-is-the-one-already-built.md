@@ -167,75 +167,19 @@ That is why the greenest car in India is so often the one already built.
 
 ## Notes and Sources
 
-These notes support the main claims in the essay without breaking the body into a technical memo.
-
 ### 1. Embodied cost of new vehicles
 
-The essay relies on the broader life-cycle point that a meaningful share of a vehicle's environmental burden is embedded before first use, even if exact values vary across models and methods.
-
-Sources:
 - [IEA EV life-cycle assessment tool](https://www.iea.org/data-and-statistics/data-tools/ev-life-cycle-assessment-calculator)
 - [ICCT global passenger-car life-cycle comparison](https://theicct.org/publications/global-LCA-passenger-cars-jul2021)
 
-### 2. Used-vehicle resale and avoided-emissions estimates
+### 2. Battery-health measurement and degradation
 
-The essay uses Cars24 impact work directionally: keeping existing vehicles in circulation longer can avoid a material amount of premature new manufacturing.
-
-Source:
-- Cars24 impact research used directionally in the essay
-
-### 3. Used-EV pricing distortion
-
-The essay's claim is directional: Cars24's public-policy paper `Catalysing India's Used-EV Market` argues that battery opacity is creating pricing gaps and depressing confidence in India's early used-EV market.
-
-Source:
-- Cars24 public-policy paper `Catalysing India's Used-EV Market`
-
-### 4. Battery-health measurement and degradation
-
-The essay cites:
-- NITI Aayog's EV supply-chain report saying the battery pack can comprise `35-40%` of total bill of materials in an illustrative four-wheeler EV
-- Geotab longitudinal work across `22,700` EVs and `21` models showing an average annual degradation rate of `2.3%`
-- TÜV SÜD's explanation that there is still no single standard for determining SoH and that methods are not automatically comparable
-- the Principal Scientific Adviser's BPAN guideline as proof that battery identity infrastructure is already being contemplated publicly
-
-Sources:
 - [Geotab EV battery degradation analysis](https://www.geotab.com/blog/ev-battery-health/)
 - [NITI Aayog EV supply-chain report](https://www.niti.gov.in/sites/default/files/2023-07/Niti-Aayog_Report-VS_compressed_compressed.pdf)
-- [TÜV SÜD on battery SoH](https://www.tuvsud.com/en-gb/e-ssentials-newsletter/automotive-essentials/e-essentials-03-2024/health-status-of-a-battery)
+- [TUV SUD on battery SoH](https://www.tuvsud.com/en-gb/e-ssentials-newsletter/automotive-essentials/e-essentials-03-2024/health-status-of-a-battery)
 - [Battery Pack Aadhaar guideline](https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf)
-- Cars24 public-policy paper `Catalysing India's Used-EV Market`
 
-### 5. Financing, insurance, and tax friction
+### 3. Financing and policy
 
-The essay's financing and policy section is partly sourced and partly interpretive. It draws on public evidence around tighter EV lending terms and on Cars24 policy work around used-EV-specific tax, insurance, and warranty frictions.
-
-Sources:
 - [ADB-NITI Aayog EV financing report](https://www.niti.gov.in/sites/default/files/2023-07/ADB-EV-Financing-Report_VS_compressed.pdf)
-- Cars24 public-policy paper `Catalysing India's Used-EV Market`
-
-### 6. Public-policy direction
-
-The essay's policy framing draws on public policy documents and Cars24 public-policy work around:
-- battery certification and recertification
-- GST and category incentives
-- road-tax and inter-state transfer friction
-- international learning from markets such as China and the EU
-- Recurrent as a comparable signal
-
-Sources:
 - [Battery Pack Aadhaar guideline](https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf)
-- Cars24 public-policy paper `Catalysing India's Used-EV Market`
-
-### 7. What is sourced and what is argued
-
-What is sourced:
-- life-cycle literature showing that manufacturing burden matters, not only tailpipe or charging-stage emissions
-- avoided-emissions direction from Cars24 impact research
-- Geotab's public battery-degradation benchmark
-- the research base around used-EV financing, tax, warranty, and measurement friction
-
-What is argued:
-- that reuse is the fastest realistic climate lever in Indian mobility
-- that used-EV weakness is primarily a trust and information problem before it is a marketing problem
-- that climate wins in this category depend on standards, portability, and legibility

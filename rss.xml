@@ -83,20 +83,10 @@
 <p>But if the shape holds, the prize is larger than another software export story.</p>
 <p>SaaS let India export code. AI may let India export consumer companies built on judgment at scale.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
-<p>These notes support the factual claims and clarify which parts of the essay are sourced versus synthetic.</p>
 <h3 id="1-saas-as-india-s-first-large-global-software-wedge">1. SaaS as India&#39;s first large global software wedge</h3>
-<p>The essay&#39;s framing of SaaS as India&#39;s first clean global startup wedge draws on the public India SaaS literature:</p>
 <ul><li><a href="https://www.bain.com/insights/india-saas-report-2021/">India SaaS Report 2021 | Bain &amp; Company</a></li><li><a href="https://www.bain.com/insights/india-saas-report-2022/">India SaaS Report 2022 | Bain &amp; Company</a></li><li><a href="https://saasboomi.org/reports/indias-saas-revolution-exploring-global-opportunities-in-a-dynamic-market/">India&#39;s SaaS Revolution: Exploring global opportunities in a dynamic market | SaaSBoomi</a></li></ul>
-<p>These sources are useful for the structural claim that Indian SaaS became globally credible because software could be built here and distributed internationally with less dependence on local operating infrastructure than consumer businesses require.</p>
 <h3 id="2-ai-as-a-context-compression-layer">2. AI as a context-compression layer</h3>
-<p>The essay&#39;s argument that AI lowers the cost of carrying operating context across a company extends the same organizational logic discussed in <a href="/posts/ai-native-is-not-ai-first/">AI-Native Is Not AI-First</a>. The deeper source tradition for that argument includes:</p>
-<ul><li><a href="https://pubsonline.informs.org/doi/10.1287/inte.4.3.28">Jay R. Galbraith, Organization Design: An Information Processing View</a></li><li><a href="https://www.melconway.com/Home/Committees_Paper.html">Melvin Conway, How Do Committees Invent?</a></li><li><a href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/the-promise-of-generative-ai-for-credit-customer-assistance">McKinsey: The promise of generative AI for credit customer assistance</a></li><li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/gen-ai-in-customer-care-early-successes-and-challenges">McKinsey: Gen AI in customer care: Early successes and challenges</a></li></ul>
-<p>The new claim in this essay is not that AI simply improves internal productivity. It is that lower coordination cost can make cross-market consumer operating systems more exportable than before.</p>
-<h3 id="3-what-is-sourced-and-what-is-argued">3. What is sourced and what is argued</h3>
-<p>What is sourced:</p>
-<ul><li>that Indian SaaS has been studied as a distinct global opportunity</li><li>that generative AI is already being used in customer care and credit operations to compress information-processing work</li><li>that Indian SaaS became globally credible because software could be built here and sold mainly outside India</li></ul>
-<p>What is argued:</p>
-<ul><li>that SaaS mattered because it reduced the penalty of geography</li><li>that consumer companies historically stayed local because operating context was expensive to coordinate</li><li>that AI can lower that coordination tax enough to create a new export wedge for India-born consumer companies</li><li>that some of India&#39;s historical complexity may become an advantage once more of that complexity is machine-readable</li><li>that AI may shift advantage away from labor-heavy manual patchwork and toward judgment, orchestration, and extracting more leverage from agentic systems</li></ul>]]></content:encoded>
+<ul><li><a href="https://pubsonline.informs.org/doi/10.1287/inte.4.3.28">Jay R. Galbraith, Organization Design: An Information Processing View</a></li><li><a href="https://www.melconway.com/Home/Committees_Paper.html">Melvin Conway, How Do Committees Invent?</a></li><li><a href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/the-promise-of-generative-ai-for-credit-customer-assistance">McKinsey: The promise of generative AI for credit customer assistance</a></li><li><a href="https://www.mckinsey.com/capabilities/operations/our-insights/gen-ai-in-customer-care-early-successes-and-challenges">McKinsey: Gen AI in customer care: Early successes and challenges</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>Used-Car Ownership Is a Lending Problem</title>
@@ -189,23 +179,9 @@
 <p>Used cars are the affordability bridge. Lending decides how many people actually cross it.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
 <h3 id="1-financing-and-market-structure">1. Financing and market structure</h3>
-<p>The essay&#39;s market framing draws primarily on:</p>
 <ul><li><a href="https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html">Crisil Ratings: Used-car volume to grow 8-10%, over twice as fast as new one</a></li><li><a href="https://static-cdn.cars24.com/prod/auto-news24-cms/root/2026/02/25/2b7d5141-a889-432d-b8dd-c83cc2fb8eda-gears-of-growth.pdf">2025 Indian Used Car Market Report</a></li><li><a href="https://cdn.cars24.com/prod/auto-news24-cms/CARS24-Blog-Images/2025/01/23/c09aec15-acf9-4bc8-9d1f-ec5e3d8241f3-C24-gears-of-growth.pdf">2024 Indian Used Car Market Report</a></li></ul>
-<p>The specific figures used in the essay include:</p>
-<ul><li>around <code>52%</code> financing penetration in 2025</li><li>higher financing adoption in non-metro markets</li><li>the longer-term rise in financing penetration from much lower historical levels</li><li>Crisil&#39;s estimate that used-car sales are expected to cross <code>~6 million</code> units with a used-to-new ratio of <code>~1.4x</code></li></ul>
 <h3 id="2-why-asset-truth-matters-in-used-car-lending">2. Why asset truth matters in used-car lending</h3>
-<p>The essay&#39;s operational argument about inspections, valuation, lien checks, documentation, and transfer visibility is based on public operator material and category practice, including:</p>
-<ul><li><a href="https://www.cars24.com/news/learn-about-cars24/ai-car-valuation-explained/">AI Valuation Explained: Why It Is a Benchmark, Not a Promise</a></li><li><a href="https://www.cars24.com/why-cars24/buy-used-cars-quality/">300-Point Car Inspection | Quality Checks by Cars24 Owned Stock</a></li><li><a href="https://www.cars24.com/article/transparent-used-car-buying-process-at-cars24/">How Cars24 Ensures Transparency Throughout the Used Car Buying Journey</a></li><li><a href="https://www.cars24.com/why-cars24/buy-used-cars-finance/">Financing, Made Easy</a></li></ul>
-<p>These links sit in the notes for traceability. The essay body intentionally keeps the argument at the category level rather than turning any one company into the protagonist.</p>
-<h3 id="3-internal-reference-that-shaped-the-framing">3. Internal reference that shaped the framing</h3>
-<p>An internal lending primer from May 2026 materially shaped the essay&#39;s framing around:</p>
-<ul><li>financing as the first constraint in the car-buying journey, not merely the last step</li><li>embedded distribution as an underwriting advantage</li><li>four core lending disciplines: customer underwriting, car valuation, car liquidation, and vehicle intelligence</li><li>tiered capital routing across own-book, co-lending, and partner-led structures</li><li>collections and liquidation as sources of underwriting truth rather than pure operating costs</li></ul>
-<p>The essay keeps those ideas at the category level and does not use the company itself as the protagonist.</p>
-<h3 id="4-what-is-sourced-and-what-is-argued">4. What is sourced and what is argued</h3>
-<p>What is sourced:</p>
-<ul><li>that used-car financing penetration has risen materially and is now central to purchases</li><li>that used-car sales growth in India is being supported by better access to finance</li><li>that inspection, valuation, verification, and process quality materially affect whether a used car becomes financeable</li></ul>
-<p>What is argued:</p>
-<ul><li>that used-car lending in India is better understood as underwriting ambiguity rather than merely extending credit</li><li>that good lending acts as a trust signal for first-time buyers</li><li>that the deepest moat in used-car lending is asset intelligence more than balance-sheet size alone</li><li>that lending in this category does not only serve the market; it helps create the market</li></ul>]]></content:encoded>
+<ul><li><a href="https://www.cars24.com/news/learn-about-cars24/ai-car-valuation-explained/">AI Valuation Explained: Why It Is a Benchmark, Not a Promise</a></li><li><a href="https://www.cars24.com/why-cars24/buy-used-cars-quality/">300-Point Car Inspection | Quality Checks by Cars24 Owned Stock</a></li><li><a href="https://www.cars24.com/article/transparent-used-car-buying-process-at-cars24/">How Cars24 Ensures Transparency Throughout the Used Car Buying Journey</a></li><li><a href="https://www.cars24.com/why-cars24/buy-used-cars-finance/">Financing, Made Easy</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>The Car Is the Artifact. Trust Is the Product.</title>
@@ -288,34 +264,10 @@
 <p>Trust is the product.</p>
 <p>And the institutions that understand that earliest will not look like old dealerships with better software. They will look like something larger: operating systems for ownership.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
-<h3 id="1-trust-architecture-in-used-vehicles">1. Trust architecture in used vehicles</h3>
-<p>The essay&#39;s trust-stack argument is synthetic. It pulls together the public ownership and road-safety sources cited across this series, plus Cars24 category research around:</p>
-<ul><li>information asymmetry</li><li>quality consistency</li><li>pricing opacity</li><li>RC transfer anxiety</li><li>lack of recourse</li></ul>
-<p>Source:</p>
-<ul><li>synthesis of the public and company-reported sources cited across this essay series</li></ul>
-<h3 id="2-rc-transfer-volume-and-friction">2. RC transfer volume and friction</h3>
-<p>The essay refers to company research evidence of:</p>
-<ul><li>intra-state RC transfer volumes moving from roughly <code>2.98M</code> in FY24 to <code>3.54M</code> in FY26</li><li>less than <code>70%</code> of RC transfers completing within <code>60 days</code></li></ul>
-<p>Sources:</p>
-<ul><li>Cars24 VAHAN-linked transfer analysis referenced in the essay</li><li>Cars24 transfer-reform and deemed-ownership research referenced in the essay</li></ul>
-<h3 id="3-reform-stack-around-transfer-and-deemed-ownership">3. Reform stack around transfer and deemed ownership</h3>
-<p>The essay&#39;s transfer-reform framing draws on source-pack materials around:</p>
-<ul><li>e-KYC</li><li>digital RC and insurance retrieval</li><li>digital NOCs</li><li>any registering authority within a state</li><li>clearer ADRV workflows</li><li>Form <code>29CA</code> for inter-dealer traceability</li><li>explicit deemed ownership logic tied to Section <code>157</code></li></ul>
-<p>Source:</p>
-<ul><li>Cars24 transfer-reform and deemed-ownership research referenced in the essay</li></ul>
-<h3 id="4-team-bhp-as-trust-institution">4. Team-BHP as trust institution</h3>
-<p>The essay uses Team-BHP as an example of community trust becoming part of the category&#39;s ownership infrastructure.</p>
-<p>Sources:</p>
+<h3 id="1-team-bhp-as-trust-institution">1. Team-BHP as trust institution</h3>
 <ul><li><a href="https://www.team-bhp.com/aboutus/overview">Team-BHP Overview</a></li><li><a href="https://www.team-bhp.com/aboutus/history">Team-BHP History</a></li><li><a href="https://www.team-bhp.com/aboutus/philosophy">Team-BHP Philosophy</a></li><li><a href="https://www.team-bhp.com/aboutus/key-features">Team-BHP Key Features</a></li><li><a href="https://www.team-bhp.com/forum/faq.php?faq=troubleshooting">Team-BHP FAQ</a></li><li><a href="https://archive.factordaily.com/team-bhp-profile/">FactorDaily profile on Team-BHP</a></li></ul>
-<h3 id="5-safety-recourse-and-investigative-legibility">5. Safety, recourse, and investigative legibility</h3>
-<p>The essay includes safety and investigative truth inside the broader trust stack.</p>
-<p>Sources:</p>
-<ul><li><a href="https://www.crashfreeindia.org/">Crashfree India</a></li><li>Cars24 road-safety and investigative-legibility research used as supporting material</li></ul>
-<h3 id="6-what-is-sourced-and-what-is-argued">6. What is sourced and what is argued</h3>
-<p>What is sourced:</p>
-<ul><li>RC transfer scale and friction in the underlying research</li><li>Team-BHP&#39;s public role and positioning</li><li>the broad transfer-reform stack</li></ul>
-<p>What is argued:</p>
-<ul><li>that the enduring product in mobility is trust rather than the one-time transaction</li><li>that information, transfer, financing, community memory, and recourse belong to one product logic</li><li>that India&#39;s unfinished ownership infrastructure leaves room for multiple world-scale institutions</li></ul>]]></content:encoded>
+<h3 id="2-safety-and-investigative-legibility">2. Safety and investigative legibility</h3>
+<ul><li><a href="https://www.crashfreeindia.org/">Crashfree India</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>Builder Is the Only Role Left</title>
@@ -413,24 +365,8 @@
 <p>Not a flattering label.</p>
 <p>The only role left that still compounds cleanly when context gets cheaper and reality gets harder to hide from.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
-<p>These notes support the conceptual claims in the essay without turning the body into an internal memo.</p>
-<h3 id="1-the-technician-anecdote">1. The technician anecdote</h3>
-<p>The opening anecdote comes from direct founder observation and is used here not as sentiment, but as a concrete example of loop-closing behavior.</p>
-<h3 id="2-organizations-coordination-and-information-cost">2. Organizations, coordination, and information cost</h3>
-<p>The essay&#39;s argument that older prestige systems were partly built around scarce coordination and expensive context is consistent with organization-design literature that treats companies as information-processing systems.</p>
-<p>Sources:</p>
-<ul><li>Jay R. Galbraith, <a href="https://pubsonline.informs.org/doi/10.1287/inte.4.3.28"><em>Organization Design: An Information Processing View</em></a></li><li><a href="https://link.springer.com/article/10.1186/s41469-018-0029-2">The science of organizational design: fit between structure and coordination</a></li></ul>
-<h3 id="3-builder-as-a-structural-rather-than-motivational-category">3. Builder as a structural rather than motivational category</h3>
-<p>The essay&#39;s use of <code>builder</code> is not drawn from a single public source. It is a synthesis of repeated founder doctrine, public writing, and the broader organization-design arguments already developed across this essay series.</p>
-<h3 id="4-management-versus-coordination-theater">4. Management versus coordination theater</h3>
-<p>The distinction made in the essay is interpretive.</p>
-<p>What is argued:</p>
-<ul><li>that management remains essential</li><li>that much of what acquired prestige in scaling organizations was actually coordination overhead</li><li>that cheaper context and better systems reduce the relative value of that overhead</li></ul>
-<h3 id="5-what-is-sourced-and-what-is-argued">5. What is sourced and what is argued</h3>
-<p>What is sourced:</p>
-<ul><li>organizational-design and information-processing foundations</li></ul>
-<p>What is argued:</p>
-<ul><li>that the prestige hierarchy of modern work is changing</li><li>that titles should behave as coordinates, not coronations</li><li>that dignity and authority should move closer to loop-closing work</li></ul>]]></content:encoded>
+<h3 id="1-organizations-coordination-and-information-cost">1. Organizations, coordination, and information cost</h3>
+<ul><li>Jay R. Galbraith, <a href="https://pubsonline.informs.org/doi/10.1287/inte.4.3.28"><em>Organization Design: An Information Processing View</em></a></li><li><a href="https://link.springer.com/article/10.1186/s41469-018-0029-2">The science of organizational design: fit between structure and coordination</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>AI-Native Is Not AI-First</title>
@@ -489,27 +425,10 @@
 <p>It will be divided between companies that kept their old shape and companies that rebuilt for a new one. One group will still be batching context through layers and permission chains, only with better software. The other will be operating on a different nervous system altogether.</p>
 <p>That is the difference between AI-first and AI-native. One is adoption. The other is redesign.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
-<p>These notes support the main factual and conceptual claims in the essay without turning the piece itself into a research memo.</p>
 <h3 id="1-organizations-as-information-processing-systems">1. Organizations as information-processing systems</h3>
-<p>The essay&#39;s core claim is that hierarchy emerged partly as a response to the cost of gathering, moving, and acting on information inside a growing organization.</p>
-<p>Sources:</p>
 <ul><li>Jay R. Galbraith, <a href="https://pubsonline.informs.org/doi/10.1287/inte.4.3.28"><em>Organization Design: An Information Processing View</em></a></li><li>Organization design research summary, <a href="https://link.springer.com/article/10.1186/s41469-018-0029-2"><em>The science of organizational design: fit between structure and coordination</em></a></li></ul>
 <h3 id="2-company-shape-and-communication-structure">2. Company shape and communication structure</h3>
-<p>The essay&#39;s argument that company structure shapes what a company can build sits in the tradition usually associated with Conway&#39;s Law.</p>
-<p>Sources:</p>
-<ul><li>Melvin Conway, <a href="https://www.melconway.com/Home/Committees_Paper.html"><em>How Do Committees Invent?</em></a></li><li>Original PDF at Mel Conway&#39;s site, <a href="https://www.melconway.com/Home/pdf/committees.pdf"><em>How Do Committees Invent?</em></a></li><li>Alan MacCormack, Carliss Baldwin, and John Rusnak, <a href="https://dash.harvard.edu/entities/publication/73120379-3450-6bd4-e053-0100007fdf3b"><em>Exploring the duality between product and organizational architectures: A test of the “mirroring” hypothesis</em></a></li></ul>
-<h3 id="3-why-this-essay-uses-the-phrase-context-machine">3. Why this essay uses the phrase <code>context machine</code></h3>
-<p><code>Context machine</code> is a synthesis, not a quoted term from a single source. It is shorthand for a view of the company as a system that receives signals, compresses them, routes them, and converts them into decisions. That framing is consistent with the information-processing tradition above, but the wording here is original to the essay.</p>
-<h3 id="4-ai-and-the-falling-cost-of-context-work">4. AI and the falling cost of context work</h3>
-<p>The essay&#39;s central distinction between <code>AI-first</code> and <code>AI-native</code> is interpretive. It does not depend on a single research paper. It comes from observing that a large share of middle-layer organizational work has historically been about summarizing, routing, triaging, and translating context for the next human in line.</p>
-<p>The claim of the essay is that once AI can absorb more of that work, the relevant design question shifts from <code>where can I deploy a tool?</code> to <code>what kind of company shape still makes sense?</code></p>
-<h3 id="5-management-versus-coordination-overhead">5. Management versus coordination overhead</h3>
-<p>The essay separates management from the coordination theater that often accumulates around it. That distinction is interpretive, but it is grounded in the same organizational-design literature above: information-processing load, coordination cost, and decision latency are not the same thing as judgment, hiring, standards, conflict resolution, or trust.</p>
-<h3 id="6-what-is-sourced-and-what-is-argued">6. What is sourced and what is argued</h3>
-<p>What is sourced:</p>
-<ul><li>the idea that organization design has long been studied as an information-processing problem</li><li>the idea that communication structure shapes system architecture</li><li>the modern <code>mirroring hypothesis</code> literature that extends Conway&#39;s original intuition</li></ul>
-<p>What is argued:</p>
-<ul><li>that AI changes the economics of context enough to reopen the question of hierarchy</li><li>that many companies are mistaking software adoption for organizational redesign</li><li>that the deepest divide ahead will be between companies that keep the old shape and those that rebuild for a new one</li></ul>]]></content:encoded>
+<ul><li>Melvin Conway, <a href="https://www.melconway.com/Home/Committees_Paper.html"><em>How Do Committees Invent?</em></a></li><li>Original PDF at Mel Conway&#39;s site, <a href="https://www.melconway.com/Home/pdf/committees.pdf"><em>How Do Committees Invent?</em></a></li><li>Alan MacCormack, Carliss Baldwin, and John Rusnak, <a href="https://dash.harvard.edu/entities/publication/73120379-3450-6bd4-e053-0100007fdf3b"><em>Exploring the duality between product and organizational architectures: A test of the mirroring hypothesis</em></a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>Scale Is a Learning Problem</title>
@@ -593,29 +512,14 @@
 <p>They will be the ones that became more intelligent as they grew.</p>
 <p>Scale is a learning problem.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
-<p>These notes support the conceptual claims in the essay without turning the main piece into an internal research memo.</p>
 <h3 id="1-systems-thinking-and-leverage-points">1. Systems thinking and leverage points</h3>
-<p>The essay&#39;s distinction between visible events and deeper structures draws heavily from Donella Meadows&#39; work, especially the idea that different interventions in a system carry very different leverage.</p>
-<p>Sources:</p>
 <ul><li>Donella H. Meadows, <a href="https://www.chelseagreen.com/product/thinking-in-systems/"><em>Thinking in Systems: A Primer</em></a></li><li>Donella H. Meadows, <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/"><em>Leverage Points: Places to Intervene in a System</em></a></li></ul>
 <h3 id="2-learning-organizations-and-mental-models">2. Learning organizations and mental models</h3>
-<p>The argument that organizations learn when they surface and revise mental models in public is closely aligned with Peter Senge&#39;s framing of the learning organization and the five disciplines.</p>
-<p>Sources:</p>
 <ul><li>Peter M. Senge, <a href="https://books.google.com/books/about/The_Fifth_Discipline.html?id=5Rsrt-2T95YC"><em>The Fifth Discipline</em></a></li><li>Infed summary, <a href="https://infed.org/mobi/peter-senge-and-the-learning-organization/"><em>Peter Senge and the learning organization</em></a></li></ul>
 <h3 id="3-organization-design-as-an-information-problem">3. Organization design as an information problem</h3>
-<p>The essay&#39;s claim that scale depends on how a company sees, moves, and acts on information is grounded in the classic organization-design view that firms are information-processing systems.</p>
-<p>Sources:</p>
 <ul><li>Jay R. Galbraith, <a href="https://pubsonline.informs.org/doi/10.1287/inte.4.3.28"><em>Organization Design: An Information Processing View</em></a></li></ul>
 <h3 id="4-psychological-safety-and-learning-speed">4. Psychological safety and learning speed</h3>
-<p>The section on fear, defensiveness, and the movement of truth draws on psychological-safety research, especially the idea that teams learn faster when people can surface risk, error, and uncertainty without humiliation.</p>
-<p>Sources:</p>
-<ul><li>Amy C. Edmondson, <a href="https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams"><em>Psychological Safety and Learning Behavior in Work Teams</em></a></li><li>Google re:Work, <a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/"><em>Guide to understanding team effectiveness</em></a></li></ul>
-<h3 id="5-what-is-argued-and-what-is-sourced">5. What is argued and what is sourced</h3>
-<p>This essay is partly sourced and partly interpretive.</p>
-<p>What is sourced:</p>
-<ul><li>the distinction between events and deeper systemic structures</li><li>the role of mental models in organizational learning</li><li>the framing of organizations as information-processing systems</li><li>the relationship between psychological safety and learning behavior</li></ul>
-<p>What is argued:</p>
-<ul><li>that many companies still confuse headcount growth with capability growth</li><li>that the next durable moat is a faster organizational learning system</li><li>that founder-led companies stall when the founders remain the entire learning loop</li><li>that capability scale is becoming more important than headcount scale</li></ul>]]></content:encoded>
+<ul><li>Amy C. Edmondson, <a href="https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams"><em>Psychological Safety and Learning Behavior in Work Teams</em></a></li><li>Google re:Work, <a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/"><em>Guide to understanding team effectiveness</em></a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>India&apos;s Road Deaths Are a Trust Problem, Not a Traffic Problem</title>
@@ -651,11 +555,11 @@
 <p>Then there is infrastructure.</p>
 <p>One of the strongest things Crashfree India has done so far is <a href="https://crashfreeindia.org/our-work/project-rakshak">Project Rakshak</a>, a youth-led infrastructure initiative that works on the part of road safety India routinely neglects: dangerous places that everybody locally knows are unsafe, but which formal systems act on only after enough people have already been injured or killed.</p>
 <p>A blackspot should not have to earn its name through repeated death.</p>
-<p>By the end of 2025, Project Rakshak teams had assessed more than <code>120</code> high-risk locations across <code>18</code> cities. Cars24&#39;s H2 FY26 public update says <code>24</code> of those sites had already been approved for on-ground implementation, with estimated potential to prevent more than <code>1,000</code> crashes. The public materials are careful not to overclaim impact. They present the work as early evidence that dangerous roads can become legible to authorities before more death forces attention.</p>
+<p>By the end of 2025, Project Rakshak teams had assessed more than <code>120</code> high-risk locations across <code>18</code> cities. Cars24&#39;s H2 FY26 public update says <code>24</code> of those sites had already been approved for on-ground implementation, with estimated potential to prevent more than <code>1,000</code> crashes. Read conservatively, that is early evidence that dangerous roads can become legible to authorities before more death forces attention.</p>
 <p>The more interesting part is what follows. The work is no longer just identifying dangerous roads. It is turning local evidence into administrative action.</p>
 <p>Those numbers matter less as proof of scale than as proof of method. Road safety improves when dangerous infrastructure becomes visible early, when local evidence is legible enough for authorities to act on, and when diagnosis does not stop at outrage.</p>
 <p>The Rakshak report makes another important point. Crash data on these high-risk sites is almost certainly undercounted. FIR-linked records show only part of the picture. Non-fatal crashes often disappear entirely from formal memory. That is exactly what a trust problem looks like. The road is telling one story. The file is telling another.</p>
-<p>And when the work does break into the file, you can see the leverage it creates. District road-safety committee minutes reviewed for this essay from Guntur on March 17, 2026, show hospitals, engineers, NHAI, and administrators being directed to use iRAD and eDAR in real time, review high-risk locations, and prepare for trauma-care readiness. The same minutes formally brought a Crashfree-linked junction case study into the district process. This is not a solved system. It is a real example of dangerous places becoming institutionally legible before more death forces attention.</p>
+<p>And when that work enters administrative process, you can see the leverage it creates. Hospitals, engineers, highway authorities, and district administrators can work from the same evidence, review the same high-risk locations, and coordinate around the same response chain. This is not a solved system. It is a real example of dangerous places becoming institutionally legible before more death forces attention.</p>
 <h2 id="after-the-crash-opacity-keeps-killing">After the crash, opacity keeps killing</h2>
 <p>The same pattern appears after impact. One of the most under-discussed failures in Indian road safety is not the crash itself but what happens to the victim afterward. A country can pass a Good Samaritan law, announce ambulance numbers, and publish compensation frameworks. But if citizens do not know their rights, hospitals behave unpredictably, police processes remain inconsistent, and families have no practical way to navigate the system, the law on paper does not create trust in practice.</p>
 <p>You see that gap immediately after a crash, when crowds gather but nobody is sure who should call first or what protection they actually have.</p>
@@ -691,56 +595,17 @@
 <p>Safer roads do not begin when drivers become perfect. They begin when systems become trustworthy enough that imperfection is no longer so often fatal.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
 <h3 id="1-official-road-deaths-in-india">1. Official road deaths in India</h3>
-<p>The essay cites the official figure of <code>172,890</code> road deaths in India in <code>2023</code>.</p>
-<p>Source:</p>
 <ul><li>Ministry of Road Transport and Highways, <a href="https://www.morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf"><em>Road Accidents in India 2023</em></a></li></ul>
 <h3 id="2-crashfree-india-and-the-people-behind-it">2. Crashfree India and the people behind it</h3>
-<p>The essay identifies <a href="https://www.crashfreeindia.org/">Crashfree India</a> as a public-interest initiative backed by <a href="https://www.cars24.com/">Cars24</a>. It names <a href="https://www.linkedin.com/in/amarsrivastava26/">Amar Srivastava</a> and <a href="https://in.linkedin.com/in/connectwithdeepanshu">Deepanshu Gupta</a> as founders of the <a href="https://irsc-draft.framer.website/">Indian Road Safety Campaign</a> and co-founders of Crashfree India. It also refers to <a href="https://theorg.com/org/cars24/org-chart/gajendra-jangid">Gajendra Jangid</a> as a Cars24 co-founder who helped shape Crashfree India from the start.</p>
-<p>Sources:</p>
 <ul><li><a href="https://www.crashfreeindia.org/">Crashfree India</a></li><li><a href="https://irsc-draft.framer.website/">Indian Road Safety Campaign</a></li><li><a href="https://www.linkedin.com/in/amarsrivastava26/">Amar Srivastava</a></li><li><a href="https://in.linkedin.com/in/connectwithdeepanshu">Deepanshu Gupta</a></li><li><a href="https://theorg.com/org/cars24/org-chart/gajendra-jangid">Gajendra Jangid</a></li><li><a href="https://www.linkedin.com/posts/gajendra-jangid-665b3040_eleven-years-ago-four-of-us-started-cars24-activity-7455182772224139264-sswr">Gajendra Jangid&#39;s LinkedIn post on continuing work on Crashfree India</a></li><li><a href="https://economictimes.indiatimes.com/tech/technology/cars24-narrows-operating-losses-during-fy26-as-revenue-grows-27-ceo-vikram-chopra/articleshow/130882004.cms">Economic Times report quoting Cars24 on Gajendra Jangid continuing to advise on Crashfree India</a></li></ul>
-<h3 id="3-scale-of-field-activity">3. Scale of field activity</h3>
-<p>The essay refers to publicly reported Crashfree India activity in Cars24&#39;s H2 FY26 update, including work across <code>18</code> cities and multi-track infrastructure and compensation efforts.</p>
-<p>Source:</p>
-<ul><li><a href="https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf">Cars24 H2 FY26 report</a></li></ul>
-<h3 id="4-project-rakshak-and-dangerous-infrastructure">4. Project Rakshak and dangerous infrastructure</h3>
-<p>The essay refers to <a href="https://crashfreeindia.org/our-work/project-rakshak">Project Rakshak</a> and cites the following underlying numbers:</p>
-<ul><li><code>120+</code> high-risk locations assessed</li><li><code>18</code> cities</li><li><code>24</code> sites approved for implementation</li><li><code>1,000+</code> crashes potentially preventable according to the public update</li></ul>
-<p>Sources:</p>
-<ul><li><a href="https://crashfreeindia.org/our-work/project-rakshak">Project Rakshak</a></li><li><a href="https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf">Cars24 H2 FY26 report</a></li></ul>
-<h3 id="5-data-quality-irad-and-edar">5. Data quality, iRAD, and eDAR</h3>
-<p>The argument about fragmented road-death counts and the limits of digitization draws on the broader gap between transport, police, and public-health views of mortality, along with district-level implementation material reviewed for this essay related to iRAD and eDAR.</p>
-<p>Sources:</p>
-<ul><li>Ministry of Road Transport and Highways, <a href="https://www.morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf"><em>Road Accidents in India 2023</em></a></li><li>District road safety committee minutes reviewed for this essay, Guntur, March <code>17</code>, <code>2026</code></li></ul>
-<h3 id="6-emergency-response-and-trauma-care">6. Emergency response and trauma care</h3>
-<p>The essay&#39;s discussion of ERSS-112, dispatch quality, and the chain-of-survival problem draws from Crashfree India&#39;s public emergency-care material.</p>
-<p>Sources:</p>
+<h3 id="3-scale-of-field-activity-and-dangerous-infrastructure">3. Scale of field activity and dangerous infrastructure</h3>
+<ul><li><a href="https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf">Cars24 H2 FY26 report</a></li><li><a href="https://crashfreeindia.org/our-work/project-rakshak">Project Rakshak</a></li></ul>
+<h3 id="4-emergency-response-and-trauma-care">4. Emergency response and trauma care</h3>
 <ul><li><a href="https://www.crashfreeindia.org/documents/pre-hospital-care-primer.pdf">Pre-hospital care primer</a></li><li><a href="https://autonauts.cars24.com/blog/quiet-heroes">The Quiet Heroes in Chaos</a></li></ul>
-<p>The reference to <code>Check. Call. Care.</code> comes from Crashfree India&#39;s first-responder field material reviewed for this essay.</p>
-<p>The essay&#39;s discussion of PM RAHAT as a proposed post-crash response infrastructure model draws from:</p>
-<p>Source:</p>
-<ul><li>Crashfree India <code>Concept Note PM Rahat</code> reviewed for this essay</li></ul>
-<h3 id="7-compensation-access-and-legal-awareness">7. Compensation access and legal awareness</h3>
-<p>The essay&#39;s core claim that compensation access remains very low relies on Crashfree India&#39;s public brief and related public legal-awareness work.</p>
-<p>Sources:</p>
+<h3 id="5-compensation-access-and-legal-awareness">5. Compensation access and legal awareness</h3>
 <ul><li><a href="https://www.crashfreeindia.org/documents/justice-unserved-crashfree-india.pdf"><em>Justice Unserved</em></a></li><li><a href="https://crashfreeindia.org/blog/legal-awareness-helpdesks">Legal awareness and helpdesks</a></li><li><a href="https://crashfreeindia.org/compensation-calculator">Compensation calculator</a></li><li><a href="https://crashfreeindia.org/aasha">Aasha</a></li></ul>
-<h3 id="8-public-compensation-metrics-used-in-the-essay">8. Public compensation metrics used in the essay</h3>
-<p>The essay uses public <code>Justice Unserved</code> figures including:</p>
-<ul><li><code>205</code> hit-and-run claims filed in FY <code>2022-23</code></li><li><code>3,000</code> claims filed in FY <code>2023-24</code>, still only about <code>12%</code> of average yearly hit-and-run crashes</li><li><code>70%</code> of surveyed low-income households unaware of compensation clauses and schemes</li><li><code>1,026</code> pending hit-and-run claims cited in the brief, of which <code>921</code> were stalled by documentary deficiencies</li><li>public examples of substantial unclaimed MACT funds and state-by-state variation in execution</li></ul>
-<p>Source:</p>
-<ul><li><a href="https://www.crashfreeindia.org/documents/justice-unserved-crashfree-india.pdf"><em>Justice Unserved</em></a></li></ul>
-<h3 id="9-compensation-fieldwork-and-institutional-outreach">9. Compensation fieldwork and institutional outreach</h3>
-<p>The essay refers to Crashfree India&#39;s public compensation tools and to the H2 FY26 public update describing:</p>
-<ul><li>a Gurugram Police partnership for proactive victim outreach</li><li>an AI chatbot for claims</li><li>a compensation calculator benchmarked against legal precedent</li><li>collaboration with MoRTH on a national compensation portal</li></ul>
-<p>Sources:</p>
-<ul><li><a href="https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf">Cars24 H2 FY26 report</a></li><li><a href="https://crashfreeindia.org/blog/legal-awareness-helpdesks">Legal awareness and helpdesks</a></li></ul>
-<h3 id="10-civic-alliance-knowledge-systems-and-public-engagement">10. Civic alliance, knowledge systems, and public engagement</h3>
-<p>The essay refers to a knowledge hub and broader public-information work as part of Crashfree India&#39;s effort to make road safety more legible to citizens and institutions.</p>
-<p>Sources:</p>
-<ul><li><a href="https://crashfreeindia.org/knowledge-hub">Knowledge hub</a></li></ul>
-<h3 id="11-information-legibility-and-investigative-traceability">11. Information legibility and investigative traceability</h3>
-<p>The essay&#39;s reference to Cars24&#39;s <code>Verify</code> tool uses it as supporting evidence for the argument that information infrastructure is part of road-safety capacity after harm. The relevant materials reviewed for this essay show ownership details, document status, transfer history, and training use with law-enforcement personnel.</p>
-<p>Sources:</p>
-<ul><li>Cars24 Verify screenshots and training materials reviewed for this essay</li><li>Crashfree India / Cars24 public-policy operating materials reviewed for this essay, June <code>2026</code></li></ul>]]></content:encoded>
+<h3 id="6-civic-alliance-and-public-engagement">6. Civic alliance and public engagement</h3>
+<ul><li><a href="https://crashfreeindia.org/knowledge-hub">Knowledge hub</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>The Paranoid Survive. The Regulated Thrive.</title>
@@ -771,34 +636,15 @@
 <p>The paranoid survive. The regulated thrive. I am building for both.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
 <h3 id="1-andy-grove-paranoia-and-strategic-inflection-points">1. Andy Grove, paranoia, and strategic inflection points</h3>
-<p>The opening frame draws on Andy Grove&#39;s well-known formulation that &quot;only the paranoid survive,&quot; along with his broader argument that strong companies need to recognize and respond to strategic inflection points before those shifts become existential.</p>
-<p>Sources:</p>
 <ul><li><a href="https://books.google.com/books/about/Only_the_Paranoid_Survive.html?id=7MhoPwAACAAJ"><em>Only the Paranoid Survive</em> by Andy Grove</a></li><li><a href="https://newsroom.intel.com/corporate/andy-grove-stanford-graduate-school-business">Intel: Andy Grove at the Stanford Graduate School of Business on strategic inflection points</a></li></ul>
 <h3 id="2-the-all-blacks-and-regulation-under-pressure">2. The All Blacks and regulation under pressure</h3>
-<p>The essay uses the New Zealand All Blacks as a high-performance example because their leadership tradition is often described as combining extreme standards with emotional control under pressure. The specific <code>red head / blue head</code> framing comes from rugby-performance and leadership writing around the team.</p>
-<p>Sources:</p>
-<ul><li><a href="https://www.rugbymuseum.co.nz/stories/on-this-day/all-blacks-win-three-out-of-four">The New Zealand Rugby Museum on the All Blacks&#39; long-term performance record</a></li><li><a href="https://www.the42.ie/james-lowe-leinster-red-head-blue-head-3184762-Jan2017/">The 42: James Lowe and the All Blacks&#39; <code>red head / blue head</code> framework</a></li></ul>
-<h3 id="3-stress-degrades-judgment">3. Stress degrades judgment</h3>
-<p>The section on stress and decision quality draws on Amy Arnsten&#39;s work on how even relatively modest uncontrollable stress can impair prefrontal-cortex function, weaken working memory, and shift cognition toward more reflexive responses.</p>
-<p>Sources:</p>
-<ul><li><a href="https://medicine.yale.edu/profile/amy-arnsten/">Amy Arnsten, Yale School of Medicine faculty profile</a></li><li><a href="https://medicine.yale.edu/news-article/how-stress-turns-brain-from-dr-jekyll-to-mr-hyde/">Yale Medicine: how stress can turn the brain from <code>Dr. Jekyll to Mr. Hyde</code></a></li></ul>
-<h3 id="4-emotion-and-decision-making">4. Emotion and decision-making</h3>
-<p>Several ideas in the essay sit together here:</p>
-<ul><li>Daniel Goleman&#39;s popularization of the <code>amygdala hijack</code></li><li>Daniel Kahneman&#39;s distinction between fast and slow cognition</li><li>Antonio Damasio&#39;s work showing that the loss of emotion does not produce better decisions, but often worse ones</li><li>James Gross&#39;s research on emotion regulation, especially the difference between suppression and reappraisal</li></ul>
-<p>Sources:</p>
-<ul><li><a href="https://books.google.com/books/about/Emotional_Intelligence.html?id=qSJWKdZ8zDkC"><em>Emotional Intelligence</em> by Daniel Goleman</a></li><li><a href="https://books.google.com/books/about/Thinking_Fast_and_Slow.html?id=ZuKTvERuPG8C"><em>Thinking, Fast and Slow</em> by Daniel Kahneman</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3744027/">Antonio Damasio on emotion and decision-making</a></li><li><a href="https://profiles.stanford.edu/james-gross">James Gross, Stanford profile</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4434967/">James Gross, <code>Emotion Regulation: Current Status and Future Prospects</code></a></li></ul>
-<h3 id="5-psychological-safety-compassion-and-performance">5. Psychological safety, compassion, and performance</h3>
-<p>The argument that compassion is not a soft alternative to performance, but one condition for sustained high performance, is informed by the convergence between Google&#39;s Project Aristotle work, Amy Edmondson&#39;s psychological-safety research, and Kim Scott&#39;s management language around care and challenge.</p>
-<p>Sources:</p>
-<ul><li><a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/">Google re:Work guide to understanding team effectiveness</a></li><li><a href="https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams">Amy Edmondson, <code>Psychological Safety and Learning Behavior in Work Teams</code></a></li><li><a href="https://www.radicalcandor.com/blog/care-personally-challenge-directly/">Kim Scott on <code>care personally, challenge directly</code></a></li></ul>
-<h3 id="6-regulation-is-trainable">6. Regulation is trainable</h3>
-<p>The essay treats regulation as trainable rather than fixed. The reference to heart rate variability is intentionally cautious: HRV is useful, but not magical. It is a meaningful physiological signal in many contexts, though interpretation depends on measurement quality and context.</p>
-<p>Sources:</p>
-<ul><li><a href="https://www.health.harvard.edu/blog/heart-rate-variability-new-way-track-well-2017112212789">Harvard Health on heart rate variability</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5900369/">A systematic review of heart rate variability in stress and health</a></li></ul>
-<h3 id="7-calm-is-contagious">7. Calm is contagious</h3>
-<p>The line that teams catch a leader&#39;s nervous system more readily than strategy is an interpretive synthesis, but it draws on a real cluster of leadership writing and stress-contagion research. The specific <code>calm is contagious</code> phrasing is common in military and leadership literature, including Navy SEAL-adjacent writing.</p>
-<p>Sources:</p>
-<ul><li><a href="https://www.forbes.com/sites/brentgleeson/2020/03/27/why-calm-is-contagious-in-a-crisis/">Brent Gleeson in Forbes on why calm is contagious in leadership</a></li><li><a href="https://www.ncbi.nlm.nih.gov/books/NBK64041/">Emotional contagion and group behavior overview</a></li></ul>]]></content:encoded>
+<ul><li><a href="https://www.rugbymuseum.co.nz/stories/on-this-day/all-blacks-win-three-out-of-four">The New Zealand Rugby Museum on the All Blacks&#39; long-term performance record</a></li><li><a href="https://www.the42.ie/james-lowe-leinster-red-head-blue-head-3184762-Jan2017/">The 42: James Lowe and the All Blacks&#39; red head / blue head framework</a></li></ul>
+<h3 id="3-stress-judgment-and-emotion-regulation">3. Stress, judgment, and emotion regulation</h3>
+<ul><li><a href="https://medicine.yale.edu/profile/amy-arnsten/">Amy Arnsten, Yale School of Medicine faculty profile</a></li><li><a href="https://medicine.yale.edu/news-article/how-stress-turns-brain-from-dr-jekyll-to-mr-hyde/">Yale Medicine: how stress can turn the brain from Dr. Jekyll to Mr. Hyde</a></li><li><a href="https://books.google.com/books/about/Emotional_Intelligence.html?id=qSJWKdZ8zDkC"><em>Emotional Intelligence</em> by Daniel Goleman</a></li><li><a href="https://books.google.com/books/about/Thinking_Fast_and_Slow.html?id=ZuKTvERuPG8C"><em>Thinking, Fast and Slow</em> by Daniel Kahneman</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3744027/">Antonio Damasio on emotion and decision-making</a></li><li><a href="https://profiles.stanford.edu/james-gross">James Gross, Stanford profile</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4434967/">James Gross, Emotion Regulation: Current Status and Future Prospects</a></li></ul>
+<h3 id="4-psychological-safety-compassion-and-performance">4. Psychological safety, compassion, and performance</h3>
+<ul><li><a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/">Google re:Work guide to understanding team effectiveness</a></li><li><a href="https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams">Amy Edmondson, Psychological Safety and Learning Behavior in Work Teams</a></li><li><a href="https://www.radicalcandor.com/blog/care-personally-challenge-directly/">Kim Scott on care personally, challenge directly</a></li></ul>
+<h3 id="5-regulation-and-calm-under-pressure">5. Regulation and calm under pressure</h3>
+<ul><li><a href="https://www.health.harvard.edu/blog/heart-rate-variability-new-way-track-well-2017112212789">Harvard Health on heart rate variability</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5900369/">A systematic review of heart rate variability in stress and health</a></li><li><a href="https://www.forbes.com/sites/brentgleeson/2020/03/27/why-calm-is-contagious-in-a-crisis/">Brent Gleeson in Forbes on why calm is contagious in leadership</a></li><li><a href="https://www.ncbi.nlm.nih.gov/books/NBK64041/">Emotional contagion and group behavior overview</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>The Greenest Car in India Is the One Already Built</title>
@@ -884,38 +730,12 @@
 <p>It will decarbonize faster by learning how to preserve useful life with much more intelligence and much more trust.</p>
 <p>That is why the greenest car in India is so often the one already built.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
-<p>These notes support the main claims in the essay without breaking the body into a technical memo.</p>
 <h3 id="1-embodied-cost-of-new-vehicles">1. Embodied cost of new vehicles</h3>
-<p>The essay relies on the broader life-cycle point that a meaningful share of a vehicle&#39;s environmental burden is embedded before first use, even if exact values vary across models and methods.</p>
-<p>Sources:</p>
 <ul><li><a href="https://www.iea.org/data-and-statistics/data-tools/ev-life-cycle-assessment-calculator">IEA EV life-cycle assessment tool</a></li><li><a href="https://theicct.org/publications/global-LCA-passenger-cars-jul2021">ICCT global passenger-car life-cycle comparison</a></li></ul>
-<h3 id="2-used-vehicle-resale-and-avoided-emissions-estimates">2. Used-vehicle resale and avoided-emissions estimates</h3>
-<p>The essay uses Cars24 impact work directionally: keeping existing vehicles in circulation longer can avoid a material amount of premature new manufacturing.</p>
-<p>Source:</p>
-<ul><li>Cars24 impact research used directionally in the essay</li></ul>
-<h3 id="3-used-ev-pricing-distortion">3. Used-EV pricing distortion</h3>
-<p>The essay&#39;s claim is directional: Cars24&#39;s public-policy paper <code>Catalysing India&#39;s Used-EV Market</code> argues that battery opacity is creating pricing gaps and depressing confidence in India&#39;s early used-EV market.</p>
-<p>Source:</p>
-<ul><li>Cars24 public-policy paper <code>Catalysing India&#39;s Used-EV Market</code></li></ul>
-<h3 id="4-battery-health-measurement-and-degradation">4. Battery-health measurement and degradation</h3>
-<p>The essay cites:</p>
-<ul><li>NITI Aayog&#39;s EV supply-chain report saying the battery pack can comprise <code>35-40%</code> of total bill of materials in an illustrative four-wheeler EV</li><li>Geotab longitudinal work across <code>22,700</code> EVs and <code>21</code> models showing an average annual degradation rate of <code>2.3%</code></li><li>TÜV SÜD&#39;s explanation that there is still no single standard for determining SoH and that methods are not automatically comparable</li><li>the Principal Scientific Adviser&#39;s BPAN guideline as proof that battery identity infrastructure is already being contemplated publicly</li></ul>
-<p>Sources:</p>
-<ul><li><a href="https://www.geotab.com/blog/ev-battery-health/">Geotab EV battery degradation analysis</a></li><li><a href="https://www.niti.gov.in/sites/default/files/2023-07/Niti-Aayog_Report-VS_compressed_compressed.pdf">NITI Aayog EV supply-chain report</a></li><li><a href="https://www.tuvsud.com/en-gb/e-ssentials-newsletter/automotive-essentials/e-essentials-03-2024/health-status-of-a-battery">TÜV SÜD on battery SoH</a></li><li><a href="https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf">Battery Pack Aadhaar guideline</a></li><li>Cars24 public-policy paper <code>Catalysing India&#39;s Used-EV Market</code></li></ul>
-<h3 id="5-financing-insurance-and-tax-friction">5. Financing, insurance, and tax friction</h3>
-<p>The essay&#39;s financing and policy section is partly sourced and partly interpretive. It draws on public evidence around tighter EV lending terms and on Cars24 policy work around used-EV-specific tax, insurance, and warranty frictions.</p>
-<p>Sources:</p>
-<ul><li><a href="https://www.niti.gov.in/sites/default/files/2023-07/ADB-EV-Financing-Report_VS_compressed.pdf">ADB-NITI Aayog EV financing report</a></li><li>Cars24 public-policy paper <code>Catalysing India&#39;s Used-EV Market</code></li></ul>
-<h3 id="6-public-policy-direction">6. Public-policy direction</h3>
-<p>The essay&#39;s policy framing draws on public policy documents and Cars24 public-policy work around:</p>
-<ul><li>battery certification and recertification</li><li>GST and category incentives</li><li>road-tax and inter-state transfer friction</li><li>international learning from markets such as China and the EU</li><li>Recurrent as a comparable signal</li></ul>
-<p>Sources:</p>
-<ul><li><a href="https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf">Battery Pack Aadhaar guideline</a></li><li>Cars24 public-policy paper <code>Catalysing India&#39;s Used-EV Market</code></li></ul>
-<h3 id="7-what-is-sourced-and-what-is-argued">7. What is sourced and what is argued</h3>
-<p>What is sourced:</p>
-<ul><li>life-cycle literature showing that manufacturing burden matters, not only tailpipe or charging-stage emissions</li><li>avoided-emissions direction from Cars24 impact research</li><li>Geotab&#39;s public battery-degradation benchmark</li><li>the research base around used-EV financing, tax, warranty, and measurement friction</li></ul>
-<p>What is argued:</p>
-<ul><li>that reuse is the fastest realistic climate lever in Indian mobility</li><li>that used-EV weakness is primarily a trust and information problem before it is a marketing problem</li><li>that climate wins in this category depend on standards, portability, and legibility</li></ul>]]></content:encoded>
+<h3 id="2-battery-health-measurement-and-degradation">2. Battery-health measurement and degradation</h3>
+<ul><li><a href="https://www.geotab.com/blog/ev-battery-health/">Geotab EV battery degradation analysis</a></li><li><a href="https://www.niti.gov.in/sites/default/files/2023-07/Niti-Aayog_Report-VS_compressed_compressed.pdf">NITI Aayog EV supply-chain report</a></li><li><a href="https://www.tuvsud.com/en-gb/e-ssentials-newsletter/automotive-essentials/e-essentials-03-2024/health-status-of-a-battery">TUV SUD on battery SoH</a></li><li><a href="https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf">Battery Pack Aadhaar guideline</a></li></ul>
+<h3 id="3-financing-and-policy">3. Financing and policy</h3>
+<ul><li><a href="https://www.niti.gov.in/sites/default/files/2023-07/ADB-EV-Financing-Report_VS_compressed.pdf">ADB-NITI Aayog EV financing report</a></li><li><a href="https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf">Battery Pack Aadhaar guideline</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>The Coming Decade of Car Ownership in India</title>
@@ -985,34 +805,9 @@
 <p>It is less fear.</p>
 <h2 id="notes-and-sources">Notes and Sources</h2>
 <h3 id="1-car-ownership-remains-low-and-first-time-ownership-remains-central">1. Car ownership remains low and first-time ownership remains central</h3>
-<p>The essay&#39;s framing relies on India still being a low-penetration car-ownership market, with a large first-time-buyer base rather than a mature replacement market.</p>
-<p>Sources:</p>
 <ul><li><a href="https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf">Cars24 H2 FY26 report</a></li></ul>
-<h3 id="2-used-car-market-scale-and-direction">2. Used-car market scale and direction</h3>
-<p>The essay uses the public framing in Cars24&#39;s H2 FY26 report, which describes India as roughly a <code>₹4 lakh crore</code> used-car market with low car penetration and a large first-time-buyer opportunity.</p>
-<p>Sources:</p>
-<ul><li><a href="https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf">Cars24 H2 FY26 report</a></li></ul>
-<h3 id="3-rc-transfer-as-category-infrastructure">3. RC transfer as category infrastructure</h3>
-<p>The essay uses RC transfer not as operational detail but as evidence that the health of the used-car market depends on trustworthy transfer rails.</p>
-<p>Sources:</p>
-<ul><li>Cars24 VAHAN-linked transfer analysis used in the essay research</li><li>Cars24 transfer-reform and deemed-ownership materials referenced in the essay research</li><li>public reporting around RC transfer simplification and liability risk</li></ul>
-<h3 id="4-intra-state-transfer-volume">4. Intra-state transfer volume</h3>
-<p>The essay refers to intra-state RC transfer volume moving from roughly <code>2.98M</code> in FY24 to <code>3.54M</code> in FY26, based on Cars24&#39;s VAHAN-linked transfer analysis used in the research for this series.</p>
-<p>Source:</p>
-<ul><li>Cars24 VAHAN-linked transfer analysis used in the research for this series</li></ul>
-<h3 id="5-transfer-completion-friction">5. Transfer completion friction</h3>
-<p>The essay cites Cars24 transfer-reform research indicating that less than <code>70%</code> of RC transfers complete within <code>60 days</code>, with many cases taking far longer.</p>
-<p>Sources:</p>
-<ul><li>Cars24 transfer-reform research materials</li><li>media and policy reporting referenced in the essay research</li></ul>
-<h3 id="6-team-bhp-as-trust-infrastructure">6. Team-BHP as trust infrastructure</h3>
-<p>The essay uses Team-BHP as an example of community-built ownership infrastructure.</p>
-<p>Sources:</p>
-<ul><li><a href="https://www.team-bhp.com/aboutus/overview">Team-BHP Overview</a></li><li><a href="https://www.team-bhp.com/aboutus/history">Team-BHP History</a></li><li><a href="https://www.team-bhp.com/aboutus/philosophy">Team-BHP Philosophy</a></li><li><a href="https://www.team-bhp.com/aboutus/key-features">Team-BHP Key Features</a></li><li><a href="https://www.team-bhp.com/forum/faq.php?faq=troubleshooting">Team-BHP FAQ</a></li><li><a href="https://archive.factordaily.com/team-bhp-profile/">FactorDaily profile on Team-BHP</a></li><li><a href="https://tma-live.s3.ap-south-1.amazonaws.com/media/team-bhp-advertising/media-kit-Team-BHP%20Media%20Deck.pdf">Team-BHP 2024 media kit</a></li></ul>
-<h3 id="7-what-is-argued-and-what-is-sourced">7. What is argued and what is sourced</h3>
-<p>What is sourced:</p>
-<ul><li>India&#39;s still-low ownership penetration</li><li>the public low-penetration and first-time-buyer framing in the H2 FY26 report</li><li>transfer-volume scale</li><li>transfer-friction evidence</li><li>Team-BHP&#39;s public positioning and scale</li></ul>
-<p>What is argued:</p>
-<ul><li>that first-time ownership anxiety is as important as distrust of bad actors</li><li>that ownership services behave like trust deposits</li><li>that India auto will grow by building ownership institutions, not only by increasing transactional throughput</li></ul>]]></content:encoded>
+<h3 id="2-team-bhp-as-trust-infrastructure">2. Team-BHP as trust infrastructure</h3>
+<ul><li><a href="https://www.team-bhp.com/aboutus/overview">Team-BHP Overview</a></li><li><a href="https://www.team-bhp.com/aboutus/history">Team-BHP History</a></li><li><a href="https://www.team-bhp.com/aboutus/philosophy">Team-BHP Philosophy</a></li><li><a href="https://www.team-bhp.com/aboutus/key-features">Team-BHP Key Features</a></li><li><a href="https://www.team-bhp.com/forum/faq.php?faq=troubleshooting">Team-BHP FAQ</a></li><li><a href="https://archive.factordaily.com/team-bhp-profile/">FactorDaily profile on Team-BHP</a></li><li><a href="https://tma-live.s3.ap-south-1.amazonaws.com/media/team-bhp-advertising/media-kit-Team-BHP%20Media%20Deck.pdf">Team-BHP 2024 media kit</a></li></ul>]]></content:encoded>
     </item>
   </channel>
 </rss>

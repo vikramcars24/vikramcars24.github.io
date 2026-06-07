@@ -161,47 +161,8 @@ And the institutions that understand that earliest will not look like old dealer
 
 ## Notes and Sources
 
-### 1. Trust architecture in used vehicles
+### 1. Team-BHP as trust institution
 
-The essay's trust-stack argument is synthetic. It pulls together the public ownership and road-safety sources cited across this series, plus Cars24 category research around:
-- information asymmetry
-- quality consistency
-- pricing opacity
-- RC transfer anxiety
-- lack of recourse
-
-Source:
-- synthesis of the public and company-reported sources cited across this essay series
-
-### 2. RC transfer volume and friction
-
-The essay refers to company research evidence of:
-- intra-state RC transfer volumes moving from roughly `2.98M` in FY24 to `3.54M` in FY26
-- less than `70%` of RC transfers completing within `60 days`
-
-Sources:
-- Cars24 VAHAN-linked transfer analysis referenced in the essay
-- Cars24 transfer-reform and deemed-ownership research referenced in the essay
-
-### 3. Reform stack around transfer and deemed ownership
-
-The essay's transfer-reform framing draws on source-pack materials around:
-- e-KYC
-- digital RC and insurance retrieval
-- digital NOCs
-- any registering authority within a state
-- clearer ADRV workflows
-- Form `29CA` for inter-dealer traceability
-- explicit deemed ownership logic tied to Section `157`
-
-Source:
-- Cars24 transfer-reform and deemed-ownership research referenced in the essay
-
-### 4. Team-BHP as trust institution
-
-The essay uses Team-BHP as an example of community trust becoming part of the category's ownership infrastructure.
-
-Sources:
 - [Team-BHP Overview](https://www.team-bhp.com/aboutus/overview)
 - [Team-BHP History](https://www.team-bhp.com/aboutus/history)
 - [Team-BHP Philosophy](https://www.team-bhp.com/aboutus/philosophy)
@@ -209,22 +170,6 @@ Sources:
 - [Team-BHP FAQ](https://www.team-bhp.com/forum/faq.php?faq=troubleshooting)
 - [FactorDaily profile on Team-BHP](https://archive.factordaily.com/team-bhp-profile/)
 
-### 5. Safety, recourse, and investigative legibility
+### 2. Safety and investigative legibility
 
-The essay includes safety and investigative truth inside the broader trust stack.
-
-Sources:
 - [Crashfree India](https://www.crashfreeindia.org/)
-- Cars24 road-safety and investigative-legibility research used as supporting material
-
-### 6. What is sourced and what is argued
-
-What is sourced:
-- RC transfer scale and friction in the underlying research
-- Team-BHP's public role and positioning
-- the broad transfer-reform stack
-
-What is argued:
-- that the enduring product in mobility is trust rather than the one-time transaction
-- that information, transfer, financing, community memory, and recourse belong to one product logic
-- that India's unfinished ownership infrastructure leaves room for multiple world-scale institutions

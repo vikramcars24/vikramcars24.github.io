@@ -58,64 +58,33 @@ The paranoid survive. The regulated thrive. I am building for both.
 
 ### 1. Andy Grove, paranoia, and strategic inflection points
 
-The opening frame draws on Andy Grove's well-known formulation that "only the paranoid survive," along with his broader argument that strong companies need to recognize and respond to strategic inflection points before those shifts become existential.
-
-Sources:
 - [*Only the Paranoid Survive* by Andy Grove](https://books.google.com/books/about/Only_the_Paranoid_Survive.html?id=7MhoPwAACAAJ)
 - [Intel: Andy Grove at the Stanford Graduate School of Business on strategic inflection points](https://newsroom.intel.com/corporate/andy-grove-stanford-graduate-school-business)
 
 ### 2. The All Blacks and regulation under pressure
 
-The essay uses the New Zealand All Blacks as a high-performance example because their leadership tradition is often described as combining extreme standards with emotional control under pressure. The specific `red head / blue head` framing comes from rugby-performance and leadership writing around the team.
-
-Sources:
 - [The New Zealand Rugby Museum on the All Blacks' long-term performance record](https://www.rugbymuseum.co.nz/stories/on-this-day/all-blacks-win-three-out-of-four)
-- [The 42: James Lowe and the All Blacks' `red head / blue head` framework](https://www.the42.ie/james-lowe-leinster-red-head-blue-head-3184762-Jan2017/)
+- [The 42: James Lowe and the All Blacks' red head / blue head framework](https://www.the42.ie/james-lowe-leinster-red-head-blue-head-3184762-Jan2017/)
 
-### 3. Stress degrades judgment
+### 3. Stress, judgment, and emotion regulation
 
-The section on stress and decision quality draws on Amy Arnsten's work on how even relatively modest uncontrollable stress can impair prefrontal-cortex function, weaken working memory, and shift cognition toward more reflexive responses.
-
-Sources:
 - [Amy Arnsten, Yale School of Medicine faculty profile](https://medicine.yale.edu/profile/amy-arnsten/)
-- [Yale Medicine: how stress can turn the brain from `Dr. Jekyll to Mr. Hyde`](https://medicine.yale.edu/news-article/how-stress-turns-brain-from-dr-jekyll-to-mr-hyde/)
-
-### 4. Emotion and decision-making
-
-Several ideas in the essay sit together here:
-- Daniel Goleman's popularization of the `amygdala hijack`
-- Daniel Kahneman's distinction between fast and slow cognition
-- Antonio Damasio's work showing that the loss of emotion does not produce better decisions, but often worse ones
-- James Gross's research on emotion regulation, especially the difference between suppression and reappraisal
-
-Sources:
+- [Yale Medicine: how stress can turn the brain from Dr. Jekyll to Mr. Hyde](https://medicine.yale.edu/news-article/how-stress-turns-brain-from-dr-jekyll-to-mr-hyde/)
 - [*Emotional Intelligence* by Daniel Goleman](https://books.google.com/books/about/Emotional_Intelligence.html?id=qSJWKdZ8zDkC)
 - [*Thinking, Fast and Slow* by Daniel Kahneman](https://books.google.com/books/about/Thinking_Fast_and_Slow.html?id=ZuKTvERuPG8C)
 - [Antonio Damasio on emotion and decision-making](https://pmc.ncbi.nlm.nih.gov/articles/PMC3744027/)
 - [James Gross, Stanford profile](https://profiles.stanford.edu/james-gross)
-- [James Gross, `Emotion Regulation: Current Status and Future Prospects`](https://pmc.ncbi.nlm.nih.gov/articles/PMC4434967/)
+- [James Gross, Emotion Regulation: Current Status and Future Prospects](https://pmc.ncbi.nlm.nih.gov/articles/PMC4434967/)
 
-### 5. Psychological safety, compassion, and performance
+### 4. Psychological safety, compassion, and performance
 
-The argument that compassion is not a soft alternative to performance, but one condition for sustained high performance, is informed by the convergence between Google's Project Aristotle work, Amy Edmondson's psychological-safety research, and Kim Scott's management language around care and challenge.
-
-Sources:
 - [Google re:Work guide to understanding team effectiveness](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/)
-- [Amy Edmondson, `Psychological Safety and Learning Behavior in Work Teams`](https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams)
-- [Kim Scott on `care personally, challenge directly`](https://www.radicalcandor.com/blog/care-personally-challenge-directly/)
+- [Amy Edmondson, Psychological Safety and Learning Behavior in Work Teams](https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams)
+- [Kim Scott on care personally, challenge directly](https://www.radicalcandor.com/blog/care-personally-challenge-directly/)
 
-### 6. Regulation is trainable
+### 5. Regulation and calm under pressure
 
-The essay treats regulation as trainable rather than fixed. The reference to heart rate variability is intentionally cautious: HRV is useful, but not magical. It is a meaningful physiological signal in many contexts, though interpretation depends on measurement quality and context.
-
-Sources:
 - [Harvard Health on heart rate variability](https://www.health.harvard.edu/blog/heart-rate-variability-new-way-track-well-2017112212789)
 - [A systematic review of heart rate variability in stress and health](https://pmc.ncbi.nlm.nih.gov/articles/PMC5900369/)
-
-### 7. Calm is contagious
-
-The line that teams catch a leader's nervous system more readily than strategy is an interpretive synthesis, but it draws on a real cluster of leadership writing and stress-contagion research. The specific `calm is contagious` phrasing is common in military and leadership literature, including Navy SEAL-adjacent writing.
-
-Sources:
 - [Brent Gleeson in Forbes on why calm is contagious in leadership](https://www.forbes.com/sites/brentgleeson/2020/03/27/why-calm-is-contagious-in-a-crisis/)
 - [Emotional contagion and group behavior overview](https://www.ncbi.nlm.nih.gov/books/NBK64041/)

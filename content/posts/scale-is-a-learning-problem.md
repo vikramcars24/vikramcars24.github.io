@@ -163,53 +163,21 @@ Scale is a learning problem.
 
 ## Notes and Sources
 
-These notes support the conceptual claims in the essay without turning the main piece into an internal research memo.
-
 ### 1. Systems thinking and leverage points
 
-The essay's distinction between visible events and deeper structures draws heavily from Donella Meadows' work, especially the idea that different interventions in a system carry very different leverage.
-
-Sources:
 - Donella H. Meadows, [*Thinking in Systems: A Primer*](https://www.chelseagreen.com/product/thinking-in-systems/)
 - Donella H. Meadows, [*Leverage Points: Places to Intervene in a System*](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/)
 
 ### 2. Learning organizations and mental models
 
-The argument that organizations learn when they surface and revise mental models in public is closely aligned with Peter Senge's framing of the learning organization and the five disciplines.
-
-Sources:
 - Peter M. Senge, [*The Fifth Discipline*](https://books.google.com/books/about/The_Fifth_Discipline.html?id=5Rsrt-2T95YC)
 - Infed summary, [*Peter Senge and the learning organization*](https://infed.org/mobi/peter-senge-and-the-learning-organization/)
 
 ### 3. Organization design as an information problem
 
-The essay's claim that scale depends on how a company sees, moves, and acts on information is grounded in the classic organization-design view that firms are information-processing systems.
-
-Sources:
 - Jay R. Galbraith, [*Organization Design: An Information Processing View*](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
 
 ### 4. Psychological safety and learning speed
 
-The section on fear, defensiveness, and the movement of truth draws on psychological-safety research, especially the idea that teams learn faster when people can surface risk, error, and uncertainty without humiliation.
-
-Sources:
 - Amy C. Edmondson, [*Psychological Safety and Learning Behavior in Work Teams*](https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams)
 - Google re:Work, [*Guide to understanding team effectiveness*](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/)
-
-### 5. What is argued and what is sourced
-
-This essay is partly sourced and partly interpretive.
-
-What is sourced:
-
-- the distinction between events and deeper systemic structures
-- the role of mental models in organizational learning
-- the framing of organizations as information-processing systems
-- the relationship between psychological safety and learning behavior
-
-What is argued:
-
-- that many companies still confuse headcount growth with capability growth
-- that the next durable moat is a faster organizational learning system
-- that founder-led companies stall when the founders remain the entire learning loop
-- that capability scale is becoming more important than headcount scale

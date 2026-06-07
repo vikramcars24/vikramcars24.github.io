@@ -141,47 +141,10 @@ It is less fear.
 
 ### 1. Car ownership remains low and first-time ownership remains central
 
-The essay's framing relies on India still being a low-penetration car-ownership market, with a large first-time-buyer base rather than a mature replacement market.
-
-Sources:
 - [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
 
-### 2. Used-car market scale and direction
+### 2. Team-BHP as trust infrastructure
 
-The essay uses the public framing in Cars24's H2 FY26 report, which describes India as roughly a `₹4 lakh crore` used-car market with low car penetration and a large first-time-buyer opportunity.
-
-Sources:
-- [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
-
-### 3. RC transfer as category infrastructure
-
-The essay uses RC transfer not as operational detail but as evidence that the health of the used-car market depends on trustworthy transfer rails.
-
-Sources:
-- Cars24 VAHAN-linked transfer analysis used in the essay research
-- Cars24 transfer-reform and deemed-ownership materials referenced in the essay research
-- public reporting around RC transfer simplification and liability risk
-
-### 4. Intra-state transfer volume
-
-The essay refers to intra-state RC transfer volume moving from roughly `2.98M` in FY24 to `3.54M` in FY26, based on Cars24's VAHAN-linked transfer analysis used in the research for this series.
-
-Source:
-- Cars24 VAHAN-linked transfer analysis used in the research for this series
-
-### 5. Transfer completion friction
-
-The essay cites Cars24 transfer-reform research indicating that less than `70%` of RC transfers complete within `60 days`, with many cases taking far longer.
-
-Sources:
-- Cars24 transfer-reform research materials
-- media and policy reporting referenced in the essay research
-
-### 6. Team-BHP as trust infrastructure
-
-The essay uses Team-BHP as an example of community-built ownership infrastructure.
-
-Sources:
 - [Team-BHP Overview](https://www.team-bhp.com/aboutus/overview)
 - [Team-BHP History](https://www.team-bhp.com/aboutus/history)
 - [Team-BHP Philosophy](https://www.team-bhp.com/aboutus/philosophy)
@@ -189,17 +152,3 @@ Sources:
 - [Team-BHP FAQ](https://www.team-bhp.com/forum/faq.php?faq=troubleshooting)
 - [FactorDaily profile on Team-BHP](https://archive.factordaily.com/team-bhp-profile/)
 - [Team-BHP 2024 media kit](https://tma-live.s3.ap-south-1.amazonaws.com/media/team-bhp-advertising/media-kit-Team-BHP%20Media%20Deck.pdf)
-
-### 7. What is argued and what is sourced
-
-What is sourced:
-- India's still-low ownership penetration
-- the public low-penetration and first-time-buyer framing in the H2 FY26 report
-- transfer-volume scale
-- transfer-friction evidence
-- Team-BHP's public positioning and scale
-
-What is argued:
-- that first-time ownership anxiety is as important as distrust of bad actors
-- that ownership services behave like trust deposits
-- that India auto will grow by building ownership institutions, not only by increasing transactional throughput

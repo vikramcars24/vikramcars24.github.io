@@ -191,39 +191,7 @@ The only role left that still compounds cleanly when context gets cheaper and re
 
 ## Notes and Sources
 
-These notes support the conceptual claims in the essay without turning the body into an internal memo.
+### 1. Organizations, coordination, and information cost
 
-### 1. The technician anecdote
-
-The opening anecdote comes from direct founder observation and is used here not as sentiment, but as a concrete example of loop-closing behavior.
-
-### 2. Organizations, coordination, and information cost
-
-The essay's argument that older prestige systems were partly built around scarce coordination and expensive context is consistent with organization-design literature that treats companies as information-processing systems.
-
-Sources:
 - Jay R. Galbraith, [*Organization Design: An Information Processing View*](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
 - [The science of organizational design: fit between structure and coordination](https://link.springer.com/article/10.1186/s41469-018-0029-2)
-
-### 3. Builder as a structural rather than motivational category
-
-The essay's use of `builder` is not drawn from a single public source. It is a synthesis of repeated founder doctrine, public writing, and the broader organization-design arguments already developed across this essay series.
-
-### 4. Management versus coordination theater
-
-The distinction made in the essay is interpretive.
-
-What is argued:
-- that management remains essential
-- that much of what acquired prestige in scaling organizations was actually coordination overhead
-- that cheaper context and better systems reduce the relative value of that overhead
-
-### 5. What is sourced and what is argued
-
-What is sourced:
-- organizational-design and information-processing foundations
-
-What is argued:
-- that the prestige hierarchy of modern work is changing
-- that titles should behave as coordinates, not coronations
-- that dignity and authority should move closer to loop-closing work
