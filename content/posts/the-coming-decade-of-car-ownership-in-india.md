@@ -141,9 +141,6 @@ It is less fear.
 
 - [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
 - [Team-BHP Overview](https://www.team-bhp.com/aboutus/overview)
-- [Team-BHP History](https://www.team-bhp.com/aboutus/history)
 - [Team-BHP Philosophy](https://www.team-bhp.com/aboutus/philosophy)
 - [Team-BHP Key Features](https://www.team-bhp.com/aboutus/key-features)
-- [Team-BHP FAQ](https://www.team-bhp.com/forum/faq.php?faq=troubleshooting)
 - [FactorDaily profile on Team-BHP](https://archive.factordaily.com/team-bhp-profile/)
-- [Team-BHP 2024 media kit](https://tma-live.s3.ap-south-1.amazonaws.com/media/team-bhp-advertising/media-kit-Team-BHP%20Media%20Deck.pdf)

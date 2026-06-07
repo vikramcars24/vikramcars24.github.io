@@ -166,7 +166,6 @@ Scale is a learning problem.
 - Donella H. Meadows, [*Thinking in Systems: A Primer*](https://www.chelseagreen.com/product/thinking-in-systems/)
 - Donella H. Meadows, [*Leverage Points: Places to Intervene in a System*](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/)
 - Peter M. Senge, [*The Fifth Discipline*](https://books.google.com/books/about/The_Fifth_Discipline.html?id=5Rsrt-2T95YC)
-- Infed summary, [*Peter Senge and the learning organization*](https://infed.org/mobi/peter-senge-and-the-learning-organization/)
 - Jay R. Galbraith, [*Organization Design: An Information Processing View*](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
 - Amy C. Edmondson, [*Psychological Safety and Learning Behavior in Work Teams*](https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams)
 - Google re:Work, [*Guide to understanding team effectiveness*](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/)
