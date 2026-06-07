@@ -313,13 +313,6 @@ pre code {
   text-decoration: none;
 }
 
-.essay-collection-description {
-  margin: 0;
-  color: color-mix(in srgb, var(--ink) 78%, transparent);
-  font-size: 1rem;
-  line-height: 1.72;
-}
-
 .essay-collection-home + .essay-collection-home {
   padding-top: 2rem;
   border-top: 1px solid var(--line);
@@ -409,14 +402,6 @@ pre code {
   border-top: 1px solid var(--line);
 }
 
-.home-interviews-intro {
-  max-width: 35rem;
-  margin: 0 0 1.6rem;
-  color: color-mix(in srgb, var(--ink) 80%, transparent);
-  font-size: 1rem;
-  line-height: 1.76;
-}
-
 .interview-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -481,14 +466,6 @@ pre code {
   margin-top: 3.4rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--line);
-}
-
-.home-elsewhere-intro {
-  max-width: 35rem;
-  margin: 0 0 1.4rem;
-  color: color-mix(in srgb, var(--ink) 80%, transparent);
-  font-size: 1rem;
-  line-height: 1.76;
 }
 
 .elsewhere-list {

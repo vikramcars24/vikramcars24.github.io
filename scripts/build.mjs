@@ -376,7 +376,6 @@ function renderArchive(site, posts) {
           <section class="archive-hero">
             <p class="eyebrow">Archive</p>
             <h1>Published writing</h1>
-            <p class="intro">Essays on mobility, trust, organization, and how companies learn under pressure.</p>
           </section>
 
           <div class="essay-collections essay-collections-archive">
@@ -723,7 +722,6 @@ function renderEssayCollection(collection, variant, site) {
       <div class="essay-collection-head">
         <p class="essay-collection-meta">${count} essay${count === 1 ? "" : "s"}</p>
         <h2 class="essay-collection-title">${title}</h2>
-        <p class="essay-collection-description">${escapeHtml(collection.description)}</p>
       </div>
       ${rows}
     </section>
@@ -783,7 +781,6 @@ function renderHomeInterviewsSection(sectionTitle, interviews, includeIntro = fa
       <div class="home-section-head">
         <p class="home-label">${escapeHtml(sectionTitle)}</p>
       </div>
-      ${includeIntro ? `<p class="home-interviews-intro">Conversations on company building, leadership, and staying steady while the stakes rise.</p>` : ""}
       <div class="interview-grid">
         ${validInterviews.map((interview) => renderHomeInterviewCard(interview)).join("")}
       </div>
@@ -837,7 +834,6 @@ function renderElsewhereSection(items) {
       <div class="home-section-head">
         <p class="home-label">Elsewhere</p>
       </div>
-      <p class="home-elsewhere-intro">Interviews, essays, and conversations published outside this site that still feel central to the work.</p>
       <div class="elsewhere-list">
         ${validItems.map((item) => renderElsewhereRow(item)).join("")}
       </div>
