@@ -9,6 +9,7 @@ const managedEntries = [
   "index.html",
   "404.html",
   "styles.css",
+  "favicon.svg",
   "rss.xml",
   "sitemap.xml",
   "robots.txt",

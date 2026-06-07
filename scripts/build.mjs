@@ -19,6 +19,7 @@ async function main() {
   await ensureDir(path.join(distDir, "posts"));
 
   await fs.copyFile(path.join(assetsDir, "styles.css"), path.join(distDir, "styles.css"));
+  await fs.copyFile(path.join(assetsDir, "favicon.svg"), path.join(distDir, "favicon.svg"));
   await copyDirectoryIfPresent(mediaDir, path.join(distDir, "media"));
 
   await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts), "utf8");
@@ -481,6 +482,7 @@ function renderDocument({ site, title, description, pathName, imagePath, imageAl
     ${ogImage ? `<meta name="twitter:image" content="${escapeAttribute(ogImage)}">` : ""}
     ${ogImage && imageAlt ? `<meta name="twitter:image:alt" content="${escapeAttribute(imageAlt)}">` : ""}
     <meta name="theme-color" content="#f4ecdf">
+    <link rel="icon" type="image/svg+xml" href="${sitePath(site, "/favicon.svg")}">
     <script>
       (() => {
         const storageKey = "vikram-theme";
