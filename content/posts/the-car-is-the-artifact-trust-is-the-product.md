@@ -161,15 +161,10 @@ And the institutions that understand that earliest will not look like old dealer
 
 ## Notes and Sources
 
-### 1. Team-BHP as trust institution
-
 - [Team-BHP Overview](https://www.team-bhp.com/aboutus/overview)
 - [Team-BHP History](https://www.team-bhp.com/aboutus/history)
 - [Team-BHP Philosophy](https://www.team-bhp.com/aboutus/philosophy)
 - [Team-BHP Key Features](https://www.team-bhp.com/aboutus/key-features)
 - [Team-BHP FAQ](https://www.team-bhp.com/forum/faq.php?faq=troubleshooting)
 - [FactorDaily profile on Team-BHP](https://archive.factordaily.com/team-bhp-profile/)
-
-### 2. Safety and investigative legibility
-
 - [Crashfree India](https://www.crashfreeindia.org/)

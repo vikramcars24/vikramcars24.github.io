@@ -166,14 +166,9 @@ SaaS let India export code. AI may let India export consumer companies built on 
 
 ## Notes and Sources
 
-### 1. SaaS as India's first large global software wedge
-
 - [India SaaS Report 2021 | Bain & Company](https://www.bain.com/insights/india-saas-report-2021/)
 - [India SaaS Report 2022 | Bain & Company](https://www.bain.com/insights/india-saas-report-2022/)
 - [India's SaaS Revolution: Exploring global opportunities in a dynamic market | SaaSBoomi](https://saasboomi.org/reports/indias-saas-revolution-exploring-global-opportunities-in-a-dynamic-market/)
-
-### 2. AI as a context-compression layer
-
 - [Jay R. Galbraith, Organization Design: An Information Processing View](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
 - [Melvin Conway, How Do Committees Invent?](https://www.melconway.com/Home/Committees_Paper.html)
 - [McKinsey: The promise of generative AI for credit customer assistance](https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/the-promise-of-generative-ai-for-credit-customer-assistance)

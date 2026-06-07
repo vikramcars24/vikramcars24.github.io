@@ -190,14 +190,9 @@ Used cars are the affordability bridge. Lending decides how many people actually
 
 ## Notes and Sources
 
-### 1. Financing and market structure
-
 - [Crisil Ratings: Used-car volume to grow 8-10%, over twice as fast as new one](https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html)
 - [2025 Indian Used Car Market Report](https://static-cdn.cars24.com/prod/auto-news24-cms/root/2026/02/25/2b7d5141-a889-432d-b8dd-c83cc2fb8eda-gears-of-growth.pdf)
 - [2024 Indian Used Car Market Report](https://cdn.cars24.com/prod/auto-news24-cms/CARS24-Blog-Images/2025/01/23/c09aec15-acf9-4bc8-9d1f-ec5e3d8241f3-C24-gears-of-growth.pdf)
-
-### 2. Why asset truth matters in used-car lending
-
 - [AI Valuation Explained: Why It Is a Benchmark, Not a Promise](https://www.cars24.com/news/learn-about-cars24/ai-car-valuation-explained/)
 - [300-Point Car Inspection | Quality Checks by Cars24 Owned Stock](https://www.cars24.com/why-cars24/buy-used-cars-quality/)
 - [How Cars24 Ensures Transparency Throughout the Used Car Buying Journey](https://www.cars24.com/article/transparent-used-car-buying-process-at-cars24/)

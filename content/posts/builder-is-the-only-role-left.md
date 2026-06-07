@@ -191,7 +191,5 @@ The only role left that still compounds cleanly when context gets cheaper and re
 
 ## Notes and Sources
 
-### 1. Organizations, coordination, and information cost
-
 - Jay R. Galbraith, [*Organization Design: An Information Processing View*](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
 - [The science of organizational design: fit between structure and coordination](https://link.springer.com/article/10.1186/s41469-018-0029-2)

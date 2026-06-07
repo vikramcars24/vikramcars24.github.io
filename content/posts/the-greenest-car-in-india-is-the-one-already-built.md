@@ -167,19 +167,10 @@ That is why the greenest car in India is so often the one already built.
 
 ## Notes and Sources
 
-### 1. Embodied cost of new vehicles
-
 - [IEA EV life-cycle assessment tool](https://www.iea.org/data-and-statistics/data-tools/ev-life-cycle-assessment-calculator)
 - [ICCT global passenger-car life-cycle comparison](https://theicct.org/publications/global-LCA-passenger-cars-jul2021)
-
-### 2. Battery-health measurement and degradation
-
 - [Geotab EV battery degradation analysis](https://www.geotab.com/blog/ev-battery-health/)
 - [NITI Aayog EV supply-chain report](https://www.niti.gov.in/sites/default/files/2023-07/Niti-Aayog_Report-VS_compressed_compressed.pdf)
 - [TUV SUD on battery SoH](https://www.tuvsud.com/en-gb/e-ssentials-newsletter/automotive-essentials/e-essentials-03-2024/health-status-of-a-battery)
 - [Battery Pack Aadhaar guideline](https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf)
-
-### 3. Financing and policy
-
 - [ADB-NITI Aayog EV financing report](https://www.niti.gov.in/sites/default/files/2023-07/ADB-EV-Financing-Report_VS_compressed.pdf)
-- [Battery Pack Aadhaar guideline](https://www.psa.gov.in/CMS/web/sites/default/files/publication/Battery%20Pack%20Aadhaar%20Guideline.pdf)

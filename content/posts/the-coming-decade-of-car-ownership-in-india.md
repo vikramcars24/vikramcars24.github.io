@@ -139,12 +139,7 @@ It is less fear.
 
 ## Notes and Sources
 
-### 1. Car ownership remains low and first-time ownership remains central
-
 - [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
-
-### 2. Team-BHP as trust infrastructure
-
 - [Team-BHP Overview](https://www.team-bhp.com/aboutus/overview)
 - [Team-BHP History](https://www.team-bhp.com/aboutus/history)
 - [Team-BHP Philosophy](https://www.team-bhp.com/aboutus/philosophy)

@@ -145,12 +145,7 @@ Safer roads do not begin when drivers become perfect. They begin when systems be
 
 ## Notes and Sources
 
-### 1. Official road deaths in India
-
 - Ministry of Road Transport and Highways, [*Road Accidents in India 2023*](https://www.morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf)
-
-### 2. Crashfree India and the people behind it
-
 - [Crashfree India](https://www.crashfreeindia.org/)
 - [Indian Road Safety Campaign](https://irsc-draft.framer.website/)
 - [Amar Srivastava](https://www.linkedin.com/in/amarsrivastava26/)
@@ -158,24 +153,12 @@ Safer roads do not begin when drivers become perfect. They begin when systems be
 - [Gajendra Jangid](https://theorg.com/org/cars24/org-chart/gajendra-jangid)
 - [Gajendra Jangid's LinkedIn post on continuing work on Crashfree India](https://www.linkedin.com/posts/gajendra-jangid-665b3040_eleven-years-ago-four-of-us-started-cars24-activity-7455182772224139264-sswr)
 - [Economic Times report quoting Cars24 on Gajendra Jangid continuing to advise on Crashfree India](https://economictimes.indiatimes.com/tech/technology/cars24-narrows-operating-losses-during-fy26-as-revenue-grows-27-ceo-vikram-chopra/articleshow/130882004.cms)
-
-### 3. Scale of field activity and dangerous infrastructure
-
 - [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
 - [Project Rakshak](https://crashfreeindia.org/our-work/project-rakshak)
-
-### 4. Emergency response and trauma care
-
 - [Pre-hospital care primer](https://www.crashfreeindia.org/documents/pre-hospital-care-primer.pdf)
 - [The Quiet Heroes in Chaos](https://autonauts.cars24.com/blog/quiet-heroes)
-
-### 5. Compensation access and legal awareness
-
 - [*Justice Unserved*](https://www.crashfreeindia.org/documents/justice-unserved-crashfree-india.pdf)
 - [Legal awareness and helpdesks](https://crashfreeindia.org/blog/legal-awareness-helpdesks)
 - [Compensation calculator](https://crashfreeindia.org/compensation-calculator)
 - [Aasha](https://crashfreeindia.org/aasha)
-
-### 6. Civic alliance and public engagement
-
 - [Knowledge hub](https://crashfreeindia.org/knowledge-hub)

@@ -163,21 +163,10 @@ Scale is a learning problem.
 
 ## Notes and Sources
 
-### 1. Systems thinking and leverage points
-
 - Donella H. Meadows, [*Thinking in Systems: A Primer*](https://www.chelseagreen.com/product/thinking-in-systems/)
 - Donella H. Meadows, [*Leverage Points: Places to Intervene in a System*](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/)
-
-### 2. Learning organizations and mental models
-
 - Peter M. Senge, [*The Fifth Discipline*](https://books.google.com/books/about/The_Fifth_Discipline.html?id=5Rsrt-2T95YC)
 - Infed summary, [*Peter Senge and the learning organization*](https://infed.org/mobi/peter-senge-and-the-learning-organization/)
-
-### 3. Organization design as an information problem
-
 - Jay R. Galbraith, [*Organization Design: An Information Processing View*](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
-
-### 4. Psychological safety and learning speed
-
 - Amy C. Edmondson, [*Psychological Safety and Learning Behavior in Work Teams*](https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams)
 - Google re:Work, [*Guide to understanding team effectiveness*](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/)

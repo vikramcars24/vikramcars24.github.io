@@ -113,13 +113,8 @@ That is the difference between AI-first and AI-native. One is adoption. The othe
 
 ## Notes and Sources
 
-### 1. Organizations as information-processing systems
-
 - Jay R. Galbraith, [*Organization Design: An Information Processing View*](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28)
 - Organization design research summary, [*The science of organizational design: fit between structure and coordination*](https://link.springer.com/article/10.1186/s41469-018-0029-2)
-
-### 2. Company shape and communication structure
-
 - Melvin Conway, [*How Do Committees Invent?*](https://www.melconway.com/Home/Committees_Paper.html)
 - Original PDF at Mel Conway's site, [*How Do Committees Invent?*](https://www.melconway.com/Home/pdf/committees.pdf)
 - Alan MacCormack, Carliss Baldwin, and John Rusnak, [*Exploring the duality between product and organizational architectures: A test of the mirroring hypothesis*](https://dash.harvard.edu/entities/publication/73120379-3450-6bd4-e053-0100007fdf3b)
