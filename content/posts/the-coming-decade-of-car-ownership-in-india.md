@@ -139,8 +139,6 @@ It is less fear.
 
 ## Notes and Sources
 
-These notes support the main factual claims in the essay without turning the body into a research memo.
-
 ### 1. Car ownership remains low and first-time ownership remains central
 
 The essay's framing relies on India still being a low-penetration car-ownership market, with a large first-time-buyer base rather than a mature replacement market.

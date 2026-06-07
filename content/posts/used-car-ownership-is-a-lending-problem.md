@@ -190,8 +190,6 @@ Used cars are the affordability bridge. Lending decides how many people actually
 
 ## Notes and Sources
 
-These notes support the main factual claims and clarify which parts of the essay are direct sourcing versus synthesis.
-
 ### 1. Financing and market structure
 
 The essay's market framing draws primarily on:

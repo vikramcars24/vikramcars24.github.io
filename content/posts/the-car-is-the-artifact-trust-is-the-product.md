@@ -161,8 +161,6 @@ And the institutions that understand that earliest will not look like old dealer
 
 ## Notes and Sources
 
-These notes support the main factual claims and conceptual anchors in the essay without breaking the body into a research memo.
-
 ### 1. Trust architecture in used vehicles
 
 The essay's trust-stack argument is synthetic. It pulls together the public ownership and road-safety sources cited across this series, plus Cars24 category research around:

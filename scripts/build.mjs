@@ -698,10 +698,10 @@ function renderEssayCover(post) {
 function renderHomeArchiveRow(post) {
   return `
     <article class="home-archive-row">
-      <div class="home-archive-copy">
-        <h3><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h3>
+      <a class="home-archive-copy" href="${sitePath(post.site, `/posts/${post.slug}/`)}">
+        <h3>${renderDisplayTitle(post.displayTitle)}</h3>
         <p>${escapeHtml(post.description)}</p>
-      </div>
+      </a>
       ${renderEntryVisual(post, "home-archive-visual")}
     </article>
   `;

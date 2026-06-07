@@ -145,8 +145,6 @@ Safer roads do not begin when drivers become perfect. They begin when systems be
 
 ## Notes and Sources
 
-These notes support the main factual claims in the essay without breaking the body into a research memo.
-
 ### 1. Official road deaths in India
 
 The essay cites the official figure of `172,890` road deaths in India in `2023`.
