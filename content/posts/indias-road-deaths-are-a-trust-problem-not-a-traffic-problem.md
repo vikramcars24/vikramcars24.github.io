@@ -47,7 +47,9 @@ It is backed by [Cars24](https://www.cars24.com/), but it is not a business line
 
 Over the last year and a half, that work has given a closer view of the problem than opinion alone ever could. The same pattern keeps appearing: the breakdowns are tightly connected.
 
-By the March to May 2026 quarter alone, Crashfree India was reporting active work across 18 cities, 20-plus partner institutions, 60-plus experts, and more than 10 national media references. Those numbers do not prove the thesis by themselves. They do show that this is no longer a symbolic initiative. It has enough field presence to see how the system actually behaves under pressure.
+This stopped being theory alone a while ago. The closer you get to actual road-safety work, the harder it is to believe that deaths persist only because drivers are careless. What you start seeing instead is a chain of weak trust: weak data, weak prevention, weak response, weak recourse, and weak information.
+
+Cars24's H2 FY26 public update says Crashfree India mapped `120+` high-risk locations across `18` cities with academic partners, pushed `24` sites into approved implementation, and was building compensation and policy work in parallel. Those numbers do not prove the thesis by themselves. They matter because they show the effort is close enough to the field to see where the chain keeps breaking.
 
 ## A system that cannot see clearly
 
@@ -65,17 +67,15 @@ One of the strongest things Crashfree India has done so far is [Project Rakshak]
 
 A blackspot should not have to earn its name through repeated death.
 
-By the end of 2025, Project Rakshak teams had assessed more than 120 high-risk locations across 18 cities, narrowed them to 31 priority sites, and built authority-ready interventions for them, including 11 officially recognized blackspots. The underlying report is careful not to overclaim impact. It presents itself as an early-stage diagnostic and forward-looking document, not a victory lap. That honesty matters.
+By the end of 2025, Project Rakshak teams had assessed more than `120` high-risk locations across `18` cities. Cars24's H2 FY26 public update says `24` of those sites had already been approved for on-ground implementation, with estimated potential to prevent more than `1,000` crashes. The public materials are careful not to overclaim impact. They present the work as early evidence that dangerous roads can become legible to authorities before more death forces attention.
 
-The other thing that matters is traction. By January 2026, Crashfree India said 18 of those locations had already been approved for implementation. By May 2026, that number had risen to 25 approvals out of 31 audited locations, with implementation already started at 7 sites and the next phase being designed to cover 100 locations.
-
-The more interesting part is what follows. The work is no longer just identifying dangerous roads. It is becoming an operating model. The annual plan that followed set targets of more than 100 sites audited, 80-plus approvals, 75-plus implementations, and 12-plus district road safety committee integrations. The ambition is shifting from campaigns and pilots to repeatable administrative machinery.
+The more interesting part is what follows. The work is no longer just identifying dangerous roads. It is turning local evidence into administrative action.
 
 Those numbers matter less as proof of scale than as proof of method. Road safety improves when dangerous infrastructure becomes visible early, when local evidence is legible enough for authorities to act on, and when diagnosis does not stop at outrage.
 
 The Rakshak report makes another important point. Crash data on these high-risk sites is almost certainly undercounted. FIR-linked records show only part of the picture. Non-fatal crashes often disappear entirely from formal memory. That is exactly what a trust problem looks like. The road is telling one story. The file is telling another.
 
-And when the work does break into the file, you can see the leverage it creates. Minutes from a March 17, 2026 district road safety committee meeting in Guntur show hospitals, engineers, NHAI, and administrators being directed to use iRAD and eDAR in real time, review high-risk locations, and prepare for trauma-care readiness. The same minutes formally brought a Crashfree-linked junction case study into the district process. This is not a solved system. It is a real example of dangerous places becoming institutionally legible before more death forces attention.
+And when the work does break into the file, you can see the leverage it creates. District road-safety committee minutes reviewed for this essay from Guntur on March 17, 2026, show hospitals, engineers, NHAI, and administrators being directed to use iRAD and eDAR in real time, review high-risk locations, and prepare for trauma-care readiness. The same minutes formally brought a Crashfree-linked junction case study into the district process. This is not a solved system. It is a real example of dangerous places becoming institutionally legible before more death forces attention.
 
 ## After the crash, opacity keeps killing
 
@@ -89,17 +89,19 @@ Helping a victim should not require private courage and improvisation every sing
 
 You see it again in trauma care. India now has ERSS-112 nationwide. GPS-enabled dispatch exists. The architecture exists on paper. But as Crashfree India's [pre-hospital care primer](https://www.crashfreeindia.org/documents/pre-hospital-care-primer.pdf) argues, implementation quality still varies sharply across states, and the system is not yet optimized for citizen outcomes.
 
-The visit to AIIMS Trauma Centre makes that abstraction concrete. AIIMS reportedly sees roughly 125 to 175 trauma patients a day, or more than 70,000 cases a year, according to Crashfree's [The Quiet Heroes in Chaos](https://autonauts.cars24.com/blog/quiet-heroes). And yet one of the clearest lessons from that visit was that many serious road-crash victims still arrive without meaningful pre-hospital intervention. Everyday people, often rickshawalas, end up acting as de facto first responders without training or equipment. Even at a leading trauma centre, the burden on pre-arrival coordination is strikingly thin.
+The visit to AIIMS Trauma Centre makes that abstraction concrete. According to Crashfree's published account, AIIMS sees roughly 125 to 175 trauma patients a day, or more than 70,000 cases a year. And yet one of the clearest lessons from that visit was that many serious road-crash victims still arrive without meaningful pre-hospital intervention. Everyday people, often rickshawalas, end up acting as de facto first responders without training or equipment. Even at a leading trauma centre, the burden on pre-arrival coordination is strikingly thin.
 
-The same is true of compensation, where the law exists but access is broken. Crashfree India's compensation research may be the sharpest proof of this. Across the readable versions of its [Justice Unserved brief](https://www.crashfreeindia.org/documents/justice-unserved-crashfree-india.pdf), the exact numerator shifts by year and data cut, but the conclusion does not: only a tiny fraction of eligible crashes ever turn into formal compensation claims. India does not mainly have a compensation-law problem. It has a compensation-access problem.
+This is also why proposals like PM RAHAT matter. The strongest version of the idea is not compensation after the fact, but treatment certainty in the minutes after impact. Its implementation logic is simple and important: hospital readiness, police-hospital coordination, reliable fund flow, and as close to zero out-of-pocket burden as possible for eligible victims. That is what it looks like when road safety is treated as response infrastructure rather than only as legal design. A crash should not become fatal because the post-crash chain is confused about who pays, who admits, who calls, or who moves first.
 
-Crashfree's internal planning materials make the institutional scale of that failure even starker. One deck cites 70% of low-income families as unaware that compensation exists, puts hit-and-run compensation access below 5%, and notes roughly 11 lakh claims pending in MACT courts, with nearly 986 crore rupees sitting in MACT-linked bank accounts in just five states even after settlement. Whether one uses the public brief or the internal planning cut, the conclusion remains the same: the system is legally present and operationally absent.
+The same is true of compensation, where the law exists but access is broken. Crashfree India's compensation research may be the sharpest proof of this. Its public [Justice Unserved brief](https://www.crashfreeindia.org/documents/justice-unserved-crashfree-india.pdf) says that in FY2022-23 only `205` hit-and-run claims were filed, and in 2023-24 the number rose to `3,000`, still only about `12%` of India's average yearly hit-and-run crashes. The same brief reports that `70%` of surveyed low-income households were unaware of compensation clauses and schemes after a road crash. India does not mainly have a compensation-law problem. It has a compensation-access problem.
 
-The information gap is not theoretical. Crashfree India's [legal-awareness and helpdesk work](https://crashfreeindia.org/blog/legal-awareness-helpdesks) found that many families do not even know that a MACT claim has to be filed within six months. In practice, one of the biggest unlocks is often not a new law but a 90-minute awareness session and a printed checklist. At Sharda Hospital and AIIMS Trauma Centre, their street plays and legal helpdesks reportedly drew more than 500 spectators and over 100 victims or families queued for guidance. That is what opacity looks like in real life: people do not just need money, they need translation.
+The brief also shows how procedural friction destroys access even when entitlement exists. Of `1,026` pending hit-and-run claims cited in the report, `921` were stalled by documentary deficiencies. It also points to major pools of unclaimed funds sitting in MACTs and to large variation in e-DAR execution across states. The system is legally present and operationally fragile.
+
+The information gap is not theoretical. Crashfree India's [legal-awareness and helpdesk work](https://crashfreeindia.org/blog/legal-awareness-helpdesks) found that many families do not even know that a MACT claim has to be filed within six months. In practice, one of the biggest unlocks is often not a new law but a 90-minute awareness session and a printed checklist. That is what opacity looks like in real life: people do not just need money, they need translation.
 
 That is the difference between policy and trust. Policy says a victim can claim. Trust means the victim knows it, believes it, can prove it, and can survive the process long enough to receive it.
 
-Crashfree India's work is useful here as evidence, not branding. By early 2026, the compensation effort had already involved more than 50 stakeholder consultations across judges, lawyers, insurers, legal-aid bodies, police, and administrators, along with 30-plus detailed victim accounts and more than 20 RTIs. It had produced public tools like the [compensation calculator](https://crashfreeindia.org/compensation-calculator) and [Aasha](https://crashfreeindia.org/aasha). It had helped more than 100 victims or family members through legal desks, many of whom reportedly had almost no awareness of FIR requirements, legal-aid pathways, or even where a claim begins. It had begun setting up institutional partnerships with Gurugram Police and legal-aid groups to build proactive victim-support helpdesks. By May 2026, the work had moved further: recommendations had been presented to MoRTH, partnerships were active with district road safety committees and police in places like Jaipur and Gurugram, and the tools were being pushed toward real district use.
+Crashfree India's work is useful here as evidence, not branding. Cars24's H2 FY26 public update says the compensation effort is now working through a Gurugram Police partnership for proactive victim outreach, an AI chatbot for the claims process, a [compensation calculator](https://crashfreeindia.org/compensation-calculator) benchmarked against legal precedent, and collaboration with MoRTH on a national compensation portal. It is evidence that somebody is finally treating navigation as part of justice.
 
 The point is not that the problem is solved. It is that the problem starts becoming solvable only when somebody treats the invisible part of the crash as seriously as the visible one.
 
@@ -111,23 +113,23 @@ India still treats many road deaths as if they are the natural tax of growth. A 
 
 This is why I keep returning to a line that surfaced often in the Crashfree India work: information is infrastructure. If crash data is weak, safety design is weak. If hazardous locations are invisible, prevention is weak. If the compensation system is illegible, justice is weak. If a bystander is confused about what helping will cost them, emergency response is weak. If five institutions own one slice each, the citizen still experiences one broken system.
 
+Even investigative clarity is part of that same chain. The logic behind tools like Cars24's Verify is not that dashboards save lives on their own. It is that legible ownership trails, transfer status, document history, and a usable timeline make enforcement and investigation more truthful after harm. When police and other institutions can see the same record of a vehicle's status, accountability gets harder to evade. Information systems do not replace safer roads. But they do make the road-safety system more capable of responding honestly once something has gone wrong.
+
 That last point matters more than it sounds.
 
 Road safety in India is split across transport departments, police, hospitals, local governments, courts, insurers, ministries, and private actors. Each can point to its part and still leave the person on the road inside a failure that nobody owns end to end. This is why India produces so much sincere activity in road safety without enough visible outcome. Everyone owns a fragment. Too few own the chain.
 
-That is also why road safety cannot remain a CSR sidecar or an annual awareness week. Any company that benefits from mobility at scale inherits some responsibility for making the system more legible, more responsive, or less lethal. Safety is not adjacent to the category. It is part of the category substrate.
+A mobility company that wants the upside of the category cannot keep treating the downside as somebody else's ministry.
 
-Crashfree India has made progress precisely where it has worked against that fragmentation.
+That is also why road safety cannot remain a CSR sidecar or an annual awareness week. Crashfree India is useful precisely because it treats safety as category practice rather than symbolic concern. Any company that benefits from mobility at scale inherits some responsibility for making the system more legible, more responsive, or less lethal. Safety is not adjacent to the category. It is part of the category substrate.
 
-By January 2026, it had already built a civic alliance of 13 organizations across 10 states and reported direct engagement with more than 120,000 people through collective actions. It had also begun building a road-safety dialogue series, a [knowledge hub](https://crashfreeindia.org/knowledge-hub), community risk-reporting systems, and research briefs intended to make road safety more legible to citizens, practitioners, and policymakers alike. The 2025 impact report framed this correctly: these are not stand-alone projects. They are components of a larger information and accountability layer.
+Crashfree India has made the most progress where it has worked against that fragmentation. It has built public tools, a [knowledge hub](https://crashfreeindia.org/knowledge-hub), district partnerships, and research that tries to make the invisible parts of road safety legible. That is the right instinct. Road safety gets easier to improve when the chain becomes easier to see.
 
 Even the early first-responder and public-awareness work reflected that instinct. Check-Call-Care guides. First-responder training. Good Samaritan explainers. These may look small next to infrastructure or compensation reform, but they solve a real trust problem: crowds are often compassionate, but uncertain. In the first minutes after a crash, uncertainty kills.
 
 None of this means Crashfree India has cracked the problem. It has not.
 
-And to its credit, some of its own internal updates say that plainly. One January 2026 note admitted that technology, despite being a long-term scale lever, had not moved as fast or as effectively as the team wanted. That kind of self-accountability matters. A road-safety effort that cannot see its own gaps will not be very good at seeing a country's.
-
-But progress does not need to be perfect to be meaningful. By June 6, 2026, Crashfree India had at least shown the outline of a different model: find dangerous infrastructure before it accumulates more death, treat compensation as a justice system rather than a legal footnote, build public tools instead of only reports, and use research to change institutions rather than decorate them.
+But progress does not need to be perfect to be meaningful. By mid-2026, Crashfree India had at least shown the outline of a different model: find dangerous infrastructure before it accumulates more death, treat compensation as a justice system rather than a legal footnote, build public tools instead of only reports, and use research to change institutions rather than decorate them.
 
 India's road deaths are not only a traffic problem. They are a trust problem because the system around the crash remains too opaque, too fragmented, and too unreliable to stop error from becoming fatal as often as it does.
 
@@ -167,34 +169,30 @@ Sources:
 
 ### 3. Scale of field activity
 
-The essay refers to Crashfree India's reported work across `18` cities, `20+` partner institutions, `60+` experts, and `10+` national media references by the March-May `2026` period.
+The essay refers to publicly reported Crashfree India activity in Cars24's H2 FY26 update, including work across `18` cities and multi-track infrastructure and compensation efforts.
 
 Source:
-- Crashfree India reporting and operating updates, `Q1 2026`
+- [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
 
 ### 4. Project Rakshak and dangerous infrastructure
 
 The essay refers to [Project Rakshak](https://crashfreeindia.org/our-work/project-rakshak) and cites the following underlying numbers:
 - `120+` high-risk locations assessed
-- `31` priority sites
-- `11` officially recognized blackspots
-- `18` sites approved by January `2026`
-- `25 of 31` sites approved by May `2026`
-- implementation underway at `7` sites
+- `18` cities
+- `24` sites approved for implementation
+- `1,000+` crashes potentially preventable according to the public update
 
 Sources:
 - [Project Rakshak](https://crashfreeindia.org/our-work/project-rakshak)
-- Project Rakshak consolidated report
-- Project Rakshak forum materials
-- Crashfree India reporting and operating updates, `Q1 2026`
+- [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
 
 ### 5. Data quality, iRAD, and eDAR
 
-The argument about fragmented road-death counts and the limits of digitization draws on the broader gap between transport, police, and public-health views of mortality, along with district-level implementation material related to iRAD and eDAR.
+The argument about fragmented road-death counts and the limits of digitization draws on the broader gap between transport, police, and public-health views of mortality, along with district-level implementation material reviewed for this essay related to iRAD and eDAR.
 
 Sources:
 - Ministry of Road Transport and Highways, [*Road Accidents in India 2023*](https://www.morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf)
-- District road safety committee minutes, Guntur, March `17`, `2026`
+- District road safety committee minutes reviewed for this essay, Guntur, March `17`, `2026`
 
 ### 6. Emergency response and trauma care
 
@@ -204,7 +202,12 @@ Sources:
 - [Pre-hospital care primer](https://www.crashfreeindia.org/documents/pre-hospital-care-primer.pdf)
 - [The Quiet Heroes in Chaos](https://autonauts.cars24.com/blog/quiet-heroes)
 
-The reference to `Check. Call. Care.` comes from Crashfree India's first-responder material.
+The reference to `Check. Call. Care.` comes from Crashfree India's first-responder field material reviewed for this essay.
+
+The essay's discussion of PM RAHAT as a proposed post-crash response infrastructure model draws from:
+
+Source:
+- Crashfree India `Concept Note PM Rahat` reviewed for this essay
 
 ### 7. Compensation access and legal awareness
 
@@ -216,37 +219,41 @@ Sources:
 - [Compensation calculator](https://crashfreeindia.org/compensation-calculator)
 - [Aasha](https://crashfreeindia.org/aasha)
 
-### 8. Additional compensation metrics
+### 8. Public compensation metrics used in the essay
 
-The essay includes several additional compensation-system metrics:
-- `70%` of low-income families unaware compensation exists
-- `<5%` hit-and-run compensation access
-- roughly `11 lakh` MACT cases pending
-- roughly `986 crore` in MACT-linked bank accounts across five states
+The essay uses public `Justice Unserved` figures including:
+- `205` hit-and-run claims filed in FY `2022-23`
+- `3,000` claims filed in FY `2023-24`, still only about `12%` of average yearly hit-and-run crashes
+- `70%` of surveyed low-income households unaware of compensation clauses and schemes
+- `1,026` pending hit-and-run claims cited in the brief, of which `921` were stalled by documentary deficiencies
+- public examples of substantial unclaimed MACT funds and state-by-state variation in execution
 
 Source:
-- Crashfree India compensation planning materials
+- [*Justice Unserved*](https://www.crashfreeindia.org/documents/justice-unserved-crashfree-india.pdf)
 
 ### 9. Compensation fieldwork and institutional outreach
 
-The essay refers to:
-- `50+` stakeholder consultations
-- `30+` detailed victim accounts
-- `20+` RTIs
-- `100+` victims or family members helped through legal desks
-- partnerships with police, district road safety committees, and legal-aid groups through May `2026`
+The essay refers to Crashfree India's public compensation tools and to the H2 FY26 public update describing:
+- a Gurugram Police partnership for proactive victim outreach
+- an AI chatbot for claims
+- a compensation calculator benchmarked against legal precedent
+- collaboration with MoRTH on a national compensation portal
 
 Sources:
-- Crashfree India compensation planning and operating materials
-- Crashfree India reporting and operating updates, `Q1 2026`
+- [Cars24 H2 FY26 report](https://fastly-production.24c.in/cars24/docs/finance/DOC_H2_report_1778144998.pdf)
+- [Legal awareness and helpdesks](https://crashfreeindia.org/blog/legal-awareness-helpdesks)
 
 ### 10. Civic alliance, knowledge systems, and public engagement
 
-The essay refers to:
-- a civic alliance of `13` organizations across `10` states
-- `120,000+` direct engagements through collective activities
-- a knowledge hub and broader public-information work
+The essay refers to a knowledge hub and broader public-information work as part of Crashfree India's effort to make road safety more legible to citizens and institutions.
 
 Sources:
-- Crashfree India `2025` impact report
 - [Knowledge hub](https://crashfreeindia.org/knowledge-hub)
+
+### 11. Information legibility and investigative traceability
+
+The essay's reference to Cars24's `Verify` tool uses it as supporting evidence for the argument that information infrastructure is part of road-safety capacity after harm. The relevant materials reviewed for this essay show ownership details, document status, transfer history, and training use with law-enforcement personnel.
+
+Sources:
+- Cars24 Verify screenshots and training materials reviewed for this essay
+- Crashfree India / Cars24 public-policy operating materials reviewed for this essay, June `2026`

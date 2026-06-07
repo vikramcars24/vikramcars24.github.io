@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1003" height="1568" viewBox="0 0 1003 1568" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1003" y2="1568">
+      <stop offset="0%" stop-color="#F7F4FF"/>
+      <stop offset="42%" stop-color="#EFEAFF"/>
+      <stop offset="100%" stop-color="#E7E1FF"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.24 125.44) rotate(40) scale(451.35 815.36)">
+      <stop offset="0%" stop-color="#4736FE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4736FE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(842.52 972.16) rotate(210) scale(280.84000000000003 595.84)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1003" height="1568" fill="url(#bgGradient)"/>
+  <rect width="1003" height="1568" fill="url(#violetGlow)" opacity="0.04"/>
+  <ellipse cx="782.34" cy="439.04" rx="220.66" ry="344.96" fill="rgba(71,54,254,0.05)"/>
+  <ellipse cx="180.54" cy="1285.76" rx="180.54" ry="282.24" fill="rgba(239,69,35,0.035)"/>
+  <g><line x1="50.150000000000006" y1="156.8" x2="50.150000000000006" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="140.42000000000002" y1="156.8" x2="140.42000000000002" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="230.69000000000003" y1="156.8" x2="230.69000000000003" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="320.96000000000004" y1="156.8" x2="320.96000000000004" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="411.23" y1="156.8" x2="411.23" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="501.5" y1="156.8" x2="501.5" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="591.7700000000001" y1="156.8" x2="591.7700000000001" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="682.0400000000001" y1="156.8" x2="682.0400000000001" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="772.3100000000001" y1="156.8" x2="772.3100000000001" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="862.58" y1="156.8" x2="862.58" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="952.85" y1="156.8" x2="952.85" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="156.8" x2="952.8499999999999" y2="156.8" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="336" x2="952.8499999999999" y2="336" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="515.2" x2="952.8499999999999" y2="515.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="694.4000000000001" x2="952.8499999999999" y2="694.4000000000001" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="873.6000000000001" x2="952.8499999999999" y2="873.6000000000001" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="1052.8" x2="952.8499999999999" y2="1052.8" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="1232" x2="952.8499999999999" y2="1232" stroke="rgba(71,54,254,0.05)" stroke-width="1"/>
+<line x1="50.150000000000006" y1="1411.2" x2="952.8499999999999" y2="1411.2" stroke="rgba(71,54,254,0.05)" stroke-width="1"/></g>
+  <rect x="72.216" y="133.28" width="110.33" height="14.111999999999998" rx="3.136" fill="rgba(71,54,254,0.9)"/>
+  <rect x="842.52" y="1387.68" width="80.24" height="14.111999999999998" rx="3.136" fill="rgba(239,69,35,0.82)"/>
+  
+  
+  <g>
+    <rect x="80.24" y="658.56" width="842.52" height="595.84" rx="24" fill="rgba(255,255,255,0.26)" stroke="rgba(71,54,254,0.08)" stroke-width="1.0030000000000001"/>
+    <ellipse cx="771.1064" cy="765.8112" rx="134.8032" ry="107.2512" fill="rgba(71,54,254,0.05)"/>
+    <circle cx="97.09039999999999" cy="670.4767999999999" r="2.4" fill="rgba(239,69,35,0.24)"/>
+<circle cx="231.8936" cy="670.4767999999999" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="366.6968" cy="670.4767999999999" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="501.5" cy="670.4767999999999" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="636.3032000000001" cy="670.4767999999999" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="771.1064" cy="670.4767999999999" r="2.4" fill="rgba(239,69,35,0.24)"/>
+<circle cx="97.09039999999999" cy="849.2288" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="231.8936" cy="849.2288" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="366.6968" cy="849.2288" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="501.5" cy="849.2288" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="636.3032000000001" cy="849.2288" r="2.4" fill="rgba(239,69,35,0.24)"/>
+<circle cx="771.1064" cy="849.2288" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="97.09039999999999" cy="1027.9808" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="231.8936" cy="1027.9808" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="366.6968" cy="1027.9808" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="501.5" cy="1027.9808" r="2.4" fill="rgba(239,69,35,0.24)"/>
+<circle cx="636.3032000000001" cy="1027.9808" r="2.4" fill="rgba(71,54,254,0.14)"/>
+<circle cx="771.1064" cy="1027.9808" r="2.4" fill="rgba(71,54,254,0.14)"/>
+    
+      <rect x="147.64159999999998" y="706.2271999999999" width="488.66159999999996" height="71.5008" rx="14"
+            fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.16)" stroke-width="1.2"/>
+      <rect x="181.3424" y="721.957376" width="107.505552" height="10.010112000000001" rx="2.860032" fill="rgba(71,54,254,0.14)"/>
+      <rect x="181.3424" y="741.9775999999999" width="205.23787199999998" height="7.15008" rx="2.860032" fill="rgba(22,22,22,0.08)"/>
+      <circle cx="787.9567999999999" cy="741.9775999999999" r="8" fill="rgba(71,54,254,0.88)"/>
+    
+
+      <rect x="147.64159999999998" y="822.4159999999999" width="589.7639999999999" height="71.5008" rx="14"
+            fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.16)" stroke-width="1.2"/>
+      <rect x="181.3424" y="838.146176" width="129.74808" height="10.010112000000001" rx="2.860032" fill="rgba(71,54,254,0.14)"/>
+      <rect x="181.3424" y="858.1664" width="247.70087999999996" height="7.15008" rx="2.860032" fill="rgba(22,22,22,0.08)"/>
+      <circle cx="787.9567999999999" cy="858.1664" r="8" fill="rgba(239,69,35,0.88)"/>
+    
+
+      <rect x="147.64159999999998" y="938.6048" width="488.66159999999996" height="71.5008" rx="14"
+            fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.16)" stroke-width="1.2"/>
+      <rect x="181.3424" y="954.334976" width="107.505552" height="10.010112000000001" rx="2.860032" fill="rgba(71,54,254,0.14)"/>
+      <rect x="181.3424" y="974.3552" width="205.23787199999998" height="7.15008" rx="2.860032" fill="rgba(22,22,22,0.08)"/>
+      <circle cx="787.9567999999999" cy="974.3552" r="8" fill="rgba(71,54,254,0.88)"/>
+    
+
+      <rect x="147.64159999999998" y="1054.7936" width="589.7639999999999" height="71.5008" rx="14"
+            fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.16)" stroke-width="1.2"/>
+      <rect x="181.3424" y="1070.523776" width="129.74808" height="10.010112000000001" rx="2.860032" fill="rgba(71,54,254,0.14)"/>
+      <rect x="181.3424" y="1090.5439999999999" width="247.70087999999996" height="7.15008" rx="2.860032" fill="rgba(22,22,22,0.08)"/>
+      <circle cx="787.9567999999999" cy="1090.5439999999999" r="8" fill="rgba(239,69,35,0.88)"/>
+    
+    <path d="M 787.9567999999999 741.9775999999999 C 855.3584 741.9775999999999, 855.3584 858.1664, 787.9567999999999 858.1664" stroke="rgba(71,54,254,0.26)" stroke-width="2" fill="none" stroke-dasharray="6 8"/>
+<path d="M 787.9567999999999 858.1664 C 855.3584 858.1664, 855.3584 974.3552, 787.9567999999999 974.3552" stroke="rgba(71,54,254,0.26)" stroke-width="2" fill="none" stroke-dasharray="6 8"/>
+<path d="M 787.9567999999999 974.3552 C 855.3584 974.3552, 855.3584 1090.5439999999999, 787.9567999999999 1090.5439999999999" stroke="rgba(71,54,254,0.26)" stroke-width="2" fill="none" stroke-dasharray="6 8"/>
+  </g>
+  
+  <g>
+    <text x="80.24" y="156.8" fill="rgba(71,54,254,0.72)" font-size="20.58156" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">ORG DESIGN / AI</text>
+    <text x="80.24" y="250.88" fill="#4736FE" font-size="100.30000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">The coming</text>
+<text x="80.24" y="388.864" fill="#4736FE" font-size="100.30000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">decade of car</text>
+<text x="80.24" y="526.848" fill="#4736FE" font-size="100.30000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.05em">ownership in India.</text>
+    <text x="80.24" y="706.2271999999999" fill="#4736FE" opacity="0.96" font-size="38.114" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Pre-owned. Transfer-heavy. Trust-led.</text>
+    <text x="80.24" y="815.9871999999999" fill="#161616" opacity="0.76" font-size="25.075000000000003" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="80.24" dy="0">The market grows when ownership feels survivable, then normal.</tspan>
+    </text>
+  </g>
+</svg>

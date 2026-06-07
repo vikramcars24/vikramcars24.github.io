@@ -65,6 +65,8 @@ In the AI-native company, the state of the business is more continuously availab
 
 A surprising number of recurring rituals turn out to be design debt once shared context becomes cheap. Status meetings, chase emails, escalation decks, and permission loops were often compensating for the same thing: too few people being able to see enough of the system to act.
 
+Once shared context becomes cheap, meetings should default to decision, not narration.
+
 That sounds like an efficiency improvement. It is not. It is a different operating system.
 
 A company that can make in two days the decision it used to make in two weeks does not remain the same company with better tooling. It becomes a different species. It gets more learning cycles per quarter. It corrects faster. It compounds faster. Time starts behaving differently inside the business.
@@ -145,8 +147,6 @@ The claim of the essay is that once AI can absorb more of that work, the relevan
 The essay separates management from the coordination theater that often accumulates around it. That distinction is interpretive, but it is grounded in the same organizational-design literature above: information-processing load, coordination cost, and decision latency are not the same thing as judgment, hiring, standards, conflict resolution, or trust.
 
 ### 6. What is sourced and what is argued
-
-This essay contains relatively few empirical claims that require heavy citation. Most of it is an argument about organizational design under new technical conditions.
 
 What is sourced:
 - the idea that organization design has long been studied as an information-processing problem

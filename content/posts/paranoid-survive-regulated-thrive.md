@@ -56,8 +56,6 @@ The paranoid survive. The regulated thrive. I am building for both.
 
 ## Notes and Sources
 
-This is a more conceptual essay than the road-safety piece, so the notes are organized around the main ideas and source threads rather than every sentence.
-
 ### 1. Andy Grove, paranoia, and strategic inflection points
 
 The opening frame draws on Andy Grove's well-known formulation that "only the paranoid survive," along with his broader argument that strong companies need to recognize and respond to strategic inflection points before those shifts become existential.

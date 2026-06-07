@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1003" height="1568" viewBox="0 0 1003 1568" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1003" y2="1568">
+      <stop offset="0%" stop-color="#F6F2FF"/>
+      <stop offset="42%" stop-color="#EEE9FF"/>
+      <stop offset="100%" stop-color="#E7E2FF"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.24 125.44) rotate(40) scale(451.35 815.36)">
+      <stop offset="0%" stop-color="#4736FE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4736FE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(842.52 972.16) rotate(210) scale(280.84000000000003 595.84)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1003" height="1568" fill="url(#bgGradient)"/>
+  <rect width="1003" height="1568" fill="url(#violetGlow)" opacity="0.08"/>
+  <rect x="70.21000000000001" y="125.44" width="130.39000000000001" height="15.68" rx="3.136" fill="rgba(239,69,35,0.9)"/>
+  <rect x="792.37" y="1411.2" width="120.36" height="15.68" rx="3.136" fill="rgba(71,54,254,0.8)"/>
+  
+  
+  <g>
+    <ellipse cx="703.7048" cy="758.912" rx="134.8032" ry="118.54079999999999" fill="rgba(71,54,254,0.05)"/>
+    <ellipse cx="248.74400000000003" cy="1206.7328" rx="117.95280000000001" ry="92.1984" fill="rgba(239,69,35,0.04)"/>
+    
+      <rect x="130.7912" y="1127.7056" width="657.1656" height="65.856"
+            rx="16"
+            fill="rgba(255,255,255,0.42)"
+            stroke="rgba(71,54,254,0.12)"
+            stroke-width="1.0030000000000001"/>
+    
+
+      <rect x="181.3424" y="1035.5072" width="556.0632" height="59.270399999999995"
+            rx="16"
+            fill="rgba(255,255,255,0.58)"
+            stroke="rgba(71,54,254,0.12)"
+            stroke-width="1.0030000000000001"/>
+    
+
+      <rect x="231.8936" y="956.48" width="454.9608" height="55.9776"
+            rx="16"
+            fill="rgba(255,255,255,0.74)"
+            stroke="rgba(71,54,254,0.12)"
+            stroke-width="1.0030000000000001"/>
+    
+
+      <rect x="290.87" y="884.0384" width="353.85839999999996" height="52.684799999999996"
+            rx="16"
+            fill="rgba(255,255,255,0.9)"
+            stroke="rgba(71,54,254,0.12)"
+            stroke-width="1.0030000000000001"/>
+    
+    
+      <path d="M 299.2952 1154.048 C 400.3976 1154.048, 422.83736 1003.56704, 464.96335999999997 1003.56704"
+            stroke="rgba(71,54,254,0.28)"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"/>
+    
+
+      <path d="M 341.4212 1068.4352 C 442.5236 1068.4352, 462.68024 967.34624, 504.80624 967.34624"
+            stroke="rgba(239,69,35,0.34)"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"/>
+    
+
+      <path d="M 383.5472 989.4080000000001 C 484.64959999999996 989.4080000000001, 491.65688 931.12544, 533.78288 931.12544"
+            stroke="rgba(71,54,254,0.28)"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"/>
+    
+    
+    <g>
+      <rect x="181.3424" y="1147.4624" width="117.95280000000001" height="39.5136" rx="15.805439999999999" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.12)" stroke-width="1"/>
+      <rect x="193.13768" y="1156.155392" width="28.308672" height="7.112447999999999" rx="3.5562239999999994" fill="rgba(71,54,254,0.12)"/>
+      <rect x="193.13768" y="1168.009472" width="58.976400000000005" height="4.741631999999999" rx="2.765952" fill="rgba(22,22,22,0.07)"/>
+      <circle cx="278.063696" cy="1167.2192" r="7.112447999999999" fill="rgba(71,54,254,0.84)"/>
+    </g>
+  
+    <g>
+      <rect x="215.0432" y="1061.8496" width="151.65359999999998" height="39.5136" rx="15.805439999999999" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.12)" stroke-width="1"/>
+      <rect x="230.20856" y="1070.542592" width="36.396863999999994" height="7.112447999999999" rx="3.5562239999999994" fill="rgba(239,69,35,0.12)"/>
+      <rect x="230.20856" y="1082.396672" width="75.82679999999999" height="4.741631999999999" rx="2.765952" fill="rgba(22,22,22,0.07)"/>
+      <circle cx="339.39915199999996" cy="1081.6064000000001" r="7.112447999999999" fill="rgba(239,69,35,0.84)"/>
+    </g>
+  
+    <g>
+      <rect x="248.74400000000003" y="976.2368" width="126.37799999999999" height="39.5136" rx="15.805439999999999" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.12)" stroke-width="1"/>
+      <rect x="261.3818" y="984.929792" width="30.330719999999996" height="7.112447999999999" rx="3.5562239999999994" fill="rgba(71,54,254,0.12)"/>
+      <rect x="261.3818" y="996.783872" width="63.18899999999999" height="4.741631999999999" rx="2.765952" fill="rgba(22,22,22,0.07)"/>
+      <circle cx="352.37396" cy="995.9936" r="7.112447999999999" fill="rgba(71,54,254,0.84)"/>
+    </g>
+  
+    
+    <path d="M 602.6024 785.2544 L 602.6024 1186.976"
+          stroke="rgba(71,54,254,0.18)"
+          stroke-width="2.2"
+          stroke-linecap="round"/>
+  
+    
+      <ellipse cx="602.6024" cy="956.48" rx="141.26111999999998" ry="70.992768"
+               transform="rotate(12 602.6024 956.48)"
+               fill="none"
+               stroke="rgba(71,54,254,0.36)"
+               stroke-width="2"/>
+    
+
+        <g filter="url(#fineGlow)">
+          <circle cx="736.2445892394541" cy="957.6980314615319" r="7" fill="rgba(255,255,255,0.96)"/>
+          <circle cx="736.2445892394541" cy="957.6980314615319" r="3.1" fill="rgba(71,54,254,0.88)"/>
+        </g>
+      
+
+        <g filter="url(#fineGlow)">
+          <circle cx="468.9602107605459" cy="955.2619685384682" r="7" fill="rgba(255,255,255,0.96)"/>
+          <circle cx="468.9602107605459" cy="955.2619685384682" r="3.1" fill="rgba(71,54,254,0.88)"/>
+        </g>
+      
+
+      <ellipse cx="602.6024" cy="956.48" rx="162.9936" ry="88.37875199999999"
+               transform="rotate(-20 602.6024 956.48)"
+               fill="none"
+               stroke="rgba(239,69,35,0.28)"
+               stroke-width="2"/>
+    
+
+        <g filter="url(#fineGlow)">
+          <circle cx="752.0289460178401" cy="946.2473157642414" r="7" fill="rgba(255,255,255,0.96)"/>
+          <circle cx="752.0289460178401" cy="946.2473157642414" r="3.1" fill="rgba(239,69,35,0.92)"/>
+        </g>
+      
+
+        <g filter="url(#fineGlow)">
+          <circle cx="449.26796952500126" cy="977.057154957945" r="7" fill="rgba(255,255,255,0.96)"/>
+          <circle cx="449.26796952500126" cy="977.057154957945" r="3.1" fill="rgba(239,69,35,0.92)"/>
+        </g>
+      
+
+      <ellipse cx="602.6024" cy="956.48" rx="188.34815999999998" ry="105.76473599999998"
+               transform="rotate(30 602.6024 956.48)"
+               fill="none"
+               stroke="rgba(71,54,254,0.24)"
+               stroke-width="2"/>
+    
+
+        <g filter="url(#fineGlow)">
+          <circle cx="527.5335578368" cy="1034.077053717386" r="7" fill="rgba(255,255,255,0.96)"/>
+          <circle cx="527.5335578368" cy="1034.077053717386" r="3.1" fill="rgba(71,54,254,0.74)"/>
+        </g>
+      
+
+        <g filter="url(#fineGlow)">
+          <circle cx="688.2425294843838" cy="886.4665133822973" r="7" fill="rgba(255,255,255,0.96)"/>
+          <circle cx="688.2425294843838" cy="886.4665133822973" r="3.1" fill="rgba(71,54,254,0.74)"/>
+        </g>
+      
+    
+    <g filter="url(#softGlow)">
+      <circle cx="602.6024" cy="956.48" r="78.23692799999999" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.22)" stroke-width="1.5"/>
+      <circle cx="602.6024" cy="956.48" r="52.157951999999995" fill="rgba(71,54,254,0.08)" stroke="rgba(71,54,254,0.18)" stroke-width="1.2"/>
+      <circle cx="602.6024" cy="956.48" r="18.834816" fill="rgba(239,69,35,0.92)"/>
+    </g>
+  
+    <g filter="url(#fineGlow)"><circle cx="639.69" cy="808.55" r="1.24" fill="rgba(71,54,254,0.12)"/><circle cx="409.61" cy="794.10" r="1.32" fill="rgba(71,54,254,0.12)"/><circle cx="361.22" cy="1075.45" r="1.93" fill="rgba(71,54,254,0.08)"/><circle cx="505.58" cy="1054.58" r="0.87" fill="rgba(239,69,35,0.16)"/><circle cx="437.26" cy="989.78" r="1.69" fill="rgba(71,54,254,0.12)"/><circle cx="542.93" cy="855.41" r="1.47" fill="rgba(239,69,35,0.16)"/><circle cx="369.84" cy="1002.98" r="0.80" fill="rgba(71,54,254,0.12)"/><circle cx="650.54" cy="1103.67" r="0.60" fill="rgba(239,69,35,0.16)"/><circle cx="469.57" cy="860.93" r="0.60" fill="rgba(71,54,254,0.12)"/><circle cx="234.89" cy="1088.04" r="1.00" fill="rgba(239,69,35,0.16)"/><circle cx="604.89" cy="987.24" r="0.60" fill="rgba(239,69,35,0.16)"/><circle cx="595.34" cy="767.71" r="1.96" fill="rgba(71,54,254,0.08)"/><circle cx="351.91" cy="975.05" r="0.60" fill="rgba(71,54,254,0.08)"/><circle cx="353.93" cy="1006.17" r="1.86" fill="rgba(239,69,35,0.16)"/><circle cx="476.87" cy="844.17" r="0.82" fill="rgba(71,54,254,0.12)"/><circle cx="526.14" cy="1119.16" r="1.38" fill="rgba(71,54,254,0.08)"/><circle cx="592.54" cy="908.29" r="1.80" fill="rgba(71,54,254,0.12)"/><circle cx="334.01" cy="984.70" r="0.60" fill="rgba(71,54,254,0.08)"/><circle cx="593.64" cy="753.76" r="1.11" fill="rgba(71,54,254,0.08)"/><circle cx="338.41" cy="826.67" r="1.59" fill="rgba(71,54,254,0.08)"/><circle cx="281.69" cy="850.05" r="1.48" fill="rgba(71,54,254,0.08)"/><circle cx="636.98" cy="797.31" r="2.12" fill="rgba(71,54,254,0.08)"/><circle cx="673.80" cy="835.10" r="1.85" fill="rgba(239,69,35,0.16)"/><circle cx="574.55" cy="1079.92" r="1.75" fill="rgba(239,69,35,0.16)"/><circle cx="555.49" cy="924.13" r="1.85" fill="rgba(71,54,254,0.08)"/><circle cx="340.78" cy="748.48" r="2.05" fill="rgba(239,69,35,0.16)"/><circle cx="645.50" cy="804.37" r="1.53" fill="rgba(71,54,254,0.12)"/><circle cx="271.12" cy="786.36" r="1.28" fill="rgba(71,54,254,0.08)"/><circle cx="348.00" cy="737.28" r="0.84" fill="rgba(239,69,35,0.16)"/><circle cx="642.81" cy="920.18" r="2.15" fill="rgba(71,54,254,0.08)"/><circle cx="272.35" cy="788.44" r="0.64" fill="rgba(239,69,35,0.16)"/><circle cx="344.97" cy="978.76" r="1.28" fill="rgba(71,54,254,0.08)"/><circle cx="549.49" cy="1054.66" r="1.52" fill="rgba(71,54,254,0.12)"/><circle cx="264.16" cy="862.43" r="0.72" fill="rgba(71,54,254,0.12)"/><circle cx="680.17" cy="956.65" r="0.60" fill="rgba(71,54,254,0.08)"/><circle cx="333.06" cy="825.84" r="0.98" fill="rgba(71,54,254,0.12)"/><circle cx="264.16" cy="967.46" r="0.97" fill="rgba(239,69,35,0.16)"/><circle cx="236.15" cy="1006.12" r="2.19" fill="rgba(71,54,254,0.08)"/><circle cx="402.50" cy="962.10" r="0.60" fill="rgba(239,69,35,0.16)"/><circle cx="355.95" cy="881.23" r="0.63" fill="rgba(239,69,35,0.16)"/><circle cx="423.41" cy="1097.86" r="0.67" fill="rgba(71,54,254,0.12)"/><circle cx="733.19" cy="778.49" r="1.79" fill="rgba(239,69,35,0.16)"/></g>
+  </g>
+  
+  <g>
+    <text x="80.24" y="146.8" fill="rgba(71,54,254,0.72)" font-size="20.58156" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">SYSTEMS / SCALE</text>
+    <text x="80.24" y="268.88" fill="#4736FE" font-size="90.27000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">Scale is a</text>
+<text x="80.24" y="406.864" fill="#6B58FF" font-size="90.27000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.05em">learning</text>
+<text x="80.24" y="544.848" fill="#4736FE" font-size="90.27000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">problem.</text>
+    <text x="80.24" y="706.2271999999999" fill="#4736FE" opacity="0.96" font-size="38.114" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Capability compounds when truth moves.</text>
+    <text x="80.24" y="815.9871999999999" fill="#161616" opacity="0.76" font-size="25.075000000000003" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="80.24" dy="0">The companies that grow wiser do not need to grow heavier.</tspan>
+    </text>
+  </g>
+</svg>

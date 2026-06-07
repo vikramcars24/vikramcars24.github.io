@@ -31,11 +31,21 @@ In an AI-compressed, org-first company, the only durable role is the person who 
 
 The enduring business in mobility is not selling a vehicle once, but becoming the trust layer around ownership across financing, transfer, safety, resale, and use.
 
+## 7. Scale Is a Learning Problem
+
+Most companies think they scale by adding people, process, and control. The deeper divide is between companies that get heavier as complexity rises and companies that get wiser.
+
 ## Notes
 
 - Essay 3 should draw from [essay-3-crashfree-channel-editorial-notes.md](/Users/vikram/Documents/New%20project%204/notes/essay-3-crashfree-channel-editorial-notes.md).
 - `Flatland` is best treated as source material for essays 4 and 5, not as a public essay title.
 - Essay 6 can carry the lightest company presence because it is the closest thing to a synthesis essay, but it should still work as a category argument first.
+- Essay 6 is also the cleanest place to carry the quiet `$100B+` category thesis:
+  - Indian auto can still produce multiple world-scale companies because ownership infrastructure is unfinished
+- Essay 7 should draw from:
+  - [naina-systems-thinking/03-systems-thinking-at-cars24-essay.md](/Users/vikram/Documents/New%20project%204/notes/naina-systems-thinking/03-systems-thinking-at-cars24-essay.md)
+  - [naina-systems-thinking/05-slack-wide-addendum.md](/Users/vikram/Documents/New%20project%204/notes/naina-systems-thinking/05-slack-wide-addendum.md)
+  - [naina-sahni-essay-material.md](/Users/vikram/Documents/New%20project%204/notes/naina-sahni-essay-material.md)
 - Cross-series Slack source memo:
   - [essay-series-public-policy-channel-raw-materials.md](/Users/vikram/Documents/New%20project%204/notes/essay-series-public-policy-channel-raw-materials.md)
 - Founder doctrine sheet:

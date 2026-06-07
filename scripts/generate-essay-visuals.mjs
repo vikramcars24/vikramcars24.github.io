@@ -19,6 +19,50 @@ const sizes = {
 // cars24-maker-agent + creative-direction source files strictly.
 const essays = [
   {
+    slug: "the-coming-decade-of-car-ownership-in-india",
+    title: "The Coming Decade of Car Ownership in India",
+    titleLines: ["The coming", "decade of car", "ownership in India."],
+    accentLineIndex: 2,
+    subtitle: "Pre-owned. Transfer-heavy. Trust-led.",
+    description: "The market grows when ownership feels survivable, then normal.",
+    motif: "ownership-ledger",
+    textMode: "architectural-light",
+    backgroundMode: "signal-light",
+    palette: {
+      bgTop: "#F7F4FF",
+      bgMid: "#EFEAFF",
+      bgBottom: "#E7E1FF",
+      glowPrimary: "#4736FE",
+      glowSecondary: "#EF4523",
+      titlePrimary: "#4736FE",
+      titleAccent: "#4736FE",
+      subtitle: "#4736FE",
+      description: "#161616"
+    }
+  },
+  {
+    slug: "the-greenest-car-in-india-is-the-one-already-built",
+    title: "The Greenest Car in India Is the One Already Built",
+    titleLines: ["The greenest car", "in India is the", "one already built."],
+    accentLineIndex: 2,
+    subtitle: "Reuse works only when trust works.",
+    description: "Battery legibility and transfer rails make climate real.",
+    motif: "battery-passport",
+    textMode: "architectural-light",
+    backgroundMode: "maker-light",
+    palette: {
+      bgTop: "#F6F3FF",
+      bgMid: "#F0ECFF",
+      bgBottom: "#E7E1FF",
+      glowPrimary: "#4736FE",
+      glowSecondary: "#EF4523",
+      titlePrimary: "#4736FE",
+      titleAccent: "#6F5BFF",
+      subtitle: "#4736FE",
+      description: "#161616"
+    }
+  },
+  {
     slug: "indias-road-deaths-trust-problem",
     title: "India's Road Deaths Are a Trust Problem",
     titleLines: ["India's road", "deaths are a", "trust problem."],
@@ -61,6 +105,76 @@ const essays = [
       subtitle: "#4736FE",
       description: "#161616"
     }
+  },
+  {
+    slug: "builder-is-the-only-role-left",
+    title: "Builder Is the Only Role Left",
+    titleLines: ["Builder is", "the only role", "left."],
+    accentLineIndex: 2,
+    subtitle: "Prestige should move closer to the problem.",
+    description: "The durable role is the one that closes loops directly.",
+    motif: "builder-geometry",
+    textMode: "architectural",
+    backgroundMode: "maker-dark",
+    palette: {
+      bgTop: "#6356FF",
+      bgMid: "#4736FE",
+      bgBottom: "#2B1EB0",
+      glowPrimary: "#FFFFFF",
+      glowSecondary: "#EF4523",
+      titlePrimary: "#FFFFFF",
+      titleAccent: "#FFFFFF",
+      subtitle: "#FFFFFF",
+      description: "#FFFFFF"
+    }
+  },
+  {
+    slug: "the-car-is-the-artifact-trust-is-the-product",
+    title: "The Car Is the Artifact. Trust Is the Product.",
+    titleLines: ["The car is", "the artifact.", "Trust is the product."],
+    accentLineIndex: 2,
+    subtitle: "Certainty is what compounds in mobility.",
+    description: "Ownership becomes a business when trust becomes a system.",
+    motif: "trust-stack",
+    textMode: "architectural",
+    backgroundMode: "maker-dark",
+    palette: {
+      bgTop: "#5A4DFF",
+      bgMid: "#4736FE",
+      bgBottom: "#21167F",
+      glowPrimary: "#FFFFFF",
+      glowSecondary: "#EF4523",
+      titlePrimary: "#FFFFFF",
+      titleAccent: "#FFFFFF",
+      subtitle: "#FFFFFF",
+      description: "#FFFFFF"
+    }
+  },
+  {
+    slug: "scale-is-a-learning-problem",
+    title: "Scale Is a Learning Problem",
+    titleLines: ["Scale is a", "learning", "problem."],
+    accentLineIndex: 1,
+    subtitle: "Capability compounds when truth moves.",
+    description: "The companies that grow wiser do not need to grow heavier.",
+    motif: "learning-orbits",
+    textMode: "architectural-light",
+    eyebrow: "SYSTEMS / SCALE",
+    titleScale: 0.9,
+    titleOffsetY: 18,
+    eyebrowOffsetY: -10,
+    backgroundMode: "maker-light",
+    palette: {
+      bgTop: "#F6F2FF",
+      bgMid: "#EEE9FF",
+      bgBottom: "#E7E2FF",
+      glowPrimary: "#4736FE",
+      glowSecondary: "#EF4523",
+      titlePrimary: "#4736FE",
+      titleAccent: "#6B58FF",
+      subtitle: "#4736FE",
+      description: "#161616"
+    }
   }
 ];
 
@@ -87,6 +201,16 @@ function renderEssayVisual({ essay, variant, width, height }) {
     ? renderForensicCaseIllustration(essay, width, height, variant)
     : essay.motif === "context-loom"
       ? renderContextLoomMotif(essay, width, height, variant)
+      : essay.motif === "ownership-ledger"
+        ? renderOwnershipLedgerMotif(essay, width, height, variant)
+        : essay.motif === "battery-passport"
+          ? renderBatteryPassportMotif(essay, width, height, variant)
+          : essay.motif === "builder-geometry"
+            ? renderBuilderGeometryMotif(essay, width, height, variant)
+            : essay.motif === "trust-stack"
+              ? renderTrustStackMotif(essay, width, height, variant)
+              : essay.motif === "learning-orbits"
+                ? renderLearningOrbitMotif(essay, width, height, variant)
     : essay.motif === "context-grid"
       ? renderContextGridMotif(essay, width, height, variant)
       : renderAiMotif(essay, width, height, variant);
@@ -138,6 +262,10 @@ function renderBackground(essay, width, height) {
     return renderSignalLightBackground(essay, width, height);
   }
 
+  if (essay.backgroundMode === "maker-dark") {
+    return renderMakerDarkBackground(essay, width, height);
+  }
+
   return `
   <rect width="${width}" height="${height}" fill="url(#bgGradient)"/>
   <rect width="${width}" height="${height}" fill="url(#violetGlow)" opacity="0.78"/>
@@ -176,6 +304,18 @@ function renderSignalLightBackground(essay, width, height) {
   <ellipse cx="${width * 0.18}" cy="${height * 0.82}" rx="${width * 0.18}" ry="${height * 0.18}" fill="rgba(239,69,35,0.035)"/>
   <g>${lines.join("\n")}</g>
   <rect x="${width * 0.072}" y="${height * 0.085}" width="${width * 0.11}" height="${Math.max(8, height * 0.009)}" rx="${Math.max(2, height * 0.002)}" fill="rgba(71,54,254,0.9)"/>
+  <rect x="${width * 0.84}" y="${height * 0.885}" width="${width * 0.08}" height="${Math.max(8, height * 0.009)}" rx="${Math.max(2, height * 0.002)}" fill="rgba(239,69,35,0.82)"/>
+  `;
+}
+
+function renderMakerDarkBackground(essay, width, height) {
+  return `
+  <rect width="${width}" height="${height}" fill="url(#bgGradient)"/>
+  <rect width="${width}" height="${height}" fill="url(#violetGlow)" opacity="0.16"/>
+  <rect width="${width}" height="${height}" fill="url(#emberGlow)" opacity="0.18"/>
+  <ellipse cx="${width * 0.82}" cy="${height * 0.24}" rx="${width * 0.22}" ry="${height * 0.22}" fill="rgba(255,255,255,0.05)"/>
+  <ellipse cx="${width * 0.14}" cy="${height * 0.8}" rx="${width * 0.18}" ry="${height * 0.2}" fill="rgba(239,69,35,0.08)"/>
+  <rect x="${width * 0.072}" y="${height * 0.085}" width="${width * 0.11}" height="${Math.max(8, height * 0.009)}" rx="${Math.max(2, height * 0.002)}" fill="rgba(255,255,255,0.82)"/>
   <rect x="${width * 0.84}" y="${height * 0.885}" width="${width * 0.08}" height="${Math.max(8, height * 0.009)}" rx="${Math.max(2, height * 0.002)}" fill="rgba(239,69,35,0.82)"/>
   `;
 }
@@ -309,20 +449,23 @@ function renderArchitecturalLightTextBlock(essay, width, height, variant) {
   const descY = subtitleY + (isPreview ? height * 0.1 : isSocial ? height * 0.07 : height * 0.084);
   const subtitleSize = isPreview ? width * 0.03 : isSocial ? width * 0.038 : width * 0.032;
   const descSize = isPreview ? width * 0.019 : isSocial ? width * 0.025 : width * 0.022;
+  const titleScale = essay.titleScale || 1;
+  const titleOffsetY = essay.titleOffsetY || 0;
+  const eyebrowOffsetY = essay.eyebrowOffsetY || 0;
 
   const titleLines = essay.titleLines
     .map((line, index) => {
-      const y = titleTop + index * lineGap;
+      const y = titleTop + titleOffsetY + index * lineGap;
       const fill = index === essay.accentLineIndex ? essay.palette.titleAccent : essay.palette.titlePrimary;
       const weight = index === essay.accentLineIndex ? "700" : line === "is not" ? "300" : "500";
       const spacing = index === essay.accentLineIndex ? "-0.05em" : "-0.06em";
-      return `<text x="${marginX}" y="${y}" fill="${fill}" font-size="${titleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="${weight}" letter-spacing="${spacing}">${escapeXml(line)}</text>`;
+      return `<text x="${marginX}" y="${y}" fill="${fill}" font-size="${titleSize * titleScale}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="${weight}" letter-spacing="${spacing}">${escapeXml(line)}</text>`;
     })
     .join("\n");
 
   return `
   <g>
-    <text x="${marginX}" y="${eyebrowY}" fill="rgba(71,54,254,0.72)" font-size="${subtitleSize * 0.54}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">ORG DESIGN / AI</text>
+    <text x="${marginX}" y="${eyebrowY + eyebrowOffsetY}" fill="rgba(71,54,254,0.72)" font-size="${subtitleSize * 0.54}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">${escapeXml(essay.eyebrow || "ORG DESIGN / AI")}</text>
     ${titleLines}
     <text x="${marginX}" y="${subtitleY}" fill="${essay.palette.subtitle}" opacity="0.96" font-size="${subtitleSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">${escapeXml(essay.subtitle)}</text>
     <text x="${marginX}" y="${descY}" fill="${essay.palette.description}" opacity="0.76" font-size="${descSize}" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
@@ -735,6 +878,300 @@ function renderContextLoomMotif(essay, width, height, variant) {
   </g>`;
 }
 
+function renderOwnershipLedgerMotif(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const boardX = width * (isPreview ? 0.55 : isSocial ? 0.08 : 0.08);
+  const boardY = height * (isPreview ? 0.18 : isSocial ? 0.42 : 0.12);
+  const boardW = width * (isPreview ? 0.34 : isSocial ? 0.84 : 0.82);
+  const boardH = height * (isPreview ? 0.56 : isSocial ? 0.38 : 0.72);
+  const rows = isSocial ? 4 : 5;
+  const cards = [];
+  const lines = [];
+  const dots = [];
+
+  for (let i = 0; i < rows; i += 1) {
+    const y = boardY + boardH * (0.08 + i * (0.78 / rows));
+    const w = boardW * (0.58 + (i % 2) * 0.12);
+    const h = boardH * 0.12;
+    cards.push(`
+      <rect x="${boardX + boardW * 0.08}" y="${y}" width="${w}" height="${h}" rx="${Math.max(14, width * 0.01)}"
+            fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.16)" stroke-width="${Math.max(1.2, width * 0.001)}"/>
+      <rect x="${boardX + boardW * 0.12}" y="${y + h * 0.22}" width="${w * 0.22}" height="${h * 0.14}" rx="${h * 0.04}" fill="rgba(71,54,254,0.14)"/>
+      <rect x="${boardX + boardW * 0.12}" y="${y + h * 0.5}" width="${w * 0.42}" height="${h * 0.1}" rx="${h * 0.04}" fill="rgba(22,22,22,0.08)"/>
+      <circle cx="${boardX + boardW * 0.84}" cy="${y + h * 0.5}" r="${Math.max(8, width * 0.005)}" fill="${i % 2 === 0 ? "rgba(71,54,254,0.88)" : "rgba(239,69,35,0.88)"}"/>
+    `);
+    if (i < rows - 1) {
+      const x1 = boardX + boardW * 0.84;
+      const y1 = y + h * 0.5;
+      const x2 = boardX + boardW * 0.84;
+      const y2 = boardY + boardH * (0.08 + (i + 1) * (0.78 / rows)) + h * 0.5;
+      lines.push(`<path d="M ${x1} ${y1} C ${x1 + boardW * 0.08} ${y1}, ${x2 + boardW * 0.08} ${y2}, ${x2} ${y2}" stroke="rgba(71,54,254,0.26)" stroke-width="${Math.max(2, width * 0.0015)}" fill="none" stroke-dasharray="${Math.max(6, width * 0.004)} ${Math.max(8, width * 0.006)}"/>`);
+    }
+  }
+
+  for (let i = 0; i < 18; i += 1) {
+    const x = boardX + boardW * (0.02 + (i % 6) * 0.16);
+    const y = boardY + boardH * (0.02 + Math.floor(i / 6) * 0.3);
+    dots.push(`<circle cx="${x}" cy="${y}" r="${Math.max(2.4, width * 0.0019)}" fill="${i % 5 === 0 ? "rgba(239,69,35,0.24)" : "rgba(71,54,254,0.14)"}"/>`);
+  }
+
+  return `
+  <g>
+    <rect x="${boardX}" y="${boardY}" width="${boardW}" height="${boardH}" rx="${Math.max(24, width * 0.015)}" fill="rgba(255,255,255,0.26)" stroke="rgba(71,54,254,0.08)" stroke-width="${Math.max(1, width * 0.001)}"/>
+    <ellipse cx="${boardX + boardW * 0.82}" cy="${boardY + boardH * 0.18}" rx="${boardW * 0.16}" ry="${boardH * 0.18}" fill="rgba(71,54,254,0.05)"/>
+    ${dots.join("\n")}
+    ${cards.join("\n")}
+    ${lines.join("\n")}
+  </g>`;
+}
+
+function renderBatteryPassportMotif(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const frameX = width * (isPreview ? 0.58 : isSocial ? 0.1 : 0.12);
+  const frameY = height * (isPreview ? 0.18 : isSocial ? 0.34 : 0.14);
+  const frameW = width * (isPreview ? 0.28 : isSocial ? 0.8 : 0.76);
+  const frameH = height * (isPreview ? 0.58 : isSocial ? 0.46 : 0.7);
+  const batteryX = frameX + frameW * 0.12;
+  const batteryY = frameY + frameH * 0.16;
+  const batteryW = frameW * 0.24;
+  const batteryH = frameH * 0.56;
+  const bars = [];
+  for (let i = 0; i < 4; i += 1) {
+    bars.push(`<rect x="${batteryX + batteryW * 0.18}" y="${batteryY + batteryH * (0.14 + i * 0.18)}" width="${batteryW * 0.5}" height="${batteryH * 0.1}" rx="${batteryH * 0.03}" fill="${i < 3 ? "rgba(71,54,254,0.88)" : "rgba(239,69,35,0.54)"}"/>`);
+  }
+  const cards = [];
+  const cardLabels = ["SoH", "Warranty", "Transfer", "Value"];
+  for (let i = 0; i < 4; i += 1) {
+    const x = frameX + frameW * 0.48;
+    const y = frameY + frameH * (0.12 + i * 0.18);
+    cards.push(`
+      <rect x="${x}" y="${y}" width="${frameW * 0.34}" height="${frameH * 0.12}" rx="${Math.max(12, width * 0.009)}" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="${Math.max(1, width * 0.001)}"/>
+      <rect x="${x + frameW * 0.04}" y="${y + frameH * 0.03}" width="${frameW * 0.09}" height="${frameH * 0.025}" rx="${frameH * 0.01}" fill="${i % 2 === 0 ? "rgba(71,54,254,0.14)" : "rgba(239,69,35,0.14)"}"/>
+      <rect x="${x + frameW * 0.04}" y="${y + frameH * 0.065}" width="${frameW * 0.2}" height="${frameH * 0.018}" rx="${frameH * 0.01}" fill="rgba(22,22,22,0.08)"/>
+    `);
+  }
+  const rings = `
+    <circle cx="${batteryX + batteryW * 0.44}" cy="${batteryY + batteryH * 0.48}" r="${frameW * 0.21}" stroke="rgba(71,54,254,0.14)" stroke-width="${Math.max(2, width * 0.0014)}" fill="none"/>
+    <circle cx="${batteryX + batteryW * 0.44}" cy="${batteryY + batteryH * 0.48}" r="${frameW * 0.27}" stroke="rgba(239,69,35,0.12)" stroke-width="${Math.max(2, width * 0.0014)}" fill="none" stroke-dasharray="${Math.max(10, width * 0.006)} ${Math.max(10, width * 0.006)}"/>
+  `;
+  const links = [];
+  for (let i = 0; i < 4; i += 1) {
+    const y1 = batteryY + batteryH * (0.18 + i * 0.18);
+    const y2 = frameY + frameH * (0.18 + i * 0.18);
+    links.push(`<path d="M ${batteryX + batteryW} ${y1} C ${frameX + frameW * 0.38} ${y1}, ${frameX + frameW * 0.42} ${y2}, ${frameX + frameW * 0.48} ${y2}" stroke="rgba(71,54,254,0.28)" stroke-width="${Math.max(1.8, width * 0.0013)}" fill="none"/>`);
+  }
+  return `
+  <g>
+    <rect x="${frameX}" y="${frameY}" width="${frameW}" height="${frameH}" rx="${Math.max(24, width * 0.014)}" fill="rgba(255,255,255,0.24)" stroke="rgba(71,54,254,0.08)" stroke-width="${Math.max(1, width * 0.001)}"/>
+    ${rings}
+    <rect x="${batteryX}" y="${batteryY}" width="${batteryW}" height="${batteryH}" rx="${Math.max(18, width * 0.011)}" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.18)" stroke-width="${Math.max(1.2, width * 0.001)}"/>
+    <rect x="${batteryX + batteryW * 0.32}" y="${batteryY - batteryH * 0.06}" width="${batteryW * 0.18}" height="${batteryH * 0.05}" rx="${batteryH * 0.015}" fill="rgba(71,54,254,0.84)"/>
+    ${bars.join("\n")}
+    ${links.join("\n")}
+    ${cards.join("\n")}
+  </g>`;
+}
+
+function renderBuilderGeometryMotif(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const clusterX = width * (isPreview ? 0.58 : isSocial ? 0.1 : 0.1);
+  const clusterY = height * (isPreview ? 0.18 : isSocial ? 0.38 : 0.14);
+  const clusterW = width * (isPreview ? 0.28 : isSocial ? 0.78 : 0.78);
+  const clusterH = height * (isPreview ? 0.58 : isSocial ? 0.46 : 0.72);
+  const columns = [];
+  const heights = [0.18, 0.34, 0.54, 0.78];
+  for (let i = 0; i < heights.length; i += 1) {
+    const x = clusterX + clusterW * (0.08 + i * 0.18);
+    const h = clusterH * heights[i];
+    const y = clusterY + clusterH - h;
+    columns.push(`
+      <rect x="${x}" y="${y}" width="${clusterW * 0.12}" height="${h}" rx="${Math.max(18, width * 0.01)}" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="${Math.max(1.2, width * 0.001)}"/>
+      <rect x="${x + clusterW * 0.018}" y="${y + h * 0.12}" width="${clusterW * 0.084}" height="${Math.max(10, h * 0.14)}" rx="${Math.max(8, width * 0.006)}" fill="${i === heights.length - 1 ? "rgba(239,69,35,0.88)" : "rgba(255,255,255,0.8)"}"/>
+    `);
+  }
+  const rails = [];
+  for (let i = 0; i < 5; i += 1) {
+    const y = clusterY + clusterH * (0.18 + i * 0.16);
+    rails.push(`<line x1="${clusterX}" y1="${y}" x2="${clusterX + clusterW}" y2="${y}" stroke="rgba(255,255,255,0.08)" stroke-width="${Math.max(1, width * 0.0009)}"/>`);
+  }
+  const path = `<path d="M ${clusterX + clusterW * 0.06} ${clusterY + clusterH * 0.82} C ${clusterX + clusterW * 0.22} ${clusterY + clusterH * 0.74}, ${clusterX + clusterW * 0.42} ${clusterY + clusterH * 0.58}, ${clusterX + clusterW * 0.76} ${clusterY + clusterH * 0.2}" stroke="rgba(239,69,35,0.92)" stroke-width="${Math.max(4, width * 0.0028)}" fill="none" stroke-linecap="round"/>`;
+  return `
+  <g>
+    <rect x="${clusterX}" y="${clusterY}" width="${clusterW}" height="${clusterH}" rx="${Math.max(24, width * 0.014)}" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="${Math.max(1, width * 0.001)}"/>
+    ${rails.join("\n")}
+    ${columns.join("\n")}
+    ${path}
+  </g>`;
+}
+
+function renderTrustStackMotif(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const baseX = width * (isPreview ? 0.58 : isSocial ? 0.1 : 0.1);
+  const baseY = height * (isPreview ? 0.18 : isSocial ? 0.42 : 0.16);
+  const baseW = width * (isPreview ? 0.28 : isSocial ? 0.8 : 0.8);
+  const baseH = height * (isPreview ? 0.56 : isSocial ? 0.4 : 0.66);
+  const layers = [];
+  const layerSpecs = [
+    [0.02, 0.72, 0.92, 0.16, "rgba(255,255,255,0.14)"],
+    [0.08, 0.5, 0.78, 0.14, "rgba(255,255,255,0.18)"],
+    [0.16, 0.3, 0.62, 0.12, "rgba(255,255,255,0.22)"],
+    [0.24, 0.14, 0.46, 0.1, "rgba(255,255,255,0.28)"]
+  ];
+  for (const [x, y, w, h, fill] of layerSpecs) {
+    layers.push(`<rect x="${baseX + baseW * x}" y="${baseY + baseH * y}" width="${baseW * w}" height="${baseH * h}" rx="${Math.max(16, width * 0.01)}" fill="${fill}" stroke="rgba(255,255,255,0.12)" stroke-width="${Math.max(1, width * 0.001)}"/>`);
+  }
+  const nodes = [];
+  const points = [
+    [0.18, 0.8], [0.34, 0.8], [0.5, 0.8], [0.66, 0.8],
+    [0.24, 0.57], [0.44, 0.57], [0.64, 0.57],
+    [0.32, 0.36], [0.54, 0.36],
+    [0.44, 0.19]
+  ];
+  points.forEach(([px, py], index) => {
+    nodes.push(`<circle cx="${baseX + baseW * px}" cy="${baseY + baseH * py}" r="${Math.max(6, width * 0.004)}" fill="${index === points.length - 1 ? "rgba(239,69,35,0.92)" : "rgba(255,255,255,0.86)"}"/>`);
+  });
+  const paths = [
+    [[0.18,0.8],[0.24,0.57]], [[0.34,0.8],[0.24,0.57]], [[0.5,0.8],[0.44,0.57]], [[0.66,0.8],[0.64,0.57]],
+    [[0.24,0.57],[0.32,0.36]], [[0.44,0.57],[0.32,0.36]], [[0.44,0.57],[0.54,0.36]], [[0.64,0.57],[0.54,0.36]],
+    [[0.32,0.36],[0.44,0.19]], [[0.54,0.36],[0.44,0.19]]
+  ].map(([[x1,y1],[x2,y2]], i) => `<path d="M ${baseX + baseW * x1} ${baseY + baseH * y1} L ${baseX + baseW * x2} ${baseY + baseH * y2}" stroke="${i % 3 === 0 ? "rgba(239,69,35,0.72)" : "rgba(255,255,255,0.48)"}" stroke-width="${Math.max(2, width * 0.0014)}" fill="none"/>`);
+  return `
+  <g>
+    <ellipse cx="${baseX + baseW * 0.74}" cy="${baseY + baseH * 0.18}" rx="${baseW * 0.18}" ry="${baseH * 0.2}" fill="rgba(239,69,35,0.08)"/>
+    <ellipse cx="${baseX + baseW * 0.2}" cy="${baseY + baseH * 0.82}" rx="${baseW * 0.16}" ry="${baseH * 0.16}" fill="rgba(255,255,255,0.08)"/>
+    ${layers.join("\n")}
+    ${paths.join("\n")}
+    ${nodes.join("\n")}
+  </g>`;
+}
+
+function renderLearningOrbitMotif(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const isBlog = variant === "blog";
+  const frameX = width * (isPreview ? 0.56 : isSocial ? 0.08 : isBlog ? 0.08 : 0.1);
+  const frameY = height * (isPreview ? 0.18 : isSocial ? 0.4 : isBlog ? 0.12 : 0.16);
+  const frameW = width * (isPreview ? 0.34 : isSocial ? 0.84 : isBlog ? 0.82 : 0.8);
+  const frameH = height * (isPreview ? 0.56 : isSocial ? 0.42 : isBlog ? 0.7 : 0.66);
+  const cx = frameX + frameW * 0.62;
+  const cy = frameY + frameH * (isBlog ? 0.46 : 0.5);
+  const coreR = Math.min(frameW, frameH) * (isPreview ? 0.12 : isSocial ? 0.11 : isBlog ? 0.14 : 0.12);
+
+  const layers = [];
+  const layerSpecs = [
+    [0.06, 0.76, 0.78, 0.1, "rgba(255,255,255,0.42)"],
+    [0.12, 0.62, 0.66, 0.09, "rgba(255,255,255,0.58)"],
+    [0.18, 0.5, 0.54, 0.085, "rgba(255,255,255,0.74)"],
+    [0.25, 0.39, 0.42, 0.08, "rgba(255,255,255,0.9)"]
+  ];
+
+  for (const [x, y, w, h, fill] of layerSpecs) {
+    layers.push(`
+      <rect x="${frameX + frameW * x}" y="${frameY + frameH * y}" width="${frameW * w}" height="${frameH * h}"
+            rx="${Math.max(16, width * 0.011)}"
+            fill="${fill}"
+            stroke="rgba(71,54,254,0.12)"
+            stroke-width="${Math.max(1, width * 0.001)}"/>
+    `);
+  }
+
+  const orbitGroup = [];
+  const orbitSpecs = [
+    [coreR * 1.95, coreR * 0.98, 12, "rgba(71,54,254,0.36)", "rgba(71,54,254,0.88)"],
+    [coreR * 2.25, coreR * 1.22, -20, "rgba(239,69,35,0.28)", "rgba(239,69,35,0.92)"],
+    [coreR * 2.6, coreR * 1.46, 30, "rgba(71,54,254,0.24)", "rgba(71,54,254,0.74)"]
+  ];
+
+  orbitSpecs.forEach(([rx, ry, rotate, stroke, nodeFill], index) => {
+    orbitGroup.push(`
+      <ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"
+               transform="rotate(${rotate} ${cx} ${cy})"
+               fill="none"
+               stroke="${stroke}"
+               stroke-width="${Math.max(2, width * 0.0015)}"/>
+    `);
+    const nodeAngles = index === 1 ? [28, 202] : index === 2 ? [98, 282] : [338, 158];
+    nodeAngles.forEach((angle) => {
+      const point = pointOnEllipse(cx, cy, rx, ry, rotate, angle);
+      orbitGroup.push(`
+        <g filter="url(#fineGlow)">
+          <circle cx="${point.x}" cy="${point.y}" r="${Math.max(7, width * 0.0046)}" fill="rgba(255,255,255,0.96)"/>
+          <circle cx="${point.x}" cy="${point.y}" r="${Math.max(3.1, width * 0.0023)}" fill="${nodeFill}"/>
+        </g>
+      `);
+    });
+  });
+
+  const anchorLines = [
+    [frameX + frameW * 0.26, frameY + frameH * 0.8, cx - coreR * 1.9, cy + coreR * 0.65],
+    [frameX + frameW * 0.31, frameY + frameH * 0.67, cx - coreR * 1.35, cy + coreR * 0.15],
+    [frameX + frameW * 0.36, frameY + frameH * 0.55, cx - coreR * 0.95, cy - coreR * 0.35]
+  ]
+    .map(([x1, y1, x2, y2], index) => `
+      <path d="M ${x1} ${y1} C ${x1 + frameW * 0.12} ${y1}, ${x2 - frameW * 0.05} ${y2}, ${x2} ${y2}"
+            stroke="${index === 1 ? "rgba(239,69,35,0.34)" : "rgba(71,54,254,0.28)"}"
+            stroke-width="${Math.max(1.8, width * 0.00125)}"
+            fill="none"
+            stroke-linecap="round"/>
+    `)
+    .join("\n");
+
+  const chips = [
+    [0.12, 0.79, 0.14, "cool"],
+    [0.16, 0.66, 0.18, "warm"],
+    [0.2, 0.53, 0.15, "cool"]
+  ]
+    .map(([x, y, w, accent]) => renderSignalChip({
+      x: frameX + frameW * x,
+      y: frameY + frameH * y,
+      w: frameW * w,
+      h: frameH * 0.06,
+      accent
+    }))
+    .join("");
+
+  const core = `
+    <g filter="url(#softGlow)">
+      <circle cx="${cx}" cy="${cy}" r="${coreR * 1.08}" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.22)" stroke-width="${Math.max(1.5, width * 0.0012)}"/>
+      <circle cx="${cx}" cy="${cy}" r="${coreR * 0.72}" fill="rgba(71,54,254,0.08)" stroke="rgba(71,54,254,0.18)" stroke-width="${Math.max(1.2, width * 0.0011)}"/>
+      <circle cx="${cx}" cy="${cy}" r="${coreR * 0.26}" fill="rgba(239,69,35,0.92)"/>
+    </g>
+  `;
+
+  const verticalRail = `
+    <path d="M ${cx} ${frameY + frameH * 0.24} L ${cx} ${frameY + frameH * 0.85}"
+          stroke="rgba(71,54,254,0.18)"
+          stroke-width="${Math.max(2.2, width * 0.0017)}"
+          stroke-linecap="round"/>
+  `;
+
+  const particles = renderParticles({
+    width,
+    height,
+    count: isBlog ? 56 : isPreview ? 34 : 42,
+    region: [frameX + frameW * 0.18, frameY + frameH * 0.16, frameW * 0.7, frameH * 0.62],
+    colors: ["rgba(71,54,254,0.12)", "rgba(239,69,35,0.16)", "rgba(71,54,254,0.08)"],
+    seed: 417
+  });
+
+  return `
+  <g>
+    <ellipse cx="${frameX + frameW * 0.74}" cy="${frameY + frameH * 0.2}" rx="${frameW * 0.16}" ry="${frameH * 0.18}" fill="rgba(71,54,254,0.05)"/>
+    <ellipse cx="${frameX + frameW * 0.2}" cy="${frameY + frameH * 0.88}" rx="${frameW * 0.14}" ry="${frameH * 0.14}" fill="rgba(239,69,35,0.04)"/>
+    ${layers.join("\n")}
+    ${anchorLines}
+    ${chips}
+    ${verticalRail}
+    ${orbitGroup.join("\n")}
+    ${core}
+    ${particles}
+  </g>`;
+}
+
 function renderSignalCard({ x, y, w, h, accent }) {
   const fill = accent === "warm" ? "rgba(239,69,35,0.14)" : "rgba(71,54,254,0.14)";
   return `
@@ -745,6 +1182,32 @@ function renderSignalCard({ x, y, w, h, accent }) {
       <rect x="${x + w * 0.08}" y="${y + h * 0.62}" width="${w * 0.4}" height="${h * 0.08}" rx="${h * 0.05}" fill="rgba(22,22,22,0.05)"/>
     </g>
   `;
+}
+
+function renderSignalChip({ x, y, w, h, accent }) {
+  const fill = accent === "warm" ? "rgba(239,69,35,0.12)" : "rgba(71,54,254,0.12)";
+  const accentFill = accent === "warm" ? "rgba(239,69,35,0.84)" : "rgba(71,54,254,0.84)";
+  return `
+    <g>
+      <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${Math.max(10, h * 0.4)}" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.12)" stroke-width="${Math.max(1, w * 0.004)}"/>
+      <rect x="${x + w * 0.1}" y="${y + h * 0.22}" width="${w * 0.24}" height="${h * 0.18}" rx="${h * 0.09}" fill="${fill}"/>
+      <rect x="${x + w * 0.1}" y="${y + h * 0.52}" width="${w * 0.5}" height="${h * 0.12}" rx="${h * 0.07}" fill="rgba(22,22,22,0.07)"/>
+      <circle cx="${x + w * 0.82}" cy="${y + h * 0.5}" r="${Math.max(4.5, h * 0.18)}" fill="${accentFill}"/>
+    </g>
+  `;
+}
+
+function pointOnEllipse(cx, cy, rx, ry, rotationDeg, angleDeg) {
+  const t = (angleDeg * Math.PI) / 180;
+  const rotation = (rotationDeg * Math.PI) / 180;
+  const cosR = Math.cos(rotation);
+  const sinR = Math.sin(rotation);
+  const ex = rx * Math.cos(t);
+  const ey = ry * Math.sin(t);
+  return {
+    x: cx + ex * cosR - ey * sinR,
+    y: cy + ex * sinR + ey * cosR
+  };
 }
 
 function roadStroke(pathD, widthPx, fill) {

@@ -37,6 +37,7 @@ India will not become a mass car-owning society by replaying the path of rich co
 - ownership confidence is also a knowledge problem; India's used-car market depends on credible community memory, not only transactions and financing
 - ownership support is market expansion, not add-on service
 - helping a household manage insurance, PUC, challans, servicing, FASTag, and paperwork is how trust gets built before the next major transaction
+- this is large enough to become a category-scale wealth-creation story, not just a commerce story
 
 ## Best numbers currently in the working source base
 
@@ -101,6 +102,21 @@ India will not become a mass car-owning society by replaying the path of rich co
 - category implication:
   - ownership rails do not just monetize the existing market
   - they enlarge the market by making first-time ownership feel survivable and then normal
+
+## Category-scale implication
+
+- this essay can quietly carry a bigger claim:
+  - India auto is likely to produce several very large companies in the coming decades
+- the reason is not only vehicle demand
+- it is that first-time ownership at Indian scale requires new institutions
+- whoever reduces fear, friction, and fragmentation across the ownership journey can build something much larger than a dealer network or a listing site
+- build the right ownership rails in India and they can travel outward:
+  - emerging markets with similar friction
+  - diaspora and cross-border ownership workflows
+  - software, data, and service infrastructure for global vehicle ownership
+- in other words:
+  - the market opportunity is not just `selling cars`
+  - it is building the operating system for ownership
 
 ## Team-BHP angle
 

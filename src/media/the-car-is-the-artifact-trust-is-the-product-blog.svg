@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1672" y2="941">
+      <stop offset="0%" stop-color="#5A4DFF"/>
+      <stop offset="42%" stop-color="#4736FE"/>
+      <stop offset="100%" stop-color="#21167F"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(133.76 75.28) rotate(40) scale(752.4 489.32)">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1404.48 583.42) rotate(210) scale(468.16 357.58)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="13.376" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.6784000000000003" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1672" height="941" fill="url(#bgGradient)"/>
+  <rect width="1672" height="941" fill="url(#violetGlow)" opacity="0.16"/>
+  <rect width="1672" height="941" fill="url(#emberGlow)" opacity="0.18"/>
+  <ellipse cx="1371.04" cy="225.84" rx="367.84" ry="207.02" fill="rgba(255,255,255,0.05)"/>
+  <ellipse cx="234.08" cy="752.8000000000001" rx="300.96" ry="188.20000000000002" fill="rgba(239,69,35,0.08)"/>
+  <rect x="120.38399999999999" y="79.985" width="183.92" height="8.469" rx="2" fill="rgba(255,255,255,0.82)"/>
+  <rect x="1404.48" y="832.785" width="133.76" height="8.469" rx="2" fill="rgba(239,69,35,0.82)"/>
+  
+  
+  <g>
+    <ellipse cx="1157.0240000000001" cy="262.3508" rx="240.76800000000003" ry="124.21200000000002" fill="rgba(239,69,35,0.08)"/>
+    <ellipse cx="434.72" cy="659.8292" rx="214.01600000000002" ry="99.3696" fill="rgba(255,255,255,0.08)"/>
+    <rect x="193.95200000000003" y="597.7232" width="1230.592" height="99.3696" rx="16.72" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.12)" stroke-width="1.672"/>
+<rect x="274.208" y="461.09000000000003" width="1043.3280000000002" height="86.94840000000002" rx="16.72" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.12)" stroke-width="1.672"/>
+<rect x="381.216" y="336.87800000000004" width="829.3120000000001" height="74.52720000000001" rx="16.72" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.12)" stroke-width="1.672"/>
+<rect x="488.22400000000005" y="237.50840000000002" width="615.296" height="62.10600000000001" rx="16.72" fill="rgba(255,255,255,0.28)" stroke="rgba(255,255,255,0.12)" stroke-width="1.672"/>
+    <path d="M 407.9680000000001 647.4080000000001 L 488.22400000000005 504.5642" stroke="rgba(239,69,35,0.72)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 621.9840000000002 647.4080000000001 L 488.22400000000005 504.5642" stroke="rgba(255,255,255,0.48)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 836.0000000000001 647.4080000000001 L 755.7440000000001 504.5642" stroke="rgba(255,255,255,0.48)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 1050.016 647.4080000000001 L 1023.2640000000001 504.5642" stroke="rgba(239,69,35,0.72)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 488.22400000000005 504.5642 L 595.2320000000001 374.14160000000004" stroke="rgba(255,255,255,0.48)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 755.7440000000001 504.5642 L 595.2320000000001 374.14160000000004" stroke="rgba(255,255,255,0.48)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 755.7440000000001 504.5642 L 889.5040000000001 374.14160000000004" stroke="rgba(239,69,35,0.72)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 1023.2640000000001 504.5642 L 889.5040000000001 374.14160000000004" stroke="rgba(255,255,255,0.48)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 595.2320000000001 374.14160000000004 L 755.7440000000001 268.56140000000005" stroke="rgba(255,255,255,0.48)" stroke-width="2.3407999999999998" fill="none"/>
+<path d="M 889.5040000000001 374.14160000000004 L 755.7440000000001 268.56140000000005" stroke="rgba(239,69,35,0.72)" stroke-width="2.3407999999999998" fill="none"/>
+    <circle cx="407.9680000000001" cy="647.4080000000001" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="621.9840000000002" cy="647.4080000000001" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="836.0000000000001" cy="647.4080000000001" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="1050.016" cy="647.4080000000001" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="488.22400000000005" cy="504.5642" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="755.7440000000001" cy="504.5642" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="1023.2640000000001" cy="504.5642" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="595.2320000000001" cy="374.14160000000004" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="889.5040000000001" cy="374.14160000000004" r="6.688" fill="rgba(255,255,255,0.86)"/>
+<circle cx="755.7440000000001" cy="268.56140000000005" r="6.688" fill="rgba(239,69,35,0.92)"/>
+  </g>
+  
+</svg>

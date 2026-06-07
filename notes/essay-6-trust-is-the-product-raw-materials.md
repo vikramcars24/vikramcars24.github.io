@@ -21,6 +21,7 @@ The enduring business in mobility is not simply moving a vehicle once. It is cre
 - public policy is not outside the product when the category depends on state systems for truth and transfer
 - community knowledge can be part of the trust stack too, not only product features and policy rails
 - repeated ownership help can turn internal consumer anxiety into trust over time
+- the Indian auto category is still structurally underbuilt enough to create multiple world-scale companies, not just one large marketplace
 
 ## Best proof points already in the note base
 
@@ -106,6 +107,30 @@ The enduring business in mobility is not simply moving a vehicle once. It is cre
   - transfer follow-through
 - each one reduces internal fear and makes the next major transaction less intimidating
 - that is why trust in this category compounds like a ledger, not like a slogan
+
+## Category-scale thesis
+
+- somewhere in the series we should say, without saying it too crudely, that Indian auto will likely produce multiple `$100B+` companies over time
+- not because cars are glamorous
+- because ownership is still an unfinished stack:
+  - discovery
+  - financing
+  - transfer
+  - servicing
+  - compliance
+  - insurance
+  - resale
+  - data
+  - community trust
+- in developed markets, much of this stack is already normalized
+- in India, large parts of it are still fragmented, manual, mistrusted, or absent
+- that creates room for enduring institutions, not just point solutions
+- the biggest winners will not only build in India
+- they will build from India for global ownership problems too
+- editorial handling:
+  - make this a category prediction, not a Cars24 valuation argument
+  - the point is that auto is still early as an institutional category in India
+  - trust, ownership rails, and information infrastructure are what can create very large outcomes
 
 ## Team-BHP angle
 

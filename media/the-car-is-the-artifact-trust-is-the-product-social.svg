@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1003" height="1568" viewBox="0 0 1003 1568" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1003" y2="1568">
+      <stop offset="0%" stop-color="#5A4DFF"/>
+      <stop offset="42%" stop-color="#4736FE"/>
+      <stop offset="100%" stop-color="#21167F"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.24 125.44) rotate(40) scale(451.35 815.36)">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(842.52 972.16) rotate(210) scale(280.84000000000003 595.84)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1003" height="1568" fill="url(#bgGradient)"/>
+  <rect width="1003" height="1568" fill="url(#violetGlow)" opacity="0.16"/>
+  <rect width="1003" height="1568" fill="url(#emberGlow)" opacity="0.18"/>
+  <ellipse cx="822.4599999999999" cy="376.32" rx="220.66" ry="344.96" fill="rgba(255,255,255,0.05)"/>
+  <ellipse cx="140.42000000000002" cy="1254.4" rx="180.54" ry="313.6" fill="rgba(239,69,35,0.08)"/>
+  <rect x="72.216" y="133.28" width="110.33" height="14.111999999999998" rx="3.136" fill="rgba(255,255,255,0.82)"/>
+  <rect x="842.52" y="1387.68" width="80.24" height="14.111999999999998" rx="3.136" fill="rgba(239,69,35,0.82)"/>
+  
+  
+  <g>
+    <ellipse cx="694.076" cy="771.4559999999999" rx="144.43200000000002" ry="125.44000000000001" fill="rgba(239,69,35,0.08)"/>
+    <ellipse cx="260.78000000000003" cy="1172.864" rx="128.38400000000001" ry="100.352" fill="rgba(255,255,255,0.08)"/>
+    <rect x="116.34800000000001" y="1110.144" width="738.2080000000001" height="100.352" rx="16" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.12)" stroke-width="1.0030000000000001"/>
+<rect x="164.49200000000002" y="972.16" width="625.8720000000001" height="87.80800000000002" rx="16" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.12)" stroke-width="1.0030000000000001"/>
+<rect x="228.68400000000003" y="846.7199999999999" width="497.48800000000006" height="75.264" rx="16" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.12)" stroke-width="1.0030000000000001"/>
+<rect x="292.87600000000003" y="746.3679999999999" width="369.10400000000004" height="62.720000000000006" rx="16" fill="rgba(255,255,255,0.28)" stroke="rgba(255,255,255,0.12)" stroke-width="1.0030000000000001"/>
+    <path d="M 244.73200000000003 1160.32 L 292.87600000000003 1016.064" stroke="rgba(239,69,35,0.72)" stroke-width="2" fill="none"/>
+<path d="M 373.11600000000004 1160.32 L 292.87600000000003 1016.064" stroke="rgba(255,255,255,0.48)" stroke-width="2" fill="none"/>
+<path d="M 501.50000000000006 1160.32 L 453.35600000000005 1016.064" stroke="rgba(255,255,255,0.48)" stroke-width="2" fill="none"/>
+<path d="M 629.884 1160.32 L 613.836 1016.064" stroke="rgba(239,69,35,0.72)" stroke-width="2" fill="none"/>
+<path d="M 292.87600000000003 1016.064 L 357.06800000000004 884.352" stroke="rgba(255,255,255,0.48)" stroke-width="2" fill="none"/>
+<path d="M 453.35600000000005 1016.064 L 357.06800000000004 884.352" stroke="rgba(255,255,255,0.48)" stroke-width="2" fill="none"/>
+<path d="M 453.35600000000005 1016.064 L 533.5960000000001 884.352" stroke="rgba(239,69,35,0.72)" stroke-width="2" fill="none"/>
+<path d="M 613.836 1016.064 L 533.5960000000001 884.352" stroke="rgba(255,255,255,0.48)" stroke-width="2" fill="none"/>
+<path d="M 357.06800000000004 884.352 L 453.35600000000005 777.728" stroke="rgba(255,255,255,0.48)" stroke-width="2" fill="none"/>
+<path d="M 533.5960000000001 884.352 L 453.35600000000005 777.728" stroke="rgba(239,69,35,0.72)" stroke-width="2" fill="none"/>
+    <circle cx="244.73200000000003" cy="1160.32" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="373.11600000000004" cy="1160.32" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="501.50000000000006" cy="1160.32" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="629.884" cy="1160.32" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="292.87600000000003" cy="1016.064" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="453.35600000000005" cy="1016.064" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="613.836" cy="1016.064" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="357.06800000000004" cy="884.352" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="533.5960000000001" cy="884.352" r="6" fill="rgba(255,255,255,0.86)"/>
+<circle cx="453.35600000000005" cy="777.728" r="6" fill="rgba(239,69,35,0.92)"/>
+  </g>
+  
+  <g>
+    <path d="M 65.195 148.96 L 55.16499999999999 148.96 L 55.16499999999999 787.3868799999999 L 65.195 787.3868799999999"
+          stroke="rgba(186,199,255,0.4)" stroke-width="1.5045" fill="none"/>
+    <text x="75.225" y="282.24" fill="#FFFFFF" opacity="1" font-size="98.294" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.055em">The car is</text>
+<text x="75.225" y="420.224" fill="#FFFFFF" opacity="1" font-size="98.294" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.055em">the artifact.</text>
+<text x="75.225" y="558.208" fill="#FFFFFF" opacity="1" font-size="98.294" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="600" letter-spacing="-0.045em">Trust is the product.</text>
+    <text x="75.225" y="740.3468799999999" fill="#FFFFFF" opacity="0.96" font-size="38.114" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Certainty is what compounds in mobility.</text>
+    <text x="75.225" y="850.1068799999999" fill="#FFFFFF" opacity="0.9" font-size="26.078" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400">
+      <tspan x="75.225" dy="0">Ownership becomes a business when trust becomes a system.</tspan>
+    </text>
+  </g>
+</svg>

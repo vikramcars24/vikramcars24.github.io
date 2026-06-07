@@ -653,9 +653,10 @@ function renderEntryRow(post) {
           <span>${formatDate(post.date)}</span>
           <span>${post.readingMinutes} min read</span>
         </div>
-        <h2 class="entry-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${escapeHtml(post.title)}</a></h2>
+        <h2 class="entry-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
         <p class="entry-description">${escapeHtml(post.description)}</p>
       </div>
+      ${renderEntryVisual(post, "entry-thumb")}
       <div class="entry-side">
         <a class="entry-link" href="${sitePath(post.site, `/posts/${post.slug}/`)}">${entryLinkLabel(post)}</a>
       </div>
@@ -678,12 +679,15 @@ function renderEssayCover(post) {
 function renderHomeFeaturedEntry(post) {
   return `
     <article class="home-featured-entry">
-      <div class="entry-meta">
-        <span>${formatDate(post.date)}</span>
-        <span>${post.readingMinutes} min read</span>
+      <div class="home-featured-copy">
+        <div class="entry-meta">
+          <span>${formatDate(post.date)}</span>
+          <span>${post.readingMinutes} min read</span>
+        </div>
+        <h2 class="home-featured-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
+        <p class="home-featured-description">${escapeHtml(post.description)}</p>
       </div>
-      <h2 class="home-featured-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
-      <p class="home-featured-description">${escapeHtml(post.description)}</p>
+      ${renderEntryVisual(post, "home-featured-visual")}
     </article>
   `;
 }
@@ -693,11 +697,30 @@ function renderHomeArchiveRow(post) {
     <article class="home-archive-row">
       <div class="home-archive-date">${formatDate(post.date)}</div>
       <div class="home-archive-copy">
-        <h3><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${escapeHtml(post.title)}</a></h3>
+        <h3><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h3>
         <p>${escapeHtml(post.description)}</p>
       </div>
+      ${renderEntryVisual(post, "home-archive-visual")}
     </article>
   `;
+}
+
+function renderEntryVisual(post, className) {
+  if (!post.image) {
+    return "";
+  }
+
+  const visualPath = entryVisualPath(post.image);
+
+  return `
+    <a class="${className}" href="${sitePath(post.site, `/posts/${post.slug}/`)}" aria-label="Open ${escapeAttribute(post.title)}">
+      <img src="${escapeAttribute(sitePath(post.site, visualPath))}" alt="${escapeAttribute(post.imageAlt)}" loading="lazy">
+    </a>
+  `;
+}
+
+function entryVisualPath(imagePath) {
+  return imagePath.replace("-preview.", "-cover.");
 }
 
 function renderHomeInterviewSections(sections) {

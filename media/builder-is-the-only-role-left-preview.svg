@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#6356FF"/>
+      <stop offset="42%" stop-color="#4736FE"/>
+      <stop offset="100%" stop-color="#2B1EB0"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96 50.4) rotate(40) scale(540 327.6)">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1008 390.6) rotate(210) scale(336.00000000000006 239.4)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  <rect width="1200" height="630" fill="url(#violetGlow)" opacity="0.16"/>
+  <rect width="1200" height="630" fill="url(#emberGlow)" opacity="0.18"/>
+  <ellipse cx="983.9999999999999" cy="151.2" rx="264" ry="138.6" fill="rgba(255,255,255,0.05)"/>
+  <ellipse cx="168.00000000000003" cy="504" rx="216" ry="126" fill="rgba(239,69,35,0.08)"/>
+  <rect x="86.39999999999999" y="53.550000000000004" width="132" height="8" rx="2" fill="rgba(255,255,255,0.82)"/>
+  <rect x="1008" y="557.55" width="96" height="8" rx="2" fill="rgba(239,69,35,0.82)"/>
+  
+  
+  <g>
+    <rect x="696" y="113.39999999999999" width="336.00000000000006" height="365.4" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+    <line x1="696" y1="179.17199999999997" x2="1032" y2="179.17199999999997" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
+<line x1="696" y1="237.63599999999997" x2="1032" y2="237.63599999999997" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
+<line x1="696" y1="296.09999999999997" x2="1032" y2="296.09999999999997" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
+<line x1="696" y1="354.56399999999996" x2="1032" y2="354.56399999999996" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
+<line x1="696" y1="413.02799999999996" x2="1032" y2="413.02799999999996" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
+    
+      <rect x="722.88" y="413.02799999999996" width="40.32000000000001" height="65.77199999999999" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+      <rect x="728.928" y="420.92063999999993" width="28.224000000000007" height="10" rx="8" fill="rgba(255,255,255,0.8)"/>
+    
+
+      <rect x="783.36" y="354.56399999999996" width="40.32000000000001" height="124.236" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+      <rect x="789.408" y="369.47231999999997" width="28.224000000000007" height="17.393040000000003" rx="8" fill="rgba(255,255,255,0.8)"/>
+    
+
+      <rect x="843.84" y="281.4839999999999" width="40.32000000000001" height="197.316" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+      <rect x="849.888" y="305.1619199999999" width="28.224000000000007" height="27.624240000000004" rx="8" fill="rgba(255,255,255,0.8)"/>
+    
+
+      <rect x="904.32" y="193.78799999999995" width="40.32000000000001" height="285.012" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+      <rect x="910.368" y="227.98943999999995" width="28.224000000000007" height="39.901680000000006" rx="8" fill="rgba(239,69,35,0.88)"/>
+    
+    <path d="M 716.16 413.02799999999996 C 769.9200000000001 383.79599999999994, 837.12 325.33199999999994, 951.36 186.48" stroke="rgba(239,69,35,0.92)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <g>
+    <path d="M 66 85.04999999999998 L 54 85.04999999999998 L 54 513.072 L 66 513.072"
+          stroke="rgba(186,199,255,0.4)" stroke-width="1.8" fill="none"/>
+    <text x="78" y="138.6" fill="#FFFFFF" opacity="1" font-size="102.00000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.055em">Builder is</text>
+<text x="78" y="245.7" fill="#FFFFFF" opacity="1" font-size="102.00000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.055em">the only role</text>
+<text x="78" y="352.8" fill="#FFFFFF" opacity="1" font-size="102.00000000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="600" letter-spacing="-0.045em">left.</text>
+    <text x="78" y="494.172" fill="#FFFFFF" opacity="0.96" font-size="33.6" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Prestige should move closer to the problem.</text>
+    <text x="78" y="557.172" fill="#FFFFFF" opacity="0.9" font-size="22.8" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="400">
+      <tspan x="78" dy="0">The durable role is the one that closes loops directly.</tspan>
+    </text>
+  </g>
+</svg>

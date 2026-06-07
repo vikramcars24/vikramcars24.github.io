@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1254" y2="1254">
+      <stop offset="0%" stop-color="#F6F3FF"/>
+      <stop offset="42%" stop-color="#F0ECFF"/>
+      <stop offset="100%" stop-color="#E7E1FF"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100.32000000000001 100.32000000000001) rotate(40) scale(564.3000000000001 652.08)">
+      <stop offset="0%" stop-color="#4736FE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4736FE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1053.36 777.48) rotate(210) scale(351.12000000000006 476.52)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10.032" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1254" height="1254" fill="url(#bgGradient)"/>
+  <rect width="1254" height="1254" fill="url(#violetGlow)" opacity="0.08"/>
+  <rect x="87.78000000000002" y="100.32000000000001" width="163.02" height="12.540000000000001" rx="2.508" fill="rgba(239,69,35,0.9)"/>
+  <rect x="990.6600000000001" y="1128.6000000000001" width="150.48" height="12.540000000000001" rx="2.508" fill="rgba(71,54,254,0.8)"/>
+  
+  
+  <g>
+    <rect x="150.48" y="175.56000000000003" width="953.04" height="877.8" rx="24" fill="rgba(255,255,255,0.24)" stroke="rgba(71,54,254,0.08)" stroke-width="1.254"/>
+    
+    <circle cx="365.485824" cy="551.96064" r="200.1384" stroke="rgba(71,54,254,0.14)" stroke-width="2" fill="none"/>
+    <circle cx="365.485824" cy="551.96064" r="257.3208" stroke="rgba(239,69,35,0.12)" stroke-width="2" fill="none" stroke-dasharray="10 10"/>
+  
+    <rect x="264.84479999999996" y="316.00800000000004" width="228.72959999999998" height="491.56800000000004" rx="18" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.18)" stroke-width="1.254"/>
+    <rect x="338.03827199999995" y="286.51392000000004" width="41.171327999999995" height="24.578400000000002" rx="7.37352" fill="rgba(71,54,254,0.84)"/>
+    <rect x="306.016128" y="384.82752000000005" width="114.36479999999999" height="49.156800000000004" rx="14.74704" fill="rgba(71,54,254,0.88)"/>
+<rect x="306.016128" y="473.3097600000001" width="114.36479999999999" height="49.156800000000004" rx="14.74704" fill="rgba(71,54,254,0.88)"/>
+<rect x="306.016128" y="561.792" width="114.36479999999999" height="49.156800000000004" rx="14.74704" fill="rgba(71,54,254,0.88)"/>
+<rect x="306.016128" y="650.2742400000001" width="114.36479999999999" height="49.156800000000004" rx="14.74704" fill="rgba(239,69,35,0.54)"/>
+    <path d="M 493.57439999999997 404.49024000000003 C 512.6351999999999 404.49024000000003, 550.7568 333.564, 607.9391999999999 333.564" stroke="rgba(71,54,254,0.28)" stroke-width="1.8" fill="none"/>
+<path d="M 493.57439999999997 492.97248 C 512.6351999999999 492.97248, 550.7568 491.568, 607.9391999999999 491.568" stroke="rgba(71,54,254,0.28)" stroke-width="1.8" fill="none"/>
+<path d="M 493.57439999999997 581.4547200000001 C 512.6351999999999 581.4547200000001, 550.7568 649.572, 607.9391999999999 649.572" stroke="rgba(71,54,254,0.28)" stroke-width="1.8" fill="none"/>
+<path d="M 493.57439999999997 669.93696 C 512.6351999999999 669.93696, 550.7568 807.576, 607.9391999999999 807.576" stroke="rgba(71,54,254,0.28)" stroke-width="1.8" fill="none"/>
+    
+      <rect x="607.9391999999999" y="280.896" width="324.03360000000004" height="105.33599999999998" rx="12" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.254"/>
+      <rect x="646.0608" y="307.23" width="85.77359999999999" height="21.945" rx="8.778" fill="rgba(71,54,254,0.14)"/>
+      <rect x="646.0608" y="337.95300000000003" width="190.608" height="15.800399999999998" rx="8.778" fill="rgba(22,22,22,0.08)"/>
+    
+
+      <rect x="607.9391999999999" y="438.9" width="324.03360000000004" height="105.33599999999998" rx="12" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.254"/>
+      <rect x="646.0608" y="465.234" width="85.77359999999999" height="21.945" rx="8.778" fill="rgba(239,69,35,0.14)"/>
+      <rect x="646.0608" y="495.957" width="190.608" height="15.800399999999998" rx="8.778" fill="rgba(22,22,22,0.08)"/>
+    
+
+      <rect x="607.9391999999999" y="596.904" width="324.03360000000004" height="105.33599999999998" rx="12" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.254"/>
+      <rect x="646.0608" y="623.2379999999999" width="85.77359999999999" height="21.945" rx="8.778" fill="rgba(71,54,254,0.14)"/>
+      <rect x="646.0608" y="653.961" width="190.608" height="15.800399999999998" rx="8.778" fill="rgba(22,22,22,0.08)"/>
+    
+
+      <rect x="607.9391999999999" y="754.908" width="324.03360000000004" height="105.33599999999998" rx="12" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.254"/>
+      <rect x="646.0608" y="781.242" width="85.77359999999999" height="21.945" rx="8.778" fill="rgba(239,69,35,0.14)"/>
+      <rect x="646.0608" y="811.965" width="190.608" height="15.800399999999998" rx="8.778" fill="rgba(22,22,22,0.08)"/>
+    
+  </g>
+  
+  <g>
+    <text x="92.79599999999999" y="150.48" fill="rgba(71,54,254,0.72)" font-size="21.669120000000003" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">ORG DESIGN / AI</text>
+    <text x="92.79599999999999" y="238.26" fill="#4736FE" font-size="105.33600000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">The greenest car</text>
+<text x="92.79599999999999" y="373.692" fill="#4736FE" font-size="105.33600000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500" letter-spacing="-0.06em">in India is the</text>
+<text x="92.79599999999999" y="509.12399999999997" fill="#6F5BFF" font-size="105.33600000000001" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.05em">one already built.</text>
+    <text x="92.79599999999999" y="685.1855999999999" fill="#4736FE" opacity="0.96" font-size="40.128" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Reuse works only when trust works.</text>
+    <text x="92.79599999999999" y="790.5215999999999" fill="#161616" opacity="0.76" font-size="27.587999999999997" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
+      <tspan x="92.79599999999999" dy="0">Battery legibility and transfer rails make climate real.</tspan>
+    </text>
+  </g>
+</svg>

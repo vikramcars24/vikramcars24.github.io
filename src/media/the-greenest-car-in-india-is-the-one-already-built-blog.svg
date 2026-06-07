@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1672" y2="941">
+      <stop offset="0%" stop-color="#F6F3FF"/>
+      <stop offset="42%" stop-color="#F0ECFF"/>
+      <stop offset="100%" stop-color="#E7E1FF"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(133.76 75.28) rotate(40) scale(752.4 489.32)">
+      <stop offset="0%" stop-color="#4736FE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4736FE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1404.48 583.42) rotate(210) scale(468.16 357.58)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="13.376" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.6784000000000003" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1672" height="941" fill="url(#bgGradient)"/>
+  <rect width="1672" height="941" fill="url(#violetGlow)" opacity="0.08"/>
+  <rect x="117.04" y="75.28" width="217.36" height="9.41" rx="2" fill="rgba(239,69,35,0.9)"/>
+  <rect x="1320.88" y="846.9" width="200.64" height="9.41" rx="2" fill="rgba(71,54,254,0.8)"/>
+  
+  
+  <g>
+    <rect x="200.64" y="131.74" width="1270.72" height="658.6999999999999" rx="24" fill="rgba(255,255,255,0.24)" stroke="rgba(71,54,254,0.08)" stroke-width="1.672"/>
+    
+    <circle cx="487.314432" cy="414.19056" r="266.8512" stroke="rgba(71,54,254,0.14)" stroke-width="2.3407999999999998" fill="none"/>
+    <circle cx="487.314432" cy="414.19056" r="343.0944" stroke="rgba(239,69,35,0.12)" stroke-width="2.3407999999999998" fill="none" stroke-dasharray="10.032 10.032"/>
+  
+    <rect x="353.1264" y="237.132" width="304.9728" height="368.872" rx="18.392" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.18)" stroke-width="1.672"/>
+    <rect x="450.717696" y="214.99968" width="54.895103999999996" height="18.4436" rx="5.53308" fill="rgba(71,54,254,0.84)"/>
+    <rect x="408.021504" y="288.77408" width="152.4864" height="36.8872" rx="11.06616" fill="rgba(71,54,254,0.88)"/>
+<rect x="408.021504" y="355.17104" width="152.4864" height="36.8872" rx="11.06616" fill="rgba(71,54,254,0.88)"/>
+<rect x="408.021504" y="421.568" width="152.4864" height="36.8872" rx="11.06616" fill="rgba(71,54,254,0.88)"/>
+<rect x="408.021504" y="487.96496" width="152.4864" height="36.8872" rx="11.06616" fill="rgba(239,69,35,0.54)"/>
+    <path d="M 658.0992 303.52896 C 683.5136 303.52896, 734.3424 250.30599999999998, 810.5856 250.30599999999998" stroke="rgba(71,54,254,0.28)" stroke-width="2.1736" fill="none"/>
+<path d="M 658.0992 369.92592 C 683.5136 369.92592, 734.3424 368.87199999999996, 810.5856 368.87199999999996" stroke="rgba(71,54,254,0.28)" stroke-width="2.1736" fill="none"/>
+<path d="M 658.0992 436.32288000000005 C 683.5136 436.32288000000005, 734.3424 487.438, 810.5856 487.438" stroke="rgba(71,54,254,0.28)" stroke-width="2.1736" fill="none"/>
+<path d="M 658.0992 502.71984000000003 C 683.5136 502.71984000000003, 734.3424 606.0039999999999, 810.5856 606.0039999999999" stroke="rgba(71,54,254,0.28)" stroke-width="2.1736" fill="none"/>
+    
+      <rect x="810.5856" y="210.784" width="432.04480000000007" height="79.04399999999998" rx="15.047999999999998" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.672"/>
+      <rect x="861.4144" y="230.545" width="114.3648" height="16.467499999999998" rx="6.587" fill="rgba(71,54,254,0.14)"/>
+      <rect x="861.4144" y="253.59949999999998" width="254.144" height="11.856599999999998" rx="6.587" fill="rgba(22,22,22,0.08)"/>
+    
+
+      <rect x="810.5856" y="329.35" width="432.04480000000007" height="79.04399999999998" rx="15.047999999999998" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.672"/>
+      <rect x="861.4144" y="349.111" width="114.3648" height="16.467499999999998" rx="6.587" fill="rgba(239,69,35,0.14)"/>
+      <rect x="861.4144" y="372.1655" width="254.144" height="11.856599999999998" rx="6.587" fill="rgba(22,22,22,0.08)"/>
+    
+
+      <rect x="810.5856" y="447.91599999999994" width="432.04480000000007" height="79.04399999999998" rx="15.047999999999998" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.672"/>
+      <rect x="861.4144" y="467.6769999999999" width="114.3648" height="16.467499999999998" rx="6.587" fill="rgba(71,54,254,0.14)"/>
+      <rect x="861.4144" y="490.7314999999999" width="254.144" height="11.856599999999998" rx="6.587" fill="rgba(22,22,22,0.08)"/>
+    
+
+      <rect x="810.5856" y="566.482" width="432.04480000000007" height="79.04399999999998" rx="15.047999999999998" fill="rgba(255,255,255,0.95)" stroke="rgba(71,54,254,0.14)" stroke-width="1.672"/>
+      <rect x="861.4144" y="586.2429999999999" width="114.3648" height="16.467499999999998" rx="6.587" fill="rgba(239,69,35,0.14)"/>
+      <rect x="861.4144" y="609.2975" width="254.144" height="11.856599999999998" rx="6.587" fill="rgba(22,22,22,0.08)"/>
+    
+  </g>
+  
+</svg>
