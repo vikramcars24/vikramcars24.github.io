@@ -1,12 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vikram Chopra">
-  <defs>
-    <radialGradient id="dot" cx="35%" cy="35%" r="75%">
-      <stop offset="0%" stop-color="#d7a286" />
-      <stop offset="72%" stop-color="#a45c37" />
-      <stop offset="100%" stop-color="#8d4e2d" />
-    </radialGradient>
-  </defs>
-  <rect width="64" height="64" rx="16" fill="#faf7f1" />
-  <circle cx="32" cy="32" r="12" fill="url(#dot)" />
-  <circle cx="32" cy="32" r="16" fill="none" stroke="#e7dccf" stroke-width="2" />
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="#faf7f1" stroke="#d8d0c4" stroke-width="2.5" />
+  <text
+    x="32"
+    y="40"
+    text-anchor="middle"
+    font-family="Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif"
+    font-size="21"
+    font-weight="600"
+    letter-spacing="-1.1"
+    fill="#181410"
+  >VC</text>
 </svg>
