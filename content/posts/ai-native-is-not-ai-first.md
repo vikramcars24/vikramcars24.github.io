@@ -19,19 +19,25 @@ A founder I respect told me recently that his company was AI-first now. I asked 
 
 I do not say this to mock him. Most of us built companies for a world in which context was expensive to gather, expensive to move, and expensive to act on. We built layers because human beings are bad at carrying large amounts of context across a scaled system.
 
+## AI-first is not the same as AI-native
+
 That is why the distinction between AI-first and AI-native matters.
 
 An AI-first company uses AI. An AI-native company rebuilds around what AI changes.
 
+## Companies are built to carry context
+
 That sounds semantic until you look closely at what a company actually is. [Jay Galbraith](https://pubsonline.informs.org/doi/10.1287/inte.4.3.28) made the point decades ago in more academic language: organization design is fundamentally an information problem.
 
-Most people describe companies in terms of product, market, talent, or capital. All of that matters. But every scaled company is also a context machine. It takes signals from the edge, compresses them, routes them, interprets them, and turns them into decisions. The org chart is not just a power map. It is a context architecture.
+Most people describe companies in terms of product, market, talent, or capital. All of that matters. But every scaled company is also a context machine. It takes signals from the edge, compresses them, routes them, interprets them, and turns them into decisions. The org chart is not just a power map. It is a context architecture. It decides who gets to see reality, when they see it, and how much of it survives the trip.
 
 Hierarchy was never simply ego or bureaucracy. It was a workaround for an information problem.
 
 As a company grows, no single person can see enough of the system to make every decision well. So you add layers. A layer summarizes what is happening below, escalates what matters, filters noise, and translates decisions from above into action below. It is not elegant, but it works. That is how large organizations stayed coherent.
 
 It is also how they became slow.
+
+## AI changes the cost of layers
 
 Every layer introduces latency. Every layer degrades fidelity. Facts get polished on the way up. Decisions get generalized on the way down. By the time a signal reaches someone with the authority to act, it is usually cleaner, flatter, and less useful than the reality that produced it.
 
@@ -42,6 +48,8 @@ Not because it replaces judgment. It does not. Not because it makes humans irrel
 That work can now be done faster, more continuously, and often with better fidelity than the human chain it used to travel through.
 
 Once that becomes true, the old company shape has to be questioned.
+
+## The redesign is organizational, not just technical
 
 Most companies are still asking the wrong question. The question is not whether to use AI. Every serious company will. The question is what kind of company makes sense once the cost of carrying context drops this sharply.
 
@@ -55,6 +63,8 @@ In the old company, context travels in batches. Through meetings. Through decks.
 
 In the AI-native company, the state of the business is more continuously available. Not just visible in a dashboard. Legible. Systems surface what changed, what matters, what is unusual, what is breaking, and what needs a call. The meeting no longer exists to transfer information that should already be available. It exists where humans need to argue, decide, and take responsibility.
 
+A surprising number of recurring rituals turn out to be design debt once shared context becomes cheap. Status meetings, chase emails, escalation decks, and permission loops were often compensating for the same thing: too few people being able to see enough of the system to act.
+
 That sounds like an efficiency improvement. It is not. It is a different operating system.
 
 A company that can make in two days the decision it used to make in two weeks does not remain the same company with better tooling. It becomes a different species. It gets more learning cycles per quarter. It corrects faster. It compounds faster. Time starts behaving differently inside the business.
@@ -65,7 +75,9 @@ That was never the highest form of management. It was overhead.
 
 The real work of management is still deeply human: judgment, hiring, standards, coaching, conflict, escalation, trust, the hard decision under uncertainty. If AI strips away the coordination theater, what remains is leadership itself.
 
-None of this works in a low-trust company. If people hoard context, edit bad news for the next layer, or wait for permission because being wrong is punished, AI will only speed up theater. The technical change lowers the cost of carrying context. The cultural question is whether truth is allowed to travel at all.
+None of this works in a low-trust company. If people hoard context, edit bad news for the next layer, or wait for permission because being wrong is punished harder than being slow, AI will not make the company smarter. It will make it faster at producing polished summaries of the wrong story. The technical shift lowers the cost of carrying context. The cultural question is whether truth is allowed to travel at all.
+
+## More shared context means more agency
 
 The same shift happens at the edge of the company.
 
@@ -78,6 +90,8 @@ AI-native companies can change this by lowering the cost of shared context. The 
 The point is not more agents. It is more agency.
 
 This is also where many companies will fail. They will buy the tools and preserve the old permission structure. They will use AI to summarize meetings that should not exist. They will make reporting cleaner while keeping authority trapped at the same altitude. They will claim transformation when what they really achieved was software modernization.
+
+## The org design becomes the strategy
 
 I keep coming back to one sentence: the org design is the AI strategy. Everything else is tooling.
 

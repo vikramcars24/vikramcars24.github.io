@@ -53,6 +53,7 @@ async function loadPosts(site) {
       const wordCount = body.trim().split(/\s+/).filter(Boolean).length;
       const readingMinutes = Math.max(1, Math.round(wordCount / 220));
       const { html: bodyHtml, headings } = renderMarkdown(body);
+      warnIfEssayNeedsMainSections({ slug, category: attributes.category || "Essay", headings });
       return {
         site,
         slug,
@@ -74,6 +75,28 @@ async function loadPosts(site) {
       };
     })
   );
+}
+
+function warnIfEssayNeedsMainSections({ slug, category, headings }) {
+  if (category !== "Essay") {
+    return;
+  }
+
+  const levelTwoHeadings = (headings || []).filter((heading) => heading.level === 2);
+
+  if (levelTwoHeadings.length === 0) {
+    console.warn(`[toc] ${slug}: add main-article ## sections so the sidebar table of contents is not empty.`);
+    return;
+  }
+
+  const notesIndex = levelTwoHeadings.findIndex((heading) => heading.id === "notes-and-sources");
+  const mainHeadings = notesIndex === -1
+    ? levelTwoHeadings
+    : levelTwoHeadings.slice(0, notesIndex);
+
+  if (mainHeadings.length === 0) {
+    console.warn(`[toc] ${slug}: add main-article ## sections before "Notes and Sources" so the sidebar table of contents reflects the essay.`);
+  }
 }
 
 function parseFrontMatter(raw) {
@@ -267,6 +290,9 @@ function renderHome(site, posts) {
   const featured = posts.find((post) => post.featured) || posts[0];
   const latest = posts[0];
   const archivePosts = posts.slice(1);
+  const interviews = Array.isArray(site.interviews) ? site.interviews : [];
+  const interviewSections = groupBy(interviews, (interview) => interview.section || "Interviews");
+  const elsewhere = Array.isArray(site.elsewhere) ? site.elsewhere : [];
 
   return renderDocument({
     site,
@@ -295,6 +321,9 @@ function renderHome(site, posts) {
             ${renderHomeFeaturedEntry(latest)}
             ${archivePosts.length > 0 ? `<div class="home-archive-list">${archivePosts.map((post) => renderHomeArchiveRow(post)).join("")}</div>` : ""}
           </section>
+
+          ${interviews.length > 0 ? renderHomeInterviewSections(interviewSections) : ""}
+          ${elsewhere.length > 0 ? renderElsewhereSection(elsewhere) : ""}
         </main>
         ${renderFooter(site)}
       </div>
@@ -669,6 +698,106 @@ function renderHomeArchiveRow(post) {
   `;
 }
 
+function renderHomeInterviewSections(sections) {
+  const sectionEntries = Object.entries(sections).filter(([, items]) =>
+    items.some((interview) => String(interview.videoId || "").trim())
+  );
+
+  if (sectionEntries.length === 0) {
+    return "";
+  }
+
+  return sectionEntries
+    .map(([sectionTitle, items], index) => renderHomeInterviewsSection(sectionTitle, items, index === 0))
+    .join("");
+}
+
+function renderHomeInterviewsSection(sectionTitle, interviews, includeIntro = false) {
+  const validInterviews = interviews.filter((interview) => String(interview.videoId || "").trim());
+
+  if (validInterviews.length === 0) {
+    return "";
+  }
+
+  return `
+    <section class="home-interviews">
+      <div class="home-section-head">
+        <p class="home-label">${escapeHtml(sectionTitle)}</p>
+      </div>
+      ${includeIntro ? `<p class="home-interviews-intro">Conversations on company building, leadership, and staying steady while the stakes rise.</p>` : ""}
+      <div class="interview-grid">
+        ${validInterviews.map((interview) => renderHomeInterviewCard(interview)).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderHomeInterviewCard(interview) {
+  const videoId = String(interview.videoId || "").trim();
+
+  if (!videoId) {
+    return "";
+  }
+
+  const title = interview.title || "Interview";
+  const host = interview.host || "";
+  const description = interview.description || "";
+  const meta = [host, interview.date ? formatDate(interview.date) : ""].filter(Boolean).join(" • ");
+  const watchUrl = interview.url || `https://www.youtube.com/watch?v=${videoId}`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
+
+  return `
+    <article class="interview-card">
+      <div class="interview-video">
+        <iframe
+          src="${escapeAttribute(embedUrl)}"
+          title="${escapeAttribute(title)}"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      ${meta ? `<p class="interview-meta">${escapeHtml(meta)}</p>` : ""}
+      <h3 class="interview-title">${escapeHtml(title)}</h3>
+      ${description ? `<p class="interview-description">${escapeHtml(description)}</p>` : ""}
+      <p class="interview-action"><a class="inline-link" href="${escapeAttribute(watchUrl)}" target="_blank" rel="noreferrer">Watch on YouTube</a></p>
+    </article>
+  `;
+}
+
+function renderElsewhereSection(items) {
+  const validItems = items.filter((item) => String(item.url || "").trim());
+
+  if (validItems.length === 0) {
+    return "";
+  }
+
+  return `
+    <section class="home-elsewhere">
+      <div class="home-section-head">
+        <p class="home-label">Elsewhere</p>
+      </div>
+      <p class="home-elsewhere-intro">Interviews, essays, and conversations published outside this site that still feel central to the work.</p>
+      <div class="elsewhere-list">
+        ${validItems.map((item) => renderElsewhereRow(item)).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderElsewhereRow(item) {
+  const meta = [item.type || "", item.source || "", item.date ? formatDate(item.date) : ""].filter(Boolean).join(" • ");
+
+  return `
+    <article class="elsewhere-row">
+      ${meta ? `<p class="elsewhere-meta">${escapeHtml(meta)}</p>` : ""}
+      <h3 class="elsewhere-title"><a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title || "Untitled")}</a></h3>
+      ${item.description ? `<p class="elsewhere-description">${escapeHtml(item.description)}</p>` : ""}
+    </article>
+  `;
+}
+
 function entryLinkLabel(post) {
   const category = String(post.category || "").toLowerCase();
   if (category.includes("note")) {
@@ -691,7 +820,9 @@ function renderDisplayTitle(title) {
 }
 
 function renderTableOfContents(post) {
-  const headings = (post.headings || []).filter((heading) => heading.level === 2 || heading.level === 3);
+  const allHeadings = post.headings || [];
+  const preferredLevel = allHeadings.some((heading) => heading.level === 2) ? 2 : 3;
+  const headings = allHeadings.filter((heading) => heading.level === preferredLevel);
 
   if (headings.length === 0) {
     return "";

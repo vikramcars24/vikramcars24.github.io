@@ -141,8 +141,35 @@ Best additions:
 - institutional pattern:
   - repeated attempts to make transfer, traceability, and public-system data more legible
 
+Attachment-backed additions now read:
+- `Concept Note PM Rahat.pdf` makes the implementation thesis much sharper:
+  - it focuses on hospital readiness, police-hospital synchronization, fund-flow efficiency, and `0%` out-of-pocket burden for eligible victims
+  - this supports the essay's core idea that safety failure is often a handoff failure
+- Verify Portal screenshots and training photos provide concrete adjacent proof:
+  - the system surfaces ownership details, document status, and timeline history
+  - the police-training images show this was not only an abstract product claim
+- the broader public-policy archive reinforces a future extension of the essay:
+  - public safety improves when truth moves faster across institutions
+
 Editorial implication:
 - this material is best used to deepen the essay's information-infrastructure argument, not to change its core thesis
 
 See:
 - [essay-series-public-policy-channel-raw-materials.md](/Users/vikram/Documents/New%20project%204/notes/essay-series-public-policy-channel-raw-materials.md)
+
+## 13. Founder archive as thesis reinforcement
+
+The two-year founder archive across `#announcements` and `all@cars24.com` reinforces the published essay's core frame in a useful way.
+
+What it adds:
+- road safety treated as a category obligation rather than a symbolic side project
+- repeated language around customer dignity, post-transaction responsibility, and public-interest work
+- stronger support for the idea that mobility companies inherit responsibilities beyond the sale
+
+Editorial implication:
+- use this archive to sharpen future rewrites toward category responsibility and information infrastructure
+- avoid turning the essay into a company case study; keep the argument public and system-level
+
+See:
+- [essay-series-founder-voice-source-map.md](/Users/vikram/Documents/New%20project%204/notes/essay-series-founder-voice-source-map.md)
+- [essay-series-doctrine-sheet.md](/Users/vikram/Documents/New%20project%204/notes/essay-series-doctrine-sheet.md)

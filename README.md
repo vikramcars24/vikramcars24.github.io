@@ -27,6 +27,11 @@ category: Essay
 Your writing starts here.
 ```
 
+For essays, add real top-level `##` sections in the main body before `## Notes and Sources`.
+The sidebar TOC is intended to reflect the article's argument, not only the research appendix.
+Each essay should also get its own visual identity from scratch. Do not reuse or lightly tweak a previous essay's image system, motif, or composition.
+When essay visuals fall under the Cars24 Maker workflow, strictly follow the `cars24-maker-agent` skill and its loaded creative-direction sources rather than improvising a parallel system.
+
 Supported Markdown includes:
 
 - `#`, `##`, `###` headings

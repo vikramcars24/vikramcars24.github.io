@@ -19,6 +19,8 @@ The enduring business in mobility is not simply moving a vehicle once. It is cre
 - transfer certainty is part of the product experience, not an afterthought
 - legitimacy with the state changes what a marketplace can credibly offer
 - public policy is not outside the product when the category depends on state systems for truth and transfer
+- community knowledge can be part of the trust stack too, not only product features and policy rails
+- repeated ownership help can turn internal consumer anxiety into trust over time
 
 ## Best proof points already in the note base
 
@@ -52,15 +54,81 @@ The enduring business in mobility is not simply moving a vehicle once. It is cre
 - VAHAN transfer data:
   - shows the category is real and system-sized, not anecdotal
 
+## Best attachment-backed additions
+
+- The Hindu clipping gives a public version of the trust argument:
+  - liability remains with the person named on the RC even after sale
+  - less than `70%` of RC transfers complete within `60 days`
+  - some cases take years
+  - incomplete transfers create both citizen risk and security risk
+- the transfer-reform stack is now explicit:
+  - e-KYC
+  - digital RC and insurance retrieval
+  - digital NOCs
+  - any registering authority within the state
+  - State Transport Authority as the ADRV node
+  - Form `29CA` for inter-dealer traceability
+  - owner take-back capped at `15 days`
+  - explicit deemed ownership for Section `157` insurance continuity
+- the DO material makes the trust stack legible:
+  - Form `29C` as proof of seller relief
+  - dealer-side liability during possession
+  - workflow clarity for transfer, insurance, and downstream RTO services
+- the NTR policy makes the information layer equally concrete:
+  - API-first data sharing
+  - masked PII by default
+  - consent and privacy obligations
+  - CERT-IN audit requirements
+  - mandatory audit logs
+- the Verify screenshots are useful because they show trust as visible system behavior:
+  - document stack
+  - timeline
+  - ownership details
+  - investigative traceability
+
 ## Best channel-derived lines of thought
 
 - trust is not a feeling in this category; it is the visible behavior of systems
 - state interfaces, media legitimacy, dashboards, and auditability are part of the trust stack
 - the car is what moves, but certainty is what compounds
 
+## Ownership-thesis link
+
+- this essay should borrow one idea from essay 1:
+  - in India, trust is often built before the big buy / sell moment by helping people live with the car
+- ownership tasks are not adjacent services
+- they are recurring trust events:
+  - insurance
+  - PUC
+  - challans
+  - servicing
+  - FASTag
+  - transfer follow-through
+- each one reduces internal fear and makes the next major transaction less intimidating
+- that is why trust in this category compounds like a ledger, not like a slogan
+
+## Team-BHP angle
+
+- Team-BHP belongs in this essay as one of the clearest examples that trust can itself become the enduring product
+- what Rush built is not best described as content:
+  - it is a curated owner archive
+  - a reputational filter on the category
+  - a community memory for what cars, brands, dealers, and practices deserve confidence
+- the key design choices are essay-worthy:
+  - no car ads
+  - no paid memberships
+  - open searchable knowledge base
+  - tight moderation and member screening
+  - strong road-safety stance
+- category implication:
+  - trust compounds when truth is protected, not merely posted
+  - communities can do real product work by collapsing information asymmetry before a transaction even starts
+  - if the car is the artifact and trust is the product, then Team-BHP is one of the earliest trust products in Indian mobility
+- use carefully:
+  - this should not read like deal justification
+  - it should read like respect for a rare institution that Indian auto enthusiasts built for themselves
+
 ## What still needs locking later
 
-- The Hindu PDF
-- Verify Portal images / UI screenshots
-- MoRTH recommendation decks and DO amendment files
 - any final public-safe formulation of transfer-performance claims
+- whether we want to publish the strongest security examples or keep the essay at a cleaner category level

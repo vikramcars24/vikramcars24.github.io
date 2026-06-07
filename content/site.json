@@ -7,5 +7,81 @@
   "basePath": "",
   "intro": "I write about building companies, making decisions under pressure, and staying clear-eyed while the stakes rise.",
   "about": "The work that matters most to me lives in the tension between intensity and steadiness: how to move fast without becoming frantic, and how to demand more without losing care for the people around the work.",
-  "footerNote": "Built for long arguments, sharp ideas, and posts worth rereading."
+  "footerNote": "Built for long arguments, sharp ideas, and posts worth rereading.",
+  "interviews": [
+    {
+      "section": "Interviews",
+      "title": "He Built India's Biggest Car Selling & Purchasing Platform",
+      "host": "Raj Shamani",
+      "date": "2023-07-01",
+      "videoId": "x9ICVBEsds4",
+      "description": "A wide-ranging conversation on building Cars24, leadership, hiring, scaling, and lessons learned from Mahendra Singh Dhoni."
+    },
+    {
+      "section": "Interviews",
+      "title": "Meet Cars24 Founder",
+      "host": "Sandeep Maheshwari",
+      "date": "2023-03-04",
+      "videoId": "HadopNcCS40",
+      "description": "A conversation on the early journey behind Cars24, ambition, and the mindset required to build through uncertainty."
+    },
+    {
+      "section": "Interviews",
+      "title": "How Cars24 CEO, Vikram Chopra Built a Rs 27,000 cr used car startup",
+      "host": "Mint",
+      "date": "2024-01-25",
+      "videoId": "b7ENRpPUKAs",
+      "description": "A detailed conversation on growing Cars24, the used-car market, early company building, and the journey from Raebareli to scaling a large business."
+    },
+    {
+      "section": "Talks & Panels",
+      "title": "Playing the long game: what it takes to build generation defining companies",
+      "host": "Z47 Moments",
+      "date": "2022-05-11",
+      "videoId": "s-nsfBhm0vI",
+      "description": "A panel on building enduring companies, with Vikram Chopra alongside Asish Mohapatra and Varun Alagh."
+    }
+  ],
+  "elsewhere": [
+    {
+      "type": "Essay",
+      "title": "What You're Actually Paying For When You Buy a Used Car Online",
+      "source": "Cars24",
+      "date": "2026-05-21",
+      "url": "https://www.cars24.com/article/real-cost-of-buying-used-car-online-india-platform-vs-local-market/",
+      "description": "A detailed argument about pricing, trust, and what buyers are really comparing when they evaluate used-car platforms against local dealers."
+    },
+    {
+      "type": "Interview",
+      "title": "The world is in a bad place this year, but I need to take a long-term view",
+      "source": "Moneycontrol",
+      "date": "2022-11-22",
+      "url": "https://www.moneycontrol.com/news/business/startup/the-world-is-getting-screwed-this-year-but-i-need-to-take-a-long-term-view-cars24-chief-vikram-chopra-9576181.html",
+      "description": "A conversation on navigating a funding winter, reducing burn, and making decisions with a multi-decade view of the business."
+    },
+    {
+      "type": "Interview",
+      "title": "'Political Will' Is India’s Biggest Failure in Air Pollution Control",
+      "source": "Outlook Business",
+      "date": "2025-12-03",
+      "url": "https://www.outlookbusiness.com/interviews/political-will-is-indias-biggest-failure-in-air-pollution-control-says-cars24-cofounder-vikram-chopra",
+      "description": "An argument for uncomfortable public-policy action on pollution, even when that stance cuts against the immediate interests of the car industry."
+    },
+    {
+      "type": "Essay",
+      "title": "Rising Strong: The Art of Failing Forward",
+      "source": "Cars24",
+      "date": "2024-10-03",
+      "url": "https://www.cars24.com/news/inside-scoop/the-art-of-failing-forward/",
+      "description": "A short reflection on failure, resilience, and the emotional work required to keep moving after setbacks."
+    },
+    {
+      "type": "Essay",
+      "title": "Embracing Discomfort for Growth",
+      "source": "Cars24",
+      "date": "2024-10-03",
+      "url": "https://www.cars24.com/news/inside-scoop/embracing-discomfort-for-growth/",
+      "description": "A note on choosing discomfort deliberately as a condition for growth, ambition, and better judgment."
+    }
+  ]
 }

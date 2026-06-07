@@ -27,6 +27,8 @@ What stayed with me was not just grief. It was the sheer unfairness of it. Same 
 
 But this is not a special story. That is the point. [Amar Srivastava](https://www.linkedin.com/in/amarsrivastava26/) and [Deepanshu Gupta](https://in.linkedin.com/in/connectwithdeepanshu) did not come to road safety as detached experts. The problem had already touched people close to them. So had it for [Gajendra Jangid](https://theorg.com/org/cars24/org-chart/gajendra-jangid), my co-founder at Cars24, who helped shape Crashfree India with them from the start. None of us arrived at this subject from a safe distance.
 
+## When road death becomes normal
+
 And yet road crashes still occupy a strange place in public life. They are intimate enough to wound almost every family, and abstract enough to remain normal.
 
 In 2023, India officially recorded [172,890 road deaths](https://www.morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf). Independent estimates have suggested the real number may be materially higher. The precise figure matters. But the more revealing fact is that we still cannot agree on it. A country that cannot count its road deaths cleanly is not just struggling with traffic. It is struggling with truth.
@@ -47,11 +49,15 @@ Over the last year and a half, that work has given a closer view of the problem 
 
 By the March to May 2026 quarter alone, Crashfree India was reporting active work across 18 cities, 20-plus partner institutions, 60-plus experts, and more than 10 national media references. Those numbers do not prove the thesis by themselves. They do show that this is no longer a symbolic initiative. It has enough field presence to see how the system actually behaves under pressure.
 
+## A system that cannot see clearly
+
 In a trustworthy road-safety system, truth travels: where crashes happen, why they happened, what a bystander should do, what a hospital or a police officer is supposed to do next, and what a victim is owed afterward. In India, that truth too often dies at each handoff.
 
 Start with crash data. India has lived for years with multiple counts of road deaths that do not line up cleanly with one another: MoRTH, NCRB, WHO, sample-registration estimates, police data. Even when the same crash should feed the same system, the final picture diverges. This is not a statistical inconvenience. It is a governing failure. If the baseline itself is weak, targets become performative and evaluation becomes guesswork.
 
 That is why simply digitizing paperwork is not enough. Systems like iRAD and eDAR point in the right direction. A geo-tagged, multi-stakeholder, single-source record is obviously better than disconnected forms passed between institutions. But bad diagnosis can also be digitized. If officials are still trained to close a file rather than investigate a chain of failure, faster data entry only accelerates bad judgment.
+
+## Dangerous roads and invisible blackspots
 
 Then there is infrastructure.
 
@@ -71,11 +77,15 @@ The Rakshak report makes another important point. Crash data on these high-risk 
 
 And when the work does break into the file, you can see the leverage it creates. Minutes from a March 17, 2026 district road safety committee meeting in Guntur show hospitals, engineers, NHAI, and administrators being directed to use iRAD and eDAR in real time, review high-risk locations, and prepare for trauma-care readiness. The same minutes formally brought a Crashfree-linked junction case study into the district process. This is not a solved system. It is a real example of dangerous places becoming institutionally legible before more death forces attention.
 
+## After the crash, opacity keeps killing
+
 The same pattern appears after impact. One of the most under-discussed failures in Indian road safety is not the crash itself but what happens to the victim afterward. A country can pass a Good Samaritan law, announce ambulance numbers, and publish compensation frameworks. But if citizens do not know their rights, hospitals behave unpredictably, police processes remain inconsistent, and families have no practical way to navigate the system, the law on paper does not create trust in practice.
 
 You see that gap immediately after a crash, when crowds gather but nobody is sure who should call first or what protection they actually have.
 
 That is why even something as simple as a first-responder card matters. One of the early Crashfree-linked materials distilled roadside action into three words: Check. Call. Care. Make the scene safe. Call 112. Control bleeding. Check for a pulse. Start CPR if needed. In a functioning system this would feel obvious. In India, that kind of clarity is itself part of the missing infrastructure.
+
+Helping a victim should not require private courage and improvisation every single time.
 
 You see it again in trauma care. India now has ERSS-112 nationwide. GPS-enabled dispatch exists. The architecture exists on paper. But as Crashfree India's [pre-hospital care primer](https://www.crashfreeindia.org/documents/pre-hospital-care-primer.pdf) argues, implementation quality still varies sharply across states, and the system is not yet optimized for citizen outcomes.
 
@@ -93,6 +103,8 @@ Crashfree India's work is useful here as evidence, not branding. By early 2026, 
 
 The point is not that the problem is solved. It is that the problem starts becoming solvable only when somebody treats the invisible part of the crash as seriously as the visible one.
 
+## Trust has to be built across the whole chain
+
 The trust problem is also cultural.
 
 India still treats many road deaths as if they are the natural tax of growth. A country gets richer, vehicles multiply, roads widen, and fatalities rise for a while. That shrug sits quietly underneath far too much institutional behavior. We have built speed, volume, and aspiration. We have not yet built a safety philosophy equal to them.
@@ -102,6 +114,8 @@ This is why I keep returning to a line that surfaced often in the Crashfree Indi
 That last point matters more than it sounds.
 
 Road safety in India is split across transport departments, police, hospitals, local governments, courts, insurers, ministries, and private actors. Each can point to its part and still leave the person on the road inside a failure that nobody owns end to end. This is why India produces so much sincere activity in road safety without enough visible outcome. Everyone owns a fragment. Too few own the chain.
+
+That is also why road safety cannot remain a CSR sidecar or an annual awareness week. Any company that benefits from mobility at scale inherits some responsibility for making the system more legible, more responsive, or less lethal. Safety is not adjacent to the category. It is part of the category substrate.
 
 Crashfree India has made progress precisely where it has worked against that fragmentation.
 

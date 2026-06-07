@@ -12,6 +12,11 @@ const sizes = {
   blog: { width: 1672, height: 941 }
 };
 
+// Visual rule: every essay needs its own identity from scratch.
+// Reuse palette infrastructure if helpful, but do not borrow an older essay's
+// core motif or composition with only minor cosmetic changes.
+// When essay visual work falls under the Cars24 Maker workflow, follow the
+// cars24-maker-agent + creative-direction source files strictly.
 const essays = [
   {
     slug: "indias-road-deaths-trust-problem",
@@ -42,7 +47,7 @@ const essays = [
     accentLineIndex: 2,
     subtitle: "The org design is the AI strategy.",
     description: "What changes when the cost of carrying context collapses.",
-    motif: "context-grid",
+    motif: "context-loom",
     textMode: "architectural-light",
     backgroundMode: "signal-light",
     palette: {
@@ -80,6 +85,8 @@ function renderEssayVisual({ essay, variant, width, height }) {
   const background = renderBackground(essay, width, height);
   const motif = essay.motif === "forensic"
     ? renderForensicCaseIllustration(essay, width, height, variant)
+    : essay.motif === "context-loom"
+      ? renderContextLoomMotif(essay, width, height, variant)
     : essay.motif === "context-grid"
       ? renderContextGridMotif(essay, width, height, variant)
       : renderAiMotif(essay, width, height, variant);
@@ -610,6 +617,134 @@ function renderContextGridMotif(essay, width, height, variant) {
     ${connectors.join("\n")}
     ${particles}
   </g>`;
+}
+
+function renderContextLoomMotif(essay, width, height, variant) {
+  const isPreview = variant === "preview";
+  const isSocial = variant === "social";
+  const isBlog = variant === "blog";
+  const frameX = width * (isPreview ? 0.54 : isSocial ? 0.08 : isBlog ? 0.05 : 0.1);
+  const frameY = height * (isPreview ? 0.16 : isSocial ? 0.4 : isBlog ? 0.1 : 0.14);
+  const frameW = width * (isPreview ? 0.38 : isSocial ? 0.84 : isBlog ? 0.88 : 0.8);
+  const frameH = height * (isPreview ? 0.58 : isSocial ? 0.42 : isBlog ? 0.8 : 0.7);
+
+  const inputCount = isBlog ? 5 : 4;
+  const outputCount = 3;
+  const inputs = Array.from({ length: inputCount }, (_, index) => frameY + frameH * (0.08 + index * (isBlog ? 0.16 : 0.2)));
+  const routers = [0.22, 0.5, 0.78].map((ratio) => frameY + frameH * ratio);
+  const outputs = [0.22, 0.5, 0.78].map((ratio) => frameY + frameH * ratio);
+
+  const leftX = frameX + frameW * 0.04;
+  const rightX = frameX + frameW * 0.68;
+  const spineX = frameX + frameW * 0.5;
+  const leftCardW = frameW * (isBlog ? 0.2 : 0.24);
+  const rightCardW = frameW * (isBlog ? 0.22 : 0.24);
+  const leftCardH = frameH * (isBlog ? 0.12 : 0.14);
+  const rightCardH = frameH * (isBlog ? 0.14 : 0.16);
+
+  const gridLines = [];
+  const columnCount = isBlog ? 8 : 6;
+  const rowCount = isBlog ? 6 : 5;
+  for (let i = 0; i <= columnCount; i += 1) {
+    const x = frameX + (frameW * i) / columnCount;
+    gridLines.push(`<line x1="${x}" y1="${frameY}" x2="${x}" y2="${frameY + frameH}" stroke="rgba(71,54,254,0.06)" stroke-width="${Math.max(1, width * 0.0009)}"/>`);
+  }
+  for (let i = 0; i <= rowCount; i += 1) {
+    const y = frameY + (frameH * i) / rowCount;
+    gridLines.push(`<line x1="${frameX}" y1="${y}" x2="${frameX + frameW}" y2="${y}" stroke="rgba(71,54,254,0.07)" stroke-width="${Math.max(1, width * 0.0009)}"/>`);
+  }
+
+  const frame = `
+    <rect x="${frameX}" y="${frameY}" width="${frameW}" height="${frameH}" rx="${Math.max(20, width * 0.012)}" fill="rgba(255,255,255,0.28)" stroke="rgba(71,54,254,0.09)" stroke-width="${Math.max(1.2, width * 0.001)}"/>
+    <ellipse cx="${frameX + frameW * 0.86}" cy="${frameY + frameH * 0.16}" rx="${frameW * 0.22}" ry="${frameH * 0.25}" fill="rgba(71,54,254,0.05)"/>
+    <ellipse cx="${frameX + frameW * 0.08}" cy="${frameY + frameH * 0.9}" rx="${frameW * 0.2}" ry="${frameH * 0.22}" fill="rgba(239,69,35,0.04)"/>
+    ${gridLines.join("\n")}
+    <line x1="${spineX}" y1="${frameY + frameH * 0.1}" x2="${spineX}" y2="${frameY + frameH * 0.84}" stroke="rgba(71,54,254,0.24)" stroke-width="${Math.max(2.6, width * 0.0018)}"/>
+  `;
+
+  const inputCards = inputs
+    .map((y, index) => renderSignalCard({
+      x: leftX,
+      y,
+      w: leftCardW,
+      h: leftCardH,
+      accent: index % 2 === 0 ? "cool" : "warm"
+    }))
+    .join("");
+
+  const outputCards = outputs
+    .map((y, index) => renderSignalCard({
+      x: rightX,
+      y: y - rightCardH / 2,
+      w: rightCardW,
+      h: rightCardH,
+      accent: index === 1 ? "warm" : "cool"
+    }))
+    .join("");
+
+  const flows = [];
+  inputs.forEach((y, index) => {
+    const sourceX = leftX + leftCardW;
+    const sourceY = y + leftCardH * 0.5;
+    const targetY = routers[index % routers.length];
+    flows.push(`<path d="M ${sourceX} ${sourceY} C ${frameX + frameW * 0.34} ${sourceY}, ${frameX + frameW * 0.42} ${targetY}, ${spineX - frameW * 0.02} ${targetY}"
+      stroke="${index % 2 === 0 ? "rgba(71,54,254,0.52)" : "rgba(239,69,35,0.46)"}"
+      stroke-width="${Math.max(2.4, width * 0.0016)}" fill="none" stroke-linecap="round"/>`);
+  });
+
+  outputs.forEach((y, index) => {
+    const sourceY = routers[index];
+    const endX = rightX;
+    const endY = y;
+    flows.push(`<path d="M ${spineX + frameW * 0.02} ${sourceY} C ${frameX + frameW * 0.58} ${sourceY}, ${frameX + frameW * 0.61} ${endY}, ${endX} ${endY}"
+      stroke="${index === 1 ? "rgba(239,69,35,0.48)" : "rgba(71,54,254,0.52)"}"
+      stroke-width="${Math.max(2.6, width * 0.0017)}" fill="none" stroke-linecap="round"/>`);
+  });
+
+  if (isBlog) {
+    flows.push(`<path d="M ${leftX + leftCardW * 0.98} ${inputs[2] + leftCardH * 0.52} C ${frameX + frameW * 0.36} ${inputs[2] + leftCardH * 0.52}, ${frameX + frameW * 0.41} ${routers[2]}, ${spineX - frameW * 0.02} ${routers[2]}"
+      stroke="rgba(71,54,254,0.46)" stroke-width="${Math.max(2.4, width * 0.0016)}" fill="none" stroke-linecap="round"/>`);
+  }
+
+  const nodes = routers
+    .map((y, index) => `
+      <g filter="url(#fineGlow)">
+        <circle cx="${spineX}" cy="${y}" r="${Math.max(18, width * 0.011)}" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.24)" stroke-width="${Math.max(1.5, width * 0.0012)}"/>
+        <circle cx="${spineX}" cy="${y}" r="${Math.max(6, width * 0.0036)}" fill="${index === 1 ? "rgba(239,69,35,0.96)" : "rgba(71,54,254,0.96)"}"/>
+      </g>
+    `)
+    .join("");
+
+  const particles = renderParticles({
+    width,
+    height,
+    count: isBlog ? 42 : isPreview ? 26 : 34,
+    region: [frameX, frameY, frameW, frameH],
+    colors: ["rgba(71,54,254,0.16)", "rgba(239,69,35,0.16)", "rgba(71,54,254,0.08)"],
+    seed: 241
+  });
+
+  return `
+  <g>
+    ${frame}
+    ${inputCards}
+    ${outputCards}
+    ${flows.join("\n")}
+    ${nodes}
+    ${particles}
+  </g>`;
+}
+
+function renderSignalCard({ x, y, w, h, accent }) {
+  const fill = accent === "warm" ? "rgba(239,69,35,0.14)" : "rgba(71,54,254,0.14)";
+  return `
+    <g>
+      <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${Math.max(12, w * 0.045)}" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.16)" stroke-width="${Math.max(1, w * 0.004)}"/>
+      <rect x="${x + w * 0.08}" y="${y + h * 0.18}" width="${w * 0.24}" height="${h * 0.12}" rx="${h * 0.05}" fill="${fill}"/>
+      <rect x="${x + w * 0.08}" y="${y + h * 0.42}" width="${w * 0.52}" height="${h * 0.1}" rx="${h * 0.05}" fill="rgba(22,22,22,0.08)"/>
+      <rect x="${x + w * 0.08}" y="${y + h * 0.62}" width="${w * 0.4}" height="${h * 0.08}" rx="${h * 0.05}" fill="rgba(22,22,22,0.05)"/>
+    </g>
+  `;
 }
 
 function roadStroke(pathD, widthPx, fill) {

@@ -8,9 +8,12 @@
 - Read in this pass:
   - channel history through Slack connector
   - key threads around PMO, MoRTH, VAHAN, Verify Portal, RC transfer, DO, EV resale, and media shaping
-- Not readable in this pass:
-  - native Slack file attachments
-  - every `_slack_read_file` call returned `missing_scopes`
+  - Slack file inventory through saved user token
+  - core attachment set downloaded and extracted locally
+  - Verify screenshots and LEA training photos visually reviewed
+- Still partially unread:
+  - Google-native Slack attachments that do not expose downloadable file bytes
+  - some image-only files that would need OCR to extract more than visual proof
 
 ## Reliability rule
 
@@ -26,8 +29,15 @@ Do not treat channel-posted numbers as final published truth unless they are lat
 
 - public reports
 - primary documents
-- source files once Slack file access is restored
+- attachment files already read in this pass
 - Shivanshu-owned numbers where applicable
+
+Treat the following as materially stronger than ordinary channel chatter:
+
+- official or quasi-official policy documents shared in the channel
+- decks and amendment drafts intended for ministries
+- media PDFs that are already public reporting
+- concept notes that clarify operating design, even where they should not be quoted directly
 
 ## Big picture
 
@@ -241,9 +251,25 @@ Best reusable frame:
 - north/south/west `~85%`
 - monthly range `~708k` to `~900k`
 
-### What still needs attachment-level verification later
+### What the attachment pass now locks
 
-- dashboard screenshots / methodology
+The attachment pass now locks several important points:
+
+- India used-car market projected from `USD 36.39B` in `2025` to `USD 73.52B` by `2030`
+- used/new ratio projected from `1.3:1` in `2024` to `1.7:1` by `2030`
+- less than `70%` of RC transfers are completed within `60 days`, with many taking years
+- no defined time limits under current rules for many RTO services
+- physical appearances, non-standard documentation, and hypothecation termination are major friction layers
+- reform direction is now concrete:
+  - e-KYC for buyer, seller, and authorised intermediaries
+  - digital RC and insurance retrieval from VAHAN
+  - digital NOC workflow
+  - out-of-state ADRV procurement enablement
+  - inter-dealer transfer recognition
+
+What still needs additional locking if we want to publish more aggressively:
+
+- dashboard screenshots / methodology for the VAHAN data slice
 - any interstate transfer numbers
 - pending-application totals
 - mean / median completion-time figures
@@ -274,12 +300,31 @@ Best reusable frame:
 - inter-state transfer for EVs changes price discovery and expands the market
 - residual value is the demand lever most people underweight
 
-### What still needs attachment-level verification later
+### What the attachment pass now locks
 
-- `Catalysing India's Used-EV Market.docx`
-- `Global Comparison on Vehicle Ownership Transfer Process.pdf`
-- any formal recommendations sent to PMO or MoRTH
-- any comparative foreign examples we want to cite directly
+The attachment pass now gives this essay a much stronger core:
+
+- 3-5-year-old Nexon EVs are trading at `45-50%` of original value against an OEM-implied `55-60%` floor
+- that creates an estimated `Rs 60,000-Rs 90,000` value gap per vehicle
+- at `50,000` used-EV transactions by FY28, that implies `Rs 300-450 crore` of value destruction from information failure
+- battery cost share is roughly `40%` of total EV value
+- Geotab's longitudinal work on `22,700` EVs across `21` models found average annual capacity loss of `1.8-2.3%`
+- SoH methods can vary by up to `+/-7` percentage points on the same battery
+- used EV dealer margins are taxed at `18%`, while new EVs still sit at `5%`
+- EV loans carry LTV ratios `10-30%` lower than ICE equivalents, with tenures `6-18` months shorter and EMI burden `1.5-1.8x`
+- warranty transfer is usually possible but still manual, OEM-specific, and poorly surfaced
+- proposed infrastructure fixes are clear:
+  - chemistry-specific SoH standards
+  - BPAN plus VAHAN integration
+  - warranty status on BPAN / VAHAN
+  - apartment charging NOC in `7 days`
+  - CCS-2 for all new public chargers from FY27
+
+What still needs more work later:
+
+- any exact PMO recommendation wording we want to quote or paraphrase publicly
+- whether we want direct foreign-comparison citations in the public essay body
+- any additional market-volume numbers from outside the policy draft
 
 ## Essay 3
 
@@ -307,6 +352,16 @@ Best reusable frame:
   - Cars24 / allied systems are being used as an investigative aid by LEAs
 - visible pattern:
   - the company is repeatedly solving for institutional truth transfer, not just operational convenience
+
+The attachment pass sharpens this further:
+
+- the PM RAHAT concept note is explicitly about hospital readiness, police-hospital synchronization, fund-flow efficiency, and achieving `0%` out-of-pocket burden for eligible victims
+- the note is less about compensation and more about whether the emergency-response chain can function under real institutional conditions
+- the Verify image set gives concrete proof of traceability layers:
+  - owner details
+  - document stack
+  - sale timeline
+  - training usage in police settings
 
 ### Best future use
 
@@ -348,6 +403,11 @@ Do not use it as:
 - the main rhetorical source of the essay
 
 That still belongs to `Flatland` / AI-native org design material.
+
+The attachment pass does add one useful adjacent proof layer:
+
+- the NTR data-sharing policy makes clear that API access is the preferred mode, but only inside a high-discipline regime of consent, masking, security audits, audit logs, and operational accountability
+- this is strong supporting evidence for the essay's claim that future advantage comes from redesigning how context moves, not merely from adding more software
 
 ## Essay 5
 
@@ -421,6 +481,28 @@ Why:
 - transfer, traceability, and recourse are category-defining trust layers
 - policy reform is not outside the product; it changes what the product can credibly be
 
+The attachment pass now gives this essay a much clearer systems stack:
+
+- The Hindu article makes the public case that transfer delay is both a citizen-liability problem and a security problem
+- the amendment draft spells out the operating trust rails:
+  - any registering authority within the state
+  - State Transport Authority for ADRV registration
+  - auto-fetch from VAHAN
+  - seller take-back capped at `15 days`
+  - Form `29CA` for inter-dealer traceability
+  - maximum two dealer-to-dealer hops before final transfer
+  - explicit deemed ownership for Section `157` insurance purposes
+- the recommendation deck and DO SOP show how trust is operationalized:
+  - seller liability relief
+  - transfer traceability
+  - insurance continuity
+  - dealer-facing workflow clarity
+- the NTR data-sharing policy shows trust as auditable infrastructure:
+  - API-first access
+  - masked PII by default
+  - CERT-IN security audits
+  - mandatory log records
+
 ## Published essays - useful update opportunities
 
 ## `Paranoid / Regulated`
@@ -438,32 +520,44 @@ This is more useful as:
 
 This essay has the best direct expansion opportunity from the channel.
 
-Potential future additions once attachment access is restored:
+Potential future additions, now that the core attachment set is read:
 
 - PM RAHAT proposal details
 - The Hindu article PDF
 - Verify Portal screenshots / materials
 - any public-policy notes that sharpen the case for information as safety infrastructure
 
-## Missing attachment inventory to revisit later
+## Attachment status
 
-From this pass, the highest-priority unread Slack attachments are:
+### Read and usable in this pass
 
-- `F0B6SN0TQTS`
-  - `TH Delhi 25 May.pdf`
-- `F0B74D4Q4DS`
-  - `MoRTH - Rationale & Proposed CMVR Amendments (Authorised Dealers) 12.05.2026.docx`
-- `F0B4N8BDGUC`
-  - `Catalysing India's Used-EV Market.docx`
+- `F08GJ8NARQE`
+  - `Cars24 Public Policy Approach.pdf`
+- `F08HC20FW6R`
+  - `Public Policy Core Charter Action Plan.pdf`
+- `F0964LXKT1Q`
+  - `DO Quarterly Review - AMJ'25.pdf`
+- `F09C2K7A6NR`
+  - `Policy for Data Sharing from the National Transport Repository`
+- `F09DJQE95P0`
+  - `FDI on Re-commerce.docx`
+- `F09KRN4MR4Y`
+  - `20251006 - SOP - DO for Retail Business_V1.0.pdf`
+- `F0B310RULF5`
+  - `Used-car Industry Recommendations Compiled Final_Kunal.docx`
 - `F0B4C98CDU3`
   - `Global Comparison on Vehicle Ownership Transfer Process.pdf`
 - `F0B4LFHCH6D`
   - `Concept Note PM Rahat.pdf`
-- `F0B310RULF5`
-  - `Used-car Industry Recommendations Compiled Final_Kunal.docx`
 - `F0B4LM0RNQ5`
   - `Used-car Industry Recommendation for MoRTH_V2 Cars24 & Spinny .pptx`
-- Verify Portal images:
+- `F0B4N8BDGUC`
+  - `Catalysing India's Used-EV Market.docx`
+- `F0B6SN0TQTS`
+  - `TH Delhi 25 May.pdf`
+- `F0B74D4Q4DS`
+  - `MoRTH - Rationale & Proposed CMVR Amendments (Authorised Dealers) 12.05.2026.docx`
+- Verify / training images:
   - `F0B7VA5F1C6`
   - `F0B7U0TT3JR`
   - `F0B810X8N3W`
@@ -473,9 +567,18 @@ From this pass, the highest-priority unread Slack attachments are:
   - `F0B7Z886AAD`
   - `F0B7VB72JKG`
 
-## Best next step once file access is restored
+### Still unresolved or only partially readable
 
-1. Read the unread attachment set above.
+- `F0B34SV80LX`
+  - external Google Doc for deemed ownership discussion
+- `F08K8M4CQQ2`
+  - `Process Reforms in Vehicle Ownership blogpost.docx`
+- Google-native spreadsheet / deck files and list files that do not expose normal download bytes
+- image-only files where OCR may still surface additional details
+
+## Best next step on the remaining gaps
+
+1. Resolve the remaining Google-native Slack files directly through Drive access or exported copies.
 2. Split them into:
    - numbers spine
    - category-language spine
@@ -487,7 +590,7 @@ From this pass, the highest-priority unread Slack attachments are:
 
 ## Bottom line
 
-Even without the attachments, `#public-policy` is already one of the strongest cross-essay raw-material pools in the repo.
+With the core attachment set now read, `#public-policy` is no longer just a promising raw-material pool. It is one of the strongest source spines in the repo for the ownership, EV reuse, road-safety-adjacent, and trust-system essays.
 
 It particularly strengthens:
 
