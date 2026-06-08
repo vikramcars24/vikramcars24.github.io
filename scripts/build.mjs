@@ -27,8 +27,18 @@ const CURATED_ESSAY_COLLECTIONS = [
       "scale-is-a-learning-problem",
       "ai-native-is-not-ai-first",
       "builder-is-the-only-role-left",
+      "most-execution-problems-are-trust-problems",
       "ai-may-do-for-consumer-what-saas-did-for-software",
       "paranoid-survive-regulated-thrive"
+    ]
+  },
+  {
+    id: "judgment-desire-human-nature",
+    title: "Judgment, Desire, and Human Nature",
+    description: "How we misread our own desires, misjudge other people, and carry invisible psychological machinery into everyday life.",
+    slugs: [
+      "who-taught-you-to-want-this",
+      "the-context-we-refuse-to-see"
     ]
   }
 ];
