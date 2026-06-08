@@ -6,6 +6,7 @@
     "build": "node scripts/build.mjs",
     "publish:root": "npm run build && node scripts/sync-root.mjs",
     "flatland:pdf": "node scripts/render-flatland-pdf.mjs",
+    "slack:api": "node scripts/slack-api.mjs",
     "slack:download": "node scripts/slack-download-file.mjs",
     "whatsapp:connect": "node scripts/unipile-whatsapp-connect.mjs",
     "whatsapp:read": "node scripts/unipile-whatsapp-read.mjs",

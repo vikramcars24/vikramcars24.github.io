@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="92" y1="30" x2="1588" y2="904" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4EEE4"/>
+      <stop offset="1" stop-color="#E2D6C7"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+  <rect width="1672" height="941" fill="url(#bg)"/>
+  <circle cx="1452" cy="126" r="122" fill="#FAF7F1" opacity="0.88"/>
+  <rect x="118" y="96" width="188" height="10" rx="4" fill="#1A2A34"/>
+  <rect x="118" y="116" width="144" height="8" rx="4" fill="#D1613D"/>
+
+  <circle cx="1018" cy="392" r="188" fill="#F9F4ED" stroke="#1A2A34" stroke-width="10"/>
+  <path d="M1018 204C1121.83 204 1206 288.167 1206 392C1206 495.833 1121.83 580 1018 580" fill="#D1613D"/>
+  <path d="M1018 204C1121.83 204 1206 288.167 1206 392C1206 495.833 1121.83 580 1018 580" stroke="#1A2A34" stroke-width="10"/>
+  <path d="M1018 204C914.167 204 830 288.167 830 392C830 495.833 914.167 580 1018 580" fill="#365968"/>
+  <path d="M1018 204C914.167 204 830 288.167 830 392C830 495.833 914.167 580 1018 580" stroke="#1A2A34" stroke-width="10"/>
+  <path d="M1018 252V532" stroke="#1A2A34" stroke-width="10" stroke-linecap="round"/>
+
+  <path d="M784 336C702 348 627 384 558 438" stroke="#1A2A34" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M1252 336C1334 348 1409 384 1478 438" stroke="#1A2A34" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <circle cx="492" cy="486" r="48" fill="#365968"/>
+  <circle cx="1544" cy="486" r="48" fill="#D1613D"/>
+
+  <g filter="url(#soft)" opacity="0.18">
+    <ellipse cx="1188" cy="770" rx="268" ry="92" fill="#D1613D"/>
+  </g>
+
+  <text x="118" y="762" fill="#1A2A34" font-family="Georgia, 'Times New Roman', serif" font-size="84" letter-spacing="-1.5">
+    <tspan x="118" dy="0">The Context We</tspan>
+    <tspan x="118" dy="94">Refuse to See</tspan>
+  </text>
+</svg>

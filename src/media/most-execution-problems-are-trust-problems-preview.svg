@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="94" y1="38" x2="1112" y2="592" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3EEE6"/>
+      <stop offset="1" stop-color="#DDD3C4"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="300" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#365866"/>
+      <stop offset="1" stop-color="#15252F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1032" cy="106" r="90" fill="#FAF7F1" opacity="0.92"/>
+  <path d="M104 92H244" stroke="#1C2B34" stroke-width="5" stroke-linecap="round"/>
+  <path d="M104 106H228" stroke="#C45734" stroke-width="5" stroke-linecap="round"/>
+  <rect x="0" y="318" width="1200" height="312" fill="url(#water)"/>
+  <path d="M0 305C81 289 171 281 269 286C382 292 492 325 611 325C734 325 861 287 980 286C1067 285 1140 293 1200 305V333H0V305Z" fill="#6F8B91"/>
+  <path d="M520 166L638 302H402L520 166Z" fill="#F8F4EE" stroke="#1C2B34" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M402 302H638L770 540H270L402 302Z" fill="#E6DDD0" stroke="#1C2B34" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M433 354H607" stroke="#1C2B34" stroke-width="7" stroke-linecap="round"/>
+  <path d="M403 406H637" stroke="#1C2B34" stroke-width="7" stroke-linecap="round"/>
+  <path d="M370 460H670" stroke="#1C2B34" stroke-width="7" stroke-linecap="round"/>
+  <path d="M327 516H713" stroke="#1C2B34" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="845" cy="210" r="22" fill="#C45734"/>
+  <circle cx="896" cy="232" r="22" fill="#C45734"/>
+  <circle cx="944" cy="205" r="22" fill="#C45734"/>
+  <circle cx="995" cy="229" r="22" fill="#C45734"/>
+  <path d="M854 247C897 278 940 307 985 335" stroke="#C45734" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <text x="104" y="514" fill="#F8F4EE" font-family="Georgia, 'Times New Roman', serif" font-size="54" letter-spacing="-1.1">
+    <tspan x="104" dy="0">Most Execution Problems</tspan>
+    <tspan x="104" dy="64">Are Trust Problems</tspan>
+  </text>
+</svg>

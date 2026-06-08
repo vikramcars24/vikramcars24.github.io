@@ -64,6 +64,25 @@ That saves the file into `downloads/` by default. You can also pass a raw Slack 
 SLACK_TOKEN=xoxp-or-xoxb npm run slack:download -- F0B5ZEB6S92 --out downloads/flatland.pdf
 ```
 
+For broader Slack API access using your own app token, use the local helper:
+
+```bash
+SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- channel C0GUPESGJ --limit 5
+SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- thread C0GUPESGJ 1768793402.113289
+SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- file-info F0B8ZMQBFQA
+SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- download F0B8ZMQBFQA --out downloads/maker-agent-v2.zip
+SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- user U054KL2NR
+```
+
+To avoid exporting the token every time, create a local file in the repo root that is not committed:
+
+```bash
+printf "SLACK_TOKEN='xoxp-...'\n" > ".slack-token"
+chmod 600 ".slack-token"
+```
+
+After that, `npm run slack:api -- ...` will pick it up automatically from the project root.
+
 ## UniPile WhatsApp connection
 
 This repo now includes a small helper to create a UniPile Hosted Auth link for WhatsApp.

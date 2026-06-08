@@ -9,3 +9,5 @@ scripts/slack-download-file.mjs
 scripts/unipile-utils.mjs
 scripts/unipile-whatsapp-connect.mjs
 scripts/unipile-whatsapp-read.mjs
+.slack-token
+.slack-token.sh
