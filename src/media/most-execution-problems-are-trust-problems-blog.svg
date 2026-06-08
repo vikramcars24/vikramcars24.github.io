@@ -58,9 +58,16 @@
   <path d="M1194 512L1312 466" stroke="#F27A4A" stroke-width="10" stroke-linecap="round" stroke-dasharray="12 16"/>
   <path d="M1180 506V224" stroke="#F27A4A" stroke-width="8" stroke-linecap="round" stroke-dasharray="10 16"/>
 
-  <text x="110" y="644" fill="#F6F1E9" font-family="'Helvetica Neue', Arial, sans-serif" font-size="82" font-weight="700" letter-spacing="-1.8">
-    <tspan x="110" dy="0">EXECUTION PROBLEMS</tspan>
-    <tspan x="110" dy="96">OFTEN BEGIN AS</tspan>
-    <tspan x="110" dy="96">TRUST PROBLEMS</tspan>
-  </text>
+  <rect x="126" y="420" width="562" height="248" rx="28" fill="#101B24" stroke="#22374A" stroke-width="4"/>
+  <rect x="164" y="466" width="210" height="18" rx="9" fill="#405769"/>
+  <rect x="396" y="466" width="148" height="18" rx="9" fill="#8FA6B4"/>
+  <rect x="164" y="516" width="324" height="12" rx="6" fill="#233443"/>
+  <rect x="164" y="548" width="208" height="12" rx="6" fill="#233443"/>
+  <rect x="164" y="580" width="278" height="12" rx="6" fill="#233443"/>
+  <rect x="164" y="626" width="186" height="10" rx="5" fill="#F27A4A" opacity="0.78"/>
+  <circle cx="614" cy="608" r="18" fill="#D5E1E7"/>
+  <path d="M600 594L566 542" stroke="#8FA6B4" stroke-width="8" stroke-linecap="round"/>
+  <path d="M620 596L648 546" stroke="#8FA6B4" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="554" cy="528" r="14" fill="#D5E1E7"/>
+  <circle cx="656" cy="530" r="14" fill="#D5E1E7"/>
 </svg>

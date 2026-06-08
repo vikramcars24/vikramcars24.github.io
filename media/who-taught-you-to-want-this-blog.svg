@@ -19,30 +19,28 @@
   <rect x="118" y="96" width="182" height="10" rx="4" fill="#D6E0FF" opacity="0.92"/>
   <rect x="118" y="116" width="136" height="8" rx="4" fill="#FF7A45"/>
 
-  <circle cx="432" cy="286" r="32" fill="#D8E1FF"/>
-  <circle cx="432" cy="286" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
-  <circle cx="324" cy="618" r="32" fill="#D8E1FF"/>
-  <circle cx="324" cy="618" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
-  <circle cx="716" cy="700" r="32" fill="#D8E1FF"/>
-  <circle cx="716" cy="700" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
-  <circle cx="984" cy="366" r="32" fill="#D8E1FF"/>
-  <circle cx="984" cy="366" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
+  <circle cx="340" cy="238" r="34" fill="#D8E1FF"/>
+  <circle cx="340" cy="238" r="80" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="24"/>
+  <circle cx="286" cy="660" r="34" fill="#D8E1FF"/>
+  <circle cx="286" cy="660" r="80" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="24"/>
+  <circle cx="690" cy="746" r="34" fill="#D8E1FF"/>
+  <circle cx="690" cy="746" r="80" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="24"/>
+  <circle cx="936" cy="346" r="34" fill="#D8E1FF"/>
+  <circle cx="936" cy="346" r="80" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="24"/>
+  <circle cx="1108" cy="660" r="34" fill="#D8E1FF"/>
+  <circle cx="1108" cy="660" r="80" stroke="#D8E1FF" stroke-opacity="0.16" stroke-width="24"/>
 
-  <path d="M486 308C636 322 812 340 1158 418" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <path d="M374 584C612 526 824 492 1162 430" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <path d="M764 662C914 594 1012 536 1176 446" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <path d="M1030 356C1102 378 1150 394 1196 410" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M392 256C544 278 748 322 1180 446" stroke="#9EB3FF" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M334 622C612 548 838 504 1194 438" stroke="#9EB3FF" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M738 712C930 612 1052 536 1206 454" stroke="#9EB3FF" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M984 356C1090 390 1148 410 1212 430" stroke="#9EB3FF" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M1062 620C1136 562 1186 518 1228 472" stroke="#9EB3FF" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 18"/>
 
-  <circle cx="1284" cy="430" r="66" fill="#FF6A3A"/>
-  <circle cx="1284" cy="430" r="128" stroke="#FF8D65" stroke-opacity="0.24" stroke-width="30"/>
-  <circle cx="1284" cy="430" r="208" stroke="#FF8D65" stroke-opacity="0.1" stroke-width="22"/>
+  <circle cx="1284" cy="430" r="76" fill="#FF6A3A"/>
+  <circle cx="1284" cy="430" r="146" stroke="#FF8D65" stroke-opacity="0.24" stroke-width="34"/>
+  <circle cx="1284" cy="430" r="230" stroke="#FF8D65" stroke-opacity="0.1" stroke-width="24"/>
 
-  <g filter="url(#soft)" opacity="0.18">
-    <ellipse cx="1118" cy="760" rx="308" ry="108" fill="#FF7A45"/>
+  <g filter="url(#soft)" opacity="0.22">
+    <ellipse cx="1128" cy="760" rx="328" ry="118" fill="#FF7A45"/>
   </g>
-
-  <text x="118" y="760" fill="#F6F1E8" font-family="Georgia, 'Times New Roman', serif" font-size="88" letter-spacing="-1.6">
-    <tspan x="118" dy="0">Who Taught You</tspan>
-    <tspan x="118" dy="98">to Want This?</tspan>
-  </text>
 </svg>
