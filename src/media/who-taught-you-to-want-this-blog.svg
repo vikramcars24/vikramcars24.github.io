@@ -1,54 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" fill="none">
   <defs>
-    <linearGradient id="bg" x1="84" y1="42" x2="1602" y2="903" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F6F1E8"/>
-      <stop offset="1" stop-color="#E6DCC8"/>
+    <linearGradient id="bg" x1="118" y1="42" x2="1554" y2="902" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1A4A"/>
+      <stop offset="1" stop-color="#070D25"/>
     </linearGradient>
-    <radialGradient id="warm" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1080 318) rotate(90) scale(282 282)">
-      <stop stop-color="#D85E3A" stop-opacity="0.24"/>
-      <stop offset="1" stop-color="#D85E3A" stop-opacity="0"/>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1294 430) rotate(90) scale(258 258)">
+      <stop stop-color="#FF7A45" stop-opacity="0.44"/>
+      <stop offset="1" stop-color="#FF7A45" stop-opacity="0"/>
     </radialGradient>
-    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="18"/>
     </filter>
   </defs>
   <rect width="1672" height="941" fill="url(#bg)"/>
-  <rect width="1672" height="941" fill="url(#warm)"/>
-  <circle cx="1450" cy="126" r="122" fill="#FBF7F0" opacity="0.85"/>
-  <rect x="116" y="98" width="188" height="10" rx="4" fill="#1D2C36"/>
-  <rect x="116" y="118" width="142" height="8" rx="4" fill="#D85E3A"/>
+  <rect width="1672" height="941" fill="url(#glow)"/>
+  <circle cx="1452" cy="126" r="118" fill="#172560" opacity="0.9"/>
+  <rect x="118" y="96" width="182" height="10" rx="4" fill="#D6E0FF" opacity="0.92"/>
+  <rect x="118" y="116" width="136" height="8" rx="4" fill="#FF7A45"/>
 
-  <circle cx="1084" cy="408" r="74" fill="#D85E3A"/>
-  <circle cx="1084" cy="408" r="132" stroke="#D85E3A" stroke-opacity="0.18" stroke-width="28"/>
-  <circle cx="1084" cy="408" r="214" stroke="#D85E3A" stroke-opacity="0.08" stroke-width="22"/>
+  <circle cx="432" cy="286" r="32" fill="#D8E1FF"/>
+  <circle cx="432" cy="286" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
+  <circle cx="324" cy="618" r="32" fill="#D8E1FF"/>
+  <circle cx="324" cy="618" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
+  <circle cx="716" cy="700" r="32" fill="#D8E1FF"/>
+  <circle cx="716" cy="700" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
+  <circle cx="984" cy="366" r="32" fill="#D8E1FF"/>
+  <circle cx="984" cy="366" r="72" stroke="#D8E1FF" stroke-opacity="0.18" stroke-width="22"/>
 
-  <g opacity="0.96">
-    <circle cx="438" cy="254" r="54" fill="#1D2C36"/>
-    <circle cx="438" cy="254" r="108" stroke="#1D2C36" stroke-opacity="0.12" stroke-width="24"/>
-    <circle cx="366" cy="578" r="54" fill="#1D2C36"/>
-    <circle cx="366" cy="578" r="108" stroke="#1D2C36" stroke-opacity="0.12" stroke-width="24"/>
-    <circle cx="702" cy="706" r="54" fill="#1D2C36"/>
-    <circle cx="702" cy="706" r="108" stroke="#1D2C36" stroke-opacity="0.12" stroke-width="24"/>
-    <circle cx="860" cy="196" r="42" fill="#1D2C36" opacity="0.72"/>
+  <path d="M486 308C636 322 812 340 1158 418" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M374 584C612 526 824 492 1162 430" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M764 662C914 594 1012 536 1176 446" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <path d="M1030 356C1102 378 1150 394 1196 410" stroke="#9EB3FF" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+
+  <circle cx="1284" cy="430" r="66" fill="#FF6A3A"/>
+  <circle cx="1284" cy="430" r="128" stroke="#FF8D65" stroke-opacity="0.24" stroke-width="30"/>
+  <circle cx="1284" cy="430" r="208" stroke="#FF8D65" stroke-opacity="0.1" stroke-width="22"/>
+
+  <g filter="url(#soft)" opacity="0.18">
+    <ellipse cx="1118" cy="760" rx="308" ry="108" fill="#FF7A45"/>
   </g>
 
-  <path d="M514 280C650 292 776 316 955 383" stroke="#1D2C36" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <path d="M426 516C594 466 744 431 954 409" stroke="#1D2C36" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <path d="M770 650C853 574 908 527 994 456" stroke="#1D2C36" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <path d="M908 360L964 378L924 418" fill="#1D2C36"/>
-  <path d="M908 360L964 378L924 418" stroke="#1D2C36" stroke-width="6" stroke-linejoin="round"/>
-  <path d="M906 389L964 404L925 444" fill="#1D2C36"/>
-  <path d="M906 389L964 404L925 444" stroke="#1D2C36" stroke-width="6" stroke-linejoin="round"/>
-  <path d="M950 427L1006 439L969 481" fill="#1D2C36"/>
-  <path d="M950 427L1006 439L969 481" stroke="#1D2C36" stroke-width="6" stroke-linejoin="round"/>
-
-  <g filter="url(#blur)" opacity="0.18">
-    <ellipse cx="1164" cy="744" rx="288" ry="94" fill="#D85E3A"/>
-  </g>
-
-  <text x="116" y="760" fill="#1D2C36" font-family="Georgia, 'Times New Roman', serif" font-size="86" letter-spacing="-1.6">
-    <tspan x="116" dy="0">Who Taught You</tspan>
-    <tspan x="116" dy="96">to Want This?</tspan>
+  <text x="118" y="760" fill="#F6F1E8" font-family="Georgia, 'Times New Roman', serif" font-size="88" letter-spacing="-1.6">
+    <tspan x="118" dy="0">Who Taught You</tspan>
+    <tspan x="118" dy="98">to Want This?</tspan>
   </text>
 </svg>

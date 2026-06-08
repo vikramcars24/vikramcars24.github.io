@@ -1,49 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" fill="none">
   <defs>
-    <linearGradient id="bg" x1="76" y1="34" x2="1598" y2="906" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F3EEE6"/>
-      <stop offset="1" stop-color="#DDD3C4"/>
+    <linearGradient id="bg" x1="86" y1="42" x2="1588" y2="904" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#142232"/>
+      <stop offset="1" stop-color="#0C141B"/>
     </linearGradient>
-    <linearGradient id="water" x1="0" y1="420" x2="1672" y2="941" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3A5C69"/>
-      <stop offset="1" stop-color="#162731"/>
+    <linearGradient id="panel" x1="102" y1="72" x2="1560" y2="248" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6EEF2"/>
+      <stop offset="1" stop-color="#C9D8E0"/>
     </linearGradient>
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="16"/>
-    </filter>
+    <linearGradient id="glow" x1="1082" y1="360" x2="1422" y2="716" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F27A4A" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#F27A4A" stop-opacity="0"/>
+    </linearGradient>
   </defs>
+
   <rect width="1672" height="941" fill="url(#bg)"/>
-  <circle cx="1450" cy="124" r="122" fill="#FAF7F1" opacity="0.88"/>
-  <rect x="118" y="96" width="188" height="10" rx="4" fill="#1C2B34"/>
-  <rect x="118" y="116" width="144" height="8" rx="4" fill="#C45734"/>
+  <path d="M0 286H1672" stroke="#22374A" stroke-width="2"/>
+  <path d="M0 468H1672" stroke="#172735" stroke-width="2"/>
+  <path d="M0 650H1672" stroke="#172735" stroke-width="2"/>
+  <path d="M278 286V941" stroke="#172735" stroke-width="2"/>
+  <path d="M556 286V941" stroke="#172735" stroke-width="2"/>
+  <path d="M834 286V941" stroke="#172735" stroke-width="2"/>
+  <path d="M1112 286V941" stroke="#172735" stroke-width="2"/>
+  <path d="M1390 286V941" stroke="#172735" stroke-width="2"/>
 
-  <rect x="0" y="446" width="1672" height="495" fill="url(#water)"/>
-  <path d="M0 425C111 399 228 390 354 396C510 404 673 457 846 457C1022 457 1199 397 1355 396C1477 395 1583 406 1672 425V474H0V425Z" fill="#718C91"/>
+  <rect x="98" y="72" width="1476" height="152" rx="28" fill="url(#panel)"/>
+  <rect x="160" y="116" width="24" height="24" rx="5" stroke="#304A5E" stroke-width="5"/>
+  <path d="M202 128H432" stroke="#304A5E" stroke-width="10" stroke-linecap="round"/>
+  <rect x="160" y="160" width="24" height="24" rx="5" stroke="#304A5E" stroke-width="5"/>
+  <path d="M202 172H388" stroke="#304A5E" stroke-width="10" stroke-linecap="round"/>
+  <rect x="630" y="116" width="158" height="22" rx="11" fill="#8FA6B4"/>
+  <rect x="806" y="116" width="206" height="22" rx="11" fill="#5B7382"/>
+  <rect x="1030" y="116" width="118" height="22" rx="11" fill="#8FA6B4"/>
+  <rect x="630" y="160" width="250" height="22" rx="11" fill="#5B7382"/>
+  <rect x="898" y="160" width="152" height="22" rx="11" fill="#8FA6B4"/>
+  <rect x="1244" y="108" width="264" height="80" rx="18" fill="#DEE8ED" stroke="#7D96A5" stroke-width="5"/>
+  <path d="M1300 148H1452" stroke="#7D96A5" stroke-width="10" stroke-linecap="round"/>
 
-  <path d="M738 184L905 424H571L738 184Z" fill="#FAF7F1" stroke="#1C2B34" stroke-width="10" stroke-linejoin="round"/>
-  <path d="M571 424H905L1084 770H392L571 424Z" fill="#E7DED2" stroke="#1C2B34" stroke-width="10" stroke-linejoin="round"/>
+  <circle cx="1158" cy="566" r="152" fill="url(#glow)"/>
 
-  <path d="M620 502H856" stroke="#1C2B34" stroke-width="10" stroke-linecap="round"/>
-  <path d="M582 574H894" stroke="#1C2B34" stroke-width="10" stroke-linecap="round"/>
-  <path d="M534 652H942" stroke="#1C2B34" stroke-width="10" stroke-linecap="round"/>
-  <path d="M474 734H1002" stroke="#1C2B34" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="936" cy="450" r="24" fill="#D5E1E7"/>
+  <circle cx="1124" cy="404" r="24" fill="#D5E1E7"/>
+  <circle cx="1348" cy="458" r="24" fill="#D5E1E7"/>
+  <circle cx="1024" cy="656" r="24" fill="#D5E1E7"/>
+  <circle cx="1246" cy="684" r="24" fill="#D5E1E7"/>
+  <circle cx="1464" cy="632" r="24" fill="#D5E1E7"/>
+  <path d="M960 444L1098 410" stroke="#8FA6B4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1148 410L1320 450" stroke="#8FA6B4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M956 470L1004 632" stroke="#8FA6B4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1048 654L1220 678" stroke="#8FA6B4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1270 676L1438 636" stroke="#8FA6B4" stroke-width="10" stroke-linecap="round"/>
 
-  <g opacity="0.96">
-    <circle cx="1178" cy="230" r="32" fill="#C45734"/>
-    <circle cx="1250" cy="264" r="32" fill="#C45734"/>
-    <circle cx="1322" cy="224" r="32" fill="#C45734"/>
-    <circle cx="1394" cy="260" r="32" fill="#C45734"/>
-    <circle cx="1466" cy="222" r="32" fill="#C45734"/>
-  </g>
-  <path d="M1192 282C1274 340 1352 390 1438 446" stroke="#C45734" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <circle cx="1180" cy="536" r="28" fill="#F27A4A"/>
+  <path d="M1124 474L1170 510" stroke="#F27A4A" stroke-width="10" stroke-linecap="round" stroke-dasharray="12 16"/>
+  <path d="M1192 560L1228 654" stroke="#F27A4A" stroke-width="10" stroke-linecap="round" stroke-dasharray="12 16"/>
+  <path d="M1194 512L1312 466" stroke="#F27A4A" stroke-width="10" stroke-linecap="round" stroke-dasharray="12 16"/>
+  <path d="M1180 506V224" stroke="#F27A4A" stroke-width="8" stroke-linecap="round" stroke-dasharray="10 16"/>
 
-  <g filter="url(#soft)" opacity="0.18">
-    <ellipse cx="1188" cy="782" rx="264" ry="86" fill="#C45734"/>
-  </g>
-
-  <text x="118" y="770" fill="#F8F4EE" font-family="Georgia, 'Times New Roman', serif" font-size="82" letter-spacing="-1.4">
-    <tspan x="118" dy="0">Most Execution Problems</tspan>
-    <tspan x="118" dy="92">Are Trust Problems</tspan>
+  <text x="110" y="644" fill="#F6F1E9" font-family="'Helvetica Neue', Arial, sans-serif" font-size="82" font-weight="700" letter-spacing="-1.8">
+    <tspan x="110" dy="0">EXECUTION PROBLEMS</tspan>
+    <tspan x="110" dy="96">OFTEN BEGIN AS</tspan>
+    <tspan x="110" dy="96">TRUST PROBLEMS</tspan>
   </text>
 </svg>

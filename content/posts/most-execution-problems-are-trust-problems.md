@@ -1,17 +1,17 @@
 ---
-title: Most Execution Problems Are Trust Problems
+title: Execution Problems Often Begin as Trust Problems
 date: 2026-06-17
-description: Companies usually diagnose missed deadlines, weak decisions, and poor accountability at the surface. But many of those failures begin lower down, in trust, conflict avoidance, and the human structure of the team.
+description: Teams usually diagnose delay, weak decisions, and poor accountability at the process level. But many failures begin earlier, in trust, conflict avoidance, and the human structure of the team.
 image: /media/most-execution-problems-are-trust-problems-preview.svg
 imageAlt: 1200x630 social preview for Most Execution Problems Are Trust Problems.
 articleImage: /media/most-execution-problems-are-trust-problems-blog.svg
 articleImageAlt: Editorial visual for Most Execution Problems Are Trust Problems.
-summary: Leaders often talk about execution at the level of schedules, plans, and owners because those are visible. | Many recurring execution failures are downstream of deeper team dysfunctions: weak trust, artificial harmony, low commitment, and avoidance of accountability. | The problem beneath the problem is often human, not procedural.
+summary: Teams talk about schedules and owners because those are visible. | Many recurring failures begin earlier: people do not trust each other enough to disagree honestly, commit clearly, or hold peers accountable. | By the time the issue shows up as execution, it has often spent time underground.
 featured: false
 category: Essay
 ---
 
-One of the most common mistakes in companies is that we diagnose problems at the level they become visible.
+One of the easiest ways to misdiagnose a team is to start where the problem becomes visible.
 
 A project got delayed.
 
@@ -25,37 +25,25 @@ Someone obvious underperformed and nobody dealt with it.
 
 The postmortem then sounds familiar. Planning issue. Ownership issue. Follow-through issue. Process issue. Review issue. Prioritization issue.
 
-Sometimes those diagnoses are correct.
+Sometimes those diagnoses are correct. Often they are not wrong so much as shallow.
 
-Often they are not wrong so much as shallow.
+They describe where the problem surfaced, not where it began.
 
-They describe where the problem surfaced. Not where it began.
+Leadership teams rarely say the thing they most need to say.
 
-## The surface is rarely the source
+Not: the launch slipped because we did not update the tracker.
 
-This is true of most organizational failure.
+But: the launch slipped because we did not trust one another enough to say what we really thought early enough.
 
-What you can see is usually the event.
+That second diagnosis is harder because it is no longer procedural.
 
-What produced the event is usually lower down.
+Now the conversation is about trust. Fear. Avoidance. Artificial harmony. Reluctance to confront. Preference for being liked over being clear.
 
-That is why I keep returning to the iceberg principle. At the surface sit visible incidents: missed timelines, bad handoffs, poor meetings, weak accountability, unresolved conflict, recurring customer pain. Beneath that sit patterns. Beneath the patterns sit structures. Beneath the structures sit assumptions and emotional realities people are often too uncomfortable to name directly.
-
-Most leaders can discuss the top of the iceberg for hours.
-
-Far fewer want to discuss what is underneath.
-
-Because underneath is where the conversation becomes less procedural and more human.
-
-Trust. Fear. Avoidance. Defensiveness. Status anxiety. Artificial harmony. Reluctance to confront. Inability to commit. Unwillingness to hold peers accountable. Preference for being liked over being clear.
-
-Those are harder conversations than timeline tracking.
-
-They are also often the real conversation.
+Those are much more uncomfortable things to name than a weak review cadence.
 
 ## This is why Five Dysfunctions still endures
 
-One reason Patrick Lencioni's [five dysfunctions model](https://www.tablegroup.com/topics-and-resources/teamwork-5-dysfunctions/) remains useful is that it gives simple language to a pattern most operating teams have experienced but often fail to diagnose cleanly.
+One reason Patrick Lencioni's [five dysfunctions model](https://www.tablegroup.com/topics-and-resources/teamwork-5-dysfunctions/) remains useful is that it gives simple language to a pattern most leadership teams have lived through but often fail to diagnose cleanly.
 
 The model is straightforward:
 
@@ -81,7 +69,7 @@ Because there is no real buy-in, accountability becomes performative.
 
 Because accountability is weak, personal priorities quietly outrun team results.
 
-By the time the problem appears in a dashboard, a deadline, or a customer issue, it already has a long history.
+By the time the problem appears in a dashboard, a deadline, or a customer issue, the team has usually been going wrong for a while.
 
 ## Leaders prefer process language because it feels safer
 
@@ -123,7 +111,7 @@ People comply without committing.
 
 Execution slows because unresolved disagreement has simply moved underground.
 
-This is one of the most common patterns in companies that believe they have an execution problem.
+This is one of the most common patterns in teams that believe they have an execution problem.
 
 What they actually have is an honesty problem.
 
@@ -199,7 +187,7 @@ But it is not primary.
 
 It is the visible consequence of a team that has stopped functioning as a team lower down.
 
-This is why some organizations keep missing goals despite looking full of intelligent, hardworking people. Intelligence and effort are not enough when the human operating system is mistrusted, conflict-avoidant, ambiguous, and low on peer accountability.
+This is why some organizations keep missing goals despite looking full of intelligent, hardworking people. Intelligence and effort are not enough when the human operating system underneath the team is mistrusted, conflict-avoidant, ambiguous, and low on peer accountability.
 
 ## Every company eventually reveals what it is willing to confront
 
@@ -257,7 +245,7 @@ That requires courage because deeper diagnosis is always less flattering.
 
 It demands that leaders look beneath missed deadlines and ask whether the team trusts one another enough, argues honestly enough, commits clearly enough, and holds peers accountable directly enough.
 
-Most execution problems do not begin as execution problems.
+Many execution problems do not begin as execution problems.
 
 They begin as trust problems that have not yet become legible.
 

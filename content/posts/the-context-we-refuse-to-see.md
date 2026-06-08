@@ -123,15 +123,19 @@ This is why so much diagnosis in the world remains morally loud and analytically
 
 We are much more comfortable condemning people than understanding conditions.
 
-## The world is probabilistic, not theatrical
+## This is not a case for naivety
 
-There is another reason this topic interests me.
+None of this means behavior tells us nothing about character.
 
-Some research suggests that what psychology classically described as attribution error may sometimes be less irrational than it first appears. In a probabilistic world, behavior is genuinely informative. If situations do not fully determine what people do, then actions still tell us something about the person. That is part of why these judgments feel reasonable and why they persist. A 2015 paper by Walker, Smith, and Vul argues exactly this: the so-called "fundamental attribution error" can look more rational once you stop assuming situations are fully deterministic and start treating social inference as probabilistic in an uncertain world.
+It does.
+
+Actions are evidence.
+
+Part of why these judgments feel so natural is that behavior genuinely is informative. Some research even argues that attribution mistakes may look more rational than classic psychology assumed once you treat social judgment as probabilistic in an uncertain world.
 
 That nuance matters.
 
-It means we should not pretend the answer is to become blind to character.
+The answer is not to become blind to character.
 
 Behavior does reveal people.
 
@@ -245,4 +249,3 @@ And if you want to live, lead, or judge well, accuracy matters more than the emo
 
 - [The “Fundamental Attribution Error” is rational in an uncertain world | Walker, Smith, Vul](https://www.mit.edu/~k2smith/pdf/WalkerSmithVul_2015_FAE.pdf)
 - [Fundamental Attribution Error in Psychology | Simply Psychology](https://www.simplypsychology.org/fundamental-attribution.html)
-- [Psychological Safety and Learning Behavior in Work Teams | Amy C. Edmondson](https://www.researchgate.net/publication/13439216_Psychological_Safety_and_Learning_Behavior_in_Work_Teams)

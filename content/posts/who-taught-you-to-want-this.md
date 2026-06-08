@@ -145,19 +145,15 @@ It can look like discipline. It can look like taste. It can look like hunger. It
 
 That is why simple anti-material or anti-ambition language does not help much.
 
-The answer is not to want nothing.
-
-The answer is not to withdraw from the world and pretend imitation disappears.
+The answer is not to want nothing. It is not to withdraw from the world and pretend imitation disappears.
 
 Imitation is part of being human. We learn through models. We build through models. We become through models.
 
 The real question is whether we are choosing them consciously.
 
-There are desires that enlarge a life and desires that narrow it.
+Some models leave you more grounded, more generous, more alive, more internally free.
 
-There are models who make you more grounded, more generous, more alive, more internally free.
-
-And there are models who make you more agitated, more comparative, more brittle, more trapped inside performance.
+Others leave you more agitated, more comparative, more brittle, more trapped inside performance.
 
 Both kinds can look impressive from the outside.
 
@@ -189,30 +185,6 @@ Most people do not need less ambition.
 
 They need cleaner ambition.
 
-## A good life requires better models of desire
-
-One of the most underappreciated facts about adulthood is that we are always teaching one another what matters.
-
-Parents do it. Founders do it. Friends do it. Managers do it. Public figures do it. Entire companies do it.
-
-We model not only effort, but aspiration.
-
-That means desire is not just a private psychological issue. It is also a moral and cultural one.
-
-What are we teaching people to admire?
-
-What kind of lives are we making look enviable?
-
-What kind of success feels expensive in all the wrong ways, yet still captures imitation because it is bright enough and public enough and socially rewarded enough?
-
-This matters in families. It matters in organizations. It matters in founder culture. It matters in countries trying to decide what modernity should mean.
-
-A society can get richer while teaching its people worse things to want.
-
-A company can get larger while training everyone inside it to imitate the wrong form of success.
-
-A person can become more accomplished while becoming less free.
-
 ## Wanting is not the enemy
 
 I do not think the goal is to become detached from desire altogether.
@@ -222,6 +194,8 @@ Desire animates life. It creates movement. It creates craft. It creates love, in
 The problem is not wanting.
 
 The problem is sleepwalking into desires that were socially installed but personally unexamined.
+
+One of the underappreciated facts of adult life is that we are always teaching one another what matters. Parents do it. Founders do it. Friends do it. Managers do it. Entire companies do it. We model not only effort, but aspiration.
 
 That is how people spend years climbing toward something and then feel strangely absent when they arrive.
 

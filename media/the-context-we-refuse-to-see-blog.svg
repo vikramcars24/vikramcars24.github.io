@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" fill="none">
   <defs>
-    <linearGradient id="bg" x1="92" y1="30" x2="1588" y2="904" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="110" y1="42" x2="1558" y2="904" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F4EEE4"/>
-      <stop offset="1" stop-color="#E2D6C7"/>
+      <stop offset="1" stop-color="#E4D8CA"/>
     </linearGradient>
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="16"/>
-    </filter>
+    <linearGradient id="beam" x1="1140" y1="146" x2="842" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB493" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#FFB493" stop-opacity="0"/>
+    </linearGradient>
   </defs>
   <rect width="1672" height="941" fill="url(#bg)"/>
   <circle cx="1452" cy="126" r="122" fill="#FAF7F1" opacity="0.88"/>
-  <rect x="118" y="96" width="188" height="10" rx="4" fill="#1A2A34"/>
-  <rect x="118" y="116" width="144" height="8" rx="4" fill="#D1613D"/>
+  <rect x="118" y="132" width="408" height="12" rx="6" fill="url(#beam)"/>
+  <path d="M118 132H526L968 132L864 520H118V132Z" fill="url(#beam)"/>
 
-  <circle cx="1018" cy="392" r="188" fill="#F9F4ED" stroke="#1A2A34" stroke-width="10"/>
-  <path d="M1018 204C1121.83 204 1206 288.167 1206 392C1206 495.833 1121.83 580 1018 580" fill="#D1613D"/>
-  <path d="M1018 204C1121.83 204 1206 288.167 1206 392C1206 495.833 1121.83 580 1018 580" stroke="#1A2A34" stroke-width="10"/>
-  <path d="M1018 204C914.167 204 830 288.167 830 392C830 495.833 914.167 580 1018 580" fill="#365968"/>
-  <path d="M1018 204C914.167 204 830 288.167 830 392C830 495.833 914.167 580 1018 580" stroke="#1A2A34" stroke-width="10"/>
-  <path d="M1018 252V532" stroke="#1A2A34" stroke-width="10" stroke-linecap="round"/>
+  <rect x="1040" y="176" width="150" height="304" rx="28" fill="#365968" opacity="0.1" stroke="#365968" stroke-width="8"/>
+  <circle cx="1198" cy="286" r="42" stroke="#365968" stroke-width="8"/>
+  <path d="M1198 258V286L1222 304" stroke="#365968" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1248" y="360" width="118" height="72" rx="16" fill="#365968" opacity="0.12"/>
+  <rect x="1300" y="200" width="120" height="18" rx="9" fill="#365968" opacity="0.14"/>
 
-  <path d="M784 336C702 348 627 384 558 438" stroke="#1A2A34" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <path d="M1252 336C1334 348 1409 384 1478 438" stroke="#1A2A34" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
-  <circle cx="492" cy="486" r="48" fill="#365968"/>
-  <circle cx="1544" cy="486" r="48" fill="#D1613D"/>
+  <circle cx="812" cy="500" r="36" fill="#1A2A34"/>
+  <path d="M812 536V632" stroke="#1A2A34" stroke-width="16" stroke-linecap="round"/>
+  <path d="M766 572L858 572" stroke="#1A2A34" stroke-width="16" stroke-linecap="round"/>
+  <path d="M812 632L766 708" stroke="#1A2A34" stroke-width="16" stroke-linecap="round"/>
+  <path d="M812 632L858 708" stroke="#1A2A34" stroke-width="16" stroke-linecap="round"/>
 
-  <g filter="url(#soft)" opacity="0.18">
-    <ellipse cx="1188" cy="770" rx="268" ry="92" fill="#D1613D"/>
-  </g>
+  <path d="M854 500C928 458 986 396 1044 322" stroke="#1A2A34" stroke-width="12" stroke-linecap="round" stroke-dasharray="16 18"/>
+  <circle cx="1074" cy="286" r="24" fill="#D1613D"/>
 
-  <text x="118" y="762" fill="#1A2A34" font-family="Georgia, 'Times New Roman', serif" font-size="84" letter-spacing="-1.5">
+  <text x="118" y="766" fill="#1A2A34" font-family="Georgia, 'Times New Roman', serif" font-size="86" letter-spacing="-1.5">
     <tspan x="118" dy="0">The Context We</tspan>
-    <tspan x="118" dy="94">Refuse to See</tspan>
+    <tspan x="118" dy="96">Refuse to See</tspan>
   </text>
 </svg>
