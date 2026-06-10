@@ -456,6 +456,7 @@ function renderPost(site, post) {
     bodyClass: "post-page",
     openGraphType: "article",
     publishedDate: post.date,
+    structuredData: buildArticleStructuredData(site, post),
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -545,7 +546,19 @@ function renderRedirectPage(site, pathName, targetPath) {
 </html>`;
 }
 
-function renderDocument({ site, title, description, pathName, imagePath, imageAlt = "", content, bodyClass, openGraphType = "website", publishedDate = "" }) {
+function renderDocument({
+  site,
+  title,
+  description,
+  pathName,
+  imagePath,
+  imageAlt = "",
+  content,
+  bodyClass,
+  openGraphType = "website",
+  publishedDate = "",
+  structuredData = null
+}) {
   const canonical = absoluteUrl(site.domain, sitePath(site, pathName));
   const ogImage = imagePath ? absoluteUrl(site.domain, sitePath(site, imagePath)) : "";
 
@@ -573,6 +586,7 @@ function renderDocument({ site, title, description, pathName, imagePath, imageAl
     ${ogImage && imageAlt ? `<meta name="twitter:image:alt" content="${escapeAttribute(imageAlt)}">` : ""}
     <meta name="theme-color" content="#f4ecdf">
     <link rel="icon" type="image/svg+xml" href="${sitePath(site, "/favicon.svg")}">
+    ${structuredData ? `<script type="application/ld+json">${serializeStructuredData(structuredData)}</script>` : ""}
     <script>
       (() => {
         const storageKey = "vikram-theme";
@@ -591,12 +605,15 @@ function renderDocument({ site, title, description, pathName, imagePath, imageAl
   </head>
   <body class="${escapeAttribute(bodyClass)}">
     ${content}
+    <button class="quote-copy-button" type="button" data-quote-copy hidden>Copy quote</button>
     <script>
       (() => {
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
         const shareButton = document.querySelector("[data-share-button]");
+        const quoteButton = document.querySelector("[data-quote-copy]");
+        const quoteRegion = document.querySelector(".article-body");
         const themeMeta = document.querySelector('meta[name="theme-color"]');
 
         if (button) {
@@ -648,6 +665,107 @@ function renderDocument({ site, title, description, pathName, imagePath, imageAl
               } catch (_) {
                 shareButton.textContent = previousLabel;
               }
+            }
+          });
+        }
+
+        if (quoteButton && quoteRegion) {
+          const baseLabel = "Copy quote";
+
+          const normalizeSelection = (value) => {
+            return String(value || "")
+              .replace(/\\s+/g, " ")
+              .trim();
+          };
+
+          const hideQuoteButton = () => {
+            quoteButton.hidden = true;
+            quoteButton.textContent = baseLabel;
+          };
+
+          const updateQuoteButton = () => {
+            const selection = window.getSelection();
+
+            if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
+              hideQuoteButton();
+              return;
+            }
+
+            const text = normalizeSelection(selection.toString());
+            const range = selection.getRangeAt(0);
+
+            if (!text || text.length < 24 || !quoteRegion.contains(range.commonAncestorContainer)) {
+              hideQuoteButton();
+              return;
+            }
+
+            const rect = range.getBoundingClientRect();
+            const titleNode = document.querySelector(".essay-header h1");
+            const pageTitle = titleNode ? titleNode.textContent.replace(/\\s+/g, " ").trim() : document.title;
+
+            quoteButton.dataset.quoteText = text;
+            quoteButton.dataset.quoteTitle = pageTitle;
+            quoteButton.dataset.quoteUrl = window.location.href;
+            quoteButton.hidden = false;
+
+            const maxLeft = Math.max(12, window.innerWidth - quoteButton.offsetWidth - 12);
+            const left = Math.min(
+              Math.max(12, rect.left + (rect.width / 2) - (quoteButton.offsetWidth / 2)),
+              maxLeft
+            );
+            const top = window.innerWidth < 640
+              ? Math.max(12, window.innerHeight - 68)
+              : Math.max(12, rect.top - 48);
+
+            quoteButton.style.left = left + "px";
+            quoteButton.style.top = top + "px";
+          };
+
+          quoteButton.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+          });
+
+          quoteButton.addEventListener("click", async () => {
+            const quoteText = normalizeSelection(quoteButton.dataset.quoteText || "");
+            const quoteTitle = quoteButton.dataset.quoteTitle || document.title;
+            const quoteUrl = quoteButton.dataset.quoteUrl || window.location.href;
+
+            if (!quoteText) {
+              hideQuoteButton();
+              return;
+            }
+
+            const payload = '"' + quoteText + '"\\n\\nSource: Vikram Chopra, "' + quoteTitle + '"\\n' + quoteUrl;
+
+            try {
+              await navigator.clipboard.writeText(payload);
+              quoteButton.textContent = "Copied quote";
+            } catch (_) {
+              quoteButton.textContent = "Copy failed";
+            }
+
+            window.setTimeout(() => {
+              hideQuoteButton();
+            }, 1400);
+          });
+
+          document.addEventListener("selectionchange", () => {
+            window.requestAnimationFrame(updateQuoteButton);
+          });
+
+          document.addEventListener("scroll", () => {
+            if (!quoteButton.hidden) {
+              window.requestAnimationFrame(updateQuoteButton);
+            }
+          }, { passive: true });
+
+          document.addEventListener("pointerdown", (event) => {
+            if (quoteButton.contains(event.target)) {
+              return;
+            }
+
+            if (!quoteRegion.contains(event.target)) {
+              hideQuoteButton();
             }
           });
         }
@@ -727,10 +845,33 @@ function renderHeader(site) {
 
 function renderFooter(site) {
   return `
+    ${renderNewsletter(site)}
     <footer class="site-footer">
       <p>${escapeHtml(site.footerNote)}</p>
       <p class="footer-note"><a href="${sitePath(site, "/archive/")}">Archive</a></p>
     </footer>
+  `;
+}
+
+function renderNewsletter(site) {
+  const newsletter = site.newsletter;
+
+  if (!newsletter || typeof newsletter !== "object") {
+    return "";
+  }
+
+  const ctaHref = resolveActionHref(site, newsletter.ctaHref || "");
+
+  return `
+    <section class="newsletter-block" aria-label="Newsletter">
+      <div class="newsletter-copy">
+        ${newsletter.eyebrow ? `<p class="eyebrow">${escapeHtml(newsletter.eyebrow)}</p>` : ""}
+        <h2>${escapeHtml(newsletter.title || "Get new essays by email")}</h2>
+        ${newsletter.description ? `<p class="newsletter-description">${escapeHtml(newsletter.description)}</p>` : ""}
+        ${newsletter.note ? `<p class="newsletter-note">${escapeHtml(newsletter.note)}</p>` : ""}
+      </div>
+      ${ctaHref ? `<div class="newsletter-actions"><a class="button-link newsletter-button" href="${escapeAttribute(ctaHref)}">${escapeHtml(newsletter.ctaLabel || "Subscribe")}</a></div>` : ""}
+    </section>
   `;
 }
 
@@ -1046,6 +1187,56 @@ function renderSources(post) {
       <p><em>Sources: ${renderInline(sourcesLine)}</em></p>
     </section>
   `;
+}
+
+function buildArticleStructuredData(site, post) {
+  const canonical = absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`));
+  const image = post.image ? absoluteUrl(site.domain, sitePath(site, post.image)) : "";
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    datePublished: `${post.date}T12:00:00Z`,
+    dateModified: `${post.date}T12:00:00Z`,
+    author: {
+      "@type": "Person",
+      name: site.name
+    },
+    publisher: {
+      "@type": "Person",
+      name: site.name
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical
+    }
+  };
+
+  if (image) {
+    data.image = [image];
+  }
+
+  return data;
+}
+
+function serializeStructuredData(data) {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+function resolveActionHref(site, href) {
+  const value = String(href || "").trim();
+
+  if (!value) {
+    return "";
+  }
+
+  if (/^https?:\/\//i.test(value) || value.startsWith("mailto:")) {
+    return value;
+  }
+
+  return sitePath(site, value);
 }
 
 function stripFormatting(text) {

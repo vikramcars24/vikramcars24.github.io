@@ -8,6 +8,14 @@
   "intro": "I write about building companies, making decisions under pressure, and staying clear-eyed while the stakes rise.",
   "about": "The work that matters most to me lives in the tension between intensity and steadiness: how to move fast without becoming frantic, and how to demand more without losing care for the people around the work.",
   "footerNote": "Built for long arguments, sharp ideas, and posts worth rereading.",
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "Get new essays without depending on the algorithm",
+    "description": "Email subscription is coming soon. Until then, subscribe via RSS and check back here for new writing.",
+    "ctaLabel": "Subscribe via RSS",
+    "ctaHref": "/rss.xml",
+    "note": "The email list will be connected here once the provider is set up."
+  },
   "interviews": [
     {
       "section": "Interviews",

@@ -22,6 +22,7 @@
     <meta name="twitter:image:alt" content="1200x630 social preview for AI-Native Is Not AI-First. The Distinction Is the Company.">
     <meta name="theme-color" content="#f4ecdf">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI-Native Is Not AI-First. The Distinction Is the Company.","description":"Most companies are adding AI to old workflows. The deeper shift is organizational: what happens when the cost of carrying context collapses.","datePublished":"2026-06-08T12:00:00Z","dateModified":"2026-06-08T12:00:00Z","author":{"@type":"Person","name":"Vikram Chopra"},"publisher":{"@type":"Person","name":"Vikram Chopra"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://vikramchopra.in/posts/ai-native-is-not-ai-first/"},"image":["https://vikramchopra.in/media/ai-native-is-not-ai-first-preview.png"]}</script>
     <script>
       (() => {
         const storageKey = "vikram-theme";
@@ -125,6 +126,17 @@
           </article>
         </main>
         
+    
+    <section class="newsletter-block" aria-label="Newsletter">
+      <div class="newsletter-copy">
+        <p class="eyebrow">Newsletter</p>
+        <h2>Get new essays without depending on the algorithm</h2>
+        <p class="newsletter-description">Email subscription is coming soon. Until then, subscribe via RSS and check back here for new writing.</p>
+        <p class="newsletter-note">The email list will be connected here once the provider is set up.</p>
+      </div>
+      <div class="newsletter-actions"><a class="button-link newsletter-button" href="/rss.xml">Subscribe via RSS</a></div>
+    </section>
+  
     <footer class="site-footer">
       <p>Built for long arguments, sharp ideas, and posts worth rereading.</p>
       <p class="footer-note"><a href="/archive/">Archive</a></p>
@@ -132,12 +144,15 @@
   
       </div>
     
+    <button class="quote-copy-button" type="button" data-quote-copy hidden>Copy quote</button>
     <script>
       (() => {
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
         const shareButton = document.querySelector("[data-share-button]");
+        const quoteButton = document.querySelector("[data-quote-copy]");
+        const quoteRegion = document.querySelector(".article-body");
         const themeMeta = document.querySelector('meta[name="theme-color"]');
 
         if (button) {
@@ -189,6 +204,107 @@
               } catch (_) {
                 shareButton.textContent = previousLabel;
               }
+            }
+          });
+        }
+
+        if (quoteButton && quoteRegion) {
+          const baseLabel = "Copy quote";
+
+          const normalizeSelection = (value) => {
+            return String(value || "")
+              .replace(/\s+/g, " ")
+              .trim();
+          };
+
+          const hideQuoteButton = () => {
+            quoteButton.hidden = true;
+            quoteButton.textContent = baseLabel;
+          };
+
+          const updateQuoteButton = () => {
+            const selection = window.getSelection();
+
+            if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
+              hideQuoteButton();
+              return;
+            }
+
+            const text = normalizeSelection(selection.toString());
+            const range = selection.getRangeAt(0);
+
+            if (!text || text.length < 24 || !quoteRegion.contains(range.commonAncestorContainer)) {
+              hideQuoteButton();
+              return;
+            }
+
+            const rect = range.getBoundingClientRect();
+            const titleNode = document.querySelector(".essay-header h1");
+            const pageTitle = titleNode ? titleNode.textContent.replace(/\s+/g, " ").trim() : document.title;
+
+            quoteButton.dataset.quoteText = text;
+            quoteButton.dataset.quoteTitle = pageTitle;
+            quoteButton.dataset.quoteUrl = window.location.href;
+            quoteButton.hidden = false;
+
+            const maxLeft = Math.max(12, window.innerWidth - quoteButton.offsetWidth - 12);
+            const left = Math.min(
+              Math.max(12, rect.left + (rect.width / 2) - (quoteButton.offsetWidth / 2)),
+              maxLeft
+            );
+            const top = window.innerWidth < 640
+              ? Math.max(12, window.innerHeight - 68)
+              : Math.max(12, rect.top - 48);
+
+            quoteButton.style.left = left + "px";
+            quoteButton.style.top = top + "px";
+          };
+
+          quoteButton.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+          });
+
+          quoteButton.addEventListener("click", async () => {
+            const quoteText = normalizeSelection(quoteButton.dataset.quoteText || "");
+            const quoteTitle = quoteButton.dataset.quoteTitle || document.title;
+            const quoteUrl = quoteButton.dataset.quoteUrl || window.location.href;
+
+            if (!quoteText) {
+              hideQuoteButton();
+              return;
+            }
+
+            const payload = '"' + quoteText + '"\n\nSource: Vikram Chopra, "' + quoteTitle + '"\n' + quoteUrl;
+
+            try {
+              await navigator.clipboard.writeText(payload);
+              quoteButton.textContent = "Copied quote";
+            } catch (_) {
+              quoteButton.textContent = "Copy failed";
+            }
+
+            window.setTimeout(() => {
+              hideQuoteButton();
+            }, 1400);
+          });
+
+          document.addEventListener("selectionchange", () => {
+            window.requestAnimationFrame(updateQuoteButton);
+          });
+
+          document.addEventListener("scroll", () => {
+            if (!quoteButton.hidden) {
+              window.requestAnimationFrame(updateQuoteButton);
+            }
+          }, { passive: true });
+
+          document.addEventListener("pointerdown", (event) => {
+            if (quoteButton.contains(event.target)) {
+              return;
+            }
+
+            if (!quoteRegion.contains(event.target)) {
+              hideQuoteButton();
             }
           });
         }
