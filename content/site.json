@@ -1,21 +1,13 @@
 {
   "name": "Vikram Chopra",
   "siteTitle": "Vikram Chopra",
-  "tagline": "Essays on pressure, judgment, ambition, and company building.",
-  "description": "A home for essays and notes on building companies, making hard decisions, and staying steady under pressure.",
+  "tagline": "I am the founder of Cars24. These essays are the worldview underneath it: how a country learns to own cars, why trust is the real product in mobility, what a company becomes when AI collapses the cost of coordination, and how a builder stays clear-eyed while the stakes rise.",
+  "description": "I am the founder of Cars24. These essays are the worldview underneath it: how a country learns to own cars, why trust is the real product in mobility, what a company becomes when AI collapses the cost of coordination, and how a builder stays clear-eyed while the stakes rise.",
   "domain": "https://vikramchopra.in",
   "basePath": "",
-  "intro": "I write about building companies, making decisions under pressure, and staying clear-eyed while the stakes rise.",
-  "about": "The work that matters most to me lives in the tension between intensity and steadiness: how to move fast without becoming frantic, and how to demand more without losing care for the people around the work.",
+  "intro": "I am the founder of Cars24. These essays are the worldview underneath it: how a country learns to own cars, why trust is the real product in mobility, what a company becomes when AI collapses the cost of coordination, and how a builder stays clear-eyed while the stakes rise.",
+  "about": "I write to think. I publish to be argued with.",
   "footerNote": "Built for long arguments, sharp ideas, and posts worth rereading.",
-  "newsletter": {
-    "eyebrow": "Newsletter",
-    "title": "Get new essays without depending on the algorithm",
-    "description": "Email subscription is coming soon. Until then, subscribe via RSS and check back here for new writing.",
-    "ctaLabel": "Subscribe via RSS",
-    "ctaHref": "/rss.xml",
-    "note": "The email list will be connected here once the provider is set up."
-  },
   "interviews": [
     {
       "section": "Interviews",

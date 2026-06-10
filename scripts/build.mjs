@@ -74,15 +74,12 @@ async function main() {
   await fs.rm(distDir, { recursive: true, force: true });
   await ensureDir(path.join(distDir, "archive"));
   await ensureDir(path.join(distDir, "posts"));
-  await ensureDir(path.join(distDir, "subscribe"));
-
   await fs.copyFile(path.join(assetsDir, "styles.css"), path.join(distDir, "styles.css"));
   await fs.copyFile(path.join(assetsDir, "favicon.svg"), path.join(distDir, "favicon.svg"));
   await copyDirectoryIfPresent(mediaDir, path.join(distDir, "media"));
 
   await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts, essayCollections), "utf8");
   await fs.writeFile(path.join(distDir, "archive", "index.html"), renderArchive(site, essayCollections), "utf8");
-  await fs.writeFile(path.join(distDir, "subscribe", "index.html"), renderSubscribePage(site), "utf8");
   await fs.writeFile(path.join(distDir, "404.html"), renderNotFound(site), "utf8");
 
   for (const post of posts) {
@@ -462,39 +459,6 @@ function renderArchive(site, essayCollections) {
   });
 }
 
-function renderSubscribePage(site) {
-  const newsletter = site.newsletter || {};
-
-  return renderDocument({
-    site,
-    title: `Subscribe | ${site.siteTitle}`,
-    description: newsletter.description || site.description,
-    pathName: "/subscribe/",
-    imagePath: "",
-    bodyClass: "subscribe-page",
-    openGraphType: "website",
-    structuredData: buildCollectionPageStructuredData(site, {
-      pathName: "/subscribe/",
-      title: `Subscribe | ${site.siteTitle}`,
-      description: newsletter.description || site.description
-    }),
-    content: `
-      <div class="page-shell">
-        ${renderHeader(site)}
-        <main class="content">
-          <section class="archive-hero">
-            <p class="eyebrow">${escapeHtml(newsletter.eyebrow || "Subscribe")}</p>
-            <h1>${escapeHtml(newsletter.title || "Get new essays without depending on the algorithm")}</h1>
-            ${newsletter.description ? `<p class="dek">${escapeHtml(newsletter.description)}</p>` : ""}
-            ${newsletter.note ? `<p class="home-intro-copy">${escapeHtml(newsletter.note)}</p>` : ""}
-          </section>
-        </main>
-        ${renderFooter(site)}
-      </div>
-    `
-  });
-}
-
 function renderPost(site, post, collection) {
   const toc = renderTableOfContents(post);
   return renderDocument({
@@ -536,14 +500,15 @@ function renderPost(site, post, collection) {
             <div class="essay-layout">
               ${toc}
               <div class="essay-main">
-                ${renderSummary(post)}
-                ${renderArticleImage(post)}
-                <div class="article-body">
-                  ${post.bodyHtml}
-                </div>
-                ${renderSources(post)}
-                ${renderRelatedEssays(site, post, collection)}
+              ${renderSummary(post)}
+              ${renderArticleImage(post)}
+              <div class="article-body">
+                ${post.bodyHtml}
               </div>
+              <p class="essay-signoff">Vikram Chopra, Founder &amp; Builder</p>
+              ${renderSources(post)}
+              ${renderRelatedEssays(site, post, collection)}
+            </div>
             </div>
           </article>
         </main>
@@ -880,9 +845,6 @@ function renderDocument({
 }
 
 function renderHeader(site) {
-  const newsletter = site.newsletter || {};
-  const subscribeHref = resolveActionHref(site, newsletter.subscribePageHref || "/subscribe/");
-
   return `
     <header class="site-header">
       <a class="brand" href="${sitePath(site, "/")}">
@@ -892,7 +854,6 @@ function renderHeader(site) {
       <div class="site-header-actions">
       <nav class="site-nav" aria-label="Primary">
         <a href="${sitePath(site, "/archive/")}">Archive</a>
-        <a href="${escapeAttribute(subscribeHref)}">Subscribe</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -905,33 +866,10 @@ function renderHeader(site) {
 
 function renderFooter(site) {
   return `
-    ${renderNewsletter(site)}
     <footer class="site-footer">
       <p>${escapeHtml(site.footerNote)}</p>
       <p class="footer-note"><a href="${sitePath(site, "/archive/")}">Archive</a></p>
     </footer>
-  `;
-}
-
-function renderNewsletter(site) {
-  const newsletter = site.newsletter;
-
-  if (!newsletter || typeof newsletter !== "object") {
-    return "";
-  }
-
-  const ctaHref = resolveActionHref(site, newsletter.ctaHref || "");
-
-  return `
-    <section class="newsletter-block" aria-label="Newsletter">
-      <div class="newsletter-copy">
-        ${newsletter.eyebrow ? `<p class="eyebrow">${escapeHtml(newsletter.eyebrow)}</p>` : ""}
-        <h2>${escapeHtml(newsletter.title || "Get new essays by email")}</h2>
-        ${newsletter.description ? `<p class="newsletter-description">${escapeHtml(newsletter.description)}</p>` : ""}
-        ${newsletter.note ? `<p class="newsletter-note">${escapeHtml(newsletter.note)}</p>` : ""}
-      </div>
-      ${ctaHref ? `<div class="newsletter-actions"><a class="button-link newsletter-button" href="${escapeAttribute(ctaHref)}">${escapeHtml(newsletter.ctaLabel || "Subscribe")}</a></div>` : ""}
-    </section>
   `;
 }
 
@@ -1404,20 +1342,6 @@ function serializeStructuredData(data) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
-function resolveActionHref(site, href) {
-  const value = String(href || "").trim();
-
-  if (!value) {
-    return "";
-  }
-
-  if (/^https?:\/\//i.test(value) || value.startsWith("mailto:")) {
-    return value;
-  }
-
-  return sitePath(site, value);
-}
-
 function stripFormatting(text) {
   return String(text).replace(/[*_`]/g, "").trim();
 }
@@ -1473,7 +1397,6 @@ function renderSitemap(site, posts) {
   const urls = [
     "/",
     "/archive/",
-    "/subscribe/",
     ...posts.map((post) => `/posts/${post.slug}/`),
     ...REDIRECTS.map((redirect) => `/posts/${redirect.from}/`)
   ];

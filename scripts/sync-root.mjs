@@ -15,7 +15,6 @@ const managedEntries = [
   "robots.txt",
   "_redirects",
   "archive",
-  "subscribe",
   "posts",
   "media",
   ".nojekyll",
