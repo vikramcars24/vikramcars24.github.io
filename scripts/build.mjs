@@ -66,25 +66,29 @@ async function main() {
   const site = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
   const posts = await loadPosts(site);
   const mediaDir = path.join(assetsDir, "media");
+  const essayCollections = buildEssayCollections(posts);
+  const collectionBySlug = buildCollectionBySlug(essayCollections);
 
   posts.sort((left, right) => right.date.localeCompare(left.date));
 
   await fs.rm(distDir, { recursive: true, force: true });
   await ensureDir(path.join(distDir, "archive"));
   await ensureDir(path.join(distDir, "posts"));
+  await ensureDir(path.join(distDir, "subscribe"));
 
   await fs.copyFile(path.join(assetsDir, "styles.css"), path.join(distDir, "styles.css"));
   await fs.copyFile(path.join(assetsDir, "favicon.svg"), path.join(distDir, "favicon.svg"));
   await copyDirectoryIfPresent(mediaDir, path.join(distDir, "media"));
 
-  await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts), "utf8");
-  await fs.writeFile(path.join(distDir, "archive", "index.html"), renderArchive(site, posts), "utf8");
+  await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts, essayCollections), "utf8");
+  await fs.writeFile(path.join(distDir, "archive", "index.html"), renderArchive(site, essayCollections), "utf8");
+  await fs.writeFile(path.join(distDir, "subscribe", "index.html"), renderSubscribePage(site), "utf8");
   await fs.writeFile(path.join(distDir, "404.html"), renderNotFound(site), "utf8");
 
   for (const post of posts) {
     const postDir = path.join(distDir, "posts", post.slug);
     await ensureDir(postDir);
-    await fs.writeFile(path.join(postDir, "index.html"), renderPost(site, post), "utf8");
+    await fs.writeFile(path.join(postDir, "index.html"), renderPost(site, post, collectionBySlug.get(post.slug) || null), "utf8");
   }
 
   for (const redirect of REDIRECTS) {
@@ -369,9 +373,8 @@ function renderInline(text) {
   return output;
 }
 
-function renderHome(site, posts) {
+function renderHome(site, posts, essayCollections) {
   const featured = posts.find((post) => post.featured) || posts[0];
-  const essayCollections = buildEssayCollections(posts);
   const interviews = Array.isArray(site.interviews) ? site.interviews : [];
   const interviewSections = groupBy(interviews, (interview) => interview.section || "Interviews");
   const elsewhere = Array.isArray(site.elsewhere) ? site.elsewhere : [];
@@ -385,6 +388,7 @@ function renderHome(site, posts) {
     imageAlt: featured?.imageAlt || site.siteTitle,
     bodyClass: "home-page",
     openGraphType: "website",
+    structuredData: buildWebsiteStructuredData(site),
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -414,9 +418,7 @@ function renderHome(site, posts) {
   });
 }
 
-function renderArchive(site, posts) {
-  const essayCollections = buildEssayCollections(posts);
-
+function renderArchive(site, essayCollections) {
   return renderDocument({
     site,
     title: `Archive | ${site.siteTitle}`,
@@ -425,6 +427,11 @@ function renderArchive(site, posts) {
     imagePath: "",
     bodyClass: "archive-page",
     openGraphType: "website",
+    structuredData: buildCollectionPageStructuredData(site, {
+      pathName: "/archive/",
+      title: `Archive | ${site.siteTitle}`,
+      description: `Archive of essays and notes by ${site.name}.`
+    }),
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -444,7 +451,40 @@ function renderArchive(site, posts) {
   });
 }
 
-function renderPost(site, post) {
+function renderSubscribePage(site) {
+  const newsletter = site.newsletter || {};
+
+  return renderDocument({
+    site,
+    title: `Subscribe | ${site.siteTitle}`,
+    description: newsletter.description || site.description,
+    pathName: "/subscribe/",
+    imagePath: "",
+    bodyClass: "subscribe-page",
+    openGraphType: "website",
+    structuredData: buildCollectionPageStructuredData(site, {
+      pathName: "/subscribe/",
+      title: `Subscribe | ${site.siteTitle}`,
+      description: newsletter.description || site.description
+    }),
+    content: `
+      <div class="page-shell">
+        ${renderHeader(site)}
+        <main class="content">
+          <section class="archive-hero">
+            <p class="eyebrow">${escapeHtml(newsletter.eyebrow || "Subscribe")}</p>
+            <h1>${escapeHtml(newsletter.title || "Get new essays without depending on the algorithm")}</h1>
+            ${newsletter.description ? `<p class="dek">${escapeHtml(newsletter.description)}</p>` : ""}
+            ${newsletter.note ? `<p class="home-intro-copy">${escapeHtml(newsletter.note)}</p>` : ""}
+          </section>
+        </main>
+        ${renderFooter(site)}
+      </div>
+    `
+  });
+}
+
+function renderPost(site, post, collection) {
   const toc = renderTableOfContents(post);
   return renderDocument({
     site,
@@ -456,7 +496,10 @@ function renderPost(site, post) {
     bodyClass: "post-page",
     openGraphType: "article",
     publishedDate: post.date,
-    structuredData: buildArticleStructuredData(site, post),
+    structuredData: [
+      buildArticleStructuredData(site, post),
+      buildBreadcrumbStructuredData(site, post)
+    ],
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
@@ -488,6 +531,7 @@ function renderPost(site, post) {
                   ${post.bodyHtml}
                 </div>
                 ${renderSources(post)}
+                ${renderRelatedEssays(site, post, collection)}
               </div>
             </div>
           </article>
@@ -569,6 +613,7 @@ function renderDocument({
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeAttribute(description)}">
+    <meta name="author" content="${escapeAttribute(site.name)}">
     <link rel="canonical" href="${escapeAttribute(canonical)}">
     <link rel="alternate" type="application/rss+xml" title="${escapeAttribute(site.siteTitle)} RSS" href="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, "/rss.xml")))}">
     <meta property="og:site_name" content="${escapeAttribute(site.siteTitle)}">
@@ -824,6 +869,9 @@ function renderDocument({
 }
 
 function renderHeader(site) {
+  const newsletter = site.newsletter || {};
+  const subscribeHref = resolveActionHref(site, newsletter.subscribePageHref || "/subscribe/");
+
   return `
     <header class="site-header">
       <a class="brand" href="${sitePath(site, "/")}">
@@ -833,6 +881,7 @@ function renderHeader(site) {
       <div class="site-header-actions">
       <nav class="site-nav" aria-label="Primary">
         <a href="${sitePath(site, "/archive/")}">Archive</a>
+        <a href="${escapeAttribute(subscribeHref)}">Subscribe</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -1106,6 +1155,47 @@ function buildEssayCollections(posts) {
   return collections;
 }
 
+function buildCollectionBySlug(collections) {
+  const map = new Map();
+
+  for (const collection of collections) {
+    for (const post of collection.posts) {
+      map.set(post.slug, collection);
+    }
+  }
+
+  return map;
+}
+
+function pickRelatedPosts(posts, currentSlug, limit) {
+  const index = posts.findIndex((item) => item.slug === currentSlug);
+
+  if (index === -1) {
+    return posts.slice(0, limit);
+  }
+
+  const related = [];
+
+  for (let offset = 1; related.length < limit && offset < posts.length; offset += 1) {
+    const forward = posts[index + offset];
+    const backward = posts[index - offset];
+
+    if (forward && forward.slug !== currentSlug) {
+      related.push(forward);
+    }
+
+    if (related.length >= limit) {
+      break;
+    }
+
+    if (backward && backward.slug !== currentSlug) {
+      related.push(backward);
+    }
+  }
+
+  return related.slice(0, limit);
+}
+
 function renderDisplayTitle(title) {
   const parts = String(title)
     .split("|")
@@ -1189,6 +1279,33 @@ function renderSources(post) {
   `;
 }
 
+function renderRelatedEssays(site, post, collection) {
+  if (!collection || !Array.isArray(collection.posts)) {
+    return "";
+  }
+
+  const relatedPosts = pickRelatedPosts(collection.posts, post.slug, 3);
+
+  if (relatedPosts.length === 0) {
+    return "";
+  }
+
+  return `
+    <section class="related-essays" aria-label="Related essays">
+      <p class="essay-summary-label">Continue Reading</p>
+      <h2>More in ${escapeHtml(collection.title)}</h2>
+      <div class="related-essay-list">
+        ${relatedPosts.map((item) => `
+          <article class="related-essay-card">
+            <h3><a href="${sitePath(site, `/posts/${item.slug}/`)}">${renderDisplayTitle(item.displayTitle)}</a></h3>
+            <p>${escapeHtml(item.description)}</p>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function buildArticleStructuredData(site, post) {
   const canonical = absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`));
   const image = post.image ? absoluteUrl(site.domain, sitePath(site, post.image)) : "";
@@ -1219,6 +1336,57 @@ function buildArticleStructuredData(site, post) {
   }
 
   return data;
+}
+
+function buildWebsiteStructuredData(site) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.siteTitle,
+    url: absoluteUrl(site.domain, sitePath(site, "/")),
+    description: site.description,
+    publisher: {
+      "@type": "Person",
+      name: site.name
+    }
+  };
+}
+
+function buildCollectionPageStructuredData(site, page) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: page.title,
+    url: absoluteUrl(site.domain, sitePath(site, page.pathName)),
+    description: page.description
+  };
+}
+
+function buildBreadcrumbStructuredData(site, post) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: absoluteUrl(site.domain, sitePath(site, "/"))
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Archive",
+        item: absoluteUrl(site.domain, sitePath(site, "/archive/"))
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`))
+      }
+    ]
+  };
 }
 
 function serializeStructuredData(data) {
@@ -1294,6 +1462,7 @@ function renderSitemap(site, posts) {
   const urls = [
     "/",
     "/archive/",
+    "/subscribe/",
     ...posts.map((post) => `/posts/${post.slug}/`),
     ...REDIRECTS.map((redirect) => `/posts/${redirect.from}/`)
   ];
