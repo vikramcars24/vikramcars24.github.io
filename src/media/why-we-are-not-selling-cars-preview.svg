@@ -1,0 +1,63 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#5A4DFF"/>
+      <stop offset="42%" stop-color="#4736FE"/>
+      <stop offset="100%" stop-color="#21167F"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96 50.4) rotate(40) scale(540 327.6)">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1008 390.6) rotate(210) scale(336 239.4)">
+      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  <rect width="1200" height="630" fill="url(#violetGlow)" opacity="0.16"/>
+  <rect width="1200" height="630" fill="url(#emberGlow)" opacity="0.18"/>
+  <ellipse cx="984" cy="151" rx="264" ry="139" fill="#FFFFFF" opacity="0.05"/>
+  <ellipse cx="168" cy="504" rx="216" ry="126" fill="#EF4523" opacity="0.08"/>
+  <rect x="86" y="54" width="132" height="8" rx="4" fill="#FFFFFF" opacity="0.82"/>
+  <rect x="1008" y="558" width="96" height="8" rx="4" fill="#EF4523" opacity="0.82"/>
+
+  <rect x="736" y="188" width="246" height="174" rx="22" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1.5"/>
+  <path d="M756 248C804 248 818 292 804 292" stroke="#FFFFFF" stroke-opacity="0.46" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M962 248C914 248 900 292 914 292" stroke="#EF4523" stroke-opacity="0.62" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M860 332V386" stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="758" cy="248" r="8" fill="#FFFFFF"/>
+  <circle cx="962" cy="248" r="8" fill="#EF4523"/>
+  <circle cx="860" cy="386" r="8" fill="#FFFFFF"/>
+
+  <rect x="718" y="204" width="70" height="46" rx="20" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1.2"/>
+  <rect x="728" y="213" width="13" height="5" rx="2.5" fill="#EF4523" fill-opacity="0.16"/>
+  <rect x="728" y="223" width="30" height="4" rx="2" fill="#FFFFFF" fill-opacity="0.24"/>
+  <rect x="728" y="230" width="22" height="3" rx="1.5" fill="#FFFFFF" fill-opacity="0.16"/>
+  <circle cx="776" cy="226" r="5.4" fill="#EF4523"/>
+
+  <rect x="928" y="204" width="70" height="46" rx="20" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1.2"/>
+  <path d="M964 215L975 217L973 227C971 235 967 239 961 242C956 239 951 235 949 227L947 217L964 215Z" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M957 228L962 232L970 225" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="810" y="390" width="98" height="39" rx="17" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1.2"/>
+  <path d="M827 415L846 409L866 416L887 406" stroke="#FFFFFF" stroke-opacity="0.62" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="827" cy="415" r="4.4" fill="#FFFFFF"/>
+  <circle cx="846" cy="409" r="4.4" fill="#FFFFFF"/>
+  <circle cx="866" cy="416" r="4.4" fill="#FFFFFF"/>
+  <circle cx="887" cy="406" r="4.4" fill="#FFFFFF"/>
+
+  <rect x="802" y="267" width="112" height="71" rx="14" fill="#FFFFFF" opacity="0.96" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.4"/>
+  <rect x="812" y="278" width="29" height="7" rx="3.5" fill="#4736FE" fill-opacity="0.14"/>
+  <path d="M825 307C830 297 841 293 850 293H867C877 293 886 298 891 307V308H825V307Z" fill="none" stroke="#4736FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="841" cy="308" r="4.4" fill="#4736FE"/>
+  <circle cx="877" cy="308" r="4.4" fill="#4736FE"/>
+  <rect x="823" y="321" width="71" height="6" rx="3" fill="#EF4523"/>
+
+  <text x="80" y="95" fill="#FFFFFF" opacity="0.72" font-size="16.8" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">MOBILITY / TRUST</text>
+  <text x="80" y="166" fill="#FFFFFF" font-size="80" font-family="Georgia, 'Times New Roman', serif" letter-spacing="-0.04em">
+    <tspan x="80" dy="0">Why We Are Not</tspan>
+    <tspan x="80" dy="76">Selling Cars</tspan>
+  </text>
+  <text x="80" y="314" fill="#FFFFFF" opacity="0.92" font-size="30" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Trust is the infrastructure around ownership.</text>
+</svg>

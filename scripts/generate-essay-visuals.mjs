@@ -137,12 +137,12 @@ const essays = [
     }
   },
   {
-    slug: "the-car-is-the-artifact-trust-is-the-product",
-    title: "The Car Is the Artifact. Trust Is the Product.",
-    titleLines: ["The car is", "the artifact.", "Trust is the", "product."],
-    accentLineIndex: 3,
-    subtitle: "Certainty is what compounds in mobility.",
-    description: "Ownership becomes a business when trust becomes a system.",
+    slug: "why-we-are-not-selling-cars",
+    title: "Why We Are Not Selling Cars",
+    titleLines: ["Why We Are Not", "Selling Cars"],
+    accentLineIndex: -1,
+    subtitle: "Trust is the infrastructure around ownership.",
+    description: "The rails matter more than the artifact.",
     motif: "trust-stack",
     textMode: "institutional-dark",
     eyebrow: "MOBILITY / TRUST",

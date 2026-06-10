@@ -2,6 +2,7 @@
 title: Used-Car Ownership Is a Lending Problem
 date: 2026-06-12
 description: India's pre-owned market becomes mass not because used cars are cheaper, but when lending can underwrite messy assets, lower upfront fear, and turn aspiration into a survivable monthly payment.
+socialDescription: India's next ownership unlock is not more listings. It is financing that understands the asset, the buyer, and the realities of used-car trust.
 image: /media/used-car-ownership-is-a-lending-problem-preview.svg
 imageAlt: 1200x630 social preview for Used-Car Ownership Is a Lending Problem
 articleImage: /media/used-car-ownership-is-a-lending-problem-blog.svg

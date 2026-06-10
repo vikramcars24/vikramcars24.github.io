@@ -1,0 +1,30 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="102" y1="32" x2="1090" y2="596" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4EFE5"/>
+      <stop offset="1" stop-color="#DCE5E6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="995" cy="132" r="116" fill="#F7F3EC"/>
+  <circle cx="950" cy="392" r="172" fill="#EDF2F2" opacity="0.76"/>
+  <rect x="632" y="160" width="196" height="196" rx="34" fill="#1C2630"/>
+  <rect x="676" y="204" width="108" height="18" rx="9" fill="#E8E2D5" opacity="0.9"/>
+  <rect x="676" y="242" width="72" height="18" rx="9" fill="#E8E2D5" opacity="0.6"/>
+  <rect x="676" y="280" width="124" height="18" rx="9" fill="#E8E2D5" opacity="0.78"/>
+  <circle cx="730" cy="387" r="18" fill="#1C2630"/>
+  <circle cx="906" cy="304" r="18" fill="#1C2630"/>
+  <circle cx="1003" cy="472" r="18" fill="#1C2630"/>
+  <path d="M809 275C845 294 862 310 889 320" stroke="#1C2630" stroke-width="8" stroke-linecap="round"/>
+  <path d="M800 324C860 374 906 416 980 457" stroke="#1C2630" stroke-width="8" stroke-linecap="round"/>
+  <path d="M688 359C706 368 714 375 723 381" stroke="#1C2630" stroke-width="8" stroke-linecap="round"/>
+  <path d="M730 387C772 432 834 468 938 476" stroke="#C4663A" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+  <path d="M808 255C868 244 918 199 942 140" stroke="#2C7285" stroke-width="7" stroke-linecap="round" opacity="0.88"/>
+  <path d="M109 92H244" stroke="#2C7285" stroke-width="5" stroke-linecap="round"/>
+  <path d="M109 106H226" stroke="#C4663A" stroke-width="5" stroke-linecap="round"/>
+  <text x="109" y="166" fill="#1C2630" font-family="Georgia, 'Times New Roman', serif" font-size="50" letter-spacing="-1.1">
+    <tspan x="109" dy="0">AI Will Do for Consumer</tspan>
+    <tspan x="109" dy="60">What SaaS Did for</tspan>
+    <tspan x="109" dy="60">Software</tspan>
+  </text>
+</svg>

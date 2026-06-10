@@ -2,6 +2,7 @@
 title: The Greenest Car in India Is the One Already Built
 date: 2026-06-06
 description: The fastest realistic climate lever in Indian mobility is not only cleaner new production. It is making the vehicles that already exist trustworthy enough to stay useful longer.
+socialDescription: The cleanest car decision in India is often extending the life of one already built, not manufacturing a new one and calling it green.
 image: /media/the-greenest-car-in-india-is-the-one-already-built-preview.png
 imageAlt: 1200x630 social preview for The Greenest Car in India Is the One Already Built
 articleImage: /media/the-greenest-car-in-india-is-the-one-already-built-blog.png

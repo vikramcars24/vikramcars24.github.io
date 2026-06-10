@@ -2,9 +2,9 @@
 title: Why We Are Not Selling Cars
 date: 2026-06-10
 description: The lasting business in mobility is not moving a vehicle once. It is becoming the trust layer around ownership.
-image: /media/the-car-is-the-artifact-trust-is-the-product-preview.png
+image: /media/why-we-are-not-selling-cars-preview.png
 imageAlt: 1200x630 social preview for Why We Are Not Selling Cars
-articleImage: /media/the-car-is-the-artifact-trust-is-the-product-blog.png
+articleImage: /media/why-we-are-not-selling-cars-blog.png
 articleImageAlt: Editorial visual for Why We Are Not Selling Cars
 summary: Levitt's railroads died defending the object instead of the need. Most mobility companies are making the same mistake with cars. | The customer is buying a stack of certainty: asset truth, clean transfer, fair financing, recourse when something breaks. | Indian auto is early in institutional completion, and the prize is AI-native vehicle ownership infrastructure: the rails the whole category runs on.
 featured: false

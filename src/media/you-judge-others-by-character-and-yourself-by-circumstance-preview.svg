@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="104" y1="36" x2="1102" y2="594" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4EEE4"/>
+      <stop offset="1" stop-color="#E4D8CA"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="824" y1="92" x2="612" y2="354" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB493" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#FFB493" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1032" cy="102" r="92" fill="#FAF7F1" opacity="0.9"/>
+  <path d="M102 112H310L700 112L612 354H102V112Z" fill="url(#beam)"/>
+
+  <rect x="720" y="132" width="112" height="220" rx="20" fill="#365968" opacity="0.1" stroke="#365968" stroke-width="6"/>
+  <circle cx="838" cy="214" r="30" stroke="#365968" stroke-width="6"/>
+  <path d="M838 194V214L854 226" stroke="#365968" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="876" y="256" width="82" height="50" rx="12" fill="#365968" opacity="0.12"/>
+
+  <circle cx="582" cy="342" r="24" fill="#1A2A34"/>
+  <path d="M582 368V432" stroke="#1A2A34" stroke-width="12" stroke-linecap="round"/>
+  <path d="M552 392L612 392" stroke="#1A2A34" stroke-width="12" stroke-linecap="round"/>
+  <path d="M582 432L552 482" stroke="#1A2A34" stroke-width="12" stroke-linecap="round"/>
+  <path d="M582 432L612 482" stroke="#1A2A34" stroke-width="12" stroke-linecap="round"/>
+
+  <path d="M612 356C658 334 694 294 726 246" stroke="#1A2A34" stroke-width="8" stroke-linecap="round" stroke-dasharray="10 14"/>
+  <circle cx="744" cy="220" r="16" fill="#D1613D"/>
+
+  <text x="104" y="454" fill="#1A2A34" font-family="Georgia, 'Times New Roman', serif" font-size="50" letter-spacing="-1.05">
+    <tspan x="104" dy="0">You Judge Others by</tspan>
+    <tspan x="104" dy="58">Character and</tspan>
+    <tspan x="104" dy="58">Yourself by</tspan>
+    <tspan x="104" dy="58">Circumstance</tspan>
+  </text>
+</svg>

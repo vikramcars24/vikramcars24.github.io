@@ -2,6 +2,7 @@
 title: Who Taught You to Want This?
 date: 2026-06-16
 description: A surprising amount of modern ambition is not self-authored. It is borrowed from peers, rivals, timelines, and status systems that quietly teach us what to want.
+socialDescription: Taste often feels personal. Much of it is inherited, signaled, and socially taught long before we experience it as our own desire.
 image: /media/who-taught-you-to-want-this-preview.svg
 imageAlt: 1200x630 social preview for Who Taught You to Want This?
 articleImage: /media/who-taught-you-to-want-this-blog.svg

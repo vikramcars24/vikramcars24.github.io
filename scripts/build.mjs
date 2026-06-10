@@ -64,6 +64,7 @@ const REDIRECTS = [
 
 async function main() {
   const site = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
+  site.socialImageMeta = await resolveImageMeta(site.socialImage || "");
   const posts = await loadPosts(site);
   const mediaDir = path.join(assetsDir, "media");
   const essayCollections = buildEssayCollections(posts);
@@ -130,8 +131,10 @@ async function loadPosts(site) {
         displayTitle: attributes.displayTitle || attributes.title || slugToTitle(slug),
         date: attributes.date || new Date().toISOString().slice(0, 10),
         description: attributes.description || createExcerpt(body),
+        socialDescription: attributes.socialDescription || "",
         image: attributes.image || "",
         imageAlt: attributes.imageAlt || attributes.title || slugToTitle(slug),
+        imageMeta: await resolveImageMeta(attributes.image || ""),
         articleImage: attributes.articleImage || "",
         articleImageAlt: attributes.articleImageAlt || attributes.imageAlt || attributes.title || slugToTitle(slug),
         summary: attributes.summary || "",
@@ -386,14 +389,21 @@ function renderHome(site, posts, essayCollections) {
   const interviews = Array.isArray(site.interviews) ? site.interviews : [];
   const interviewSections = groupBy(interviews, (interview) => interview.section || "Interviews");
   const elsewhere = Array.isArray(site.elsewhere) ? site.elsewhere : [];
+  const imagePath = site.socialImage || featured?.image || "";
+  const imageAlt = site.socialImageAlt || featured?.imageAlt || site.siteTitle;
+  const imageMeta = site.socialImageMeta || featured?.imageMeta || null;
 
   return renderDocument({
     site,
     title: site.siteTitle,
-    description: site.description,
+    description: site.socialDescription || site.description,
     pathName: "/",
-    imagePath: featured?.image || "",
-    imageAlt: featured?.imageAlt || site.siteTitle,
+    imagePath,
+    imageAlt,
+    imageWidth: imageMeta?.width || null,
+    imageHeight: imageMeta?.height || null,
+    socialTitle: site.socialTitle || site.siteTitle,
+    socialDescription: site.socialDescription || site.description,
     bodyClass: "home-page",
     openGraphType: "website",
     structuredData: buildWebsiteStructuredData(site),
@@ -419,6 +429,7 @@ function renderHome(site, posts, essayCollections) {
 
           ${interviews.length > 0 ? renderHomeInterviewSections(interviewSections) : ""}
           ${elsewhere.length > 0 ? renderElsewhereSection(elsewhere) : ""}
+          ${renderSubscribeLine(site)}
         </main>
         ${renderFooter(site)}
       </div>
@@ -465,9 +476,12 @@ function renderPost(site, post, collection) {
     site,
     title: `${post.title} | ${site.siteTitle}`,
     description: post.description,
+    socialDescription: post.socialDescription || post.description,
     pathName: `/posts/${post.slug}/`,
     imagePath: post.image,
     imageAlt: post.imageAlt,
+    imageWidth: post.imageMeta?.width || null,
+    imageHeight: post.imageMeta?.height || null,
     bodyClass: "post-page",
     openGraphType: "article",
     publishedDate: post.date,
@@ -508,6 +522,7 @@ function renderPost(site, post, collection) {
               <p class="essay-signoff">Vikram Chopra, Founder &amp; Builder</p>
               ${renderSources(post)}
               ${renderRelatedEssays(site, post, collection)}
+              ${renderSubscribeLine(site)}
             </div>
             </div>
           </article>
@@ -573,14 +588,20 @@ function renderDocument({
   pathName,
   imagePath,
   imageAlt = "",
+  imageWidth = null,
+  imageHeight = null,
   content,
   bodyClass,
   openGraphType = "website",
   publishedDate = "",
-  structuredData = null
+  structuredData = null,
+  socialTitle = "",
+  socialDescription = ""
 }) {
   const canonical = absoluteUrl(site.domain, sitePath(site, pathName));
   const ogImage = imagePath ? absoluteUrl(site.domain, sitePath(site, imagePath)) : "";
+  const metaTitle = socialTitle || title;
+  const metaDescription = socialDescription || description;
 
   return `<!doctype html>
 <html lang="en">
@@ -588,21 +609,23 @@ function renderDocument({
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeAttribute(description)}">
+    <meta name="description" content="${escapeAttribute(metaDescription)}">
     <meta name="author" content="${escapeAttribute(site.name)}">
     <link rel="canonical" href="${escapeAttribute(canonical)}">
     <link rel="alternate" type="application/rss+xml" title="${escapeAttribute(site.siteTitle)} RSS" href="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, "/rss.xml")))}">
     <meta property="og:site_name" content="${escapeAttribute(site.siteTitle)}">
-    <meta property="og:title" content="${escapeAttribute(title)}">
-    <meta property="og:description" content="${escapeAttribute(description)}">
+    <meta property="og:title" content="${escapeAttribute(metaTitle)}">
+    <meta property="og:description" content="${escapeAttribute(metaDescription)}">
     <meta property="og:type" content="${escapeAttribute(openGraphType)}">
     <meta property="og:url" content="${escapeAttribute(canonical)}">
     ${ogImage ? `<meta property="og:image" content="${escapeAttribute(ogImage)}">` : ""}
+    ${ogImage && imageWidth ? `<meta property="og:image:width" content="${escapeAttribute(String(imageWidth))}">` : ""}
+    ${ogImage && imageHeight ? `<meta property="og:image:height" content="${escapeAttribute(String(imageHeight))}">` : ""}
     ${ogImage && imageAlt ? `<meta property="og:image:alt" content="${escapeAttribute(imageAlt)}">` : ""}
     ${publishedDate ? `<meta property="article:published_time" content="${escapeAttribute(`${publishedDate}T12:00:00Z`)}">` : ""}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${escapeAttribute(title)}">
-    <meta name="twitter:description" content="${escapeAttribute(description)}">
+    <meta name="twitter:title" content="${escapeAttribute(metaTitle)}">
+    <meta name="twitter:description" content="${escapeAttribute(metaDescription)}">
     ${ogImage ? `<meta name="twitter:image" content="${escapeAttribute(ogImage)}">` : ""}
     ${ogImage && imageAlt ? `<meta name="twitter:image:alt" content="${escapeAttribute(imageAlt)}">` : ""}
     <meta name="theme-color" content="#f4ecdf">
@@ -870,6 +893,30 @@ function renderFooter(site) {
       <p>${escapeHtml(site.footerNote)}</p>
       <p class="footer-note"><a href="${sitePath(site, "/archive/")}">Archive</a></p>
     </footer>
+  `;
+}
+
+function renderSubscribeLine(site) {
+  const subscribe = site.subscribe;
+
+  if (!subscribe || typeof subscribe !== "object") {
+    return "";
+  }
+
+  const href = String(subscribe.href || "").trim();
+
+  if (!href) {
+    return "";
+  }
+
+  const line = String(subscribe.line || "New essays by email, a few times a year.").trim();
+  const target = /^https?:\/\//i.test(href) || href.startsWith("mailto:")
+    ? href
+    : sitePath(site, href);
+  const rel = /^https?:\/\//i.test(target) ? ` target="_blank" rel="noreferrer"` : "";
+
+  return `
+    <p class="subscribe-line"><a href="${escapeAttribute(target)}"${rel}>${escapeHtml(line)}</a></p>
   `;
 }
 
@@ -1519,6 +1566,53 @@ function escapeXml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&apos;");
+}
+
+async function resolveImageMeta(imagePath) {
+  const value = String(imagePath || "").trim();
+
+  if (!value || !value.startsWith("/media/")) {
+    return null;
+  }
+
+  const absolutePath = path.join(assetsDir, value.replace(/^\//, ""));
+  const extension = path.extname(absolutePath).toLowerCase();
+
+  try {
+    if (extension === ".png") {
+      const buffer = await fs.readFile(absolutePath);
+      if (buffer.length >= 24) {
+        return {
+          width: buffer.readUInt32BE(16),
+          height: buffer.readUInt32BE(20)
+        };
+      }
+    }
+
+    if (extension === ".svg") {
+      const svg = await fs.readFile(absolutePath, "utf8");
+      const viewBoxMatch = svg.match(/viewBox="([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)"/i);
+      if (viewBoxMatch) {
+        return {
+          width: Math.round(Number(viewBoxMatch[3])),
+          height: Math.round(Number(viewBoxMatch[4]))
+        };
+      }
+
+      const widthMatch = svg.match(/width="([\d.]+)"/i);
+      const heightMatch = svg.match(/height="([\d.]+)"/i);
+      if (widthMatch && heightMatch) {
+        return {
+          width: Math.round(Number(widthMatch[1])),
+          height: Math.round(Number(heightMatch[1]))
+        };
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
 }
 
 async function ensureDir(directory) {

@@ -2,9 +2,10 @@
 title: Execution Problems Begin as Trust Problems
 date: 2026-06-17
 description: Teams diagnose delay and weak accountability at the process level. Many failures begin earlier, in trust, conflict avoidance, and the human structure of the team.
-image: /media/most-execution-problems-are-trust-problems-preview.svg
+socialDescription: Many execution failures show up as process problems, but begin earlier in low trust, conflict avoidance, and false commitment inside the team.
+image: /media/execution-problems-begin-as-trust-problems-preview.png
 imageAlt: 1200x630 social preview for Execution Problems Begin as Trust Problems
-articleImage: /media/most-execution-problems-are-trust-problems-blog.svg
+articleImage: /media/execution-problems-begin-as-trust-problems-blog.svg
 articleImageAlt: Editorial visual for Execution Problems Begin as Trust Problems
 summary: The postmortem says process. The cause is usually trust, conflict avoidance, and false commitment one level down. | Lencioni's chain explains it, but trust is the floor, not the skill: candor needs practice even between co-founders. | Comfort is not the precondition for honesty. It is the reward.
 featured: false
