@@ -32,4 +32,6 @@ I am not exempt. I have wanted numbers because another founder announced them fi
 
 That question does not kill desire. It cleans it.
 
-*Sources: René Girard, Deceit, Desire, and the Novel (1961) and Things Hidden Since the Foundation of the World (1978); Luke Burgis, Wanting (2021).*
+## Notes and Sources
+- René Girard, Deceit, Desire, and the Novel, 1961, and Things Hidden Since the Foundation of the World, 1978. Mimetic desire; distant versus close models.
+- Luke Burgis, Wanting: The Power of Mimetic Desire in Everyday Life, 2021. Girard applied to business; conflict comes from sameness.

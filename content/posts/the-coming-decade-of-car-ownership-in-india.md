@@ -73,4 +73,9 @@ The future of car ownership in India is not just more cars.
 
 It is less fear.
 
-*Sources: CRISIL Ratings (2025), used-car market size, 1.4x ratio, Anuj Sethi quote; SIAM, FY2024-25 PV sales; MoRTH / Data For India, cars per 1,000; IndianBlueBook, first-buyer share, organized split, financing penetration; Central Motor Vehicle Rules, 2022 "deemed ownership" amendment.*
+## Notes and Sources
+- [CRISIL Ratings, press release, July 2025](https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html). Used-car market at ~₹4 lakh crore and ~6 million units, the 1.4x used-to-new ratio, the US ~2.5x and UK ~4.0x comparisons, the ~3.7 year average transaction age, and the Anuj Sethi quote.
+- [SIAM](https://www.siam.in). Record 4.3 million passenger vehicles sold in FY2024-25.
+- [Ministry of Road Transport and Highways registration data, via Data For India](https://www.dataforindia.com/vehicle-ownership/). Roughly 35 cars per 1,000 people (2022).
+- [IndianBlueBook (Mahindra First Choice Wheels), FY25 report](https://www.autocarpro.in/news/indias-used-car-industry-expected-to-touch-$73-billion-by-fy28-indianbluebook-report-120648). 64% of non-metro buyers' first car is used; ~29% organized share; financing penetration.
+- Central Motor Vehicle Rules, 2022 amendment creating "deemed ownership" of vehicles pending transfer.

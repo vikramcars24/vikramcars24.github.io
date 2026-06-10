@@ -30,4 +30,7 @@ And here is where I have to push past the model, because I live the exception to
 
 Many execution problems do not begin as execution problems. They begin as trust problems that have not yet become legible. Once you see that, you stop treating symptoms as causes and start looking for the problem beneath the problem. That is where most real execution work begins.
 
-*Sources: Patrick Lencioni, The Five Dysfunctions of a Team (2002); Amy Edmondson, "Psychological Safety and Learning Behavior in Work Teams," Administrative Science Quarterly (1999); Kim Scott, Radical Candor (2017).*
+## Notes and Sources
+- [Patrick Lencioni, The Five Dysfunctions of a Team, 2002](https://www.tablegroup.com/topics-and-resources/teamwork-5-dysfunctions/). The trust-to-results causal chain.
+- [Amy Edmondson, "Psychological Safety and Learning Behavior in Work Teams," Administrative Science Quarterly, 1999](https://doi.org/10.2307/2666999). Disagreement and admission of error require safety.
+- [Kim Scott, Radical Candor, 2017](https://www.radicalcandor.com/our-approach). The fifteen-years-of-unspoken-feedback story.

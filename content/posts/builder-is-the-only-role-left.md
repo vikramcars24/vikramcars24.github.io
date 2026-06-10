@@ -41,4 +41,5 @@ At Cars24 we made this literal. We removed the old bands, grades, and designatio
 
 That is what I mean by builder. Not a heroic identity. Not a flattering label. The only role left that still compounds cleanly when context gets cheaper and reality gets harder to hide from.
 
-*Sources: Jay Galbraith, "Organization Design: An Information Processing View" (1974).*
+## Notes and Sources
+- [Jay Galbraith, "Organization Design: An Information Processing View," 1974](https://doi.org/10.1287/inte.4.3.28). Organization structure exists to process information under uncertainty; the basis for the coordination-prestige argument.

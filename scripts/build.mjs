@@ -102,7 +102,9 @@ async function main() {
   await fs.writeFile(path.join(distDir, "rss.xml"), renderRss(site, posts), "utf8");
   await fs.writeFile(path.join(distDir, "sitemap.xml"), renderSitemap(site, posts), "utf8");
   await fs.writeFile(path.join(distDir, "robots.txt"), renderRobots(site), "utf8");
+  await fs.writeFile(path.join(distDir, "llms.txt"), renderLlmsTxt(site, essayCollections), "utf8");
   await fs.writeFile(path.join(distDir, "_redirects"), renderRedirects(site), "utf8");
+  await fs.writeFile(path.join(distDir, "_headers"), renderHeaders(), "utf8");
 
   console.log(`Built ${posts.length} post(s) into ${distDir}`);
 }
@@ -268,7 +270,7 @@ function renderMarkdown(markdown) {
       const text = line.replace(/^###\s+/, "");
       const id = slugifyHeading(text, headings);
       headings.push({ level: 3, text: stripFormatting(text), id });
-      blocks.push(`<h3 id="${escapeAttribute(id)}">${renderInline(text)}</h3>`);
+      blocks.push(renderHeadingTag(3, id, text));
       index += 1;
       continue;
     }
@@ -277,7 +279,7 @@ function renderMarkdown(markdown) {
       const text = line.replace(/^##\s+/, "");
       const id = slugifyHeading(text, headings);
       headings.push({ level: 2, text: stripFormatting(text), id });
-      blocks.push(`<h2 id="${escapeAttribute(id)}">${renderInline(text)}</h2>`);
+      blocks.push(renderHeadingTag(2, id, text));
       index += 1;
       continue;
     }
@@ -286,7 +288,7 @@ function renderMarkdown(markdown) {
       const text = line.replace(/^#\s+/, "");
       const id = slugifyHeading(text, headings);
       headings.push({ level: 1, text: stripFormatting(text), id });
-      blocks.push(`<h1 id="${escapeAttribute(id)}">${renderInline(text)}</h1>`);
+      blocks.push(renderHeadingTag(1, id, text));
       index += 1;
       continue;
     }
@@ -347,7 +349,7 @@ function renderMarkdown(markdown) {
       const text = strongOnlyMatch[1].trim();
       const id = slugifyHeading(text, headings);
       headings.push({ level: 2, text: stripFormatting(text), id });
-      blocks.push(`<h2 id="${escapeAttribute(id)}">${renderInline(text)}</h2>`);
+      blocks.push(renderHeadingTag(2, id, text));
       continue;
     }
 
@@ -355,6 +357,11 @@ function renderMarkdown(markdown) {
   }
 
   return { html: blocks.join("\n"), headings };
+}
+
+function renderHeadingTag(level, id, text) {
+  const headingClass = id === "notes-and-sources" ? ` class="essay-summary-label"` : "";
+  return `<h${level} id="${escapeAttribute(id)}"${headingClass}>${renderInline(text)}</h${level}>`;
 }
 
 function startsNewBlock(line) {
@@ -517,8 +524,8 @@ function renderPost(site, post, collection) {
             <div class="essay-layout">
               ${toc}
               <div class="essay-main">
-              ${renderSummary(post)}
               ${renderArticleImage(post)}
+              ${renderSummary(post)}
               <div class="article-body">
                 ${post.bodyHtml}
               </div>
@@ -1308,6 +1315,7 @@ function renderRelatedEssays(site, post, collection) {
 function buildArticleStructuredData(site, post) {
   const canonical = absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`));
   const image = post.image ? absoluteUrl(site.domain, sitePath(site, post.image)) : "";
+  const person = buildPersonStructuredData(site);
 
   const data = {
     "@context": "https://schema.org",
@@ -1316,14 +1324,8 @@ function buildArticleStructuredData(site, post) {
     description: post.description,
     datePublished: `${post.date}T12:00:00Z`,
     dateModified: `${post.date}T12:00:00Z`,
-    author: {
-      "@type": "Person",
-      name: site.name
-    },
-    publisher: {
-      "@type": "Person",
-      name: site.name
-    },
+    author: person,
+    publisher: person,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": canonical
@@ -1337,28 +1339,65 @@ function buildArticleStructuredData(site, post) {
   return data;
 }
 
+function buildPersonStructuredData(site) {
+  return {
+    "@type": "Person",
+    name: site.name,
+    jobTitle: "Founder, Cars24",
+    url: absoluteUrl(site.domain, sitePath(site, "/")),
+    sameAs: [
+      site.linkedInUrl,
+      site.xUrl,
+      site.companyUrl
+    ].filter(Boolean)
+  };
+}
+
 function buildWebsiteStructuredData(site) {
+  const person = buildPersonStructuredData(site);
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: site.siteTitle,
     url: absoluteUrl(site.domain, sitePath(site, "/")),
     description: site.description,
-    publisher: {
-      "@type": "Person",
-      name: site.name
-    }
+    author: person,
+    publisher: person
   };
 }
 
 function buildCollectionPageStructuredData(site, page) {
+  const person = buildPersonStructuredData(site);
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: page.title,
     url: absoluteUrl(site.domain, sitePath(site, page.pathName)),
-    description: page.description
+    description: page.description,
+    author: person,
+    publisher: person
   };
+}
+
+function renderLlmsTxt(site, essayCollections) {
+  const lines = [
+    "# Vikram Chopra",
+    "Founder of Cars24. Essays on car ownership in India, trust as the product, AI-native companies, and leadership.",
+    "",
+    `- [Home](${absoluteUrl(site.domain, sitePath(site, "/"))})`,
+    `- [Archive](${absoluteUrl(site.domain, sitePath(site, "/archive/"))})`,
+    ""
+  ];
+
+  for (const collection of essayCollections) {
+    lines.push(`## ${collection.title}`);
+    for (const post of collection.posts) {
+      lines.push(`- [${post.displayTitle}](${absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`))}): ${post.description}`);
+    }
+    lines.push("");
+  }
+
+  return `${lines.join("\n").trim()}\n`;
 }
 
 function buildBreadcrumbStructuredData(site, post) {
@@ -1471,6 +1510,23 @@ function renderRedirects(site) {
       return `${from} ${to} 301`;
     })
     .join("\n")}\n`;
+}
+
+function renderHeaders() {
+  return `/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles.css
+  Cache-Control: public, max-age=3600
+
+/favicon.svg
+  Cache-Control: public, max-age=86400
+`;
 }
 
 function renderRobots(site) {

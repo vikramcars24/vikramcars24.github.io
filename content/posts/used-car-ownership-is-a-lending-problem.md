@@ -56,4 +56,6 @@ If we describe used-car ownership only in the language of listings, inspection, 
 
 Used cars are the affordability bridge. Lending decides how many people actually cross it.
 
-*Sources: CRISIL Ratings (2025) on used-car volume and the used-to-new ratio; IndianBlueBook (FY25) on used-car financing penetration (organized-platform vs whole-market). The organized-platform financing share is from organized-retail data; the ~20 to 25% market figure is IndianBlueBook.*
+## Notes and Sources
+- [CRISIL Ratings, press release, July 2025](https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html). Used-car volume crossing six million units, the 1.4x used-to-new ratio (up from below 1.0x), and finance access as a driver of the shift.
+- [IndianBlueBook (Mahindra First Choice Wheels), FY25](https://www.autocarpro.in/news/indias-used-car-industry-expected-to-touch-$73-billion-by-fy28-indianbluebook-report-120648). Used-car financing penetration: above half on organized platforms, roughly 20 to 25% across the whole market.

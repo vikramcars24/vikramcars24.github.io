@@ -50,4 +50,8 @@ This is not only my read. McKinsey's 2025 State of AI survey tested 25 factors a
 
 That is the difference between AI-first and AI-native. One is adoption. The other is redesign.
 
-*Sources: Ronald Coase, "The Nature of the Firm" (1937); Jay Galbraith, "Organization Design: An Information Processing View" (1974); Melvin Conway, "How Do Committees Invent?" (1968); McKinsey, "The State of AI" (2025).*
+## Notes and Sources
+- [Ronald Coase, "The Nature of the Firm," Economica, 1937](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x). Why firms and hierarchies exist: to economize on the costs of coordination.
+- [Jay Galbraith, "Organization Design: An Information Processing View," 1974](https://doi.org/10.1287/inte.4.3.28). Structure as information processing under uncertainty.
+- [Melvin Conway, "How Do Committees Invent?", 1968](https://www.melconway.com/Home/Committees_Paper.html). Organizations ship their communication structures.
+- [McKinsey, "The State of AI: How organizations are rewiring to capture value," 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value). Of 25 factors tested, workflow redesign had the largest effect on bottom-line impact from gen AI.

@@ -64,4 +64,14 @@ A mature road-safety system assumes human beings will make mistakes. Its job is 
 
 Safer roads do not begin when drivers become perfect. They begin when systems become trustworthy enough that imperfection is no longer so often fatal.
 
-*Sources: MoRTH Road Accidents in India 2023; WHO Global Status Report on Road Safety 2018; India Sample Registration System (2022); SaveLIFE Foundation / Stanford Social Innovation Review on the Mumbai-Pune Zero Fatality Corridor; World Bank, Traffic Crash Injuries and Disabilities (2021); Supreme Court of India, S. Rajaseekaran v. Union of India (January 2025); Section 134A, Motor Vehicles Act and SaveLIFE Foundation v. Union of India (2016); Bar Council of India (2021); Crashfree India public materials (Project Rakshak, Justice Unserved, legal-awareness helpdesks).*
+## Notes and Sources
+- [Ministry of Road Transport and Highways, Road Accidents in India 2023](https://morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf). 172,890 deaths, the highest recorded.
+- [WHO, Global Status Report on Road Safety 2018, and WHO India](https://www.who.int/india/health-topics/road-safety). Estimated ~300,000 deaths in 2016 against an official count near 150,000.
+- [Sample Registration System estimates via Data For India](https://www.dataforindia.com/road-accident-deaths-measurement/). ~271,300 road deaths for 2022, far above the police count; the non-reconciling data systems.
+- [SaveLIFE Foundation and Piyush Tewari, profiled in Stanford Social Innovation Review](https://ssir.org/articles/entry/a_new_model_for_saving_lives_on_roads_around_the_world). The Mumbai-Pune Zero Fatality Corridor: 3,500+ engineering defects fixed, ambulance response cut from ~35 to under 10 minutes, deaths down ~52% (2016 to 2020).
+- [World Bank, Traffic Crash Injuries and Disabilities: The Burden on Indian Society, 2021](https://www.worldbank.org/en/news/press-release/2021/02/13/road-crashes-in-india-increase-household-poverty-and-debt). Only 14% of poor crash-affected households received any compensation; the seven-months-of-income burden.
+- Supreme Court of India, S. Rajaseekaran v. Union of India, January 2025. A negligible number of victims benefit from compensation schemes due to low awareness.
+- Section 134A, Motor Vehicles Act, and SaveLIFE Foundation v. Union of India (2016). Good Samaritan protections.
+- [India Legal on unclaimed tribunal funds: ₹459 crore in Bombay, the national pending backlog over ₹80,000 crore](https://indialegallive.com/column-news/road-accident-victms-india-highest-fatalities-in-world-rs-80000-crore-compensation-unpaid/).
+- Bar Council of India, 2021. 28 advocates suspended for fake motor-accident claims.
+- [Crashfree India public materials](https://www.crashfreeindia.org) and [Justice Unserved](https://www.crashfreeindia.org/documents/justice-unserved-crashfree-india.pdf). Project Rakshak (120+ sites assessed, 25 approvals), claim rates, paperwork stalls, awareness, and legal-awareness helpdesks.

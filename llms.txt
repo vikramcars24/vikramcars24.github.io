@@ -1,0 +1,24 @@
+# Vikram Chopra
+Founder of Cars24. Essays on car ownership in India, trust as the product, AI-native companies, and leadership.
+
+- [Home](https://vikramchopra.in/)
+- [Archive](https://vikramchopra.in/archive/)
+
+## Mobility, Ownership, and Trust
+- [The Coming Decade of Car Ownership in India](https://vikramchopra.in/posts/the-coming-decade-of-car-ownership-in-india/): India's next ownership wave will not look like the rich-world past. It will be pre-owned, transfer-heavy, and trust-led.
+- [Used-Car Ownership Is a Lending Problem](https://vikramchopra.in/posts/used-car-ownership-is-a-lending-problem/): India's pre-owned market becomes mass not because used cars are cheaper, but when lending can underwrite messy assets, lower upfront fear, and turn aspiration into a survivable monthly payment.
+- [The Greenest Car in India Is the One Already Built](https://vikramchopra.in/posts/the-greenest-car-in-india-is-the-one-already-built/): The fastest realistic climate lever in Indian mobility is not only cleaner new production. It is making the vehicles that already exist trustworthy enough to stay useful longer.
+- [India's Road Deaths Are a Trust Problem, Not a Traffic Problem](https://vikramchopra.in/posts/indias-road-deaths-are-a-trust-problem-not-a-traffic-problem/): Road deaths persist not because drivers make mistakes, but because the system around the mistake is too opaque to stop error from turning fatal.
+- [Why We Are Not Selling Cars](https://vikramchopra.in/posts/why-we-are-not-selling-cars/): The lasting business in mobility is not moving a vehicle once. It is becoming the trust layer around ownership.
+
+## Organization, AI, and Company Design
+- [Scale Is a Learning Problem](https://vikramchopra.in/posts/scale-is-a-learning-problem/): Most companies think they scale by adding people. The deeper truth is that they scale by learning faster than complexity compounds.
+- [AI-Native Is Not AI-First. The Distinction Is the Company.](https://vikramchopra.in/posts/ai-native-is-not-ai-first/): Most companies are adding AI to old workflows. The deeper shift is organizational: what happens when the cost of carrying context collapses.
+- [Builder. The Only Title That Matters.](https://vikramchopra.in/posts/builder-is-the-only-role-left/): As context gets cheaper and coordination gets compressed, value shifts from the people who narrate the work to the people who close the loop.
+- [Execution Problems Begin as Trust Problems](https://vikramchopra.in/posts/execution-problems-begin-as-trust-problems/): Teams diagnose delay and weak accountability at the process level. Many failures begin earlier, in trust, conflict avoidance, and the human structure of the team.
+- [AI Will Do for Consumer What SaaS Did for Software](https://vikramchopra.in/posts/ai-will-do-for-consumer-what-saas-did-for-software/): India's first clean global export was software, because code traveled. AI is collapsing the cost of carrying operating context, and that opens the same door for consumer companies.
+
+## Judgment, Desire, and Human Nature
+- [The Paranoid Survive. The Regulated Thrive.](https://vikramchopra.in/posts/paranoid-survive-regulated-thrive/): The best companies build brakes into their intensity. They do not tear them out.
+- [Who Taught You to Want This?](https://vikramchopra.in/posts/who-taught-you-to-want-this/): A surprising amount of modern ambition is not self-authored. It is borrowed from peers, rivals, timelines, and status systems that quietly teach us what to want.
+- [You Judge Others by Character and Yourself by Circumstance](https://vikramchopra.in/posts/you-judge-others-by-character-and-yourself-by-circumstance/): We read behavior as character because it is emotionally satisfying and operationally fast. But much of what we judge as personal failure is a person colliding with pressure and context we cannot see.

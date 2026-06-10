@@ -58,4 +58,8 @@ For years the exciting question from India was which software company gets built
 
 SaaS let India export code. AI will let India export consumer companies built on judgment at scale.
 
-*Sources: Bain & Company, India SaaS Report 2022; McKinsey on gen AI in customer care (2024); Melvin Conway, "How Do Committees Invent?" (1968); Jay Galbraith, "Organization Design: An Information Processing View" (1974).*
+## Notes and Sources
+- [Bain & Company, India SaaS Report 2022](https://www.bain.com/insights/india-saas-report-2022/). Indian SaaS second only to the US; ~20% of revenue from India.
+- [McKinsey, "Gen AI in customer care: early successes and challenges," 2024](https://www.mckinsey.com/capabilities/operations/our-insights/gen-ai-in-customer-care-early-successes-and-challenges). The context layer becoming machine-readable at operating scale.
+- [Melvin Conway, "How Do Committees Invent?", 1968](https://www.melconway.com/Home/Committees_Paper.html).
+- [Jay Galbraith, "Organization Design: An Information Processing View," 1974](https://doi.org/10.1287/inte.4.3.28).

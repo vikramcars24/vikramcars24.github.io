@@ -41,4 +41,15 @@ So I want to be two things the world calls opposites. Paranoid about the work. R
 
 The paranoid survive. The regulated thrive. I am building for both.
 
-*Sources: Andy Grove, Only the Paranoid Survive (1996); All Blacks red/blue head, Ceri Evans, Perform Under Pressure (2019) and James Kerr, Legacy (2013); Amy Arnsten, Nature Reviews Neuroscience (2009); Daniel Goleman, Emotional Intelligence (1995); Daniel Kahneman, Thinking, Fast and Slow (2011); Antonio Damasio, Descartes' Error (1994); Gross & John, JPSP (2003); Google Project Aristotle and Amy Edmondson, ASQ (1999); Kim Scott, Radical Candor (2017); HRV: Holzman & Bridgett (2017); "calm is contagious," Navy SEAL maxim (Rorke Denver).*
+## Notes and Sources
+- Andy Grove, Only the Paranoid Survive, 1996. Strategic inflection points; paranoia as aimed vigilance.
+- [Ceri Evans, Perform Under Pressure, 2019, and James Kerr, Legacy, 2013](https://www.allblacks.com/news/all-blacks-500-a-milestone-measured-in-moments-and-stats). The All Blacks' red head / blue head model. Win record: 500 wins in 652 tests since 1903, the first rugby nation to 500.
+- [Amy Arnsten, "Stress signalling pathways that impair prefrontal cortex structure and function," Nature Reviews Neuroscience, 2009](https://www.nature.com/articles/nrn2648). Even mild uncontrollable stress rapidly degrades prefrontal function.
+- Daniel Goleman, Emotional Intelligence, 1995. The amygdala hijack, building on Joseph LeDoux's fear-pathway research.
+- Daniel Kahneman, Thinking, Fast and Slow, 2011. System 1 and System 2.
+- Antonio Damasio, Descartes' Error, 1994. Patients without emotional processing decide worse, not better.
+- James Gross and Oliver John, Journal of Personality and Social Psychology, 2003. Reappraisal outperforms suppression.
+- [Google's Project Aristotle, building on Amy Edmondson, Administrative Science Quarterly, 1999](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness). Psychological safety as the top factor in team effectiveness.
+- Kim Scott, Radical Candor, 2017. Care personally, challenge directly.
+- [Holzman and Bridgett, Neuroscience & Biobehavioral Reviews, 2017](https://pubmed.ncbi.nlm.nih.gov/28057463/). HRV correlates with self-regulation, modestly; hence "real, if imperfect."
+- "Calm is contagious": Navy SEAL maxim, popularized by Rorke Denver.

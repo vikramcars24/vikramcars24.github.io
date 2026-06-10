@@ -31,4 +31,6 @@ There is a more human truth underneath all of this. Most of us have behaved in w
 
 I judge others by character and myself by circumstance too. The title of this essay is not advice. It is a mirror. The work is to catch the sentence before it hardens.
 
-*Sources: Lee Ross, "The Intuitive Psychologist and His Shortcomings" (1977); Edward Jones and Richard Nisbett, "The Actor and the Observer" (1971).*
+## Notes and Sources
+- Lee Ross, "The Intuitive Psychologist and His Shortcomings," Advances in Experimental Social Psychology, 1977. The fundamental attribution error.
+- Edward Jones and Richard Nisbett, "The Actor and the Observer: Divergent Perceptions of the Causes of Behavior," 1971. The actor-observer asymmetry.

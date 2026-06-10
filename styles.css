@@ -747,9 +747,9 @@ pre code {
 }
 
 .essay-summary {
-  max-width: 38rem;
-  margin: 0.8rem 0 1.6rem;
-  padding: 1rem 1.1rem;
+  max-width: var(--reading-width);
+  margin: 0 0 1.8rem;
+  padding: 1.05rem 1.15rem 1.1rem;
   border: 1px solid var(--line);
   border-radius: 0.8rem;
   background: var(--surface);
@@ -766,12 +766,26 @@ pre code {
 
 .essay-summary ul {
   margin: 0;
-  padding-left: 1.15rem;
+  padding-left: 0;
+  list-style: none;
 }
 
 .essay-summary li {
-  margin: 0 0 0.45rem;
-  line-height: 1.6;
+  margin: 0 0 0.65rem;
+  padding-left: 1.05rem;
+  position: relative;
+  line-height: 1.66;
+}
+
+.essay-summary li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 42%, transparent);
 }
 
 .essay-summary li:last-child {
@@ -965,7 +979,7 @@ pre code {
 
 @media (max-width: 860px) {
   .page-shell {
-    width: min(100vw - 1.5rem, 100%);
+    width: min(100vw - 2.5rem, 100%);
   }
 
   .site-header,
@@ -1068,7 +1082,7 @@ pre code {
 
 @media (max-width: 640px) {
   .page-shell {
-    width: min(100vw - 1.25rem, 100%);
+    width: min(100vw - 2.25rem, 100%);
     padding-top: 1rem;
   }
 

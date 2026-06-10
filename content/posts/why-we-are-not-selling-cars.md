@@ -19,6 +19,8 @@ Most mobility companies in India are making the same mistake right now. They thi
 
 I do not mean trust as a brand value. I mean it as the thing the customer is actually trying to buy: confidence in the asset, in the paperwork, in the financing, in the service, in the transfer, in recourse if something breaks. Confidence that reality will still make sense after the transaction is over. A transaction is an event. Ownership is a relationship, and in India it has a texture: the challan you discover months late, the PUC run, the FASTag that will not recharge, the RC still in someone else's name. Strip the sentiment out of mobility and that is what is left. People are not buying a machine. They are buying the certainty that owning the machine will not punish them.
 
+"A car is, by its very design, an uncertain machine: thousands of parts aging at rates nobody can see from outside, in the hands of a previous owner you will never meet. That is the honest reason people pay the premium for a new car. They are not buying newness. They are buying certainty, the only complete certainty this category has ever sold. The whole used-car opportunity is to manufacture that certainty without manufacturing a new car."
+
 **The original tax is what you cannot see**
 
 The used-car category has always run on an information problem. Buyers do not know enough. Sellers cannot prove enough. Intermediaries usually know more than both. Documents are messy, history is partial, asset quality is uneven. So the price is rarely just the price. It is also a wager on what you cannot see.
@@ -51,4 +53,9 @@ Levitt's railroads had the customers, the track, and the trains, and they still 
 
 We are not selling cars. We are selling the certainty to own one.
 
-*Sources: Theodore Levitt, "Marketing Myopia," Harvard Business Review (1960); CRISIL Ratings (2025); MoRTH / Data For India; IndianBlueBook; Central Motor Vehicle Rules, 2022 "deemed ownership" amendment.*
+## Notes and Sources
+- [Theodore Levitt, "Marketing Myopia," Harvard Business Review, July-August 1960](https://hbr.org/2004/07/marketing-myopia). The railroads-versus-transportation argument, quoted verbatim.
+- [CRISIL Ratings, July 2025](https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html). Used-car market size, volume, and the used-to-new ratio.
+- [MoRTH registration data via Data For India](https://www.dataforindia.com/vehicle-ownership/). Roughly 35 cars per 1,000 people.
+- [IndianBlueBook, FY25](https://www.autocarpro.in/news/indias-used-car-industry-expected-to-touch-$73-billion-by-fy28-indianbluebook-report-120648). Organized share of used-car sales and financing penetration.
+- Central Motor Vehicle Rules, 2022 "deemed ownership" amendment.
