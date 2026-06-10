@@ -78,6 +78,7 @@ async function main() {
   await fs.copyFile(path.join(assetsDir, "styles.css"), path.join(distDir, "styles.css"));
   await fs.copyFile(path.join(assetsDir, "favicon.svg"), path.join(distDir, "favicon.svg"));
   await copyDirectoryIfPresent(mediaDir, path.join(distDir, "media"));
+  await copyVerificationFiles();
 
   await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts, essayCollections), "utf8");
   await fs.writeFile(path.join(distDir, "archive", "index.html"), renderArchive(site, essayCollections), "utf8");
@@ -107,6 +108,19 @@ async function main() {
   await fs.writeFile(path.join(distDir, "_headers"), renderHeaders(), "utf8");
 
   console.log(`Built ${posts.length} post(s) into ${distDir}`);
+}
+
+async function copyVerificationFiles() {
+  const entries = await fs.readdir(rootDir, { withFileTypes: true });
+  const verificationFiles = entries
+    .filter((entry) => entry.isFile() && /^google[a-z0-9]+\.html$/i.test(entry.name))
+    .map((entry) => entry.name);
+
+  await Promise.all(
+    verificationFiles.map((fileName) =>
+      fs.copyFile(path.join(rootDir, fileName), path.join(distDir, fileName))
+    )
+  );
 }
 
 async function loadPosts(site) {
