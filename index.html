@@ -258,6 +258,28 @@
   
             </div>
           </section>
+          
+      <section class="subscribe-module subscribe-module-home" aria-label="Subscribe">
+        <div class="subscribe-copy">
+          <p class="subscribe-kicker">By Email</p>
+          <h2>Get the next essay by email</h2>
+          <p class="subscribe-body">I publish infrequently. Email is the cleanest way to hear when a new essay is live.</p>
+          <p class="subscribe-detail">No cadence for the sake of cadence. Just new essays when there is something worth saying.</p>
+        </div>
+        <div class="subscribe-actions">
+          
+    <form class="subscribe-form subscribe-form-home" method="post" action="https://buttondown.com/api/emails/embed-subscribe/vikramchopra" data-subscribe-form data-submitting-label="Continuing...">
+      <label class="sr-only" for="subscribe-email-home">Email address</label>
+      <div class="subscribe-input-row">
+        <input class="subscribe-input" id="subscribe-email-home" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="subscribe-submit" type="submit" data-subscribe-submit>Subscribe</button>
+      </div>
+      <p class="subscribe-fine-print">After you submit, Buttondown may ask for a quick verification and will then send a confirmation email.</p>
+    </form>
+  
+        </div>
+      </section>
+    
 
           
     <section class="home-interviews">
@@ -392,9 +414,6 @@
       </div>
     </section>
   
-          
-    <p class="subscribe-line"><a href="/subscribe/">New essays by email, a few times a year.</a></p>
-  
         </main>
         
     <footer class="site-footer">
@@ -465,6 +484,23 @@
                 shareButton.textContent = previousLabel;
               }
             }
+          });
+        }
+
+        const subscribeForms = Array.from(document.querySelectorAll("[data-subscribe-form]"));
+
+        for (const form of subscribeForms) {
+          const submitButton = form.querySelector("[data-subscribe-submit]");
+          const nextLabel = form.dataset.submittingLabel || "Continuing...";
+
+          if (!submitButton) {
+            continue;
+          }
+
+          form.addEventListener("submit", () => {
+            form.classList.add("is-submitting");
+            submitButton.textContent = nextLabel;
+            submitButton.disabled = true;
           });
         }
 

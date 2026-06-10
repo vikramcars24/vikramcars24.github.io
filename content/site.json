@@ -19,7 +19,21 @@
     "href": "/subscribe/",
     "action": "https://buttondown.com/api/emails/embed-subscribe/vikramchopra",
     "externalPage": "https://buttondown.com/vikramchopra",
-    "line": "New essays by email, a few times a year."
+    "line": "New essays by email, a few times a year.",
+    "homeEyebrow": "By Email",
+    "homeTitle": "Get the next essay by email",
+    "homeBody": "I publish infrequently. Email is the cleanest way to hear when a new essay is live.",
+    "homeDetail": "No cadence for the sake of cadence. Just new essays when there is something worth saying.",
+    "essayTitle": "If this was worth your time, get the next one by email",
+    "essayBody": "A few essays a year. No feed-chasing. No filler.",
+    "pageEyebrow": "By Email",
+    "pageTitle": "Get new essays without depending on the feed",
+    "pageDek": "I publish infrequently. Email is the cleanest way to hear when a new essay is live.",
+    "pageBody": "No newsletter treadmill. No weekly note. Just new writing when there is something worth sending.",
+    "placeholder": "Email address",
+    "button": "Subscribe",
+    "submittingLabel": "Continuing...",
+    "finePrint": "After you submit, Buttondown may ask for a quick verification and will then send a confirmation email."
   },
   "interviews": [
     {

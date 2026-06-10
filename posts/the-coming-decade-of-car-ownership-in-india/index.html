@@ -142,6 +142,27 @@
               <p class="essay-signoff">Vikram Chopra, Founder &amp; Builder</p>
               
               
+      <section class="subscribe-module subscribe-module-essay" aria-label="Subscribe">
+        <div class="subscribe-copy">
+          <p class="subscribe-kicker">By Email</p>
+          <h2>If this was worth your time, get the next one by email</h2>
+          <p class="subscribe-body">A few essays a year. No feed-chasing. No filler.</p>
+        </div>
+        <div class="subscribe-actions">
+          
+    <form class="subscribe-form subscribe-form-essay" method="post" action="https://buttondown.com/api/emails/embed-subscribe/vikramchopra" data-subscribe-form data-submitting-label="Continuing...">
+      <label class="sr-only" for="subscribe-email-essay">Email address</label>
+      <div class="subscribe-input-row">
+        <input class="subscribe-input" id="subscribe-email-essay" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="subscribe-submit" type="submit" data-subscribe-submit>Subscribe</button>
+      </div>
+      <p class="subscribe-fine-print">After you submit, Buttondown may ask for a quick verification and will then send a confirmation email.</p>
+    </form>
+  
+        </div>
+      </section>
+    
+              
     <section class="related-essays" aria-label="Related essays">
       <p class="essay-summary-label">Continue Reading</p>
       <h2>More in Mobility, Ownership, and Trust</h2>
@@ -164,9 +185,6 @@
         
       </div>
     </section>
-  
-              
-    <p class="subscribe-line"><a href="/subscribe/">New essays by email, a few times a year.</a></p>
   
             </div>
             </div>
@@ -241,6 +259,23 @@
                 shareButton.textContent = previousLabel;
               }
             }
+          });
+        }
+
+        const subscribeForms = Array.from(document.querySelectorAll("[data-subscribe-form]"));
+
+        for (const form of subscribeForms) {
+          const submitButton = form.querySelector("[data-subscribe-submit]");
+          const nextLabel = form.dataset.submittingLabel || "Continuing...";
+
+          if (!submitButton) {
+            continue;
+          }
+
+          form.addEventListener("submit", () => {
+            form.classList.add("is-submitting");
+            submitButton.textContent = nextLabel;
+            submitButton.disabled = true;
           });
         }
 

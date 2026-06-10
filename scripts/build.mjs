@@ -455,10 +455,10 @@ function renderHome(site, posts, essayCollections) {
               ${essayCollections.map((collection) => renderEssayCollection(collection, "home", site)).join("")}
             </div>
           </section>
+          ${renderSubscribeModule(site, "home")}
 
           ${interviews.length > 0 ? renderHomeInterviewSections(interviewSections) : ""}
           ${elsewhere.length > 0 ? renderElsewhereSection(elsewhere) : ""}
-          ${renderSubscribeLine(site)}
         </main>
         ${renderFooter(site)}
       </div>
@@ -500,14 +500,12 @@ function renderArchive(site, essayCollections) {
 }
 
 function renderSubscribePage(site) {
-  const subscribe = site.subscribe && typeof site.subscribe === "object" ? site.subscribe : {};
-  const action = String(subscribe.action || "").trim();
-  const externalPage = String(subscribe.externalPage || "").trim();
+  const subscribe = normalizeSubscribe(site);
 
   return renderDocument({
     site,
     title: `Subscribe | ${site.siteTitle}`,
-    description: "New essays by email, a few times a year.",
+    description: subscribe.pageDek,
     pathName: "/subscribe/",
     imagePath: "",
     bodyClass: "subscribe-page",
@@ -515,33 +513,29 @@ function renderSubscribePage(site) {
     structuredData: buildCollectionPageStructuredData(site, {
       pathName: "/subscribe/",
       title: `Subscribe | ${site.siteTitle}`,
-      description: "New essays by email, a few times a year."
+      description: subscribe.pageDek
     }),
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
         <main class="content">
-          <section class="archive-hero">
-            <p class="eyebrow">Newsletter</p>
-            <h1>Get new essays without depending on the algorithm</h1>
-            <p class="dek">New essays by email, a few times a year.</p>
-            <p class="home-intro-copy">No popups. No drip sequence. Just new writing when there is something worth sending.</p>
+          <section class="archive-hero subscribe-hero">
+            <p class="eyebrow">${escapeHtml(subscribe.pageEyebrow)}</p>
+            <h1>${escapeHtml(subscribe.pageTitle)}</h1>
+            <p class="dek">${escapeHtml(subscribe.pageDek)}</p>
+            <p class="home-intro-copy">${escapeHtml(subscribe.pageBody)}</p>
           </section>
-          <section class="newsletter-block" aria-label="Newsletter">
-            <div class="newsletter-copy">
-              <p class="eyebrow">Subscribe</p>
-              <h2>Join by email</h2>
-              <p class="newsletter-description">Essays on car ownership in India, trust, AI-native companies, and leadership.</p>
-              ${externalPage ? `<p class="newsletter-note"><a href="${escapeAttribute(externalPage)}" target="_blank" rel="noreferrer">Open the hosted subscribe page</a></p>` : ""}
+          <section class="subscribe-page-panel" aria-label="Newsletter">
+            <div class="subscribe-page-points">
+              <p class="subscribe-page-label">What to expect</p>
+              <ul class="subscribe-points">
+                <li>New essays only.</li>
+                <li>A few times a year, not every week.</li>
+                <li>One confirmation email finishes the subscription.</li>
+              </ul>
             </div>
-            <div class="newsletter-actions">
-              ${action ? `
-                <form class="subscribe-form" method="post" action="${escapeAttribute(action)}">
-                  <label class="sr-only" for="subscribe-email">Email address</label>
-                  <input class="subscribe-input" id="subscribe-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-                  <button class="button-link newsletter-button" type="submit">Subscribe</button>
-                </form>
-              ` : ""}
+            <div class="subscribe-page-form">
+              ${renderSubscribeForm(site, "page")}
             </div>
           </section>
         </main>
@@ -604,8 +598,8 @@ function renderPost(site, post, collection) {
               </div>
               <p class="essay-signoff">Vikram Chopra, Founder &amp; Builder</p>
               ${renderSources(post)}
+              ${renderSubscribeModule(site, "essay")}
               ${renderRelatedEssays(site, post, collection)}
-              ${renderSubscribeLine(site)}
             </div>
             </div>
           </article>
@@ -796,6 +790,23 @@ function renderDocument({
           });
         }
 
+        const subscribeForms = Array.from(document.querySelectorAll("[data-subscribe-form]"));
+
+        for (const form of subscribeForms) {
+          const submitButton = form.querySelector("[data-subscribe-submit]");
+          const nextLabel = form.dataset.submittingLabel || "Continuing...";
+
+          if (!submitButton) {
+            continue;
+          }
+
+          form.addEventListener("submit", () => {
+            form.classList.add("is-submitting");
+            submitButton.textContent = nextLabel;
+            submitButton.disabled = true;
+          });
+        }
+
         if (quoteButton && quoteRegion) {
           const baseLabel = "Copy quote";
 
@@ -979,27 +990,90 @@ function renderFooter(site) {
   `;
 }
 
-function renderSubscribeLine(site) {
-  const subscribe = site.subscribe;
+function normalizeSubscribe(site) {
+  const subscribe = site.subscribe && typeof site.subscribe === "object" ? site.subscribe : {};
 
-  if (!subscribe || typeof subscribe !== "object") {
+  return {
+    href: String(subscribe.href || "").trim(),
+    action: String(subscribe.action || "").trim(),
+    externalPage: String(subscribe.externalPage || "").trim(),
+    line: String(subscribe.line || "New essays by email, a few times a year.").trim(),
+    homeEyebrow: String(subscribe.homeEyebrow || "By Email").trim(),
+    homeTitle: String(subscribe.homeTitle || "Get the next essay by email").trim(),
+    homeBody: String(subscribe.homeBody || "I publish infrequently. Email is the cleanest way to hear when a new essay is live.").trim(),
+    homeDetail: String(subscribe.homeDetail || "No cadence for the sake of cadence. Just new essays when there is something worth saying.").trim(),
+    essayTitle: String(subscribe.essayTitle || "If this was worth your time, get the next one by email").trim(),
+    essayBody: String(subscribe.essayBody || "A few essays a year. No feed-chasing. No filler.").trim(),
+    pageEyebrow: String(subscribe.pageEyebrow || "By Email").trim(),
+    pageTitle: String(subscribe.pageTitle || "Get new essays without depending on the feed").trim(),
+    pageDek: String(subscribe.pageDek || "I publish infrequently. Email is the cleanest way to hear when a new essay is live.").trim(),
+    pageBody: String(subscribe.pageBody || "No newsletter treadmill. No weekly note. Just new writing when there is something worth sending.").trim(),
+    placeholder: String(subscribe.placeholder || "Email address").trim(),
+    button: String(subscribe.button || "Subscribe").trim(),
+    submittingLabel: String(subscribe.submittingLabel || "Continuing...").trim(),
+    finePrint: String(subscribe.finePrint || "After you submit, Buttondown may ask for a quick verification and will then send a confirmation email.").trim()
+  };
+}
+
+function renderSubscribeModule(site, variant) {
+  const subscribe = normalizeSubscribe(site);
+
+  if (!subscribe.href) {
     return "";
   }
 
-  const href = String(subscribe.href || "").trim();
+  if (variant === "home") {
+    return `
+      <section class="subscribe-module subscribe-module-home" aria-label="Subscribe">
+        <div class="subscribe-copy">
+          <p class="subscribe-kicker">${escapeHtml(subscribe.homeEyebrow)}</p>
+          <h2>${escapeHtml(subscribe.homeTitle)}</h2>
+          <p class="subscribe-body">${escapeHtml(subscribe.homeBody)}</p>
+          <p class="subscribe-detail">${escapeHtml(subscribe.homeDetail)}</p>
+        </div>
+        <div class="subscribe-actions">
+          ${renderSubscribeForm(site, "home")}
+        </div>
+      </section>
+    `;
+  }
 
-  if (!href) {
+  if (variant === "essay") {
+    return `
+      <section class="subscribe-module subscribe-module-essay" aria-label="Subscribe">
+        <div class="subscribe-copy">
+          <p class="subscribe-kicker">By Email</p>
+          <h2>${escapeHtml(subscribe.essayTitle)}</h2>
+          <p class="subscribe-body">${escapeHtml(subscribe.essayBody)}</p>
+        </div>
+        <div class="subscribe-actions">
+          ${renderSubscribeForm(site, "essay")}
+        </div>
+      </section>
+    `;
+  }
+
+  return "";
+}
+
+function renderSubscribeForm(site, variant) {
+  const subscribe = normalizeSubscribe(site);
+
+  if (!subscribe.action) {
     return "";
   }
 
-  const line = String(subscribe.line || "New essays by email, a few times a year.").trim();
-  const target = /^https?:\/\//i.test(href) || href.startsWith("mailto:")
-    ? href
-    : sitePath(site, href);
-  const rel = /^https?:\/\//i.test(target) ? ` target="_blank" rel="noreferrer"` : "";
+  const formId = `subscribe-email-${variant}`;
 
   return `
-    <p class="subscribe-line"><a href="${escapeAttribute(target)}"${rel}>${escapeHtml(line)}</a></p>
+    <form class="subscribe-form subscribe-form-${variant}" method="post" action="${escapeAttribute(subscribe.action)}" data-subscribe-form data-submitting-label="${escapeAttribute(subscribe.submittingLabel)}">
+      <label class="sr-only" for="${escapeAttribute(formId)}">Email address</label>
+      <div class="subscribe-input-row">
+        <input class="subscribe-input" id="${escapeAttribute(formId)}" name="email" type="email" placeholder="${escapeAttribute(subscribe.placeholder)}" autocomplete="email" required>
+        <button class="subscribe-submit" type="submit" data-subscribe-submit>${escapeHtml(subscribe.button)}</button>
+      </div>
+      <p class="subscribe-fine-print">${escapeHtml(subscribe.finePrint)}</p>
+    </form>
   `;
 }
 

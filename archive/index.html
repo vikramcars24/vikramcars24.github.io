@@ -402,6 +402,23 @@
           });
         }
 
+        const subscribeForms = Array.from(document.querySelectorAll("[data-subscribe-form]"));
+
+        for (const form of subscribeForms) {
+          const submitButton = form.querySelector("[data-subscribe-submit]");
+          const nextLabel = form.dataset.submittingLabel || "Continuing...";
+
+          if (!submitButton) {
+            continue;
+          }
+
+          form.addEventListener("submit", () => {
+            form.classList.add("is-submitting");
+            submitButton.textContent = nextLabel;
+            submitButton.disabled = true;
+          });
+        }
+
         if (quoteButton && quoteRegion) {
           const baseLabel = "Copy quote";
 

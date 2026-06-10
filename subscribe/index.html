@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Subscribe | Vikram Chopra</title>
-    <meta name="description" content="New essays by email, a few times a year.">
+    <meta name="description" content="I publish infrequently. Email is the cleanest way to hear when a new essay is live.">
     <meta name="author" content="Vikram Chopra">
     <link rel="canonical" href="https://vikramchopra.in/subscribe/">
     <link rel="alternate" type="application/rss+xml" title="Vikram Chopra RSS" href="https://vikramchopra.in/rss.xml">
     <meta property="og:site_name" content="Vikram Chopra">
     <meta property="og:title" content="Subscribe | Vikram Chopra">
-    <meta property="og:description" content="New essays by email, a few times a year.">
+    <meta property="og:description" content="I publish infrequently. Email is the cleanest way to hear when a new essay is live.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vikramchopra.in/subscribe/">
     
@@ -20,12 +20,12 @@
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Subscribe | Vikram Chopra">
-    <meta name="twitter:description" content="New essays by email, a few times a year.">
+    <meta name="twitter:description" content="I publish infrequently. Email is the cleanest way to hear when a new essay is live.">
     
     
     <meta name="theme-color" content="#f4ecdf">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Subscribe | Vikram Chopra","url":"https://vikramchopra.in/subscribe/","description":"New essays by email, a few times a year.","author":{"@type":"Person","name":"Vikram Chopra","jobTitle":"Founder, Cars24","url":"https://vikramchopra.in/","sameAs":["https://in.linkedin.com/in/vikram6","https://x.com/vikramchopra","https://www.cars24.com/"]},"publisher":{"@type":"Person","name":"Vikram Chopra","jobTitle":"Founder, Cars24","url":"https://vikramchopra.in/","sameAs":["https://in.linkedin.com/in/vikram6","https://x.com/vikramchopra","https://www.cars24.com/"]}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Subscribe | Vikram Chopra","url":"https://vikramchopra.in/subscribe/","description":"I publish infrequently. Email is the cleanest way to hear when a new essay is live.","author":{"@type":"Person","name":"Vikram Chopra","jobTitle":"Founder, Cars24","url":"https://vikramchopra.in/","sameAs":["https://in.linkedin.com/in/vikram6","https://x.com/vikramchopra","https://www.cars24.com/"]},"publisher":{"@type":"Person","name":"Vikram Chopra","jobTitle":"Founder, Cars24","url":"https://vikramchopra.in/","sameAs":["https://in.linkedin.com/in/vikram6","https://x.com/vikramchopra","https://www.cars24.com/"]}}</script>
     <script>
       (() => {
         const storageKey = "vikram-theme";
@@ -63,27 +63,32 @@
     </header>
   
         <main class="content">
-          <section class="archive-hero">
-            <p class="eyebrow">Newsletter</p>
-            <h1>Get new essays without depending on the algorithm</h1>
-            <p class="dek">New essays by email, a few times a year.</p>
-            <p class="home-intro-copy">No popups. No drip sequence. Just new writing when there is something worth sending.</p>
+          <section class="archive-hero subscribe-hero">
+            <p class="eyebrow">By Email</p>
+            <h1>Get new essays without depending on the feed</h1>
+            <p class="dek">I publish infrequently. Email is the cleanest way to hear when a new essay is live.</p>
+            <p class="home-intro-copy">No newsletter treadmill. No weekly note. Just new writing when there is something worth sending.</p>
           </section>
-          <section class="newsletter-block" aria-label="Newsletter">
-            <div class="newsletter-copy">
-              <p class="eyebrow">Subscribe</p>
-              <h2>Join by email</h2>
-              <p class="newsletter-description">Essays on car ownership in India, trust, AI-native companies, and leadership.</p>
-              <p class="newsletter-note"><a href="https://buttondown.com/vikramchopra" target="_blank" rel="noreferrer">Open the hosted subscribe page</a></p>
+          <section class="subscribe-page-panel" aria-label="Newsletter">
+            <div class="subscribe-page-points">
+              <p class="subscribe-page-label">What to expect</p>
+              <ul class="subscribe-points">
+                <li>New essays only.</li>
+                <li>A few times a year, not every week.</li>
+                <li>One confirmation email finishes the subscription.</li>
+              </ul>
             </div>
-            <div class="newsletter-actions">
+            <div class="subscribe-page-form">
               
-                <form class="subscribe-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/vikramchopra">
-                  <label class="sr-only" for="subscribe-email">Email address</label>
-                  <input class="subscribe-input" id="subscribe-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-                  <button class="button-link newsletter-button" type="submit">Subscribe</button>
-                </form>
-              
+    <form class="subscribe-form subscribe-form-page" method="post" action="https://buttondown.com/api/emails/embed-subscribe/vikramchopra" data-subscribe-form data-submitting-label="Continuing...">
+      <label class="sr-only" for="subscribe-email-page">Email address</label>
+      <div class="subscribe-input-row">
+        <input class="subscribe-input" id="subscribe-email-page" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="subscribe-submit" type="submit" data-subscribe-submit>Subscribe</button>
+      </div>
+      <p class="subscribe-fine-print">After you submit, Buttondown may ask for a quick verification and will then send a confirmation email.</p>
+    </form>
+  
             </div>
           </section>
         </main>
@@ -156,6 +161,23 @@
                 shareButton.textContent = previousLabel;
               }
             }
+          });
+        }
+
+        const subscribeForms = Array.from(document.querySelectorAll("[data-subscribe-form]"));
+
+        for (const form of subscribeForms) {
+          const submitButton = form.querySelector("[data-subscribe-submit]");
+          const nextLabel = form.dataset.submittingLabel || "Continuing...";
+
+          if (!submitButton) {
+            continue;
+          }
+
+          form.addEventListener("submit", () => {
+            form.classList.add("is-submitting");
+            submitButton.textContent = nextLabel;
+            submitButton.disabled = true;
           });
         }
 
