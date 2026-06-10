@@ -75,6 +75,7 @@ async function main() {
   await fs.rm(distDir, { recursive: true, force: true });
   await ensureDir(path.join(distDir, "archive"));
   await ensureDir(path.join(distDir, "posts"));
+  await ensureDir(path.join(distDir, "subscribe"));
   await fs.copyFile(path.join(assetsDir, "styles.css"), path.join(distDir, "styles.css"));
   await fs.copyFile(path.join(assetsDir, "favicon.svg"), path.join(distDir, "favicon.svg"));
   await copyDirectoryIfPresent(mediaDir, path.join(distDir, "media"));
@@ -82,6 +83,7 @@ async function main() {
 
   await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts, essayCollections), "utf8");
   await fs.writeFile(path.join(distDir, "archive", "index.html"), renderArchive(site, essayCollections), "utf8");
+  await fs.writeFile(path.join(distDir, "subscribe", "index.html"), renderSubscribePage(site), "utf8");
   await fs.writeFile(path.join(distDir, "404.html"), renderNotFound(site), "utf8");
 
   for (const post of posts) {
@@ -485,6 +487,58 @@ function renderArchive(site, essayCollections) {
           <div class="essay-collections essay-collections-archive">
             ${essayCollections.map((collection) => renderEssayCollection(collection, "archive", site)).join("")}
           </div>
+        </main>
+        ${renderFooter(site)}
+      </div>
+    `
+  });
+}
+
+function renderSubscribePage(site) {
+  const subscribe = site.subscribe && typeof site.subscribe === "object" ? site.subscribe : {};
+  const action = String(subscribe.action || "").trim();
+  const externalPage = String(subscribe.externalPage || "").trim();
+
+  return renderDocument({
+    site,
+    title: `Subscribe | ${site.siteTitle}`,
+    description: "New essays by email, a few times a year.",
+    pathName: "/subscribe/",
+    imagePath: "",
+    bodyClass: "subscribe-page",
+    openGraphType: "website",
+    structuredData: buildCollectionPageStructuredData(site, {
+      pathName: "/subscribe/",
+      title: `Subscribe | ${site.siteTitle}`,
+      description: "New essays by email, a few times a year."
+    }),
+    content: `
+      <div class="page-shell">
+        ${renderHeader(site)}
+        <main class="content">
+          <section class="archive-hero">
+            <p class="eyebrow">Newsletter</p>
+            <h1>Get new essays without depending on the algorithm</h1>
+            <p class="dek">New essays by email, a few times a year.</p>
+            <p class="home-intro-copy">No popups. No drip sequence. Just new writing when there is something worth sending.</p>
+          </section>
+          <section class="newsletter-block" aria-label="Newsletter">
+            <div class="newsletter-copy">
+              <p class="eyebrow">Subscribe</p>
+              <h2>Join by email</h2>
+              <p class="newsletter-description">Essays on car ownership in India, trust, AI-native companies, and leadership.</p>
+              ${externalPage ? `<p class="newsletter-note"><a href="${escapeAttribute(externalPage)}" target="_blank" rel="noreferrer">Open the hosted subscribe page</a></p>` : ""}
+            </div>
+            <div class="newsletter-actions">
+              ${action ? `
+                <form class="subscribe-form" method="post" action="${escapeAttribute(action)}">
+                  <label class="sr-only" for="subscribe-email">Email address</label>
+                  <input class="subscribe-input" id="subscribe-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+                  <button class="button-link newsletter-button" type="submit">Subscribe</button>
+                </form>
+              ` : ""}
+            </div>
+          </section>
         </main>
         ${renderFooter(site)}
       </div>

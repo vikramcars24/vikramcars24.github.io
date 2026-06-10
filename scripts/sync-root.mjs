@@ -18,6 +18,7 @@ const managedEntries = [
   "_headers",
   "archive",
   "posts",
+  "subscribe",
   "media",
   ".nojekyll",
   "CNAME"

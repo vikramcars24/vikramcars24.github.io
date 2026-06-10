@@ -15,6 +15,12 @@
   "intro": "I am the founder of Cars24. These essays are the worldview underneath it: how a country learns to own cars, why trust is the real product in mobility, what a company becomes when AI collapses the cost of coordination, and how a builder stays clear-eyed while the stakes rise.",
   "about": "I write to think. I publish to be argued with.",
   "footerNote": "Built for long arguments, sharp ideas, and posts worth rereading.",
+  "subscribe": {
+    "href": "/subscribe/",
+    "action": "https://buttondown.com/api/emails/embed-subscribe/vikramchopra",
+    "externalPage": "https://buttondown.com/vikramchopra",
+    "line": "New essays by email, a few times a year."
+  },
   "interviews": [
     {
       "section": "Interviews",

@@ -570,6 +570,33 @@ pre code {
   justify-content: flex-end;
 }
 
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.subscribe-input {
+  min-width: min(20rem, 70vw);
+  padding: 0.82rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+
+.subscribe-input::placeholder {
+  color: var(--muted);
+}
+
+.subscribe-input:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--ink) 26%, var(--line));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--paper) 80%, transparent);
+}
+
 .newsletter-button {
   white-space: nowrap;
 }
