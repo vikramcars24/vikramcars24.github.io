@@ -13,10 +13,10 @@ const CURATED_ESSAY_COLLECTIONS = [
     description: "How messy assets become trustworthy enough to buy, finance, keep, and use.",
     slugs: [
       "the-coming-decade-of-car-ownership-in-india",
-      "the-car-is-the-artifact-trust-is-the-product",
       "used-car-ownership-is-a-lending-problem",
       "the-greenest-car-in-india-is-the-one-already-built",
-      "indias-road-deaths-are-a-trust-problem-not-a-traffic-problem"
+      "indias-road-deaths-are-a-trust-problem-not-a-traffic-problem",
+      "why-we-are-not-selling-cars"
     ]
   },
   {
@@ -27,9 +27,8 @@ const CURATED_ESSAY_COLLECTIONS = [
       "scale-is-a-learning-problem",
       "ai-native-is-not-ai-first",
       "builder-is-the-only-role-left",
-      "most-execution-problems-are-trust-problems",
-      "ai-may-do-for-consumer-what-saas-did-for-software",
-      "paranoid-survive-regulated-thrive"
+      "execution-problems-begin-as-trust-problems",
+      "ai-will-do-for-consumer-what-saas-did-for-software"
     ]
   },
   {
@@ -37,9 +36,29 @@ const CURATED_ESSAY_COLLECTIONS = [
     title: "Judgment, Desire, and Human Nature",
     description: "How we misread our own desires, misjudge other people, and carry invisible psychological machinery into everyday life.",
     slugs: [
+      "paranoid-survive-regulated-thrive",
       "who-taught-you-to-want-this",
-      "the-context-we-refuse-to-see"
+      "you-judge-others-by-character-and-yourself-by-circumstance"
     ]
+  }
+];
+
+const REDIRECTS = [
+  {
+    from: "most-execution-problems-are-trust-problems",
+    to: "execution-problems-begin-as-trust-problems"
+  },
+  {
+    from: "the-context-we-refuse-to-see",
+    to: "you-judge-others-by-character-and-yourself-by-circumstance"
+  },
+  {
+    from: "ai-may-do-for-consumer-what-saas-did-for-software",
+    to: "ai-will-do-for-consumer-what-saas-did-for-software"
+  },
+  {
+    from: "the-car-is-the-artifact-trust-is-the-product",
+    to: "why-we-are-not-selling-cars"
   }
 ];
 
@@ -68,9 +87,20 @@ async function main() {
     await fs.writeFile(path.join(postDir, "index.html"), renderPost(site, post), "utf8");
   }
 
+  for (const redirect of REDIRECTS) {
+    const postDir = path.join(distDir, "posts", redirect.from);
+    await ensureDir(postDir);
+    await fs.writeFile(
+      path.join(postDir, "index.html"),
+      renderRedirectPage(site, `/posts/${redirect.from}/`, `/posts/${redirect.to}/`),
+      "utf8"
+    );
+  }
+
   await fs.writeFile(path.join(distDir, "rss.xml"), renderRss(site, posts), "utf8");
   await fs.writeFile(path.join(distDir, "sitemap.xml"), renderSitemap(site, posts), "utf8");
   await fs.writeFile(path.join(distDir, "robots.txt"), renderRobots(site), "utf8");
+  await fs.writeFile(path.join(distDir, "_redirects"), renderRedirects(site), "utf8");
 
   console.log(`Built ${posts.length} post(s) into ${distDir}`);
 }
@@ -86,10 +116,11 @@ async function loadPosts(site) {
       const absolutePath = path.join(postsDir, file);
       const raw = await fs.readFile(absolutePath, "utf8");
       const { attributes, body } = parseFrontMatter(raw);
+      const { body: articleBody, sourcesLine } = extractSourcesLine(body);
       const slug = attributes.slug || file.replace(/\.md$/, "");
-      const wordCount = body.trim().split(/\s+/).filter(Boolean).length;
+      const wordCount = articleBody.trim().split(/\s+/).filter(Boolean).length;
       const readingMinutes = Math.max(1, Math.round(wordCount / 220));
-      const { html: bodyHtml, headings } = renderMarkdown(body);
+      const { html: bodyHtml, headings } = renderMarkdown(articleBody);
       warnIfEssayNeedsMainSections({ slug, category: attributes.category || "Essay", headings });
       return {
         site,
@@ -108,10 +139,26 @@ async function loadPosts(site) {
         wordCount,
         readingMinutes,
         bodyHtml,
-        headings
+        headings,
+        sourcesLine
       };
     })
   );
+}
+
+function extractSourcesLine(body) {
+  const normalized = String(body || "").trim();
+  const match = normalized.match(/\n\n\*Sources:\s*([\s\S]+?)\*\s*$/);
+
+  if (!match) {
+    return { body: normalized, sourcesLine: "" };
+  }
+
+  const articleBody = normalized.slice(0, match.index).trim();
+  return {
+    body: articleBody,
+    sourcesLine: match[1].trim()
+  };
 }
 
 function warnIfEssayNeedsMainSections({ slug, category, headings }) {
@@ -122,7 +169,6 @@ function warnIfEssayNeedsMainSections({ slug, category, headings }) {
   const levelTwoHeadings = (headings || []).filter((heading) => heading.level === 2);
 
   if (levelTwoHeadings.length === 0) {
-    console.warn(`[toc] ${slug}: add main-article ## sections so the sidebar table of contents is not empty.`);
     return;
   }
 
@@ -440,6 +486,7 @@ function renderPost(site, post) {
                 <div class="article-body">
                   ${post.bodyHtml}
                 </div>
+                ${renderSources(post)}
               </div>
             </div>
           </article>
@@ -477,6 +524,25 @@ function renderNotFound(site) {
       </div>
     `
   });
+}
+
+function renderRedirectPage(site, pathName, targetPath) {
+  const targetUrl = absoluteUrl(site.domain, sitePath(site, targetPath));
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=${escapeAttribute(targetUrl)}">
+    <link rel="canonical" href="${escapeAttribute(targetUrl)}">
+    <meta name="robots" content="noindex">
+    <title>Redirecting...</title>
+    <script>window.location.replace(${JSON.stringify(targetUrl)});</script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="${escapeAttribute(targetUrl)}">${escapeHtml(targetUrl)}</a>.</p>
+  </body>
+</html>`;
 }
 
 function renderDocument({ site, title, description, pathName, imagePath, imageAlt = "", content, bodyClass, openGraphType = "website", publishedDate = "" }) {
@@ -967,6 +1033,21 @@ function renderArticleImage(post) {
   `;
 }
 
+function renderSources(post) {
+  const sourcesLine = String(post.sourcesLine || "").trim();
+
+  if (!sourcesLine) {
+    return "";
+  }
+
+  return `
+    <section class="essay-summary essay-sources" aria-label="Notes and sources">
+      <h2 id="notes-and-sources" class="essay-summary-label">Notes and Sources</h2>
+      <p><em>Sources: ${renderInline(sourcesLine)}</em></p>
+    </section>
+  `;
+}
+
 function stripFormatting(text) {
   return String(text).replace(/[*_`]/g, "").trim();
 }
@@ -1019,7 +1100,12 @@ function renderRss(site, posts) {
 }
 
 function renderSitemap(site, posts) {
-  const urls = ["/", "/archive/", ...posts.map((post) => `/posts/${post.slug}/`)];
+  const urls = [
+    "/",
+    "/archive/",
+    ...posts.map((post) => `/posts/${post.slug}/`),
+    ...REDIRECTS.map((redirect) => `/posts/${redirect.from}/`)
+  ];
   const nodes = urls
     .map((url) => {
       return `
@@ -1032,6 +1118,16 @@ function renderSitemap(site, posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${nodes}
 </urlset>`;
+}
+
+function renderRedirects(site) {
+  return `${REDIRECTS
+    .map((redirect) => {
+      const from = sitePath(site, `/posts/${redirect.from}/`);
+      const to = sitePath(site, `/posts/${redirect.to}/`);
+      return `${from} ${to} 301`;
+    })
+    .join("\n")}\n`;
 }
 
 function renderRobots(site) {

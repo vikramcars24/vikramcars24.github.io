@@ -13,6 +13,7 @@ const managedEntries = [
   "rss.xml",
   "sitemap.xml",
   "robots.txt",
+  "_redirects",
   "archive",
   "posts",
   "media",
