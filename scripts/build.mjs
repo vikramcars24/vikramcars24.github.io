@@ -115,7 +115,12 @@ async function main() {
 async function copyVerificationFiles() {
   const entries = await fs.readdir(rootDir, { withFileTypes: true });
   const verificationFiles = entries
-    .filter((entry) => entry.isFile() && /^google[a-z0-9]+\.html$/i.test(entry.name))
+    .filter((entry) =>
+      entry.isFile() && (
+        /^google[a-z0-9]+\.html$/i.test(entry.name) ||
+        /^[a-z0-9]{8,128}\.txt$/i.test(entry.name)
+      )
+    )
     .map((entry) => entry.name);
 
   await Promise.all(
