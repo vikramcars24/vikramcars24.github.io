@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "publish:root": "npm run build && node scripts/sync-root.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
     "flatland:pdf": "node scripts/render-flatland-pdf.mjs",
     "slack:api": "node scripts/slack-api.mjs",
     "slack:download": "node scripts/slack-download-file.mjs",

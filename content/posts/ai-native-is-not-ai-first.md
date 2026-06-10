@@ -1,5 +1,6 @@
 ---
 title: AI-Native Is Not AI-First. The Distinction Is the Company.
+metaTitle: AI-Native Is Not AI-First
 date: 2026-06-08
 description: Most companies are adding AI to old workflows. The deeper shift is organizational: what happens when the cost of carrying context collapses.
 image: /media/ai-native-is-not-ai-first-preview.png

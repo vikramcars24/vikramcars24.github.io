@@ -129,6 +129,7 @@ async function loadPosts(site) {
         slug,
         title: attributes.title || slugToTitle(slug),
         displayTitle: attributes.displayTitle || attributes.title || slugToTitle(slug),
+        metaTitle: attributes.metaTitle || "",
         date: attributes.date || new Date().toISOString().slice(0, 10),
         description: attributes.description || createExcerpt(body),
         socialDescription: attributes.socialDescription || "",
@@ -472,10 +473,12 @@ function renderArchive(site, essayCollections) {
 
 function renderPost(site, post, collection) {
   const toc = renderTableOfContents(post);
+  const metaTitle = post.metaTitle || post.title;
   return renderDocument({
     site,
-    title: `${post.title} | ${site.siteTitle}`,
+    title: `${metaTitle} | ${site.siteTitle}`,
     description: post.description,
+    socialTitle: `${metaTitle} | ${site.siteTitle}`,
     socialDescription: post.socialDescription || post.description,
     pathName: `/posts/${post.slug}/`,
     imagePath: post.image,
@@ -1444,8 +1447,7 @@ function renderSitemap(site, posts) {
   const urls = [
     "/",
     "/archive/",
-    ...posts.map((post) => `/posts/${post.slug}/`),
-    ...REDIRECTS.map((redirect) => `/posts/${redirect.from}/`)
+    ...posts.map((post) => `/posts/${post.slug}/`)
   ];
   const nodes = urls
     .map((url) => {

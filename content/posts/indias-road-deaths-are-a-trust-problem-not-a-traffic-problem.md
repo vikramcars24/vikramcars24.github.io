@@ -1,5 +1,6 @@
 ---
 title: India's Road Deaths Are a Trust Problem, Not a Traffic Problem
+metaTitle: India's Road Deaths Are a Trust Problem
 date: 2026-06-07
 description: Road deaths persist not because drivers make mistakes, but because the system around the mistake is too opaque to stop error from turning fatal.
 image: /media/indias-road-deaths-trust-problem-preview.png
