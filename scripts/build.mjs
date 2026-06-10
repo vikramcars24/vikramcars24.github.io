@@ -339,7 +339,18 @@ function renderMarkdown(markdown) {
       index += 1;
     }
 
-    blocks.push(`<p>${renderInline(paragraphLines.join(" "))}</p>`);
+    const paragraphText = paragraphLines.join(" ");
+    const strongOnlyMatch = paragraphText.match(/^\*\*([^*]+)\*\*$/);
+
+    if (strongOnlyMatch) {
+      const text = strongOnlyMatch[1].trim();
+      const id = slugifyHeading(text, headings);
+      headings.push({ level: 2, text: stripFormatting(text), id });
+      blocks.push(`<h2 id="${escapeAttribute(id)}">${renderInline(text)}</h2>`);
+      continue;
+    }
+
+    blocks.push(`<p>${renderInline(paragraphText)}</p>`);
   }
 
   return { html: blocks.join("\n"), headings };
