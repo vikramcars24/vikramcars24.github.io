@@ -835,7 +835,8 @@ pre code {
 }
 
 .article-visual {
-  max-width: min(100%, 52rem);
+  width: 100%;
+  max-width: var(--reading-width);
   margin: 0 0 2rem;
   border-radius: 0.8rem;
   overflow: hidden;
