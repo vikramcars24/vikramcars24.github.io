@@ -10,6 +10,7 @@
     "perf:budget": "node scripts/lighthouse-budget-check.mjs",
     "site:ops": "npm run build && npm run seo:audit && npm run health:live",
     "audience:report": "node scripts/audience-dashboard.mjs",
+    "slack:dashboard": "node scripts/slack-dashboard.mjs",
     "flatland:pdf": "node scripts/render-flatland-pdf.mjs",
     "slack:api": "node scripts/slack-api.mjs",
     "slack:download": "node scripts/slack-download-file.mjs",

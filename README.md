@@ -69,6 +69,15 @@ This repo also includes a separate audience-reporting layer for search, traffic,
 - Daily workflow: `.github/workflows/audience-dashboard.yml`
 - Setup and provider requirements: `AUDIENCE_DASHBOARD.md`
 
+## Slack dashboard
+
+This repo also includes a lightweight monthly Slack dashboard for configured channels.
+
+- Run locally with `npm run slack:dashboard`
+- Monthly workflow: `.github/workflows/slack-dashboard.yml`
+- Configure `SLACK_TOKEN` as a GitHub Actions secret
+- Configure `SLACK_DASHBOARD_CHANNELS` as a comma-separated GitHub Actions variable or secret
+
 ## Slack file download
 
 If a source PDF or attachment is stuck behind Slack connector permissions, you can fetch it directly with a Slack API token that has `files:read`.
