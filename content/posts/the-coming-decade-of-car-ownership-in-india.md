@@ -78,4 +78,5 @@ It is less fear.
 - [SIAM](https://www.siam.in). Record 4.3 million passenger vehicles sold in FY2024-25.
 - [Ministry of Road Transport and Highways registration data, via Data For India](https://www.dataforindia.com/vehicle-ownership/). Roughly 35 cars per 1,000 people (2022).
 - [IndianBlueBook (Mahindra First Choice Wheels), FY25 report](https://www.autocarpro.in/news/indias-used-car-industry-expected-to-touch-$73-billion-by-fy28-indianbluebook-report-120648). 64% of non-metro buyers' first car is used; ~29% organized share; financing penetration.
+- [Cars24, Gears of Growth: 2025 Indian Used Car Market Report](https://static-cdn.cars24.com/prod/auto-news24-cms/root/2026/02/25/2b7d5141-a889-432d-b8dd-c83cc2fb8eda-gears-of-growth.pdf) (our own published consumer research, labeled as such). Behavioral findings on how first-time buyers approach ownership.
 - Central Motor Vehicle Rules, 2022 amendment creating "deemed ownership" of vehicles pending transfer.
