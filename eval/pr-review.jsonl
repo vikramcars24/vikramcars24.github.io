@@ -1,0 +1,2 @@
+{"input":"Review a diff that changes homepage metadata, social image paths, and one essay frontmatter image reference.","ideal":"Flags any missing matching asset, root/source drift, broken OG path, or missing verification. Findings come before summary."}
+{"input":"Review a diff that only changes generated root HTML but not content or build source.","ideal":"Flags that root output is not the primary source of truth and asks for the source-side change instead."}

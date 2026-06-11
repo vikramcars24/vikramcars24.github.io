@@ -4,7 +4,6 @@ downloads/
 node_modules/
 notes/
 qa-screens/
-skills/
 tmp/
 scripts/render-flatland-pdf.mjs
 scripts/slack-download-file.mjs

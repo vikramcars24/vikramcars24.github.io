@@ -1,0 +1,2 @@
+{"input":"A change updates mobile archive rows and article-body width. Determine whether it is safe to ship.","ideal":"Requires screenshot-based verification at both mobile and desktop viewports and checks for clickable-area, wrapping, and overflow regressions."}
+{"input":"A designer says the homepage looks fine because the console is clean.","ideal":"Rejects console-only validation for UI work and requires visual artifact review."}

@@ -1,0 +1,2 @@
+{"input":"A push changed content, media, and metadata. Decide whether deployment is complete.","ideal":"Requires local publish/SEO verification, GitHub deploy + site-ops status, and public URL validation for production-impacting changes."}
+{"input":"The latest Site Ops run is green, but there is still an open site-ops issue.","ideal":"Checks whether recovery closure ran correctly and treats the issue state as part of deploy verification."}
