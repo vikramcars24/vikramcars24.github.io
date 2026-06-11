@@ -15,6 +15,7 @@
 - Auditing root output instead of `dist/` created false CI failures. Lesson: verify the generated artifact, not the mirrored root.
 - A local JPEG metadata approach using macOS `sips` was not portable to GitHub Actions Ubuntu runners. Lesson: keep build-time asset inspection cross-platform.
 - Large Gmail batch trash operations timed out. Lesson: mailbox cleanup should use smaller batches.
+- Incident closure was defined too narrowly as "GitHub runs are green." Real RCA: the workflow lacked an explicit post-recovery inbox sweep, so stale GitHub failure mail remained even after deploy and `Site Ops` were healthy. Lesson: an incident is not closed until runtime is green, the alert issue is closed, stale alert mail from the fix window is cleared, and the lesson is written back to memory.
 
 ## Last Session
 
@@ -25,6 +26,7 @@
 - Fixed `seo:audit` to inspect `dist/`.
 - Fixed build output to include `CNAME` in `dist/`.
 - Polished archive metadata to remove the last SEO warning.
+- Corrected the incident-close definition to include inbox cleanup after the final green run.
 
 ## Next Run
 
@@ -34,3 +36,9 @@
 - If site health breaks again, use `skills/ci-triage.md`.
 - If homepage or essay layout changes, run `npm run qa:visual` before push.
 - Keep `PROJECT_MEMORY.md` current after any production-impacting fix.
+- For any GitHub/site incident, treat the mandatory closure checklist as:
+  - fix the underlying issue
+  - verify the replacement deploy or workflow run is green
+  - verify any open alert issue is closed
+  - clear stale GitHub or site-alert email generated during the incident window
+  - write the lesson back into memory

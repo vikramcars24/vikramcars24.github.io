@@ -18,7 +18,10 @@
 5. Fix the source of truth, not mirrored output.
 6. Re-run the exact verifier path locally.
 7. Push and watch the new workflow run to completion.
-8. Write the lesson into `PROJECT_MEMORY.md`.
+8. Close the operator loop:
+   - confirm the alert issue is closed or recovered
+   - sweep stale GitHub or site-alert email created during the incident window
+9. Write the lesson into `PROJECT_MEMORY.md`.
 
 ## Repo-Specific Commands
 
@@ -32,3 +35,4 @@
 
 - The replacement run is green
 - The open alert issue is closed or not recreated
+- Stale GitHub or site-alert mail from the same incident window has been cleared

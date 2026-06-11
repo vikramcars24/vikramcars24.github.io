@@ -75,3 +75,12 @@ This file is the repo-local operating contract for any coding agent working on `
   - failed attempts
   - what changed
   - the next best follow-up
+
+## Incident Closure Rule
+
+For GitHub, deploy, and site-health incidents, "green run" is not enough. Closure requires all of:
+
+- replacement deploy or workflow run is green
+- alert issue is closed or recovered
+- stale alert email from the incident window is cleared
+- lesson is written into `PROJECT_MEMORY.md`
