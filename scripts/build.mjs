@@ -448,9 +448,8 @@ function renderHome(site, posts, essayCollections) {
         ${renderHeader(site)}
         <main class="content">
           <section class="home-intro">
-            <h1>${escapeHtml(site.name)}</h1>
+            <h1>I write to think. I publish to be argued with.</h1>
             <p class="home-intro-copy">${escapeHtml(site.intro)}</p>
-            <p class="home-intro-copy">${escapeHtml(site.about)}</p>
             ${renderStartHere(site, postBySlug)}
           </section>
 

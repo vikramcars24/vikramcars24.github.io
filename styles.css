@@ -214,8 +214,10 @@ pre code {
 }
 
 .home-intro h1 {
-  font-size: clamp(3rem, 8vw, 4.8rem);
+  max-width: 18ch;
+  font-size: clamp(2.7rem, 6.5vw, 5.1rem);
   margin-bottom: 1.15rem;
+  line-height: 0.98;
 }
 
 .tagline,
