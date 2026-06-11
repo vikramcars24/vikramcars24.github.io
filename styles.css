@@ -810,7 +810,10 @@ pre code {
 }
 
 .entry-copy {
+  display: block;
   min-width: 0;
+  color: inherit;
+  text-decoration: none;
 }
 
 .entry-title {
@@ -822,16 +825,23 @@ pre code {
   letter-spacing: -0.03em;
 }
 
-.entry-title a {
-  text-decoration: none;
-}
-
 .entry-description {
   max-width: 40rem;
   margin: 0;
   color: color-mix(in srgb, var(--ink) 78%, transparent);
   font-size: 1rem;
   line-height: 1.72;
+}
+
+.entry-copy:hover .entry-title,
+.entry-copy:focus-visible .entry-title {
+  color: var(--accent);
+}
+
+.entry-copy:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  outline-offset: 0.25rem;
+  border-radius: 0.2rem;
 }
 
 .entry-thumb {
@@ -1154,7 +1164,9 @@ pre code {
   }
 
   .entry-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 6.75rem;
+    gap: 0.35rem 0.85rem;
+    align-items: start;
   }
 
   .home-archive-row {
@@ -1192,11 +1204,6 @@ pre code {
     align-items: flex-start;
   }
 
-  .entry-thumb {
-    width: 100%;
-    max-width: 8.5rem;
-  }
-
   .home-archive-visual {
     grid-area: thumb;
     width: 6.75rem;
@@ -1205,7 +1212,10 @@ pre code {
   }
 
   .entry-thumb {
-    order: -1;
+    order: initial;
+    width: 6.75rem;
+    max-width: none;
+    justify-self: end;
   }
 
   .footer-note {
@@ -1321,8 +1331,6 @@ pre code {
   }
 
   .article-body {
-    max-width: 33ch;
-    margin-inline: auto;
     font-size: 1.02rem;
     line-height: 1.78;
     padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));

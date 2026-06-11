@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "publish:root": "npm run build && node scripts/sync-root.mjs",
+    "qa:visual": "node scripts/qa-visual.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "health:live": "node scripts/live-health-check.mjs",
     "perf:budget": "node scripts/lighthouse-budget-check.mjs",
@@ -18,5 +19,8 @@
     "whatsapp:read": "node scripts/unipile-whatsapp-read.mjs",
     "serve": "python3 -m http.server 4321 -d dist",
     "preview": "npm run build && npm run serve"
+  },
+  "devDependencies": {
+    "playwright": "^1.54.0"
   }
 }

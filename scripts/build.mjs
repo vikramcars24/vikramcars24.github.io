@@ -1139,13 +1139,13 @@ function renderEntryRow(post) {
 
   return `
     <article class="entry-row">
-      <div class="entry-copy">
+      <a class="entry-copy" href="${sitePath(post.site, `/posts/${post.slug}/`)}">
         <div class="entry-meta">
           ${meta}
         </div>
-        <h2 class="entry-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
+        <h2 class="entry-title">${renderDisplayTitle(post.displayTitle)}</h2>
         <p class="entry-description">${escapeHtml(post.description)}</p>
-      </div>
+      </a>
       ${renderEntryVisual(post, "entry-thumb", "card")}
     </article>
   `;
