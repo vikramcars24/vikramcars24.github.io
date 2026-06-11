@@ -61,6 +61,14 @@ This repo includes automated monitoring for the live site.
 
 Operational details live in `SITE_OPS.md`.
 
+## Audience dashboard
+
+This repo also includes a separate audience-reporting layer for search, traffic, and subscriber metrics.
+
+- Run locally with `npm run audience:report`
+- Daily workflow: `.github/workflows/audience-dashboard.yml`
+- Setup and provider requirements: `AUDIENCE_DASHBOARD.md`
+
 ## Slack file download
 
 If a source PDF or attachment is stuck behind Slack connector permissions, you can fetch it directly with a Slack API token that has `files:read`.

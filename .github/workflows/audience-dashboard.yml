@@ -1,0 +1,116 @@
+name: Audience Dashboard
+
+on:
+  schedule:
+    - cron: "21 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audience-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build audience report
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SEARCH_CONSOLE_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_TOKEN }}
+          GOOGLE_SEARCH_CONSOLE_SITE_URL: ${{ secrets.GOOGLE_SEARCH_CONSOLE_SITE_URL }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          BUTTONDOWN_API_VERSION: ${{ secrets.BUTTONDOWN_API_VERSION }}
+        run: node scripts/audience-dashboard.mjs
+
+      - name: Upload audience artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audience-dashboard
+          path: |
+            tmp/audience-dashboard.json
+            tmp/audience-dashboard.md
+
+      - name: Write workflow summary
+        if: always()
+        run: |
+          if [ -f tmp/audience-dashboard.md ]; then
+            cat tmp/audience-dashboard.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Open or update issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.existsSync('tmp/audience-dashboard.md')
+              ? fs.readFileSync('tmp/audience-dashboard.md', 'utf8')
+              : 'Audience dashboard failed before report generation.';
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = 'Audience Dashboard Alert';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: 'audience-dashboard'
+            });
+            const existing = issues.find((issue) => issue.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: existing.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels: ['audience-dashboard']
+              });
+            }
+
+      - name: Close open issue on recovery
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = 'Audience Dashboard Alert';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: 'audience-dashboard'
+            });
+            for (const issue of issues) {
+              if (issue.title === title) {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  body: `Recovered at ${new Date().toISOString()}.`
+                });
+                await github.rest.issues.update({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  state: 'closed'
+                });
+              }
+            }
