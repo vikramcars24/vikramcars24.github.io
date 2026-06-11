@@ -147,32 +147,74 @@ async function collectCloudflare(site, now) {
   }
 
   try {
-    const last7 = {
-      since: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString(),
-      until: now.toISOString()
-    };
-
-    const url = new URL(`https://api.cloudflare.com/client/v4/zones/${zoneId}/analytics/dashboard`);
-    url.searchParams.set("since", last7.since);
-    url.searchParams.set("until", last7.until);
-    url.searchParams.set("continuous", "true");
-
-    const payload = await fetchJson(url.toString(), {
+    const last7 = dateRangeDaysAgo(now, 7, 0);
+    const payload = await fetchJson("https://api.cloudflare.com/client/v4/graphql", {
+      method: "POST",
       headers: {
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        query: `
+          query($zoneTag: string, $start: Date!, $end: Date!) {
+            viewer {
+              zones(filter: { zoneTag: $zoneTag }) {
+                httpRequests1dGroups(limit: 7, filter: { date_geq: $start, date_leq: $end }) {
+                  dimensions {
+                    date
+                  }
+                  sum {
+                    bytes
+                    cachedBytes
+                    cachedRequests
+                    pageViews
+                    requests
+                    threats
+                  }
+                  uniq {
+                    uniques
+                  }
+                }
+              }
+            }
+          }
+        `,
+        variables: {
+          zoneTag: zoneId,
+          start: last7.start,
+          end: last7.end
+        }
+      })
     });
 
-    if (!payload?.success) {
-      throw new Error("Cloudflare API returned unsuccessful response.");
+    if (Array.isArray(payload?.errors) && payload.errors.length > 0) {
+      throw new Error(payload.errors.map((error) => error.message || String(error)).join("; "));
     }
 
-    const totals = payload.result?.totals || {};
-    const requests = totals.requests || {};
-    const bandwidth = totals.bandwidth || {};
-    const pageviews = totals.pageviews || {};
-    const uniques = totals.uniques || {};
-    const threats = totals.threats || {};
+    const groups = payload?.data?.viewer?.zones?.[0]?.httpRequests1dGroups || [];
+    const totals = groups.reduce(
+      (acc, group) => {
+        const sum = group?.sum || {};
+        const uniq = group?.uniq || {};
+        acc.requests += numberOrZero(sum.requests);
+        acc.cachedRequests += numberOrZero(sum.cachedRequests);
+        acc.bandwidthBytes += numberOrZero(sum.bytes);
+        acc.cachedBandwidthBytes += numberOrZero(sum.cachedBytes);
+        acc.pageViews += numberOrZero(sum.pageViews);
+        acc.uniques += numberOrZero(uniq.uniques);
+        acc.threats += numberOrZero(sum.threats);
+        return acc;
+      },
+      {
+        requests: 0,
+        cachedRequests: 0,
+        bandwidthBytes: 0,
+        cachedBandwidthBytes: 0,
+        pageViews: 0,
+        uniques: 0,
+        threats: 0
+      }
+    );
 
     return {
       name: "Cloudflare",
@@ -181,14 +223,15 @@ async function collectCloudflare(site, now) {
       metrics: {
         zoneId,
         last7Days: {
-          requests: numberOrZero(requests.all),
-          cachedRequests: numberOrZero(requests.cached),
-          uncachedRequests: numberOrZero(requests.uncached),
-          cacheRatio: safePercent(numberOrZero(requests.cached), numberOrZero(requests.all)),
-          bandwidthBytes: numberOrZero(bandwidth.all),
-          pageViews: numberOrZero(pageviews.all),
-          uniques: numberOrZero(uniques.all),
-          threats: numberOrZero(threats.all)
+          requests: totals.requests,
+          cachedRequests: totals.cachedRequests,
+          uncachedRequests: Math.max(totals.requests - totals.cachedRequests, 0),
+          cacheRatio: safePercent(totals.cachedRequests, totals.requests),
+          bandwidthBytes: totals.bandwidthBytes,
+          cachedBandwidthBytes: totals.cachedBandwidthBytes,
+          pageViews: totals.pageViews,
+          uniques: totals.uniques,
+          threats: totals.threats
         }
       }
     };
