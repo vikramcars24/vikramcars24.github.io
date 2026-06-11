@@ -6,7 +6,7 @@ const contentDir = path.join(rootDir, "content");
 const postsDir = path.join(contentDir, "posts");
 const distDir = path.join(rootDir, "dist");
 const assetsDir = path.join(rootDir, "src");
-const plausibleDomain = process.env.PLAUSIBLE_DOMAIN || "";
+const plausibleDomain = process.env.PLAUSIBLE_DOMAIN || "vikramchopra.in";
 const plausibleScriptSrc = process.env.PLAUSIBLE_SCRIPT_SRC || "https://plausible.io/js/script.js";
 const CURATED_ESSAY_COLLECTIONS = [
   {

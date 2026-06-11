@@ -3,6 +3,8 @@ import path from "node:path";
 
 const rootDir = process.cwd();
 const sitePath = (...parts) => path.join(rootDir, ...parts);
+const ogImageWarnKb = Number.parseFloat(process.env.OG_IMAGE_WARN_KB || "250");
+const ogImageMaxKb = Number.parseFloat(process.env.OG_IMAGE_MAX_KB || "300");
 const requiredRedirects = [
   ["/posts/most-execution-problems-are-trust-problems/", "/posts/execution-problems-begin-as-trust-problems/"],
   ["/posts/the-context-we-refuse-to-see/", "/posts/you-judge-others-by-character-and-yourself-by-circumstance/"],
@@ -195,7 +197,9 @@ function auditPage({ html, page, domain, errors, warnings }) {
       } else {
         const stats = statSync(absoluteImagePath);
         const sizeKb = stats.size / 1024;
-        if (sizeKb > 300) {
+        if (sizeKb > ogImageMaxKb) {
+          errors.push(`${page.label}: og:image is ${sizeKb.toFixed(1)} KB, above ${ogImageMaxKb} KB budget`);
+        } else if (sizeKb > ogImageWarnKb) {
           warnings.push(`${page.label}: og:image is ${sizeKb.toFixed(1)} KB`);
         }
       }

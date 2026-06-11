@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "publish:root": "npm run build && node scripts/sync-root.mjs",
+    "publish:root": "node scripts/optimize-og-images.mjs && npm run build && node scripts/sync-root.mjs",
     "qa:visual": "node scripts/qa-visual.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "health:live": "node scripts/live-health-check.mjs",

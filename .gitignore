@@ -1,7 +1,9 @@
 dist/
 .DS_Store
 downloads/
+node_modules/
 notes/
+qa-screens/
 skills/
 tmp/
 scripts/render-flatland-pdf.mjs
