@@ -1,0 +1,134 @@
+name: Site Ops
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run generated SEO audit
+        run: npm run seo:audit
+
+      - name: Run live health check
+        run: node scripts/live-health-check.mjs
+
+      - name: Run desktop Lighthouse
+        run: npx --yes lighthouse https://vikramchopra.in --chrome-flags='--headless=new --no-sandbox' --only-categories=performance --preset=desktop --output=json --output-path=tmp/lighthouse-desktop.json
+
+      - name: Run mobile Lighthouse
+        run: npx --yes lighthouse https://vikramchopra.in --chrome-flags='--headless=new --no-sandbox' --only-categories=performance --form-factor=mobile --screenEmulation.mobile=true --output=json --output-path=tmp/lighthouse-mobile.json
+
+      - name: Check Lighthouse budgets
+        run: node scripts/lighthouse-budget-check.mjs
+
+      - name: Upload monitoring artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-ops-artifacts
+          path: |
+            tmp/site-health-report.md
+            tmp/lighthouse-report.md
+            tmp/lighthouse-desktop.json
+            tmp/lighthouse-mobile.json
+
+      - name: Write workflow summary
+        if: always()
+        run: |
+          if [ -f tmp/site-health-report.md ]; then
+            cat tmp/site-health-report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f tmp/lighthouse-report.md ]; then
+            printf '\n' >> "$GITHUB_STEP_SUMMARY"
+            cat tmp/lighthouse-report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Open or update issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const parts = [];
+            if (fs.existsSync('tmp/site-health-report.md')) {
+              parts.push(fs.readFileSync('tmp/site-health-report.md', 'utf8'));
+            }
+            if (fs.existsSync('tmp/lighthouse-report.md')) {
+              parts.push(fs.readFileSync('tmp/lighthouse-report.md', 'utf8'));
+            }
+            const body = parts.join('\n\n---\n\n');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = 'Site Ops Alert';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: 'site-ops'
+            });
+            const existing = issues.find((issue) => issue.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: existing.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels: ['site-ops']
+              });
+            }
+
+      - name: Close open issue on recovery
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = 'Site Ops Alert';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: 'site-ops'
+            });
+            for (const issue of issues) {
+              if (issue.title === title) {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  body: `Recovered at ${new Date().toISOString()}.`
+                });
+                await github.rest.issues.update({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  state: 'closed'
+                });
+              }
+            }

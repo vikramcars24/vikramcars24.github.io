@@ -50,6 +50,17 @@ npm run serve
 
 Then open [http://localhost:4321](http://localhost:4321).
 
+## Site ops
+
+This repo includes automated monitoring for the live site.
+
+- Deploys run on push to `main` via `.github/workflows/deploy.yml`
+- Hourly health checks run via `.github/workflows/site-ops.yml`
+- The health workflow checks build, SEO, live URLs, redirects, and Lighthouse budgets
+- Failures open or update a `Site Ops Alert` GitHub issue automatically
+
+Operational details live in `SITE_OPS.md`.
+
 ## Slack file download
 
 If a source PDF or attachment is stuck behind Slack connector permissions, you can fetch it directly with a Slack API token that has `files:read`.

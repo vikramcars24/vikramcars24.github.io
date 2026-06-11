@@ -1094,7 +1094,7 @@ function renderEntryRow(post) {
         <h2 class="entry-title"><a href="${sitePath(post.site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a></h2>
         <p class="entry-description">${escapeHtml(post.description)}</p>
       </div>
-      ${renderEntryVisual(post, "entry-thumb")}
+      ${renderEntryVisual(post, "entry-thumb", "card")}
       <div class="entry-side">
         <a class="entry-link" href="${sitePath(post.site, `/posts/${post.slug}/`)}">${entryLinkLabel(post)}</a>
       </div>
@@ -1121,7 +1121,7 @@ function renderHomeArchiveRow(post) {
         <h3>${renderDisplayTitle(post.displayTitle)}</h3>
         <p>${escapeHtml(post.description)}</p>
       </a>
-      ${renderEntryVisual(post, "home-archive-visual")}
+      ${renderEntryVisual(post, "home-archive-visual", "card")}
     </article>
   `;
 }
@@ -1147,9 +1147,11 @@ function renderEssayCollection(collection, variant, site) {
   `;
 }
 
-function renderEntryVisual(post, className) {
-  const visualPath = entryVisualPath(post);
-  const altText = post.articleImageAlt || post.imageAlt;
+function renderEntryVisual(post, className, variant = "article") {
+  const visualPath = entryVisualPath(post, variant);
+  const altText = variant === "card"
+    ? (post.imageAlt || post.articleImageAlt)
+    : (post.articleImageAlt || post.imageAlt);
 
   if (!visualPath) {
     return "";
@@ -1162,7 +1164,11 @@ function renderEntryVisual(post, className) {
   `;
 }
 
-function entryVisualPath(post) {
+function entryVisualPath(post, variant = "article") {
+  if (variant === "card" && post.image) {
+    return post.image;
+  }
+
   if (post.articleImage) {
     return post.articleImage;
   }

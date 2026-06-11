@@ -18,7 +18,6 @@
   "subscribe": {
     "href": "/subscribe/",
     "action": "https://buttondown.com/api/emails/embed-subscribe/vikramchopra",
-    "externalPage": "https://buttondown.com/vikramchopra",
     "line": "New essays by email, a few times a year.",
     "homeEyebrow": "By Email",
     "homeTitle": "Get the next essay by email",
