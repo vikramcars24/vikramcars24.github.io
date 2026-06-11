@@ -23,15 +23,20 @@ At least one provider must be configured to get useful audience data. Missing pr
 ### Google Search Console
 
 Preferred:
-- `GOOGLE_SERVICE_ACCOUNT_JSON`
+- `GOOGLE_OAUTH_CLIENT_JSON`
+- `GOOGLE_OAUTH_REFRESH_TOKEN`
 
 Alternative:
+- `GOOGLE_SERVICE_ACCOUNT_JSON`
+
+Fallback:
 - `GOOGLE_SEARCH_CONSOLE_TOKEN`
 
 Optional override:
 - `GOOGLE_SEARCH_CONSOLE_SITE_URL`
 
 Notes:
+- The OAuth refresh-token path is the easiest setup when the site is already verified in the same Google account.
 - If you use a service account, add that service account email as an owner or delegated user in Search Console for `https://vikramchopra.in/`.
 - The script uses the official Search Console Search Analytics API.
 

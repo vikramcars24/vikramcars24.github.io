@@ -125,10 +125,14 @@ async function collectSearchConsole(site, now) {
       }
     };
   } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (isSearchConsoleSetupBlocker(message)) {
+      return skipped("Google Search Console", message);
+    }
     return {
       name: "Google Search Console",
       status: "error",
-      message: error instanceof Error ? error.message : String(error),
+      message,
       metrics: { siteUrl }
     };
   }
@@ -292,6 +296,27 @@ async function querySearchConsole(siteUrl, token, body) {
 }
 
 async function getGoogleAccessToken() {
+  const oauthClientJson = process.env.GOOGLE_OAUTH_CLIENT_JSON || "";
+  const oauthRefreshToken = process.env.GOOGLE_OAUTH_REFRESH_TOKEN || "";
+  if (oauthClientJson && oauthRefreshToken) {
+    const client = JSON.parse(oauthClientJson);
+    const installed = client.installed || client.web || client;
+    const response = await fetchJson(installed.token_uri || "https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams({
+        client_id: installed.client_id,
+        client_secret: installed.client_secret,
+        refresh_token: oauthRefreshToken,
+        grant_type: "refresh_token"
+      }).toString()
+    });
+
+    return String(response.access_token || "");
+  }
+
   const bearer = process.env.GOOGLE_SEARCH_CONSOLE_TOKEN || "";
   if (bearer) {
     return bearer;
@@ -444,6 +469,15 @@ function skipped(name, message) {
     message,
     metrics: {}
   };
+}
+
+function isSearchConsoleSetupBlocker(message) {
+  const text = String(message || "").toLowerCase();
+  return text.includes("has not been used in project")
+    || text.includes("it is disabled")
+    || text.includes("insufficient permissions")
+    || text.includes("you need additional access")
+    || text.includes("resourcemanager.projects.get");
 }
 
 function dateRangeDaysAgo(now, daysBackStart, daysBackEnd) {
