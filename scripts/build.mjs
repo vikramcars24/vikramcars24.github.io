@@ -477,10 +477,12 @@ function renderHome(site, posts, essayCollections) {
 }
 
 function renderArchive(site, essayCollections) {
+  const archiveDescription = `Essays by ${site.name} on car ownership, trust, AI-native companies, and leadership under pressure.`;
+
   return renderDocument({
     site,
     title: `Essays | ${site.siteTitle}`,
-    description: `Essays and notes by ${site.name}.`,
+    description: archiveDescription,
     pathName: "/archive/",
     imagePath: "",
     bodyClass: "archive-page",
@@ -488,7 +490,7 @@ function renderArchive(site, essayCollections) {
     structuredData: buildCollectionPageStructuredData(site, {
       pathName: "/archive/",
       title: `Essays | ${site.siteTitle}`,
-      description: `Essays and notes by ${site.name}.`
+      description: archiveDescription
     }),
     content: `
       <div class="page-shell">
