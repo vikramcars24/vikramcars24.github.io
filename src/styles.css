@@ -892,6 +892,7 @@ pre code {
   color: color-mix(in srgb, var(--ink) 78%, transparent);
   font-size: 1.28rem;
   line-height: 1.45;
+  text-wrap: pretty;
 }
 
 .essay-summary {
@@ -1027,6 +1028,10 @@ pre code {
 .article-body blockquote,
 .article-body pre {
   margin: 0 0 1.45rem;
+}
+
+.article-body p {
+  text-wrap: pretty;
 }
 
 .article-body h2 {

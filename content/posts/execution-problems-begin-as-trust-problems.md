@@ -16,7 +16,7 @@ One of the easiest ways to misdiagnose a team is to start where the problem beco
 
 This is why Patrick Lencioni's Five Dysfunctions of a Team has endured. It gives simple language to a pattern most leadership teams have lived through and fail to diagnose cleanly: absence of trust leads to fear of conflict, which leads to lack of commitment, which leads to avoidance of accountability, which leads to inattention to results. What makes it durable is that it follows the causal chain better than most management discussion does. A team rarely begins inattentive to results. It begins much earlier. People do not trust one another enough to be vulnerable, so they avoid real conflict, so decisions get fake agreement instead of real buy-in, so accountability becomes performative, so personal priorities quietly outrun team results. By the time the problem shows up in a dashboard, the team has been going wrong for a while.
 
-## Where Leaders Misdiagnose
+## Where leaders misdiagnose
 
 The value of a model like that is not in summarizing it. It is in seeing where most companies stop short of using it. In my experience the real work hides in three places.
 
@@ -28,7 +28,7 @@ The value of a model like that is not in summarizing it. It is in seeing where m
 
 None of this means process is irrelevant. Clear roles, decision rights, and review rhythms matter. But process amplifies the quality of the team underneath it, it rarely saves a team from fundamental dysfunction for long. A low-trust team turns any process into bureaucracy. A conflict-avoidant team turns any cadence into theater. The deeper point connects to Amy Edmondson's work on psychological safety: a team only voices disagreement and admits mistakes when it is safe to do so, and without that, every operating system you install runs on bad data.
 
-## Trust Is the Floor, Not the Skill
+## Trust is the floor, not the skill
 
 And here is where I have to push past the model, because I live the exception to it. The chain says trust unlocks conflict. I have caught myself not saying hard things to my own co-founders, and we have about as much trust as a leadership team can build. More than a decade together. Egos worn down by the years. Nobody second-guesses intent; whatever is said, we know it is said for the right reason. By the model, candor should be free for us. It is not. The discomfort still shows up, the pause before the sentence, the butterflies. Kim Scott tells the same story from the other side: she walked through fifteen years of her career, surrounded by people who trusted and liked her, before anyone told her about the metaphorical spinach in her teeth. What that taught me is that trust is the floor, not the skill. You can believe feedback is a gift and bad news is a gift, and the belief still will not deliver the hard sentence for you. Practice does. The butterflies are the point. Hard things need practice, and then more practice. I now treat candor as a rep to be done, not a trait to be assumed. A team that waits to feel comfortable before being honest will wait forever. Comfort is not the precondition. It is the reward.
 
