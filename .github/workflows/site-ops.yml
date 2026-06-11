@@ -5,6 +5,10 @@ on:
     - cron: "17 * * * *"
   workflow_dispatch:
 
+concurrency:
+  group: site-ops
+  cancel-in-progress: false
+
 permissions:
   contents: read
   issues: write
@@ -64,6 +68,13 @@ jobs:
             cat tmp/lighthouse-report.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Send Slack DM on failure
+        if: failure()
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_REPORT_DM_USER: ${{ vars.SLACK_REPORT_DM_USER }}
+        run: node scripts/send-site-ops-alert-slack.mjs
+
       - name: Open or update issue on failure
         if: failure()
         uses: actions/github-script@v7
@@ -81,6 +92,12 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const title = 'Site Ops Alert';
+            const runUrl = `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const renderedBody = [
+              body,
+              '',
+              `Latest failing run: ${runUrl}`
+            ].filter(Boolean).join('\n');
             const { data: issues } = await github.rest.issues.listForRepo({
               owner,
               repo,
@@ -93,14 +110,14 @@ jobs:
                 owner,
                 repo,
                 issue_number: existing.number,
-                body
+                body: renderedBody
               });
             } else {
               await github.rest.issues.create({
                 owner,
                 repo,
                 title,
-                body,
+                body: renderedBody,
                 labels: ['site-ops']
               });
             }

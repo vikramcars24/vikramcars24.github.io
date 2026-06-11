@@ -5,6 +5,10 @@ on:
     - cron: "27 6 1 * *"
   workflow_dispatch:
 
+concurrency:
+  group: monthly-site-report
+  cancel-in-progress: false
+
 permissions:
   contents: read
   issues: write
@@ -65,7 +69,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const body = fs.existsSync('tmp/slack-dashboard.md')
+            const body = fs.existsSync('tmp/audience-dashboard.md')
               ? fs.readFileSync('tmp/audience-dashboard.md', 'utf8')
               : 'Monthly site report failed before report generation.';
             const owner = context.repo.owner;
