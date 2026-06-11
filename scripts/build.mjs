@@ -1844,6 +1844,14 @@ async function resolveImageMeta(imagePath) {
       }
     }
 
+    if (extension === ".jpg" || extension === ".jpeg") {
+      const jpeg = await fs.readFile(absolutePath);
+      const dimensions = getJpegDimensions(jpeg);
+      if (dimensions) {
+        return dimensions;
+      }
+    }
+
     if (extension === ".svg") {
       const svg = await fs.readFile(absolutePath, "utf8");
       const viewBoxMatch = svg.match(/viewBox="([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)"/i);
@@ -1865,6 +1873,54 @@ async function resolveImageMeta(imagePath) {
     }
   } catch {
     return null;
+  }
+
+  return null;
+}
+
+function getJpegDimensions(buffer) {
+  if (!buffer || buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) {
+    return null;
+  }
+
+  let offset = 2;
+
+  while (offset + 9 < buffer.length) {
+    while (offset < buffer.length && buffer[offset] === 0xff) {
+      offset += 1;
+    }
+
+    const marker = buffer[offset];
+    offset += 1;
+
+    if (marker === 0xd9 || marker === 0xda) {
+      break;
+    }
+
+    if (offset + 1 >= buffer.length) {
+      break;
+    }
+
+    const segmentLength = buffer.readUInt16BE(offset);
+    if (segmentLength < 2 || offset + segmentLength > buffer.length) {
+      break;
+    }
+
+    const isStartOfFrame =
+      marker >= 0xc0 &&
+      marker <= 0xcf &&
+      marker !== 0xc4 &&
+      marker !== 0xc8 &&
+      marker !== 0xcc;
+
+    if (isStartOfFrame) {
+      return {
+        height: buffer.readUInt16BE(offset + 3),
+        width: buffer.readUInt16BE(offset + 5)
+      };
+    }
+
+    offset += segmentLength;
   }
 
   return null;

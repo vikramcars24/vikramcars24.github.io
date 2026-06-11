@@ -2,7 +2,7 @@
 title: Scale Is a Learning Problem
 date: 2026-06-08
 description: Most companies think they scale by adding people. The deeper truth is that they scale by learning faster than complexity compounds.
-image: /media/scale-is-a-learning-problem-preview.png
+image: /media/scale-is-a-learning-problem-preview.jpg
 imageAlt: 1200x630 social preview for Scale Is a Learning Problem
 articleImage: /media/scale-is-a-learning-problem-blog.png
 articleImageAlt: Editorial visual for Scale Is a Learning Problem

@@ -2,7 +2,7 @@
 title: Why We Are Not Selling Cars
 date: 2026-06-10
 description: The lasting business in mobility is not moving a vehicle once. It is becoming the trust layer around ownership.
-image: /media/why-we-are-not-selling-cars-preview.png
+image: /media/why-we-are-not-selling-cars-preview.jpg
 imageAlt: 1200x630 social preview for Why We Are Not Selling Cars
 articleImage: /media/why-we-are-not-selling-cars-blog.png
 articleImageAlt: Editorial visual for Why We Are Not Selling Cars

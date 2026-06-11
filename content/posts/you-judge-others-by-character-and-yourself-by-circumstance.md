@@ -4,9 +4,9 @@ metaTitle: You Judge Others by Character and Circumstance
 date: 2026-06-18
 description: We read behavior as character because it is emotionally satisfying and operationally fast. But much of what we judge as personal failure is a person colliding with pressure and context we cannot see.
 socialDescription: We explain others by character and ourselves by circumstance. The mistake is not compassion, it is shallow diagnosis dressed up as judgment.
-image: /media/you-judge-others-by-character-and-yourself-by-circumstance-preview.png
+image: /media/you-judge-others-by-character-and-yourself-by-circumstance-preview.jpg
 imageAlt: 1200x630 social preview for You Judge Others by Character and Yourself by Circumstance
-articleImage: /media/you-judge-others-by-character-and-yourself-by-circumstance-blog.svg
+articleImage: /media/you-judge-others-by-character-and-yourself-by-circumstance-blog.png
 articleImageAlt: Editorial visual for You Judge Others by Character and Yourself by Circumstance
 summary: We explain other people by character and ourselves by circumstance, and the double standard is invisible while lived. | Context is not an excuse, it is part of the cause. Misread it and you punish where you should redesign. | The title is not advice. It is a mirror.
 featured: false

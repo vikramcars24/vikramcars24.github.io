@@ -2,7 +2,7 @@
 title: Builder. The Only Title That Matters.
 date: 2026-06-09
 description: As context gets cheaper and coordination gets compressed, value shifts from the people who narrate the work to the people who close the loop.
-image: /media/builder-is-the-only-role-left-preview.png
+image: /media/builder-is-the-only-role-left-preview.jpg
 imageAlt: 1200x630 social preview for Builder. The Only Title That Matters.
 articleImage: /media/builder-is-the-only-role-left-blog.png
 articleImageAlt: Editorial visual for Builder. The Only Title That Matters.

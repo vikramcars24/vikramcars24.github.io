@@ -3,7 +3,7 @@ title: AI Will Do for Consumer What SaaS Did for Software
 date: 2026-06-14
 description: India's first clean global export was software, because code traveled. AI is collapsing the cost of carrying operating context, and that opens the same door for consumer companies.
 socialDescription: SaaS let India export code. AI can let India export consumer companies by collapsing the cost of carrying operating context across markets.
-image: /media/ai-will-do-for-consumer-what-saas-did-for-software-preview.png
+image: /media/ai-will-do-for-consumer-what-saas-did-for-software-preview.jpg
 imageAlt: 1200x630 social preview for AI Will Do for Consumer What SaaS Did for Software
 articleImage: /media/ai-will-do-for-consumer-what-saas-did-for-software-blog.svg
 articleImageAlt: Editorial visual for AI Will Do for Consumer What SaaS Did for Software

@@ -2,7 +2,7 @@
 title: The Coming Decade of Car Ownership in India
 date: 2026-06-05
 description: India's next ownership wave will not look like the rich-world past. It will be pre-owned, transfer-heavy, and trust-led.
-image: /media/the-coming-decade-of-car-ownership-in-india-preview.png
+image: /media/the-coming-decade-of-car-ownership-in-india-preview.jpg
 imageAlt: 1200x630 social preview for The Coming Decade of Car Ownership in India
 articleImage: /media/the-coming-decade-of-car-ownership-in-india-blog.png
 articleImageAlt: Editorial visual for The Coming Decade of Car Ownership in India
