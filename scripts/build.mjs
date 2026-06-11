@@ -1434,13 +1434,16 @@ function renderSummary(post) {
 }
 
 function renderArticleImage(post) {
-  if (!post.articleImage) {
+  const visualPath = post.image || post.articleImage;
+  const altText = post.imageAlt || post.articleImageAlt || post.title;
+
+  if (!visualPath) {
     return "";
   }
 
   return `
     <figure class="article-visual">
-      <img src="${escapeAttribute(sitePath(post.site, post.articleImage))}" alt="${escapeAttribute(post.articleImageAlt)}">
+      <img src="${escapeAttribute(sitePath(post.site, visualPath))}" alt="${escapeAttribute(altText)}">
     </figure>
   `;
 }
@@ -1477,10 +1480,10 @@ function renderRelatedEssays(site, post, collection) {
       <h2>More in ${escapeHtml(collection.title)}</h2>
       <div class="related-essay-list">
         ${relatedPosts.map((item) => `
-          <article class="related-essay-card">
-            <h3><a href="${sitePath(site, `/posts/${item.slug}/`)}">${renderDisplayTitle(item.displayTitle)}</a></h3>
+          <a class="related-essay-card" href="${sitePath(site, `/posts/${item.slug}/`)}">
+            <h3>${renderDisplayTitle(item.displayTitle)}</h3>
             <p>${escapeHtml(item.description)}</p>
-          </article>
+          </a>
         `).join("")}
       </div>
     </section>
