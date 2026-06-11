@@ -3,6 +3,7 @@ import path from "node:path";
 
 const rootDir = process.cwd();
 const sitePath = (...parts) => path.join(rootDir, ...parts);
+const generatedSitePath = (...parts) => path.join(rootDir, "dist", ...parts);
 const ogImageWarnKb = Number.parseFloat(process.env.OG_IMAGE_WARN_KB || "250");
 const ogImageMaxKb = Number.parseFloat(process.env.OG_IMAGE_MAX_KB || "300");
 const requiredRedirects = [
@@ -88,7 +89,7 @@ async function main() {
 }
 
 async function readText(relativeFile, errors) {
-  const absoluteFile = sitePath(relativeFile);
+  const absoluteFile = generatedSitePath(relativeFile);
   try {
     return await fs.readFile(absoluteFile, "utf8");
   } catch (error) {
@@ -191,7 +192,7 @@ function auditPage({ html, page, domain, errors, warnings }) {
     if (!localImagePath) {
       errors.push(`${page.label}: og:image is not on the site domain`);
     } else {
-      const absoluteImagePath = sitePath(localImagePath);
+      const absoluteImagePath = generatedSitePath(localImagePath);
       if (!existsSyncish(absoluteImagePath)) {
         errors.push(`${page.label}: missing local og:image asset ${localImagePath}`);
       } else {
@@ -234,7 +235,7 @@ async function auditCrossPage({ pageMeta, warnings }) {
 }
 
 async function auditSitemap({ domain, postSlugs, errors, warnings }) {
-  const xml = await fs.readFile(sitePath("sitemap.xml"), "utf8");
+  const xml = await fs.readFile(generatedSitePath("sitemap.xml"), "utf8");
   const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
   const expected = [
     `${domain}/`,
@@ -257,7 +258,7 @@ async function auditSitemap({ domain, postSlugs, errors, warnings }) {
 }
 
 async function auditRss({ domain, postSlugs, errors }) {
-  const xml = await fs.readFile(sitePath("rss.xml"), "utf8");
+  const xml = await fs.readFile(generatedSitePath("rss.xml"), "utf8");
   for (const slug of postSlugs) {
     const url = `${domain}/posts/${slug}/`;
     if (!xml.includes(url)) {
@@ -267,7 +268,7 @@ async function auditRss({ domain, postSlugs, errors }) {
 }
 
 async function auditRobots({ domain, errors }) {
-  const robots = await fs.readFile(sitePath("robots.txt"), "utf8");
+  const robots = await fs.readFile(generatedSitePath("robots.txt"), "utf8");
   const expected = `Sitemap: ${domain}/sitemap.xml`;
   if (!robots.includes(expected)) {
     errors.push(`robots.txt: missing sitemap reference ${expected}`);
@@ -275,7 +276,7 @@ async function auditRobots({ domain, errors }) {
 }
 
 async function auditRedirects({ domain, errors }) {
-  const redirects = await fs.readFile(sitePath("_redirects"), "utf8");
+  const redirects = await fs.readFile(generatedSitePath("_redirects"), "utf8");
 
   for (const [from, to] of requiredRedirects) {
     const line = `${from} ${to} 301`;
@@ -283,7 +284,7 @@ async function auditRedirects({ domain, errors }) {
       errors.push(`_redirects: missing ${line}`);
     }
 
-    const redirectHtmlPath = sitePath(from.slice(1), "index.html");
+    const redirectHtmlPath = generatedSitePath(from.slice(1), "index.html");
     if (!existsSyncish(redirectHtmlPath)) {
       errors.push(`${from}: missing generated redirect page`);
       continue;
@@ -299,7 +300,7 @@ async function auditRedirects({ domain, errors }) {
 
 async function auditCname({ domain, errors }) {
   const expectedHost = new URL(domain).hostname;
-  const cname = (await fs.readFile(sitePath("CNAME"), "utf8")).trim();
+  const cname = (await fs.readFile(generatedSitePath("CNAME"), "utf8")).trim();
   if (cname !== expectedHost) {
     errors.push(`CNAME: expected ${expectedHost}, found ${cname}`);
   }

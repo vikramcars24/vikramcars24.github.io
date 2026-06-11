@@ -125,6 +125,7 @@ async function copyVerificationFiles() {
   const verificationFiles = entries
     .filter((entry) =>
       entry.isFile() && (
+        entry.name === "CNAME" ||
         /^google[a-z0-9]+\.html$/i.test(entry.name) ||
         /^[a-z0-9]{8,128}\.txt$/i.test(entry.name)
       )
