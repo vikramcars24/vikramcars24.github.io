@@ -746,8 +746,10 @@ pre code {
 }
 
 .related-essay-card {
+  display: block;
   padding: 1rem 0;
   border-top: 1px solid var(--line);
+  text-decoration: none;
 }
 
 .related-essay-card:first-child {
@@ -763,8 +765,9 @@ pre code {
   line-height: 1.12;
 }
 
-.related-essay-card h3 a {
-  text-decoration: none;
+.related-essay-card:hover h3,
+.related-essay-card:focus-visible h3 {
+  color: var(--accent);
 }
 
 .related-essay-card p {
@@ -772,6 +775,12 @@ pre code {
   color: color-mix(in srgb, var(--ink) 78%, transparent);
   font-size: 0.98rem;
   line-height: 1.65;
+}
+
+.related-essay-card:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  outline-offset: 0.25rem;
+  border-radius: 0.2rem;
 }
 
 .archive-hero {
@@ -1312,8 +1321,16 @@ pre code {
   }
 
   .article-body {
-    font-size: 1.08rem;
-    line-height: 1.84;
+    max-width: 33ch;
+    margin-inline: auto;
+    font-size: 1.02rem;
+    line-height: 1.78;
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .article-body h2,
+  .article-body h3 {
+    scroll-margin-top: 2.5rem;
   }
 
 }

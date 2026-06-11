@@ -11,7 +11,7 @@ featured: false
 category: Essay
 slug: why-we-are-not-selling-cars
 ---
-In 1960, a Harvard professor named Theodore Levitt asked a question that wrecked a lot of comfortable companies. What business are you actually in?
+In 1960, a Harvard professor named [Theodore Levitt](https://hbr.org/2004/07/marketing-myopia) asked a question that wrecked a lot of comfortable companies. What business are you actually in?
 
 His example was the American railroads. They had been giants, and they declined, and everyone assumed it was because demand for transportation had fallen. It had not. Demand grew. Cars, trucks, and planes carried it. The railroads missed all of it because, in Levitt's words, "they assumed themselves to be in the railroad business rather than in the transportation business. They were product oriented instead of customer oriented." They defended the object and lost the need.
 
@@ -47,7 +47,7 @@ This is also the thread running under everything I have written about this categ
 
 **What business we are in**
 
-So when people ask what Cars24 is, the honest answer is not a used-car company, the same way the railroads were never really in the railroad business. We are not selling cars. The car is the artifact. We are in the business of removing the fear of owning one, of making the asset legible, the paperwork survivable, the financing fair, and the system honest enough that an ordinary person can step into ownership without bracing for it to go wrong.
+So when people ask what [Cars24](https://www.cars24.com) is, the honest answer is not a used-car company, the same way the railroads were never really in the railroad business. We are not selling cars. The car is the artifact. We are in the business of removing the fear of owning one, of making the asset legible, the paperwork survivable, the financing fair, and the system honest enough that an ordinary person can step into ownership without bracing for it to go wrong.
 
 Levitt's railroads had the customers, the track, and the trains, and they still lost, because they guarded the object instead of the need. The need in Indian mobility is not more cars on the road. It is the confidence to own them. Build that, and the cars take care of themselves.
 

@@ -6,6 +6,8 @@ const contentDir = path.join(rootDir, "content");
 const postsDir = path.join(contentDir, "posts");
 const distDir = path.join(rootDir, "dist");
 const assetsDir = path.join(rootDir, "src");
+const plausibleDomain = process.env.PLAUSIBLE_DOMAIN || "";
+const plausibleScriptSrc = process.env.PLAUSIBLE_SCRIPT_SRC || "https://plausible.io/js/script.js";
 const CURATED_ESSAY_COLLECTIONS = [
   {
     id: "mobility-ownership-trust",
@@ -449,7 +451,7 @@ function renderHome(site, posts, essayCollections) {
         <main class="content">
           <section class="home-intro">
             <h1>I write to think. I publish to be argued with.</h1>
-            <p class="home-intro-copy">${escapeHtml(site.intro)}</p>
+            <p class="home-intro-copy">${renderHomeIntro(site)}</p>
             ${renderStartHere(site, postBySlug)}
           </section>
 
@@ -715,6 +717,7 @@ function renderDocument({
     <meta name="theme-color" content="#f4ecdf">
     <link rel="icon" type="image/svg+xml" href="${sitePath(site, "/favicon.svg")}">
     ${structuredData ? `<script type="application/ld+json">${serializeStructuredData(structuredData)}</script>` : ""}
+    ${renderPlausibleScript()}
     <script>
       (() => {
         const storageKey = "vikram-theme";
@@ -968,6 +971,14 @@ function renderDocument({
 </html>`;
 }
 
+function renderPlausibleScript() {
+  if (!plausibleDomain) {
+    return "";
+  }
+
+  return `<script defer data-domain="${escapeAttribute(plausibleDomain)}" src="${escapeAttribute(plausibleScriptSrc)}"></script>`;
+}
+
 function renderHeader(site) {
   return `
     <header class="site-header">
@@ -995,6 +1006,8 @@ function renderFooter(site) {
       <p class="footer-note">
         <a href="${sitePath(site, "/archive/")}">Essays</a>
         <span aria-hidden="true"> · </span>
+        <a href="${escapeAttribute(site.companyUrl)}">Cars24</a>
+        <span aria-hidden="true"> · </span>
         <a href="${escapeAttribute(site.linkedInUrl)}">LinkedIn</a>
         <span aria-hidden="true"> · </span>
         <a href="${escapeAttribute(site.xUrl)}">X</a>
@@ -1005,6 +1018,12 @@ function renderFooter(site) {
       </p>
     </footer>
   `;
+}
+
+function renderHomeIntro(site) {
+  const intro = escapeHtml(site.intro);
+  const companyUrl = escapeAttribute(site.companyUrl || "https://www.cars24.com");
+  return intro.replace("Cars24", `<a href="${companyUrl}">Cars24</a>`);
 }
 
 function renderStartHere(site, postBySlug) {
