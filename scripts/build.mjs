@@ -62,6 +62,12 @@ const REDIRECTS = [
   }
 ];
 
+const START_HERE_SLUGS = [
+  "the-coming-decade-of-car-ownership-in-india",
+  "why-we-are-not-selling-cars",
+  "paranoid-survive-regulated-thrive"
+];
+
 async function main() {
   const site = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
   site.socialImageMeta = await resolveImageMeta(site.socialImage || "");
@@ -418,6 +424,7 @@ function renderHome(site, posts, essayCollections) {
   const interviews = Array.isArray(site.interviews) ? site.interviews : [];
   const interviewSections = groupBy(interviews, (interview) => interview.section || "Interviews");
   const elsewhere = Array.isArray(site.elsewhere) ? site.elsewhere : [];
+  const postBySlug = new Map(posts.map((post) => [post.slug, post]));
   const imagePath = site.socialImage || featured?.image || "";
   const imageAlt = site.socialImageAlt || featured?.imageAlt || site.siteTitle;
   const imageMeta = site.socialImageMeta || featured?.imageMeta || null;
@@ -444,12 +451,13 @@ function renderHome(site, posts, essayCollections) {
             <h1>${escapeHtml(site.name)}</h1>
             <p class="home-intro-copy">${escapeHtml(site.intro)}</p>
             <p class="home-intro-copy">${escapeHtml(site.about)}</p>
+            ${renderStartHere(site, postBySlug)}
           </section>
 
           <section class="home-writing">
             <div class="home-section-head">
               <p class="home-label">Writing</p>
-              <a href="${sitePath(site, "/archive/")}" class="inline-link">Archive</a>
+              <a href="${sitePath(site, "/archive/")}" class="inline-link">Essays</a>
             </div>
             <div class="essay-collections essay-collections-home">
               ${essayCollections.map((collection) => renderEssayCollection(collection, "home", site)).join("")}
@@ -469,23 +477,23 @@ function renderHome(site, posts, essayCollections) {
 function renderArchive(site, essayCollections) {
   return renderDocument({
     site,
-    title: `Archive | ${site.siteTitle}`,
-    description: `Archive of essays and notes by ${site.name}.`,
+    title: `Essays | ${site.siteTitle}`,
+    description: `Essays and notes by ${site.name}.`,
     pathName: "/archive/",
     imagePath: "",
     bodyClass: "archive-page",
     openGraphType: "website",
     structuredData: buildCollectionPageStructuredData(site, {
       pathName: "/archive/",
-      title: `Archive | ${site.siteTitle}`,
-      description: `Archive of essays and notes by ${site.name}.`
+      title: `Essays | ${site.siteTitle}`,
+      description: `Essays and notes by ${site.name}.`
     }),
     content: `
       <div class="page-shell">
         ${renderHeader(site)}
         <main class="content archive-content">
           <section class="archive-hero">
-            <p class="eyebrow">Archive</p>
+            <p class="eyebrow">Essays</p>
             <h1>Published writing</h1>
           </section>
 
@@ -574,7 +582,7 @@ function renderPost(site, post, collection) {
             <nav class="breadcrumb">
               <a href="${sitePath(site, "/")}">Home</a>
               <span>/</span>
-              <a href="${sitePath(site, "/archive/")}">Archive</a>
+              <a href="${sitePath(site, "/archive/")}">Essays</a>
             </nav>
             <header class="essay-header">
               <p class="eyebrow">${escapeHtml(post.category)}</p>
@@ -626,10 +634,10 @@ function renderNotFound(site) {
           <section class="not-found">
             <p class="eyebrow">404</p>
             <h1>That page drifted off.</h1>
-            <p class="intro">The writing is still intact. Start again from the homepage or the archive.</p>
+            <p class="intro">The writing is still intact. Start again from the homepage or the essays.</p>
             <div class="cta-row">
               <a class="button-link" href="${sitePath(site, "/")}">Go home</a>
-              <a class="button-link button-link-muted" href="${sitePath(site, "/archive/")}">Open archive</a>
+              <a class="button-link button-link-muted" href="${sitePath(site, "/archive/")}">Open essays</a>
             </div>
           </section>
         </main>
@@ -970,7 +978,7 @@ function renderHeader(site) {
       </a>
       <div class="site-header-actions">
       <nav class="site-nav" aria-label="Primary">
-        <a href="${sitePath(site, "/archive/")}">Archive</a>
+        <a href="${sitePath(site, "/archive/")}">Essays</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -985,8 +993,35 @@ function renderFooter(site) {
   return `
     <footer class="site-footer">
       <p>${escapeHtml(site.footerNote)}</p>
-      <p class="footer-note"><a href="${sitePath(site, "/archive/")}">Archive</a></p>
+      <p class="footer-note">
+        <a href="${sitePath(site, "/archive/")}">Essays</a>
+        <span aria-hidden="true"> · </span>
+        <a href="${escapeAttribute(site.linkedInUrl)}">LinkedIn</a>
+        <span aria-hidden="true"> · </span>
+        <a href="${escapeAttribute(site.xUrl)}">X</a>
+        <span aria-hidden="true"> · </span>
+        <a href="${sitePath(site, "/rss.xml")}">RSS</a>
+        <span aria-hidden="true"> · </span>
+        <a href="${sitePath(site, "/subscribe/")}">Subscribe</a>
+      </p>
     </footer>
+  `;
+}
+
+function renderStartHere(site, postBySlug) {
+  const items = START_HERE_SLUGS
+    .map((slug) => postBySlug.get(slug))
+    .filter(Boolean);
+
+  if (items.length === 0) {
+    return "";
+  }
+
+  return `
+    <p class="home-start-here">
+      <span>Start here:</span>
+      ${items.map((post, index) => `${index === 0 ? " " : '<span aria-hidden="true"> · </span>'}<a href="${sitePath(site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a>`).join("")}
+    </p>
   `;
 }
 
@@ -1537,7 +1572,7 @@ function renderLlmsTxt(site, essayCollections) {
     "Founder of Cars24. Essays on car ownership in India, trust as the product, AI-native companies, and leadership.",
     "",
     `- [Home](${absoluteUrl(site.domain, sitePath(site, "/"))})`,
-    `- [Archive](${absoluteUrl(site.domain, sitePath(site, "/archive/"))})`,
+    `- [Essays](${absoluteUrl(site.domain, sitePath(site, "/archive/"))})`,
     ""
   ];
 
@@ -1566,7 +1601,7 @@ function buildBreadcrumbStructuredData(site, post) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Archive",
+        name: "Essays",
         item: absoluteUrl(site.domain, sitePath(site, "/archive/"))
       },
       {
