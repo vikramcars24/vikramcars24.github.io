@@ -1,4 +1,4 @@
-name: Slack Dashboard
+name: Monthly Site Report
 
 on:
   schedule:
@@ -13,7 +13,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
-  slack-dashboard:
+  monthly-site-report:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,26 +24,39 @@ jobs:
         with:
           node-version: 22
 
-      - name: Build monthly Slack dashboard
+      - name: Build audience report
+        env:
+          GOOGLE_OAUTH_CLIENT_JSON: ${{ secrets.GOOGLE_OAUTH_CLIENT_JSON }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SEARCH_CONSOLE_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_TOKEN }}
+          GOOGLE_SEARCH_CONSOLE_SITE_URL: ${{ secrets.GOOGLE_SEARCH_CONSOLE_SITE_URL }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          BUTTONDOWN_API_VERSION: ${{ secrets.BUTTONDOWN_API_VERSION }}
+        run: node scripts/audience-dashboard.mjs
+
+      - name: Send report to Slack DM
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          SLACK_DASHBOARD_CHANNELS: ${{ vars.SLACK_DASHBOARD_CHANNELS }}
-        run: node scripts/slack-dashboard.mjs
+          SLACK_REPORT_DM_USER: ${{ vars.SLACK_REPORT_DM_USER }}
+        run: node scripts/send-monthly-site-report-slack.mjs
 
-      - name: Upload Slack artifacts
+      - name: Upload report artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: slack-dashboard
+          name: monthly-site-report
           path: |
-            tmp/slack-dashboard.json
-            tmp/slack-dashboard.md
+            tmp/audience-dashboard.json
+            tmp/audience-dashboard.md
 
       - name: Write workflow summary
         if: always()
         run: |
-          if [ -f tmp/slack-dashboard.md ]; then
-            cat tmp/slack-dashboard.md >> "$GITHUB_STEP_SUMMARY"
+          if [ -f tmp/audience-dashboard.md ]; then
+            cat tmp/audience-dashboard.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Open or update issue on failure
@@ -53,16 +66,16 @@ jobs:
           script: |
             const fs = require('fs');
             const body = fs.existsSync('tmp/slack-dashboard.md')
-              ? fs.readFileSync('tmp/slack-dashboard.md', 'utf8')
-              : 'Slack dashboard failed before report generation.';
+              ? fs.readFileSync('tmp/audience-dashboard.md', 'utf8')
+              : 'Monthly site report failed before report generation.';
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            const title = 'Slack Dashboard Alert';
+            const title = 'Monthly Site Report Alert';
             const { data: issues } = await github.rest.issues.listForRepo({
               owner,
               repo,
               state: 'open',
-              labels: 'slack-dashboard'
+              labels: 'monthly-site-report'
             });
             const existing = issues.find((issue) => issue.title === title);
             if (existing) {
@@ -78,7 +91,7 @@ jobs:
                 repo,
                 title,
                 body,
-                labels: ['slack-dashboard']
+                labels: ['monthly-site-report']
               });
             }
 
@@ -89,12 +102,12 @@ jobs:
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            const title = 'Slack Dashboard Alert';
+            const title = 'Monthly Site Report Alert';
             const { data: issues } = await github.rest.issues.listForRepo({
               owner,
               repo,
               state: 'open',
-              labels: 'slack-dashboard'
+              labels: 'monthly-site-report'
             });
             for (const issue of issues) {
               if (issue.title === title) {

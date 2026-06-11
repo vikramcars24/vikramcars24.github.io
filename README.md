@@ -69,14 +69,15 @@ This repo also includes a separate audience-reporting layer for search, traffic,
 - Daily workflow: `.github/workflows/audience-dashboard.yml`
 - Setup and provider requirements: `AUDIENCE_DASHBOARD.md`
 
-## Slack dashboard
+## Monthly Slack site report
 
-This repo also includes a lightweight monthly Slack dashboard for configured channels.
+This repo also includes a lightweight monthly site report that is sent to Slack DM.
 
-- Run locally with `npm run slack:dashboard`
+- Audience data is generated with `npm run audience:report`
 - Monthly workflow: `.github/workflows/slack-dashboard.yml`
+- Slack DM sender: `node scripts/send-monthly-site-report-slack.mjs`
 - Configure `SLACK_TOKEN` as a GitHub Actions secret
-- Configure `SLACK_DASHBOARD_CHANNELS` as a comma-separated GitHub Actions variable or secret
+- Configure `SLACK_REPORT_DM_USER` as a GitHub Actions variable or secret
 
 ## Slack file download
 

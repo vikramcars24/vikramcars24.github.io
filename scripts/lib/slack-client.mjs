@@ -91,6 +91,35 @@ export async function fetchUserInfo(token, user) {
   return payload.user || {};
 }
 
+export async function openDirectMessage(token, userId) {
+  const payload = await slackApi("conversations.open", token, { users: userId });
+  return payload.channel || {};
+}
+
+export async function postMessage(token, channel, text) {
+  const response = await fetch("https://slack.com/api/chat.postMessage", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    body: JSON.stringify({
+      channel,
+      text,
+      mrkdwn: true
+    })
+  });
+
+  const payload = await response.json();
+
+  if (!response.ok || !payload.ok) {
+    const message = payload.error || `HTTP ${response.status}`;
+    throw new Error(`Slack chat.postMessage failed: ${message}`);
+  }
+
+  return payload;
+}
+
 export async function downloadFile(url, token, destination) {
   const response = await fetch(url, {
     headers: {
