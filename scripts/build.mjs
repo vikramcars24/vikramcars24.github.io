@@ -996,7 +996,6 @@ function normalizeSubscribe(site) {
   return {
     href: String(subscribe.href || "").trim(),
     action: String(subscribe.action || "").trim(),
-    externalPage: String(subscribe.externalPage || "").trim(),
     line: String(subscribe.line || "New essays by email, a few times a year.").trim(),
     homeEyebrow: String(subscribe.homeEyebrow || "By Email").trim(),
     homeTitle: String(subscribe.homeTitle || "Get the next essay by email").trim(),
