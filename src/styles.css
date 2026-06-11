@@ -787,10 +787,10 @@ pre code {
 
 .entry-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 11rem 5.5rem;
-  gap: 1.35rem;
-  align-items: center;
-  padding: 1.2rem 0;
+  grid-template-columns: minmax(0, 1fr) 8.75rem;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -824,10 +824,8 @@ pre code {
 }
 
 .entry-thumb {
-  aspect-ratio: 1.2 / 1;
-}
-
-.entry-side {
+  width: 8.75rem;
+  aspect-ratio: 1.26 / 1;
   justify-self: end;
 }
 
@@ -1180,7 +1178,7 @@ pre code {
 
   .entry-thumb {
     width: 100%;
-    max-width: 20rem;
+    max-width: 8.5rem;
   }
 
   .home-archive-visual {
@@ -1192,10 +1190,6 @@ pre code {
 
   .entry-thumb {
     order: -1;
-  }
-
-  .entry-side {
-    justify-self: start;
   }
 
   .footer-note {

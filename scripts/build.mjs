@@ -1129,9 +1129,6 @@ function renderEntryRow(post) {
         <p class="entry-description">${escapeHtml(post.description)}</p>
       </div>
       ${renderEntryVisual(post, "entry-thumb", "card")}
-      <div class="entry-side">
-        <a class="entry-link" href="${sitePath(post.site, `/posts/${post.slug}/`)}">${entryLinkLabel(post)}</a>
-      </div>
     </article>
   `;
 }
@@ -1310,14 +1307,6 @@ function renderElsewhereRow(item) {
       ${item.description ? `<p class="elsewhere-description">${escapeHtml(item.description)}</p>` : ""}
     </article>
   `;
-}
-
-function entryLinkLabel(post) {
-  const category = String(post.category || "").toLowerCase();
-  if (category.includes("note")) {
-    return "Read notes";
-  }
-  return "Read essay";
 }
 
 function buildEssayCollections(posts) {
