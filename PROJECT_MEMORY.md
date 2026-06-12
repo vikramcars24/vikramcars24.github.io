@@ -9,6 +9,7 @@
 - `Site Ops` GitHub Action is currently green after the audit/build-path fixes.
 - The site has automated GitHub issue + Slack DM alerting for site-ops failures.
 - `qa-screens/` is intentionally gitignored; screenshot verification is mandatory for layout changes.
+- GitHub/site email must be treated as a first-class ops queue, not a secondary notification surface.
 
 ## Failed Attempts And Lessons
 
@@ -16,6 +17,7 @@
 - A local JPEG metadata approach using macOS `sips` was not portable to GitHub Actions Ubuntu runners. Lesson: keep build-time asset inspection cross-platform.
 - Large Gmail batch trash operations timed out. Lesson: mailbox cleanup should use smaller batches.
 - Incident closure was defined too narrowly as "GitHub runs are green." Real RCA: the workflow lacked an explicit post-recovery inbox sweep, so stale GitHub failure mail remained even after deploy and `Site Ops` were healthy. Lesson: an incident is not closed until runtime is green, the alert issue is closed, stale alert mail from the fix window is cleared, and the lesson is written back to memory.
+- Email triage was handled reactively instead of as a standing queue. Lesson: use a written morning ops sweep and severity labels so GitHub/site mail is reviewed proactively.
 
 ## Last Session
 
@@ -27,6 +29,7 @@
 - Fixed build output to include `CNAME` in `dist/`.
 - Polished archive metadata to remove the last SEO warning.
 - Corrected the incident-close definition to include inbox cleanup after the final green run.
+- Added explicit GitHub-email triage and morning ops sweep doctrine.
 
 ## Next Run
 
@@ -34,6 +37,8 @@
   - real new source assets worth keeping
   - generated junk and duplicate Finder-style files worth deleting
 - If site health breaks again, use `skills/ci-triage.md`.
+- If fresh GitHub/site mail appears, use `skills/github-email-triage.md`.
+- For routine operational hygiene, use `skills/morning-ops-sweep.md`.
 - If homepage or essay layout changes, run `npm run qa:visual` before push.
 - Keep `PROJECT_MEMORY.md` current after any production-impacting fix.
 - For any GitHub/site incident, treat the mandatory closure checklist as:

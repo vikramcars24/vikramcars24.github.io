@@ -1,0 +1,2 @@
+{"input":"A new GitHub email says Site Ops failed, but the latest replacement run is green and the issue is already closed.","ideal":"Classifies the email as stale resolved noise, verifies the run and issue state, clears the email, and does not reopen investigation."}
+{"input":"A GitHub email requests updated app permissions.","ideal":"Classifies as security, inspects the exact permission delta before acting, and does not treat it like ordinary CI mail."}

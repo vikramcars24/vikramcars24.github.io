@@ -67,6 +67,8 @@ This file is the repo-local operating contract for any coding agent working on `
 - `skills/pr-review.md`
 - `skills/design-qa.md`
 - `skills/deploy-check.md`
+- `skills/github-email-triage.md`
+- `skills/morning-ops-sweep.md`
 
 ## End-Of-Run Rule
 
@@ -84,3 +86,15 @@ For GitHub, deploy, and site-health incidents, "green run" is not enough. Closur
 - alert issue is closed or recovered
 - stale alert email from the incident window is cleared
 - lesson is written into `PROJECT_MEMORY.md`
+
+## Inbox Rule
+
+GitHub and site email is part of the operational control plane for this repo.
+
+- Triage fresh GitHub/site mail proactively, not only when asked.
+- Treat Gmail as equal in importance to GitHub Actions and GitHub issues.
+- Use severity buckets, not one catch-all label:
+  - `Ops/GitHub/Security`
+  - `Ops/GitHub/CI`
+  - `Ops/Site`
+  - `Ops/Resolved`
