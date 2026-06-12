@@ -13,12 +13,31 @@ async function main() {
   const domain = new URL(site.domain).origin;
   const now = new Date();
 
-  const providers = await Promise.all([
-    collectSiteOps(),
-    collectSearchConsole(site, now),
-    collectCloudflare(site, now),
-    collectButtondown(now)
-  ]);
+  const providerCollectors = [
+    ["Site Ops", () => collectSiteOps()],
+    ["Google Search Console", () => collectSearchConsole(site, now)],
+    ["Cloudflare", () => collectCloudflare(site, now)],
+    ["Buttondown", () => collectButtondown(now)]
+  ];
+
+  const providerResults = await Promise.allSettled(
+    providerCollectors.map(([, collect]) => collect())
+  );
+
+  const providers = providerResults.map((result, index) => {
+    const [name] = providerCollectors[index];
+    if (result.status === "fulfilled") {
+      return result.value;
+    }
+
+    const message = result.reason instanceof Error ? result.reason.message : String(result.reason);
+    return {
+      name,
+      status: "error",
+      message,
+      metrics: {}
+    };
+  });
 
   const summary = {
     generatedAt: now.toISOString(),
@@ -31,12 +50,16 @@ async function main() {
   await fs.writeFile(reportMdPath, renderMarkdown(summary), "utf8");
 
   const failing = providers.filter((provider) => provider.status === "error");
-  if (failing.length > 0) {
-    console.error(`Audience dashboard failed for ${failing.length} provider(s). Report written to ${reportMdPath}`);
+  const skippedProviders = providers.filter((provider) => provider.status === "skipped");
+
+  if (failing.length > 0 || skippedProviders.length > 0) {
+    console.log(`Audience dashboard written to ${reportMdPath} with partial provider coverage.`);
     for (const provider of failing) {
-      console.error(`ERROR: ${provider.name}: ${provider.message}`);
+      console.error(`WARN: ${provider.name}: ${provider.message}`);
     }
-    process.exitCode = 1;
+    for (const provider of skippedProviders) {
+      console.log(`SKIP: ${provider.name}: ${provider.message}`);
+    }
     return;
   }
 
@@ -73,13 +96,13 @@ async function collectSiteOps() {
 
 async function collectSearchConsole(site, now) {
   const siteUrl = process.env.GOOGLE_SEARCH_CONSOLE_SITE_URL || ensureTrailingSlash(site.domain);
-  const token = await getGoogleAccessToken();
-
-  if (!token) {
-    return skipped("Google Search Console", "Set GOOGLE_SERVICE_ACCOUNT_JSON or GOOGLE_SEARCH_CONSOLE_TOKEN to enable Search Console reporting.");
-  }
 
   try {
+    const token = await getGoogleAccessToken();
+    if (!token) {
+      return skipped("Google Search Console", "Set GOOGLE_SERVICE_ACCOUNT_JSON or GOOGLE_SEARCH_CONSOLE_TOKEN to enable Search Console reporting.");
+    }
+
     const last7 = dateRangeDaysAgo(now, 7, 0);
     const prev7 = dateRangeDaysAgo(now, 14, 7);
     const last28 = dateRangeDaysAgo(now, 28, 0);
@@ -126,7 +149,7 @@ async function collectSearchConsole(site, now) {
     };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    if (isSearchConsoleSetupBlocker(message)) {
+    if (isSearchConsoleSetupBlocker(message) || isGoogleAuthSetupBlocker(message)) {
       return skipped("Google Search Console", message);
     }
     return {
@@ -521,6 +544,15 @@ function isSearchConsoleSetupBlocker(message) {
     || text.includes("insufficient permissions")
     || text.includes("you need additional access")
     || text.includes("resourcemanager.projects.get");
+}
+
+function isGoogleAuthSetupBlocker(message) {
+  const text = String(message || "").toLowerCase();
+  return text.includes("invalid_grant")
+    || text.includes("invalid_client")
+    || text.includes("unauthorized_client")
+    || text.includes("redirect_uri_mismatch")
+    || text.includes("bad request");
 }
 
 function dateRangeDaysAgo(now, daysBackStart, daysBackEnd) {
