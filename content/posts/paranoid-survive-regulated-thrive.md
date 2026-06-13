@@ -44,7 +44,7 @@ So I want to be two things the world calls opposites. Paranoid about the work. R
 The paranoid survive. The regulated thrive. I am building for both.
 
 ## Notes and Sources
-- [Naina Sahni](https://workwithnaina.com). The second half of the sentence comes from her, and so does much of my education in it. Her book on this territory, carrying the argument from the leader's nervous system into the system around the leader, is on its way.
+- [Naina Sahni](https://workwithnaina.com). The second half of the sentence comes from her, and so does much of my education in it.
 - Andy Grove, *Only the Paranoid Survive*, 1996. Strategic inflection points; paranoia as aimed vigilance.
 - [Ceri Evans, *Perform Under Pressure*, 2019, and James Kerr, *Legacy*, 2013](https://www.allblacks.com/news/all-blacks-500-a-milestone-measured-in-moments-and-stats). The All Blacks' red head / blue head model. Win record: 500 wins in 652 tests since 1903, the first rugby nation to 500.
 - [Amy Arnsten, "Stress signalling pathways that impair prefrontal cortex structure and function," *Nature Reviews Neuroscience*, 2009](https://www.nature.com/articles/nrn2648). Even mild uncontrollable stress rapidly degrades prefrontal function.
