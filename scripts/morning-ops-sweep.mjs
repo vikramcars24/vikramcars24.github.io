@@ -396,7 +396,7 @@ function categorizeGitHubMail(subject) {
 async function listGitHubOpsMessages(token) {
   const query = [
     "in:inbox",
-    "from:noreply@github.com",
+    "(from:noreply@github.com OR from:notifications@github.com)",
     "newer_than:7d",
     "(\"Site Ops\" OR \"Deploy Site\" OR \"Audience Dashboard\" OR \"Monthly Site Report\" OR \"vikramcars24.github.io\")"
   ].join(" ");
