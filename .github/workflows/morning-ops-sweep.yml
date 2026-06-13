@@ -1,0 +1,65 @@
+name: Morning Ops Sweep
+
+on:
+  schedule:
+    - cron: "11 7 * * *"
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Deploy Site
+      - Site Ops
+      - Audience Dashboard
+      - Monthly Site Report
+    types:
+      - completed
+
+concurrency:
+  group: morning-ops-sweep
+  cancel-in-progress: false
+
+permissions:
+  actions: read
+  contents: read
+  issues: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  sweep:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.name != 'Morning Ops Sweep'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run morning ops sweep
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_OAUTH_CLIENT_JSON: ${{ secrets.GOOGLE_OAUTH_CLIENT_JSON }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          GOOGLE_GMAIL_ACCESS_TOKEN: ${{ secrets.GOOGLE_GMAIL_ACCESS_TOKEN }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_REPORT_DM_USER: ${{ vars.SLACK_REPORT_DM_USER }}
+        run: node scripts/morning-ops-sweep.mjs
+
+      - name: Upload sweep artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: morning-ops-sweep
+          path: |
+            tmp/morning-ops-sweep.json
+            tmp/morning-ops-sweep.md
+
+      - name: Write workflow summary
+        if: always()
+        run: |
+          if [ -f tmp/morning-ops-sweep.md ]; then
+            cat tmp/morning-ops-sweep.md >> "$GITHUB_STEP_SUMMARY"
+          fi

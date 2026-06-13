@@ -8,6 +8,7 @@
 - `npm run seo:audit` now audits generated `dist/` output, which matches the GitHub Actions deploy artifact.
 - `Site Ops` GitHub Action is currently green after the audit/build-path fixes.
 - The site has automated GitHub issue + Slack DM alerting for site-ops failures.
+- The repo now has a dedicated `Morning Ops Sweep` workflow that checks GitHub workflow state, open alert issues, and GitHub/site email cleanup on a schedule and after key workflow completions.
 - `qa-screens/` is intentionally gitignored; screenshot verification is mandatory for layout changes.
 - GitHub/site email must be treated as a first-class ops queue, not a secondary notification surface.
 
@@ -30,6 +31,7 @@
 - Polished archive metadata to remove the last SEO warning.
 - Corrected the incident-close definition to include inbox cleanup after the final green run.
 - Added explicit GitHub-email triage and morning ops sweep doctrine.
+- Added a real `Morning Ops Sweep` automation path so GitHub/site triage is not purely manual or prompt-driven.
 
 ## Next Run
 
@@ -39,6 +41,7 @@
 - If site health breaks again, use `skills/ci-triage.md`.
 - If fresh GitHub/site mail appears, use `skills/github-email-triage.md`.
 - For routine operational hygiene, use `skills/morning-ops-sweep.md`.
+- If Gmail cleanup falls back to skipped inside automation, the blocker is credential scope, not missing sweep logic.
 - If homepage or essay layout changes, run `npm run qa:visual` before push.
 - Keep `PROJECT_MEMORY.md` current after any production-impacting fix.
 - For any GitHub/site incident, treat the mandatory closure checklist as:
