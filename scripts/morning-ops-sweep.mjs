@@ -111,12 +111,12 @@ async function collectAlertIssues() {
 }
 
 async function collectGmailTriage(workflows, issues) {
-  const token = await getGoogleAccessToken();
-  if (!token) {
-    return skippedGmail("Google OAuth credentials for Gmail are not configured.");
-  }
-
   try {
+    const token = await getGoogleAccessToken();
+    if (!token) {
+      return skippedGmail("Google OAuth credentials for Gmail are not configured.");
+    }
+
     const labelMap = await listGmailLabels(token);
     const inboxMessages = await listGitHubOpsMessages(token);
     const messages = [];
@@ -528,6 +528,7 @@ function isGoogleAuthSetupBlocker(message) {
   const normalized = String(message || "").toLowerCase();
   return [
     "invalid_grant",
+    "invalid_rapt",
     "invalid_client",
     "unauthorized_client",
     "redirect_uri_mismatch",
