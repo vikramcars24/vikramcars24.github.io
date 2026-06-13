@@ -1456,8 +1456,8 @@ function renderSummary(post) {
 }
 
 function renderArticleImage(post) {
-  const visualPath = post.image || post.articleImage;
-  const altText = post.imageAlt || post.articleImageAlt || post.title;
+  const visualPath = post.articleImage || post.image;
+  const altText = post.articleImageAlt || post.imageAlt || post.title;
 
   if (!visualPath) {
     return "";
