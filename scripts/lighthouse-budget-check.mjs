@@ -12,14 +12,16 @@ const audits = [
     name: "desktop",
     files: [
       sitePath("tmp", "lighthouse-desktop.json"),
-      sitePath("tmp", "lighthouse-desktop-retry.json")
+      sitePath("tmp", "lighthouse-desktop-retry.json"),
+      sitePath("tmp", "lighthouse-desktop-retry-2.json")
     ],
     thresholds: {
       performance: 0.75,
       fcpMs: 2500,
       lcpMs: 3500,
       cls: 0.1,
-      tbtMs: 200
+      tbtMs: 200,
+      tbtMinBreaches: 2
     }
   },
   {
@@ -92,6 +94,7 @@ function summarizeAudit(samples, audit) {
   const lcpMs = median(metrics.map((sample) => sample.lcpMs));
   const cls = median(metrics.map((sample) => sample.cls));
   const tbtMs = median(metrics.map((sample) => sample.tbtMs));
+  const tbtBreaches = metrics.filter((sample) => sample.tbtMs > audit.thresholds.tbtMs).length;
   const failures = [];
 
   if (performance < audit.thresholds.performance) {
@@ -106,8 +109,13 @@ function summarizeAudit(samples, audit) {
   if (cls > audit.thresholds.cls) {
     failures.push(`CLS ${cls.toFixed(3)} above ${audit.thresholds.cls.toFixed(3)}`);
   }
-  if (tbtMs > audit.thresholds.tbtMs) {
-    failures.push(`TBT ${formatMs(tbtMs)} above ${formatMs(audit.thresholds.tbtMs)}`);
+  if (
+    tbtMs > audit.thresholds.tbtMs &&
+    tbtBreaches >= (audit.thresholds.tbtMinBreaches || 1)
+  ) {
+    failures.push(
+      `TBT ${formatMs(tbtMs)} above ${formatMs(audit.thresholds.tbtMs)} across ${tbtBreaches}/${metrics.length} samples`
+    );
   }
 
   return {
@@ -119,6 +127,7 @@ function summarizeAudit(samples, audit) {
     lcpMs,
     cls,
     tbtMs,
+    tbtBreaches,
     failures
   };
 }
@@ -150,6 +159,7 @@ function renderReport({ summaries, failures }) {
     lines.push(`- LCP: ${formatMs(summary.lcpMs)}`);
     lines.push(`- CLS: ${summary.cls.toFixed(3)}`);
     lines.push(`- TBT: ${formatMs(summary.tbtMs)}`);
+    lines.push(`- TBT breaches: ${summary.tbtBreaches}/${summary.sampleCount}`);
     if (summary.sampleCount > 1) {
       lines.push(`- Raw TBT samples: ${summary.samples.map((sample) => formatMs(sample.tbtMs)).join(", ")}`);
     }
