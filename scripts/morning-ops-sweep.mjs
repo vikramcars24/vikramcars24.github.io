@@ -45,7 +45,8 @@ async function collectReport() {
     workflows,
     issues,
     gmail,
-    needsAttention: workflows.some((workflow) => workflow.state !== "healthy") || issues.open.length > 0
+    needsAttention: workflows.some((workflow) => workflow.state !== "healthy") || issues.open.length > 0,
+    blockingAttention: hasBlockingAttention(workflows, issues, gmail)
   };
 }
 
@@ -234,15 +235,7 @@ async function maybeSendSlack(report) {
 }
 
 function shouldSendSlack(report) {
-  if (report.trigger === "schedule" || report.trigger === "workflow_dispatch") {
-    return true;
-  }
-
-  if (report.needsAttention) {
-    return true;
-  }
-
-  return report.gmail.status === "ok" && report.gmail.trashedCount > 0;
+  return report.blockingAttention;
 }
 
 function renderSlack(report) {
@@ -329,8 +322,8 @@ function renderConsoleSummary(report) {
 }
 
 function renderHeadline(report) {
-  if (report.needsAttention) {
-    return "Attention needed. At least one workflow or alert issue is still open.";
+  if (report.blockingAttention) {
+    return "Attention needed. At least one workflow or alert issue needs manual review.";
   }
 
   if (report.gmail.status === "ok" && report.gmail.trashedCount > 0) {
@@ -355,6 +348,18 @@ function resolveTrigger() {
     return "workflow_run";
   }
   return process.env.GITHUB_EVENT_NAME || "manual";
+}
+
+function hasBlockingAttention(workflows, issues, gmail) {
+  if (issues.open.length > 0) {
+    return true;
+  }
+
+  if (workflows.some((workflow) => ["failing", "missing", "missing-run"].includes(workflow.state))) {
+    return true;
+  }
+
+  return gmail.status === "error";
 }
 
 function deriveWorkflowState(run) {
