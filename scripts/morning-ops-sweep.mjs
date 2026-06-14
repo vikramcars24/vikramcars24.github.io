@@ -352,7 +352,13 @@ function resolveTrigger() {
 
 function hasBlockingAttention(workflows, issues, gmail) {
   if (issues.open.length > 0) {
-    return true;
+    const unresolvedIssues = issues.open.filter((issue) => {
+      const workflow = workflows.find((entry) => entry.name === issue.workflow);
+      return !workflow || workflow.state !== "running";
+    });
+    if (unresolvedIssues.length > 0) {
+      return true;
+    }
   }
 
   if (workflows.some((workflow) => ["failing", "missing", "missing-run"].includes(workflow.state))) {
