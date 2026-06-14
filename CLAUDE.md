@@ -98,3 +98,5 @@ GitHub and site email is part of the operational control plane for this repo.
   - `Ops/GitHub/CI`
   - `Ops/Site`
   - `Ops/Resolved`
+- Prefer Gmail-side filters for repeat CI noise instead of making GitHub Actions mutate inbox state.
+- Keep a local machine-side sweep installed so repo health still gets checked if hosted Gmail cleanup is degraded.

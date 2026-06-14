@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { getSlackToken, openDirectMessage, postMessage } from "./lib/slack-client.mjs";
 
@@ -10,6 +11,7 @@ const defaultUserId = "U054KL2NR";
 const githubApiUrl = process.env.GITHUB_API_URL || "https://api.github.com";
 const githubServerUrl = process.env.GITHUB_SERVER_URL || "https://github.com";
 const dryRun = isTruthy(process.env.MORNING_OPS_DRY_RUN);
+const inboxSweepMode = resolveInboxSweepMode();
 
 const workflowSpecs = [
   { name: "Deploy Site", slug: "deploy", issueLabel: "", issueTitle: "" },
@@ -111,6 +113,19 @@ async function collectAlertIssues() {
 }
 
 async function collectGmailTriage(workflows, issues) {
+  if (inboxSweepMode === "filter") {
+    return {
+      status: "managed",
+      message: "GitHub CI mail is delegated to Gmail filters; API cleanup was not attempted.",
+      messages: [],
+      trashedCount: 0
+    };
+  }
+
+  if (inboxSweepMode === "disabled") {
+    return skippedGmail("Inbox sweep is disabled for this run.");
+  }
+
   try {
     const token = await getGoogleAccessToken();
     if (!token) {
@@ -325,6 +340,14 @@ function renderHeadline(report) {
   }
 
   return "System is green. No unresolved GitHub or site-ops signal is active.";
+}
+
+function resolveInboxSweepMode() {
+  const raw = String(process.env.GMAIL_SWEEP_MODE || process.env.INBOX_SWEEP_MODE || "api").trim().toLowerCase();
+  if (raw === "filter" || raw === "disabled") {
+    return raw;
+  }
+  return "api";
 }
 
 function resolveTrigger() {
@@ -563,9 +586,9 @@ function getRepo() {
 }
 
 async function fetchGitHubJson(resource, options = {}) {
-  const token = (process.env.GITHUB_TOKEN || "").trim();
+  const token = getGitHubToken();
   if (!token) {
-    throw new Error("Missing GITHUB_TOKEN.");
+    throw new Error("Missing GITHUB_TOKEN and no local gh auth token was available.");
   }
 
   return fetchJson(`${githubApiUrl}${resource}`, {
@@ -577,6 +600,22 @@ async function fetchGitHubJson(resource, options = {}) {
       ...(options.headers || {})
     }
   });
+}
+
+function getGitHubToken() {
+  const direct = (process.env.GITHUB_TOKEN || "").trim();
+  if (direct) {
+    return direct;
+  }
+
+  try {
+    return execFileSync("gh", ["auth", "token"], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"]
+    }).trim();
+  } catch {
+    return "";
+  }
 }
 
 async function fetchJson(url, options = {}) {
