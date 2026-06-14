@@ -12,6 +12,7 @@ const reportFiles = [
 async function main() {
   const token = getSlackToken();
   const userId = process.env.SLACK_REPORT_DM_USER || defaultUserId;
+  const channelId = process.env.SLACK_REPORT_DM_CHANNEL || "";
   const report = await buildReport();
   const runUrl = process.env.GITHUB_SERVER_URL && process.env.GITHUB_REPOSITORY && process.env.GITHUB_RUN_ID
     ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
@@ -19,6 +20,12 @@ async function main() {
   const message = renderMessage(report, runUrl);
 
   try {
+    if (channelId) {
+      await postMessage(token, channelId, message);
+      console.log(`Site ops alert sent to Slack channel ${channelId}`);
+      return;
+    }
+
     const dm = await openDirectMessage(token, userId);
     await postMessage(token, dm.id, message);
     console.log(`Site ops alert sent to Slack DM ${userId}`);

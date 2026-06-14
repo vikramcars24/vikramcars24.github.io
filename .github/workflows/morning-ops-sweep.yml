@@ -2,7 +2,7 @@ name: Morning Ops Sweep
 
 on:
   schedule:
-    - cron: "11 7 * * *"
+    - cron: "11 * * * *"
   workflow_dispatch:
   workflow_run:
     workflows:
@@ -46,6 +46,7 @@ jobs:
           GOOGLE_GMAIL_ACCESS_TOKEN: ${{ secrets.GOOGLE_GMAIL_ACCESS_TOKEN }}
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           SLACK_REPORT_DM_USER: ${{ vars.SLACK_REPORT_DM_USER }}
+          SLACK_REPORT_DM_CHANNEL: ${{ vars.SLACK_REPORT_DM_CHANNEL }}
         run: node scripts/morning-ops-sweep.mjs
 
       - name: Upload sweep artifacts

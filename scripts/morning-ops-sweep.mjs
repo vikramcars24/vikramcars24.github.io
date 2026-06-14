@@ -194,9 +194,16 @@ async function maybeSendSlack(report) {
   }
 
   const userId = process.env.SLACK_REPORT_DM_USER || defaultUserId;
+  const channelId = process.env.SLACK_REPORT_DM_CHANNEL || "";
   const message = renderSlack(report);
 
   try {
+    if (channelId) {
+      await postMessage(token, channelId, message);
+      console.log(`Morning ops sweep sent to Slack channel ${channelId}`);
+      return;
+    }
+
     const dm = await openDirectMessage(token, userId);
     await postMessage(token, dm.id, message);
     console.log(`Morning ops sweep sent to Slack DM ${userId}`);

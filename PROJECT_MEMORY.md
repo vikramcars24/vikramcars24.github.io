@@ -20,6 +20,7 @@
 - Incident closure was defined too narrowly as "GitHub runs are green." Real RCA: the workflow lacked an explicit post-recovery inbox sweep, so stale GitHub failure mail remained even after deploy and `Site Ops` were healthy. Lesson: an incident is not closed until runtime is green, the alert issue is closed, stale alert mail from the fix window is cleared, and the lesson is written back to memory.
 - Email triage was handled reactively instead of as a standing queue. Lesson: use a written morning ops sweep and severity labels so GitHub/site mail is reviewed proactively.
 - GitHub Actions failure mail in this inbox comes from `notifications@github.com`, not just `noreply@github.com`. Lesson: any Gmail cleanup/search automation for GitHub must query both senders or it will miss stale alerts entirely.
+- Desktop Lighthouse TBT can spike on single runs even when the site is healthy. Lesson: `Site Ops` should not fail on a one-off desktop sample; use repeated runs and aggregate the volatile metric before opening an incident.
 
 ## Last Session
 

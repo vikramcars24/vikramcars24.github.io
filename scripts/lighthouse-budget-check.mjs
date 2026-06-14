@@ -10,7 +10,10 @@ const reportPath = process.env.LIGHTHOUSE_REPORT_PATH
 const audits = [
   {
     name: "desktop",
-    file: sitePath("tmp", "lighthouse-desktop.json"),
+    files: [
+      sitePath("tmp", "lighthouse-desktop.json"),
+      sitePath("tmp", "lighthouse-desktop-retry.json")
+    ],
     thresholds: {
       performance: 0.75,
       fcpMs: 2500,
@@ -21,7 +24,7 @@ const audits = [
   },
   {
     name: "mobile",
-    file: sitePath("tmp", "lighthouse-mobile.json"),
+    files: [sitePath("tmp", "lighthouse-mobile.json")],
     thresholds: {
       performance: 0.45,
       fcpMs: 4500,
@@ -37,8 +40,20 @@ async function main() {
   const failures = [];
 
   for (const audit of audits) {
-    const raw = JSON.parse(await fs.readFile(audit.file, "utf8"));
-    const summary = summarizeAudit(raw, audit);
+    const samples = [];
+    for (const file of audit.files) {
+      try {
+        samples.push(JSON.parse(await fs.readFile(file, "utf8")));
+      } catch {
+        // Ignore missing retry files and summarize the samples we do have.
+      }
+    }
+
+    if (samples.length === 0) {
+      throw new Error(`Missing Lighthouse output for ${audit.name}. Expected one of: ${audit.files.join(", ")}`);
+    }
+
+    const summary = summarizeAudit(samples, audit);
     summaries.push(summary);
     failures.push(...summary.failures.map((failure) => `${audit.name}: ${failure}`));
   }
@@ -59,14 +74,24 @@ async function main() {
   console.log(`Report written to ${reportPath}`);
 }
 
-function summarizeAudit(raw, audit) {
-  const categories = raw.categories || {};
-  const lighthouseAudits = raw.audits || {};
-  const performance = Number(categories.performance?.score || 0);
-  const fcpMs = Number(lighthouseAudits["first-contentful-paint"]?.numericValue || 0);
-  const lcpMs = Number(lighthouseAudits["largest-contentful-paint"]?.numericValue || 0);
-  const cls = Number(lighthouseAudits["cumulative-layout-shift"]?.numericValue || 0);
-  const tbtMs = Number(lighthouseAudits["total-blocking-time"]?.numericValue || 0);
+function summarizeAudit(samples, audit) {
+  const metrics = samples.map((raw) => {
+    const categories = raw.categories || {};
+    const lighthouseAudits = raw.audits || {};
+    return {
+      performance: Number(categories.performance?.score || 0),
+      fcpMs: Number(lighthouseAudits["first-contentful-paint"]?.numericValue || 0),
+      lcpMs: Number(lighthouseAudits["largest-contentful-paint"]?.numericValue || 0),
+      cls: Number(lighthouseAudits["cumulative-layout-shift"]?.numericValue || 0),
+      tbtMs: Number(lighthouseAudits["total-blocking-time"]?.numericValue || 0)
+    };
+  });
+
+  const performance = median(metrics.map((sample) => sample.performance));
+  const fcpMs = median(metrics.map((sample) => sample.fcpMs));
+  const lcpMs = median(metrics.map((sample) => sample.lcpMs));
+  const cls = median(metrics.map((sample) => sample.cls));
+  const tbtMs = median(metrics.map((sample) => sample.tbtMs));
   const failures = [];
 
   if (performance < audit.thresholds.performance) {
@@ -87,6 +112,8 @@ function summarizeAudit(raw, audit) {
 
   return {
     name: audit.name,
+    sampleCount: metrics.length,
+    samples: metrics,
     performance,
     fcpMs,
     lcpMs,
@@ -117,11 +144,15 @@ function renderReport({ summaries, failures }) {
   lines.push("## Metrics", "");
   for (const summary of summaries) {
     lines.push(`### ${capitalize(summary.name)}`);
+    lines.push(`- Samples: ${summary.sampleCount}`);
     lines.push(`- Performance: ${summary.performance.toFixed(2)}`);
     lines.push(`- FCP: ${formatMs(summary.fcpMs)}`);
     lines.push(`- LCP: ${formatMs(summary.lcpMs)}`);
     lines.push(`- CLS: ${summary.cls.toFixed(3)}`);
     lines.push(`- TBT: ${formatMs(summary.tbtMs)}`);
+    if (summary.sampleCount > 1) {
+      lines.push(`- Raw TBT samples: ${summary.samples.map((sample) => formatMs(sample.tbtMs)).join(", ")}`);
+    }
     lines.push("");
   }
 
@@ -134,6 +165,17 @@ function formatMs(value) {
 
 function capitalize(value) {
   return value.slice(0, 1).toUpperCase() + value.slice(1);
+}
+
+function median(values) {
+  const sorted = [...values].sort((left, right) => left - right);
+  const middle = Math.floor(sorted.length / 2);
+
+  if (sorted.length % 2 === 1) {
+    return sorted[middle];
+  }
+
+  return (sorted[middle - 1] + sorted[middle]) / 2;
 }
 
 main().catch((error) => {
