@@ -15,6 +15,13 @@ Any change to `styles.css` or templates requires running `npm run qa:visual` and
 
 GitHub and site-ops email is a first-class operating surface for this repo, not an optional side channel.
 
+When a website incident or GitHub/site error appears, the agent should decide the operating surface automatically.
+
+- Use repo or Git first for site defects: code, content, media, build, CI workflow, SEO, redirects, metadata, layout, or generated artifact problems.
+- Use device first for account or auth defects: Gmail, Slack, browser sessions, Cloudflare, local tokens, local screenshots, or machine-specific credentials.
+- Use both automatically when the same incident crosses both surfaces. Example: read the alert through device-side email or browser access, fix the underlying website problem in the repo, then verify the live site from the device.
+- Do not ask Vikram to choose repo versus device unless the path is genuinely risky, irreversible, or blocked on a human-only permission step.
+
 For any deploy, CI, dashboard, or site-health incident, closure requires:
 
 - replacement run green
