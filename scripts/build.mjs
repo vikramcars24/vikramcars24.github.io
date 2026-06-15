@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
 
 const rootDir = process.cwd();
@@ -8,6 +9,7 @@ const distDir = path.join(rootDir, "dist");
 const assetsDir = path.join(rootDir, "src");
 const plausibleDomain = process.env.PLAUSIBLE_DOMAIN || "vikramchopra.in";
 const plausibleScriptSrc = process.env.PLAUSIBLE_SCRIPT_SRC || "https://plausible.io/js/script.js";
+const mediaAssetVersion = resolveMediaAssetVersion();
 const CURATED_ESSAY_COLLECTIONS = [
   {
     id: "mobility-ownership-trust",
@@ -1739,16 +1741,45 @@ Sitemap: ${absoluteUrl(site.domain, sitePath(site, "/sitemap.xml"))}
 
 function sitePath(site, pathName) {
   const basePath = normalizeBasePath(site.basePath || "");
+  const normalizedPath = withMediaVersion(pathName);
 
   if (!basePath) {
-    return pathName;
+    return normalizedPath;
   }
 
-  if (pathName === "/") {
+  if (normalizedPath === "/") {
     return `${basePath}/`;
   }
 
-  return `${basePath}${pathName}`;
+  return `${basePath}${normalizedPath}`;
+}
+
+function withMediaVersion(pathName) {
+  const value = String(pathName || "");
+
+  if (!value.startsWith("/media/") || !mediaAssetVersion) {
+    return value;
+  }
+
+  const separator = value.includes("?") ? "&" : "?";
+  return `${value}${separator}v=${mediaAssetVersion}`;
+}
+
+function resolveMediaAssetVersion() {
+  const gitSha = String(process.env.GITHUB_SHA || "").trim();
+
+  if (gitSha) {
+    return gitSha.slice(0, 7);
+  }
+
+  try {
+    return execFileSync("git", ["rev-parse", "--short", "HEAD"], {
+      cwd: rootDir,
+      encoding: "utf8"
+    }).trim();
+  } catch {
+    return "";
+  }
 }
 
 function normalizeBasePath(basePath) {
