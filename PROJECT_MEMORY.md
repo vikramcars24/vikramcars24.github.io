@@ -22,6 +22,7 @@
 - GitHub Actions failure mail in this inbox comes from `notifications@github.com`, not just `noreply@github.com`. Lesson: any Gmail cleanup/search automation for GitHub must query both senders or it will miss stale alerts entirely.
 - Desktop Lighthouse TBT can spike on single runs even when the site is healthy. Lesson: `Site Ops` should not fail on a one-off desktop sample; use repeated runs and aggregate the volatile metric before opening an incident.
 - GitHub Actions is a good health checker but a bad long-term owner of Gmail state because Google runner-side OAuth can degrade with `invalid_rapt`. Lesson: keep alerting in GitHub + Slack, delegate GitHub CI inbox filing to Gmail filters, and keep a local machine-side sweep as the independent fallback operator.
+- The Gmail filter has to live on the mailbox that actually receives GitHub CI mail. Lesson: connector auth and local OAuth can silently point at different Google accounts, so verify the active Gmail profile before concluding the filter path is complete.
 
 ## Last Session
 
@@ -36,6 +37,7 @@
 - Added explicit GitHub-email triage and morning ops sweep doctrine.
 - Added a real `Morning Ops Sweep` automation path so GitHub/site triage is not purely manual or prompt-driven.
 - Switched the hosted morning sweep to filter-managed inbox mode and added a local LaunchAgent sweep on the Mac as a second control plane.
+- Upgraded the local Gmail OAuth token for `vikram@cars24.com` to include `gmail.settings.basic`, created the `Ops/GitHub/CI` label and auto-archive filter for GitHub CI mail, and marked the lingering unread Site Ops failure mail as read.
 
 ## Next Run
 
@@ -47,6 +49,7 @@
 - For routine operational hygiene, use `skills/morning-ops-sweep.md`.
 - If Gmail cleanup falls back to skipped inside automation, the blocker is credential scope, not missing sweep logic.
 - The repo-side default is now `GMAIL_SWEEP_MODE=filter`; runner auth should not be relied on for Gmail mutation.
+- The live Gmail filter query for GitHub CI mail is `(from:notifications@github.com OR from:noreply@github.com) cc:ci_activity@noreply.github.com "vikramcars24.github.io"`.
 - If homepage or essay layout changes, run `npm run qa:visual` before push.
 - Keep `PROJECT_MEMORY.md` current after any production-impacting fix.
 - For any GitHub/site incident, treat the mandatory closure checklist as:
