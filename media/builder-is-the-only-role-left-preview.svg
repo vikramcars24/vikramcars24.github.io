@@ -1,78 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <defs>
-    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="630">
-      <stop offset="0%" stop-color="#6356FF"/>
-      <stop offset="42%" stop-color="#4736FE"/>
-      <stop offset="100%" stop-color="#2B1EB0"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#5A4DFF"/>
+      <stop offset="46%" stop-color="#4736FE"/>
+      <stop offset="100%" stop-color="#1D145F"/>
     </linearGradient>
-    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96 50.4) rotate(40) scale(540 327.6)">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    <radialGradient id="glow-left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(168.00000000000003 63) rotate(38) scale(408.00000000000006 315)">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.96)" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.96)" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="emberGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1008 390.6) rotate(210) scale(336.00000000000006 239.4)">
-      <stop offset="0%" stop-color="#EF4523" stop-opacity="0.65"/>
-      <stop offset="100%" stop-color="#EF4523" stop-opacity="0"/>
+    <radialGradient id="glow-right" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1008 403.2) rotate(210) scale(288 214.20000000000002)">
+      <stop offset="0%" stop-color="rgba(239,69,35,0.92)" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="rgba(239,69,35,0.92)" stop-opacity="0"/>
     </radialGradient>
-    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7.2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="fineGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <filter id="fine-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.88" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
+  <rect width="1200" height="630" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow-left)"/>
+  <rect width="1200" height="630" fill="url(#glow-right)"/>
   
-  <rect width="1200" height="630" fill="url(#bgGradient)"/>
-  <rect width="1200" height="630" fill="url(#violetGlow)" opacity="0.16"/>
-  <rect width="1200" height="630" fill="url(#emberGlow)" opacity="0.18"/>
-  <ellipse cx="983.9999999999999" cy="151.2" rx="264" ry="138.6" fill="rgba(255,255,255,0.05)"/>
-  <ellipse cx="168.00000000000003" cy="504" rx="216" ry="126" fill="rgba(239,69,35,0.08)"/>
-  <rect x="86.39999999999999" y="53.550000000000004" width="132" height="8" rx="2" fill="rgba(255,255,255,0.82)"/>
-  <rect x="1008" y="557.55" width="96" height="8" rx="2" fill="rgba(239,69,35,0.82)"/>
-  
-  
+  <ellipse cx="983.9999999999999" cy="138.6" rx="216" ry="126" fill="rgba(255,255,255,0.14)"/>
+  <ellipse cx="180" cy="516.6" rx="192" ry="113.39999999999999" fill="rgba(239,69,35,0.18)"/>
+  <rect x="90" y="53.550000000000004" width="132" height="6.3" rx="2" fill="rgba(255,255,255,0.96)"/>
+  <rect x="1008" y="557.55" width="96" height="6.3" rx="2" fill="rgba(239,69,35,0.92)"/>
+  <g><line x1="72" y1="50.4" x2="72" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="204" y1="50.4" x2="204" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="336" y1="50.4" x2="336" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="468" y1="50.4" x2="468" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="600" y1="50.4" x2="600" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="732" y1="50.4" x2="732" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="864" y1="50.4" x2="864" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="996" y1="50.4" x2="996" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="1128" y1="50.4" x2="1128" y2="579.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="60" y1="63" x2="1140" y2="63" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="60" y1="163.8" x2="1140" y2="163.8" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="60" y1="264.6" x2="1140" y2="264.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="60" y1="365.4" x2="1140" y2="365.4" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="60" y1="466.2" x2="1140" y2="466.2" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><line x1="60" y1="567" x2="1140" y2="567" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></g>
   <g>
-    <rect x="696" y="113.39999999999999" width="336.00000000000006" height="365.4" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
-    <line x1="696" y1="179.17199999999997" x2="1032" y2="179.17199999999997" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
-<line x1="696" y1="237.63599999999997" x2="1032" y2="237.63599999999997" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
-<line x1="696" y1="296.09999999999997" x2="1032" y2="296.09999999999997" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
-<line x1="696" y1="354.56399999999996" x2="1032" y2="354.56399999999996" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
-<line x1="696" y1="413.02799999999996" x2="1032" y2="413.02799999999996" stroke="rgba(255,255,255,0.08)" stroke-width="1.08"/>
+    <rect x="683.9999999999999" y="113.39999999999999" width="336.00000000000006" height="352.8" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)" stroke-width="1.2768000000000002"/>
     
-      <rect x="722.88" y="413.02799999999996" width="40.32000000000001" height="65.77199999999999" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
-      <rect x="728.928" y="420.92063999999993" width="28.224000000000007" height="10" rx="8" fill="rgba(255,255,255,0.8)"/>
+      <rect x="710.8799999999999" y="402.69599999999997" width="40.32000000000001" height="63.504" rx="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+      <rect x="718.1375999999999" y="412.85663999999997" width="25.804800000000004" height="10.160639999999999" rx="8" fill="rgba(255,255,255,0.96)"/>
     
-
-      <rect x="783.36" y="354.56399999999996" width="40.32000000000001" height="124.236" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
-      <rect x="789.408" y="369.47231999999997" width="28.224000000000007" height="17.393040000000003" rx="8" fill="rgba(255,255,255,0.8)"/>
+      <rect x="771.3599999999999" y="346.248" width="40.32000000000001" height="119.95200000000001" rx="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+      <rect x="778.6175999999999" y="365.44032" width="25.804800000000004" height="19.192320000000002" rx="8" fill="rgba(255,255,255,0.96)"/>
     
-
-      <rect x="843.84" y="281.4839999999999" width="40.32000000000001" height="197.316" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
-      <rect x="849.888" y="305.1619199999999" width="28.224000000000007" height="27.624240000000004" rx="8" fill="rgba(255,255,255,0.8)"/>
+      <rect x="831.8399999999999" y="268.63199999999995" width="40.32000000000001" height="197.568" rx="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+      <rect x="839.0975999999999" y="300.24287999999996" width="25.804800000000004" height="31.61088" rx="8" fill="rgba(255,255,255,0.96)"/>
     
-
-      <rect x="904.32" y="193.78799999999995" width="40.32000000000001" height="285.012" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
-      <rect x="910.368" y="227.98943999999995" width="28.224000000000007" height="39.901680000000006" rx="8" fill="rgba(239,69,35,0.88)"/>
+      <rect x="892.3199999999999" y="183.95999999999998" width="40.32000000000001" height="282.24" rx="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+      <rect x="899.5776" y="229.11839999999998" width="25.804800000000004" height="45.1584" rx="8" fill="rgba(239,69,35,0.92)"/>
     
-    <path d="M 716.16 413.02799999999996 C 769.9200000000001 383.79599999999994, 837.12 325.33199999999994, 951.36 186.48" stroke="rgba(239,69,35,0.92)" stroke-width="4" fill="none" stroke-linecap="round"/>
-  </g>
-  
-  <g>
-    <text x="80.4" y="88.2" fill="rgba(255,255,255,0.72)" font-size="16.8" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="0.12em">MOBILITY / TRUST</text>
-    <text x="80.4" y="214.20000000000002" fill="#FFFFFF" font-size="86.39999999999999" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="normal" font-weight="400" letter-spacing="-0.04em">Builder is</text>
-<text x="80.4" y="308.70000000000005" fill="#FFFFFF" font-size="86.39999999999999" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="normal" font-weight="400" letter-spacing="-0.04em">the only role</text>
-<text x="80.4" y="403.20000000000005" fill="#FFFFFF" font-size="86.39999999999999" font-family="Arapey, Georgia, 'Times New Roman', serif" font-style="italic" font-weight="400" letter-spacing="-0.04em">left.</text>
-    <text x="80.4" y="524.1600000000001" fill="#FFFFFF" opacity="0.96" font-size="33.6" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="700" letter-spacing="-0.02em">Prestige should move closer to the problem.</text>
-    <text x="80.4" y="577.71" fill="#FFFFFF" opacity="0.84" font-size="22.8" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-weight="500">
-      <tspan x="80.4" dy="0">The durable role is the one that closes loops directly.</tspan>
-    </text>
+    <path d="M 710.8799999999999 402.69599999999997 C 771.3599999999999 367.416, 838.56 310.968, 939.3599999999999 191.016" stroke="rgba(239,69,35,0.92)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <g filter="url(#fine-glow)"><circle cx="827.50" cy="346.18" r="1.61" fill="rgba(239,69,35,0.18)"/><circle cx="812.74" cy="399.71" r="1.05" fill="rgba(239,69,35,0.18)"/><circle cx="802.72" cy="363.58" r="2.44" fill="rgba(255,255,255,0.08)"/><circle cx="850.60" cy="282.62" r="2.95" fill="rgba(255,255,255,0.14)"/><circle cx="772.36" cy="459.90" r="1.17" fill="rgba(255,255,255,0.14)"/><circle cx="1019.82" cy="240.14" r="1.54" fill="rgba(255,255,255,0.14)"/><circle cx="950.52" cy="192.17" r="2.62" fill="rgba(255,255,255,0.08)"/><circle cx="978.47" cy="461.79" r="2.67" fill="rgba(255,255,255,0.08)"/><circle cx="947.27" cy="399.83" r="2.09" fill="rgba(255,255,255,0.08)"/><circle cx="999.59" cy="154.60" r="1.70" fill="rgba(239,69,35,0.18)"/><circle cx="996.76" cy="146.96" r="2.21" fill="rgba(255,255,255,0.08)"/><circle cx="727.46" cy="126.75" r="2.49" fill="rgba(255,255,255,0.14)"/><circle cx="807.00" cy="288.86" r="0.97" fill="rgba(239,69,35,0.18)"/><circle cx="950.97" cy="396.67" r="0.92" fill="rgba(255,255,255,0.14)"/><circle cx="739.20" cy="424.08" r="0.90" fill="rgba(239,69,35,0.18)"/><circle cx="992.66" cy="177.42" r="1.91" fill="rgba(239,69,35,0.18)"/><circle cx="983.81" cy="299.59" r="2.55" fill="rgba(239,69,35,0.18)"/><circle cx="747.38" cy="141.88" r="0.95" fill="rgba(239,69,35,0.18)"/></g>
   </g>
 </svg>

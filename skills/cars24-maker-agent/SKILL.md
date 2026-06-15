@@ -5,10 +5,10 @@ description: Use when creating Cars24 content in the Maker workflow: write-up on
 
 # Cars24 Maker Agent
 
-This is the Codex-side wrapper for the Maker Agent that already exists in the Claude setup at:
+This is the Codex-side wrapper for the standalone Maker repo at:
 
-- `/Users/vikram/Desktop/maker-agent-v1/2_Agents/2_Codex Agents/maker-agent.md`
-- `/Users/vikram/Desktop/maker-agent-v1/3_Skills/2_Codex Skills/maker-skill.md`
+- `/Users/vikram/Documents/maker-agent-v2/2_Agents/2_Codex Agents/maker-agent.md`
+- `/Users/vikram/Documents/maker-agent-v2/3_Skills/2_Codex Skills/maker-skill.md`
 
 ## When to use
 
@@ -22,10 +22,10 @@ Use this skill when the user wants Cars24 creative work in any of these forms:
 
 Read these source files in order:
 
-1. `/Users/vikram/Desktop/maker-agent-v1/3_Skills/2_Codex Skills/maker-skill.md`
-2. `/Users/vikram/Desktop/maker-agent-v1/2_Agents/2_Codex Agents/maker-agent.md`
-3. `/Users/vikram/Desktop/maker-agent-v1/3_Skills/2_Codex Skills/founder-voice-skill.md` when founder-led copy is needed
-4. `/Users/vikram/Desktop/maker-agent-v1/3_Skills/2_Codex Skills/creative-direction.md` before any image brief or visual output
+1. `/Users/vikram/Documents/maker-agent-v2/3_Skills/2_Codex Skills/maker-skill.md`
+2. `/Users/vikram/Documents/maker-agent-v2/2_Agents/2_Codex Agents/maker-agent.md`
+3. `/Users/vikram/Documents/maker-agent-v2/3_Skills/2_Codex Skills/founder-voice-skill.md` when founder-led copy is needed
+4. `/Users/vikram/Documents/maker-agent-v2/3_Skills/2_Codex Skills/creative-direction.md` before any image brief or visual output
 
 ## Core behavior
 

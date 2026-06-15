@@ -1,36 +1,49 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <defs>
-    <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F5EBDD"/>
-      <stop offset="1" stop-color="#E8D8C3"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#F2EDFF"/>
+      <stop offset="46%" stop-color="#E9E2FF"/>
+      <stop offset="100%" stop-color="#DDD2FF"/>
     </linearGradient>
-    <linearGradient id="arc" x1="280" y1="402" x2="918" y2="402" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#174B5A"/>
-      <stop offset="1" stop-color="#B85C36"/>
-    </linearGradient>
+    <radialGradient id="glow-left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(168.00000000000003 63) rotate(38) scale(408.00000000000006 315)">
+      <stop offset="0%" stop-color="rgba(71,54,254,0.92)" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="rgba(71,54,254,0.92)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-right" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1008 403.2) rotate(210) scale(288 214.20000000000002)">
+      <stop offset="0%" stop-color="rgba(239,69,35,0.9)" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="rgba(239,69,35,0.9)" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="fine-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.88" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1008" cy="118" r="120" fill="#F8F1E6" opacity="0.88"/>
-  <path d="M0 458C68 430 146 416 234 420C318 424 372 452 434 472V630H0V458Z" fill="#172029"/>
-  <path d="M742 474C836 434 920 414 994 418C1086 424 1154 458 1200 490V630H742V474Z" fill="#172029"/>
-  <path d="M283 404C390 335 491 286 601 286C709 286 810 336 918 404" stroke="url(#arc)" stroke-width="16" stroke-linecap="round"/>
-  <path d="M313 410L335 386" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M373 372L391 348" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M441 336L457 312" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M516 309L527 284" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M598 300V275" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M680 308L691 283" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M754 334L770 311" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M822 371L841 347" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <path d="M884 410L906 386" stroke="#172029" stroke-width="10" stroke-linecap="round"/>
-  <rect x="732" y="333" width="70" height="22" rx="11" fill="#172029"/>
-  <rect x="744" y="320" width="30" height="16" rx="5" fill="#172029"/>
-  <circle cx="752" cy="357" r="10" fill="#E8D8C3" stroke="#172029" stroke-width="6"/>
-  <circle cx="784" cy="357" r="10" fill="#E8D8C3" stroke="#172029" stroke-width="6"/>
-  <path d="M109 89H249" stroke="#174B5A" stroke-width="5" stroke-linecap="round"/>
-  <path d="M109 103H229" stroke="#B85C36" stroke-width="5" stroke-linecap="round"/>
-  <text x="109" y="184" fill="#172029" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="-1.2">
-    <tspan x="109" dy="0">Used-Car Ownership</tspan>
-    <tspan x="109" dy="68">Is a Lending Problem</tspan>
-  </text>
+  <rect width="1200" height="630" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow-left)"/>
+  <rect width="1200" height="630" fill="url(#glow-right)"/>
+  
+  <ellipse cx="983.9999999999999" cy="138.6" rx="216" ry="126" fill="rgba(71,54,254,0.18)"/>
+  <ellipse cx="180" cy="516.6" rx="192" ry="113.39999999999999" fill="rgba(239,69,35,0.18)"/>
+  <rect x="90" y="53.550000000000004" width="132" height="6.3" rx="2" fill="rgba(255,255,255,0.96)"/>
+  <rect x="1008" y="557.55" width="96" height="6.3" rx="2" fill="rgba(239,69,35,0.9)"/>
+  <g><line x1="72" y1="50.4" x2="72" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="204" y1="50.4" x2="204" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="336" y1="50.4" x2="336" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="468" y1="50.4" x2="468" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="600" y1="50.4" x2="600" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="732" y1="50.4" x2="732" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="864" y1="50.4" x2="864" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="996" y1="50.4" x2="996" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="1128" y1="50.4" x2="1128" y2="579.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="60" y1="63" x2="1140" y2="63" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="60" y1="163.8" x2="1140" y2="163.8" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="60" y1="264.6" x2="1140" y2="264.6" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="60" y1="365.4" x2="1140" y2="365.4" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="60" y1="466.2" x2="1140" y2="466.2" stroke="rgba(71,54,254,0.08)" stroke-width="1"/><line x1="60" y1="567" x2="1140" y2="567" stroke="rgba(71,54,254,0.08)" stroke-width="1"/></g>
+  <g><rect x="672.0000000000001" y="88.2" width="360" height="390.6" rx="22" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.22)" stroke-width="1.368"/><rect x="679.2000000000002" y="158.508" width="64.8" height="46.872" rx="12" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.22)" stroke-width="1.2"/><rect x="895.2" y="158.508" width="64.8" height="46.872" rx="12" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.22)" stroke-width="1.2"/><path d="M 744.0000000000001 181.94400000000002 C 780.0000000000001 181.94400000000002, 794.4000000000001 252.252, 819.6000000000001 252.252" stroke="rgba(71,54,254,0.92)" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M 884.4000000000001 252.252 C 909.6000000000001 252.252, 916.8000000000002 181.94400000000002, 895.2 181.94400000000002" stroke="rgba(71,54,254,0.92)" stroke-width="2.2" fill="none" stroke-linecap="round"/><rect x="679.2000000000002" y="244.44" width="64.8" height="46.872" rx="12" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.22)" stroke-width="1.2"/><rect x="895.2" y="244.44" width="64.8" height="46.872" rx="12" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.22)" stroke-width="1.2"/><path d="M 744.0000000000001 267.876 C 780.0000000000001 267.876, 794.4000000000001 252.252, 819.6000000000001 252.252" stroke="rgba(239,69,35,0.9)" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M 884.4000000000001 252.252 C 909.6000000000001 252.252, 916.8000000000002 267.876, 895.2 267.876" stroke="rgba(239,69,35,0.9)" stroke-width="2.2" fill="none" stroke-linecap="round"/><rect x="679.2000000000002" y="330.372" width="64.8" height="46.872" rx="12" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.22)" stroke-width="1.2"/><rect x="895.2" y="330.372" width="64.8" height="46.872" rx="12" fill="rgba(255,255,255,0.94)" stroke="rgba(71,54,254,0.22)" stroke-width="1.2"/><path d="M 744.0000000000001 353.808 C 780.0000000000001 353.808, 794.4000000000001 252.252, 819.6000000000001 252.252" stroke="rgba(71,54,254,0.92)" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M 884.4000000000001 252.252 C 909.6000000000001 252.252, 916.8000000000002 353.808, 895.2 353.808" stroke="rgba(71,54,254,0.92)" stroke-width="2.2" fill="none" stroke-linecap="round"/><g>
+    <rect x="758.4000000000001" y="205.38" width="122.4" height="85.932" rx="18" fill="rgba(255,255,255,0.96)" stroke="rgba(71,54,254,0.22)" stroke-width="1.44"/>
+    <rect x="775.5360000000001" y="217.41048" width="26.928" height="8.593200000000001" rx="5.15592" fill="rgba(71,54,254,0.18)"/>
+    <path d="M 785.3280000000001 253.50191999999998 C 792.6720000000001 241.47144, 804.912 234.59688, 814.7040000000001 234.59688 L 834.2880000000001 234.59688 C 846.5280000000001 234.59688, 858.768 243.19008, 866.1120000000001 253.50191999999998 L 866.1120000000001 256.93919999999997 L 785.3280000000001 256.93919999999997 Z" fill="none" stroke="rgba(71,54,254,0.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="800.0160000000001" cy="256.93919999999997" r="4.6" fill="rgba(71,54,254,0.92)"/>
+    <circle cx="848.9760000000001" cy="256.93919999999997" r="4.6" fill="rgba(71,54,254,0.92)"/>
+    <rect x="780.4320000000001" y="270.68832" width="78.336" height="6.874560000000001" rx="6" fill="rgba(239,69,35,0.9)"/>
+  </g><g filter="url(#fine-glow)"><circle cx="845.27" cy="241.90" r="2.44" fill="rgba(71,54,254,0.18)"/><circle cx="931.45" cy="442.85" r="0.96" fill="rgba(239,69,35,0.18)"/><circle cx="814.63" cy="241.28" r="2.38" fill="rgba(239,69,35,0.18)"/><circle cx="921.78" cy="205.14" r="1.61" fill="rgba(71,54,254,0.08)"/><circle cx="825.59" cy="240.07" r="2.14" fill="rgba(239,69,35,0.18)"/><circle cx="934.37" cy="368.48" r="1.29" fill="rgba(71,54,254,0.18)"/><circle cx="785.30" cy="407.37" r="1.40" fill="rgba(71,54,254,0.18)"/><circle cx="721.82" cy="312.35" r="1.47" fill="rgba(71,54,254,0.18)"/><circle cx="885.64" cy="383.89" r="2.54" fill="rgba(71,54,254,0.18)"/><circle cx="698.91" cy="208.85" r="1.18" fill="rgba(71,54,254,0.18)"/><circle cx="743.02" cy="283.56" r="2.63" fill="rgba(71,54,254,0.18)"/><circle cx="760.26" cy="449.14" r="1.47" fill="rgba(71,54,254,0.08)"/><circle cx="888.82" cy="218.79" r="1.70" fill="rgba(239,69,35,0.18)"/><circle cx="788.74" cy="434.79" r="2.18" fill="rgba(239,69,35,0.18)"/><circle cx="916.29" cy="461.78" r="2.00" fill="rgba(239,69,35,0.18)"/><circle cx="970.02" cy="243.70" r="1.97" fill="rgba(239,69,35,0.18)"/><circle cx="926.32" cy="443.32" r="2.04" fill="rgba(239,69,35,0.18)"/><circle cx="820.92" cy="412.70" r="1.53" fill="rgba(71,54,254,0.18)"/><circle cx="946.76" cy="404.52" r="1.47" fill="rgba(71,54,254,0.18)"/><circle cx="696.09" cy="387.05" r="1.64" fill="rgba(71,54,254,0.18)"/><circle cx="706.81" cy="164.36" r="2.86" fill="rgba(239,69,35,0.18)"/><circle cx="825.16" cy="110.91" r="1.42" fill="rgba(71,54,254,0.08)"/><circle cx="818.21" cy="389.74" r="2.20" fill="rgba(239,69,35,0.18)"/><circle cx="831.13" cy="98.77" r="0.83" fill="rgba(239,69,35,0.18)"/><circle cx="900.58" cy="388.24" r="1.22" fill="rgba(71,54,254,0.18)"/><circle cx="902.19" cy="234.21" r="1.67" fill="rgba(71,54,254,0.08)"/></g></g>
 </svg>

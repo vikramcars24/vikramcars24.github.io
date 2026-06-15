@@ -134,4 +134,11 @@ async function main() {
   console.log(`Saved visual QA screenshots to ${shotsDir}`);
 }
 
-await main();
+main()
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

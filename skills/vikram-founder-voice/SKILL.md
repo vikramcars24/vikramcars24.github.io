@@ -7,7 +7,7 @@ description: Use when writing or rewriting founder-led Cars24 content in Vikram 
 
 Source file:
 
-- `/Users/vikram/Desktop/maker-agent-v1/3_Skills/2_Codex Skills/founder-voice-skill.md`
+- `/Users/vikram/Documents/maker-agent-v2/3_Skills/2_Codex Skills/founder-voice-skill.md`
 
 ## When to use
 

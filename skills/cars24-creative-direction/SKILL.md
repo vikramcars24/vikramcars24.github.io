@@ -5,10 +5,10 @@ description: Use before generating any Cars24 image brief, creative concept, or 
 
 # Cars24 Creative Direction
 
-This skill points to the established creative-direction source of truth in the Maker bundle:
+This skill points to the established creative-direction source of truth in the standalone Maker repo:
 
-- Primary source: `/Users/vikram/Desktop/maker-agent-v1/1_References/CREATIVE-DIRECTION.md`
-- Codex mirror: `/Users/vikram/Desktop/maker-agent-v1/3_Skills/2_Codex Skills/creative-direction.md`
+- Primary source: `/Users/vikram/Documents/maker-agent-v2/1_References/CREATIVE-DIRECTION.md`
+- Codex mirror: `/Users/vikram/Documents/maker-agent-v2/3_Skills/2_Codex Skills/creative-direction.md`
 
 ## When to use
 
@@ -24,7 +24,7 @@ Use this before:
 
 Start with:
 
-1. `/Users/vikram/Desktop/maker-agent-v1/1_References/CREATIVE-DIRECTION.md`
+1. `/Users/vikram/Documents/maker-agent-v2/1_References/CREATIVE-DIRECTION.md`
 
 Then load only the specific supporting references you need from the same bundle, such as:
 

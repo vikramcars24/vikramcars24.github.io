@@ -1,43 +1,44 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
   <defs>
-    <linearGradient id="bg" x1="70" y1="24" x2="1116" y2="604" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5A4DFF"/>
-      <stop offset="0.46" stop-color="#4839FE"/>
-      <stop offset="1" stop-color="#241A7D"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#090E24"/>
+      <stop offset="55%" stop-color="#131C48"/>
+      <stop offset="100%" stop-color="#201E69"/>
     </linearGradient>
-    <radialGradient id="glowLeft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(222 114) rotate(38) scale(376 244)">
-      <stop stop-color="#FFFFFF" stop-opacity="0.7"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    <radialGradient id="bloom" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(864 277.2) rotate(180) scale(336.00000000000006 214.20000000000002)">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(972 410) rotate(216) scale(284 212)">
-      <stop stop-color="#EF4523" stop-opacity="0.42"/>
-      <stop offset="1" stop-color="#EF4523" stop-opacity="0"/>
-    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
   </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#bloom)"/>
+  <ellipse cx="216" cy="491.40000000000003" rx="192" ry="138.6" fill="#EF4523" opacity="0.08"/>
+  <ellipse cx="1008" cy="126" rx="216" ry="151.2" fill="#6A5BFF" opacity="0.11"/>
 
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#glowLeft)" opacity="0.18"/>
-  <rect width="1200" height="630" fill="url(#glowRight)" opacity="0.22"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 672.0000000000001 403.2 C 792 302.4, 900 277.2, 1032 327.6" stroke="#FFFFFF" stroke-opacity="0.72" stroke-width="3.6"/>
+    <path d="M 696 434.7 C 804 365.4, 900 352.8, 1044 415.8" stroke="#6B5BFF" stroke-opacity="0.9" stroke-width="4.08"/>
+    <path d="M 648 466.2 C 792 466.2, 900 441, 1056 504" stroke="#EF4523" stroke-opacity="0.95" stroke-width="4.08" stroke-dasharray="16 10"/>
 
-  <ellipse cx="968" cy="136" rx="170" ry="98" fill="#FFFFFF" opacity="0.05"/>
-  <ellipse cx="220" cy="514" rx="214" ry="120" fill="#FFFFFF" opacity="0.035"/>
+    <circle cx="816.0000000000001" cy="302.4" r="8" fill="#FFFFFF"/>
+    <circle cx="936" cy="277.2" r="8" fill="#FFFFFF"/>
+    <circle cx="1008" cy="327.6" r="8" fill="#FFFFFF"/>
 
-  <rect x="86" y="56" width="104" height="6" rx="3" fill="#FFFFFF" opacity="0.9"/>
-  <rect x="1012" y="564" width="86" height="6" rx="3" fill="#EF4523" opacity="0.88"/>
+    <circle cx="768" cy="390.6" r="7" fill="#6B5BFF"/>
+    <circle cx="936" cy="352.8" r="7" fill="#6B5BFF"/>
+    <circle cx="1032" cy="415.8" r="7" fill="#6B5BFF"/>
 
-  <path d="M758 332C832 294 902 280 978 288C1056 296 1112 330 1150 392" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="3" stroke-linecap="round"/>
-  <path d="M842 290L936 270L1042 302L1120 388" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="842" cy="290" r="8" fill="#FFFFFF" opacity="0.9"/>
-  <circle cx="936" cy="270" r="8" fill="#FFFFFF" opacity="0.9"/>
-  <circle cx="1042" cy="302" r="8" fill="#FFFFFF" opacity="0.9"/>
-  <circle cx="1120" cy="388" r="10" fill="#EF4523" opacity="0.96"/>
+    <circle cx="840" cy="466.2" r="8" fill="#EF4523"/>
+    <circle cx="996" cy="441" r="8" fill="#EF4523"/>
+    <circle cx="1092" cy="510.3" r="8" fill="#EF4523"/>
+  </g>
 
-  <text x="86" y="110" fill="#FFFFFF" opacity="0.68" font-family="'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0.18em">ESSAYS</text>
-  <text x="86" y="230" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="92" letter-spacing="-1.8">
-    <tspan x="86" dy="0">Vikram Chopra</tspan>
-  </text>
-  <text x="86" y="334" fill="#FFFFFF" opacity="0.96" font-family="'Helvetica Neue', Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="-0.3">
-    <tspan x="86" dy="0">I write to think.</tspan>
-    <tspan x="86" dy="40">I publish to be argued with.</tspan>
-  </text>
+  <circle cx="672.0000000000001" cy="403.2" r="12" fill="#FFFFFF"/>
+  <circle cx="672.0000000000001" cy="403.2" r="32.4" fill="#FFFFFF" opacity="0.12" filter="url(#soft)"/>
+  <rect x="72" y="50.4" width="108" height="7.5600000000000005" rx="3" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="1008" y="554.4" width="96" height="7.5600000000000005" rx="3" fill="#EF4523" opacity="0.95"/>
 </svg>
