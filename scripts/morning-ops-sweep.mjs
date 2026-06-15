@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { getSlackToken, openDirectMessage, postMessage } from "./lib/slack-client.mjs";
+import { getGoogleAccessToken as getSharedGoogleAccessToken, GOOGLE_SCOPE_SETS } from "./lib/google-auth.mjs";
 
 const rootDir = process.cwd();
 const reportDir = path.join(rootDir, "tmp");
@@ -514,46 +515,14 @@ function findHeader(headers = [], name) {
 }
 
 async function getGoogleAccessToken() {
-  const directToken = (process.env.GOOGLE_GMAIL_ACCESS_TOKEN || "").trim();
-  if (directToken) {
-    return directToken;
-  }
-
-  const refreshToken = (process.env.GOOGLE_OAUTH_REFRESH_TOKEN || "").trim();
-  const clientJson = (process.env.GOOGLE_OAUTH_CLIENT_JSON || "").trim();
-  if (!refreshToken || !clientJson) {
-    return "";
-  }
-
-  const client = JSON.parse(clientJson);
-  const source = client.installed || client.web || client;
-  const clientId = source.client_id;
-  const clientSecret = source.client_secret;
-  const tokenUri = source.token_uri || "https://oauth2.googleapis.com/token";
-
-  if (!clientId || !clientSecret) {
-    throw new Error("GOOGLE_OAUTH_CLIENT_JSON is missing client_id or client_secret.");
-  }
-
-  const response = await fetch(tokenUri, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: new URLSearchParams({
-      client_id: clientId,
-      client_secret: clientSecret,
-      refresh_token: refreshToken,
-      grant_type: "refresh_token"
-    })
+  return getSharedGoogleAccessToken({
+    profiles: [
+      process.env.GOOGLE_GMAIL_PROFILE || "work",
+      process.env.GOOGLE_GMAIL_FALLBACK_PROFILE || ""
+    ],
+    requiredScopes: GOOGLE_SCOPE_SETS.gmailOps,
+    directAccessTokenEnv: "GOOGLE_GMAIL_ACCESS_TOKEN"
   });
-
-  const payload = await response.json();
-  if (!response.ok || !payload.access_token) {
-    throw new Error(payload.error_description || payload.error || `Google token exchange failed: HTTP ${response.status}`);
-  }
-
-  return payload.access_token;
 }
 
 function skippedGmail(message) {

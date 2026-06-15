@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { getGoogleAccessToken as getSharedGoogleAccessToken, GOOGLE_SCOPE_SETS } from "./lib/google-auth.mjs";
 
 const rootDir = process.cwd();
 const sitePath = (...parts) => path.join(rootDir, ...parts);
@@ -362,6 +363,17 @@ async function querySearchConsole(siteUrl, token, body) {
 }
 
 async function getGoogleAccessToken() {
+  const sharedToken = await getSharedGoogleAccessToken({
+    profiles: [
+      process.env.GOOGLE_SEARCH_CONSOLE_PROFILE || "personal",
+      process.env.GOOGLE_SEARCH_CONSOLE_FALLBACK_PROFILE || "work"
+    ],
+    requiredScopes: GOOGLE_SCOPE_SETS.searchConsole
+  });
+  if (sharedToken) {
+    return sharedToken;
+  }
+
   const oauthClientJson = process.env.GOOGLE_OAUTH_CLIENT_JSON || "";
   const oauthRefreshToken = process.env.GOOGLE_OAUTH_REFRESH_TOKEN || "";
   if (oauthClientJson && oauthRefreshToken) {

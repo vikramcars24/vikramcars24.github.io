@@ -100,3 +100,4 @@ GitHub and site email is part of the operational control plane for this repo.
   - `Ops/Resolved`
 - Prefer Gmail-side filters for repeat CI noise instead of making GitHub Actions mutate inbox state.
 - Keep a local machine-side sweep installed so repo health still gets checked if hosted Gmail cleanup is degraded.
+- Reusable Google OAuth lives in the shared registry at `~/.codex/google-auth/profiles.json` with named `personal` and `work` profiles. Prefer that service over ad hoc `token.json` handling, and only re-auth when a required scope is missing.
