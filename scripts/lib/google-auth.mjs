@@ -3,7 +3,7 @@ import path from "node:path";
 import { promises as fs } from "node:fs";
 
 const homeDir = os.homedir();
-const defaultRegistryFile = path.join(homeDir, ".codex", "google-auth", "profiles.json");
+const defaultRegistryFile = path.join(homeDir, ".ai-ops", "google-auth", "profiles.json");
 const legacyProfileFiles = {
   work: path.join(homeDir, "token.json"),
   personal: path.join(homeDir, "token_personal.json")

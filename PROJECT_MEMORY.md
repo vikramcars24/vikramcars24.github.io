@@ -39,7 +39,7 @@
 - Added a real `Morning Ops Sweep` automation path so GitHub/site triage is not purely manual or prompt-driven.
 - Switched the hosted morning sweep to filter-managed inbox mode and added a local LaunchAgent sweep on the Mac as a second control plane.
 - Upgraded the local Gmail OAuth token for `vikram@cars24.com` to include `gmail.settings.basic`, created the `Ops/GitHub/CI` label and auto-archive filter for GitHub CI mail, and marked the lingering unread Site Ops failure mail as read.
-- Promoted Google OAuth into a shared local service with named `personal` and `work` profiles under `~/.codex/google-auth`, upgraded the personal profile to the wider workspace scope bundle, and pointed repo scripts at profile-based resolution.
+- Promoted Google OAuth into a shared local service with named `personal` and `work` profiles under `~/.ai-ops/google-auth`, upgraded the personal profile to the wider workspace scope bundle, and pointed repo scripts at profile-based resolution.
 
 ## Next Run
 
@@ -52,7 +52,7 @@
 - If Gmail cleanup falls back to skipped inside automation, the blocker is credential scope, not missing sweep logic.
 - The repo-side default is now `GMAIL_SWEEP_MODE=filter`; runner auth should not be relied on for Gmail mutation.
 - The live Gmail filter query for GitHub CI mail is `(from:notifications@github.com OR from:noreply@github.com) cc:ci_activity@noreply.github.com "vikramcars24.github.io"`.
-- The canonical Google auth entrypoint is `~/bin/google-auth-service`; use `status`, `assert`, `email`, or `access-token` instead of creating new token files.
+- The canonical Google auth entrypoint is `~/bin/google-auth-service`; use `status`, `assert`, `email`, or `access-token` instead of creating new token files. The service state lives in `~/.ai-ops/google-auth`, not in any repo.
 - If homepage or essay layout changes, run `npm run qa:visual` before push.
 - Keep `PROJECT_MEMORY.md` current after any production-impacting fix.
 - For any GitHub/site incident, treat the mandatory closure checklist as:
