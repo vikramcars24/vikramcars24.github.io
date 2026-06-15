@@ -12,3 +12,18 @@ scripts/unipile-whatsapp-connect.mjs
 scripts/unipile-whatsapp-read.mjs
 .slack-token
 .slack-token.sh
+
+# Finder/iCloud-style duplicate publish artifacts are never source of truth.
+.nojekyll 2
+CNAME 2
+_headers 2
+_redirects 2
+llms 2.txt
+robots 2.txt
+sitemap 2.xml
+archive/index 2.html
+subscribe/index 2.html
+media/* 2
+media/* 2.*
+media/* 3
+media/* 3.*
