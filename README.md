@@ -122,7 +122,7 @@ Set your UniPile API key, then run:
 UNIPILE_API_KEY=your_api_key npm run whatsapp:connect
 ```
 
-If `/Users/vikram/Desktop/unipile/.env` already exists, the script will reuse that UniPile setup automatically.
+If `/Users/vikram/Documents/unipile/.env` already exists, the script will reuse that UniPile setup automatically.
 If a WhatsApp account is already linked in UniPile, the script will print the existing `account_id` instead of starting a new QR flow.
 
 Optional environment variables:
