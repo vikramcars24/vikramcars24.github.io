@@ -5,6 +5,7 @@ node_modules/
 notes/
 qa-screens/
 tmp/
+error.log
 scripts/render-flatland-pdf.mjs
 scripts/slack-download-file.mjs
 scripts/unipile-utils.mjs
