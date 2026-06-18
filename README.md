@@ -1,4 +1,4 @@
-# Vikram Writing Site
+# Vikram Chopra
 
 A minimal essay site inspired by the clean, text-first feel of [darioamodei.com](https://www.darioamodei.com/).
 

@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -euo pipefail
 
-REPO_DIR="/Users/vikram/Documents/New project 4"
+REPO_DIR="/Users/vikram/Documents/vikramchopra"
 LOG_DIR="$HOME/Library/Logs"
 
 mkdir -p "$LOG_DIR"

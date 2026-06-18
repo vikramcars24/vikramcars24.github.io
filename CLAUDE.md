@@ -1,4 +1,4 @@
-# Vikram Writing Site Operator Guide
+# Vikram Chopra Operator Guide
 
 This file is the repo-local operating contract for any coding agent working on `vikramchopra.in`.
 

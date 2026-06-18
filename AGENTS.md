@@ -1,4 +1,4 @@
-# Vikram Writing Site
+# Vikram Chopra
 
 For any change that touches website output or discoverability, run the full publish-and-SEO pass before calling the work done.
 
