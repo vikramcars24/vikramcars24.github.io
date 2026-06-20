@@ -14,11 +14,7 @@
     "audience:report": "node scripts/audience-dashboard.mjs",
     "slack:dashboard": "node scripts/slack-dashboard.mjs",
     "flatland:pdf": "node scripts/render-flatland-pdf.mjs",
-    "slack:api": "node scripts/slack-api.mjs",
-    "slack:download": "node scripts/slack-download-file.mjs",
     "google:auth:status": "~/bin/google-auth-service status",
-    "whatsapp:connect": "node scripts/unipile-whatsapp-connect.mjs",
-    "whatsapp:read": "node scripts/unipile-whatsapp-read.mjs",
     "serve": "python3 -m http.server 4321 -d dist",
     "preview": "npm run build && npm run serve"
   },

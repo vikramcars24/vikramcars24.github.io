@@ -79,72 +79,23 @@ This repo also includes a lightweight monthly site report that is sent to Slack 
 - Configure `SLACK_TOKEN` as a GitHub Actions secret
 - Configure `SLACK_REPORT_DM_USER` as a GitHub Actions variable or secret
 
-## Slack file download
+## Shared integrations
 
-If a source PDF or attachment is stuck behind Slack connector permissions, you can fetch it directly with a Slack API token that has `files:read`.
+This repo is not the home for generic integrations like UniPile / WhatsApp.
 
-```bash
-SLACK_TOKEN=xoxp-or-xoxb npm run slack:download -- https://cars24.slack.com/files/U054KL2NR/F0B5ZEB6S92/flatland.pdf
-```
+- Keep site-owned Slack automation here when it is directly about this site's monitoring or reporting.
+- Keep reusable cross-repo integrations in `~/Agent-Ops`.
 
-That saves the file into `downloads/` by default. You can also pass a raw Slack file ID and optionally override the destination:
-
-```bash
-SLACK_TOKEN=xoxp-or-xoxb npm run slack:download -- F0B5ZEB6S92 --out downloads/flatland.pdf
-```
-
-For broader Slack API access using your own app token, use the local helper:
+For generic Slack API access or Slack file downloads, use:
 
 ```bash
-SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- channel C0GUPESGJ --limit 5
-SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- thread C0GUPESGJ 1768793402.113289
-SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- file-info F0B8ZMQBFQA
-SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- download F0B8ZMQBFQA --out downloads/maker-agent-v2.zip
-SLACK_TOKEN=xoxp-or-xoxb npm run slack:api -- user U054KL2NR
+node ~/Agent-Ops/scripts/slack-api.mjs channel C0GUPESGJ --limit 5
+node ~/Agent-Ops/scripts/slack-download-file.mjs F0B5ZEB6S92 --out downloads/flatland.pdf
 ```
 
-To avoid exporting the token every time, create a local file in the repo root that is not committed:
+For UniPile / WhatsApp, use:
 
 ```bash
-printf "SLACK_TOKEN='xoxp-...'\n" > ".slack-token"
-chmod 600 ".slack-token"
+node ~/Agent-Ops/scripts/unipile-whatsapp-connect.mjs
+node ~/Agent-Ops/scripts/unipile-whatsapp-read.mjs
 ```
-
-After that, `npm run slack:api -- ...` will pick it up automatically from the project root.
-
-## UniPile WhatsApp connection
-
-This repo now includes a small helper to create a UniPile Hosted Auth link for WhatsApp.
-
-Set your UniPile API key, then run:
-
-```bash
-UNIPILE_API_KEY=your_api_key npm run whatsapp:connect
-```
-
-If `/Users/vikram/Documents/unipile/.env` already exists, the script will reuse that UniPile setup automatically.
-If a WhatsApp account is already linked in UniPile, the script will print the existing `account_id` instead of starting a new QR flow.
-
-Optional environment variables:
-
-- `UNIPILE_REDIRECT_URI`: defaults to `http://127.0.0.1:8787/unipile/callback`
-- `UNIPILE_LINK_EXPIRES_MINUTES`: defaults to `10`
-- `UNIPILE_AUTH_DOMAIN`: optional custom Hosted Auth domain such as `auth.yourapp.com`
-- `UNIPILE_WAIT_FOR_SYNC`: set to `true` to wait for initial sync before redirecting
-
-The script will print a UniPile auth URL. Open it, choose WhatsApp, then scan the QR code from your phone. If you keep the default redirect URI, the script also starts a small local callback server and prints the linked `account_id` after UniPile redirects back.
-
-## UniPile WhatsApp reading
-
-To list recent WhatsApp chats and show messages from the latest chat:
-
-```bash
-npm run whatsapp:read
-```
-
-Optional usage:
-
-- `npm run whatsapp:read -- t8GNEog8SGKQNKKmFOQHcQ`
-- `npm run whatsapp:read -- --chats 10 --messages 50`
-
-The script reuses the same env fallback order as `whatsapp:connect`, auto-detects the first linked WhatsApp account if you do not pass an `account_id`, and prints recent chats plus message text from the newest chat.

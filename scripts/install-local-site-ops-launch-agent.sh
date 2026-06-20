@@ -3,7 +3,8 @@ set -euo pipefail
 
 LABEL="com.vikram.site-ops-sweep"
 PLIST_PATH="$HOME/Library/LaunchAgents/${LABEL}.plist"
-SCRIPT_PATH="/Users/vikram/Documents/vikramchopra/scripts/run-local-ops-sweep.sh"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_PATH="${SCRIPT_DIR}/run-local-ops-sweep.sh"
 WRAPPER_PATH="$HOME/bin/site-ops-sweep.sh"
 LOG_DIR="$HOME/Library/Logs"
 

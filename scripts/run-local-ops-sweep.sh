@@ -1,7 +1,8 @@
 #!/bin/zsh
 set -euo pipefail
 
-REPO_DIR="/Users/vikram/Documents/vikramchopra"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 LOG_DIR="$HOME/Library/Logs"
 
 mkdir -p "$LOG_DIR"
@@ -19,4 +20,4 @@ if [[ -z "${GITHUB_TOKEN:-}" ]]; then
   export GITHUB_TOKEN
 fi
 
-/usr/bin/env node scripts/morning-ops-sweep.mjs >> "$LOG_DIR/site-ops-sweep.log" 2>> "$LOG_DIR/site-ops-sweep.err"
+/usr/bin/env node "${SCRIPT_DIR}/morning-ops-sweep.mjs" >> "$LOG_DIR/site-ops-sweep.log" 2>> "$LOG_DIR/site-ops-sweep.err"
