@@ -75,19 +75,56 @@ const START_HERE_SLUGS = [
 const CULTURE_DOCUMENTS = [
   {
     id: "flatland",
+    slug: "flatland",
     title: "Flatland",
     meta: "Culture book - 33 pages",
     href: "/media/docs/flatland.pdf",
     cover: "/media/docs/flatland-cover-01.png",
+    sourceFile: "flatland.en.txt",
+    translationFile: "flatland.md",
     description: "An operating note for a flatter, faster Cars24: builder ownership, open information, AI-native work, and clarity over hierarchy."
   },
   {
     id: "values",
+    slug: "values",
     title: "Our Values",
     meta: "Culture book - 22 pages",
     href: "/media/docs/cars24-values.pdf",
     cover: "/media/docs/values-cover-01.png",
+    sourceFile: "cars24-values.en.txt",
+    translationFile: "cars24-values.md",
     description: "Five values for how Cars24 works: customer love, ownership, truth, high standards, and becoming better humans through work."
+  }
+];
+
+const CULTURE_LANGUAGES = [
+  {
+    code: "en",
+    htmlLang: "en",
+    label: "English",
+    nativeLabel: "English",
+    homePath: "/",
+    readerNote: "Original English"
+  },
+  {
+    code: "hi",
+    htmlLang: "hi",
+    label: "Hindi",
+    nativeLabel: "हिन्दी",
+    homePath: "/hi/",
+    readerNote: "Claude translated",
+    landingTitle: "हिन्दी reader",
+    landingDek: "Flatland और Cars24 Values को हिन्दी में पढ़ें. ये pages Claude से tone-preserving translation के रूप में बनाए गए हैं, literal browser translation नहीं."
+  },
+  {
+    code: "mr",
+    htmlLang: "mr",
+    label: "Marathi",
+    nativeLabel: "मराठी",
+    homePath: "/mr/",
+    readerNote: "Claude translated",
+    landingTitle: "मराठी reader",
+    landingDek: "Flatland आणि Cars24 Values मराठीत वाचा. हे pages Claude ने message आणि tone जपत तयार केले आहेत; literal browser translation नाही."
   }
 ];
 
@@ -98,6 +135,7 @@ async function main() {
   const mediaDir = path.join(assetsDir, "media");
   const essayCollections = buildEssayCollections(posts);
   const collectionBySlug = buildCollectionBySlug(essayCollections);
+  const cultureDocuments = await loadCultureDocuments();
 
   posts.sort((left, right) => right.date.localeCompare(left.date));
 
@@ -105,15 +143,30 @@ async function main() {
   await ensureDir(path.join(distDir, "archive"));
   await ensureDir(path.join(distDir, "posts"));
   await ensureDir(path.join(distDir, "subscribe"));
+  await ensureDir(path.join(distDir, "culture"));
   await fs.copyFile(path.join(assetsDir, "styles.css"), path.join(distDir, "styles.css"));
   await fs.copyFile(path.join(assetsDir, "favicon.svg"), path.join(distDir, "favicon.svg"));
   await copyDirectoryIfPresent(mediaDir, path.join(distDir, "media"));
   await copyVerificationFiles();
 
-  await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts, essayCollections), "utf8");
+  await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts, essayCollections, cultureDocuments), "utf8");
   await fs.writeFile(path.join(distDir, "archive", "index.html"), renderArchive(site, essayCollections), "utf8");
   await fs.writeFile(path.join(distDir, "subscribe", "index.html"), renderSubscribePage(site), "utf8");
   await fs.writeFile(path.join(distDir, "404.html"), renderNotFound(site), "utf8");
+
+  for (const language of CULTURE_LANGUAGES.filter((entry) => entry.code !== "en")) {
+    const languageDir = path.join(distDir, language.code);
+    await ensureDir(languageDir);
+    await fs.writeFile(path.join(languageDir, "index.html"), renderCultureLanguageHome(site, cultureDocuments, language), "utf8");
+  }
+
+  for (const doc of cultureDocuments) {
+    for (const version of doc.versions) {
+      const docDir = path.join(distDir, version.pathName.replace(/^\/|\/$/g, ""));
+      await ensureDir(docDir);
+      await fs.writeFile(path.join(docDir, "index.html"), renderCultureDocumentPage(site, doc, version), "utf8");
+    }
+  }
 
   for (const post of posts) {
     const postDir = path.join(distDir, "posts", post.slug);
@@ -132,9 +185,9 @@ async function main() {
   }
 
   await fs.writeFile(path.join(distDir, "rss.xml"), renderRss(site, posts), "utf8");
-  await fs.writeFile(path.join(distDir, "sitemap.xml"), renderSitemap(site, posts), "utf8");
+  await fs.writeFile(path.join(distDir, "sitemap.xml"), renderSitemap(site, posts, cultureDocuments), "utf8");
   await fs.writeFile(path.join(distDir, "robots.txt"), renderRobots(site), "utf8");
-  await fs.writeFile(path.join(distDir, "llms.txt"), renderLlmsTxt(site, essayCollections), "utf8");
+  await fs.writeFile(path.join(distDir, "llms.txt"), renderLlmsTxt(site, essayCollections, cultureDocuments), "utf8");
   await fs.writeFile(path.join(distDir, "_redirects"), renderRedirects(site), "utf8");
   await fs.writeFile(path.join(distDir, "_headers"), renderHeaders(), "utf8");
 
@@ -202,6 +255,80 @@ async function loadPosts(site) {
       };
     })
   );
+}
+
+async function loadCultureDocuments() {
+  return Promise.all(
+    CULTURE_DOCUMENTS.map(async (doc) => {
+      const englishSource = await fs.readFile(path.join(contentDir, "culture-docs", doc.sourceFile), "utf8");
+      const versions = [
+        {
+          language: CULTURE_LANGUAGES[0],
+          markdown: normalizeCultureSourceText(englishSource, doc),
+          pathName: `/culture/${doc.slug}/`
+        }
+      ];
+
+      for (const language of CULTURE_LANGUAGES.slice(1)) {
+        const translationPath = path.join(contentDir, "culture-docs", "translations", language.code, doc.translationFile);
+        try {
+          const markdown = await fs.readFile(translationPath, "utf8");
+          versions.push({
+            language,
+            markdown,
+            pathName: `/${language.code}/culture/${doc.slug}/`
+          });
+        } catch {
+          // Missing translations are simply not exposed.
+        }
+      }
+
+      return {
+        ...doc,
+        versions
+      };
+    })
+  );
+}
+
+function normalizeCultureSourceText(source, doc) {
+  const lines = String(source || "")
+    .replace(/\r/g, "")
+    .replace(/\f/g, "\n\n")
+    .split("\n")
+    .map((line) => line.trimEnd())
+    .filter((line) => {
+      const trimmed = line.trim();
+      if (!trimmed) {
+        return true;
+      }
+      return ![
+        /^CARS24\s*\/\s*2026\s*\/\s*FLATLAND/i,
+        /^CARS24\s+2026\s+FLATLAND/i,
+        /^CARS24\s+2026$/i,
+        /^@ CARS24$/i,
+        /^READ IN\b/i,
+        /^SCROLL TO BEGIN$/i,
+        /^LET.S BEGIN$/i,
+        /^PAGE\s+\d+$/i,
+        /^\d{1,2}$/
+      ].some((pattern) => pattern.test(trimmed));
+    });
+
+  const blocks = lines
+    .join("\n")
+    .split(/\n{2,}/)
+    .map((block) => block.trim().replace(/\n+/g, " "))
+    .filter(Boolean)
+    .filter((block) => block !== doc.title)
+    .map((block) => {
+      if (/^(PART|Part)\b/.test(block) || (block.length < 72 && !/[.!?।]$/.test(block))) {
+        return `## ${block}`;
+      }
+      return block;
+    });
+
+  return `# ${doc.title}\n\n${blocks.join("\n\n")}`;
 }
 
 function extractSourcesLine(body) {
@@ -443,7 +570,7 @@ function renderInline(text) {
   return output;
 }
 
-function renderHome(site, posts, essayCollections) {
+function renderHome(site, posts, essayCollections, cultureDocuments) {
   const featured = posts.find((post) => post.featured) || posts[0];
   const interviews = Array.isArray(site.interviews) ? site.interviews : [];
   const interviewSections = groupBy(interviews, (interview) => interview.section || "Interviews");
@@ -478,7 +605,7 @@ function renderHome(site, posts, essayCollections) {
           </section>
 
           ${renderLanguageModule(site)}
-          ${renderCultureDocuments(site)}
+          ${renderCultureDocuments(site, cultureDocuments)}
 
           <section class="home-writing">
             <div class="home-section-head">
@@ -709,15 +836,16 @@ function renderDocument({
   publishedDate = "",
   structuredData = null,
   socialTitle = "",
-  socialDescription = ""
+  socialDescription = "",
+  htmlLang = "en"
 }) {
   const canonical = absoluteUrl(site.domain, sitePath(site, pathName));
   const ogImage = imagePath ? absoluteUrl(site.domain, sitePath(site, imagePath)) : "";
   const metaTitle = socialTitle || title;
   const metaDescription = socialDescription || description;
 
-  return `<!doctype html>
-<html lang="en">
+  return stripTrailingWhitespace(`<!doctype html>
+<html lang="${escapeAttribute(htmlLang)}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -759,135 +887,20 @@ function renderDocument({
         }
       })();
     </script>
-    <script>
-      window.googleTranslateElementInit = function () {
-        if (!window.google || !window.google.translate || !document.getElementById("google_translate_element")) {
-          return;
-        }
-
-        new window.google.translate.TranslateElement({
-          pageLanguage: "en",
-          includedLanguages: "hi,mr,gu,bn,ta,te,kn,ml,pa,or",
-          autoDisplay: false
-        }, "google_translate_element");
-
-        window.dispatchEvent(new Event("google-translate-ready"));
-      };
-    </script>
-    <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <link rel="stylesheet" href="${sitePath(site, "/styles.css")}">
   </head>
   <body class="${escapeAttribute(bodyClass)}">
     ${content}
-    <div id="google_translate_element" class="google-translate-host" aria-hidden="true"></div>
     <button class="quote-copy-button" type="button" data-quote-copy hidden>Copy quote</button>
     <script>
       (() => {
         const storageKey = "vikram-theme";
-        const languageStorageKey = "vikram-language";
-        const googleLanguageCodes = new Set(["hi", "mr", "gu", "bn", "ta", "te", "kn", "ml", "pa", "or"]);
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
         const themeMeta = document.querySelector('meta[name="theme-color"]');
-        const languageSelects = Array.from(document.querySelectorAll("[data-language-select]"));
-        const hinglishNodes = Array.from(document.querySelectorAll("[data-hinglish]"));
-
-        for (const node of hinglishNodes) {
-          node.dataset.englishText = node.textContent;
-        }
-
-        const clearGoogleTranslateCookie = () => {
-          const hostParts = window.location.hostname.split(".");
-          const domains = ["", window.location.hostname];
-
-          if (hostParts.length > 1) {
-            domains.push("." + hostParts.slice(-2).join("."));
-          }
-
-          for (const domain of domains) {
-            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + (domain ? "; domain=" + domain : "");
-          }
-        };
-
-        const setGoogleTranslateCookie = (code) => {
-          clearGoogleTranslateCookie();
-          if (!googleLanguageCodes.has(code)) {
-            return;
-          }
-          document.cookie = "googtrans=/en/" + code + "; path=/";
-        };
-
-        const syncLanguageSelects = (code) => {
-          for (const select of languageSelects) {
-            select.value = code;
-          }
-        };
-
-        const applyHinglish = (active) => {
-          document.body.dataset.language = active ? "hinglish" : "";
-          for (const node of hinglishNodes) {
-            node.textContent = active ? node.dataset.hinglish : node.dataset.englishText;
-          }
-        };
-
-        const applyLanguage = (code, reloadForGoogle = false) => {
-          const normalizedCode = code || "en";
-          localStorage.setItem(languageStorageKey, normalizedCode);
-          syncLanguageSelects(normalizedCode);
-
-          if (normalizedCode === "hinglish") {
-            clearGoogleTranslateCookie();
-            applyHinglish(true);
-            return;
-          }
-
-          applyHinglish(false);
-
-          if (normalizedCode === "en") {
-            clearGoogleTranslateCookie();
-            if (reloadForGoogle) {
-              window.location.reload();
-            }
-            return;
-          }
-
-          if (!googleLanguageCodes.has(normalizedCode)) {
-            return;
-          }
-
-          setGoogleTranslateCookie(normalizedCode);
-          const googleSelect = document.querySelector(".goog-te-combo");
-          if (googleSelect) {
-            googleSelect.value = normalizedCode;
-            googleSelect.dispatchEvent(new Event("change"));
-            return;
-          }
-
-          if (reloadForGoogle) {
-            window.location.reload();
-          }
-        };
-
-        if (languageSelects.length > 0) {
-          const storedLanguage = localStorage.getItem(languageStorageKey) || "en";
-          applyLanguage(storedLanguage, false);
-
-          for (const select of languageSelects) {
-            select.addEventListener("change", () => {
-              applyLanguage(select.value, true);
-            });
-          }
-
-          window.addEventListener("google-translate-ready", () => {
-            const storedLanguage = localStorage.getItem(languageStorageKey) || "en";
-            if (googleLanguageCodes.has(storedLanguage)) {
-              applyLanguage(storedLanguage, false);
-            }
-          });
-        }
 
         if (button) {
           const applyTheme = (theme) => {
@@ -1110,7 +1123,11 @@ function renderDocument({
       })();
     </script>
   </body>
-</html>`;
+</html>`);
+}
+
+function stripTrailingWhitespace(value) {
+  return String(value).replace(/[ \t]+$/gm, "");
 }
 
 function renderPlausibleScript() {
@@ -1146,28 +1163,11 @@ function renderHeader(site) {
 function renderCompactLanguageControl() {
   return `
     <div class="language-control language-control-compact">
-      <label for="site-language-compact">Language</label>
-      ${renderLanguageSelect("site-language-compact")}
+      <span>Language</span>
+      <div class="language-link-row">
+        ${CULTURE_LANGUAGES.map((language) => `<a href="${sitePath({ basePath: "" }, language.homePath)}">${escapeHtml(language.nativeLabel)}</a>`).join("")}
+      </div>
     </div>
-  `.trim();
-}
-
-function renderLanguageSelect(id) {
-  return `
-    <select id="${escapeAttribute(id)}" data-language-select aria-label="Translate website">
-      <option value="en">English</option>
-      <option value="hinglish">Hinglish</option>
-      <option value="hi">हिन्दी</option>
-      <option value="mr">मराठी</option>
-      <option value="gu">ગુજરાતી</option>
-      <option value="bn">বাংলা</option>
-      <option value="ta">தமிழ்</option>
-      <option value="te">తెలుగు</option>
-      <option value="kn">ಕನ್ನಡ</option>
-      <option value="ml">മലയാളം</option>
-      <option value="pa">ਪੰਜਾਬੀ</option>
-      <option value="or">ଓଡ଼ିଆ</option>
-    </select>
   `.trim();
 }
 
@@ -1175,31 +1175,33 @@ function renderLanguageModule() {
   return `
     <section class="language-module" aria-labelledby="language-module-title">
       <div>
-        <p class="home-label" data-hinglish="Language">Language</p>
-        <h2 id="language-module-title" data-hinglish="Website apni language mein padhein">Read the website in your language</h2>
-        <p data-hinglish="Hindi, regional languages aur Hinglish mein site padhein. Regional language options poori website ko translate karte hain; Hinglish mode main site chrome aur culture docs ko conversational Hinglish mein dikhata hai.">Read the full site in Hindi and major Indian languages. Hinglish mode keeps the site chrome and culture documents conversational for teammates who prefer it.</p>
+        <p class="home-label">Language</p>
+        <h2 id="language-module-title">Read culture documents in your language</h2>
+        <p>These reader pages use Claude-generated translations that preserve the message and tone instead of doing literal browser translation. Hindi is live first; more regional languages can be generated from the same source files.</p>
       </div>
       <div class="language-module-control">
-        <label for="site-language-home" data-hinglish="Language choose karein">Choose language</label>
-        ${renderLanguageSelect("site-language-home")}
-        <p data-hinglish="Language preference is browser mein save rahegi.">Your language preference stays saved in this browser.</p>
+        <span>Available now</span>
+        <div class="language-pill-row">
+          ${CULTURE_LANGUAGES.map((language) => `<a class="language-pill" href="${sitePath({ basePath: "" }, language.homePath)}">${escapeHtml(language.nativeLabel)}</a>`).join("")}
+        </div>
+        <p>No external translation script runs on page load.</p>
       </div>
     </section>
   `.trim();
 }
 
-function renderCultureDocuments(site) {
+function renderCultureDocuments(site, cultureDocuments = CULTURE_DOCUMENTS) {
   return `
     <section class="culture-docs" id="culture-docs" aria-labelledby="culture-docs-title">
       <div class="home-section-head">
         <div>
-          <p class="home-label" data-hinglish="Cars24 Culture">Cars24 Culture</p>
-          <h2 id="culture-docs-title" data-hinglish="Flatland aur values, apni language mein">Flatland and values, readable in your language</h2>
-          <p data-hinglish="Original PDFs yahin hain. Page ki language badalte hi summaries aur reader context bhi translate ho jaayega.">The original PDFs are here, with on-page summaries and reader context that follow the selected language.</p>
+          <p class="home-label">Cars24 Culture</p>
+          <h2 id="culture-docs-title">Flatland and values, with translated readers</h2>
+          <p>The original PDFs stay available. The language versions are separate Claude-translated reader pages, so the document itself is readable in that language.</p>
         </div>
       </div>
       <div class="culture-doc-grid">
-        ${CULTURE_DOCUMENTS.map((doc) => renderCultureDocumentCard(site, doc)).join("")}
+        ${cultureDocuments.map((doc) => renderCultureDocumentCard(site, doc)).join("")}
       </div>
     </section>
   `.trim();
@@ -1216,12 +1218,138 @@ function renderCultureDocumentCard(site, doc) {
         <h3>${escapeHtml(doc.title)}</h3>
         <p>${escapeHtml(doc.description)}</p>
         <div class="culture-doc-actions">
-          <a class="button-link" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">Open PDF</a>
-          <a class="button-link button-link-muted" href="${sitePath(site, "/#language-module-title")}">Choose language</a>
+          <a class="button-link" href="${sitePath(site, `/culture/${doc.slug}/`)}">Read English</a>
+          ${renderCultureDocVersionLinks(site, doc)}
+          <a class="button-link button-link-muted" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">Original PDF</a>
         </div>
       </div>
     </article>
   `.trim();
+}
+
+function renderCultureDocVersionLinks(site, doc) {
+  return (doc.versions || [])
+    .filter((version) => version.language.code !== "en")
+    .map((version) => `<a class="button-link" href="${sitePath(site, version.pathName)}">Read ${escapeHtml(version.language.nativeLabel)}</a>`)
+    .join("");
+}
+
+function renderCultureLanguageHome(site, cultureDocuments, language) {
+  const title = `${language.nativeLabel} culture docs | ${site.siteTitle}`;
+  const description = `Claude-translated Cars24 culture documents in ${language.label}.`;
+
+  return renderDocument({
+    site,
+    title,
+    description,
+    pathName: language.homePath,
+    imagePath: site.socialImage || "",
+    imageAlt: site.socialImageAlt || site.siteTitle,
+    imageWidth: site.socialImageMeta?.width || null,
+    imageHeight: site.socialImageMeta?.height || null,
+    bodyClass: "culture-language-page",
+    htmlLang: language.htmlLang,
+    openGraphType: "website",
+    structuredData: buildCollectionPageStructuredData(site, {
+      pathName: language.homePath,
+      title,
+      description
+    }),
+    content: `
+      <div class="page-shell">
+        ${renderHeader(site)}
+        <main class="content">
+          <section class="archive-hero culture-language-hero">
+            <p class="eyebrow">${escapeHtml(language.readerNote)}</p>
+            <h1>${escapeHtml(language.landingTitle || `${language.nativeLabel} reader`)}</h1>
+            <p class="dek">${escapeHtml(language.landingDek || `Read Cars24 culture documents in ${language.label}.`)}</p>
+          </section>
+          <section class="culture-docs culture-docs-standalone" aria-labelledby="culture-language-docs-title">
+            <div class="home-section-head">
+              <div>
+                <p class="home-label">Cars24 Culture</p>
+                <h2 id="culture-language-docs-title">Documents</h2>
+              </div>
+            </div>
+            <div class="culture-doc-grid">
+              ${cultureDocuments.map((doc) => renderCultureDocumentCard(site, doc)).join("")}
+            </div>
+          </section>
+        </main>
+        ${renderFooter(site)}
+      </div>
+    `
+  });
+}
+
+function renderCultureDocumentPage(site, doc, version) {
+  const language = version.language;
+  const isEnglish = language.code === "en";
+  const title = isEnglish ? `${doc.title} | ${site.siteTitle}` : `${doc.title} in ${language.label} | ${site.siteTitle}`;
+  const description = isEnglish
+    ? `${doc.title} as a readable web page, alongside the original PDF.`
+    : `${doc.title}, translated into ${language.label} with Claude to preserve tone and meaning.`;
+  const bodyHtml = renderCultureReaderBody(version.markdown);
+
+  return renderDocument({
+    site,
+    title,
+    description,
+    pathName: version.pathName,
+    imagePath: doc.cover,
+    imageAlt: `${doc.title} cover`,
+    bodyClass: "culture-reader-page",
+    htmlLang: language.htmlLang,
+    openGraphType: "article",
+    structuredData: buildCollectionPageStructuredData(site, {
+      pathName: version.pathName,
+      title,
+      description
+    }),
+    content: `
+      <div class="page-shell">
+        ${renderHeader(site)}
+        <main class="content">
+          <article class="culture-reader">
+            <nav class="breadcrumb">
+              <a href="${sitePath(site, "/")}">Home</a>
+              <span>/</span>
+              <a href="${sitePath(site, "/#culture-docs")}">Docs</a>
+            </nav>
+            <header class="culture-reader-header">
+              <p class="eyebrow">${escapeHtml(language.readerNote)}</p>
+              <h1>${escapeHtml(doc.title)}</h1>
+              <p class="dek">${escapeHtml(description)}</p>
+              <div class="culture-reader-actions">
+                ${renderCultureReaderLanguageLinks(site, doc, language.code)}
+                <a class="button-link button-link-muted" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">Original PDF</a>
+              </div>
+            </header>
+            <div class="article-body culture-reader-body">
+              ${bodyHtml}
+            </div>
+          </article>
+        </main>
+        ${renderFooter(site)}
+      </div>
+    `
+  });
+}
+
+function renderCultureReaderLanguageLinks(site, doc, activeLanguageCode) {
+  return `<div class="language-pill-row culture-reader-languages">
+    ${doc.versions.map((version) => {
+      const activeClass = version.language.code === activeLanguageCode ? " language-pill-active" : "";
+      return `<a class="language-pill${activeClass}" href="${sitePath(site, version.pathName)}">${escapeHtml(version.language.nativeLabel)}</a>`;
+    }).join("")}
+  </div>`;
+}
+
+function renderCultureReaderBody(markdown) {
+  const bodyMarkdown = String(markdown || "")
+    .replace(/^#\s+.+(?:\n|$)/, "")
+    .trim();
+  return renderMarkdown(bodyMarkdown).html;
 }
 
 function renderFooter(site) {
@@ -1801,15 +1929,26 @@ function buildCollectionPageStructuredData(site, page) {
   };
 }
 
-function renderLlmsTxt(site, essayCollections) {
+function renderLlmsTxt(site, essayCollections, cultureDocuments = []) {
   const lines = [
     "# Vikram Chopra",
     "Founder of Cars24. Essays on car ownership in India, trust as the product, AI-native companies, and leadership.",
     "",
     `- [Home](${absoluteUrl(site.domain, sitePath(site, "/"))})`,
     `- [Essays](${absoluteUrl(site.domain, sitePath(site, "/archive/"))})`,
+    `- [Hindi culture docs](${absoluteUrl(site.domain, sitePath(site, "/hi/"))})`,
     ""
   ];
+
+  if (cultureDocuments.length > 0) {
+    lines.push("## Culture Documents");
+    for (const doc of cultureDocuments) {
+      for (const version of doc.versions) {
+        lines.push(`- [${doc.title} - ${version.language.label}](${absoluteUrl(site.domain, sitePath(site, version.pathName))})`);
+      }
+    }
+    lines.push("");
+  }
 
   for (const collection of essayCollections) {
     lines.push(`## ${collection.title}`);
@@ -1904,10 +2043,12 @@ function renderRss(site, posts) {
 </rss>`;
 }
 
-function renderSitemap(site, posts) {
+function renderSitemap(site, posts, cultureDocuments = []) {
   const urls = [
     "/",
     "/archive/",
+    ...CULTURE_LANGUAGES.filter((language) => language.code !== "en").map((language) => language.homePath),
+    ...cultureDocuments.flatMap((doc) => doc.versions.map((version) => version.pathName)),
     ...posts.map((post) => `/posts/${post.slug}/`)
   ];
   const nodes = urls
