@@ -41,6 +41,22 @@
         }
       })();
     </script>
+    <script>
+      window.googleTranslateElementInit = function () {
+        if (!window.google || !window.google.translate || !document.getElementById("google_translate_element")) {
+          return;
+        }
+
+        new window.google.translate.TranslateElement({
+          pageLanguage: "en",
+          includedLanguages: "hi,mr,gu,bn,ta,te,kn,ml,pa,or",
+          autoDisplay: false
+        }, "google_translate_element");
+
+        window.dispatchEvent(new Event("google-translate-ready"));
+      };
+    </script>
+    <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="archive-page">
@@ -53,8 +69,26 @@
         <span>Vikram Chopra</span>
       </a>
       <div class="site-header-actions">
+      <div class="language-control language-control-compact">
+      <label for="site-language-compact">Language</label>
+      <select id="site-language-compact" data-language-select aria-label="Translate website">
+      <option value="en">English</option>
+      <option value="hinglish">Hinglish</option>
+      <option value="hi">हिन्दी</option>
+      <option value="mr">मराठी</option>
+      <option value="gu">ગુજરાતી</option>
+      <option value="bn">বাংলা</option>
+      <option value="ta">தமிழ்</option>
+      <option value="te">తెలుగు</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="ml">മലയാളം</option>
+      <option value="pa">ਪੰਜਾਬੀ</option>
+      <option value="or">ଓଡ଼ିଆ</option>
+    </select>
+    </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="/archive/">Essays</a>
+        <a href="/#culture-docs">Docs</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -87,7 +121,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/the-coming-decade-of-car-ownership-in-india/" aria-label="Open The Coming Decade of Car Ownership in India">
-      <img src="/media/the-coming-decade-of-car-ownership-in-india-preview.jpg?v=cee671d" alt="1200x630 social preview for The Coming Decade of Car Ownership in India" loading="lazy">
+      <img src="/media/the-coming-decade-of-car-ownership-in-india-preview.jpg?v=6fd51ba" alt="1200x630 social preview for The Coming Decade of Car Ownership in India" loading="lazy">
     </a>
   
     </article>
@@ -102,7 +136,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/used-car-ownership-is-a-lending-problem/" aria-label="Open Used-Car Ownership Is a Lending Problem">
-      <img src="/media/used-car-ownership-is-a-lending-problem-preview.svg?v=cee671d" alt="1200x630 social preview for Used-Car Ownership Is a Lending Problem" loading="lazy">
+      <img src="/media/used-car-ownership-is-a-lending-problem-preview.svg?v=6fd51ba" alt="1200x630 social preview for Used-Car Ownership Is a Lending Problem" loading="lazy">
     </a>
   
     </article>
@@ -117,7 +151,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/the-greenest-car-in-india-is-the-one-already-built/" aria-label="Open The Greenest Car in India Is the One Already Built">
-      <img src="/media/the-greenest-car-in-india-is-the-one-already-built-preview.jpg?v=cee671d" alt="1200x630 social preview for The Greenest Car in India Is the One Already Built" loading="lazy">
+      <img src="/media/the-greenest-car-in-india-is-the-one-already-built-preview.jpg?v=6fd51ba" alt="1200x630 social preview for The Greenest Car in India Is the One Already Built" loading="lazy">
     </a>
   
     </article>
@@ -132,7 +166,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/indias-road-deaths-are-a-trust-problem-not-a-traffic-problem/" aria-label="Open India&#39;s Road Deaths Are a Trust Problem, Not a Traffic Problem">
-      <img src="/media/indias-road-deaths-trust-problem-preview.jpg?v=cee671d" alt="1200x630 social preview for India&#39;s Road Deaths Are a Trust Problem, Not a Traffic Problem" loading="lazy">
+      <img src="/media/indias-road-deaths-trust-problem-preview.jpg?v=6fd51ba" alt="1200x630 social preview for India&#39;s Road Deaths Are a Trust Problem, Not a Traffic Problem" loading="lazy">
     </a>
   
     </article>
@@ -147,7 +181,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/why-we-are-not-selling-cars/" aria-label="Open Why We Are Not Selling Cars">
-      <img src="/media/why-we-are-not-selling-cars-preview.jpg?v=cee671d" alt="1200x630 social preview for Why We Are Not Selling Cars" loading="lazy">
+      <img src="/media/why-we-are-not-selling-cars-preview.jpg?v=6fd51ba" alt="1200x630 social preview for Why We Are Not Selling Cars" loading="lazy">
     </a>
   
     </article>
@@ -170,7 +204,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/scale-is-a-learning-problem/" aria-label="Open Scale Is a Learning Problem">
-      <img src="/media/scale-is-a-learning-problem-preview.jpg?v=cee671d" alt="1200x630 social preview for Scale Is a Learning Problem" loading="lazy">
+      <img src="/media/scale-is-a-learning-problem-preview.jpg?v=6fd51ba" alt="1200x630 social preview for Scale Is a Learning Problem" loading="lazy">
     </a>
   
     </article>
@@ -185,7 +219,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/ai-native-is-not-ai-first/" aria-label="Open AI-Native Is Not AI-First. The Distinction Is the Company.">
-      <img src="/media/ai-native-is-not-ai-first-preview.jpg?v=cee671d" alt="1200x630 social preview for AI-Native Is Not AI-First. The Distinction Is the Company." loading="lazy">
+      <img src="/media/ai-native-is-not-ai-first-preview.jpg?v=6fd51ba" alt="1200x630 social preview for AI-Native Is Not AI-First. The Distinction Is the Company." loading="lazy">
     </a>
   
     </article>
@@ -200,7 +234,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/builder-is-the-only-role-left/" aria-label="Open Builder. The Only Title That Matters.">
-      <img src="/media/builder-is-the-only-role-left-preview.jpg?v=cee671d" alt="1200x630 social preview for Builder. The Only Title That Matters." loading="lazy">
+      <img src="/media/builder-is-the-only-role-left-preview.jpg?v=6fd51ba" alt="1200x630 social preview for Builder. The Only Title That Matters." loading="lazy">
     </a>
   
     </article>
@@ -215,7 +249,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/execution-problems-begin-as-trust-problems/" aria-label="Open Execution Problems Begin as Trust Problems">
-      <img src="/media/execution-problems-begin-as-trust-problems-preview.jpg?v=cee671d" alt="1200x630 social preview for Execution Problems Begin as Trust Problems" loading="lazy">
+      <img src="/media/execution-problems-begin-as-trust-problems-preview.jpg?v=6fd51ba" alt="1200x630 social preview for Execution Problems Begin as Trust Problems" loading="lazy">
     </a>
   
     </article>
@@ -230,7 +264,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/ai-will-do-for-consumer-what-saas-did-for-software/" aria-label="Open AI Will Do for Consumer What SaaS Did for Software">
-      <img src="/media/ai-will-do-for-consumer-what-saas-did-for-software-preview.jpg?v=cee671d" alt="1200x630 social preview for AI Will Do for Consumer What SaaS Did for Software" loading="lazy">
+      <img src="/media/ai-will-do-for-consumer-what-saas-did-for-software-preview.jpg?v=6fd51ba" alt="1200x630 social preview for AI Will Do for Consumer What SaaS Did for Software" loading="lazy">
     </a>
   
     </article>
@@ -253,7 +287,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/paranoid-survive-regulated-thrive/" aria-label="Open The Paranoid Survive. The Regulated Thrive.">
-      <img src="/media/paranoid-survive-regulated-thrive-social.png?v=cee671d" alt="1200x630 social preview for The Paranoid Survive. The Regulated Thrive." loading="lazy">
+      <img src="/media/paranoid-survive-regulated-thrive-social.png?v=6fd51ba" alt="1200x630 social preview for The Paranoid Survive. The Regulated Thrive." loading="lazy">
     </a>
   
     </article>
@@ -268,7 +302,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/who-taught-you-to-want-this/" aria-label="Open Who Taught You to Want This?">
-      <img src="/media/who-taught-you-to-want-this-preview.jpg?v=cee671d" alt="1200x630 social preview for Who Taught You to Want This?" loading="lazy">
+      <img src="/media/who-taught-you-to-want-this-preview.jpg?v=6fd51ba" alt="1200x630 social preview for Who Taught You to Want This?" loading="lazy">
     </a>
   
     </article>
@@ -283,7 +317,7 @@
       </a>
       
     <a class="entry-thumb" href="/posts/you-judge-others-by-character-and-yourself-by-circumstance/" aria-label="Open You Judge Others by Character and Yourself by Circumstance">
-      <img src="/media/you-judge-others-by-character-and-yourself-by-circumstance-preview.jpg?v=cee671d" alt="1200x630 social preview for You Judge Others by Character and Yourself by Circumstance" loading="lazy">
+      <img src="/media/you-judge-others-by-character-and-yourself-by-circumstance-preview.jpg?v=6fd51ba" alt="1200x630 social preview for You Judge Others by Character and Yourself by Circumstance" loading="lazy">
     </a>
   
     </article>
@@ -312,16 +346,115 @@
   
       </div>
     
+    <div id="google_translate_element" class="google-translate-host" aria-hidden="true"></div>
     <button class="quote-copy-button" type="button" data-quote-copy hidden>Copy quote</button>
     <script>
       (() => {
         const storageKey = "vikram-theme";
+        const languageStorageKey = "vikram-language";
+        const googleLanguageCodes = new Set(["hi", "mr", "gu", "bn", "ta", "te", "kn", "ml", "pa", "or"]);
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
         const themeMeta = document.querySelector('meta[name="theme-color"]');
+        const languageSelects = Array.from(document.querySelectorAll("[data-language-select]"));
+        const hinglishNodes = Array.from(document.querySelectorAll("[data-hinglish]"));
+
+        for (const node of hinglishNodes) {
+          node.dataset.englishText = node.textContent;
+        }
+
+        const clearGoogleTranslateCookie = () => {
+          const hostParts = window.location.hostname.split(".");
+          const domains = ["", window.location.hostname];
+
+          if (hostParts.length > 1) {
+            domains.push("." + hostParts.slice(-2).join("."));
+          }
+
+          for (const domain of domains) {
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + (domain ? "; domain=" + domain : "");
+          }
+        };
+
+        const setGoogleTranslateCookie = (code) => {
+          clearGoogleTranslateCookie();
+          if (!googleLanguageCodes.has(code)) {
+            return;
+          }
+          document.cookie = "googtrans=/en/" + code + "; path=/";
+        };
+
+        const syncLanguageSelects = (code) => {
+          for (const select of languageSelects) {
+            select.value = code;
+          }
+        };
+
+        const applyHinglish = (active) => {
+          document.body.dataset.language = active ? "hinglish" : "";
+          for (const node of hinglishNodes) {
+            node.textContent = active ? node.dataset.hinglish : node.dataset.englishText;
+          }
+        };
+
+        const applyLanguage = (code, reloadForGoogle = false) => {
+          const normalizedCode = code || "en";
+          localStorage.setItem(languageStorageKey, normalizedCode);
+          syncLanguageSelects(normalizedCode);
+
+          if (normalizedCode === "hinglish") {
+            clearGoogleTranslateCookie();
+            applyHinglish(true);
+            return;
+          }
+
+          applyHinglish(false);
+
+          if (normalizedCode === "en") {
+            clearGoogleTranslateCookie();
+            if (reloadForGoogle) {
+              window.location.reload();
+            }
+            return;
+          }
+
+          if (!googleLanguageCodes.has(normalizedCode)) {
+            return;
+          }
+
+          setGoogleTranslateCookie(normalizedCode);
+          const googleSelect = document.querySelector(".goog-te-combo");
+          if (googleSelect) {
+            googleSelect.value = normalizedCode;
+            googleSelect.dispatchEvent(new Event("change"));
+            return;
+          }
+
+          if (reloadForGoogle) {
+            window.location.reload();
+          }
+        };
+
+        if (languageSelects.length > 0) {
+          const storedLanguage = localStorage.getItem(languageStorageKey) || "en";
+          applyLanguage(storedLanguage, false);
+
+          for (const select of languageSelects) {
+            select.addEventListener("change", () => {
+              applyLanguage(select.value, true);
+            });
+          }
+
+          window.addEventListener("google-translate-ready", () => {
+            const storedLanguage = localStorage.getItem(languageStorageKey) || "en";
+            if (googleLanguageCodes.has(storedLanguage)) {
+              applyLanguage(storedLanguage, false);
+            }
+          });
+        }
 
         if (button) {
           const applyTheme = (theme) => {

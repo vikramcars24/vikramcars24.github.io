@@ -72,6 +72,25 @@ const START_HERE_SLUGS = [
   "paranoid-survive-regulated-thrive"
 ];
 
+const CULTURE_DOCUMENTS = [
+  {
+    id: "flatland",
+    title: "Flatland",
+    meta: "Culture book - 33 pages",
+    href: "/media/docs/flatland.pdf",
+    cover: "/media/docs/flatland-cover-01.png",
+    description: "An operating note for a flatter, faster Cars24: builder ownership, open information, AI-native work, and clarity over hierarchy."
+  },
+  {
+    id: "values",
+    title: "Our Values",
+    meta: "Culture book - 22 pages",
+    href: "/media/docs/cars24-values.pdf",
+    cover: "/media/docs/values-cover-01.png",
+    description: "Five values for how Cars24 works: customer love, ownership, truth, high standards, and becoming better humans through work."
+  }
+];
+
 async function main() {
   const site = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
   site.socialImageMeta = await resolveImageMeta(site.socialImage || "");
@@ -458,6 +477,9 @@ function renderHome(site, posts, essayCollections) {
             ${renderStartHere(site, postBySlug)}
           </section>
 
+          ${renderLanguageModule(site)}
+          ${renderCultureDocuments(site)}
+
           <section class="home-writing">
             <div class="home-section-head">
               <p class="home-label">Writing</p>
@@ -737,20 +759,135 @@ function renderDocument({
         }
       })();
     </script>
+    <script>
+      window.googleTranslateElementInit = function () {
+        if (!window.google || !window.google.translate || !document.getElementById("google_translate_element")) {
+          return;
+        }
+
+        new window.google.translate.TranslateElement({
+          pageLanguage: "en",
+          includedLanguages: "hi,mr,gu,bn,ta,te,kn,ml,pa,or",
+          autoDisplay: false
+        }, "google_translate_element");
+
+        window.dispatchEvent(new Event("google-translate-ready"));
+      };
+    </script>
+    <script defer src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <link rel="stylesheet" href="${sitePath(site, "/styles.css")}">
   </head>
   <body class="${escapeAttribute(bodyClass)}">
     ${content}
+    <div id="google_translate_element" class="google-translate-host" aria-hidden="true"></div>
     <button class="quote-copy-button" type="button" data-quote-copy hidden>Copy quote</button>
     <script>
       (() => {
         const storageKey = "vikram-theme";
+        const languageStorageKey = "vikram-language";
+        const googleLanguageCodes = new Set(["hi", "mr", "gu", "bn", "ta", "te", "kn", "ml", "pa", "or"]);
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
         const themeMeta = document.querySelector('meta[name="theme-color"]');
+        const languageSelects = Array.from(document.querySelectorAll("[data-language-select]"));
+        const hinglishNodes = Array.from(document.querySelectorAll("[data-hinglish]"));
+
+        for (const node of hinglishNodes) {
+          node.dataset.englishText = node.textContent;
+        }
+
+        const clearGoogleTranslateCookie = () => {
+          const hostParts = window.location.hostname.split(".");
+          const domains = ["", window.location.hostname];
+
+          if (hostParts.length > 1) {
+            domains.push("." + hostParts.slice(-2).join("."));
+          }
+
+          for (const domain of domains) {
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + (domain ? "; domain=" + domain : "");
+          }
+        };
+
+        const setGoogleTranslateCookie = (code) => {
+          clearGoogleTranslateCookie();
+          if (!googleLanguageCodes.has(code)) {
+            return;
+          }
+          document.cookie = "googtrans=/en/" + code + "; path=/";
+        };
+
+        const syncLanguageSelects = (code) => {
+          for (const select of languageSelects) {
+            select.value = code;
+          }
+        };
+
+        const applyHinglish = (active) => {
+          document.body.dataset.language = active ? "hinglish" : "";
+          for (const node of hinglishNodes) {
+            node.textContent = active ? node.dataset.hinglish : node.dataset.englishText;
+          }
+        };
+
+        const applyLanguage = (code, reloadForGoogle = false) => {
+          const normalizedCode = code || "en";
+          localStorage.setItem(languageStorageKey, normalizedCode);
+          syncLanguageSelects(normalizedCode);
+
+          if (normalizedCode === "hinglish") {
+            clearGoogleTranslateCookie();
+            applyHinglish(true);
+            return;
+          }
+
+          applyHinglish(false);
+
+          if (normalizedCode === "en") {
+            clearGoogleTranslateCookie();
+            if (reloadForGoogle) {
+              window.location.reload();
+            }
+            return;
+          }
+
+          if (!googleLanguageCodes.has(normalizedCode)) {
+            return;
+          }
+
+          setGoogleTranslateCookie(normalizedCode);
+          const googleSelect = document.querySelector(".goog-te-combo");
+          if (googleSelect) {
+            googleSelect.value = normalizedCode;
+            googleSelect.dispatchEvent(new Event("change"));
+            return;
+          }
+
+          if (reloadForGoogle) {
+            window.location.reload();
+          }
+        };
+
+        if (languageSelects.length > 0) {
+          const storedLanguage = localStorage.getItem(languageStorageKey) || "en";
+          applyLanguage(storedLanguage, false);
+
+          for (const select of languageSelects) {
+            select.addEventListener("change", () => {
+              applyLanguage(select.value, true);
+            });
+          }
+
+          window.addEventListener("google-translate-ready", () => {
+            const storedLanguage = localStorage.getItem(languageStorageKey) || "en";
+            if (googleLanguageCodes.has(storedLanguage)) {
+              applyLanguage(storedLanguage, false);
+            }
+          });
+        }
 
         if (button) {
           const applyTheme = (theme) => {
@@ -992,8 +1129,10 @@ function renderHeader(site) {
         <span>${escapeHtml(site.name)}</span>
       </a>
       <div class="site-header-actions">
+      ${renderCompactLanguageControl()}
       <nav class="site-nav" aria-label="Primary">
         <a href="${sitePath(site, "/archive/")}">Essays</a>
+        <a href="${sitePath(site, "/#culture-docs")}">Docs</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -1002,6 +1141,87 @@ function renderHeader(site) {
       </div>
     </header>
   `;
+}
+
+function renderCompactLanguageControl() {
+  return `
+    <div class="language-control language-control-compact">
+      <label for="site-language-compact">Language</label>
+      ${renderLanguageSelect("site-language-compact")}
+    </div>
+  `.trim();
+}
+
+function renderLanguageSelect(id) {
+  return `
+    <select id="${escapeAttribute(id)}" data-language-select aria-label="Translate website">
+      <option value="en">English</option>
+      <option value="hinglish">Hinglish</option>
+      <option value="hi">हिन्दी</option>
+      <option value="mr">मराठी</option>
+      <option value="gu">ગુજરાતી</option>
+      <option value="bn">বাংলা</option>
+      <option value="ta">தமிழ்</option>
+      <option value="te">తెలుగు</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="ml">മലയാളം</option>
+      <option value="pa">ਪੰਜਾਬੀ</option>
+      <option value="or">ଓଡ଼ିଆ</option>
+    </select>
+  `.trim();
+}
+
+function renderLanguageModule() {
+  return `
+    <section class="language-module" aria-labelledby="language-module-title">
+      <div>
+        <p class="home-label" data-hinglish="Language">Language</p>
+        <h2 id="language-module-title" data-hinglish="Website apni language mein padhein">Read the website in your language</h2>
+        <p data-hinglish="Hindi, regional languages aur Hinglish mein site padhein. Regional language options poori website ko translate karte hain; Hinglish mode main site chrome aur culture docs ko conversational Hinglish mein dikhata hai.">Read the full site in Hindi and major Indian languages. Hinglish mode keeps the site chrome and culture documents conversational for teammates who prefer it.</p>
+      </div>
+      <div class="language-module-control">
+        <label for="site-language-home" data-hinglish="Language choose karein">Choose language</label>
+        ${renderLanguageSelect("site-language-home")}
+        <p data-hinglish="Language preference is browser mein save rahegi.">Your language preference stays saved in this browser.</p>
+      </div>
+    </section>
+  `.trim();
+}
+
+function renderCultureDocuments(site) {
+  return `
+    <section class="culture-docs" id="culture-docs" aria-labelledby="culture-docs-title">
+      <div class="home-section-head">
+        <div>
+          <p class="home-label" data-hinglish="Cars24 Culture">Cars24 Culture</p>
+          <h2 id="culture-docs-title" data-hinglish="Flatland aur values, apni language mein">Flatland and values, readable in your language</h2>
+          <p data-hinglish="Original PDFs yahin hain. Page ki language badalte hi summaries aur reader context bhi translate ho jaayega.">The original PDFs are here, with on-page summaries and reader context that follow the selected language.</p>
+        </div>
+      </div>
+      <div class="culture-doc-grid">
+        ${CULTURE_DOCUMENTS.map((doc) => renderCultureDocumentCard(site, doc)).join("")}
+      </div>
+    </section>
+  `.trim();
+}
+
+function renderCultureDocumentCard(site, doc) {
+  return `
+    <article class="culture-doc-card">
+      <a class="culture-doc-cover" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">
+        <img src="${sitePath(site, doc.cover)}" alt="${escapeAttribute(doc.title)} cover" loading="lazy">
+      </a>
+      <div class="culture-doc-copy">
+        <p class="culture-doc-meta">${escapeHtml(doc.meta)}</p>
+        <h3>${escapeHtml(doc.title)}</h3>
+        <p>${escapeHtml(doc.description)}</p>
+        <div class="culture-doc-actions">
+          <a class="button-link" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button-link button-link-muted" href="${sitePath(site, "/#language-module-title")}">Choose language</a>
+        </div>
+      </div>
+    </article>
+  `.trim();
 }
 
 function renderFooter(site) {
