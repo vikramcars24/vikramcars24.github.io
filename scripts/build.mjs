@@ -125,6 +125,86 @@ const CULTURE_LANGUAGES = [
     readerNote: "Claude translated",
     landingTitle: "मराठी reader",
     landingDek: "Flatland आणि Cars24 Values मराठीत वाचा. हे pages Claude ने message आणि tone जपत तयार केले आहेत; literal browser translation नाही."
+  },
+  {
+    code: "gu",
+    htmlLang: "gu",
+    label: "Gujarati",
+    nativeLabel: "ગુજરાતી",
+    homePath: "/gu/",
+    readerNote: "Claude translated",
+    landingTitle: "ગુજરાતી reader",
+    landingDek: "Flatland અને Cars24 Values ગુજરાતી ભાષામાં વાંચો. આ pages Claude દ્વારા message અને tone સાચવીને બનાવવામાં આવ્યા છે; literal browser translation નથી."
+  },
+  {
+    code: "bn",
+    htmlLang: "bn",
+    label: "Bengali",
+    nativeLabel: "বাংলা",
+    homePath: "/bn/",
+    readerNote: "Claude translated",
+    landingTitle: "বাংলা reader",
+    landingDek: "Flatland এবং Cars24 Values বাংলায় পড়ুন. এই pages Claude দিয়ে message এবং tone ধরে অনুবাদ করা হয়েছে; literal browser translation নয়."
+  },
+  {
+    code: "ta",
+    htmlLang: "ta",
+    label: "Tamil",
+    nativeLabel: "தமிழ்",
+    homePath: "/ta/",
+    readerNote: "Claude translated",
+    landingTitle: "தமிழ் reader",
+    landingDek: "Flatland மற்றும் Cars24 Values-ஐ தமிழில் படிக்கவும். இந்த pages Claude மூலம் message மற்றும் tone காக்கப்பட்ட translation ஆக உருவாக்கப்பட்டவை; literal browser translation அல்ல."
+  },
+  {
+    code: "te",
+    htmlLang: "te",
+    label: "Telugu",
+    nativeLabel: "తెలుగు",
+    homePath: "/te/",
+    readerNote: "Claude translated",
+    landingTitle: "తెలుగు reader",
+    landingDek: "Flatland మరియు Cars24 Values తెలుగులో చదవండి. ఇవి Claude ద్వారా message మరియు tone కాపాడుతూ రూపొందించిన pages; literal browser translation కాదు."
+  },
+  {
+    code: "kn",
+    htmlLang: "kn",
+    label: "Kannada",
+    nativeLabel: "ಕನ್ನಡ",
+    homePath: "/kn/",
+    readerNote: "Claude translated",
+    landingTitle: "ಕನ್ನಡ reader",
+    landingDek: "Flatland ಮತ್ತು Cars24 Values ಅನ್ನು ಕನ್ನಡದಲ್ಲಿ ಓದಿ. ಈ pages Claude ಮೂಲಕ message ಮತ್ತು tone ಉಳಿಸಿಕೊಂಡ translation ಆಗಿವೆ; literal browser translation ಅಲ್ಲ."
+  },
+  {
+    code: "ml",
+    htmlLang: "ml",
+    label: "Malayalam",
+    nativeLabel: "മലയാളം",
+    homePath: "/ml/",
+    readerNote: "Claude translated",
+    landingTitle: "മലയാളം reader",
+    landingDek: "Flatlandയും Cars24 Valuesയും മലയാളത്തിൽ വായിക്കുക. ഈ pages Claude ഉപയോഗിച്ച് message ഉം tone ഉം നിലനിർത്തി തയ്യാറാക്കിയ translation ആണ്; literal browser translation അല്ല."
+  },
+  {
+    code: "pa",
+    htmlLang: "pa",
+    label: "Punjabi",
+    nativeLabel: "ਪੰਜਾਬੀ",
+    homePath: "/pa/",
+    readerNote: "Claude translated",
+    landingTitle: "ਪੰਜਾਬੀ reader",
+    landingDek: "Flatland ਅਤੇ Cars24 Values ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ. ਇਹ pages Claude ਨਾਲ message ਅਤੇ tone ਬਚਾ ਕੇ ਬਣਾਏ ਗਏ ਹਨ; literal browser translation ਨਹੀਂ."
+  },
+  {
+    code: "or",
+    htmlLang: "or",
+    label: "Odia",
+    nativeLabel: "ଓଡ଼ିଆ",
+    homePath: "/or/",
+    readerNote: "Claude translated",
+    landingTitle: "ଓଡ଼ିଆ reader",
+    landingDek: "Flatland ଓ Cars24 Values ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ. ଏହି pages Claude ଦ୍ୱାରା message ଓ tone ରଖି translation ଭାବେ ତିଆରି; literal browser translation ନୁହେଁ."
   }
 ];
 

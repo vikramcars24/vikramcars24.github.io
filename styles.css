@@ -391,14 +391,15 @@ pre code {
 
 .culture-doc-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
 }
 
 .culture-doc-card {
   display: grid;
-  grid-template-columns: minmax(8.5rem, 0.48fr) minmax(0, 1fr);
-  min-height: 18rem;
+  grid-template-columns: minmax(12rem, 0.34fr) minmax(0, 1fr);
+  min-width: 0;
+  min-height: 15rem;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--line) 86%, transparent);
   border-radius: 1rem;
@@ -1457,8 +1458,7 @@ pre code {
   .subscribe-module-home,
   .subscribe-page-panel,
   .subscribe-input-row,
-  .language-module,
-  .culture-doc-grid {
+  .language-module {
     grid-template-columns: 1fr;
   }
 

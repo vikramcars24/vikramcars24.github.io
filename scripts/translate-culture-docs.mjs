@@ -99,28 +99,37 @@ SOURCE:
 ${source}
 `.trim();
 
-  return execFileSync(
-    "claude",
-    [
-      "-p",
-      "--model",
-      "sonnet",
-      "--effort",
-      "low",
-      "--no-session-persistence",
-      "--tools",
-      "",
-      "--max-budget-usd",
-      "0.35",
-      prompt
-    ],
-    {
-      cwd: rootDir,
-      encoding: "utf8",
-      maxBuffer: 1024 * 1024 * 8,
-      timeout: 90_000
+  const args = [
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "low",
+    "--no-session-persistence",
+    "--tools",
+    "",
+    "--max-budget-usd",
+    "0.60",
+    prompt
+  ];
+
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    try {
+      return execFileSync("claude", args, {
+        cwd: rootDir,
+        encoding: "utf8",
+        maxBuffer: 1024 * 1024 * 8,
+        timeout: 180_000
+      });
+    } catch (error) {
+      if (attempt === 2) {
+        throw error;
+      }
+      console.warn(`  retrying chunk after Claude error: ${error.message}`);
     }
-  );
+  }
+
+  throw new Error("Claude translation failed unexpectedly.");
 }
 
 function chunkSource(source) {
@@ -134,7 +143,7 @@ function chunkSource(source) {
 
   for (const page of pages) {
     const pageWords = page.split(/\s+/).filter(Boolean).length;
-    if (current.length > 0 && currentWords + pageWords > 650) {
+    if (current.length > 0 && currentWords + pageWords > 350) {
       chunks.push(current.join("\n\n"));
       current = [];
       currentWords = 0;
