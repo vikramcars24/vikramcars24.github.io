@@ -4,7 +4,7 @@ date: 2026-06-05
 description: India's next ownership wave will not look like the rich-world past. It will be pre-owned, transfer-heavy, and trust-led.
 image: /media/the-coming-decade-of-car-ownership-in-india-preview.jpg
 imageAlt: 1200x630 social preview for The Coming Decade of Car Ownership in India
-articleImage: /media/the-coming-decade-of-car-ownership-in-india-blog.png
+articleImage: /media/the-coming-decade-of-car-ownership-in-india-blog.jpg
 articleImageAlt: Editorial visual for The Coming Decade of Car Ownership in India
 summary: India is a first-time ownership market, and the binding constraint is the fear inside the buyer, not just price or supply. | The used market already outsells new 1.4 to 1 and scales only on rails: transfer legitimacy, financing access, ownership support, community memory. | The market grows when ownership gets easier to live with. The future is not more cars. It is less fear.
 featured: false
