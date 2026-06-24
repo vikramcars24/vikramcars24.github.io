@@ -157,43 +157,23 @@ pre code {
   gap: 0.25rem;
 }
 
-.language-control span,
-.language-module-control span {
+.language-control label {
   color: var(--muted);
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.language-link-row,
-.language-pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.language-link-row a,
-.language-pill {
-  display: inline-flex;
-  align-items: center;
+.language-select {
   min-height: 2.1rem;
-  padding: 0.34rem 0.68rem;
+  padding: 0.34rem 2rem 0.34rem 0.68rem;
   border: 1px solid var(--line);
   border-radius: 999px;
+  background: color-mix(in srgb, var(--paper) 92%, var(--surface) 8%);
   color: var(--ink);
-  text-decoration: none;
+  font: inherit;
   font-size: 0.86rem;
   line-height: 1;
-}
-
-.language-pill {
-  min-height: 2.45rem;
-  padding-inline: 0.88rem;
-}
-
-.language-pill-active {
-  border-color: var(--ink);
-  background: color-mix(in srgb, var(--surface) 72%, var(--paper) 28%);
 }
 
 .theme-toggle {
@@ -332,22 +312,6 @@ pre code {
   border-top: 1px solid var(--line);
 }
 
-.language-module {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
-  gap: 1.4rem;
-  align-items: end;
-  max-width: 58rem;
-  margin: 0 0 3rem;
-  padding: 1.25rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--line));
-  border-radius: 1rem;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface) 88%, var(--paper) 12%), transparent 82%),
-    color-mix(in srgb, var(--paper) 94%, transparent);
-}
-
-.language-module h2,
 .culture-docs h2 {
   margin: 0 0 0.5rem;
   font-family: var(--serif);
@@ -357,23 +321,10 @@ pre code {
   letter-spacing: -0.03em;
 }
 
-.language-module p,
 .culture-docs p {
   margin: 0;
   color: color-mix(in srgb, var(--ink) 80%, transparent);
   line-height: 1.7;
-}
-
-.language-module-control {
-  display: grid;
-  gap: 0.55rem;
-  min-width: 0;
-}
-
-.language-module-control p {
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.45;
 }
 
 .culture-docs {
@@ -1457,8 +1408,7 @@ pre code {
 
   .subscribe-module-home,
   .subscribe-page-panel,
-  .subscribe-input-row,
-  .language-module {
+  .subscribe-input-row {
     grid-template-columns: 1fr;
   }
 
@@ -1515,13 +1465,11 @@ pre code {
   }
 
   .subscribe-module,
-  .subscribe-page-panel,
-  .language-module {
+  .subscribe-page-panel {
     padding: 1.05rem;
     border-radius: 0.85rem;
   }
 
-  .language-module h2,
   .culture-docs h2 {
     font-size: clamp(1.55rem, 7vw, 2rem);
   }

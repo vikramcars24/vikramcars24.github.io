@@ -54,10 +54,10 @@
       </a>
       <div class="site-header-actions">
       <div class="language-control language-control-compact">
-      <span>Language</span>
-      <div class="language-link-row">
-        <a href="/">English</a><a href="/hi/">हिन्दी</a><a href="/mr/">मराठी</a><a href="/gu/">ગુજરાતી</a><a href="/bn/">বাংলা</a><a href="/ta/">தமிழ்</a><a href="/te/">తెలుగు</a><a href="/kn/">ಕನ್ನಡ</a><a href="/ml/">മലയാളം</a><a href="/pa/">ਪੰਜਾਬੀ</a><a href="/or/">ଓଡ଼ିଆ</a>
-      </div>
+      <label for="language-select">Language</label>
+      <select id="language-select" class="language-select" data-language-select aria-label="Language">
+        <option value="/" selected>English</option><option value="/hi/">हिन्दी</option><option value="/mr/">मराठी</option><option value="/gu/">ગુજરાતી</option><option value="/bn/">বাংলা</option><option value="/ta/">தமிழ்</option><option value="/te/">తెలుగు</option><option value="/kn/">ಕನ್ನಡ</option><option value="/ml/">മലയാളം</option><option value="/pa/">ਪੰਜਾਬੀ</option><option value="/or/">ଓଡ଼ିଆ</option>
+      </select>
     </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="/archive/">Essays</a>
@@ -126,6 +126,7 @@
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
+        const languageSelect = document.querySelector("[data-language-select]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
@@ -148,6 +149,15 @@
             const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
             localStorage.setItem(storageKey, nextTheme);
             applyTheme(nextTheme);
+          });
+        }
+
+        if (languageSelect) {
+          languageSelect.addEventListener("change", () => {
+            const nextPath = languageSelect.value;
+            if (nextPath && nextPath !== window.location.pathname) {
+              window.location.href = nextPath;
+            }
           });
         }
 

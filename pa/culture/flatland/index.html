@@ -13,7 +13,7 @@
     <meta property="og:description" content="Flatland, translated into Punjabi with Claude to preserve tone and meaning.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://vikramchopra.in/pa/culture/flatland/">
-    <meta property="og:image" content="https://vikramchopra.in/media/docs/flatland-cover-01.png?v=1b095d8">
+    <meta property="og:image" content="https://vikramchopra.in/media/docs/flatland-cover-01.png?v=c1de592">
 
 
     <meta property="og:image:alt" content="Flatland cover">
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Flatland in Punjabi | Vikram Chopra">
     <meta name="twitter:description" content="Flatland, translated into Punjabi with Claude to preserve tone and meaning.">
-    <meta name="twitter:image" content="https://vikramchopra.in/media/docs/flatland-cover-01.png?v=1b095d8">
+    <meta name="twitter:image" content="https://vikramchopra.in/media/docs/flatland-cover-01.png?v=c1de592">
     <meta name="twitter:image:alt" content="Flatland cover">
     <meta name="theme-color" content="#f4ecdf">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -54,10 +54,10 @@
       </a>
       <div class="site-header-actions">
       <div class="language-control language-control-compact">
-      <span>Language</span>
-      <div class="language-link-row">
-        <a href="/">English</a><a href="/hi/">हिन्दी</a><a href="/mr/">मराठी</a><a href="/gu/">ગુજરાતી</a><a href="/bn/">বাংলা</a><a href="/ta/">தமிழ்</a><a href="/te/">తెలుగు</a><a href="/kn/">ಕನ್ನಡ</a><a href="/ml/">മലയാളം</a><a href="/pa/">ਪੰਜਾਬੀ</a><a href="/or/">ଓଡ଼ିଆ</a>
-      </div>
+      <label for="language-select">Language</label>
+      <select id="language-select" class="language-select" data-language-select aria-label="Language">
+        <option value="/culture/flatland/">English</option><option value="/hi/culture/flatland/">हिन्दी</option><option value="/mr/culture/flatland/">मराठी</option><option value="/gu/culture/flatland/">ગુજરાતી</option><option value="/bn/culture/flatland/">বাংলা</option><option value="/ta/culture/flatland/">தமிழ்</option><option value="/te/culture/flatland/">తెలుగు</option><option value="/kn/culture/flatland/">ಕನ್ನಡ</option><option value="/ml/culture/flatland/">മലയാളം</option><option value="/pa/culture/flatland/" selected>ਪੰਜਾਬੀ</option><option value="/or/culture/flatland/">ଓଡ଼ିଆ</option>
+      </select>
     </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="/archive/">Essays</a>
@@ -82,10 +82,7 @@
               <h1>Flatland</h1>
               <p class="dek">Flatland, translated into Punjabi with Claude to preserve tone and meaning.</p>
               <div class="culture-reader-actions">
-                <div class="language-pill-row culture-reader-languages">
-    <a class="language-pill" href="/culture/flatland/">English</a><a class="language-pill" href="/hi/culture/flatland/">हिन्दी</a><a class="language-pill" href="/mr/culture/flatland/">मराठी</a><a class="language-pill" href="/gu/culture/flatland/">ગુજરાતી</a><a class="language-pill" href="/bn/culture/flatland/">বাংলা</a><a class="language-pill" href="/ta/culture/flatland/">தமிழ்</a><a class="language-pill" href="/te/culture/flatland/">తెలుగు</a><a class="language-pill" href="/kn/culture/flatland/">ಕನ್ನಡ</a><a class="language-pill" href="/ml/culture/flatland/">മലയാളം</a><a class="language-pill language-pill-active" href="/pa/culture/flatland/">ਪੰਜਾਬੀ</a><a class="language-pill" href="/or/culture/flatland/">ଓଡ଼ିଆ</a>
-  </div>
-                <a class="button-link button-link-muted" href="/media/docs/flatland.pdf?v=1b095d8" target="_blank" rel="noreferrer">Original PDF</a>
+                <a class="button-link" href="/media/docs/flatland-pa.pdf?v=c1de592" target="_blank" rel="noreferrer">Open PDF - ਪੰਜਾਬੀ</a>
               </div>
             </header>
             <div class="article-body culture-reader-body">
@@ -339,6 +336,7 @@
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
+        const languageSelect = document.querySelector("[data-language-select]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
@@ -361,6 +359,15 @@
             const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
             localStorage.setItem(storageKey, nextTheme);
             applyTheme(nextTheme);
+          });
+        }
+
+        if (languageSelect) {
+          languageSelect.addEventListener("change", () => {
+            const nextPath = languageSelect.value;
+            if (nextPath && nextPath !== window.location.pathname) {
+              window.location.href = nextPath;
+            }
           });
         }
 

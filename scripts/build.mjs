@@ -208,6 +208,8 @@ const CULTURE_LANGUAGES = [
   }
 ];
 
+const DEFAULT_CULTURE_LANGUAGE = CULTURE_LANGUAGES[0];
+
 async function main() {
   const site = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
   site.socialImageMeta = await resolveImageMeta(site.socialImage || "");
@@ -345,7 +347,8 @@ async function loadCultureDocuments() {
         {
           language: CULTURE_LANGUAGES[0],
           markdown: normalizeCultureSourceText(englishSource, doc),
-          pathName: `/culture/${doc.slug}/`
+          pathName: `/culture/${doc.slug}/`,
+          pdfPath: doc.href
         }
       ];
 
@@ -356,7 +359,8 @@ async function loadCultureDocuments() {
           versions.push({
             language,
             markdown,
-            pathName: `/${language.code}/culture/${doc.slug}/`
+            pathName: `/${language.code}/culture/${doc.slug}/`,
+            pdfPath: culturePdfPath(doc, language)
           });
         } catch {
           // Missing translations are simply not exposed.
@@ -369,6 +373,34 @@ async function loadCultureDocuments() {
       };
     })
   );
+}
+
+function culturePdfPath(doc, language) {
+  if (!language || language.code === "en") {
+    return doc.href;
+  }
+
+  const baseName = doc.id === "values" ? "cars24-values" : doc.slug;
+  return `/media/docs/${baseName}-${language.code}.pdf`;
+}
+
+function getCultureVersion(doc, languageCode = "en") {
+  return (doc.versions || []).find((version) => version.language.code === languageCode)
+    || (doc.versions || []).find((version) => version.language.code === "en")
+    || null;
+}
+
+function cultureLanguageTargets(site, activeLanguageCode = "en", doc = null) {
+  return CULTURE_LANGUAGES.map((language) => {
+    const version = doc ? getCultureVersion(doc, language.code) : null;
+    const pathName = version?.pathName || language.homePath;
+
+    return {
+      language,
+      pathName: sitePath(site, pathName),
+      active: language.code === activeLanguageCode
+    };
+  });
 }
 
 function normalizeCultureSourceText(source, doc) {
@@ -684,7 +716,6 @@ function renderHome(site, posts, essayCollections, cultureDocuments) {
             ${renderStartHere(site, postBySlug)}
           </section>
 
-          ${renderLanguageModule(site)}
           ${renderCultureDocuments(site, cultureDocuments)}
 
           <section class="home-writing">
@@ -977,6 +1008,7 @@ function renderDocument({
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
+        const languageSelect = document.querySelector("[data-language-select]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
@@ -999,6 +1031,15 @@ function renderDocument({
             const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
             localStorage.setItem(storageKey, nextTheme);
             applyTheme(nextTheme);
+          });
+        }
+
+        if (languageSelect) {
+          languageSelect.addEventListener("change", () => {
+            const nextPath = languageSelect.value;
+            if (nextPath && nextPath !== window.location.pathname) {
+              window.location.href = nextPath;
+            }
           });
         }
 
@@ -1218,7 +1259,8 @@ function renderPlausibleScript() {
   return `<script defer data-domain="${escapeAttribute(plausibleDomain)}" src="${escapeAttribute(plausibleScriptSrc)}"></script>`;
 }
 
-function renderHeader(site) {
+function renderHeader(site, options = {}) {
+  const languageTargets = options.languageTargets || cultureLanguageTargets(site, options.activeLanguageCode || "en", options.doc || null);
   return `
     <header class="site-header">
       <a class="brand" href="${sitePath(site, "/")}">
@@ -1226,7 +1268,7 @@ function renderHeader(site) {
         <span>${escapeHtml(site.name)}</span>
       </a>
       <div class="site-header-actions">
-      ${renderCompactLanguageControl()}
+      ${renderCompactLanguageControl(languageTargets)}
       <nav class="site-nav" aria-label="Primary">
         <a href="${sitePath(site, "/archive/")}">Essays</a>
         <a href="${sitePath(site, "/#culture-docs")}">Docs</a>
@@ -1240,57 +1282,40 @@ function renderHeader(site) {
   `;
 }
 
-function renderCompactLanguageControl() {
+function renderCompactLanguageControl(languageTargets) {
   return `
     <div class="language-control language-control-compact">
-      <span>Language</span>
-      <div class="language-link-row">
-        ${CULTURE_LANGUAGES.map((language) => `<a href="${sitePath({ basePath: "" }, language.homePath)}">${escapeHtml(language.nativeLabel)}</a>`).join("")}
-      </div>
+      <label for="language-select">Language</label>
+      <select id="language-select" class="language-select" data-language-select aria-label="Language">
+        ${languageTargets.map(({ language, pathName, active }) => `<option value="${escapeAttribute(pathName)}"${active ? " selected" : ""}>${escapeHtml(language.nativeLabel)}</option>`).join("")}
+      </select>
     </div>
   `.trim();
 }
 
-function renderLanguageModule() {
-  return `
-    <section class="language-module" aria-labelledby="language-module-title">
-      <div>
-        <p class="home-label">Language</p>
-        <h2 id="language-module-title">Read culture documents in your language</h2>
-        <p>These reader pages use Claude-generated translations that preserve the message and tone instead of doing literal browser translation. Hindi is live first; more regional languages can be generated from the same source files.</p>
-      </div>
-      <div class="language-module-control">
-        <span>Available now</span>
-        <div class="language-pill-row">
-          ${CULTURE_LANGUAGES.map((language) => `<a class="language-pill" href="${sitePath({ basePath: "" }, language.homePath)}">${escapeHtml(language.nativeLabel)}</a>`).join("")}
-        </div>
-        <p>No external translation script runs on page load.</p>
-      </div>
-    </section>
-  `.trim();
-}
-
-function renderCultureDocuments(site, cultureDocuments = CULTURE_DOCUMENTS) {
+function renderCultureDocuments(site, cultureDocuments = CULTURE_DOCUMENTS, language = DEFAULT_CULTURE_LANGUAGE) {
   return `
     <section class="culture-docs" id="culture-docs" aria-labelledby="culture-docs-title">
       <div class="home-section-head">
         <div>
           <p class="home-label">Cars24 Culture</p>
-          <h2 id="culture-docs-title">Flatland and values, with translated readers</h2>
-          <p>The original PDFs stay available. The language versions are separate Claude-translated reader pages, so the document itself is readable in that language.</p>
+          <h2 id="culture-docs-title">Flatland and values</h2>
+          <p>Use the language selector in the top masthead. The PDF links below follow the selected language.</p>
         </div>
       </div>
       <div class="culture-doc-grid">
-        ${cultureDocuments.map((doc) => renderCultureDocumentCard(site, doc)).join("")}
+        ${cultureDocuments.map((doc) => renderCultureDocumentCard(site, doc, language)).join("")}
       </div>
     </section>
   `.trim();
 }
 
-function renderCultureDocumentCard(site, doc) {
+function renderCultureDocumentCard(site, doc, language = DEFAULT_CULTURE_LANGUAGE) {
+  const version = getCultureVersion(doc, language.code) || getCultureVersion(doc, "en");
+  const pdfLabel = language.code === "en" ? "Open PDF" : `Open PDF - ${language.nativeLabel}`;
   return `
     <article class="culture-doc-card">
-      <a class="culture-doc-cover" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">
+      <a class="culture-doc-cover" href="${sitePath(site, version.pdfPath)}" target="_blank" rel="noreferrer">
         <img src="${sitePath(site, doc.cover)}" alt="${escapeAttribute(doc.title)} cover" loading="lazy">
       </a>
       <div class="culture-doc-copy">
@@ -1298,20 +1323,12 @@ function renderCultureDocumentCard(site, doc) {
         <h3>${escapeHtml(doc.title)}</h3>
         <p>${escapeHtml(doc.description)}</p>
         <div class="culture-doc-actions">
-          <a class="button-link" href="${sitePath(site, `/culture/${doc.slug}/`)}">Read English</a>
-          ${renderCultureDocVersionLinks(site, doc)}
-          <a class="button-link button-link-muted" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">Original PDF</a>
+          <a class="button-link" href="${sitePath(site, version.pdfPath)}" target="_blank" rel="noreferrer">${escapeHtml(pdfLabel)}</a>
+          <a class="button-link button-link-muted" href="${sitePath(site, version.pathName)}">Read online</a>
         </div>
       </div>
     </article>
   `.trim();
-}
-
-function renderCultureDocVersionLinks(site, doc) {
-  return (doc.versions || [])
-    .filter((version) => version.language.code !== "en")
-    .map((version) => `<a class="button-link" href="${sitePath(site, version.pathName)}">Read ${escapeHtml(version.language.nativeLabel)}</a>`)
-    .join("");
 }
 
 function renderCultureLanguageHome(site, cultureDocuments, language) {
@@ -1337,7 +1354,7 @@ function renderCultureLanguageHome(site, cultureDocuments, language) {
     }),
     content: `
       <div class="page-shell">
-        ${renderHeader(site)}
+        ${renderHeader(site, { activeLanguageCode: language.code })}
         <main class="content">
           <section class="archive-hero culture-language-hero">
             <p class="eyebrow">${escapeHtml(language.readerNote)}</p>
@@ -1352,7 +1369,7 @@ function renderCultureLanguageHome(site, cultureDocuments, language) {
               </div>
             </div>
             <div class="culture-doc-grid">
-              ${cultureDocuments.map((doc) => renderCultureDocumentCard(site, doc)).join("")}
+              ${cultureDocuments.map((doc) => renderCultureDocumentCard(site, doc, language)).join("")}
             </div>
           </section>
         </main>
@@ -1388,7 +1405,7 @@ function renderCultureDocumentPage(site, doc, version) {
     }),
     content: `
       <div class="page-shell">
-        ${renderHeader(site)}
+        ${renderHeader(site, { activeLanguageCode: language.code, doc })}
         <main class="content">
           <article class="culture-reader">
             <nav class="breadcrumb">
@@ -1401,8 +1418,7 @@ function renderCultureDocumentPage(site, doc, version) {
               <h1>${escapeHtml(doc.title)}</h1>
               <p class="dek">${escapeHtml(description)}</p>
               <div class="culture-reader-actions">
-                ${renderCultureReaderLanguageLinks(site, doc, language.code)}
-                <a class="button-link button-link-muted" href="${sitePath(site, doc.href)}" target="_blank" rel="noreferrer">Original PDF</a>
+                <a class="button-link" href="${sitePath(site, version.pdfPath)}" target="_blank" rel="noreferrer">${escapeHtml(language.code === "en" ? "Open PDF" : `Open PDF - ${language.nativeLabel}`)}</a>
               </div>
             </header>
             <div class="article-body culture-reader-body">
@@ -1414,15 +1430,6 @@ function renderCultureDocumentPage(site, doc, version) {
       </div>
     `
   });
-}
-
-function renderCultureReaderLanguageLinks(site, doc, activeLanguageCode) {
-  return `<div class="language-pill-row culture-reader-languages">
-    ${doc.versions.map((version) => {
-      const activeClass = version.language.code === activeLanguageCode ? " language-pill-active" : "";
-      return `<a class="language-pill${activeClass}" href="${sitePath(site, version.pathName)}">${escapeHtml(version.language.nativeLabel)}</a>`;
-    }).join("")}
-  </div>`;
 }
 
 function renderCultureReaderBody(markdown) {

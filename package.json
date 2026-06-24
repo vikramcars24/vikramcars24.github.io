@@ -14,6 +14,7 @@
     "audience:report": "node scripts/audience-dashboard.mjs",
     "slack:dashboard": "node scripts/slack-dashboard.mjs",
     "flatland:pdf": "node scripts/render-flatland-pdf.mjs",
+    "culture:pdfs": "node scripts/render-culture-pdfs.mjs",
     "google:auth:status": "~/bin/google-auth-service status",
     "serve": "python3 -m http.server 4321 -d dist",
     "preview": "npm run build && npm run serve"

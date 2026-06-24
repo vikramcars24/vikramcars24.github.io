@@ -13,7 +13,7 @@
     <meta property="og:description" content="Our Values, translated into Gujarati with Claude to preserve tone and meaning.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://vikramchopra.in/gu/culture/values/">
-    <meta property="og:image" content="https://vikramchopra.in/media/docs/values-cover-01.png?v=1b095d8">
+    <meta property="og:image" content="https://vikramchopra.in/media/docs/values-cover-01.png?v=c1de592">
 
 
     <meta property="og:image:alt" content="Our Values cover">
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Values in Gujarati | Vikram Chopra">
     <meta name="twitter:description" content="Our Values, translated into Gujarati with Claude to preserve tone and meaning.">
-    <meta name="twitter:image" content="https://vikramchopra.in/media/docs/values-cover-01.png?v=1b095d8">
+    <meta name="twitter:image" content="https://vikramchopra.in/media/docs/values-cover-01.png?v=c1de592">
     <meta name="twitter:image:alt" content="Our Values cover">
     <meta name="theme-color" content="#f4ecdf">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -54,10 +54,10 @@
       </a>
       <div class="site-header-actions">
       <div class="language-control language-control-compact">
-      <span>Language</span>
-      <div class="language-link-row">
-        <a href="/">English</a><a href="/hi/">हिन्दी</a><a href="/mr/">मराठी</a><a href="/gu/">ગુજરાતી</a><a href="/bn/">বাংলা</a><a href="/ta/">தமிழ்</a><a href="/te/">తెలుగు</a><a href="/kn/">ಕನ್ನಡ</a><a href="/ml/">മലയാളം</a><a href="/pa/">ਪੰਜਾਬੀ</a><a href="/or/">ଓଡ଼ିଆ</a>
-      </div>
+      <label for="language-select">Language</label>
+      <select id="language-select" class="language-select" data-language-select aria-label="Language">
+        <option value="/culture/values/">English</option><option value="/hi/culture/values/">हिन्दी</option><option value="/mr/culture/values/">मराठी</option><option value="/gu/culture/values/" selected>ગુજરાતી</option><option value="/bn/culture/values/">বাংলা</option><option value="/ta/culture/values/">தமிழ்</option><option value="/te/culture/values/">తెలుగు</option><option value="/kn/culture/values/">ಕನ್ನಡ</option><option value="/ml/culture/values/">മലയാളം</option><option value="/pa/culture/values/">ਪੰਜਾਬੀ</option><option value="/or/culture/values/">ଓଡ଼ିଆ</option>
+      </select>
     </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="/archive/">Essays</a>
@@ -82,10 +82,7 @@
               <h1>Our Values</h1>
               <p class="dek">Our Values, translated into Gujarati with Claude to preserve tone and meaning.</p>
               <div class="culture-reader-actions">
-                <div class="language-pill-row culture-reader-languages">
-    <a class="language-pill" href="/culture/values/">English</a><a class="language-pill" href="/hi/culture/values/">हिन्दी</a><a class="language-pill" href="/mr/culture/values/">मराठी</a><a class="language-pill language-pill-active" href="/gu/culture/values/">ગુજરાતી</a><a class="language-pill" href="/bn/culture/values/">বাংলা</a><a class="language-pill" href="/ta/culture/values/">தமிழ்</a><a class="language-pill" href="/te/culture/values/">తెలుగు</a><a class="language-pill" href="/kn/culture/values/">ಕನ್ನಡ</a><a class="language-pill" href="/ml/culture/values/">മലയാളം</a><a class="language-pill" href="/pa/culture/values/">ਪੰਜਾਬੀ</a><a class="language-pill" href="/or/culture/values/">ଓଡ଼ିଆ</a>
-  </div>
-                <a class="button-link button-link-muted" href="/media/docs/cars24-values.pdf?v=1b095d8" target="_blank" rel="noreferrer">Original PDF</a>
+                <a class="button-link" href="/media/docs/cars24-values-gu.pdf?v=c1de592" target="_blank" rel="noreferrer">Open PDF - ગુજરાતી</a>
               </div>
             </header>
             <div class="article-body culture-reader-body">
@@ -169,6 +166,7 @@
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
+        const languageSelect = document.querySelector("[data-language-select]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
@@ -191,6 +189,15 @@
             const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
             localStorage.setItem(storageKey, nextTheme);
             applyTheme(nextTheme);
+          });
+        }
+
+        if (languageSelect) {
+          languageSelect.addEventListener("change", () => {
+            const nextPath = languageSelect.value;
+            if (nextPath && nextPath !== window.location.pathname) {
+              window.location.href = nextPath;
+            }
           });
         }
 
