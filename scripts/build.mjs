@@ -2205,7 +2205,7 @@ function sitePath(site, pathName) {
 function withMediaVersion(pathName) {
   const value = String(pathName || "");
 
-  if (!value.startsWith("/media/") || !mediaAssetVersion) {
+  if (!(value.startsWith("/media/") || value === "/styles.css") || !mediaAssetVersion) {
     return value;
   }
 
