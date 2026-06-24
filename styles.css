@@ -521,7 +521,7 @@ pre code {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .home-section-head {
@@ -540,7 +540,7 @@ pre code {
 
 .home-archive-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 8.5rem;
+  grid-template-columns: minmax(0, 1fr) 11rem;
   gap: 1rem;
   align-items: start;
   padding: 1.15rem 0;
@@ -567,8 +567,8 @@ pre code {
 }
 
 .home-archive-visual {
-  width: 8.5rem;
-  aspect-ratio: 1.45 / 1;
+  width: 11rem;
+  aspect-ratio: 40 / 21;
   justify-self: end;
 }
 
@@ -959,7 +959,7 @@ pre code {
 
 .entry-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 8.75rem;
+  grid-template-columns: minmax(0, 1fr) 11rem;
   gap: 1rem;
   align-items: start;
   padding: 1rem 0;
@@ -1006,8 +1006,8 @@ pre code {
 }
 
 .entry-thumb {
-  width: 8.75rem;
-  aspect-ratio: 1.26 / 1;
+  width: 11rem;
+  aspect-ratio: 40 / 21;
   justify-self: end;
 }
 
@@ -1325,13 +1325,13 @@ pre code {
   }
 
   .entry-row {
-    grid-template-columns: minmax(0, 1fr) 6.75rem;
+    grid-template-columns: minmax(0, 1fr) 7.75rem;
     gap: 0.35rem 0.85rem;
     align-items: start;
   }
 
   .home-archive-row {
-    grid-template-columns: minmax(0, 1fr) 6.75rem;
+    grid-template-columns: minmax(0, 1fr) 7.75rem;
     grid-template-areas:
       "copy thumb";
     gap: 0.35rem 0.85rem;
@@ -1371,14 +1371,14 @@ pre code {
 
   .home-archive-visual {
     grid-area: thumb;
-    width: 6.75rem;
+    width: 7.75rem;
     max-width: none;
     order: initial;
   }
 
   .entry-thumb {
     order: initial;
-    width: 6.75rem;
+    width: 7.75rem;
     max-width: none;
     justify-self: end;
   }
