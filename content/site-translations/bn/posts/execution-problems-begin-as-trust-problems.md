@@ -1,0 +1,40 @@
+---
+title: Execution-এর সমস্যা শুরু হয় Trust-এর সমস্যা থেকে
+date: 2026-06-17
+description: Teams দেরি আর দুর্বল accountability-কে process-এর সমস্যা বলে diagnosis করে। কিন্তু অনেক ব্যর্থতা আরও আগে শুরু হয় — trust, conflict এড়ানো, আর team-এর মানবিক কাঠামোতে।
+socialDescription: অনেক execution ব্যর্থতা দেখা যায় process সমস্যা হিসেবে, কিন্তু শুরু হয় আরও আগে — team-এর ভেতরে কম trust, conflict এড়ানো, আর মিথ্যা commitment থেকে।
+image: /media/execution-problems-begin-as-trust-problems-preview.jpg
+imageAlt: Execution-এর সমস্যা শুরু হয় Trust-এর সমস্যা থেকে — সোশ্যাল প্রিভিউ ছবি।
+articleImage: /media/execution-problems-begin-as-trust-problems-blog.png
+articleImageAlt: Execution-এর সমস্যা শুরু হয় Trust-এর সমস্যা থেকে — এডিটোরিয়াল ভিজ্যুয়াল।
+summary: postmortem বলে process। কারণ সাধারণত trust, conflict এড়ানো, আর একধাপ নিচে মিথ্যা commitment। | Lencioni-র chain এটা ব্যাখ্যা করে, কিন্তু trust হলো মেঝে, skill নয়: co-founder-দের মধ্যেও candor-এর অনুশীলন দরকার। | সততার পূর্বশর্ত স্বস্তি নয়। স্বস্তি হলো পুরস্কার।
+featured: false
+category: Essay
+slug: execution-problems-begin-as-trust-problems
+---
+একটা team-কে ভুলভাবে diagnose করার সবচেয়ে সহজ উপায় হলো যেখানে সমস্যাটা দৃশ্যমান হয়েছে সেখান থেকে শুরু করা। একটা project slip করেছে, একটা সিদ্ধান্ত নিতে বেশি সময় লেগেছে, একটা customer সমস্যা সমাধান হয়নি, কেউ underperform করেছে কিন্তু কেউ সামলায়নি। postmortem তখন পরিচিত শোনায়: planning সমস্যা, ownership সমস্যা, follow-through সমস্যা, process সমস্যা। কখনও কখনও এগুলো ঠিক। প্রায়ই এগুলো ভুল না হলেও অগভীর। এগুলো বলে সমস্যাটা কোথায় উপরে উঠে এসেছে, কোথায় শুরু হয়েছে তা নয়। Leadership teams খুব কমই সেই কথাটা বলে যেটা সবচেয়ে বেশি বলা দরকার — "launch slip করেছে কারণ আমরা tracker update করিনি" নয়, বরং "launch slip করেছে কারণ আমরা একে অপরকে যথেষ্ট trust করতাম না বলে আসলে কী ভাবছিলাম সেটা যথেষ্ট আগে বলতে পারিনি।" দ্বিতীয় diagnosis কঠিন কারণ এটা আর procedural নয়। এখন কথোপকথনটা trust, ভয়, এড়ানো, clear হওয়ার চেয়ে পছন্দের মানুষ হওয়ার preference নিয়ে। এগুলো দুর্বল review cadence-এর চেয়ে অনেক বেশি অস্বস্তিকর নাম দিতে।
+
+এই কারণেই [Patrick Lencioni-র Five Dysfunctions of a Team](https://www.tablegroup.com/topics-and-resources/teamwork-5-dysfunctions/) টিকে আছে। এটা একটা pattern-কে সহজ ভাষা দেয় যেটা বেশিরভাগ leadership team বেঁচেছে কিন্তু cleanly diagnose করতে পারেনি: trust-এর অনুপস্থিতি → conflict-এর ভয় → commitment-এর অভাব → accountability এড়ানো → ফলাফল থেকে অমনোযোগিতা। এটা দীর্ঘস্থায়ী হওয়ার কারণ হলো এটা causal chain-টা বেশিরভাগ management আলোচনার চেয়ে ভালোভাবে অনুসরণ করে। একটা team সাধারণত ফলাফল থেকে অমনোযোগী হয়ে শুরু করে না। শুরু হয় অনেক আগে। মানুষ একে অপরকে যথেষ্ট trust করে না vulnerable হতে, তাই real conflict এড়ায়, তাই সিদ্ধান্তে real buy-in-এর বদলে fake agreement আসে, তাই accountability performative হয়ে যায়, তাই personal priority চুপচাপ team result-কে ছাড়িয়ে যায়। সমস্যাটা dashboard-এ দেখা যাওয়ার সময়, team অনেকক্ষণ ধরেই ভুলপথে চলছিল।
+
+## যেখানে leaders ভুল diagnosis করে
+
+এই ধরনের একটা model-এর মূল্য সেটা সংক্ষেপ করায় নয়। মূল্য হলো বেশিরভাগ কোম্পানি কোথায় এটা ব্যবহারের আগেই থেমে যায় সেটা দেখতে পাওয়ায়। আমার অভিজ্ঞতায় আসল কাজটা তিনটি জায়গায় লুকিয়ে থাকে।
+
+**Leaders process-এর ভাষা পছন্দ করে কারণ এটা নিরাপদ লাগে।** যদি launch slip করে কারণ weekly review দুর্বল ছিল, তুমি weekly review ঠিক করতে পারো। যদি slip করে কারণ দুজন executive তিন সপ্তাহ আগে একে অপরকে যথেষ্ট trust করত না বলে দ্বিমত পোষণ করেনি, তাহলে সমস্যাটা ব্যক্তিগত হয়ে যায় — আর এখন কথা হচ্ছে মানুষ ব্যয়বহুল হওয়ার আগ পর্যন্ত দ্বিমত লুকিয়ে রাখে কিনা, meetings সিদ্ধান্তের forum নাকি ভদ্রতার ritual, team useful friction-এর চেয়ে মিথ্যা শান্তি পছন্দ করে কিনা। এটা অনেক বেশি অস্বস্তিকর diagnosis, এ কারণেই অনেক organization আটকে থাকে। তারা দৃশ্যমান যন্ত্রপাতি সারাতেই থাকে, মানবিক কাঠামো অস্পর্শ রেখে দেয়। কৃত্রিম harmony একটা কোম্পানির সবচেয়ে ব্যয়বহুল মিথ্যাগুলোর একটা। বাইরে থেকে দেখতে পরিপক্ব লাগে — ভদ্র meetings, কম ঝামেলা, আপাত alignment। তারপর real movie শুরু হয় meeting-এর পরে, side conversation আর private reservation আর commitment ছাড়া compliance-এ। যা execution সমস্যা দেখায় সেটা প্রায়ই honesty সমস্যা। স্বাস্থ্যকর conflict মুহূর্তে ব্যয়বহুল কিন্তু সামগ্রিকভাবে সস্তা। এড়ানো conflict মুহূর্তে সস্তা লাগে কিন্তু পরে অত্যন্ত ব্যয়বহুল হয়ে ওঠে।
+
+**Commitment মানে consensus নয়।** Teams দুটোকে গুলিয়ে ফেলে। সত্যিকারের commitment-এ সবার পছন্দের ফলাফল আসা দরকার নেই। দরকার clarity, মানুষ শোনা অনুভব করা, আর একটা সিদ্ধান্ত এতটা explicit যে বিতর্ক শেষ হলে সবাই পেছনে থাকতে পারে। অনেক team কখনও সেখানে পৌঁছায় না। তারা "roughly aligned" বা "চলতে চলতে refine করব" নিয়ে চলে যায় — যেটা collaborative শোনায় আর প্রায়ই evasive, আর ambiguity flexibility-র ছদ্মবেশে downstream যায়। এ কারণেই আমি অতি-রোমান্টিক consensus culture-কে অবিশ্বাস করি। এগুলো সাধারণত বেশি commitment নয়, কম commitment তৈরি করে — কারণ মানুষ যথেষ্ট clarity ছাড়া বা কাজটা কঠিন হলে call defend করার মতো ownership ছাড়া চলে যায়।
+
+**Accountability সবচেয়ে কঠিন peers-এর মধ্যে।** Teams accountability-কে manager-এর কাজ মনে করে। সবচেয়ে শক্তিশালী রূপটা হলো peer accountability — সহকর্মীরা সরাসরি একে অপরকে ডাকে যখন standards পড়ে যায় — আর এখানেই অনেক team ব্যর্থ হয়, কারণ peer-কে accountable করা tension আর awkwardness-এর ঝুঁকি নেয়। তাই মানুষ উপরে escalate করে বা feedback এতটা নরম করে দেয় যে কিছুই বদলায় না, আর manager হয়ে যায় correction-এর একমাত্র উৎস। যদি কঠিন কথাটা শুধু boss বলতে পারে, তাহলে তোমার এখনও শক্তিশালী team নেই। তোমার আছে একটা reporting structure।
+
+এর মানে এই নয় যে process অপ্রাসঙ্গিক। স্পষ্ট role, decision rights, আর review rhythm গুরুত্বপূর্ণ। কিন্তু process তার নিচের team-এর quality-কে amplify করে — মৌলিক dysfunction থেকে team-কে বাঁচাতে খুব কমই পারে বেশিদিন। কম-trust team যেকোনো process-কে bureaucracy-তে পরিণত করে। conflict-avoidant team যেকোনো cadence-কে theater-এ পরিণত করে। গভীর কথাটা [Amy Edmondson-এর](https://doi.org/10.2307/2666999) psychological safety-র কাজের সাথে সংযুক্ত: একটা team তখনই দ্বিমত প্রকাশ করে এবং ভুল স্বীকার করে যখন সেটা করা নিরাপদ মনে হয় — আর সেটা ছাড়া তুমি যে operating system install করো না কেন, সেটা খারাপ data-তে চলে।
+
+## Trust হলো মেঝে, skill নয়
+
+আর এখানে আমাকে model-এর বাইরে যেতে হবে, কারণ আমি নিজে এর exception বাঁচি। chain বলে trust conflict-কে মুক্ত করে। আমি নিজেকে ধরেছি নিজের co-founder-দের কাছেও কঠিন কথা না বলতে — আর আমাদের মধ্যে একটা leadership team যতটা trust তৈরি করতে পারে ততটা আছে। এক দশকেরও বেশি সময় একসাথে। বছরের পর বছরে ego-গুলো ক্ষয়ে গেছে। কেউ intent নিয়ে প্রশ্ন তোলে না; যাই বলা হোক, আমরা জানি সঠিক কারণে বলা হচ্ছে। Model অনুযায়ী, candor আমাদের জন্য বিনামূল্যে হওয়া উচিত। কিন্তু তা নয়। অস্বস্তিটা এখনও আসে — বাক্যের আগের pause, পেটের মধ্যে উথলানো। [Kim Scott](https://www.radicalcandor.com/blog/care-personally-challenge-directly/) অন্যদিক থেকে একই গল্প বলেন: তিনি পনেরো বছর ধরে তাঁকে trust ও পছন্দ করে এমন মানুষদের মাঝে career কাটালেন, তারপরও কেউ তাঁকে দাঁতে পালং শাক লেগে থাকার মতো কথাটা বলেনি। এ থেকে আমি যা শিখেছি: trust হলো মেঝে, skill নয়। তুমি বিশ্বাস করতে পারো feedback একটা উপহার আর খারাপ খবর একটা উপহার — তবু সেই বিশ্বাস কঠিন বাক্যটা তোমার হয়ে deliver করবে না। practice করবে। butterflies-ই হলো মূল বিষয়। কঠিন কথার practice দরকার, তারপর আরও practice। আমি এখন candor-কে একটা rep হিসেবে দেখি যেটা করতে হবে — assume করার কোনো trait নয়। যে team স্বস্তি অনুভব না করা পর্যন্ত সৎ হওয়ার অপেক্ষা করে, সে চিরকাল অপেক্ষা করবে। স্বস্তি পূর্বশর্ত নয়। স্বস্তি হলো পুরস্কার।
+
+অনেক execution সমস্যা execution সমস্যা হিসেবে শুরু হয় না। শুরু হয় trust সমস্যা হিসেবে যেটা এখনও পাঠযোগ্য হয়ে ওঠেনি। একবার এটা দেখতে পেলে, তুমি symptom-কে cause মনে করা বন্ধ করো আর সমস্যার নিচের সমস্যাটা খুঁজতে শুরু করো। সেখানেই বেশিরভাগ real execution কাজ শুরু হয়।
+
+## নোট ও সূত্র
+- [Patrick Lencioni, The Five Dysfunctions of a Team, 2002](https://www.tablegroup.com/topics-and-resources/teamwork-5-dysfunctions/)। trust-থেকে-ফলাফলের causal chain।
+- [Amy Edmondson, "Psychological Safety and Learning Behavior in Work Teams," Administrative Science Quarterly, 1999](https://doi.org/10.2307/2666999)। দ্বিমত আর ভুল স্বীকার করতে safety দরকার।
+- [Kim Scott, Radical Candor, 2017](https://www.radicalcandor.com/our-approach)। পনেরো বছরের না-বলা feedback-এর গল্প।

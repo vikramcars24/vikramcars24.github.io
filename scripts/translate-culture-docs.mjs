@@ -1,4 +1,4 @@
-import { execFileSync } from "node:child_process";
+import { spawnSync } from "node:child_process";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -8,6 +8,7 @@ const outputDir = path.join(sourceDir, "translations");
 
 const LANGUAGES = {
   hi: { name: "Hindi", nativeName: "हिन्दी", context: "natural modern Hindi that a Cars24 teammate in India would actually read" },
+  hinglish: { name: "Hinglish", nativeName: "Hinglish", context: "natural Hindi-English mix written in Roman script, like a clear Cars24 teammate note, not awkward transliteration" },
   mr: { name: "Marathi", nativeName: "मराठी", context: "natural workplace Marathi, not Sanskritised or literal" },
   gu: { name: "Gujarati", nativeName: "ગુજરાતી", context: "clear contemporary Gujarati for a builder audience" },
   bn: { name: "Bengali", nativeName: "বাংলা", context: "natural Bengali with a direct founder note tone" },
@@ -99,37 +100,169 @@ SOURCE:
 ${source}
 `.trim();
 
+  return claude(prompt, {
+    systemPrompt: "You are a translation engine. Return only the requested translated Markdown and no commentary.",
+    maxBufferMb: 16,
+    timeoutMs: 600_000
+  });
+}
+
+function claude(prompt, { systemPrompt, maxBufferMb, timeoutMs }) {
   const args = [
     "-p",
     "--model",
     "sonnet",
+    "--output-format",
+    "json",
+    "--disable-slash-commands",
     "--effort",
     "low",
     "--no-session-persistence",
     "--tools",
     "",
-    "--max-budget-usd",
-    "0.60",
-    prompt
+    "--system-prompt",
+    systemPrompt
   ];
+  const env = { ...process.env };
+  delete env.ANTHROPIC_API_KEY;
+  delete env.ANTHROPIC_AUTH_TOKEN;
 
-  for (let attempt = 1; attempt <= 2; attempt += 1) {
+  for (let attempt = 1; attempt <= 4; attempt += 1) {
     try {
-      return execFileSync("claude", args, {
+      const result = spawnSync("claude", args, {
         cwd: rootDir,
+        env,
+        input: prompt,
         encoding: "utf8",
-        maxBuffer: 1024 * 1024 * 8,
-        timeout: 180_000
+        maxBuffer: 1024 * 1024 * maxBufferMb,
+        timeout: timeoutMs
       });
-    } catch (error) {
-      if (attempt === 2) {
+      if (result.error) {
+        result.error.stdout = result.stdout;
+        result.error.stderr = result.stderr;
+        throw result.error;
+      }
+      if (result.status !== 0) {
+        const error = new Error(`claude exited with status ${result.status}`);
+        error.status = result.status;
+        error.stdout = result.stdout;
+        error.stderr = result.stderr;
         throw error;
       }
-      console.warn(`  retrying chunk after Claude error: ${error.message}`);
+      const stdout = result.stdout;
+      const data = JSON.parse(stdout);
+      if (data?.is_error) {
+        throw new Error(`Claude CLI reported error: ${String(data.result || data.subtype || "unknown").slice(0, 600)}`);
+      }
+      return String(data?.result || "");
+    } catch (error) {
+      const timeout = error.code === "ETIMEDOUT";
+      const maxAttempts = timeout ? 2 : 4;
+      if (attempt >= maxAttempts || !isRetryableClaudeError(error)) {
+        return claudeViaAgentOpsShim({ prompt, systemPrompt, timeoutMs, maxBufferMb, cliError: error });
+      }
+      console.warn(`  retrying chunk after Claude error: ${formatClaudeError(error)}`);
+      sleepSync([1_000, 3_000, 8_000][attempt - 1] || 8_000);
     }
   }
 
   throw new Error("Claude translation failed unexpectedly.");
+}
+
+function claudeViaAgentOpsShim({ prompt, systemPrompt, timeoutMs, maxBufferMb, cliError }) {
+  console.warn(`  using Agent-Ops Claude shim after CLI error: ${formatClaudeError(cliError)}`);
+  const python = `
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.expanduser("~/Agent-Ops/services/python-shared"))
+from claude_cli import Anthropic
+
+payload = json.load(sys.stdin)
+client = Anthropic()
+response = client.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=16000,
+    system=payload["system"],
+    messages=[{"role": "user", "content": payload["prompt"]}],
+    timeout=max(60, int(payload["timeout_ms"] / 1000)),
+)
+print(json.dumps({"result": response.content[0].text}, ensure_ascii=False))
+`.trim();
+  const result = spawnSync("python3", ["-c", python], {
+    cwd: rootDir,
+    env: process.env,
+    input: JSON.stringify({ prompt, system: systemPrompt, timeout_ms: timeoutMs }),
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024 * maxBufferMb,
+    timeout: timeoutMs + 120_000
+  });
+
+  if (result.error) {
+    throw new Error(`${formatClaudeError(cliError)}; Agent-Ops shim failed: ${result.error.message}`);
+  }
+  if (result.status !== 0) {
+    throw new Error(`${formatClaudeError(cliError)}; Agent-Ops shim failed with status ${result.status}: ${String(result.stderr || result.stdout || "").slice(0, 600)}`);
+  }
+
+  try {
+    return String(JSON.parse(result.stdout).result || "");
+  } catch (error) {
+    throw new Error(`${formatClaudeError(cliError)}; Agent-Ops shim returned invalid JSON: ${String(result.stdout || error.message).slice(0, 600)}`);
+  }
+}
+
+function formatClaudeError(error) {
+  const details = [
+    error.code ? `code=${error.code}` : null,
+    error.signal ? `signal=${error.signal}` : null,
+    Number.isInteger(error.status) ? `status=${error.status}` : null
+  ].filter(Boolean);
+  const stdout = String(error.stdout || "").trim();
+  if (stdout) {
+    try {
+      const data = JSON.parse(stdout);
+      if (data?.is_error) {
+        details.push(`api_status=${data.api_error_status || "unknown"}`);
+        details.push(`result=${String(data.result || data.subtype || "unknown").slice(0, 240)}`);
+      } else {
+        details.push(`stdout=${stdout.slice(0, 240)}`);
+      }
+    } catch {
+      details.push(`stdout=${stdout.slice(0, 240)}`);
+    }
+  }
+  const stderr = String(error.stderr || "").trim();
+  if (stderr) {
+    details.push(stderr.slice(0, 240));
+  }
+  return details.length > 0 ? details.join(" ") : String(error.message || "unknown").slice(0, 240);
+}
+
+function isRetryableClaudeError(error) {
+  if (String(error.stderr || "").trim()) {
+    return false;
+  }
+  const stdout = String(error.stdout || "").trim();
+  if (stdout) {
+    try {
+      const data = JSON.parse(stdout);
+      if (data?.is_error) {
+        const result = String(data.result || "").toLowerCase();
+        if (result.includes("invalid authentication") || result.includes("not logged in") || result.includes("/login")) {
+          return false;
+        }
+      }
+    } catch {
+      return true;
+    }
+  }
+  return error.code === "ETIMEDOUT" || Number.isInteger(error.status);
+}
+
+function sleepSync(ms) {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
 }
 
 function chunkSource(source) {

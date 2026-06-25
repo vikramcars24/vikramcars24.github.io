@@ -5,6 +5,7 @@ import path from "node:path";
 import { chromium } from "playwright";
 
 const rootDir = process.cwd();
+const siteRootDir = process.env.QA_SITE_ROOT || path.join(rootDir, "dist");
 const shotsDir = path.join(rootDir, "qa-screens");
 const host = "127.0.0.1";
 const port = 4322;
@@ -43,10 +44,10 @@ function contentType(filePath) {
 
 function resolvePath(urlPath) {
   const cleanPath = decodeURIComponent(urlPath.split("?")[0]);
-  let filePath = path.join(rootDir, cleanPath);
+  let filePath = path.join(siteRootDir, cleanPath);
 
   if (cleanPath.endsWith("/")) {
-    filePath = path.join(rootDir, cleanPath, "index.html");
+    filePath = path.join(siteRootDir, cleanPath, "index.html");
   }
 
   if (!path.extname(filePath) && existsSync(path.join(filePath, "index.html"))) {
@@ -68,7 +69,7 @@ function createStaticServer() {
       });
       createReadStream(statPath).pipe(res);
     } catch {
-      const body = await readFile(path.join(rootDir, "404.html"), "utf8");
+      const body = await readFile(path.join(siteRootDir, "404.html"), "utf8");
       res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
       res.end(body);
     }

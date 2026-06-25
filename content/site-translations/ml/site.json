@@ -1,0 +1,192 @@
+{
+  "siteTitle": "Vikram Chopra",
+  "tagline": "ഞാൻ Cars24-ന്റെ സ്ഥാപകനാണ്. ഈ ഉപന്യാസങ്ങൾ അതിനടിയിലെ ലോകവീക്ഷണമാണ്: ഒരു രാജ്യം കാർ ഉടമസ്ഥതയിലേക്ക് വളരുന്നതെങ്ങനെ, മൊബിലിറ്റിയിൽ വിശ്വാസം തന്നെ ഉൽപ്പന്നമാകുന്നതെങ്ങനെ, AI ഏകോപനച്ചെലവ് തകർക്കുമ്പോൾ ഒരു കമ്പനി എന്തായിത്തീരുന്നു, ഓഹരി ഉയരുമ്പോഴും ഒരു Builder എങ്ങനെ തെളിഞ്ഞ കണ്ണോടെ നിൽക്കുന്നു.",
+  "description": "ഞാൻ Cars24-ന്റെ സ്ഥാപകനാണ്. ഈ ഉപന്യാസങ്ങൾ അതിനടിയിലെ ലോകവീക്ഷണമാണ്: ഒരു രാജ്യം കാർ ഉടമസ്ഥതയിലേക്ക് വളരുന്നതെങ്ങനെ, മൊബിലിറ്റിയിൽ വിശ്വാസം തന്നെ ഉൽപ്പന്നമാകുന്നതെങ്ങനെ, AI ഏകോപനച്ചെലവ് തകർക്കുമ്പോൾ ഒരു കമ്പനി എന്തായിത്തീരുന്നു, ഓഹരി ഉയരുമ്പോഴും ഒരു Builder എങ്ങനെ തെളിഞ്ഞ കണ്ണോടെ നിൽക്കുന്നു.",
+  "socialTitle": "Vikram Chopra-യുടെ ഉപന്യാസങ്ങൾ",
+  "socialDescription": "Cars24-ന്റെ സ്ഥാപകൻ. ഇന്ത്യയിലെ കാർ ഉടമസ്ഥത, ഉൽപ്പന്നമായ വിശ്വാസം, AI-നേറ്റീവ് കമ്പനികൾ, ഉയർന്ന പന്തയങ്ങൾക്കിടയിലും തെളിഞ്ഞ കാഴ്ചപ്പാട് — ഇവയെക്കുറിച്ചുള്ള ഉപന്യാസങ്ങൾ.",
+  "socialImageAlt": "Vikram Chopra-യുടെ ഉപന്യാസങ്ങളുടെ സോഷ്യൽ പ്രിവ്യൂ.",
+  "intro": "ഞാൻ Cars24-ന്റെ സ്ഥാപകനാണ്. ഈ ഉപന്യാസങ്ങൾ അതിനടിയിലെ ലോകവീക്ഷണമാണ്: ഒരു രാജ്യം കാർ ഉടമസ്ഥതയിലേക്ക് വളരുന്നതെങ്ങനെ, മൊബിലിറ്റിയിൽ വിശ്വാസം തന്നെ ഉൽപ്പന്നമാകുന്നതെങ്ങനെ, AI ഏകോപനച്ചെലവ് തകർക്കുമ്പോൾ ഒരു കമ്പനി എന്തായിത്തീരുന്നു, ഓഹരി ഉയരുമ്പോഴും ഒരു Builder എങ്ങനെ തെളിഞ്ഞ കണ്ണോടെ നിൽക്കുന്നു.",
+  "about": "ഞാൻ എഴുതുന്നത് ചിന്തിക്കാൻ. പ്രസിദ്ധീകരിക്കുന്നത് തർക്കിക്കപ്പെടാൻ.",
+  "footerNote": "നീണ്ട വാദങ്ങൾക്കും മൂർച്ചയുള്ള ആശയങ്ങൾക്കും വീണ്ടും വായിക്കാൻ തോന്നിക്കുന്ന കുറിപ്പുകൾക്കും വേണ്ടി നിർമ്മിച്ചത്.",
+  "subscribe": {
+    "href": "/subscribe/",
+    "action": "https://buttondown.com/api/emails/embed-subscribe/vikramchopra",
+    "line": "വർഷത്തിൽ ഒരു കുറവ് തവണ, ഇമെയിലിൽ പുതിയ ഉപന്യാസങ്ങൾ.",
+    "homeEyebrow": "ഇമെയിൽ വഴി",
+    "homeTitle": "അടുത്ത ഉപന്യാസം ഇമെയിലിൽ നേടൂ",
+    "homeBody": "ഞാൻ അപൂർവ്വമായേ പ്രസിദ്ധീകരിക്കൂ. പുതിയ ഉപന്യാസം വരുമ്പോൾ അറിയാൻ ഇമെയിൽ ഏറ്റവും ലളിതമായ വഴിയാണ്.",
+    "homeDetail": "കൃത്യനിഷ്ഠയ്ക്ക് വേണ്ടിയുള്ള കൃത്യനിഷ്ഠ ഇല്ല. പറയാൻ വല്ലതും ഉണ്ടെന്ന് തോന്നുമ്പോൾ മാത്രം പുതിയ ഉപന്യാസം.",
+    "essayTitle": "ഇത് വായിക്കാൻ ദ്ദേഹിച്ചെങ്കിൽ, അടുത്തത് ഇമെയിലിൽ കിട്ടട്ടെ",
+    "essayBody": "വർഷത്തിൽ ഒരുപിടി ഉപന്യാസങ്ങൾ. ഫീഡ് ഓടിക്കൊണ്ടില്ല. ഫില്ലർ ഇല്ല.",
+    "pageEyebrow": "ഇമെയിൽ വഴി",
+    "pageTitle": "ഫീഡിനെ ആശ്രയിക്കാതെ പുതിയ ഉപന്യാസങ്ങൾ നേടൂ",
+    "pageDek": "ഞാൻ അപൂർവ്വമായേ പ്രസിദ്ധീകരിക്കൂ. പുതിയ ഉപന്യാസം വരുമ്പോൾ അറിയാൻ ഇമെയിൽ ഏറ്റവും ലളിതമായ വഴിയാണ്.",
+    "pageBody": "ന്യൂസ്‌ലെറ്റർ ട്രെഡ്‌മിൽ ഇല്ല. ആഴ്ചതോറുമുള്ള കുറിപ്പ് ഇല്ല. പറയാൻ വല്ലതും ഉണ്ടെന്ന് തോന്നുമ്പോൾ മാത്രം പുതിയ എഴുത്ത്.",
+    "placeholder": "ഇമെയിൽ വിലാസം",
+    "button": "Subscribe",
+    "submittingLabel": "തുടരുന്നു...",
+    "finePrint": "Submit ചെയ്തശേഷം Buttondown ഒരു ദ്രുതസ്ഥിരീകരണം ആവശ്യപ്പെടാം, തുടർന്ന് ഒരു confirmation ഇമെയിൽ അയയ്ക്കും."
+  },
+  "interviews": [
+    {
+      "section": "അഭിമുഖങ്ങൾ",
+      "title": "He Built India's Biggest Car Selling & Purchasing Platform",
+      "host": "Raj Shamani",
+      "date": "2023-07-01",
+      "videoId": "x9ICVBEsds4",
+      "description": "Cars24 കെട്ടിപ്പടുക്കൽ, നേതൃത്വം, നിയമനം, സ്കെയിലിംഗ്, Mahendra Singh Dhoni-യിൽ നിന്ന് പഠിച്ച പാഠങ്ങൾ — ഇവയെക്കുറിച്ചുള്ള വിശദമായ സംഭാഷണം."
+    },
+    {
+      "section": "അഭിമുഖങ്ങൾ",
+      "title": "Meet Cars24 Founder",
+      "host": "Sandeep Maheshwari",
+      "date": "2023-03-04",
+      "videoId": "HadopNcCS40",
+      "description": "Cars24-ന്റെ ആദ്യകാല യാത്ര, അഭിലാഷം, അനിശ്ചിതത്വത്തിനിടയിൽ നിർമ്മിക്കാൻ ആവശ്യമായ മനോഭാവം — ഇവയെക്കുറിച്ചുള്ള സംഭാഷണം."
+    },
+    {
+      "section": "അഭിമുഖങ്ങൾ",
+      "title": "How Cars24 CEO, Vikram Chopra Built a Rs 27,000 cr used car startup",
+      "host": "Mint",
+      "date": "2024-01-25",
+      "videoId": "b7ENRpPUKAs",
+      "description": "Cars24-ന്റെ വളർച്ച, ഉപയോഗിച്ച കാർ വിപണി, കമ്പനി നിർമ്മാണത്തിന്റെ ആദ്യ ഘട്ടങ്ങൾ, Raebareli-യിൽ നിന്ന് ഒരു വലിയ ബിസിനസ്സ് കെട്ടിപ്പടുക്കുന്നത് — ഇവയെക്കുറിച്ചുള്ള വിശദമായ സംഭാഷണം."
+    },
+    {
+      "section": "പ്രഭാഷണങ്ങളും പാനലുകളും",
+      "title": "Playing the long game: what it takes to build generation defining companies",
+      "host": "Z47 Moments",
+      "date": "2022-05-11",
+      "videoId": "s-nsfBhm0vI",
+      "description": "Vikram Chopra, Asish Mohapatra, Varun Alagh എന്നിവർ ഒന്നിച്ചുള്ള പാനൽ — തലമുറകൾ അടയാളപ്പെടുത്തുന്ന കമ്പനികൾ നിർമ്മിക്കുന്നതിനെക്കുറിച്ച്."
+    }
+  ],
+  "elsewhere": [
+    {
+      "type": "ഉപന്യാസം",
+      "title": "What You're Actually Paying For When You Buy a Used Car Online",
+      "source": "Cars24",
+      "date": "2026-05-21",
+      "url": "https://www.cars24.com/article/real-cost-of-buying-used-car-online-india-platform-vs-local-market/",
+      "description": "വില നിർണ്ണയം, വിശ്വാസം, ഉപഭോക്താക്കൾ ഉപയോഗിച്ച കാർ പ്ലാറ്റ്ഫോമുകളെ പ്രാദേശിക ഡീലർമാരുമായി താരതമ്യം ചെയ്യുമ്പോൾ യഥാർത്ഥത്തിൽ എന്ത് അളക്കുന്നു — ഇവയെക്കുറിച്ചുള്ള വിശദമായ വാദം."
+    },
+    {
+      "type": "അഭിമുഖം",
+      "title": "How we use AI will determine our success",
+      "source": "Moneycontrol",
+      "date": "2020-12-02",
+      "url": "https://www.moneycontrol.com/news/business/startup/exclusive-how-we-use-ai-will-determine-our-success-says-cars24-ceo-vikram-chopra-6178821.html",
+      "description": "മൂല്യനിർണ്ണയ ഗുണം, വിലനിർണ്ണയ കൃത്യത, AI-ചോദിത പഠനം — ഉപയോഗിച്ച കാർ വിപണിയിൽ ആർ ജയിക്കുമെന്ന് ഇവ നിർണ്ണയിക്കും എന്ന Cars24-ന്റെ കാഴ്ചപ്പാടിന്റെ ആദ്യ ആവിഷ്കാരം."
+    },
+    {
+      "type": "അഭിമുഖം",
+      "title": "The world is in a bad place this year, but I need to take a long-term view",
+      "source": "Moneycontrol",
+      "date": "2022-11-22",
+      "url": "https://www.moneycontrol.com/news/business/startup/the-world-is-getting-screwed-this-year-but-i-need-to-take-a-long-term-view-cars24-chief-vikram-chopra-9576181.html",
+      "description": "ഫണ്ടിംഗ് ശൈത്യകാലം നാവിഗേറ്റ് ചെയ്യൽ, ചെലവ് കുറയ്ക്കൽ, ബിസിനസ്സിനെ ദശകങ്ങൾ നീളുന്ന ദൃഷ്ടികോണിൽ നിന്ന് തീരുമാനങ്ങളെടുക്കൽ — ഇവയെക്കുറിച്ചുള്ള സംഭാഷണം."
+    },
+    {
+      "type": "അഭിമുഖം",
+      "title": "'Political Will' Is India's Biggest Failure in Air Pollution Control",
+      "source": "Outlook Business",
+      "date": "2025-12-03",
+      "url": "https://www.outlookbusiness.com/interviews/political-will-is-indias-biggest-failure-in-air-pollution-control-says-cars24-cofounder-vikram-chopra",
+      "description": "കാർ വ്യവസായത്തിന്റെ ഉടനടി താൽപ്പര്യങ്ങൾക്ക് എതിരായാലും, മലിനീകരണത്തിൽ അസ്വസ്ഥകരമായ പൊതുനയ നടപടി ആവശ്യമാണ് എന്ന വാദം."
+    },
+    {
+      "type": "ഉപന്യാസം",
+      "title": "Rising Strong: The Art of Failing Forward",
+      "source": "Cars24",
+      "date": "2024-10-03",
+      "url": "https://www.cars24.com/news/inside-scoop/the-art-of-failing-forward/",
+      "description": "പരാജയം, പ്രതിരോധശേഷി, തിരിച്ചടിക്ക് ശേഷം മുന്നോട്ട് നീങ്ങാൻ ആവശ്യമായ ആന്തരിക ജോലി — ഇവയെക്കുറിച്ചുള്ള ഒരു ഹ്രസ്വ ചിന്ത."
+    },
+    {
+      "type": "ഉപന്യാസം",
+      "title": "Embracing Discomfort for Growth",
+      "source": "Cars24",
+      "date": "2024-10-03",
+      "url": "https://www.cars24.com/news/inside-scoop/embracing-discomfort-for-growth/",
+      "description": "വളർച്ചയ്ക്കും അഭിലാഷത്തിനും മെച്ചപ്പെട്ട വിധിനിർണ്ണയത്തിനും ഒരു ഉപാധിയായി അസ്വസ്ഥത ബോധപൂർവ്വം തെരഞ്ഞെടുക്കുന്നതിനെക്കുറിച്ചൊരു കുറിപ്പ്."
+    }
+  ],
+  "ui": {
+    "languageLabel": "ഭാഷ",
+    "navEssays": "ഉപന്യാസങ്ങൾ",
+    "navDocs": "രേഖകൾ",
+    "themeDark": "ഇരുണ്ട",
+    "themeLight": "തെളിഞ്ഞ",
+    "themeToggleLabel": "നിറ തീം മാറ്റുക",
+    "homeTitle": "ഞാൻ എഴുതുന്നത് ചിന്തിക്കാൻ. പ്രസിദ്ധീകരിക്കുന്നത് തർക്കിക്കപ്പെടാൻ.",
+    "startHere": "ഇവിടെ നിന്ന് തുടങ്ങൂ:",
+    "cars24Culture": "Cars24 സംസ്കാരം",
+    "cultureTitle": "Flatland-ഉം മൂല്യങ്ങളും",
+    "cultureDescription": "മുകളിലെ മാസ്‌ഹെഡിലെ ഭാഷ സെലക്ടർ ഉപയോഗിക്കൂ. താഴെയുള്ള PDF ലിങ്കുകൾ തെരഞ്ഞെടുത്ത ഭാഷ അനുസരിച്ച് മാറും.",
+    "documentsTitle": "രേഖകൾ",
+    "openPdf": "PDF തുറക്കുക",
+    "writing": "എഴുത്ത്",
+    "essaySingular": "ഉപന്യാസം",
+    "essayPlural": "ഉപന്യാസങ്ങൾ",
+    "archiveEyebrow": "ഉപന്യാസങ്ങൾ",
+    "archiveTitle": "പ്രസിദ്ധീകരിച്ച എഴുത്ത്",
+    "archiveDescription": "കാർ ഉടമസ്ഥത, വിശ്വാസം, AI-നേറ്റീവ് കമ്പനികൾ, സമ്മർദ്ദത്തിലെ നേതൃത്വം — ഇവയെക്കുറിച്ച് Vikram Chopra-യുടെ ഉപന്യാസങ്ങൾ.",
+    "home": "ഹോം",
+    "share": "പങ്കിടുക",
+    "copied": "പകർത്തി",
+    "minRead": "മിനിറ്റ് വായന",
+    "words": "വാക്കുകൾ",
+    "inBrief": "ചുരുക്കത്തിൽ",
+    "onThisPage": "ഈ പേജിൽ",
+    "notesAndSources": "കുറിപ്പുകളും ഉറവിടങ്ങളും",
+    "continueReading": "തുടർന്ന് വായിക്കൂ",
+    "moreIn": "ഇതിൽ കൂടുതൽ",
+    "subscribeFallbackKicker": "ഇമെയിൽ വഴി",
+    "subscribeWhatToExpect": "എന്ത് പ്രതീക്ഷിക്കാം",
+    "subscribePoints": [
+      "പുതിയ ഉപന്യാസങ്ങൾ മാത്രം.",
+      "ആഴ്ചതോറും അല്ല, വർഷത്തിൽ ഒരു കുറവ് തവണ.",
+      "ഒരൊറ്റ confirmation ഇമെയിൽ subscription പൂർത്തിയാക്കും."
+    ],
+    "watchOnYouTube": "YouTube-ൽ കാണുക",
+    "elsewhere": "മറ്റിടങ്ങളിൽ",
+    "notFoundEyebrow": "404",
+    "notFoundTitle": "ആ പേജ് ഒഴുകി പോയി.",
+    "notFoundIntro": "എഴുത്തൊക്കെ ഇവിടെ ഉണ്ട്. ഹോംപേജിൽ നിന്നോ ഉപന്യാസങ്ങളിൽ നിന്നോ വീണ്ടും തുടങ്ങൂ.",
+    "goHome": "ഹോമിലേക്ക് പോകൂ",
+    "openEssays": "ഉപന്യാസങ്ങൾ തുറക്കൂ",
+    "footerEssays": "ഉപന്യാസങ്ങൾ",
+    "footerSubscribe": "Subscribe",
+    "essaySignoff": "Vikram Chopra, Founder & Builder",
+    "cultureDocs": {
+      "flatland": {
+        "title": "Flatland",
+        "meta": "സംസ്കാര പുസ്തകം - 33 പേജുകൾ",
+        "description": "കൂടുതൽ പരന്നതും വേഗമേറിയതുമായ ഒരു Cars24-നുള്ള ഒരു ഓപ്പറേറ്റിംഗ് കുറിപ്പ്: Builder ഉടമസ്ഥത, തുറന്ന വിവരം, AI-നേറ്റീവ് ജോലി, ശ്രേണിക്ക് പകരം വ്യക്തത."
+      },
+      "values": {
+        "title": "നമ്മുടെ മൂല്യങ്ങൾ",
+        "meta": "സംസ്കാര പുസ്തകം - 22 പേജുകൾ",
+        "description": "Cars24 പ്രവർത്തിക്കുന്ന രീതിയുടെ അഞ്ച് മൂല്യങ്ങൾ: ഉപഭോക്തൃ സ്നേഹം, ഉടമസ്ഥത, സത്യം, ഉയർന്ന നിലവാരം, ജോലിയിലൂടെ മെച്ചപ്പെട്ട മനുഷ്യരാകൽ."
+      }
+    },
+    "collections": {
+      "mobility-ownership-trust": {
+        "title": "മൊബിലിറ്റി, ഉടമസ്ഥത, വിശ്വാസം",
+        "description": "അലഞ്ഞ ആസ്തികൾ വാങ്ങാനും ധനസഹായം നേടാനും സൂക്ഷിക്കാനും ഉപയോഗിക്കാനുള്ള ആത്മവിശ്വാസം ആർജ്ജിക്കുന്നതെങ്ങനെ."
+      },
+      "ai-work-company-design": {
+        "title": "സംഘടന, AI, കമ്പനി രൂപകൽപ്പന",
+        "description": "കമ്പനികൾ എങ്ങനെ പഠിക്കുന്നു, സമ്മർദ്ദത്തിൽ ഉറച്ചു നിൽക്കുന്നു, context വിലകുറഞ്ഞ് Builders ലൂപ്പ് വേഗം അടയ്ക്കുമ്പോൾ സ്വയം പുനർരൂപകൽപ്പന ചെയ്യുന്നു."
+      },
+      "judgment-desire-human-nature": {
+        "title": "വിധിനിർണ്ണയം, ആഗ്രഹം, മനുഷ്യ സ്വഭാവം",
+        "description": "നാം നമ്മുടെ സ്വന്തം ആഗ്രഹങ്ങൾ തെറ്റായി വ്യാഖ്യാനിക്കുന്നതും മറ്റുള്ളവരെ തെറ്റായി വിലയിരുത്തുന്നതും ദൈനംദിന ജീവിതത്തിൽ അദൃശ്യമായ മനഃശാസ്ത്ര യന്ത്രസാമഗ്രികൾ വഹിക്കുന്നതും."
+      },
+      "more-essays": {
+        "title": "കൂടുതൽ ഉപന്യാസങ്ങൾ",
+        "description": "പ്രധാന തീമാറ്റിക് ട്രാക്കുകളിലൊന്നും ഇതുവരെ ഉൾക്കൊള്ളാത്ത അധിക എഴുത്ത്."
+      }
+    }
+  }
+}

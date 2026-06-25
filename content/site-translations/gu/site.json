@@ -1,0 +1,192 @@
+{
+  "siteTitle": "Vikram Chopra",
+  "tagline": "હું Cars24ના સ્થાપક છું. આ નિબંધો એ વિચારો છે જે તેની નીચે ટકેલા છે: એક દેશ ગાડી ધરાવતાં કેવી રીતે શીખે છે, ગતિ-ઉદ્યોગમાં ભરોસો જ સાચી પ્રોડક્ટ કેમ છે, AI જ્યારે સંકલનનો ખર્ચ ઘટાડે ત્યારે કંપની શું બને છે, અને દાવ ઊંચા હોય ત્યારે પણ બિલ્ડર સ્પષ્ટ નજર કેવી રીતે ટકાવે છે.",
+  "description": "હું Cars24ના સ્થાપક છું. આ નિબંધો એ વિચારો છે જે તેની નીચે ટકેલા છે: એક દેશ ગાડી ધરાવતાં કેવી રીતે શીખે છે, ગતિ-ઉદ્યોગમાં ભરોસો જ સાચી પ્રોડક્ટ કેમ છે, AI જ્યારે સંકલનનો ખર્ચ ઘટાડે ત્યારે કંપની શું બને છે, અને દાવ ઊંચા હોય ત્યારે પણ બિલ્ડર સ્પષ્ટ નજર કેવી રીતે ટકાવે છે.",
+  "socialTitle": "Vikram Chopraના નિબંધો",
+  "socialDescription": "Cars24ના સ્થાપક. ભારતમાં ગાડીની માલિકી, ભરોસો-પ્રોડક્ટ, AI-native કંપનીઓ, અને ઊંચા દાવ વચ્ચે સ્પષ્ટ નજર ટકાવવા વિશે નિબંધો.",
+  "socialImageAlt": "Vikram Chopraના નિબંધો માટે સોશિયલ પ્રીવ્યૂ.",
+  "intro": "હું Cars24ના સ્થાપક છું. આ નિબંધો એ વિચારો છે જે તેની નીચે ટકેલા છે: એક દેશ ગાડી ધરાવતાં કેવી રીતે શીખે છે, ગતિ-ઉદ્યોગમાં ભરોસો જ સાચી પ્રોડક્ટ કેમ છે, AI જ્યારે સંકલનનો ખર્ચ ઘટાડે ત્યારે કંપની શું બને છે, અને દાવ ઊંચા હોય ત્યારે પણ બિલ્ડર સ્પષ્ટ નજર કેવી રીતે ટકાવે છે.",
+  "about": "હું વિચારવા માટે લખું છું. હું વિવાદ આવકારવા માટે પ્રકાશિત કરું છું.",
+  "footerNote": "લાંબી દલીલો, ધારદાર વિચારો, અને ફરી વાંચવા લાયક લખાણ માટે.",
+  "subscribe": {
+    "href": "/subscribe/",
+    "action": "https://buttondown.com/api/emails/embed-subscribe/vikramchopra",
+    "line": "નવા નિબંધો ઇમેઇલ પર, વર્ષમાં થોડી વખત.",
+    "homeEyebrow": "ઇમેઇલ દ્વારા",
+    "homeTitle": "આગળનો નિબંધ ઇમેઇલ પર મેળવો",
+    "homeBody": "હું ઓછા અંતરે લખું છું. નવો નિબંધ પ્રકાશિત થાય ત્યારે જાણવા માટે ઇમેઇલ સૌથી સ્વચ્છ માર્ગ છે.",
+    "homeDetail": "ખાલી ભરવા ખાતર કોઈ cadence નહીં. ફક્ત જ્યારે કહેવા લાયક કંઈ હોય ત્યારે નવો નિબંધ.",
+    "essayTitle": "જો આ તમારા સમયને લાયક હતું, તો આગળનો ઇમેઇલ પર મેળવો",
+    "essayBody": "વર્ષમાં થોડા નિબંધો. Feed-ની દોડ નહીં. ભરણ નહીં.",
+    "pageEyebrow": "ઇમેઇલ દ્વારા",
+    "pageTitle": "Feed પર આધાર રાખ્યા વગર નવા નિબંધ મેળવો",
+    "pageDek": "હું ઓછા અંતરે લખું છું. નવો નિબંધ પ્રકાશિત થાય ત્યારે જાણવા માટે ઇમેઇલ સૌથી સ્વચ્છ માર્ગ છે.",
+    "pageBody": "ન્યૂઝલેટરની ઘટ્ટ નહીં. ન્યૂઝ ન્યૂઝ નહીં. ફક્ત નવું લખાણ, જ્યારે મોકલવા લાયક કંઈ હોય ત્યારે.",
+    "placeholder": "ઇમેઇલ સરનામું",
+    "button": "સબ્સ્ક્રાઇબ કરો",
+    "submittingLabel": "ચાલુ છે...",
+    "finePrint": "સબ્મિટ કર્યા પછી Buttondown ઝડપી ચકાસણી માગી શકે છે અને પછી ખાતરીનો ઇમેઇલ મોકલશે."
+  },
+  "interviews": [
+    {
+      "section": "ઇન્ટરવ્યૂ",
+      "title": "ભારતની સૌથી મોટી ગાડી ખરીદ-વેચ પ્લેટફોર્મ જેમણે બનાવી",
+      "host": "Raj Shamani",
+      "date": "2023-07-01",
+      "videoId": "x9ICVBEsds4",
+      "description": "Cars24 બાંધવા, નેતૃત્વ, ભરતી, સ્કેલ, અને Mahendra Singh Dhoniપાસેથી શીખેલા પાઠ પર વ્યાપક વાત."
+    },
+    {
+      "section": "ઇન્ટરવ્યૂ",
+      "title": "Cars24ના સ્થાપકને મળો",
+      "host": "Sandeep Maheshwari",
+      "date": "2023-03-04",
+      "videoId": "HadopNcCS40",
+      "description": "Cars24ની શરૂઆત, મહત્ત્વાકાંક્ષા, અને અનિશ્ચિતતામાં બાંધવા માટે જરૂરી માનસિકતા પર વાત."
+    },
+    {
+      "section": "ઇન્ટરવ્યૂ",
+      "title": "Cars24ના CEO Vikram Chopraએ ₹27,000 કરોડની used-car કંપની કેવી રીતે ઊભી કરી",
+      "host": "Mint",
+      "date": "2024-01-25",
+      "videoId": "b7ENRpPUKAs",
+      "description": "Cars24 ઉગાડવા, used-car બજાર, શરૂઆતનું company-building, અને Raebarelieથી મોટો ધંધો ઊભો કરવાની સફર પર વિગતવાર વાત."
+    },
+    {
+      "section": "વ્યાખ્યાનો અને પૅનલ",
+      "title": "લાંબી રમત: પેઢી-નિર્ણાયક કંપનીઓ બાંધવા શું લાગે છે",
+      "host": "Z47 Moments",
+      "date": "2022-05-11",
+      "videoId": "s-nsfBhm0vI",
+      "description": "ટકાઉ કંપનીઓ બાંધવા પર પૅનલ, Vikram Chopra, Asish Mohapatra, અને Varun Alaghની સાથે."
+    }
+  ],
+  "elsewhere": [
+    {
+      "type": "નિબંધ",
+      "title": "Used Car ઓનલાઇન ખરીદો ત્યારે તમે ખરેખર શા માટે પૈસા ચૂકવો છો",
+      "source": "Cars24",
+      "date": "2026-05-21",
+      "url": "https://www.cars24.com/article/real-cost-of-buying-used-car-online-india-platform-vs-local-market/",
+      "description": "ભાવ, ભરોસો, અને used-car platform અને સ્થાનિક ડીલરની સરખામણી કરતી વખતે ખરીદારો ખરેખર શું વજન કરે છે — તેના પર ઊંડી દલીલ."
+    },
+    {
+      "type": "ઇન્ટરવ્યૂ",
+      "title": "AI કેવી રીતે ઉપયોગ કરીશું એ જ આપણી સફળતા નક્કી કરશે",
+      "source": "Moneycontrol",
+      "date": "2020-12-02",
+      "url": "https://www.moneycontrol.com/news/business/startup/exclusive-how-we-use-ai-will-determine-our-success-says-cars24-ceo-vikram-chopra-6178821.html",
+      "description": "Cars24ના દૃષ્ટિકોણની વહેલી અભિવ્યક્તિ — મૂલ્યાંકન ગુણવત્તા, ભાવ ચોકસાઈ, અને AI-driven learning નક્કી કરશે કે used-car બજારમાં કોણ જીતે."
+    },
+    {
+      "type": "ઇન્ટરવ્યૂ",
+      "title": "આ વર્ષ દુનિયા ખરાબ જગ્યાએ છે, પણ મારે લાંબો નજારો રાખવો પડશે",
+      "source": "Moneycontrol",
+      "date": "2022-11-22",
+      "url": "https://www.moneycontrol.com/news/business/startup/the-world-is-getting-screwed-this-year-but-i-need-to-take-a-long-term-view-cars24-chief-vikram-chopra-9576181.html",
+      "description": "ફંડિંગ-winter નેવિગેટ કરવા, ખર્ચ ઘટાડવા, અને ધંધાના multi-decade નજારાથી નિર્ણય કરવા પર વાત."
+    },
+    {
+      "type": "ઇન્ટરવ્યૂ",
+      "title": "'રાજકીય ઇચ્છાશક્તિ' એ ભારતની હવા-પ્રદૂષણ નિયંત્રણમાં સૌથી મોટી નિષ્ફળતા છે",
+      "source": "Outlook Business",
+      "date": "2025-12-03",
+      "url": "https://www.outlookbusiness.com/interviews/political-will-is-indias-biggest-failure-in-air-pollution-control-says-cars24-cofounder-vikram-chopra",
+      "description": "પ્રદૂષણ પર અઘرا જાહેર-નીતિ પગલાં લેવા માટે દલીલ, ભલે એ વલણ ગાડી ઉદ્યોગના તાત્કાલિક હિત સામે જાય."
+    },
+    {
+      "type": "નિબંધ",
+      "title": "ફરી ઉઠવું: નિષ્ફળતામાંથી આગળ જવાની કળા",
+      "source": "Cars24",
+      "date": "2024-10-03",
+      "url": "https://www.cars24.com/news/inside-scoop/the-art-of-failing-forward/",
+      "description": "નિષ્ફળતા, resilience, અને ઠોકર ખાધા પછી ચાલતા રહેવા માટેના ભાવ-કામ પર ટૂંકો વિચાર."
+    },
+    {
+      "type": "નિબંધ",
+      "title": "વિકાસ માટે અગવડ ઓઢવી",
+      "source": "Cars24",
+      "date": "2024-10-03",
+      "url": "https://www.cars24.com/news/inside-scoop/embracing-discomfort-for-growth/",
+      "description": "વૃદ્ધિ, મહત્ત્વાકાંક્ષા, અને બહેતર ચુકાદા માટે જાણી-જોઈને અગવડ પસંદ કરવી — એ પર નોંધ."
+    }
+  ],
+  "ui": {
+    "languageLabel": "ભાષા",
+    "navEssays": "નિબંધો",
+    "navDocs": "દસ્તાવેજો",
+    "themeDark": "ઘેરો",
+    "themeLight": "ઉજળો",
+    "themeToggleLabel": "રંગ થીમ બદલો",
+    "homeTitle": "હું વિચારવા માટે લખું છું. હું વિવાદ આવકારવા માટે પ્રકાશિત કરું છું.",
+    "startHere": "અહીંથી શરૂ કરો:",
+    "cars24Culture": "Cars24 સંસ્કૃતિ",
+    "cultureTitle": "Flatland અને મૂલ્યો",
+    "cultureDescription": "ઉપર masthead માં ભાષા selector વાપરો. નીચેની PDF લિંક પસંદ કરેલી ભાષા અનુસાર છે.",
+    "documentsTitle": "દસ્તાવેજો",
+    "openPdf": "PDF ખોલો",
+    "writing": "લખાણ",
+    "essaySingular": "નિબંધ",
+    "essayPlural": "નિબંધો",
+    "archiveEyebrow": "નિબંધો",
+    "archiveTitle": "પ્રકાશિત લખાણ",
+    "archiveDescription": "Vikram Chopraના નિબંધો — ગાડીની માલિકી, ભરોસો, AI-native કંપનીઓ, અને દબાણ હેઠળ નેતૃત્વ પર.",
+    "home": "ઘર",
+    "share": "શેર કરો",
+    "copied": "કૉપી થયું",
+    "minRead": "મિનિટ વાંચન",
+    "words": "શબ્દો",
+    "inBrief": "ટૂંકમાં",
+    "onThisPage": "આ પૃષ્ઠ પર",
+    "notesAndSources": "નોંધ અને સ્રોત",
+    "continueReading": "આગળ વાંચો",
+    "moreIn": "વધુ આ વિષયમાં",
+    "subscribeFallbackKicker": "ઇમેઇલ દ્વારા",
+    "subscribeWhatToExpect": "શું અપેક્ષા રાખશો",
+    "subscribePoints": [
+      "ફક્ત નવા નિબંધો.",
+      "વર્ષમાં થોડી વખત, દર અઠવાડિયે નહીં.",
+      "એક ખાતરી ઇમેઇલ સબ્સ્ક્રિપ્શન પૂર્ણ કરે છે."
+    ],
+    "watchOnYouTube": "YouTube પર જુઓ",
+    "elsewhere": "અન્ય જગ્યાએ",
+    "notFoundEyebrow": "404",
+    "notFoundTitle": "એ પૃષ્ઠ ખોવાઈ ગયું.",
+    "notFoundIntro": "લખાણ સલામત છે. Homepage અથવા નિબંધોથી ફરી શરૂ કરો.",
+    "goHome": "ઘરે જાઓ",
+    "openEssays": "નિબંધો ખોલો",
+    "footerEssays": "નિબંધો",
+    "footerSubscribe": "સબ્સ્ક્રાઇબ કરો",
+    "essaySignoff": "Vikram Chopra, સ્થાપક અને Builder",
+    "cultureDocs": {
+      "flatland": {
+        "title": "Flatland",
+        "meta": "સંસ્કૃતિ પુસ્તક - 33 પૃષ્ઠ",
+        "description": "સપાટ અને ઝડપી Cars24 માટે operating note: builder ownership, ખુલ્લી માહિતી, AI-native કામ, અને hierarchy ને બદલે સ્પષ્ટતા."
+      },
+      "values": {
+        "title": "આપણા મૂલ્યો",
+        "meta": "સંસ્કૃતિ પુસ્તક - 22 પૃષ્ઠ",
+        "description": "Cars24 કેવી રીતે કામ કરે છે તે માટેના પાંચ મૂલ્યો: ગ્રાહક-પ્રેમ, ownership, સત્ય, ઊંચા ધોરણો, અને કામ દ્વારા વધુ સારા માણસ બનવું."
+      }
+    },
+    "collections": {
+      "mobility-ownership-trust": {
+        "title": "ગતિ, માલિકી, અને ભરોસો",
+        "description": "અઘरी assets ખરીદવા, ધિરાણ, રાખવા, અને ઉપયોગ કરવા લાયક ભરોસાપાત્ર કેવી રીતે બને છે."
+      },
+      "ai-work-company-design": {
+        "title": "સંગઠન, AI, અને Company Design",
+        "description": "કંપનીઓ કેવી રીتে શીખે છે, દબાણ હેઠળ સ્થિર રહે છે, અને context સસ્તો અને builders ઝડપી બનતા ત્યારે ખુદને ફરી ઘડે છે."
+      },
+      "judgment-desire-human-nature": {
+        "title": "ચુકાદો, ઇચ્છા, અને માનવ-સ્વભાવ",
+        "description": "આપણે આપણી ઇચ્છાઓ ખોટી કેવી રીتے સમજીએ છીએ, બીજાઓ વિશે ખોટો ચુકાદો કરીએ છીએ, અને રોજિંદા જીવનમાં અદ્રશ્ય માનસિક ભાર કેવી રીதે ઉઠાવીએ છીએ."
+      },
+      "more-essays": {
+        "title": "વધુ નિબંધો",
+        "description": "વધારાનું લખાણ જે હજી કોઈ મુખ્ય થીમ-track માં બેઠું નથી."
+      }
+    }
+  }
+}

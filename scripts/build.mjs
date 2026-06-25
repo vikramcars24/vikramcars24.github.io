@@ -5,11 +5,13 @@ import path from "node:path";
 const rootDir = process.cwd();
 const contentDir = path.join(rootDir, "content");
 const postsDir = path.join(contentDir, "posts");
+const siteTranslationsDir = path.join(contentDir, "site-translations");
 const distDir = path.join(rootDir, "dist");
 const assetsDir = path.join(rootDir, "src");
 const plausibleDomain = process.env.PLAUSIBLE_DOMAIN || "vikramchopra.in";
 const plausibleScriptSrc = process.env.PLAUSIBLE_SCRIPT_SRC || "https://plausible.io/js/script.js";
 const mediaAssetVersion = resolveMediaAssetVersion();
+const requireFullSiteTranslations = process.env.REQUIRE_FULL_SITE_TRANSLATIONS === "1";
 const CURATED_ESSAY_COLLECTIONS = [
   {
     id: "mobility-ownership-trust",
@@ -102,124 +104,146 @@ const CULTURE_LANGUAGES = [
     code: "en",
     htmlLang: "en",
     label: "English",
-    nativeLabel: "English",
-    homePath: "/",
-    readerNote: "Original English"
+    nativeLabel: "English"
   },
   {
     code: "hi",
     htmlLang: "hi",
     label: "Hindi",
-    nativeLabel: "हिन्दी",
-    homePath: "/hi/",
-    readerNote: "Claude translated",
-    landingTitle: "हिन्दी reader",
-    landingDek: "Flatland और Cars24 Values को हिन्दी में पढ़ें. ये pages Claude से tone-preserving translation के रूप में बनाए गए हैं, literal browser translation नहीं."
+    nativeLabel: "हिन्दी"
+  },
+  {
+    code: "hinglish",
+    htmlLang: "hi-Latn",
+    label: "Hinglish",
+    nativeLabel: "Hinglish"
   },
   {
     code: "mr",
     htmlLang: "mr",
     label: "Marathi",
-    nativeLabel: "मराठी",
-    homePath: "/mr/",
-    readerNote: "Claude translated",
-    landingTitle: "मराठी reader",
-    landingDek: "Flatland आणि Cars24 Values मराठीत वाचा. हे pages Claude ने message आणि tone जपत तयार केले आहेत; literal browser translation नाही."
+    nativeLabel: "मराठी"
   },
   {
     code: "gu",
     htmlLang: "gu",
     label: "Gujarati",
-    nativeLabel: "ગુજરાતી",
-    homePath: "/gu/",
-    readerNote: "Claude translated",
-    landingTitle: "ગુજરાતી reader",
-    landingDek: "Flatland અને Cars24 Values ગુજરાતી ભાષામાં વાંચો. આ pages Claude દ્વારા message અને tone સાચવીને બનાવવામાં આવ્યા છે; literal browser translation નથી."
+    nativeLabel: "ગુજરાતી"
   },
   {
     code: "bn",
     htmlLang: "bn",
     label: "Bengali",
-    nativeLabel: "বাংলা",
-    homePath: "/bn/",
-    readerNote: "Claude translated",
-    landingTitle: "বাংলা reader",
-    landingDek: "Flatland এবং Cars24 Values বাংলায় পড়ুন. এই pages Claude দিয়ে message এবং tone ধরে অনুবাদ করা হয়েছে; literal browser translation নয়."
+    nativeLabel: "বাংলা"
   },
   {
     code: "ta",
     htmlLang: "ta",
     label: "Tamil",
-    nativeLabel: "தமிழ்",
-    homePath: "/ta/",
-    readerNote: "Claude translated",
-    landingTitle: "தமிழ் reader",
-    landingDek: "Flatland மற்றும் Cars24 Values-ஐ தமிழில் படிக்கவும். இந்த pages Claude மூலம் message மற்றும் tone காக்கப்பட்ட translation ஆக உருவாக்கப்பட்டவை; literal browser translation அல்ல."
+    nativeLabel: "தமிழ்"
   },
   {
     code: "te",
     htmlLang: "te",
     label: "Telugu",
-    nativeLabel: "తెలుగు",
-    homePath: "/te/",
-    readerNote: "Claude translated",
-    landingTitle: "తెలుగు reader",
-    landingDek: "Flatland మరియు Cars24 Values తెలుగులో చదవండి. ఇవి Claude ద్వారా message మరియు tone కాపాడుతూ రూపొందించిన pages; literal browser translation కాదు."
+    nativeLabel: "తెలుగు"
   },
   {
     code: "kn",
     htmlLang: "kn",
     label: "Kannada",
-    nativeLabel: "ಕನ್ನಡ",
-    homePath: "/kn/",
-    readerNote: "Claude translated",
-    landingTitle: "ಕನ್ನಡ reader",
-    landingDek: "Flatland ಮತ್ತು Cars24 Values ಅನ್ನು ಕನ್ನಡದಲ್ಲಿ ಓದಿ. ಈ pages Claude ಮೂಲಕ message ಮತ್ತು tone ಉಳಿಸಿಕೊಂಡ translation ಆಗಿವೆ; literal browser translation ಅಲ್ಲ."
+    nativeLabel: "ಕನ್ನಡ"
   },
   {
     code: "ml",
     htmlLang: "ml",
     label: "Malayalam",
-    nativeLabel: "മലയാളം",
-    homePath: "/ml/",
-    readerNote: "Claude translated",
-    landingTitle: "മലയാളം reader",
-    landingDek: "Flatlandയും Cars24 Valuesയും മലയാളത്തിൽ വായിക്കുക. ഈ pages Claude ഉപയോഗിച്ച് message ഉം tone ഉം നിലനിർത്തി തയ്യാറാക്കിയ translation ആണ്; literal browser translation അല്ല."
+    nativeLabel: "മലയാളം"
   },
   {
     code: "pa",
     htmlLang: "pa",
     label: "Punjabi",
-    nativeLabel: "ਪੰਜਾਬੀ",
-    homePath: "/pa/",
-    readerNote: "Claude translated",
-    landingTitle: "ਪੰਜਾਬੀ reader",
-    landingDek: "Flatland ਅਤੇ Cars24 Values ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ. ਇਹ pages Claude ਨਾਲ message ਅਤੇ tone ਬਚਾ ਕੇ ਬਣਾਏ ਗਏ ਹਨ; literal browser translation ਨਹੀਂ."
+    nativeLabel: "ਪੰਜਾਬੀ"
   },
   {
     code: "or",
     htmlLang: "or",
     label: "Odia",
-    nativeLabel: "ଓଡ଼ିଆ",
-    homePath: "/or/",
-    readerNote: "Claude translated",
-    landingTitle: "ଓଡ଼ିଆ reader",
-    landingDek: "Flatland ଓ Cars24 Values ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ. ଏହି pages Claude ଦ୍ୱାରା message ଓ tone ରଖି translation ଭାବେ ତିଆରି; literal browser translation ନୁହେଁ."
+    nativeLabel: "ଓଡ଼ିଆ"
   }
 ];
 
 const DEFAULT_CULTURE_LANGUAGE = CULTURE_LANGUAGES[0];
 
-async function main() {
-  const site = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
-  site.socialImageMeta = await resolveImageMeta(site.socialImage || "");
-  const posts = await loadPosts(site);
-  const mediaDir = path.join(assetsDir, "media");
-  const essayCollections = buildEssayCollections(posts);
-  const collectionBySlug = buildCollectionBySlug(essayCollections);
-  const cultureDocuments = await loadCultureDocuments();
+const DEFAULT_UI = {
+  languageLabel: "Language",
+  navEssays: "Essays",
+  navDocs: "Docs",
+  themeDark: "Dark",
+  themeLight: "Light",
+  themeToggleLabel: "Switch color theme",
+  homeTitle: "I write to think. I publish to be argued with.",
+  startHere: "Start here:",
+  cars24Culture: "Cars24 Culture",
+  cultureTitle: "Flatland and values",
+  cultureDescription: "Use the language selector in the top masthead. The PDF links below follow the selected language.",
+  documentsTitle: "Documents",
+  openPdf: "Open PDF",
+  writing: "Writing",
+  essaySingular: "essay",
+  essayPlural: "essays",
+  archiveEyebrow: "Essays",
+  archiveTitle: "Published writing",
+  archiveDescription: "Essays by Vikram Chopra on car ownership, trust, AI-native companies, and leadership under pressure.",
+  home: "Home",
+  share: "Share",
+  copied: "Copied",
+  minRead: "min read",
+  words: "words",
+  inBrief: "In Brief",
+  onThisPage: "On this page",
+  notesAndSources: "Notes and Sources",
+  continueReading: "Continue Reading",
+  moreIn: "More in",
+  subscribeFallbackKicker: "By Email",
+  subscribeWhatToExpect: "What to expect",
+  subscribePoints: [
+    "New essays only.",
+    "A few times a year, not every week.",
+    "One confirmation email finishes the subscription."
+  ],
+  watchOnYouTube: "Watch on YouTube",
+  elsewhere: "Elsewhere",
+  notFoundEyebrow: "404",
+  notFoundTitle: "That page drifted off.",
+  notFoundIntro: "The writing is still intact. Start again from the homepage or the essays.",
+  goHome: "Go home",
+  openEssays: "Open essays",
+  footerEssays: "Essays",
+  footerSubscribe: "Subscribe",
+  essaySignoff: "Vikram Chopra, Founder & Builder",
+  cultureDocs: {
+    flatland: {
+      title: "Flatland",
+      description: "An operating note for a flatter, faster Cars24: builder ownership, open information, AI-native work, and clarity over hierarchy."
+    },
+    values: {
+      title: "Our Values",
+      description: "Five values for how Cars24 works: customer love, ownership, truth, high standards, and becoming better humans through work."
+    }
+  },
+  collections: {}
+};
 
-  posts.sort((left, right) => right.date.localeCompare(left.date));
+async function main() {
+  const baseSite = JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
+  baseSite.socialImageMeta = await resolveImageMeta(baseSite.socialImage || "");
+  const mediaDir = path.join(assetsDir, "media");
+  const cultureDocuments = await loadCultureDocuments();
+  const languageContexts = await loadLanguageContexts(baseSite, cultureDocuments);
+  const englishContext = languageContexts.find((context) => context.language.code === "en") || languageContexts[0];
+  const { site, posts, essayCollections, collectionBySlug } = englishContext;
 
   await fs.rm(distDir, { recursive: true, force: true });
   await ensureDir(path.join(distDir, "archive"));
@@ -236,17 +260,21 @@ async function main() {
   await fs.writeFile(path.join(distDir, "subscribe", "index.html"), renderSubscribePage(site), "utf8");
   await fs.writeFile(path.join(distDir, "404.html"), renderNotFound(site), "utf8");
 
-  for (const language of CULTURE_LANGUAGES.filter((entry) => entry.code !== "en")) {
-    const languageDir = path.join(distDir, language.code);
-    await ensureDir(languageDir);
-    await fs.writeFile(path.join(languageDir, "index.html"), renderCultureLanguageHome(site, cultureDocuments, language), "utf8");
+  for (const context of languageContexts.filter((entry) => entry.language.code !== "en")) {
+    const languageDir = path.join(distDir, context.language.code);
+    await ensureDir(path.join(languageDir, "archive"));
+    await ensureDir(path.join(languageDir, "posts"));
+    await ensureDir(path.join(languageDir, "subscribe"));
+    await fs.writeFile(path.join(languageDir, "index.html"), renderHome(context.site, context.posts, context.essayCollections, cultureDocuments), "utf8");
+    await fs.writeFile(path.join(languageDir, "archive", "index.html"), renderArchive(context.site, context.essayCollections), "utf8");
+    await fs.writeFile(path.join(languageDir, "subscribe", "index.html"), renderSubscribePage(context.site), "utf8");
   }
 
   for (const doc of cultureDocuments) {
     for (const version of doc.versions) {
       const docDir = path.join(distDir, version.pathName.replace(/^\/|\/$/g, ""));
       await ensureDir(docDir);
-      await fs.writeFile(path.join(docDir, "index.html"), renderCultureDocumentPage(site, doc, version), "utf8");
+      await fs.writeFile(path.join(docDir, "index.html"), renderRedirectPage(site, version.pathName, version.pdfPath), "utf8");
     }
   }
 
@@ -266,14 +294,32 @@ async function main() {
     );
   }
 
+  for (const context of languageContexts.filter((entry) => entry.language.code !== "en")) {
+    for (const post of context.posts) {
+      const postDir = path.join(distDir, context.language.code, "posts", post.slug);
+      await ensureDir(postDir);
+      await fs.writeFile(path.join(postDir, "index.html"), renderPost(context.site, post, context.collectionBySlug.get(post.slug) || null), "utf8");
+    }
+
+    for (const redirect of REDIRECTS) {
+      const postDir = path.join(distDir, context.language.code, "posts", redirect.from);
+      await ensureDir(postDir);
+      await fs.writeFile(
+        path.join(postDir, "index.html"),
+        renderRedirectPage(context.site, `/posts/${redirect.from}/`, `/posts/${redirect.to}/`),
+        "utf8"
+      );
+    }
+  }
+
   await fs.writeFile(path.join(distDir, "rss.xml"), renderRss(site, posts), "utf8");
-  await fs.writeFile(path.join(distDir, "sitemap.xml"), renderSitemap(site, posts, cultureDocuments), "utf8");
+  await fs.writeFile(path.join(distDir, "sitemap.xml"), renderSitemap(site, languageContexts, cultureDocuments), "utf8");
   await fs.writeFile(path.join(distDir, "robots.txt"), renderRobots(site), "utf8");
   await fs.writeFile(path.join(distDir, "llms.txt"), renderLlmsTxt(site, essayCollections, cultureDocuments), "utf8");
   await fs.writeFile(path.join(distDir, "_redirects"), renderRedirects(site), "utf8");
   await fs.writeFile(path.join(distDir, "_headers"), renderHeaders(), "utf8");
 
-  console.log(`Built ${posts.length} post(s) into ${distDir}`);
+  console.log(`Built ${posts.length} post(s) across ${languageContexts.length} language(s) into ${distDir}`);
 }
 
 async function copyVerificationFiles() {
@@ -295,17 +341,180 @@ async function copyVerificationFiles() {
   );
 }
 
-async function loadPosts(site) {
+async function loadLanguageContexts(baseSite, cultureDocuments) {
+  const contexts = [];
+  const postFiles = await listPostMarkdownFiles();
+
+  for (const language of CULTURE_LANGUAGES) {
+    if (language.code !== "en") {
+      const completeness = await getSiteTranslationCompleteness(language, postFiles);
+
+      if (!completeness.complete) {
+        const message = formatSiteTranslationFailure(language, completeness);
+
+        if (requireFullSiteTranslations) {
+          throw new Error(message);
+        }
+
+        console.warn(message);
+        continue;
+      }
+    }
+
+    const site = await loadLocalizedSite(baseSite, language);
+    site.activeLanguage = language;
+    site.languagePrefix = language.code === "en" ? "" : `/${language.code}`;
+    site.ui = mergeDeep(DEFAULT_UI, site.ui || {});
+    site.cultureDocuments = localizeCultureDocuments(cultureDocuments, site);
+
+    const posts = await loadPosts(site, language);
+    posts.sort((left, right) => right.date.localeCompare(left.date));
+
+    const essayCollections = buildEssayCollections(posts, site);
+    const collectionBySlug = buildCollectionBySlug(essayCollections);
+
+    contexts.push({
+      language,
+      site,
+      posts,
+      essayCollections,
+      collectionBySlug
+    });
+  }
+
+  const siteLanguages = contexts.map((context) => context.language);
+  for (const context of contexts) {
+    context.site.siteLanguages = siteLanguages;
+  }
+
+  return contexts;
+}
+
+async function loadLocalizedSite(baseSite, language) {
+  const site = structuredClone(baseSite);
+
+  if (language.code === "en") {
+    return mergeDeep(site, { ui: DEFAULT_UI });
+  }
+
+  const translationPath = path.join(siteTranslationsDir, language.code, "site.json");
+  const translated = normalizeLocalizedSiteConfig(JSON.parse(await fs.readFile(translationPath, "utf8")));
+  return mergeDeep(site, translated);
+}
+
+function normalizeLocalizedSiteConfig(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return value;
+  }
+
+  if (!value.site || typeof value.site !== "object" || Array.isArray(value.site)) {
+    return value;
+  }
+
+  const normalized = { ...value.site };
+  for (const [key, child] of Object.entries(value)) {
+    if (key !== "site") {
+      normalized[key] = child;
+    }
+  }
+  return normalized;
+}
+
+async function listPostMarkdownFiles() {
   const files = await fs.readdir(postsDir);
-  const markdownFiles = files
+  return files
     .filter((file) => file.endsWith(".md") && !path.basename(file).startsWith("_"))
     .sort();
+}
+
+async function getSiteTranslationCompleteness(language, postFiles) {
+  const missing = [];
+  const invalid = [];
+  const translationDir = path.join(siteTranslationsDir, language.code);
+  const siteTranslationPath = path.join(translationDir, "site.json");
+
+  if (!(await fileExists(siteTranslationPath))) {
+    missing.push(`content/site-translations/${language.code}/site.json`);
+  } else {
+    try {
+      JSON.parse(await fs.readFile(siteTranslationPath, "utf8"));
+    } catch (error) {
+      invalid.push(`content/site-translations/${language.code}/site.json (${error.message})`);
+    }
+  }
+
+  for (const file of postFiles) {
+    const postTranslationPath = path.join(translationDir, "posts", file);
+    if (!(await fileExists(postTranslationPath))) {
+      missing.push(`content/site-translations/${language.code}/posts/${file}`);
+    }
+  }
+
+  return {
+    complete: missing.length === 0 && invalid.length === 0,
+    missing,
+    invalid
+  };
+}
+
+function formatSiteTranslationFailure(language, completeness) {
+  const missingPreview = completeness.missing.slice(0, 5);
+  const invalidPreview = completeness.invalid.slice(0, 5);
+  const details = [
+    ...missingPreview.map((file) => `missing ${file}`),
+    ...invalidPreview.map((file) => `invalid ${file}`)
+  ];
+  const remaining = completeness.missing.length + completeness.invalid.length - details.length;
+  const suffix = remaining > 0 ? `, and ${remaining} more` : "";
+  return `Skipping ${language.label} full-site routes: ${details.join("; ")}${suffix}. Run "npm run site:translate -- ${language.code}" after Claude credits are available.`;
+}
+
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function localizeCultureDocuments(cultureDocuments, site) {
+  const uiDocs = site.ui?.cultureDocs || {};
+
+  return Object.fromEntries(
+    cultureDocuments.map((doc) => {
+      const version = getCultureVersion(doc, site.activeLanguage?.code || "en") || getCultureVersion(doc, "en");
+      const uiDoc = uiDocs[doc.id] || {};
+      return [
+        doc.id,
+        {
+          title: uiDoc.title || version?.title || doc.title,
+          description: uiDoc.description || doc.description,
+          meta: uiDoc.meta || doc.meta
+        }
+      ];
+    })
+  );
+}
+
+async function loadPosts(site, language = DEFAULT_CULTURE_LANGUAGE) {
+  const markdownFiles = await listPostMarkdownFiles();
 
   return Promise.all(
     markdownFiles.map(async (file) => {
       const absolutePath = path.join(postsDir, file);
       const raw = await fs.readFile(absolutePath, "utf8");
-      const { attributes, body } = parseFrontMatter(raw);
+      const base = parseFrontMatter(raw);
+      const translated = language.code === "en"
+        ? null
+        : await loadTranslatedPost(language, file);
+      if (language.code !== "en" && !translated) {
+        throw new Error(`Missing translated post for ${language.label}: content/site-translations/${language.code}/posts/${file}`);
+      }
+      const attributes = translated
+        ? mergeDeep(base.attributes, translated.attributes)
+        : base.attributes;
+      const body = translated?.body || base.body;
       const { body: articleBody, sourcesLine } = extractSourcesLine(body);
       const slug = attributes.slug || file.replace(/\.md$/, "");
       const wordCount = articleBody.trim().split(/\s+/).filter(Boolean).length;
@@ -339,6 +548,17 @@ async function loadPosts(site) {
   );
 }
 
+async function loadTranslatedPost(language, file) {
+  const translationPath = path.join(siteTranslationsDir, language.code, "posts", file);
+
+  try {
+    const raw = await fs.readFile(translationPath, "utf8");
+    return parseFrontMatter(raw);
+  } catch {
+    return null;
+  }
+}
+
 async function loadCultureDocuments() {
   return Promise.all(
     CULTURE_DOCUMENTS.map(async (doc) => {
@@ -347,6 +567,7 @@ async function loadCultureDocuments() {
         {
           language: CULTURE_LANGUAGES[0],
           markdown: normalizeCultureSourceText(englishSource, doc),
+          title: doc.title,
           pathName: `/culture/${doc.slug}/`,
           pdfPath: doc.href
         }
@@ -359,6 +580,7 @@ async function loadCultureDocuments() {
           versions.push({
             language,
             markdown,
+            title: extractMarkdownTitle(markdown) || doc.title,
             pathName: `/${language.code}/culture/${doc.slug}/`,
             pdfPath: culturePdfPath(doc, language)
           });
@@ -373,6 +595,11 @@ async function loadCultureDocuments() {
       };
     })
   );
+}
+
+function extractMarkdownTitle(markdown) {
+  const match = String(markdown || "").match(/^#\s+(.+)$/m);
+  return match ? stripFormatting(match[1]) : "";
 }
 
 function culturePdfPath(doc, language) {
@@ -390,17 +617,57 @@ function getCultureVersion(doc, languageCode = "en") {
     || null;
 }
 
-function cultureLanguageTargets(site, activeLanguageCode = "en", doc = null) {
-  return CULTURE_LANGUAGES.map((language) => {
-    const version = doc ? getCultureVersion(doc, language.code) : null;
-    const pathName = version?.pathName || language.homePath;
+function languageTargetsForPath(site, pathName = "/") {
+  const activeLanguageCode = site.activeLanguage?.code || "en";
+  const basePath = stripLanguagePrefix(pathName);
+  const siteLanguages = Array.isArray(site.siteLanguages) && site.siteLanguages.length > 0
+    ? site.siteLanguages
+    : [site.activeLanguage || DEFAULT_CULTURE_LANGUAGE];
 
+  return siteLanguages.map((language) => {
     return {
       language,
-      pathName: sitePath(site, pathName),
+      pathName: sitePathForLanguage(site, language, basePath),
       active: language.code === activeLanguageCode
     };
   });
+}
+
+function sitePathForLanguage(site, language, pathName = "/") {
+  const basePath = normalizeBasePath(site.basePath || "");
+  const pagePath = normalizePagePath(pathName);
+  const localizedPath = language.code === "en" ? pagePath : `/${language.code}${pagePath === "/" ? "/" : pagePath}`;
+
+  if (!basePath) {
+    return localizedPath;
+  }
+
+  if (localizedPath === "/") {
+    return `${basePath}/`;
+  }
+
+  return `${basePath}${localizedPath}`;
+}
+
+function normalizePagePath(pathName) {
+  const value = String(pathName || "/").trim() || "/";
+  return value.startsWith("/") ? value : `/${value}`;
+}
+
+function stripLanguagePrefix(pathName) {
+  const value = normalizePagePath(pathName);
+
+  for (const language of CULTURE_LANGUAGES.filter((entry) => entry.code !== "en")) {
+    const prefix = `/${language.code}`;
+    if (value === prefix) {
+      return "/";
+    }
+    if (value.startsWith(`${prefix}/`)) {
+      return value.slice(prefix.length) || "/";
+    }
+  }
+
+  return value;
 }
 
 function normalizeCultureSourceText(source, doc) {
@@ -683,6 +950,7 @@ function renderInline(text) {
 }
 
 function renderHome(site, posts, essayCollections, cultureDocuments) {
+  const ui = site.ui || DEFAULT_UI;
   const featured = posts.find((post) => post.featured) || posts[0];
   const interviews = Array.isArray(site.interviews) ? site.interviews : [];
   const interviewSections = groupBy(interviews, (interview) => interview.section || "Interviews");
@@ -708,20 +976,20 @@ function renderHome(site, posts, essayCollections, cultureDocuments) {
     structuredData: buildWebsiteStructuredData(site),
     content: `
       <div class="page-shell">
-        ${renderHeader(site)}
+        ${renderHeader(site, { pathName: "/" })}
         <main class="content">
           <section class="home-intro">
-            <h1>I write to think. I publish to be argued with.</h1>
+            <h1>${escapeHtml(site.about || ui.homeTitle)}</h1>
             <p class="home-intro-copy">${renderHomeIntro(site)}</p>
             ${renderStartHere(site, postBySlug)}
           </section>
 
-          ${renderCultureDocuments(site, cultureDocuments)}
+          ${renderCultureDocuments(site, cultureDocuments, site.activeLanguage || DEFAULT_CULTURE_LANGUAGE)}
 
           <section class="home-writing">
             <div class="home-section-head">
-              <p class="home-label">Writing</p>
-              <a href="${sitePath(site, "/archive/")}" class="inline-link">Essays</a>
+              <p class="home-label">${escapeHtml(ui.writing)}</p>
+              <a href="${sitePath(site, "/archive/")}" class="inline-link">${escapeHtml(ui.navEssays)}</a>
             </div>
             <div class="essay-collections essay-collections-home">
               ${essayCollections.map((collection) => renderEssayCollection(collection, "home", site)).join("")}
@@ -729,8 +997,8 @@ function renderHome(site, posts, essayCollections, cultureDocuments) {
           </section>
           ${renderSubscribeModule(site, "home")}
 
-          ${interviews.length > 0 ? renderHomeInterviewSections(interviewSections) : ""}
-          ${elsewhere.length > 0 ? renderElsewhereSection(elsewhere) : ""}
+          ${interviews.length > 0 ? renderHomeInterviewSections(interviewSections, site) : ""}
+          ${elsewhere.length > 0 ? renderElsewhereSection(elsewhere, site) : ""}
         </main>
         ${renderFooter(site)}
       </div>
@@ -739,11 +1007,12 @@ function renderHome(site, posts, essayCollections, cultureDocuments) {
 }
 
 function renderArchive(site, essayCollections) {
-  const archiveDescription = `Essays by ${site.name} on car ownership, trust, AI-native companies, and leadership under pressure.`;
+  const ui = site.ui || DEFAULT_UI;
+  const archiveDescription = ui.archiveDescription || `Essays by ${site.name} on car ownership, trust, AI-native companies, and leadership under pressure.`;
 
   return renderDocument({
     site,
-    title: `Essays | ${site.siteTitle}`,
+    title: `${ui.navEssays} | ${site.siteTitle}`,
     description: archiveDescription,
     pathName: "/archive/",
     imagePath: "",
@@ -751,16 +1020,16 @@ function renderArchive(site, essayCollections) {
     openGraphType: "website",
     structuredData: buildCollectionPageStructuredData(site, {
       pathName: "/archive/",
-      title: `Essays | ${site.siteTitle}`,
+      title: `${ui.navEssays} | ${site.siteTitle}`,
       description: archiveDescription
     }),
     content: `
       <div class="page-shell">
-        ${renderHeader(site)}
+        ${renderHeader(site, { pathName: "/archive/" })}
         <main class="content archive-content">
           <section class="archive-hero">
-            <p class="eyebrow">Essays</p>
-            <h1>Published writing</h1>
+            <p class="eyebrow">${escapeHtml(ui.archiveEyebrow)}</p>
+            <h1>${escapeHtml(ui.archiveTitle)}</h1>
           </section>
 
           <div class="essay-collections essay-collections-archive">
@@ -774,11 +1043,12 @@ function renderArchive(site, essayCollections) {
 }
 
 function renderSubscribePage(site) {
+  const ui = site.ui || DEFAULT_UI;
   const subscribe = normalizeSubscribe(site);
 
   return renderDocument({
     site,
-    title: `Subscribe | ${site.siteTitle}`,
+    title: `${ui.footerSubscribe} | ${site.siteTitle}`,
     description: subscribe.pageDek,
     pathName: "/subscribe/",
     imagePath: "",
@@ -791,7 +1061,7 @@ function renderSubscribePage(site) {
     }),
     content: `
       <div class="page-shell">
-        ${renderHeader(site)}
+        ${renderHeader(site, { pathName: "/subscribe/" })}
         <main class="content">
           <section class="archive-hero subscribe-hero">
             <p class="eyebrow">${escapeHtml(subscribe.pageEyebrow)}</p>
@@ -801,11 +1071,13 @@ function renderSubscribePage(site) {
           </section>
           <section class="subscribe-page-panel" aria-label="Newsletter">
             <div class="subscribe-page-points">
-              <p class="subscribe-page-label">What to expect</p>
+              <p class="subscribe-page-label">${escapeHtml(ui.subscribeWhatToExpect || "What to expect")}</p>
               <ul class="subscribe-points">
-                <li>New essays only.</li>
-                <li>A few times a year, not every week.</li>
-                <li>One confirmation email finishes the subscription.</li>
+                ${(ui.subscribePoints || [
+                  "New essays only.",
+                  "A few times a year, not every week.",
+                  "One confirmation email finishes the subscription."
+                ]).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
               </ul>
             </div>
             <div class="subscribe-page-form">
@@ -820,6 +1092,7 @@ function renderSubscribePage(site) {
 }
 
 function renderPost(site, post, collection) {
+  const ui = site.ui || DEFAULT_UI;
   const toc = renderTableOfContents(post);
   const metaTitle = post.metaTitle || post.title;
   return renderDocument({
@@ -842,13 +1115,13 @@ function renderPost(site, post, collection) {
     ],
     content: `
       <div class="page-shell">
-        ${renderHeader(site)}
+        ${renderHeader(site, { pathName: `/posts/${post.slug}/` })}
         <main class="content">
           <article class="essay">
             <nav class="breadcrumb">
-              <a href="${sitePath(site, "/")}">Home</a>
+              <a href="${sitePath(site, "/")}">${escapeHtml(ui.home)}</a>
               <span>/</span>
-              <a href="${sitePath(site, "/archive/")}">Essays</a>
+              <a href="${sitePath(site, "/archive/")}">${escapeHtml(ui.navEssays)}</a>
             </nav>
             <header class="essay-header">
               <p class="eyebrow">${escapeHtml(post.category)}</p>
@@ -856,10 +1129,10 @@ function renderPost(site, post, collection) {
               <p class="dek">${escapeHtml(post.description)}</p>
               <div class="essay-meta-row">
                 <div class="meta">
-                  <span>${post.readingMinutes} min read</span>
-                  <span>${post.wordCount} words</span>
+                  <span>${post.readingMinutes} ${escapeHtml(ui.minRead)}</span>
+                  <span>${post.wordCount} ${escapeHtml(ui.words)}</span>
                 </div>
-                <button class="share-button" type="button" data-share-button data-share-url="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`)))}" data-share-title="${escapeAttribute(post.title)}">Share</button>
+                <button class="share-button" type="button" data-share-button data-share-url="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`)))}" data-share-title="${escapeAttribute(post.title)}">${escapeHtml(ui.share)}</button>
               </div>
             </header>
             <div class="essay-layout">
@@ -870,7 +1143,7 @@ function renderPost(site, post, collection) {
               <div class="article-body">
                 ${post.bodyHtml}
               </div>
-              <p class="essay-signoff">Vikram Chopra, Founder &amp; Builder</p>
+              <p class="essay-signoff">${escapeHtml(ui.essaySignoff || "Vikram Chopra, Founder & Builder")}</p>
               ${renderSources(post)}
               ${renderSubscribeModule(site, "essay")}
               ${renderRelatedEssays(site, post, collection)}
@@ -885,6 +1158,7 @@ function renderPost(site, post, collection) {
 }
 
 function renderNotFound(site) {
+  const ui = site.ui || DEFAULT_UI;
   return renderDocument({
     site,
     title: `Not found | ${site.siteTitle}`,
@@ -895,15 +1169,15 @@ function renderNotFound(site) {
     openGraphType: "website",
     content: `
       <div class="page-shell">
-        ${renderHeader(site)}
+        ${renderHeader(site, { pathName: "/404.html" })}
         <main class="content">
           <section class="not-found">
-            <p class="eyebrow">404</p>
-            <h1>That page drifted off.</h1>
-            <p class="intro">The writing is still intact. Start again from the homepage or the essays.</p>
+            <p class="eyebrow">${escapeHtml(ui.notFoundEyebrow)}</p>
+            <h1>${escapeHtml(ui.notFoundTitle)}</h1>
+            <p class="intro">${escapeHtml(ui.notFoundIntro)}</p>
             <div class="cta-row">
-              <a class="button-link" href="${sitePath(site, "/")}">Go home</a>
-              <a class="button-link button-link-muted" href="${sitePath(site, "/archive/")}">Open essays</a>
+              <a class="button-link" href="${sitePath(site, "/")}">${escapeHtml(ui.goHome)}</a>
+              <a class="button-link button-link-muted" href="${sitePath(site, "/archive/")}">${escapeHtml(ui.openEssays)}</a>
             </div>
           </section>
         </main>
@@ -948,7 +1222,7 @@ function renderDocument({
   structuredData = null,
   socialTitle = "",
   socialDescription = "",
-  htmlLang = "en"
+  htmlLang = site.activeLanguage?.htmlLang || "en"
 }) {
   const canonical = absoluteUrl(site.domain, sitePath(site, pathName));
   const ogImage = imagePath ? absoluteUrl(site.domain, sitePath(site, imagePath)) : "";
@@ -1019,7 +1293,7 @@ function renderDocument({
             root.dataset.theme = theme;
             button.dataset.themeState = theme;
             button.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
-            button.querySelector("[data-theme-label]").textContent = theme === "dark" ? "Light" : "Dark";
+            button.querySelector("[data-theme-label]").textContent = theme === "dark" ? ${JSON.stringify(site.ui.themeLight)} : ${JSON.stringify(site.ui.themeDark)};
             if (themeMeta) {
               themeMeta.setAttribute("content", theme === "dark" ? "#12100d" : "#f4ecdf");
             }
@@ -1054,7 +1328,7 @@ function renderDocument({
                 await navigator.share({ title, url });
               } else {
                 await navigator.clipboard.writeText(url);
-                shareButton.textContent = "Copied";
+                shareButton.textContent = ${JSON.stringify(site.ui.copied)};
                 window.setTimeout(() => {
                   shareButton.textContent = previousLabel;
                 }, 1600);
@@ -1065,7 +1339,7 @@ function renderDocument({
               }
               try {
                 await navigator.clipboard.writeText(url);
-                shareButton.textContent = "Copied";
+                shareButton.textContent = ${JSON.stringify(site.ui.copied)};
                 window.setTimeout(() => {
                   shareButton.textContent = previousLabel;
                 }, 1600);
@@ -1260,7 +1534,8 @@ function renderPlausibleScript() {
 }
 
 function renderHeader(site, options = {}) {
-  const languageTargets = options.languageTargets || cultureLanguageTargets(site, options.activeLanguageCode || "en", options.doc || null);
+  const ui = site.ui || DEFAULT_UI;
+  const languageTargets = options.languageTargets || languageTargetsForPath(site, options.pathName || "/");
   return `
     <header class="site-header">
       <a class="brand" href="${sitePath(site, "/")}">
@@ -1268,25 +1543,25 @@ function renderHeader(site, options = {}) {
         <span>${escapeHtml(site.name)}</span>
       </a>
       <div class="site-header-actions">
-      ${renderCompactLanguageControl(languageTargets)}
+      ${renderCompactLanguageControl(languageTargets, ui.languageLabel)}
       <nav class="site-nav" aria-label="Primary">
-        <a href="${sitePath(site, "/archive/")}">Essays</a>
-        <a href="${sitePath(site, "/#culture-docs")}">Docs</a>
+        <a href="${sitePath(site, "/archive/")}">${escapeHtml(ui.navEssays)}</a>
+        <a href="${sitePath(site, "/#culture-docs")}">${escapeHtml(ui.navDocs)}</a>
       </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="${escapeAttribute(ui.themeToggleLabel)}">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
-        <span data-theme-label>Dark</span>
+        <span data-theme-label>${escapeHtml(ui.themeDark)}</span>
       </button>
       </div>
     </header>
   `;
 }
 
-function renderCompactLanguageControl(languageTargets) {
+function renderCompactLanguageControl(languageTargets, label = DEFAULT_UI.languageLabel) {
   return `
     <div class="language-control language-control-compact">
-      <label for="language-select">Language</label>
-      <select id="language-select" class="language-select" data-language-select aria-label="Language">
+      <label for="language-select">${escapeHtml(label)}</label>
+      <select id="language-select" class="language-select" data-language-select aria-label="${escapeAttribute(label)}">
         ${languageTargets.map(({ language, pathName, active }) => `<option value="${escapeAttribute(pathName)}"${active ? " selected" : ""}>${escapeHtml(language.nativeLabel)}</option>`).join("")}
       </select>
     </div>
@@ -1294,13 +1569,14 @@ function renderCompactLanguageControl(languageTargets) {
 }
 
 function renderCultureDocuments(site, cultureDocuments = CULTURE_DOCUMENTS, language = DEFAULT_CULTURE_LANGUAGE) {
+  const ui = site.ui || DEFAULT_UI;
   return `
     <section class="culture-docs" id="culture-docs" aria-labelledby="culture-docs-title">
       <div class="home-section-head">
         <div>
-          <p class="home-label">Cars24 Culture</p>
-          <h2 id="culture-docs-title">Flatland and values</h2>
-          <p>Use the language selector in the top masthead. The PDF links below follow the selected language.</p>
+          <p class="home-label">${escapeHtml(ui.cars24Culture)}</p>
+          <h2 id="culture-docs-title">${escapeHtml(ui.cultureTitle)}</h2>
+          <p>${escapeHtml(ui.cultureDescription)}</p>
         </div>
       </div>
       <div class="culture-doc-grid">
@@ -1311,140 +1587,37 @@ function renderCultureDocuments(site, cultureDocuments = CULTURE_DOCUMENTS, lang
 }
 
 function renderCultureDocumentCard(site, doc, language = DEFAULT_CULTURE_LANGUAGE) {
+  const ui = site.ui || DEFAULT_UI;
   const version = getCultureVersion(doc, language.code) || getCultureVersion(doc, "en");
-  const pdfLabel = language.code === "en" ? "Open PDF" : `Open PDF - ${language.nativeLabel}`;
+  const localizedDoc = site.cultureDocuments?.[doc.id] || {};
+  const title = localizedDoc.title || version.title || doc.title;
+  const description = localizedDoc.description || doc.description;
+  const meta = localizedDoc.meta || doc.meta;
+  const pdfLabel = language.code === "en" ? ui.openPdf : `${ui.openPdf} - ${language.nativeLabel}`;
   return `
     <article class="culture-doc-card">
       <a class="culture-doc-cover" href="${sitePath(site, version.pdfPath)}" target="_blank" rel="noreferrer">
-        <img src="${sitePath(site, doc.cover)}" alt="${escapeAttribute(doc.title)} cover" loading="lazy">
+        <img src="${sitePath(site, doc.cover)}" alt="${escapeAttribute(title)} cover" loading="lazy">
       </a>
       <div class="culture-doc-copy">
-        <p class="culture-doc-meta">${escapeHtml(doc.meta)}</p>
-        <h3>${escapeHtml(doc.title)}</h3>
-        <p>${escapeHtml(doc.description)}</p>
+        <p class="culture-doc-meta">${escapeHtml(meta)}</p>
+        <h3>${escapeHtml(title)}</h3>
+        <p>${escapeHtml(description)}</p>
         <div class="culture-doc-actions">
           <a class="button-link" href="${sitePath(site, version.pdfPath)}" target="_blank" rel="noreferrer">${escapeHtml(pdfLabel)}</a>
-          <a class="button-link button-link-muted" href="${sitePath(site, version.pathName)}">Read online</a>
         </div>
       </div>
     </article>
   `.trim();
 }
 
-function renderCultureLanguageHome(site, cultureDocuments, language) {
-  const title = `${language.nativeLabel} culture docs | ${site.siteTitle}`;
-  const description = `Claude-translated Cars24 culture documents in ${language.label}.`;
-
-  return renderDocument({
-    site,
-    title,
-    description,
-    pathName: language.homePath,
-    imagePath: site.socialImage || "",
-    imageAlt: site.socialImageAlt || site.siteTitle,
-    imageWidth: site.socialImageMeta?.width || null,
-    imageHeight: site.socialImageMeta?.height || null,
-    bodyClass: "culture-language-page",
-    htmlLang: language.htmlLang,
-    openGraphType: "website",
-    structuredData: buildCollectionPageStructuredData(site, {
-      pathName: language.homePath,
-      title,
-      description
-    }),
-    content: `
-      <div class="page-shell">
-        ${renderHeader(site, { activeLanguageCode: language.code })}
-        <main class="content">
-          <section class="archive-hero culture-language-hero">
-            <p class="eyebrow">${escapeHtml(language.readerNote)}</p>
-            <h1>${escapeHtml(language.landingTitle || `${language.nativeLabel} reader`)}</h1>
-            <p class="dek">${escapeHtml(language.landingDek || `Read Cars24 culture documents in ${language.label}.`)}</p>
-          </section>
-          <section class="culture-docs culture-docs-standalone" aria-labelledby="culture-language-docs-title">
-            <div class="home-section-head">
-              <div>
-                <p class="home-label">Cars24 Culture</p>
-                <h2 id="culture-language-docs-title">Documents</h2>
-              </div>
-            </div>
-            <div class="culture-doc-grid">
-              ${cultureDocuments.map((doc) => renderCultureDocumentCard(site, doc, language)).join("")}
-            </div>
-          </section>
-        </main>
-        ${renderFooter(site)}
-      </div>
-    `
-  });
-}
-
-function renderCultureDocumentPage(site, doc, version) {
-  const language = version.language;
-  const isEnglish = language.code === "en";
-  const title = isEnglish ? `${doc.title} | ${site.siteTitle}` : `${doc.title} in ${language.label} | ${site.siteTitle}`;
-  const description = isEnglish
-    ? `${doc.title} as a readable web page, alongside the original PDF.`
-    : `${doc.title}, translated into ${language.label} with Claude to preserve tone and meaning.`;
-  const bodyHtml = renderCultureReaderBody(version.markdown);
-
-  return renderDocument({
-    site,
-    title,
-    description,
-    pathName: version.pathName,
-    imagePath: doc.cover,
-    imageAlt: `${doc.title} cover`,
-    bodyClass: "culture-reader-page",
-    htmlLang: language.htmlLang,
-    openGraphType: "article",
-    structuredData: buildCollectionPageStructuredData(site, {
-      pathName: version.pathName,
-      title,
-      description
-    }),
-    content: `
-      <div class="page-shell">
-        ${renderHeader(site, { activeLanguageCode: language.code, doc })}
-        <main class="content">
-          <article class="culture-reader">
-            <nav class="breadcrumb">
-              <a href="${sitePath(site, "/")}">Home</a>
-              <span>/</span>
-              <a href="${sitePath(site, "/#culture-docs")}">Docs</a>
-            </nav>
-            <header class="culture-reader-header">
-              <p class="eyebrow">${escapeHtml(language.readerNote)}</p>
-              <h1>${escapeHtml(doc.title)}</h1>
-              <p class="dek">${escapeHtml(description)}</p>
-              <div class="culture-reader-actions">
-                <a class="button-link" href="${sitePath(site, version.pdfPath)}" target="_blank" rel="noreferrer">${escapeHtml(language.code === "en" ? "Open PDF" : `Open PDF - ${language.nativeLabel}`)}</a>
-              </div>
-            </header>
-            <div class="article-body culture-reader-body">
-              ${bodyHtml}
-            </div>
-          </article>
-        </main>
-        ${renderFooter(site)}
-      </div>
-    `
-  });
-}
-
-function renderCultureReaderBody(markdown) {
-  const bodyMarkdown = String(markdown || "")
-    .replace(/^#\s+.+(?:\n|$)/, "")
-    .trim();
-  return renderMarkdown(bodyMarkdown).html;
-}
-
 function renderFooter(site) {
+  const ui = site.ui || DEFAULT_UI;
   return `
     <footer class="site-footer">
       <p>${escapeHtml(site.footerNote)}</p>
       <p class="footer-note">
-        <a href="${sitePath(site, "/archive/")}">Essays</a>
+        <a href="${sitePath(site, "/archive/")}">${escapeHtml(ui.footerEssays)}</a>
         <span aria-hidden="true"> · </span>
         <a href="${escapeAttribute(site.companyUrl)}">Cars24</a>
         <span aria-hidden="true"> · </span>
@@ -1454,7 +1627,7 @@ function renderFooter(site) {
         <span aria-hidden="true"> · </span>
         <a href="${sitePath(site, "/rss.xml")}">RSS</a>
         <span aria-hidden="true"> · </span>
-        <a href="${sitePath(site, "/subscribe/")}">Subscribe</a>
+        <a href="${sitePath(site, "/subscribe/")}">${escapeHtml(ui.footerSubscribe)}</a>
       </p>
     </footer>
   `;
@@ -1467,6 +1640,7 @@ function renderHomeIntro(site) {
 }
 
 function renderStartHere(site, postBySlug) {
+  const ui = site.ui || DEFAULT_UI;
   const items = START_HERE_SLUGS
     .map((slug) => postBySlug.get(slug))
     .filter(Boolean);
@@ -1477,7 +1651,7 @@ function renderStartHere(site, postBySlug) {
 
   return `
     <p class="home-start-here">
-      <span>Start here:</span>
+      <span>${escapeHtml(ui.startHere)}</span>
       ${items.map((post, index) => `${index === 0 ? " " : '<span aria-hidden="true"> · </span>'}<a href="${sitePath(site, `/posts/${post.slug}/`)}">${renderDisplayTitle(post.displayTitle)}</a>`).join("")}
     </p>
   `;
@@ -1494,6 +1668,7 @@ function normalizeSubscribe(site) {
     homeTitle: String(subscribe.homeTitle || "Get the next essay by email").trim(),
     homeBody: String(subscribe.homeBody || "I publish infrequently. Email is the cleanest way to hear when a new essay is live.").trim(),
     homeDetail: String(subscribe.homeDetail || "No cadence for the sake of cadence. Just new essays when there is something worth saying.").trim(),
+    essayEyebrow: String(subscribe.essayEyebrow || "").trim(),
     essayTitle: String(subscribe.essayTitle || "If this was worth your time, get the next one by email").trim(),
     essayBody: String(subscribe.essayBody || "A few essays a year. No feed-chasing. No filler.").trim(),
     pageEyebrow: String(subscribe.pageEyebrow || "By Email").trim(),
@@ -1508,6 +1683,7 @@ function normalizeSubscribe(site) {
 }
 
 function renderSubscribeModule(site, variant) {
+  const ui = site.ui || DEFAULT_UI;
   const subscribe = normalizeSubscribe(site);
 
   if (!subscribe.href) {
@@ -1516,7 +1692,7 @@ function renderSubscribeModule(site, variant) {
 
   if (variant === "home") {
     return `
-      <section class="subscribe-module subscribe-module-home" aria-label="Subscribe">
+      <section class="subscribe-module subscribe-module-home" aria-label="${escapeAttribute(subscribe.homeTitle)}">
         <div class="subscribe-copy">
           <p class="subscribe-kicker">${escapeHtml(subscribe.homeEyebrow)}</p>
           <h2>${escapeHtml(subscribe.homeTitle)}</h2>
@@ -1532,9 +1708,9 @@ function renderSubscribeModule(site, variant) {
 
   if (variant === "essay") {
     return `
-      <section class="subscribe-module subscribe-module-essay" aria-label="Subscribe">
+      <section class="subscribe-module subscribe-module-essay" aria-label="${escapeAttribute(subscribe.essayTitle)}">
         <div class="subscribe-copy">
-          <p class="subscribe-kicker">By Email</p>
+          <p class="subscribe-kicker">${escapeHtml(subscribe.essayEyebrow || ui.subscribeFallbackKicker)}</p>
           <h2>${escapeHtml(subscribe.essayTitle)}</h2>
           <p class="subscribe-body">${escapeHtml(subscribe.essayBody)}</p>
         </div>
@@ -1559,7 +1735,7 @@ function renderSubscribeForm(site, variant) {
 
   return `
     <form class="subscribe-form subscribe-form-${variant}" method="post" action="${escapeAttribute(subscribe.action)}" data-subscribe-form data-submitting-label="${escapeAttribute(subscribe.submittingLabel)}">
-      <label class="sr-only" for="${escapeAttribute(formId)}">Email address</label>
+      <label class="sr-only" for="${escapeAttribute(formId)}">${escapeHtml(subscribe.placeholder)}</label>
       <div class="subscribe-input-row">
         <input class="subscribe-input" id="${escapeAttribute(formId)}" name="email" type="email" placeholder="${escapeAttribute(subscribe.placeholder)}" autocomplete="email" required>
         <button class="subscribe-submit" type="submit" data-subscribe-submit>${escapeHtml(subscribe.button)}</button>
@@ -1570,12 +1746,13 @@ function renderSubscribeForm(site, variant) {
 }
 
 function renderEntryRow(post) {
+  const ui = post.site.ui || DEFAULT_UI;
   const meta = post.category && post.category !== "Essay"
     ? `
           <span>${escapeHtml(post.category)}</span>
-          <span>${post.readingMinutes} min read</span>
+          <span>${post.readingMinutes} ${escapeHtml(ui.minRead)}</span>
         `
-    : `<span>${post.readingMinutes} min read</span>`;
+    : `<span>${post.readingMinutes} ${escapeHtml(ui.minRead)}</span>`;
 
   return `
     <article class="entry-row">
@@ -1616,6 +1793,7 @@ function renderHomeArchiveRow(post) {
 }
 
 function renderEssayCollection(collection, variant, site) {
+  const ui = site.ui || DEFAULT_UI;
   const count = collection.posts.length;
   const anchorHref = sitePath(site, `/archive/#${collection.id}`);
   const title = variant === "archive"
@@ -1628,7 +1806,7 @@ function renderEssayCollection(collection, variant, site) {
   return `
     <section class="essay-collection essay-collection-${variant}"${variant === "archive" ? ` id="${escapeAttribute(collection.id)}"` : ""}>
       <div class="essay-collection-head">
-        <p class="essay-collection-meta">${count} essay${count === 1 ? "" : "s"}</p>
+        <p class="essay-collection-meta">${count} ${escapeHtml(count === 1 ? ui.essaySingular : ui.essayPlural)}</p>
         <h2 class="essay-collection-title">${title}</h2>
       </div>
       ${rows}
@@ -1669,7 +1847,7 @@ function entryVisualPath(post, variant = "article") {
   return "";
 }
 
-function renderHomeInterviewSections(sections) {
+function renderHomeInterviewSections(sections, site) {
   const sectionEntries = Object.entries(sections).filter(([, items]) =>
     items.some((interview) => String(interview.videoId || "").trim())
   );
@@ -1679,11 +1857,11 @@ function renderHomeInterviewSections(sections) {
   }
 
   return sectionEntries
-    .map(([sectionTitle, items], index) => renderHomeInterviewsSection(sectionTitle, items, index === 0))
+    .map(([sectionTitle, items], index) => renderHomeInterviewsSection(sectionTitle, items, index === 0, site))
     .join("");
 }
 
-function renderHomeInterviewsSection(sectionTitle, interviews, includeIntro = false) {
+function renderHomeInterviewsSection(sectionTitle, interviews, includeIntro = false, site = null) {
   const validInterviews = interviews.filter((interview) => String(interview.videoId || "").trim());
 
   if (validInterviews.length === 0) {
@@ -1696,13 +1874,13 @@ function renderHomeInterviewsSection(sectionTitle, interviews, includeIntro = fa
         <p class="home-label">${escapeHtml(sectionTitle)}</p>
       </div>
       <div class="interview-grid">
-        ${validInterviews.map((interview) => renderHomeInterviewCard(interview)).join("")}
+        ${validInterviews.map((interview) => renderHomeInterviewCard(interview, site)).join("")}
       </div>
     </section>
   `;
 }
 
-function renderHomeInterviewCard(interview) {
+function renderHomeInterviewCard(interview, site) {
   const videoId = String(interview.videoId || "").trim();
 
   if (!videoId) {
@@ -1731,12 +1909,13 @@ function renderHomeInterviewCard(interview) {
       ${meta ? `<p class="interview-meta">${escapeHtml(meta)}</p>` : ""}
       <h3 class="interview-title">${escapeHtml(title)}</h3>
       ${description ? `<p class="interview-description">${escapeHtml(description)}</p>` : ""}
-      <p class="interview-action"><a class="inline-link" href="${escapeAttribute(watchUrl)}" target="_blank" rel="noreferrer">Watch on YouTube</a></p>
+      <p class="interview-action"><a class="inline-link" href="${escapeAttribute(watchUrl)}" target="_blank" rel="noreferrer">${escapeHtml((site?.ui || DEFAULT_UI).watchOnYouTube)}</a></p>
     </article>
   `;
 }
 
-function renderElsewhereSection(items) {
+function renderElsewhereSection(items, site) {
+  const ui = site.ui || DEFAULT_UI;
   const validItems = items.filter((item) => String(item.url || "").trim());
 
   if (validItems.length === 0) {
@@ -1746,7 +1925,7 @@ function renderElsewhereSection(items) {
   return `
     <section class="home-elsewhere">
       <div class="home-section-head">
-        <p class="home-label">Elsewhere</p>
+        <p class="home-label">${escapeHtml(ui.elsewhere)}</p>
       </div>
       <div class="elsewhere-list">
         ${validItems.map((item) => renderElsewhereRow(item)).join("")}
@@ -1767,10 +1946,12 @@ function renderElsewhereRow(item) {
   `;
 }
 
-function buildEssayCollections(posts) {
+function buildEssayCollections(posts, site = null) {
+  const translatedCollections = site?.ui?.collections || {};
   const postBySlug = new Map(posts.map((post) => [post.slug, post]));
   const assigned = new Set();
   const collections = CURATED_ESSAY_COLLECTIONS.map((collection) => {
+    const translated = translatedCollections[collection.id] || {};
     const collectionPosts = collection.slugs
       .map((slug) => postBySlug.get(slug))
       .filter(Boolean);
@@ -1778,6 +1959,8 @@ function buildEssayCollections(posts) {
     collectionPosts.forEach((post) => assigned.add(post.slug));
     return {
       ...collection,
+      title: translated.title || collection.title,
+      description: translated.description || collection.description,
       posts: collectionPosts
     };
   }).filter((collection) => collection.posts.length > 0);
@@ -1786,8 +1969,8 @@ function buildEssayCollections(posts) {
   if (unassignedPosts.length > 0) {
     collections.push({
       id: "more-essays",
-      title: "More Essays",
-      description: "Additional writing that does not yet sit inside one of the main thematic tracks.",
+      title: translatedCollections["more-essays"]?.title || "More Essays",
+      description: translatedCollections["more-essays"]?.description || "Additional writing that does not yet sit inside one of the main thematic tracks.",
       posts: unassignedPosts
     });
   }
@@ -1850,6 +2033,7 @@ function renderDisplayTitle(title) {
 }
 
 function renderTableOfContents(post) {
+  const ui = post.site.ui || DEFAULT_UI;
   const allHeadings = post.headings || [];
   const preferredLevel = allHeadings.some((heading) => heading.level === 2) ? 2 : 3;
   const headings = allHeadings.filter((heading) => heading.level === preferredLevel);
@@ -1860,7 +2044,7 @@ function renderTableOfContents(post) {
 
   return `
     <aside class="essay-toc" aria-label="Table of contents">
-      <p class="essay-toc-label">On this page</p>
+      <p class="essay-toc-label">${escapeHtml(ui.onThisPage)}</p>
       <ol class="essay-toc-list">
         ${headings
           .map((heading) => {
@@ -1873,6 +2057,7 @@ function renderTableOfContents(post) {
 }
 
 function renderSummary(post) {
+  const ui = post.site.ui || DEFAULT_UI;
   const items = String(post.summary || "")
     .split("|")
     .map((item) => item.trim())
@@ -1884,7 +2069,7 @@ function renderSummary(post) {
 
   return `
     <section class="essay-summary" aria-label="Essay summary">
-      <p class="essay-summary-label">In Brief</p>
+      <p class="essay-summary-label">${escapeHtml(ui.inBrief)}</p>
       <ul>
         ${items.map((item) => `<li>${renderInline(item)}</li>`).join("")}
       </ul>
@@ -1908,6 +2093,7 @@ function renderArticleImage(post) {
 }
 
 function renderSources(post) {
+  const ui = post.site.ui || DEFAULT_UI;
   const sourcesLine = String(post.sourcesLine || "").trim();
 
   if (!sourcesLine) {
@@ -1916,13 +2102,14 @@ function renderSources(post) {
 
   return `
     <section class="essay-summary essay-sources" aria-label="Notes and sources">
-      <h2 id="notes-and-sources" class="essay-summary-label">Notes and Sources</h2>
+      <h2 id="notes-and-sources" class="essay-summary-label">${escapeHtml(ui.notesAndSources)}</h2>
       <p><em>Sources: ${renderInline(sourcesLine)}</em></p>
     </section>
   `;
 }
 
 function renderRelatedEssays(site, post, collection) {
+  const ui = site.ui || DEFAULT_UI;
   if (!collection || !Array.isArray(collection.posts)) {
     return "";
   }
@@ -1935,8 +2122,8 @@ function renderRelatedEssays(site, post, collection) {
 
   return `
     <section class="related-essays" aria-label="Related essays">
-      <p class="essay-summary-label">Continue Reading</p>
-      <h2>More in ${escapeHtml(collection.title)}</h2>
+      <p class="essay-summary-label">${escapeHtml(ui.continueReading)}</p>
+      <h2>${escapeHtml(ui.moreIn)} ${escapeHtml(collection.title)}</h2>
       <div class="related-essay-list">
         ${relatedPosts.map((item) => `
           <a class="related-essay-card" href="${sitePath(site, `/posts/${item.slug}/`)}">
@@ -2023,15 +2210,14 @@ function renderLlmsTxt(site, essayCollections, cultureDocuments = []) {
     "",
     `- [Home](${absoluteUrl(site.domain, sitePath(site, "/"))})`,
     `- [Essays](${absoluteUrl(site.domain, sitePath(site, "/archive/"))})`,
-    `- [Hindi culture docs](${absoluteUrl(site.domain, sitePath(site, "/hi/"))})`,
     ""
   ];
 
   if (cultureDocuments.length > 0) {
-    lines.push("## Culture Documents");
+    lines.push("## Culture Document PDFs");
     for (const doc of cultureDocuments) {
       for (const version of doc.versions) {
-        lines.push(`- [${doc.title} - ${version.language.label}](${absoluteUrl(site.domain, sitePath(site, version.pathName))})`);
+        lines.push(`- [${doc.title} - ${version.language.label}](${absoluteUrl(site.domain, sitePath(site, version.pdfPath))})`);
       }
     }
     lines.push("");
@@ -2130,15 +2316,21 @@ function renderRss(site, posts) {
 </rss>`;
 }
 
-function renderSitemap(site, posts, cultureDocuments = []) {
-  const urls = [
-    "/",
-    "/archive/",
-    ...CULTURE_LANGUAGES.filter((language) => language.code !== "en").map((language) => language.homePath),
-    ...cultureDocuments.flatMap((doc) => doc.versions.map((version) => version.pathName)),
-    ...posts.map((post) => `/posts/${post.slug}/`)
-  ];
+function renderSitemap(site, languageContexts, cultureDocuments = []) {
+  const urls = [];
+
+  for (const context of languageContexts) {
+    const prefix = context.language.code === "en" ? "" : `/${context.language.code}`;
+    urls.push(`${prefix || "/"}`);
+    urls.push(`${prefix}/archive/`.replace(/^\/archive/, "/archive"));
+    urls.push(`${prefix}/subscribe/`.replace(/^\/subscribe/, "/subscribe"));
+    urls.push(...context.posts.map((post) => `${prefix}/posts/${post.slug}/`.replace(/^\/posts/, "/posts")));
+  }
+
+  urls.push(...cultureDocuments.flatMap((doc) => doc.versions.map((version) => version.pdfPath)));
+
   const nodes = urls
+    .map((url) => url === "" ? "/" : url)
     .map((url) => {
       return `
   <url>
@@ -2189,7 +2381,11 @@ Sitemap: ${absoluteUrl(site.domain, sitePath(site, "/sitemap.xml"))}
 
 function sitePath(site, pathName) {
   const basePath = normalizeBasePath(site.basePath || "");
-  const normalizedPath = withMediaVersion(pathName);
+  let normalizedPath = withMediaVersion(pathName);
+
+  if (shouldPrefixLanguagePath(site, normalizedPath)) {
+    normalizedPath = `${site.languagePrefix}${normalizedPath === "/" ? "/" : normalizedPath}`;
+  }
 
   if (!basePath) {
     return normalizedPath;
@@ -2200,6 +2396,39 @@ function sitePath(site, pathName) {
   }
 
   return `${basePath}${normalizedPath}`;
+}
+
+function shouldPrefixLanguagePath(site, pathName) {
+  if (!site.languagePrefix) {
+    return false;
+  }
+
+  const value = String(pathName || "");
+
+  if (!value.startsWith("/")) {
+    return false;
+  }
+
+  if (value.startsWith(site.languagePrefix + "/")) {
+    return false;
+  }
+
+  if (CULTURE_LANGUAGES.some((language) => language.code !== "en" && value.startsWith(`/${language.code}/`))) {
+    return false;
+  }
+
+  return ![
+    "/styles.css",
+    "/favicon.svg",
+    "/rss.xml",
+    "/sitemap.xml",
+    "/robots.txt",
+    "/llms.txt",
+    "/_redirects",
+    "/_headers"
+  ].some((assetPath) => value === assetPath)
+    && !value.startsWith("/media/")
+    && !value.startsWith("/.well-known/");
 }
 
 function withMediaVersion(pathName) {
@@ -2261,6 +2490,28 @@ function groupBy(items, selector) {
     groups[key].push(item);
     return groups;
   }, {});
+}
+
+function mergeDeep(base, override) {
+  if (Array.isArray(base) || Array.isArray(override)) {
+    return override === undefined ? base : override;
+  }
+
+  if (!isPlainObject(base) || !isPlainObject(override)) {
+    return override === undefined ? base : override;
+  }
+
+  const output = { ...base };
+
+  for (const [key, value] of Object.entries(override)) {
+    output[key] = key in output ? mergeDeep(output[key], value) : value;
+  }
+
+  return output;
+}
+
+function isPlainObject(value) {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
 function slugToTitle(slug) {

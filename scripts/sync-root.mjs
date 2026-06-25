@@ -19,6 +19,7 @@ const managedEntries = [
   "archive",
   "culture",
   "hi",
+  "hinglish",
   "mr",
   "gu",
   "bn",
@@ -41,7 +42,11 @@ async function main() {
   }
 
   for (const entry of managedEntries.filter((value) => value !== ".nojekyll" && value !== "CNAME")) {
-    await fs.cp(path.join(distDir, entry), path.join(rootDir, entry), { recursive: true, force: true });
+    const source = path.join(distDir, entry);
+    if (!(await exists(source))) {
+      continue;
+    }
+    await fs.cp(source, path.join(rootDir, entry), { recursive: true, force: true });
   }
 
   const site = JSON.parse(await fs.readFile(siteConfigPath, "utf8"));
@@ -57,3 +62,12 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+async function exists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
