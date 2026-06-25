@@ -1238,6 +1238,7 @@ function renderDocument({
     <meta name="description" content="${escapeAttribute(metaDescription)}">
     <meta name="author" content="${escapeAttribute(site.name)}">
     <link rel="canonical" href="${escapeAttribute(canonical)}">
+    ${renderHreflangLinks(site, pathName)}
     <link rel="alternate" type="application/rss+xml" title="${escapeAttribute(site.siteTitle)} RSS" href="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, "/rss.xml")))}">
     <meta property="og:site_name" content="${escapeAttribute(site.siteTitle)}">
     <meta property="og:title" content="${escapeAttribute(metaTitle)}">
@@ -1309,6 +1310,32 @@ function renderDocument({
         }
 
         if (languageSelect) {
+          const prefetchedLanguagePaths = new Set();
+          const prefetchLanguageTarget = (path) => {
+            if (!path) {
+              return;
+            }
+
+            const url = new URL(path, window.location.href);
+            if (url.origin !== window.location.origin || url.pathname === window.location.pathname || prefetchedLanguagePaths.has(url.pathname)) {
+              return;
+            }
+
+            prefetchedLanguagePaths.add(url.pathname);
+            const link = document.createElement("link");
+            link.rel = "prefetch";
+            link.href = url.href;
+            document.head.appendChild(link);
+          };
+          const prefetchLanguageTargets = () => {
+            for (const option of languageSelect.options) {
+              prefetchLanguageTarget(option.value);
+            }
+          };
+
+          languageSelect.addEventListener("focus", prefetchLanguageTargets, { once: true });
+          languageSelect.addEventListener("pointerenter", prefetchLanguageTargets, { once: true });
+          languageSelect.addEventListener("pointerdown", prefetchLanguageTargets, { once: true });
           languageSelect.addEventListener("change", () => {
             const nextPath = languageSelect.value;
             if (nextPath && nextPath !== window.location.pathname) {
@@ -1531,6 +1558,45 @@ function renderPlausibleScript() {
   }
 
   return `<script defer data-domain="${escapeAttribute(plausibleDomain)}" src="${escapeAttribute(plausibleScriptSrc)}"></script>`;
+}
+
+function renderHreflangLinks(site, pathName) {
+  const targets = languageTargetsForPath(site, pathName);
+  if (targets.length <= 1) {
+    return "";
+  }
+
+  const links = targets.map(({ language, pathName: targetPath }) => {
+    const href = absoluteUrl(site.domain, localizedTargetPath(site, targetPath));
+    return `<link rel="alternate" hreflang="${escapeAttribute(language.htmlLang || language.code)}" href="${escapeAttribute(href)}">`;
+  });
+  const defaultTarget = targets.find(({ language }) => language.code === "en") || targets[0];
+
+  if (defaultTarget) {
+    const href = absoluteUrl(site.domain, localizedTargetPath(site, defaultTarget.pathName));
+    links.push(`<link rel="alternate" hreflang="x-default" href="${escapeAttribute(href)}">`);
+  }
+
+  return links.join("\n    ");
+}
+
+function localizedTargetPath(site, pathName) {
+  const basePath = normalizeBasePath(site.basePath || "");
+  const normalizedPath = normalizePagePath(pathName);
+
+  if (basePath && (normalizedPath === basePath || normalizedPath.startsWith(`${basePath}/`))) {
+    return normalizedPath;
+  }
+
+  if (!basePath) {
+    return normalizedPath;
+  }
+
+  if (normalizedPath === "/") {
+    return `${basePath}/`;
+  }
+
+  return `${basePath}${normalizedPath}`;
 }
 
 function renderHeader(site, options = {}) {
@@ -2321,10 +2387,11 @@ function renderSitemap(site, languageContexts, cultureDocuments = []) {
 
   for (const context of languageContexts) {
     const prefix = context.language.code === "en" ? "" : `/${context.language.code}`;
-    urls.push(`${prefix || "/"}`);
-    urls.push(`${prefix}/archive/`.replace(/^\/archive/, "/archive"));
-    urls.push(`${prefix}/subscribe/`.replace(/^\/subscribe/, "/subscribe"));
-    urls.push(...context.posts.map((post) => `${prefix}/posts/${post.slug}/`.replace(/^\/posts/, "/posts")));
+    const localizedPath = (pathName) => prefix ? `${prefix}${pathName === "/" ? "/" : pathName}` : pathName;
+    urls.push(localizedPath("/"));
+    urls.push(localizedPath("/archive/"));
+    urls.push(localizedPath("/subscribe/"));
+    urls.push(...context.posts.map((post) => localizedPath(`/posts/${post.slug}/`)));
   }
 
   urls.push(...cultureDocuments.flatMap((doc) => doc.versions.map((version) => version.pdfPath)));
@@ -2334,7 +2401,7 @@ function renderSitemap(site, languageContexts, cultureDocuments = []) {
     .map((url) => {
       return `
   <url>
-    <loc>${escapeXml(absoluteUrl(site.domain, sitePath(site, url)))}</loc>
+    <loc>${escapeXml(absoluteUrl(site.domain, localizedTargetPath(site, url)))}</loc>
   </url>`;
     })
     .join("");

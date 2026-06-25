@@ -51,11 +51,13 @@ const cultureDocs = [
 
 async function main() {
   const errors = [];
+  const site = await readSiteConfig(errors);
   const postFiles = await listPostFiles(errors);
 
   const translationSourcesComplete = await auditTranslationSources({ postFiles, errors });
-  await auditGeneratedRoutes({ postFiles, errors, requireAllLanguages: translationSourcesComplete });
+  await auditGeneratedRoutes({ postFiles, errors, requireAllLanguages: translationSourcesComplete, domain: site?.domain || "" });
   await auditCultureRedirects({ errors, requireAllLanguages: translationSourcesComplete });
+  await auditLocalizedSitemap({ postFiles, errors, requireAllLanguages: translationSourcesComplete, domain: site?.domain || "" });
   auditRegionalPdfs({ errors });
 
   if (errors.length > 0) {
@@ -70,6 +72,15 @@ async function main() {
   console.log(
     `Localization verification passed for ${targetLanguages.length} language(s), ${postFiles.length} post(s), and ${targetLanguages.length * cultureDocs.length} regional PDF(s).`
   );
+}
+
+async function readSiteConfig(errors) {
+  try {
+    return JSON.parse(await fs.readFile(path.join(contentDir, "site.json"), "utf8"));
+  } catch (error) {
+    errors.push(`unable to read content/site.json: ${error.message}`);
+    return null;
+  }
 }
 
 async function listPostFiles(errors) {
@@ -161,7 +172,7 @@ function auditTranslatedText({ label, raw, sourceRaw, language, errors }) {
   }
 }
 
-async function auditGeneratedRoutes({ postFiles, errors, requireAllLanguages }) {
+async function auditGeneratedRoutes({ postFiles, errors, requireAllLanguages, domain }) {
   const baseRoutes = [
     { pathName: "/", relativeFile: "index.html" },
     { pathName: "/archive/", relativeFile: path.join("archive", "index.html") },
@@ -204,6 +215,13 @@ async function auditGeneratedRoutes({ postFiles, errors, requireAllLanguages }) 
         if (JSON.stringify(optionValues) !== JSON.stringify(expectedValues)) {
           errors.push(`${label}: language selector targets mismatch; expected ${expectedValues.join(", ")} but found ${optionValues.join(", ")}`);
         }
+        auditHreflangAlternates({
+          html,
+          label,
+          expectedPaths: expectedValues,
+          domain,
+          errors
+        });
       }
     }
   }
@@ -217,6 +235,39 @@ async function auditGeneratedRoutes({ postFiles, errors, requireAllLanguages }) 
     }
     if (/language-pill|language-module/i.test(html)) {
       errors.push(`${relativeFile}: contains deprecated language selector UI`);
+    }
+  }
+}
+
+function auditHreflangAlternates({ html, label, expectedPaths, domain, errors }) {
+  const normalizedDomain = normalizeDomain(domain);
+  if (!normalizedDomain) {
+    return;
+  }
+
+  const alternates = [...html.matchAll(/<link\s+rel="alternate"\s+hreflang="([^"]+)"\s+href="([^"]+)"/gi)]
+    .map((match) => ({ hreflang: match[1], href: match[2] }));
+  const expected = allLanguages.map((language, index) => ({
+    hreflang: language.htmlLang,
+    href: `${normalizedDomain}${expectedPaths[index]}`
+  }));
+  expected.push({
+    hreflang: "x-default",
+    href: `${normalizedDomain}${expectedPaths[0]}`
+  });
+
+  if (alternates.length !== expected.length) {
+    errors.push(`${label}: expected ${expected.length} hreflang alternate(s), found ${alternates.length}`);
+  }
+
+  for (const expectedAlternate of expected) {
+    const actual = alternates.find((alternate) => alternate.hreflang === expectedAlternate.hreflang);
+    if (!actual) {
+      errors.push(`${label}: missing hreflang ${expectedAlternate.hreflang}`);
+      continue;
+    }
+    if (actual.href !== expectedAlternate.href) {
+      errors.push(`${label}: hreflang ${expectedAlternate.hreflang} points to ${actual.href}, expected ${expectedAlternate.href}`);
     }
   }
 }
@@ -246,6 +297,55 @@ async function auditCultureRedirects({ errors, requireAllLanguages }) {
       if (!/meta name="robots" content="noindex"/i.test(html)) {
         errors.push(`${relativeFile}: redirect page should be noindex`);
       }
+    }
+  }
+}
+
+async function auditLocalizedSitemap({ postFiles, errors, requireAllLanguages, domain }) {
+  if (!requireAllLanguages) {
+    return;
+  }
+
+  const normalizedDomain = normalizeDomain(domain);
+  if (!normalizedDomain) {
+    return;
+  }
+
+  const xml = await readGenerated("sitemap.xml", errors);
+  if (!xml) {
+    return;
+  }
+
+  const urls = new Set([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]));
+  const basePaths = [
+    "/",
+    "/archive/",
+    "/subscribe/",
+    ...postFiles.map((file) => `/posts/${file.replace(/\.md$/, "")}/`)
+  ];
+
+  for (const basePath of basePaths) {
+    for (const pathName of languageTargetsForRoute(basePath)) {
+      const expected = `${normalizedDomain}${pathName}`;
+      if (!urls.has(expected)) {
+        errors.push(`sitemap.xml: missing localized URL ${expected}`);
+      }
+    }
+  }
+
+  const culturePdfUrls = [
+    "/media/docs/flatland.pdf",
+    "/media/docs/cars24-values.pdf",
+    ...targetLanguages.flatMap((language) => [
+      `/media/docs/flatland-${language.code}.pdf`,
+      `/media/docs/cars24-values-${language.code}.pdf`
+    ])
+  ];
+
+  for (const pathName of culturePdfUrls) {
+    const expected = `${normalizedDomain}${pathName}`;
+    if (!urls.has(expected)) {
+      errors.push(`sitemap.xml: missing culture PDF URL ${expected}`);
     }
   }
 }
@@ -407,6 +507,10 @@ function formatListPreview(items) {
   const preview = items.slice(0, 5).join(", ");
   const remaining = items.length - 5;
   return remaining > 0 ? `${preview}, and ${remaining} more` : preview;
+}
+
+function normalizeDomain(domain) {
+  return String(domain || "").replace(/\/$/, "");
 }
 
 main().catch((error) => {

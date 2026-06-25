@@ -13,6 +13,23 @@ const redirectChecks = [
   ["/posts/ai-may-do-for-consumer-what-saas-did-for-software/", "/posts/ai-will-do-for-consumer-what-saas-did-for-software/"],
   ["/posts/the-car-is-the-artifact-trust-is-the-product/", "/posts/why-we-are-not-selling-cars/"]
 ];
+const localizedLanguages = [
+  { code: "hi", htmlLang: "hi" },
+  { code: "hinglish", htmlLang: "hi-Latn" },
+  { code: "mr", htmlLang: "mr" },
+  { code: "gu", htmlLang: "gu" },
+  { code: "bn", htmlLang: "bn" },
+  { code: "ta", htmlLang: "ta" },
+  { code: "te", htmlLang: "te" },
+  { code: "kn", htmlLang: "kn" },
+  { code: "ml", htmlLang: "ml" },
+  { code: "pa", htmlLang: "pa" },
+  { code: "or", htmlLang: "or" }
+];
+const localizedPdfDocs = [
+  { label: "flatland", fileBase: "flatland", minBytes: 1_000_000 },
+  { label: "values", fileBase: "cars24-values", minBytes: 1_000_000 }
+];
 
 async function main() {
   const site = JSON.parse(await fs.readFile(sitePath("content", "site.json"), "utf8"));
@@ -39,6 +56,24 @@ async function main() {
     const result = await checkPage(`${domain}${pathname}`, label);
     checks.push(result);
     if (!result.ok) failures.push(`${label}: ${result.message}`);
+  }
+
+  for (const language of localizedLanguages) {
+    const result = await checkLocalizedHome(`${domain}/${language.code}/`, language);
+    checks.push(result);
+    if (!result.ok) failures.push(`${language.code}: ${result.message}`);
+  }
+
+  for (const language of localizedLanguages) {
+    for (const doc of localizedPdfDocs) {
+      const result = await checkPdfHead(
+        `${domain}/media/docs/${doc.fileBase}-${language.code}.pdf`,
+        `${doc.label}-${language.code}`,
+        doc.minBytes
+      );
+      checks.push(result);
+      if (!result.ok) failures.push(`${doc.label}-${language.code}: ${result.message}`);
+    }
   }
 
   for (const [from, to] of redirectChecks) {
@@ -109,6 +144,145 @@ async function checkPage(url, label) {
   } catch (error) {
     return {
       kind: "page",
+      label,
+      url,
+      ok: false,
+      status: 0,
+      message: error instanceof Error ? error.message : String(error)
+    };
+  }
+}
+
+async function checkLocalizedHome(url, language) {
+  try {
+    const response = await fetch(url, {
+      redirect: "follow",
+      headers: {
+        "user-agent": "vikramchopra-site-ops/1.0"
+      }
+    });
+    const contentType = response.headers.get("content-type") || "";
+    const body = contentType.includes("text/html") ? await response.text() : "";
+
+    if (!response.ok) {
+      return {
+        kind: "localized-page",
+        label: language.code,
+        url,
+        ok: false,
+        status: response.status,
+        message: `expected 200, got ${response.status}`
+      };
+    }
+
+    if (!contentType.includes("text/html")) {
+      return {
+        kind: "localized-page",
+        label: language.code,
+        url,
+        ok: false,
+        status: response.status,
+        message: `expected text/html, got ${contentType || "missing content-type"}`
+      };
+    }
+
+    const checks = [
+      [`html lang ${language.htmlLang}`, body.includes(`<html lang="${language.htmlLang}">`)],
+      ["one masthead language selector", countMatches(body, /<select\b[^>]*data-language-select/gi) === 1],
+      ["selected locale option", new RegExp(`<option\\b[^>]*value="/${escapeRegExp(language.code)}/"[^>]*selected`, "i").test(body)],
+      ["localized Flatland PDF link", body.includes(`/media/docs/flatland-${language.code}.pdf`)],
+      ["localized values PDF link", body.includes(`/media/docs/cars24-values-${language.code}.pdf`)],
+      ["substantial HTML body", body.length > 10_000]
+    ];
+    const failed = checks.find(([, ok]) => !ok);
+
+    if (failed) {
+      return {
+        kind: "localized-page",
+        label: language.code,
+        url,
+        ok: false,
+        status: response.status,
+        message: `missing ${failed[0]}`
+      };
+    }
+
+    return {
+      kind: "localized-page",
+      label: language.code,
+      url,
+      ok: true,
+      status: response.status,
+      message: `${response.status} ${contentType}; ${body.length} bytes`
+    };
+  } catch (error) {
+    return {
+      kind: "localized-page",
+      label: language.code,
+      url,
+      ok: false,
+      status: 0,
+      message: error instanceof Error ? error.message : String(error)
+    };
+  }
+}
+
+async function checkPdfHead(url, label, minBytes) {
+  try {
+    const response = await fetch(url, {
+      method: "HEAD",
+      redirect: "follow",
+      headers: {
+        "user-agent": "vikramchopra-site-ops/1.0"
+      }
+    });
+    const contentType = response.headers.get("content-type") || "";
+    const contentLength = Number.parseInt(response.headers.get("content-length") || "0", 10);
+
+    if (!response.ok) {
+      return {
+        kind: "pdf",
+        label,
+        url,
+        ok: false,
+        status: response.status,
+        message: `expected 200, got ${response.status}`
+      };
+    }
+
+    if (!contentType.toLowerCase().includes("application/pdf")) {
+      return {
+        kind: "pdf",
+        label,
+        url,
+        ok: false,
+        status: response.status,
+        message: `expected application/pdf, got ${contentType || "missing content-type"}`
+      };
+    }
+
+    if (!Number.isFinite(contentLength) || contentLength < minBytes) {
+      return {
+        kind: "pdf",
+        label,
+        url,
+        ok: false,
+        status: response.status,
+        message: `expected content-length over ${minBytes}, got ${contentLength || "missing"}`
+      };
+    }
+
+    return {
+      kind: "pdf",
+      label,
+      url,
+      ok: true,
+      status: response.status,
+      message: `${response.status} ${contentType}; ${contentLength} bytes`
+    };
+  } catch (error) {
+    return {
+      kind: "pdf",
       label,
       url,
       ok: false,
@@ -201,6 +375,14 @@ function renderReport({ domain, checks, failures }) {
 
   lines.push("");
   return lines.join("\n");
+}
+
+function countMatches(value, pattern) {
+  return (String(value || "").match(pattern) || []).length;
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 main().catch((error) => {
