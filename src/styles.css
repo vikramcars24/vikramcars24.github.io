@@ -152,30 +152,6 @@ pre code {
   text-decoration: none;
 }
 
-.language-control {
-  display: grid;
-  gap: 0.25rem;
-}
-
-.language-control label {
-  color: var(--muted);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.language-select {
-  min-height: 2.1rem;
-  padding: 0.34rem 2rem 0.34rem 0.68rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--paper) 92%, var(--surface) 8%);
-  color: var(--ink);
-  font: inherit;
-  font-size: 0.86rem;
-  line-height: 1;
-}
-
 .theme-toggle {
   display: inline-flex;
   align-items: center;

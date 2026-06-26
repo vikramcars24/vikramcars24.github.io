@@ -5,30 +5,8 @@ Founder of Cars24. Essays on car ownership in India, trust as the product, AI-na
 - [Essays](https://vikramchopra.in/archive/)
 
 ## Culture Document PDFs
-- [Flatland - English](https://vikramchopra.in/media/docs/flatland.pdf?v=01c0ab2)
-- [Flatland - Hindi](https://vikramchopra.in/media/docs/flatland-hi.pdf?v=01c0ab2)
-- [Flatland - Hinglish](https://vikramchopra.in/media/docs/flatland-hinglish.pdf?v=01c0ab2)
-- [Flatland - Marathi](https://vikramchopra.in/media/docs/flatland-mr.pdf?v=01c0ab2)
-- [Flatland - Gujarati](https://vikramchopra.in/media/docs/flatland-gu.pdf?v=01c0ab2)
-- [Flatland - Bengali](https://vikramchopra.in/media/docs/flatland-bn.pdf?v=01c0ab2)
-- [Flatland - Tamil](https://vikramchopra.in/media/docs/flatland-ta.pdf?v=01c0ab2)
-- [Flatland - Telugu](https://vikramchopra.in/media/docs/flatland-te.pdf?v=01c0ab2)
-- [Flatland - Kannada](https://vikramchopra.in/media/docs/flatland-kn.pdf?v=01c0ab2)
-- [Flatland - Malayalam](https://vikramchopra.in/media/docs/flatland-ml.pdf?v=01c0ab2)
-- [Flatland - Punjabi](https://vikramchopra.in/media/docs/flatland-pa.pdf?v=01c0ab2)
-- [Flatland - Odia](https://vikramchopra.in/media/docs/flatland-or.pdf?v=01c0ab2)
-- [Our Values - English](https://vikramchopra.in/media/docs/cars24-values.pdf?v=01c0ab2)
-- [Our Values - Hindi](https://vikramchopra.in/media/docs/cars24-values-hi.pdf?v=01c0ab2)
-- [Our Values - Hinglish](https://vikramchopra.in/media/docs/cars24-values-hinglish.pdf?v=01c0ab2)
-- [Our Values - Marathi](https://vikramchopra.in/media/docs/cars24-values-mr.pdf?v=01c0ab2)
-- [Our Values - Gujarati](https://vikramchopra.in/media/docs/cars24-values-gu.pdf?v=01c0ab2)
-- [Our Values - Bengali](https://vikramchopra.in/media/docs/cars24-values-bn.pdf?v=01c0ab2)
-- [Our Values - Tamil](https://vikramchopra.in/media/docs/cars24-values-ta.pdf?v=01c0ab2)
-- [Our Values - Telugu](https://vikramchopra.in/media/docs/cars24-values-te.pdf?v=01c0ab2)
-- [Our Values - Kannada](https://vikramchopra.in/media/docs/cars24-values-kn.pdf?v=01c0ab2)
-- [Our Values - Malayalam](https://vikramchopra.in/media/docs/cars24-values-ml.pdf?v=01c0ab2)
-- [Our Values - Punjabi](https://vikramchopra.in/media/docs/cars24-values-pa.pdf?v=01c0ab2)
-- [Our Values - Odia](https://vikramchopra.in/media/docs/cars24-values-or.pdf?v=01c0ab2)
+- [Flatland - English](https://vikramchopra.in/media/docs/flatland.pdf?v=2579176)
+- [Our Values - English](https://vikramchopra.in/media/docs/cars24-values.pdf?v=2579176)
 
 ## Mobility, Ownership, and Trust
 - [The Coming Decade of Car Ownership in India](https://vikramchopra.in/posts/the-coming-decade-of-car-ownership-in-india/): India's next ownership wave will not look like the rich-world past. It will be pre-owned, transfer-heavy, and trust-led.

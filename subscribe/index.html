@@ -7,19 +7,6 @@
     <meta name="description" content="I publish infrequently. Email is the cleanest way to hear when a new essay is live.">
     <meta name="author" content="Vikram Chopra">
     <link rel="canonical" href="https://vikramchopra.in/subscribe/">
-    <link rel="alternate" hreflang="en" href="https://vikramchopra.in/subscribe/">
-    <link rel="alternate" hreflang="hi" href="https://vikramchopra.in/hi/subscribe/">
-    <link rel="alternate" hreflang="hi-Latn" href="https://vikramchopra.in/hinglish/subscribe/">
-    <link rel="alternate" hreflang="mr" href="https://vikramchopra.in/mr/subscribe/">
-    <link rel="alternate" hreflang="gu" href="https://vikramchopra.in/gu/subscribe/">
-    <link rel="alternate" hreflang="bn" href="https://vikramchopra.in/bn/subscribe/">
-    <link rel="alternate" hreflang="ta" href="https://vikramchopra.in/ta/subscribe/">
-    <link rel="alternate" hreflang="te" href="https://vikramchopra.in/te/subscribe/">
-    <link rel="alternate" hreflang="kn" href="https://vikramchopra.in/kn/subscribe/">
-    <link rel="alternate" hreflang="ml" href="https://vikramchopra.in/ml/subscribe/">
-    <link rel="alternate" hreflang="pa" href="https://vikramchopra.in/pa/subscribe/">
-    <link rel="alternate" hreflang="or" href="https://vikramchopra.in/or/subscribe/">
-    <link rel="alternate" hreflang="x-default" href="https://vikramchopra.in/subscribe/">
     <link rel="alternate" type="application/rss+xml" title="Vikram Chopra RSS" href="https://vikramchopra.in/rss.xml">
     <meta property="og:site_name" content="Vikram Chopra">
     <meta property="og:title" content="Subscribe | Vikram Chopra">
@@ -54,7 +41,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/styles.css?v=01c0ab2">
+    <link rel="stylesheet" href="/styles.css?v=2579176">
   </head>
   <body class="subscribe-page">
 
@@ -66,12 +53,6 @@
         <span>Vikram Chopra</span>
       </a>
       <div class="site-header-actions">
-      <div class="language-control language-control-compact">
-      <label for="language-select">Language</label>
-      <select id="language-select" class="language-select" data-language-select aria-label="Language">
-        <option value="/subscribe/" selected>English</option><option value="/hi/subscribe/">हिन्दी</option><option value="/hinglish/subscribe/">Hinglish</option><option value="/mr/subscribe/">मराठी</option><option value="/gu/subscribe/">ગુજરાતી</option><option value="/bn/subscribe/">বাংলা</option><option value="/ta/subscribe/">தமிழ்</option><option value="/te/subscribe/">తెలుగు</option><option value="/kn/subscribe/">ಕನ್ನಡ</option><option value="/ml/subscribe/">മലയാളം</option><option value="/pa/subscribe/">ਪੰਜਾਬੀ</option><option value="/or/subscribe/">ଓଡ଼ିଆ</option>
-      </select>
-    </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="/archive/">Essays</a>
         <a href="/#culture-docs">Docs</a>
@@ -137,7 +118,6 @@
         const storageKey = "vikram-theme";
         const root = document.documentElement;
         const button = document.querySelector("[data-theme-toggle]");
-        const languageSelect = document.querySelector("[data-language-select]");
         const shareButton = document.querySelector("[data-share-button]");
         const quoteButton = document.querySelector("[data-quote-copy]");
         const quoteRegion = document.querySelector(".article-body");
@@ -160,41 +140,6 @@
             const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
             localStorage.setItem(storageKey, nextTheme);
             applyTheme(nextTheme);
-          });
-        }
-
-        if (languageSelect) {
-          const prefetchedLanguagePaths = new Set();
-          const prefetchLanguageTarget = (path) => {
-            if (!path) {
-              return;
-            }
-
-            const url = new URL(path, window.location.href);
-            if (url.origin !== window.location.origin || url.pathname === window.location.pathname || prefetchedLanguagePaths.has(url.pathname)) {
-              return;
-            }
-
-            prefetchedLanguagePaths.add(url.pathname);
-            const link = document.createElement("link");
-            link.rel = "prefetch";
-            link.href = url.href;
-            document.head.appendChild(link);
-          };
-          const prefetchLanguageTargets = () => {
-            for (const option of languageSelect.options) {
-              prefetchLanguageTarget(option.value);
-            }
-          };
-
-          languageSelect.addEventListener("focus", prefetchLanguageTargets, { once: true });
-          languageSelect.addEventListener("pointerenter", prefetchLanguageTargets, { once: true });
-          languageSelect.addEventListener("pointerdown", prefetchLanguageTargets, { once: true });
-          languageSelect.addEventListener("change", () => {
-            const nextPath = languageSelect.value;
-            if (nextPath && nextPath !== window.location.pathname) {
-              window.location.href = nextPath;
-            }
           });
         }
 
