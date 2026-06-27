@@ -76,14 +76,6 @@ jobs:
             cat tmp/lighthouse-report.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
-      - name: Send Slack DM on failure
-        if: failure()
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          SLACK_REPORT_DM_USER: ${{ vars.SLACK_REPORT_DM_USER }}
-          SLACK_REPORT_DM_CHANNEL: ${{ vars.SLACK_REPORT_DM_CHANNEL }}
-        run: node scripts/send-site-ops-alert-slack.mjs
-
       - name: Open or update issue on failure
         if: failure()
         uses: actions/github-script@v7

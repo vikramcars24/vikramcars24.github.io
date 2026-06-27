@@ -14,6 +14,7 @@ This repo now carries its own monitoring for `vikramchopra.in`.
   - mobile Lighthouse
 - If any check fails, GitHub opens or updates a single `Site Ops Alert` issue with the failing details.
 - If the next run passes, that issue is automatically closed.
+- Site Ops failures are not sent to Vikram's Slack DM unless the problem is a human-only blocker.
 
 ## What this covers well
 
