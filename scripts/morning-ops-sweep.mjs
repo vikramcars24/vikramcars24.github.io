@@ -324,7 +324,11 @@ function renderConsoleSummary(report) {
 
 function renderHeadline(report) {
   if (report.blockingAttention) {
-    return "Attention needed. At least one workflow or alert issue needs manual review.";
+    return "Needs your help. The sweep hit a blocker that automation cannot resolve.";
+  }
+
+  if (report.needsAttention) {
+    return "No action for you. Workflow problems are tracked for Agent Ops to handle.";
   }
 
   if (report.gmail.status === "ok" && report.gmail.trashedCount > 0) {
@@ -352,20 +356,7 @@ function resolveTrigger() {
 }
 
 function hasBlockingAttention(workflows, issues, gmail) {
-  if (issues.open.length > 0) {
-    const unresolvedIssues = issues.open.filter((issue) => {
-      const workflow = workflows.find((entry) => entry.name === issue.workflow);
-      return !workflow || workflow.state !== "running";
-    });
-    if (unresolvedIssues.length > 0) {
-      return true;
-    }
-  }
-
-  if (workflows.some((workflow) => ["failing", "missing", "missing-run"].includes(workflow.state))) {
-    return true;
-  }
-
+  // Workflow failures already open/update GitHub issues. They are ops work, not Vikram DMs.
   return gmail.status === "error";
 }
 
