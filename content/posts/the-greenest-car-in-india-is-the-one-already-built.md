@@ -30,7 +30,7 @@ That changes the question. Once a vehicle exists, the issue is no longer only wh
 
 This is where the climate story usually gets too neat. People say the obvious thing, buying used is greener than buying new, and it often is. Then the real world arrives. If the buyer cannot trust the vehicle, the inspection, the paperwork, or the resale value, they walk away, and climate loses to anxiety. Reuse is only environmentally real when it becomes operationally trustworthy.
 
-## India already scraps by age, not by truth
+**India already scraps by age, not by truth**
 
 You can watch the waste happen in policy. Delhi deregisters petrol cars at fifteen years and diesel at ten, regardless of condition. A twelve-year-old petrol car with low mileage, a clean service record, and passing emissions is, by rule, on its way to becoming waste, while the carbon already spent building it still has years of useful life to amortize. The intent is right: old vehicles can be genuinely dirty, and a vehicle that fails an honest fitness test should go. The method is wrong. Age is a guess. Condition is a fact. A country that can measure a vehicle's actual fitness, emissions, and history does not need to scrap by birthday, and every healthy car it keeps in circulation is manufacturing it avoided. That measurement layer is the trust infrastructure this essay is about, and it matters most for the petrol and diesel cars that make up nearly all of India's fleet today, not just the electric ones arriving now.
 
