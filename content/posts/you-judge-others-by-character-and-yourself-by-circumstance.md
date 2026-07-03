@@ -29,7 +29,7 @@ This is where people get uncomfortable, because they hear any emphasis on situat
 
 None of this is a case for naivety. Behavior is evidence. Actions do reveal people. Some people are exactly as careless or cruel as they appear. The point is only that a moment is evidence, not the whole case. The deepest cost of getting this wrong is not the occasional bad guess. It is that we become progressively worse at holding complexity. Once we are invested in a character story, we curate evidence around it. The colleague is no longer someone who had a bad season, they are "the kind of person who always does this." The family member under strain becomes "impossible." Moral simplification is seductive because it is efficient, and it is one of the fastest ways to become stupid about people.
 
-## Accuracy over moral simplicity
+## Accuracy over the easy story
 
 The fix is not to eliminate the bias, which we probably cannot, but to interrupt it before it hardens, with better questions. What else might explain this. What pressure might this person be under that I cannot see. If I had behaved this way, what situational explanation would I be tempted to give myself. Am I reading a pattern, or moralizing a moment. Those questions do not make judgment weaker. They make it less lazy. And this is why the lesson is not niceness. It is precision. You can be demanding and still contextual, hold people accountable and still resist simple explanations. Strong standards require better contextual understanding, not less, because if you misread the cause your intervention will be theatrical. You will punish where you should redesign. You will coach where you should draw a boundary.
 

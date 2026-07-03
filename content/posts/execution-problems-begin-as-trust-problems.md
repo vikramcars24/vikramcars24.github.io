@@ -16,7 +16,7 @@ Most execution reviews start too late. By the time a launch has slipped, the rea
 
 This is why [Patrick Lencioni's Five Dysfunctions of a Team](https://www.tablegroup.com/topics-and-resources/teamwork-5-dysfunctions/) has endured. It names a pattern most teams have lived through: low trust creates fear of conflict, weak conflict creates false commitment, false commitment weakens accountability, and weak accountability eventually shows up as missed results. I do not think the model is useful because it is elegant. It is useful because the dashboard is late. By the time the metric is red, the team has already spent weeks avoiding the real conversation.
 
-## Where leaders misdiagnose
+## Where the miss usually hides
 
 The value of a model like that is not in repeating it. It is in seeing where most companies stop short of using it. In my experience the real work hides in three places.
 
