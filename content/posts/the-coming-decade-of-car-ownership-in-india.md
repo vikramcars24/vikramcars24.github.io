@@ -27,15 +27,15 @@ In India, a large share of the market is crossing into ownership for the first t
 
 When someone buys their first car in India, the fear is not only that a shady dealer will cheat them. That fear is real. But another one matters just as much: the fear inside the buyer. Will I know how to manage this. What if I make a costly mistake. What happens when the insurance expires, a challan appears, the FASTag stops working, or the transfer paperwork gets stuck.
 
-The closest analogy is not routine shopping. It is something like skydiving for the first time. You can choose the best operator in the world, read the reviews, trust the instructor, and still feel the fear sitting inside you. The question is not only whether the operator is credible. It is whether you can trust yourself inside a new experience with real consequence.
+The closest analogy is not routine shopping. It is skydiving for the first time. You can choose the best operator in the world, read the reviews, trust the instructor, and still feel the fear sitting inside you. The question is not only whether the operator is credible. It is whether you can trust yourself inside a new experience with real consequence.
 
 **Ownership support is a trust event, not an add-on**
 
-Most people treat ownership services as adjacent. Insurance renewal, PUC reminders, service scheduling, challan discovery, FASTag, RC paperwork all get filed under after-sales convenience, or margin.
+Most people treat ownership services as adjacent. Insurance renewal, PUC reminders, service scheduling, challan discovery, FASTag, RC paperwork all get filed under after-sales convenience or margin.
 
 That understates what they do. In a first-time market, each of those interactions is a trust event. Buy a car, then get help navigating the next small problem, and something shifts. The next form feels less intimidating. The next renewal feels manageable. The car becomes part of life instead of an object demanding constant vigilance. Confidence builds in small deposits. Insurance handled. Challan found and resolved. Service booked without confusion. Over time the customer is no longer only trusting a seller. They are trusting themselves as an owner. A market grows when ownership feels survivable, then normal, then desirable.
 
-**The next wave will be pre-owned first**
+**The next wave will be pre-owned**
 
 This is why India does not become a mass car-owning country by copying the rich world's new-car-first path. It becomes one through pre-owned access.
 

@@ -14,7 +14,7 @@ slug: used-car-ownership-is-a-lending-problem
 ---
 We still talk about India's used-car market as if the main unlock were inventory. List more cars. Improve discovery. Standardize inspection. Reduce transfer friction. All of it matters, and all of it is incomplete, because used-car ownership at scale is also a lending problem.
 
-A market does not become mass merely because the sticker price is lower than new. It becomes mass when an ordinary household can bridge the gap between aspiration and liquidity without stepping into a trap. A used car can be affordable in absolute terms and still unreachable in cash terms. That gap, between price and payable reality, is where the market either widens or stalls.
+A market does not become mass merely because the sticker price is lower than new. It becomes mass when an ordinary household can bridge the gap between aspiration and liquidity without stepping into a trap. A used car can be affordable in absolute terms and still unreachable in cash terms. That gap between price and what a household can actually pay is where the market either widens or stalls.
 
 **Affordability is not access**
 
@@ -28,7 +28,7 @@ There is a second layer here that spreadsheet logic misses. In India, loan rejec
 
 New-car lending sits on a cleaner foundation. The asset is standardized, the paperwork tidy, residual values easier, and the car has not yet been shaped by prior owners, repair quality, or document gaps. Used cars are different. Every one has already lived a life, and that life leaves traces. Service quality varies. Accident history may be partial. A prior loan may exist. The transfer may still depend on procedural follow-through.
 
-So a used-car lender underwrites three things at once: the borrower's ability to repay, the truth of the asset, and the reliability of the process around ownership, transfer, and recovery. If any one is weak, the loan gets worse, through rejection, a heavier down payment, a higher rate, or manual friction. A used-car loan is not just a credit product. It is an underwriting decision on ambiguity. The car is one of the most underrated forms of collateral in consumer lending: in used cars the truth of the collateral often determines whether borrower risk can be priced at all.
+So a used-car lender underwrites three things at once: the borrower's ability to repay, the truth of the asset, and the reliability of the process around ownership, transfer, and recovery. If any one is weak, the terms get worse: rejection, a heavier down payment, a higher rate, or manual friction. A used-car loan is not just a credit product. It is an underwriting decision on ambiguity. In used cars the truth of the collateral often determines whether borrower risk can be priced at all.
 
 **In India, a loan is also a trust signal**
 

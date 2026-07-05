@@ -32,13 +32,13 @@ This is the part most people still underestimate. Consumer is not hard because a
 
 **AI changes the cost of operating context**
 
-Consumer companies are context-heavy organisms. They ingest massive amounts of messy signal: support calls, product exceptions, catalog anomalies, payment failures, refund paths, inspection outputs, fraud flags, pricing moves, local regulation, conversion drop-offs. Most of the company's complexity comes from converting that mess into decisions fast enough that the edge does not collapse.
+Consumer companies run on context. They ingest massive amounts of messy signal: support calls, product exceptions, catalog anomalies, payment failures, refund paths, inspection outputs, fraud flags, pricing moves, local regulation, conversion drop-offs. Most of the company's complexity comes from converting that mess into decisions fast enough that the edge does not collapse.
 
 Historically that required layers of human translation. Someone summarized what happened, someone routed it, someone escalated it, someone explained the pattern to another team. By the time the company acted, the signal was slower, flatter, and less useful.
 
 This is no longer speculative. [McKinsey's work on customer care](https://www.mckinsey.com/capabilities/operations/our-insights/gen-ai-in-customer-care-early-successes-and-challenges) describes gen AI already analyzing call transcripts, automating summarization, guiding agents in real time, and identifying root causes behind recurring failures. Parts of the context layer are becoming machine-readable at operating scale. AI can absorb support transcripts, classify failure modes, translate market-specific language, compare anomalies across regions, flag pricing outliers, and compress the time between event and decision. That does not make the company automated. It makes the company coherent. And coherence is what global consumer systems have always struggled to preserve.
 
-It also flips the Indian constraint. If the pre-AI way to scale was add more people until the process works, the AI-era way is build better systems until the agents work. That is a different game, and it rewards raw judgment, curiosity, and the ability to extract more from a cognitive engine than the default user can.
+It also flips the Indian constraint. If the pre-AI way to scale was add more people until the process works, the AI-era way is build better systems until the agents work. That is a different game, and it rewards raw judgment, curiosity, and the ability to get more out of AI than the average user does.
 
 **The company can stay one company across markets**
 
@@ -52,7 +52,7 @@ The categories most likely to benefit are not the simplest ones. They are the on
 
 And India has a second advantage here. Indian companies are trained on complexity: fragmented supply, inconsistent documentation, multiple languages, non-ideal infrastructure. In a pre-AI world that looked like a handicap next to cleaner developed markets. In an AI world, some of it becomes training data. The country that learned to operate through heterogeneity may do unusually well once heterogeneity becomes machine-readable.
 
-To be clear about what this is: a thesis, not a result. Nobody has demonstrated it at scale yet, and the honest version of this essay admits that the multi-geography consumer company run on shared AI context is still being proven, including by us. AI will not remove regulatory differences, manufacture trust a company has not earned, fix a bad category thesis, or save poor local execution. The companies that win will still need real local market understanding, strong on-ground operators, category-specific trust rails, and regulatory seriousness. What AI changes is not the need for those things. It changes the cost of coordinating them. That is enough to matter a lot.
+To be clear about what this is: a thesis, not a result. Nobody has demonstrated it at scale yet, and the honest version of this essay admits that the multi-geography consumer company run on shared AI context is still being proven, including by us. AI will not remove regulatory differences, manufacture trust a company has not earned, fix a bad category thesis, or save poor local execution. The companies that win will still need real local market understanding, strong on-ground operators, category-specific trust rails, and regulatory seriousness. What AI changes is not the need for those things. It changes the cost of coordinating them.
 
 For years the exciting question from India was which software company gets built here and sold everywhere. The better question now is which consumer categories become programmable enough under AI that an India-born company can run them coherently across markets. Consumer punishes abstraction faster than software ever did. But if the shape holds, the prize is larger than another software export story.
 
