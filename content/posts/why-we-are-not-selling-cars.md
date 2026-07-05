@@ -1,7 +1,7 @@
 ---
 title: Why We Are Not Selling Cars
 date: 2026-06-10
-description: The lasting business in mobility is not moving a vehicle once. It is becoming the trust layer around ownership.
+description: The lasting business in mobility is not moving a vehicle once. It is making ownership certain.
 image: /media/why-we-are-not-selling-cars-preview.jpg
 imageAlt: 1200x630 social preview for Why We Are Not Selling Cars
 articleImage: /media/why-we-are-not-selling-cars-blog.png
@@ -19,7 +19,7 @@ Most mobility companies in India are making the same mistake right now. They thi
 
 I do not mean trust as a brand value. I mean it as the thing the customer is actually trying to buy: confidence in the asset, in the paperwork, in the financing, in the service, in the transfer, in recourse if something breaks. Confidence that reality will still make sense after the transaction is over. A transaction is an event. Ownership is a relationship, and in India it has a texture: the challan you discover months late, the PUC run, the FASTag that will not recharge, the RC still in someone else's name. Strip the sentiment out of mobility and that is what is left. People are not buying a machine. They are buying the certainty that owning the machine will not punish them.
 
-A car is, by its very design, an uncertain machine: thousands of parts aging at rates nobody can see from outside, in the hands of a previous owner you will never meet. That is the honest reason people pay the premium for a new car. They are not buying newness. They are buying certainty, the only complete certainty this category has ever sold. The whole used-car opportunity is to manufacture that certainty without manufacturing a new car.
+A car is, by its very design, an uncertain machine: thousands of parts aging at rates nobody can see from outside, in the hands of a previous owner you will never meet. That is the honest reason people pay the premium for a new car. They are not buying newness. They are buying certainty, the only complete certainty this category has ever sold. This is the quiet rule of every premium category. The most premium experience is the most certain one: a five-star hotel is not selling a better bed, it is selling the guarantee that nothing about the stay will surprise you. A new car is the same purchase in a different showroom. The whole used-car opportunity is to manufacture that certainty without manufacturing a new car.
 
 **The original tax is what you cannot see**
 
