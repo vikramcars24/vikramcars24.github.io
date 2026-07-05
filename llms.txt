@@ -5,8 +5,8 @@ Founder of Cars24. Essays on car ownership in India, trust as the product, AI-na
 - [Essays](https://vikramchopra.in/archive/)
 
 ## Culture Document PDFs
-- [Flatland - English](https://vikramchopra.in/media/docs/flatland.pdf?v=29e4eab)
-- [Our Values - English](https://vikramchopra.in/media/docs/cars24-values.pdf?v=29e4eab)
+- [Flatland - English](https://vikramchopra.in/media/docs/flatland.pdf?v=0f70c6b)
+- [Our Values - English](https://vikramchopra.in/media/docs/cars24-values.pdf?v=0f70c6b)
 
 ## Mobility, Ownership, and Trust
 - [The Second-Owner Decade](https://vikramchopra.in/posts/the-coming-decade-of-car-ownership-in-india/): India's next ownership wave will not look like the rich-world past. It will be second-owner, transfer-heavy, and trust-led.
@@ -17,10 +17,10 @@ Founder of Cars24. Essays on car ownership in India, trust as the product, AI-na
 
 ## Organization, AI, and Company Design
 - [Companies Scale at the Speed They Learn](https://vikramchopra.in/posts/scale-is-a-learning-problem/): Most companies think they scale by adding people. The deeper truth is that they scale when learning moves faster than complexity compounds.
-- [AI-Native Is Not AI-First. The Org Design Is the AI Strategy.](https://vikramchopra.in/posts/ai-native-is-not-ai-first/): Most companies are adding AI to old workflows. The deeper shift is organizational: what happens when the cost of carrying context collapses.
+- [AI-Native Is Not AI-First. The Shape of the Company Is the AI Strategy.](https://vikramchopra.in/posts/ai-native-is-not-ai-first/): Most companies are adding AI to old workflows. The deeper shift is organizational: what happens when the cost of carrying context collapses.
 - [We Deleted Every Title Except Builder](https://vikramchopra.in/posts/builder-is-the-only-role-left/): Cars24 removed the old prefixes. As context gets cheaper and coordination gets compressed, value shifts to people who close the loop.
 - [Execution Problems Begin as Trust Problems](https://vikramchopra.in/posts/execution-problems-begin-as-trust-problems/): Teams diagnose delay and weak accountability at the process level. Many failures begin earlier, in trust, conflict avoidance, and the human structure of the team.
-- [AI Will Let India Export Consumer Companies](https://vikramchopra.in/posts/ai-will-do-for-consumer-what-saas-did-for-software/): India's first clean global startup export was software, because code traveled. AI can make operating context travel too, opening the same door for consumer companies.
+- [AI Will Let India Export Consumer Companies](https://vikramchopra.in/posts/ai-will-do-for-consumer-what-saas-did-for-software/): India's first clean global startup export was software, because code traveled. AI will make operating context travel too, opening the same door for consumer companies.
 
 ## Judgment, Desire, and Human Nature
 - [The Paranoid Survive. The Regulated Thrive.](https://vikramchopra.in/posts/paranoid-survive-regulated-thrive/): The best companies build brakes into their intensity. They do not tear them out.

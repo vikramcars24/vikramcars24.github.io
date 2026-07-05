@@ -1,12 +1,12 @@
 ---
-title: AI-Native Is Not AI-First. The Org Design Is the AI Strategy.
+title: AI-Native Is Not AI-First. The Shape of the Company Is the AI Strategy.
 metaTitle: AI-Native Is Not AI-First
 date: 2026-06-08
 description: Most companies are adding AI to old workflows. The deeper shift is organizational: what happens when the cost of carrying context collapses.
 image: /media/ai-native-is-not-ai-first-preview.jpg
-imageAlt: 1200x630 social preview for AI-Native Is Not AI-First. The Org Design Is the AI Strategy.
+imageAlt: 1200x630 social preview for AI-Native Is Not AI-First. The Shape of the Company Is the AI Strategy.
 articleImage: /media/ai-native-is-not-ai-first-blog.png
-articleImageAlt: Editorial visual for AI-Native Is Not AI-First. The Org Design Is the AI Strategy.
+articleImageAlt: Editorial visual for AI-Native Is Not AI-First. The Shape of the Company Is the AI Strategy.
 summary: An AI-first company uses AI. An AI-native company rebuilds around what AI changes. | Hierarchy was a workaround for expensive context. When AI collapses that cost, the shape of the company itself has to be questioned. | The shape of the company is the AI strategy. Everything else is tooling.
 featured: false
 category: Essay
@@ -43,6 +43,8 @@ And none of it works in a low-trust company. If people hoard context, edit bad n
 **More shared context means more agency, not more agents**
 
 A traditional organization keeps pushing decisions upward because that is where context accumulates. The store issue escalates because headquarters has the picture. That is usually a context problem, not a character problem. AI-native companies can change it by lowering the cost of shared context, so the person closest to the problem can see the same system state that once existed only at the center. The point is not more agents. It is more agency. This is the change I have felt most directly at [Cars24](https://www.cars24.com). The thing that mattered was not the tools we added. It was removing the delegation layer itself, the people whose main job was to route and narrate work, so that more of us do the work and coordinate around it instead of handing it down. Many companies will fail here. They will buy the tools and keep the old permission structure, summarize meetings that should not exist, make reporting cleaner while keeping authority trapped at the same level, and call it transformation when what they achieved was software modernization.
+
+**Start with the shape**
 
 The shape of the company is the AI strategy. Everything else is tooling. Start there and the agenda changes. You ask which meetings should disappear, not which copilots to buy. You ask why an update still moves through three people before anyone acts. You ask the hardest question of all: if you were building this company from scratch today, with AI available from day one, would you build the same layers, the same rituals, the same distance between signal and action. If the answer is no, the gap between the company you have and the company you would build is the real work of transformation, and it is slower than people admit. It touches authority, incentives, reporting rhythms, hiring, and status. It takes years, not quarters. Anyone telling you they became AI-native in six months is selling theater.
 

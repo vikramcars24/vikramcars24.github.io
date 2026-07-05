@@ -15,7 +15,7 @@ A few months ago I was walking through a refurbishment centre in the evening, af
 
 I have thought about that sentence often. Not because it was dramatic. Because it was precise. He saw an open loop and closed it.
 
-That is the role I increasingly believe matters most in the modern company. Builder. Not builder as a flattering word for founders. Not builder as a synonym for engineers. Builder as the person who can see what needs to happen and change reality directly.
+That is the role I increasingly believe matters most in the modern company. Builder. Not builder as a flattering word for founders. Not builder as a synonym for engineers. Builder as the person who can see what needs to happen and change reality directly. At [Cars24](https://www.cars24.com) it is now the only title we have. I will come back to that. The argument comes first.
 
 **The old prestige system rewarded distance**
 
@@ -39,7 +39,7 @@ And this is where the argument becomes bigger than culture. In a world where coo
 
 **What changed when the prefixes went**
 
-At [Cars24](https://www.cars24.com) we made this literal. We deleted every title except Builder. The old bands, grades, and designations, the vice president, the director, the manager, all went. And when the prefixes went, one thing came alive: the person who was always capable but never permitted. The model we hold in our heads is a sports team. There is a captain, but every player has a part, and the job is to play your part, not to supervise someone else playing theirs. Less delegation, more coordination. I say this as a reformed offender. I started this company to do things with my own hands, and as we scaled I became a master delegator, drifting further and further from the work, until my day was reviews and updates instead of building. AI handed the thing back. I can do things directly again, and so can everyone else, which is the entire point. A company no longer needs a layer of senior people whose job is to call the review and rally the troops. They do their part of the work. Everyone does.
+This is the part we made literal. We deleted every title except Builder. The old bands, grades, and designations, the vice president, the director, the manager, all went. And when the prefixes went, one thing came alive: the person who was always capable but never permitted. The model we hold in our heads is a sports team. There is a captain, but every player has a part, and the job is to play your part, not to supervise someone else playing theirs. Less delegation, more coordination. I say this as a reformed offender. I started this company to do things with my own hands, and as we scaled I became a master delegator, drifting further and further from the work, until my day was reviews and updates instead of building. AI handed the thing back. I can do things directly again, and so can everyone else, which is the entire point. A company no longer needs a layer of senior people whose job is to call the review and rally the troops. They do their part of the work. Everyone does.
 
 That is what I mean by builder. Not a heroic identity. Not a flattering label. The only role left that still compounds cleanly when context gets cheaper and reality gets harder to hide from.
 

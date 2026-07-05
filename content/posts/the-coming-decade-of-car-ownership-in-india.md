@@ -37,7 +37,7 @@ That understates what they do. In a first-time market, each of those interaction
 
 **The second-owner decade**
 
-This is why India does not become a mass car-owning country by copying the rich world's new-car-first path. It becomes one through pre-owned access.
+This is why India does not become a mass car-owning country by copying the rich world's new-car-first path. It becomes one through second owners.
 
 The economics already point there. India has roughly 35 cars per 1,000 people, among the lowest rates in the world, against more than 800 in the United States. The used market is now worth about ₹4 lakh crore and crosses six million units a year, around 1.4 used cars sold for every new one, according to [CRISIL Ratings](https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html). The same ratio runs about 2.5 in the United States and 4.0 in the United Kingdom, so India's used market is already the bigger one at home and still early by world standards. Set that against a record 4.3 million new passenger vehicles in FY2024-25 and the direction is unmistakable. Used cars are the affordability bridge. They let households step into ownership without absorbing the full cost of a new vehicle, and they fit the emotional reality of a first-time buyer better, because people do not only need aspiration, they need a manageable entry point.
 
@@ -67,7 +67,7 @@ And the shift is structural, not a blip. As CRISIL's Anuj Sethi put it, the risi
 
 Ask what will grow the Indian car market and the usual answer is the visible things. More income, more financing, more supply, better roads, more choice. All true. But another answer matters just as much. The market grows when ownership gets easier to live with. When first-time buyers stop feeling that one wrong decision will punish them for years, when resale stops feeling like a legal gamble, and when paperwork starts behaving like rails rather than obstacles.
 
-India's next ownership wave will be second-owner, transfer-heavy, and trust-led. That is not a narrower version of the market. It is the broader one.
+India's next decade of ownership will be second-owner, transfer-heavy, and trust-led. That is not a narrower version of the market. It is the broader one.
 
 The future of car ownership in India is not just more cars.
 
