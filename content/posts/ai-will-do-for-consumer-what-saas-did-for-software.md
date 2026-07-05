@@ -1,12 +1,12 @@
 ---
-title: AI Will Do for Consumer What SaaS Did for Software
+title: AI Will Let India Export Consumer Companies
 date: 2026-06-14
-description: India's first clean global export was software, because code traveled. AI is collapsing the cost of carrying operating context, and that opens the same door for consumer companies.
+description: India's first clean global startup export was software, because code traveled. AI can make operating context travel too, opening the same door for consumer companies.
 socialDescription: SaaS let India export code. AI can let India export consumer companies by collapsing the cost of carrying operating context across markets.
 image: /media/ai-will-do-for-consumer-what-saas-did-for-software-preview.jpg
-imageAlt: 1200x630 social preview for AI Will Do for Consumer What SaaS Did for Software
+imageAlt: 1200x630 social preview for AI Will Let India Export Consumer Companies
 articleImage: /media/ai-will-do-for-consumer-what-saas-did-for-software-blog.png
-articleImageAlt: Editorial visual for AI Will Do for Consumer What SaaS Did for Software
+articleImageAlt: Editorial visual for AI Will Let India Export Consumer Companies
 summary: SaaS traveled because code was portable. Consumer stayed local because trust and operating context were too expensive to carry across markets. | AI collapses that coordination tax, letting a company stay intellectually centralized while execution stays locally adapted. | SaaS let India export code. AI will let India export consumer companies built on judgment at scale.
 featured: false
 category: Essay
@@ -20,7 +20,7 @@ I think AI will create the same opening for consumer companies.
 
 Not because physical reality disappears, or logistics stop mattering, or local trust suddenly becomes trivial. Because AI changes the cost of carrying operating context across a complex consumer system. And that is enough to reopen a question that used to look much harder: can a consumer company built in India also become a company for the world?
 
-**Consumer was harder to export**
+**Why consumer stayed local**
 
 A consumer company does not only ship a product. It ships trust. That trust lives in many messy places at once: merchandising, support quality, pricing, fraud control, fulfillment, claims, localization, returns, compliance, field operations, recourse. The product is not the app. It is the whole system the customer collides with after pressing the button.
 
@@ -46,7 +46,7 @@ The real opportunity is not that AI makes each function cheaper. It is that more
 
 That is the part that resembles what SaaS gave software. Not the removal of local complexity. The reduction in the penalty for coordinating it.
 
-**The new export wedge**
+**What India can export next**
 
 The categories most likely to benefit are not the simplest ones. They are the ones with enough fragmentation, enough trust work, and enough operational repetition that AI can meaningfully compress the coordination tax: mobility, commerce, consumer finance, healthcare access, home services. These categories looked structurally local because the company had to carry too much context manually. AI does not make them universal by default. It makes them programmable enough that an India-born company can hold the system together across geographies.
 

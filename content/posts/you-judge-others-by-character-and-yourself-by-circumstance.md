@@ -1,21 +1,23 @@
 ---
-title: You Judge Others by Character and Yourself by Circumstance
-metaTitle: You Judge Others by Character and Circumstance
+title: You Had Reasons. They Had Flaws.
+metaTitle: You Had Reasons. They Had Flaws.
 date: 2026-06-18
 description: We read behavior as character because it is emotionally satisfying and operationally fast. But much of what we judge as personal failure is a person colliding with pressure and context we cannot see.
-socialDescription: We explain others by character and ourselves by circumstance. The mistake is not compassion, it is shallow diagnosis dressed up as judgment.
+socialDescription: We give ourselves context and give other people character stories. The mistake is not compassion, it is shallow diagnosis dressed up as judgment.
 image: /media/you-judge-others-by-character-and-yourself-by-circumstance-preview.jpg
-imageAlt: 1200x630 social preview for You Judge Others by Character and Yourself by Circumstance
+imageAlt: 1200x630 social preview for You Had Reasons. They Had Flaws.
 articleImage: /media/you-judge-others-by-character-and-yourself-by-circumstance-blog.png
-articleImageAlt: Editorial visual for You Judge Others by Character and Yourself by Circumstance
-summary: We explain other people by character and ourselves by circumstance, and the double standard is invisible while lived. | Context is not an excuse, it is part of the cause. Misread it and you punish where you should redesign. | The title is not advice. It is a mirror.
+articleImageAlt: Editorial visual for You Had Reasons. They Had Flaws.
+summary: You had reasons. They had flaws. That is the double standard, and it is nearly invisible while lived. | Context is not an excuse, it is part of the cause. Misread it and you punish where you should redesign. | The title is not advice. It is a mirror.
 featured: false
 category: Essay
 slug: you-judge-others-by-character-and-yourself-by-circumstance
 ---
-One of the easiest mistakes in life is to believe that behavior explains itself. Someone is sharp in a meeting and we decide they are arrogant. Someone misses a deadline and we decide they are careless. Someone cuts us off in traffic and we decide they are reckless. We take a moment and turn it into a person, and the move is so fast it does not feel like interpretation. It feels like perception. But often what we are seeing is not character in isolation. It is character under pressure, behavior inside a situation, a person colliding with context we do not understand.
+You had reasons. They had flaws.
 
-## The error feels like perception
+That is how the mistake usually feels from the inside. One of the easiest mistakes in life is to believe that behavior explains itself. Someone is sharp in a meeting and we decide they are arrogant. Someone misses a deadline and we decide they are careless. Someone cuts us off in traffic and we decide they are reckless. We take a moment and turn it into a person, and the move is so fast it does not feel like interpretation. It feels like perception. But often what we are seeing is not character in isolation. It is character under pressure, behavior inside a situation, a person colliding with context we do not understand.
+
+## The story feels like perception
 
 Psychologists gave this a name. In 1977 Lee Ross named it the [fundamental attribution error](https://www.simplypsychology.org/fundamental-attribution.html): our tendency to over-explain other people's behavior by their disposition and under-weight their situation. A few years earlier, Edward Jones and Richard Nisbett had described its twin, the actor-observer asymmetry. We attribute our own behavior to circumstance and other people's to character. When others behave badly, we reach for personal explanations: lazy, difficult, selfish. When we behave badly, we reach for situational ones: I was exhausted, I was under pressure, I had bad information, I am not normally like that. The double standard is obvious on paper and nearly invisible while lived, which is exactly what makes it powerful. We do not feel like we are running two moral systems. We feel like we are simply being accurate. The result is predictable. Other people start to look morally simpler than they are, and we start to look more nuanced than we are.
 
@@ -35,7 +37,7 @@ The fix is not to eliminate the bias, which we probably cannot, but to interrupt
 
 There is a more human truth underneath all of this. Most of us have behaved in ways that did not represent the best of who we are, and we have had moments that, taken out of context, would make us look smaller or colder than the full truth. We know this intimately about ourselves and forget to extend it to others. Many people are tired, afraid, badly managed, or trapped in systems that reward the wrong thing, while being judged by someone who finds character easier to see than context. The world gets worse when we do that too often. Not only because it makes us unfair, but because it makes us inaccurate. And if you want to lead or judge well, accuracy matters more than the emotional pleasure of a quick conclusion.
 
-I judge others by character and myself by circumstance too. The title of this essay is not advice. It is a mirror. The work is to catch the sentence before it hardens.
+I do this too. I give myself reasons and other people flaws. The title of this essay is not advice. It is a mirror. The work is to catch the sentence before it hardens.
 
 ## Notes and Sources
 - Lee Ross, "The Intuitive Psychologist and His Shortcomings," Advances in Experimental Social Psychology, 1977. The fundamental attribution error.

@@ -1,13 +1,13 @@
 ---
-title: India's Road Deaths Are a Trust Problem, Not a Traffic Problem
-metaTitle: India's Road Deaths Are a Trust Problem
+title: Why India Never Learns From Its Road Deaths
+metaTitle: Why India Never Learns From Its Road Deaths
 date: 2026-06-07
-description: Road deaths persist not because drivers make mistakes, but because the system around the mistake is too opaque to stop error from turning fatal.
+description: Road deaths persist not only because drivers make mistakes, but because the system around the mistake is too opaque to see, respond, and learn.
 image: /media/indias-road-deaths-trust-problem-preview.jpg
-imageAlt: 1200x630 social preview for India's Road Deaths Are a Trust Problem, Not a Traffic Problem
+imageAlt: 1200x630 social preview for Why India Never Learns From Its Road Deaths
 articleImage: /media/indias-road-deaths-trust-problem-blog.png
-articleImageAlt: Editorial visual for India's Road Deaths Are a Trust Problem, Not a Traffic Problem
-summary: India cannot agree on how many people die on its roads, and a country that cannot count its dead cleanly is struggling with truth, not just traffic. | The system fails at every handoff: crash data, dangerous roads, post-crash response, compensation access. | Safer roads begin when systems become trustworthy enough that human mistakes stop turning fatal.
+articleImageAlt: Editorial visual for Why India Never Learns From Its Road Deaths
+summary: India cannot agree on how many people die on its roads, and a country that cannot count its dead cleanly cannot learn from them. | The system fails at every handoff: crash data, dangerous roads, post-crash response, compensation access. | Safer roads begin when systems can see, respond, and learn fast enough that human mistakes stop turning fatal.
 featured: false
 category: Essay
 slug: indias-road-deaths-are-a-trust-problem-not-a-traffic-problem
@@ -18,7 +18,7 @@ Mine is from 2005. I was at IIT Bombay. One night a batchmate and I were riding 
 
 What stayed with me was not only the grief. It was the unfairness. Same vehicle, same night, same crash. One of us lived and one did not.
 
-That is the strange place road death occupies in Indian life. Intimate enough to wound almost every family, abstract enough to stay normal.
+That is the strange place road death occupies in Indian life. Intimate enough to wound almost every family, abstract enough to stay normal, and fragmented enough that the system rarely learns.
 
 In 2023 the [Ministry of Road Transport and Highways](https://morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf) recorded 172,890 road deaths, the highest India has ever logged. Even that is almost certainly an undercount. The [WHO](https://www.who.int/india/health-topics/road-safety) once estimated India's true toll at roughly 300,000 in 2016, about double the official figure for that year, and the government's own Sample Registration System put 2022 deaths far above the police count. The exact number matters. What matters more is that we still cannot agree on it. A country that cannot count its road deaths cleanly is not just struggling with traffic. It is struggling with truth.
 
@@ -30,7 +30,7 @@ This is not a fringe reading. [Piyush Tewari founded the SaveLIFE Foundation](ht
 
 I did not arrive at this from a safe distance. Neither did Amar Srivastava and Deepanshu Gupta, who founded the Indian Road Safety Campaign and built [Crashfree India](https://www.crashfreeindia.org/) with [Gajendra Jangid](https://www.cars24.com/about-us), my co-founder at [Cars24](https://www.cars24.com). The last eighteen months of that work have shown the failure at close range, and the same pattern keeps surfacing: the breakdowns are connected.
 
-**A system that cannot see**
+**The first failure is memory**
 
 Start with the data. India runs several road-death systems that do not reconcile: police-based MoRTH and NCRB figures, the survey-based Sample Registration System, the WHO's modeled estimates. The same crash should feed the same system, and the picture still diverges, sometimes by more than a lakh of deaths. A wrong baseline makes every target performative and every evaluation a guess. Digitizing the paperwork does not fix this on its own. Systems like iRAD and eDAR point the right way, a single geo-tagged record beats disconnected forms. But bad diagnosis can be digitized too. If an official is trained to close a file rather than investigate a chain of failure, faster data entry only speeds up bad judgment.
 
@@ -52,7 +52,7 @@ And into that vacuum step the middlemen. Unregulated "ambulance chasers" interce
 
 The fix is often smaller than a new law. Many families do not know a claim must be filed within six months. The biggest unlock turns out to be a 90-minute awareness session and a printed checklist; at helpdesks run inside AIIMS and Sharda hospital, more than a hundred victims' families queued for exactly that. That is what opacity looks like up close. People do not only need money. They need translation. Policy says a victim can claim. Trust means the victim knows it, believes it, can prove it, and can survive the process long enough to receive it.
 
-**Too few own the chain**
+**Nobody owns the chain**
 
 The trust problem is also cultural. India still treats road death as the natural tax of growth: more vehicles, wider roads, rising fatalities for a while, and a quiet shrug underneath it all. We have built speed, volume, and aspiration. We have not built a safety philosophy equal to them. A line kept recurring in the work: information is infrastructure. Weak crash data makes safety design weak, invisible hazards make prevention weak, an illegible compensation system makes justice weak. And the deeper reason all of this persists is fragmentation. Road safety in India is split across transport departments, police, hospitals, local governments, courts, insurers, and ministries. Each can point to its own slice and still leave the person on the road inside a failure that nobody owns end to end. That is why India produces so much sincere road-safety activity and so little visible outcome. Everyone owns a fragment. Too few own the chain.
 
@@ -62,7 +62,7 @@ None of this means Crashfree has cracked the problem. It has not. But by mid-202
 
 A mature road-safety system assumes human beings will make mistakes. Its job is to make those mistakes less likely, less severe, easier to respond to, and easier to learn from. That takes better design, better information, better coordination, and more trust.
 
-Safer roads do not begin when drivers become perfect. They begin when systems become trustworthy enough that imperfection is no longer so often fatal.
+Safer roads do not begin when drivers become perfect. They begin when systems can see, respond, and learn fast enough that imperfection is no longer so often fatal.
 
 ## Notes and Sources
 - [Ministry of Road Transport and Highways, Road Accidents in India 2023](https://morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf). 172,890 deaths, the highest recorded.

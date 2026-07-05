@@ -1,22 +1,24 @@
 ---
-title: Used-Car Ownership Is a Lending Problem
+title: Nobody Buys a Used Car. They Buy an EMI.
 date: 2026-06-12
-description: India's pre-owned market becomes mass not because used cars are cheaper, but when lending can underwrite messy assets, lower upfront fear, and turn aspiration into a survivable monthly payment.
+description: India's pre-owned market becomes mass not because used cars are cheaper, but when lending turns aspiration into a survivable monthly payment.
 socialDescription: India's next ownership unlock is not more listings. It is financing that understands the asset, the buyer, and the realities of used-car trust.
 image: /media/used-car-ownership-is-a-lending-problem-preview.jpg
-imageAlt: 1200x630 social preview for Used-Car Ownership Is a Lending Problem
+imageAlt: 1200x630 social preview for Nobody Buys a Used Car. They Buy an EMI.
 articleImage: /media/used-car-ownership-is-a-lending-problem-blog.jpg
-articleImageAlt: Editorial visual for Used-Car Ownership Is a Lending Problem
+articleImageAlt: Editorial visual for Nobody Buys a Used Car. They Buy an EMI.
 summary: Affordability is not access: most buyers settle the monthly payment before the car, and loan rejection is socially uncomfortable enough that pre-eligibility is a trust feature, not a convenience. | A used-car loan is an underwriting decision on ambiguity: the borrower, the truth of the asset, and the recovery path all at once. | The deepest moat is asset intelligence, not cheap capital. Lending does not just serve the used-car market. It helps create it.
 featured: false
 category: Essay
 slug: used-car-ownership-is-a-lending-problem
 ---
+Nobody really buys a used car in one decision. They first buy the EMI they can live with.
+
 We still talk about India's used-car market as if the main unlock were inventory. List more cars. Improve discovery. Standardize inspection. Reduce transfer friction. All of it matters, and all of it is incomplete, because used-car ownership at scale is also a lending problem.
 
 A market does not become mass merely because the sticker price is lower than new. It becomes mass when an ordinary household can bridge the gap between aspiration and liquidity without stepping into a trap. A used car can be affordable in absolute terms and still unreachable in cash terms. That gap between price and what a household can actually pay is where the market either widens or stalls.
 
-**Affordability is not access**
+**The EMI is the real entry point**
 
 Pre-owned cars are the natural bridge into ownership because they sit where aspiration and budget can meet. [CRISIL Ratings](https://www.crisilratings.com/en/home/newsroom/press-releases/2025/07/used-car-volume-to-grow-8-10percent-over-twice-as-fast-as-new-one.html) expects used-car volume to cross six million units this year, with the used-to-new ratio at about 1.4x, up from below 1.0x five years ago, and it ties that shift not only to digital adoption and confidence but to better access to finance. That last part is the point. Affordability by itself does not create access. For many households the real question is not whether a car is worth its price. It is whether paying for it empties the family's cash buffer and trades the emergency fund for mobility.
 
