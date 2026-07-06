@@ -14,7 +14,7 @@ slug: ai-native-is-not-ai-first
 ---
 Some of the least transformed companies I know now describe themselves as AI-first. Usually what they mean is simpler than the slogan. They added AI to support, or sales, or coding, or search. The workflow improved. The company did not.
 
-A founder I respect told me recently his company was AI-first now. I asked what had changed. He said they had integrated GPT into support. I asked what else. He paused, then said they were still figuring that out. I do not say this to mock him. Most of us built companies for a world in which context was expensive to gather, expensive to move, and expensive to act on. We built layers because human beings are bad at carrying large amounts of context across a scaled system. That is the distinction that matters. An AI-first company uses AI. An AI-native company rebuilds around what AI changes.
+A founder I respect told me recently his company was AI-first now. I asked what had changed. He said they had integrated GPT into support. I asked what else. He paused, then said they were still figuring that out. I do not say this to mock him. Most of us built companies for a world in which context was expensive to gather, expensive to move, and expensive to act on. That is the distinction that matters. An AI-first company uses AI. An AI-native company rebuilds around what AI changes.
 
 **A company is a machine for carrying context**
 
@@ -42,7 +42,9 @@ And none of it works in a low-trust company. If people hoard context, edit bad n
 
 **More shared context means more agency, not more agents**
 
-A traditional organization keeps pushing decisions upward because that is where context accumulates. The store issue escalates because headquarters has the picture. That is usually a context problem, not a character problem. AI-native companies can change it by lowering the cost of shared context, so the person closest to the problem can see the same system state that once existed only at the center. The point is not more agents. It is more agency. This is the change I have felt most directly at [Cars24](https://www.cars24.com). The thing that mattered was not the tools we added. It was removing the delegation layer itself, the people whose main job was to route and narrate work, so that more of us do the work and coordinate around it instead of handing it down. Many companies will fail here. They will buy the tools and keep the old permission structure, summarize meetings that should not exist, make reporting cleaner while keeping authority trapped at the same level, and call it transformation when what they achieved was software modernization.
+A traditional organization keeps pushing decisions upward because that is where context accumulates. The store issue escalates because headquarters has the picture. That is usually a context problem, not a character problem. AI-native companies can change it by lowering the cost of shared context, so the person closest to the problem can see the same system state that once existed only at the center. The point is not more agents. It is more agency.
+
+This is the change I have felt most directly at [Cars24](https://www.cars24.com). The thing that mattered was not the tools we added. It was asking which routing work still needed a human layer and which work could now be done directly, with shared context around it. Many companies will fail here. They will buy the tools and keep the old permission structure, summarize meetings that should not exist, make reporting cleaner while keeping authority trapped at the same level, and call it transformation when what they achieved was software modernization.
 
 **Start with the shape**
 

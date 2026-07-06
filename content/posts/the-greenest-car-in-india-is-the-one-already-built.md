@@ -16,7 +16,7 @@ If you care about climate in Indian mobility, you should care about reuse more t
 
 New EVs matter. Manufacturing should keep improving. But the biggest near-term lever in this category is not producing cleaner new vehicles. It is making the vehicles that already exist trustworthy enough to stay useful for longer.
 
-The greenest car in India is often the one already built.
+Architects have a saying: the greenest building is the one already built. In Indian mobility, the greenest car is often the one already built.
 
 Handled lazily, that line sounds moralistic. I mean it operationally. Every new car arrives with energy, water, minerals, logistics, and manufacturing emissions already locked inside it before anyone turns the key. If the system retires usable assets too early, mistrusts them too aggressively, or prices them incoherently, it wastes carbon the country has already paid for. Reuse is infrastructure, and India treats it like a fallback.
 
@@ -28,7 +28,7 @@ That changes the question. Once a vehicle exists, the issue is no longer only wh
 
 **But reuse only works if trust works**
 
-This is where the climate story usually gets too neat. People say the obvious thing, buying used is greener than buying new, and it often is. Then the real world arrives. If the buyer cannot trust the vehicle, the inspection, the paperwork, or the resale value, they walk away, and climate loses to anxiety. Reuse is only environmentally real when it becomes operationally trustworthy.
+This is where the climate story usually gets too neat. People say the obvious thing: buying used is greener than buying new. And it often is. Then the real world arrives. If the buyer cannot trust the vehicle, the inspection, the paperwork, or the resale value, they walk away, and climate loses to anxiety. Reuse is only environmentally real when it becomes operationally trustworthy.
 
 **India already scraps by age, not by truth**
 
@@ -36,7 +36,7 @@ You can watch the waste happen in policy. Delhi deregisters petrol cars at fifte
 
 **Used EVs reveal the problem most clearly**
 
-The point gets sharper with electric vehicles. India's used-EV challenge is usually described as a demand problem, a charging problem, or an awareness problem. Those matter, and they miss the deepest issue. The used-EV market is forming at the wrong prices because every participant, buyer, lender, insurer, manufacturer, is pricing the same battery on different assumptions, all conservative, most wrong. That is the asset, and that is also the uncertainty. When the battery is opaque, the asset gets discounted for the doubt. Otherwise useful EVs get punished, buyers stay cautious, lenders stay conservative, and adoption weakens exactly where the system should be compounding. A resale problem becomes a climate problem.
+The point gets sharper with electric vehicles. India's used-EV challenge is usually described as a demand problem, a charging problem, or an awareness problem. Those matter, and they miss the deepest issue. The used-EV market is forming at the wrong prices because every participant is pricing the same battery on different assumptions: buyer, lender, insurer, manufacturer. All conservative, most wrong. That is the asset, and that is also the uncertainty. When the battery is opaque, the asset gets discounted for the doubt. Otherwise useful EVs get punished, buyers stay cautious, lenders stay conservative, and adoption weakens exactly where the system should be compounding. A resale problem becomes a climate problem.
 
 **Battery trust is the real EV infrastructure**
 
@@ -48,7 +48,7 @@ The fix will not be won by ad campaigns. It will be won by standards: chemistry-
 
 **Policy and financing decide whether reuse is legible**
 
-Policy can distort reuse in both directions. If transfer is painful, resale suffers. If road tax punishes moving a vehicle across states, liquidity suffers. And tax can tilt the field directly. A new EV attracts 5% GST. The organized dealer reselling the same vehicle pays 18% on margin. A private grey-market sale pays nothing. The state, in effect, taxes the trustworthy channel hardest. Financing compounds it: [the ADB and NITI Aayog report](https://www.niti.gov.in/sites/default/files/2023-07/ADB-EV-Financing-Report_VS_compressed.pdf) that EV loans already run 10 to 30% lower loan-to-value and 6 to 18 months shorter tenor than petrol equivalents, used EVs sit below even that, and battery opacity is added on top, so the buyer ends up paying for the system's discomfort with ambiguity. Some of this is unglamorous detail that changes everything. Warranty portability is often technically possible but buried in manual, brand-specific process, when it should behave like a visible field rather than a detective exercise. Insurance needs to recognize the asset for what it is, with health-banded value logic rather than generic motor cover. None of it is exciting. All of it decides whether a reused asset feels financially legible.
+Policy can distort reuse in both directions. If transfer is painful, resale suffers. If road tax punishes moving a vehicle across states, liquidity suffers. And tax can tilt the field directly. A new EV attracts 5% GST. The organized dealer reselling the same vehicle pays 18% on margin. A private grey-market sale pays nothing. The state, in effect, taxes the trustworthy channel hardest. Financing compounds it: [the ADB and NITI Aayog report](https://www.niti.gov.in/sites/default/files/2023-07/ADB-EV-Financing-Report_VS_compressed.pdf) that EV loans already run 10 to 30% lower loan-to-value and 6 to 18 months shorter tenor than petrol equivalents, used EVs sit below even that, and battery opacity is added on top, so the buyer ends up paying for the system's discomfort with ambiguity. Warranty portability is often technically possible but buried in manual, brand-specific process, when it should behave like a visible field rather than a detective exercise. Insurance needs to recognize the asset for what it is, with health-banded value logic rather than generic motor cover. None of it is exciting. All of it decides whether a reused asset feels financially legible.
 
 **Reuse is social infrastructure too**
 
@@ -56,7 +56,7 @@ There is another reason this matters in India. A reused vehicle is often how mob
 
 **The climate upside is an information opportunity**
 
-The effect of reuse compounds through ordinary market behavior. Every vehicle that stays useful longer through trustworthy resale avoids some premature new production. Every battery whose health becomes legible enough to support a fair price keeps an EV from being stranded too early. Every policy fix that lowers transfer and tax friction quietly improves the carbon efficiency of the whole category. India's climate opportunity in mobility is not only a manufacturing opportunity. It is also an information one.
+The effect of reuse compounds through ordinary market behavior. Every vehicle that stays useful longer through trustworthy resale avoids some premature new production. Battery health that becomes legible enough to support a fair price keeps EVs from being stranded too early, and policy fixes that lower transfer and tax friction quietly improve the carbon efficiency of the whole category. India's climate opportunity in mobility is not only a manufacturing opportunity. It is also an information one.
 
 Markets waste assets when they cannot measure them properly. That is true of used cars, and even more true of used EVs, where an opaque battery makes the market punish the asset more than it deserves. So the real climate work here looks less glamorous than the public narrative wants: better inspection, standardized battery health, portable warranties, cleaner transfer rails, insurance that understands the asset, and finance that can price confidence instead of fear. It looks like a reused car or EV feeling legible enough that a buyer chooses it without feeling they are gambling blind.
 
@@ -64,6 +64,7 @@ India will not decarbonize mobility only by building more. It will decarbonize f
 
 ## Notes and Sources
 - [IEA](https://www.iea.org/data-and-statistics/data-tools/ev-life-cycle-assessment-calculator). Manufacturing accounts for roughly a fifth of a conventional car's lifetime emissions; lifecycle tooling at the EV Life Cycle Assessment Calculator.
+- [Carl Elefante](https://carlelefante.com/insights/the-greenest-building-is/). The built-environment line this essay adapts: the greenest building is one already built.
 - [ICCT, Negri and Bieker, "Life-cycle greenhouse gas emissions from passenger cars in the European Union," July 2025](https://theicct.org/publication/electric-cars-life-cycle-analysis-emissions-europe-jul25/). BEV production emissions ~40% higher than petrol, the ~17,000 km payback, and the ~73% lifetime advantage on the EU grid.
 - [ICCT, global lifecycle assessment of passenger cars, July 2021](https://theicct.org/publications/global-LCA-passenger-cars-jul2021). The 19 to 34% lifecycle advantage for EVs registered in India in 2021, rising with grid decarbonization.
 - [Kagawa et al., "Role of Motor Vehicle Lifetime Extension in Climate Change Policy," Environmental Science & Technology](https://doi.org/10.1021/es1034552). Extending vehicle life lowers lifecycle CO2.

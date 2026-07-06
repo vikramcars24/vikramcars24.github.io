@@ -1,7 +1,7 @@
 ---
 title: The Paranoid Survive. The Regulated Thrive.
 date: 2026-06-06
-description: The best companies build brakes into their intensity. They do not tear them out.
+description: Paranoid about the work. Regulated in yourself. Grove gave us half the sentence; the other half is what lets you keep your judgment.
 image: /media/paranoid-survive-regulated-thrive-social.jpg
 imageAlt: 1200x630 social preview for The Paranoid Survive. The Regulated Thrive.
 articleImage: /media/paranoid-survive-regulated-thrive-blog.png
@@ -11,7 +11,7 @@ featured: true
 category: Essay
 slug: paranoid-survive-regulated-thrive
 ---
-Most of the worst decisions I have made in over a decade of building [Cars24](https://www.cars24.com), I made angry. Or anxious. Or stung. I only saw it later, once I had cooled down and the call was already made. That is the thing nobody tells you about building a company. The pressure that drives you is the same pressure that ruins your judgment.
+Most of the worst decisions I have made in over a decade of building [Cars24](https://www.cars24.com), I made angry. Or anxious. Or stung. I only saw it later, once I had cooled down and the call was already made. The pressure that drives you is the same pressure that ruins your judgment.
 
 Andy Grove gave us the line we all live by: only the paranoid survive. I have lived by it. Hungry. Urgent. Raise the bar, and the day you clear it, raise it again.
 
@@ -27,7 +27,7 @@ The body explains why. Amy Arnsten at Yale has shown that even mild, uncontrolla
 
 **Feel the emotion. Do not decide inside it.**
 
-So regulation is not the soft sibling of ambition. It is what keeps ambition paying off. And it starts with one discipline I learned the hard way. Feel the emotion. Do not decide inside it.
+So regulation is not the soft sibling of ambition. It is what keeps ambition paying off. And it starts with one discipline: feel the emotion without letting it make the decision.
 
 We are human. Bad news breaks, someone disagrees, the plan slips, and we feel it. That is not a flaw to engineer away. The flaw is collapsing the feeling and the decision into one moment. Daniel Goleman called it the amygdala hijack. The brain's alarm seizes the controls a beat before the thinking mind can vote. Kahneman gave the same warning a different name, a fast system outrunning a slow one. The work of leadership is to widen the gap between them.
 
@@ -45,9 +45,9 @@ Naina names the mechanism more precisely than I can. People do not lie to a frig
 
 And all of it can be trained. That is the part I take most seriously. Calm is not a temperament you are born with. It is a capacity you build, and you build it in the body. Heart rate variability is a real, if imperfect, signal of how regulated you are underneath. It responds to practice. This is why I keep a physical trainer and mental coaches close, and why I use them. My work is no longer only the hours in meetings and reviews. The hours on my body and my mind are the work too. That is the gym where calm under fire gets built.
 
-It does not stay private either. The Navy SEALs put it in three words. Calm is contagious. So is panic. So is chaos. A team does not catch your strategy. It catches your nervous system, and amplifies it. A dysregulated founder builds a dysregulated company. A calm one builds a calm one. The highest-leverage thing I can do for the people I lead is not to push harder. It is to be the steadiest person in the room when the news is worst.
+It does not stay private either. The Navy SEALs put it in three words. Calm is contagious. So is panic. So is chaos. A team does not catch your strategy. It catches your nervous system, and amplifies it. A dysregulated founder builds a dysregulated company. A calm founder builds a calm company. The highest-leverage thing I can do for the people I lead is not to push harder. It is to be the steadiest person in the room when the news is worst.
 
-So I want to be two things the world calls opposites. Paranoid about the work. Regulated in myself. Hungry without being frantic. Demanding without being cruel. That combination is rare. That is exactly why it wins.
+So I want to be two things the world calls opposites. Paranoid about the work. Regulated in myself. Hungry without being frantic. Demanding without being cruel. That combination is rare, which is exactly why it wins.
 
 The paranoid survive. The regulated thrive. I am building for both.
 

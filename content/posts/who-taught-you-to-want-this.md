@@ -12,7 +12,7 @@ featured: false
 category: Essay
 slug: who-taught-you-to-want-this
 ---
-For a long time I thought desire was one of the most private things about a person. What you want, what you chase, what you admire, what kind of life feels meaningful. It all seems deeply personal. Then you watch people closely for long enough, including yourself, and the picture gets stranger. Why do so many people end up wanting the same things. Why do founders who once cared about building a good company slowly start caring about valuation theater and who raised what from whom. Why does satisfaction often fall not when life gets worse, but when somebody nearby gets what you now think you should have had. A lot of what we call desire is less original than we like to believe. Much of it is borrowed.
+For a long time I thought desire was one of the most private things about a person. What you want, what you chase, what kind of life feels meaningful. It all seems deeply personal. Then you watch people closely for long enough, including yourself, and the picture gets stranger. Why do so many people end up wanting the same things. Why does satisfaction often fall not when life gets worse, but when somebody nearby gets what you now think you should have had. A lot of what we call desire is less original than we like to believe. Much of it is borrowed.
 
 ## Desire is social
 
@@ -20,7 +20,7 @@ This is not a new observation. The French thinker [René Girard](https://www.imi
 
 Most people assume desire gets distorted by celebrities. That happens, but the more powerful distortions come from people much closer. This is exactly Girard's distinction between a distant model, who creates fantasy, and a close one, who creates rivalry. A billionaire in another country is a spectacle. A founder from your batch raising more capital than you can become a wound. A friend buying the house you thought you should be able to buy creates restlessness. [Luke Burgis](https://lukeburgis.com/books/), who carried Girard's idea into business, compresses it well: conflict comes from our sameness, not our differences. A peer is dangerous precisely because his life is comparable to yours. We do not merely observe what our peers have. We inherit their scale of significance. Their milestones become plausible for us, their symbols of status newly visible, their pace a pressure. That is one reason adulthood can feel quietly more anxious than childhood even as material life improves. The circle of comparison sharpens.
 
-## Rivalry detaches desire from the object
+## When winning replaces wanting
 
 This is where wanting becomes dangerous. At the start the object still seems to matter, the promotion, the company, the recognition. But if desire is being shaped through comparison, the object slowly matters less than the relative position. You do not only want to build a good company, you want to build one that beats the other company. You do not only want wealth, you want the kind that rearranges where you stand among peers. That is when desire feeds on rivalry rather than purpose, and once that happens, satisfaction becomes very hard to reach, because victory in rivalry has no natural endpoint. The comparison set keeps updating. The standard of enough keeps getting infected by somebody else's next move. People then become confused about why achievement feels flatter than expected. Often the reason is not that they wanted too much. It is that they stopped wanting the thing itself a long time ago and started wanting what it meant in relation to someone else.
 

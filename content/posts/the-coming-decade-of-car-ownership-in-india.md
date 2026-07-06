@@ -43,7 +43,7 @@ The economics already point there. India has roughly 35 cars per 1,000 people, a
 
 But a pre-owned market does not become trustworthy just because cars are cheaper. It needs rails.
 
-**Transfer is not back-office work**
+**Transfer decides legitimacy**
 
 One of the deepest mistakes in Indian mobility is treating transfer as administrative detail. RC transfer decides whether a used-car market feels legitimate or risky. And transfer is no longer occasional: CRISIL notes the average used car now changes hands at around 3.7 years old, which makes ownership a recurring cycle of handovers, not a one-time event. If the prior owner stays legally exposed after the sale, if insurance continuity is unclear, if NOCs are painful, if state systems are too manual, the market stays structurally anxious even when demand exists.
 
@@ -61,13 +61,13 @@ Look at the market this way and it stops looking like a dealership story, or eve
 
 The prize is making ownership less frightening and less opaque at national scale. That means building across the whole stack: discovery that reduces confusion, financing that expands access, transfer that creates legitimacy, service that builds confidence, and information that makes the asset more legible over time. The headroom is enormous. Only about a third of used-car sales run through organized players, and only about a quarter of used cars are bought on a loan, against roughly three-quarters of new ones.
 
-And the shift is structural, not a blip. As CRISIL's Anuj Sethi put it, the rising ratio of used to new cars "signals a structural shift, driven by rising consumer confidence and digital adoption." Confidence is the operative word. The category here is not finished infrastructure. Large parts of ownership are still manual, fragmented, mistrusted, or emotionally intimidating. That leaves room for institutions, not just transactions, which is why Indian auto will produce far larger companies than many still expect. Whoever lowers the fear and friction of ownership will not only serve the market. They will help create it.
+And the shift is structural, not a blip. As CRISIL's Anuj Sethi put it, the rising ratio of used to new cars "signals a structural shift, driven by rising consumer confidence and digital adoption." Confidence is the operative word. The category here is not finished infrastructure. Large parts of ownership are still manual, fragmented, mistrusted, or emotionally intimidating. That leaves room for institutions, not just transactions, which is why Indian auto will produce far larger companies than many still expect.
 
-**The market grows when ownership gets easier to live with**
+**What actually grows the market**
 
 Ask what will grow the Indian car market and the usual answer is the visible things. More income, more financing, more supply, better roads, more choice. All true. But another answer matters just as much. The market grows when ownership gets easier to live with. When first-time buyers stop feeling that one wrong decision will punish them for years, when resale stops feeling like a legal gamble, and when paperwork starts behaving like rails rather than obstacles.
 
-India's next decade of ownership will be second-owner, transfer-heavy, and trust-led. That is not a narrower version of the market. It is the broader one.
+India's next decade of ownership will be second-owner, transfer-heavy, and trust-led.
 
 The future of car ownership in India is not just more cars.
 
