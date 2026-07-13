@@ -854,6 +854,7 @@ function renderPost(site, post, collection) {
                 </div>
                 <button class="share-button" type="button" data-share-button data-share-url="${escapeAttribute(absoluteUrl(site.domain, sitePath(site, `/posts/${post.slug}/`)))}" data-share-title="${escapeAttribute(post.title)}">${escapeHtml(ui.share)}</button>
               </div>
+              <p class="essay-subscribe-cta"><a class="inline-link" href="${sitePath(site, "/subscribe/")}">Get the next essay by email.</a></p>
             </header>
             <div class="essay-layout">
               ${toc}
@@ -1062,6 +1063,17 @@ function renderDocument({
 
         const subscribeForms = Array.from(document.querySelectorAll("[data-subscribe-form]"));
 
+        const trackPlausibleEvent = (eventName, props = {}) => {
+          window.plausible = window.plausible || function() {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+          };
+          window.plausible(eventName, { props });
+        };
+
+        if (document.body.classList.contains("subscribe-page")) {
+          trackPlausibleEvent("Subscribe Page View", { source: "subscribe_page" });
+        }
+
         for (const form of subscribeForms) {
           const submitButton = form.querySelector("[data-subscribe-submit]");
           const nextLabel = form.dataset.submittingLabel || "Continuing...";
@@ -1071,6 +1083,9 @@ function renderDocument({
           }
 
           form.addEventListener("submit", () => {
+            trackPlausibleEvent("Subscribe Form Submit", {
+              source: form.dataset.subscribeSource || "unknown"
+            });
             form.classList.add("is-submitting");
             submitButton.textContent = nextLabel;
             submitButton.disabled = true;
@@ -1274,6 +1289,7 @@ function renderHeader(site) {
       <nav class="site-nav" aria-label="Primary">
         <a href="${sitePath(site, "/archive/")}">${escapeHtml(ui.navEssays)}</a>
         <a href="${sitePath(site, "/#culture-docs")}">${escapeHtml(ui.navDocs)}</a>
+        <a href="${sitePath(site, "/subscribe/")}">${escapeHtml(ui.footerSubscribe)}</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="${escapeAttribute(ui.themeToggleLabel)}">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -1450,7 +1466,7 @@ function renderSubscribeForm(site, variant) {
   const formId = `subscribe-email-${variant}`;
 
   return `
-    <form class="subscribe-form subscribe-form-${variant}" method="post" action="${escapeAttribute(subscribe.action)}" data-subscribe-form data-submitting-label="${escapeAttribute(subscribe.submittingLabel)}">
+    <form class="subscribe-form subscribe-form-${variant}" method="post" action="${escapeAttribute(subscribe.action)}" data-subscribe-form data-subscribe-source="${escapeAttribute(variant)}" data-submitting-label="${escapeAttribute(subscribe.submittingLabel)}">
       <label class="sr-only" for="${escapeAttribute(formId)}">${escapeHtml(subscribe.placeholder)}</label>
       <div class="subscribe-input-row">
         <input class="subscribe-input" id="${escapeAttribute(formId)}" name="email" type="email" placeholder="${escapeAttribute(subscribe.placeholder)}" autocomplete="email" required>
@@ -2033,22 +2049,34 @@ function renderRss(site, posts) {
 }
 
 function renderSitemap(site, languageContexts, cultureDocuments = []) {
-  const englishContext = languageContexts[0];
+  const englishContext = languageContexts.find((context) => context.language.code === "en") || languageContexts[0];
+  const latestPostDate = englishContext.posts
+    .map((post) => post.date)
+    .filter(Boolean)
+    .sort()
+    .at(-1) || new Date().toISOString().slice(0, 10);
   const urls = [
-    "/",
-    "/archive/",
-    "/subscribe/",
-    ...englishContext.posts.map((post) => `/posts/${post.slug}/`)
+    { url: "/", lastmod: latestPostDate },
+    { url: "/archive/", lastmod: latestPostDate },
+    { url: "/subscribe/", lastmod: latestPostDate },
+    ...englishContext.posts.map((post) => ({
+      url: `/posts/${post.slug}/`,
+      lastmod: post.date || latestPostDate
+    }))
   ];
 
-  urls.push(...cultureDocuments.flatMap((doc) => doc.versions.map((version) => version.pdfPath)));
+  urls.push(...cultureDocuments.flatMap((doc) => doc.versions.map((version) => ({
+    url: version.pdfPath,
+    lastmod: latestPostDate
+  }))));
 
   const nodes = urls
-    .map((url) => url === "" ? "/" : url)
-    .map((url) => {
+    .map((entry) => {
+      const url = entry.url === "" ? "/" : entry.url;
       return `
   <url>
     <loc>${escapeXml(absoluteUrl(site.domain, unversionedSitePath(site, url)))}</loc>
+    <lastmod>${escapeXml(normalizeSitemapDate(entry.lastmod))}</lastmod>
   </url>`;
     })
     .join("");
@@ -2056,6 +2084,12 @@ function renderSitemap(site, languageContexts, cultureDocuments = []) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${nodes}
 </urlset>`;
+}
+
+function normalizeSitemapDate(value) {
+  const raw = String(value || "").trim();
+  const match = raw.match(/^\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : new Date().toISOString().slice(0, 10);
 }
 
 function renderRedirects(site) {

@@ -41,7 +41,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/styles.css?v=4d5b34a">
+    <link rel="stylesheet" href="/styles.css?v=bc8ce6b">
   </head>
   <body class="not-found-page">
 
@@ -56,6 +56,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="/archive/">Essays</a>
         <a href="/#culture-docs">Docs</a>
+        <a href="/subscribe/">Subscribe</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
         <span class="theme-toggle-mark" aria-hidden="true"></span>
@@ -161,6 +162,17 @@
 
         const subscribeForms = Array.from(document.querySelectorAll("[data-subscribe-form]"));
 
+        const trackPlausibleEvent = (eventName, props = {}) => {
+          window.plausible = window.plausible || function() {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+          };
+          window.plausible(eventName, { props });
+        };
+
+        if (document.body.classList.contains("subscribe-page")) {
+          trackPlausibleEvent("Subscribe Page View", { source: "subscribe_page" });
+        }
+
         for (const form of subscribeForms) {
           const submitButton = form.querySelector("[data-subscribe-submit]");
           const nextLabel = form.dataset.submittingLabel || "Continuing...";
@@ -170,6 +182,9 @@
           }
 
           form.addEventListener("submit", () => {
+            trackPlausibleEvent("Subscribe Form Submit", {
+              source: form.dataset.subscribeSource || "unknown"
+            });
             form.classList.add("is-submitting");
             submitButton.textContent = nextLabel;
             submitButton.disabled = true;
