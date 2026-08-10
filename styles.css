@@ -1042,6 +1042,12 @@ pre code {
   border-color: var(--muted);
 }
 
+.essay-subscribe-cta {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
 .dek {
   max-width: 36rem;
   margin: 0 0 0.65rem;

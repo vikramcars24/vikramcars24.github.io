@@ -85,7 +85,8 @@ async function takeShots(browser) {
 
     for (const pageDef of pages) {
       const page = await context.newPage();
-      await page.goto(`http://${host}:${port}${pageDef.route}`, { waitUntil: "networkidle" });
+      await page.route("**/plausible.io/**", (route) => route.abort());
+      await page.goto(`http://${host}:${port}${pageDef.route}`, { waitUntil: "domcontentloaded" });
       await page.evaluate(async () => {
         const step = Math.max(240, Math.floor(window.innerHeight * 0.75));
         const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

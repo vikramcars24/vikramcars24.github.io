@@ -363,43 +363,81 @@ async function querySearchConsole(siteUrl, token, body) {
 }
 
 async function getGoogleAccessToken() {
-  const sharedToken = await getSharedGoogleAccessToken({
-    profiles: [
-      process.env.GOOGLE_SEARCH_CONSOLE_PROFILE || "personal",
-      process.env.GOOGLE_SEARCH_CONSOLE_FALLBACK_PROFILE || "work"
-    ],
-    requiredScopes: GOOGLE_SCOPE_SETS.searchConsole
-  });
-  if (sharedToken) {
-    return sharedToken;
-  }
-
-  const oauthClientJson = process.env.GOOGLE_OAUTH_CLIENT_JSON || "";
-  const oauthRefreshToken = process.env.GOOGLE_OAUTH_REFRESH_TOKEN || "";
-  if (oauthClientJson && oauthRefreshToken) {
-    const client = JSON.parse(oauthClientJson);
-    const installed = client.installed || client.web || client;
-    const response = await fetchJson(installed.token_uri || "https://oauth2.googleapis.com/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: new URLSearchParams({
-        client_id: installed.client_id,
-        client_secret: installed.client_secret,
-        refresh_token: oauthRefreshToken,
-        grant_type: "refresh_token"
-      }).toString()
-    });
-
-    return String(response.access_token || "");
-  }
+  const attempts = [];
 
   const bearer = process.env.GOOGLE_SEARCH_CONSOLE_TOKEN || "";
   if (bearer) {
     return bearer;
   }
 
+  const serviceAccountToken = await tryGoogleToken("service account", attempts, getServiceAccountAccessToken);
+  if (serviceAccountToken) {
+    return serviceAccountToken;
+  }
+
+  const sharedToken = await tryGoogleToken("shared Google auth profile", attempts, () =>
+    getSharedGoogleAccessToken({
+      profiles: [
+        process.env.GOOGLE_SEARCH_CONSOLE_PROFILE || "personal",
+        process.env.GOOGLE_SEARCH_CONSOLE_FALLBACK_PROFILE || "work"
+      ],
+      requiredScopes: GOOGLE_SCOPE_SETS.searchConsole,
+      oauthClientJsonEnv: "GOOGLE_SEARCH_CONSOLE_OAUTH_CLIENT_JSON",
+      oauthRefreshTokenEnv: "GOOGLE_SEARCH_CONSOLE_OAUTH_REFRESH_TOKEN"
+    })
+  );
+  if (sharedToken) {
+    return sharedToken;
+  }
+
+  const oauthToken = await tryGoogleToken("environment OAuth refresh token", attempts, getEnvironmentOAuthAccessToken);
+  if (oauthToken) {
+    return oauthToken;
+  }
+
+  if (attempts.length > 0) {
+    throw new Error(`Google Search Console auth failed: ${attempts.join(" | ")}`);
+  }
+
+  return "";
+}
+
+async function tryGoogleToken(label, attempts, resolveToken) {
+  try {
+    return await resolveToken();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    attempts.push(`${label}: ${message}`);
+    return "";
+  }
+}
+
+async function getEnvironmentOAuthAccessToken() {
+  const oauthClientJson = process.env.GOOGLE_OAUTH_CLIENT_JSON || "";
+  const oauthRefreshToken = process.env.GOOGLE_OAUTH_REFRESH_TOKEN || "";
+  if (!oauthClientJson || !oauthRefreshToken) {
+    return "";
+  }
+
+  const client = JSON.parse(oauthClientJson);
+  const installed = client.installed || client.web || client;
+  const response = await fetchJson(installed.token_uri || "https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+      client_id: installed.client_id,
+      client_secret: installed.client_secret,
+      refresh_token: oauthRefreshToken,
+      grant_type: "refresh_token"
+    }).toString()
+  });
+
+  return String(response.access_token || "");
+}
+
+async function getServiceAccountAccessToken() {
   const serviceAccountJson = await loadServiceAccountJson();
   if (!serviceAccountJson) {
     return "";
