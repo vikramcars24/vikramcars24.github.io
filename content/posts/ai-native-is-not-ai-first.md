@@ -14,6 +14,8 @@ slug: ai-native-is-not-ai-first
 ---
 Some of the least transformed companies I know now describe themselves as AI-first. Usually what they mean is simpler than the slogan. They added AI to support, or sales, or coding, or search. The workflow improved. The company did not.
 
+Cars24 began as an engineering company. Then transactions grew, and our attention moved to operations: inspections, logistics, refurbishment, and financing. I let it happen. The company drifted from the reason it had started. Around 2023, it became clear that the old way would not take us forward. We had to rebuild how the company worked while the live business kept running.
+
 A founder I respect told me recently his company was AI-first now. I asked what had changed. He said they had integrated GPT into support. I asked what else. He paused, then said they were still figuring that out. I do not say this to mock him. Most of us built companies for a world in which context was expensive to gather, expensive to move, and expensive to act on. That is the distinction that matters. An AI-first company uses AI. An AI-native company rebuilds around what AI changes.
 
 **A company is a machine for carrying context**
