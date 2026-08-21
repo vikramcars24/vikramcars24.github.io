@@ -5,8 +5,8 @@ Founder of Cars24. Essays on car ownership in India, trust as the product, AI-na
 - [Essays](https://vikramchopra.in/archive/)
 
 ## Culture Document PDFs
-- [Flatland - English](https://vikramchopra.in/media/docs/flatland.pdf?v=0113cbb)
-- [Our Values - English](https://vikramchopra.in/media/docs/cars24-values.pdf?v=0113cbb)
+- [Flatland - English](https://vikramchopra.in/media/docs/flatland.pdf?v=0de67bf)
+- [Our Values - English](https://vikramchopra.in/media/docs/cars24-values.pdf?v=0de67bf)
 
 ## Mobility, Ownership, and Trust
 - [The Second-Owner Decade](https://vikramchopra.in/posts/the-coming-decade-of-car-ownership-in-india/): India's next ownership wave will not look like the rich-world past. It will be second-owner, transfer-heavy, and trust-led.
