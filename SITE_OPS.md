@@ -5,7 +5,9 @@ This repo now carries its own monitoring for `vikramchopra.in`.
 ## What is automated
 
 - Every push to `main` deploys independently to Cloudflare Pages and GitHub Pages.
-- Every five minutes, the lightweight `Uptime Watchdog` checks the homepage, archive, subscribe page, sitemap, RSS feed, and a published PDF.
+- After both deploys succeed, the edge router is deployed in front of the site. It serves Cloudflare Pages normally and automatically retries safe requests against GitHub Pages after a primary timeout or `5xx`.
+- Every five minutes, the lightweight `Uptime Watchdog` checks the homepage, archive, subscribe page, sitemap, RSS feed, a published PDF, and the independent GitHub Pages fallback.
+- If public traffic is being served from the fallback, the site stays available but the watchdog opens an incident because redundancy is degraded.
 - The watchdog retries transient failures once, opens or updates one durable `Uptime Alert` issue, and sends Slack only when an incident opens or recovers.
 - Every day, the deeper `Site Ops` workflow runs:
   - local build
@@ -43,6 +45,8 @@ This repo now carries its own monitoring for `vikramchopra.in`.
   - the issue becomes the queue for fixing them
 - External platform failures:
   - the watchdog detects public availability failures independently from Cloudflare Pages
+  - the edge router automatically fails `GET` and `HEAD` requests over to the independent GitHub Pages deployment when the primary origin times out or returns `5xx`
+  - non-idempotent requests are never replayed to avoid duplicate writes
   - Cloudflare, DNS, Google, Bing, or Buttondown account changes still require access to the relevant account to fully remediate
 
 ## Recommended dashboards to pin

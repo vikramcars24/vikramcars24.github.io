@@ -51,7 +51,6 @@ async function main() {
   await auditRss({ domain, postSlugs, errors });
   await auditRobots({ domain, errors });
   await auditRedirects({ domain, errors });
-  await auditCname({ domain, errors });
 
   for (const page of pageMeta) {
     const descriptionLength = page.description.length;
@@ -295,14 +294,6 @@ async function auditRedirects({ domain, errors }) {
     if (!html.includes(expectedTarget)) {
       errors.push(`${from}: redirect page does not point to ${expectedTarget}`);
     }
-  }
-}
-
-async function auditCname({ domain, errors }) {
-  const expectedHost = new URL(domain).hostname;
-  const cname = (await fs.readFile(generatedSitePath("CNAME"), "utf8")).trim();
-  if (cname !== expectedHost) {
-    errors.push(`CNAME: expected ${expectedHost}, found ${cname}`);
   }
 }
 

@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vikramchopra-edge-router",
+  "main": "workers/edge-router.mjs",
+  "compatibility_date": "2026-09-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "vikramchopra.in/*",
+      "zone_name": "vikramchopra.in"
+    },
+    {
+      "pattern": "www.vikramchopra.in/*",
+      "zone_name": "vikramchopra.in"
+    }
+  ],
+  "vars": {
+    "FALLBACK_ORIGIN": "https://vikramcars24.github.io",
+    "PRIMARY_TIMEOUT_MS": "5000"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  }
+}

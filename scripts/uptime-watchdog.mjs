@@ -2,6 +2,7 @@ import { appendFile } from "node:fs/promises";
 import { getSlackToken, openDirectMessage, postMessage } from "./lib/slack-client.mjs";
 
 const defaultBaseUrl = "https://vikramchopra.in";
+const defaultFallbackUrl = "https://vikramcars24.github.io";
 const defaultSlackUser = "U054KL2NR";
 const issueTitle = "Uptime Alert";
 const issueLabel = "uptime";
@@ -13,7 +14,8 @@ const checks = [
   { path: "/subscribe/", type: "text/html" },
   { path: "/sitemap.xml", type: "application/xml" },
   { path: "/rss.xml", type: "application/xml" },
-  { path: "/media/docs/flatland.pdf", type: "application/pdf" }
+  { path: "/media/docs/flatland.pdf", type: "application/pdf" },
+  { path: "/", label: "fallback /", baseUrl: defaultFallbackUrl, type: "text/html", body: "<title>Vikram Chopra" }
 ];
 
 export async function checkSite(options = {}) {
@@ -40,7 +42,7 @@ export async function checkSite(options = {}) {
 }
 
 async function probe(check, { baseUrl, fetchImpl, attempt }) {
-  const url = new URL(check.path, baseUrl);
+  const url = new URL(check.path, check.baseUrl || baseUrl);
   url.searchParams.set("uptime_probe", `${Date.now()}-${attempt}`);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12_000);
@@ -61,9 +63,14 @@ async function probe(check, { baseUrl, fetchImpl, attempt }) {
       failures.push(`content-type ${contentType || "missing"}`);
     }
     if (check.body && !body.includes(check.body)) failures.push("expected homepage title missing");
+    const servingOrigin = response.headers.get("x-vikram-origin") || "";
+    if (servingOrigin.includes("fallback") && !check.baseUrl) {
+      failures.push(`public route is serving ${servingOrigin}`);
+    }
 
     return {
       path: check.path,
+      label: check.label || check.path,
       ok: failures.length === 0,
       status: response.status,
       contentType,
@@ -74,6 +81,7 @@ async function probe(check, { baseUrl, fetchImpl, attempt }) {
   } catch (error) {
     return {
       path: check.path,
+      label: check.label || check.path,
       ok: false,
       status: 0,
       contentType: "",
@@ -93,6 +101,14 @@ async function main() {
   await writeSummary(markdown);
 
   if (isTruthy(process.env.UPTIME_DRY_RUN)) return;
+
+  if (isTruthy(process.env.UPTIME_NOTIFICATION_TEST)) {
+    if (!report.healthy) {
+      throw new Error("Notification test refused because the production health checks are not healthy.");
+    }
+    await sendSlack(renderSlackTest(report));
+    return;
+  }
 
   const repository = process.env.GITHUB_REPOSITORY || "";
   const githubToken = process.env.GITHUB_TOKEN || "";
@@ -135,7 +151,7 @@ function renderMarkdown(report) {
     const detail = result.ok
       ? `${result.status} ${result.contentType}; ${result.latencyMs} ms`
       : result.error;
-    lines.push(`- [${result.ok ? "OK" : "FAIL"}] ${result.path}: ${detail}`);
+    lines.push(`- [${result.ok ? "OK" : "FAIL"}] ${result.label}: ${detail}`);
   }
 
   const runUrl = githubRunUrl();
@@ -244,6 +260,14 @@ function renderSlackRecovered(report, issueUrl) {
     "*vikramchopra.in recovered*",
     `Confirmed: ${report.checkedAt}`,
     `<${issueUrl}|Incident history>`
+  ].join("\n");
+}
+
+function renderSlackTest(report) {
+  return [
+    "*vikramchopra.in watchdog test passed*",
+    `Confirmed: ${report.checkedAt}`,
+    "All production and independent-fallback checks passed. Slack incident notifications are connected."
   ].join("\n");
 }
 

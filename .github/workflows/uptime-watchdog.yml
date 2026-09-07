@@ -2,8 +2,14 @@ name: Uptime Watchdog
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "3-58/5 * * * *"
   workflow_dispatch:
+    inputs:
+      test_notification:
+        description: Send a harmless Slack transport test after healthy checks
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: uptime-watchdog
@@ -35,4 +41,5 @@ jobs:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           SLACK_REPORT_DM_USER: ${{ vars.SLACK_REPORT_DM_USER }}
           SLACK_REPORT_DM_CHANNEL: ${{ vars.SLACK_REPORT_DM_CHANNEL }}
+          UPTIME_NOTIFICATION_TEST: ${{ inputs.test_notification }}
         run: node scripts/uptime-watchdog.mjs

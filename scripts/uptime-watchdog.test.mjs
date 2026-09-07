@@ -5,7 +5,7 @@ import { checkSite } from "./uptime-watchdog.mjs";
 test("reports healthy only when every route matches", async () => {
   const report = await checkSite({ fetchImpl: healthyFetch, attempts: 1 });
   assert.equal(report.healthy, true);
-  assert.equal(report.results.length, 6);
+  assert.equal(report.results.length, 7);
   assert.ok(report.results.every((result) => result.ok));
 });
 
@@ -35,6 +35,26 @@ test("reports a semantic homepage failure", async () => {
 
   assert.equal(report.healthy, false);
   assert.match(report.results[0].error, /expected homepage title missing/);
+});
+
+test("reports degraded state while the edge router is serving fallback", async () => {
+  const report = await checkSite({
+    attempts: 1,
+    fetchImpl: async (url) => {
+      const headers = { "content-type": url.pathname.endsWith(".pdf")
+        ? "application/pdf"
+        : url.pathname.endsWith(".xml")
+          ? "application/xml"
+          : "text/html; charset=utf-8" };
+      if (url.hostname === "vikramchopra.in") headers["x-vikram-origin"] = "github-pages-fallback";
+      const body = url.pathname === "/" ? "<title>Vikram Chopra</title>" : "ok";
+      return new Response(body, { status: 200, headers });
+    }
+  });
+
+  assert.equal(report.healthy, false);
+  assert.match(report.results[0].error, /serving github-pages-fallback/);
+  assert.equal(report.results.at(-1).ok, true);
 });
 
 function healthyFetch(url) {

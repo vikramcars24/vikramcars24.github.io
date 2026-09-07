@@ -2,6 +2,7 @@ dist/
 .DS_Store
 downloads/
 node_modules/
+.wrangler/
 notes/
 qa-screens/
 tmp/

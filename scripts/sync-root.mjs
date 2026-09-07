@@ -3,7 +3,6 @@ import path from "node:path";
 
 const rootDir = process.cwd();
 const distDir = path.join(rootDir, "dist");
-const siteConfigPath = path.join(rootDir, "content", "site.json");
 
 const managedEntries = [
   "index.html",
@@ -49,13 +48,9 @@ async function main() {
     await fs.cp(source, path.join(rootDir, entry), { recursive: true, force: true });
   }
 
-  const site = JSON.parse(await fs.readFile(siteConfigPath, "utf8"));
-  const hostname = new URL(site.domain).hostname;
-
   await fs.writeFile(path.join(rootDir, ".nojekyll"), "", "utf8");
-  await fs.writeFile(path.join(rootDir, "CNAME"), `${hostname}\n`, "utf8");
 
-  console.log(`Synced dist/ output into repository root for GitHub Pages and wrote CNAME for ${hostname}.`);
+  console.log("Synced dist/ output into repository root for the independent GitHub Pages fallback.");
 }
 
 main().catch((error) => {

@@ -11,6 +11,8 @@
 - The repo now has a dedicated `Morning Ops Sweep` workflow that checks GitHub workflow state, open alert issues, and GitHub/site email cleanup on a schedule and after key workflow completions.
 - `qa-screens/` is intentionally gitignored; screenshot verification is mandatory for layout changes.
 - GitHub/site email must be treated as a first-class ops queue, not a secondary notification surface.
+- Cloudflare Pages is the primary origin. A Cloudflare Worker fails safe requests over to the independent `vikramcars24.github.io` deployment after a primary timeout or `5xx`.
+- GitHub Pages must not have a custom domain or a `CNAME` artifact. Its default HTTPS hostname is deliberately independent from `vikramchopra.in`.
 
 ## Failed Attempts And Lessons
 
@@ -33,7 +35,8 @@
 - Labeled and cleaned GitHub/site ops mail.
 - Shipped lighter homepage and essay social image assets.
 - Fixed `seo:audit` to inspect `dist/`.
-- Fixed build output to include `CNAME` in `dist/`.
+- Removed the stale GitHub Pages custom-domain binding and `CNAME` artifact so the fallback cannot redirect back into the primary domain.
+- Added and live-tested the edge router with a secret-protected forced-failover check.
 - Polished archive metadata to remove the last SEO warning.
 - Corrected the incident-close definition to include inbox cleanup after the final green run.
 - Added explicit GitHub-email triage and morning ops sweep doctrine.

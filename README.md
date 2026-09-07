@@ -55,10 +55,12 @@ Then open [http://localhost:4321](http://localhost:4321).
 This repo includes automated monitoring for the live site.
 
 - Deploys run on push to `main` via `.github/workflows/deploy.yml`
-- Lightweight availability checks run every five minutes via `.github/workflows/uptime-watchdog.yml`
+- Lightweight availability and independent-fallback checks run every five minutes via `.github/workflows/uptime-watchdog.yml`
 - The full health, SEO, live URL, redirect, and Lighthouse suite runs daily via `.github/workflows/site-ops.yml`
 - Uptime incidents notify Slack only when an incident opens or recovers
 - Availability failures persist in an `Uptime Alert` issue; deep-check failures persist in a `Site Ops Alert` issue
+- A Cloudflare Worker routes normal traffic to Cloudflare Pages and automatically serves the independent GitHub Pages copy after a primary timeout or `5xx`
+- GitHub Pages deliberately has no custom domain, so the fallback cannot redirect back into a failing primary origin
 
 Operational details live in `SITE_OPS.md`.
 
