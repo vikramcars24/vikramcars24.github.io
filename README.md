@@ -55,9 +55,10 @@ Then open [http://localhost:4321](http://localhost:4321).
 This repo includes automated monitoring for the live site.
 
 - Deploys run on push to `main` via `.github/workflows/deploy.yml`
-- Hourly health checks run via `.github/workflows/site-ops.yml`
-- The health workflow checks build, SEO, live URLs, redirects, and Lighthouse budgets
-- Failures open or update a `Site Ops Alert` GitHub issue automatically
+- Lightweight availability checks run every five minutes via `.github/workflows/uptime-watchdog.yml`
+- The full health, SEO, live URL, redirect, and Lighthouse suite runs daily via `.github/workflows/site-ops.yml`
+- Uptime incidents notify Slack only when an incident opens or recovers
+- Availability failures persist in an `Uptime Alert` issue; deep-check failures persist in a `Site Ops Alert` issue
 
 Operational details live in `SITE_OPS.md`.
 

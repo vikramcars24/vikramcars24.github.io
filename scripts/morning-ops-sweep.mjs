@@ -16,6 +16,7 @@ const inboxSweepMode = resolveInboxSweepMode();
 
 const workflowSpecs = [
   { name: "Deploy Site", slug: "deploy", issueLabel: "", issueTitle: "" },
+  { name: "Uptime Watchdog", slug: "uptime-watchdog", issueLabel: "uptime", issueTitle: "Uptime Alert" },
   { name: "Site Ops", slug: "site-ops", issueLabel: "site-ops", issueTitle: "Site Ops Alert" },
   { name: "Audience Dashboard", slug: "audience-dashboard", issueLabel: "audience-dashboard", issueTitle: "Audience Dashboard Alert" },
   { name: "Monthly Site Report", slug: "monthly-site-report", issueLabel: "monthly-site-report", issueTitle: "Monthly Site Report Alert" }
@@ -407,6 +408,9 @@ function matchWorkflow(name, workflows) {
 function categorizeGitHubMail(subject) {
   const normalized = subject.toLowerCase();
 
+  if (normalized.includes("uptime watchdog")) {
+    return { kind: "workflow-alert", workflowName: "Uptime Watchdog" };
+  }
   if (normalized.includes("site ops")) {
     return { kind: "workflow-alert", workflowName: "Site Ops" };
   }
@@ -431,7 +435,7 @@ async function listGitHubOpsMessages(token) {
     "in:inbox",
     "(from:noreply@github.com OR from:notifications@github.com)",
     "newer_than:7d",
-    "(\"Site Ops\" OR \"Deploy Site\" OR \"Audience Dashboard\" OR \"Monthly Site Report\" OR \"vikramcars24.github.io\")"
+    "(\"Uptime Watchdog\" OR \"Site Ops\" OR \"Deploy Site\" OR \"Audience Dashboard\" OR \"Monthly Site Report\" OR \"vikramcars24.github.io\")"
   ].join(" ");
   const response = await fetchJson(
     `https://gmail.googleapis.com/gmail/v1/users/me/messages?q=${encodeURIComponent(query)}&maxResults=25`,

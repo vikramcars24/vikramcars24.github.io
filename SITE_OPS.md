@@ -4,8 +4,10 @@ This repo now carries its own monitoring for `vikramchopra.in`.
 
 ## What is automated
 
-- Every push to `main` still deploys the site through GitHub Pages.
-- Every hour, the `Site Ops` workflow runs:
+- Every push to `main` deploys independently to Cloudflare Pages and GitHub Pages.
+- Every five minutes, the lightweight `Uptime Watchdog` checks the homepage, archive, subscribe page, sitemap, RSS feed, and a published PDF.
+- The watchdog retries transient failures once, opens or updates one durable `Uptime Alert` issue, and sends Slack only when an incident opens or recovers.
+- Every day, the deeper `Site Ops` workflow runs:
   - local build
   - generated-page SEO audit
   - live URL health checks
@@ -14,7 +16,7 @@ This repo now carries its own monitoring for `vikramchopra.in`.
   - mobile Lighthouse
 - If any check fails, GitHub opens or updates a single `Site Ops Alert` issue with the failing details.
 - If the next run passes, that issue is automatically closed.
-- Site Ops failures are not sent to Vikram's Slack DM unless the problem is a human-only blocker.
+- Deep Site Ops failures are not sent to Vikram's Slack DM unless the problem is a human-only blocker.
 
 ## What this covers well
 
@@ -40,12 +42,13 @@ This repo now carries its own monitoring for `vikramchopra.in`.
   - the workflow will catch them
   - the issue becomes the queue for fixing them
 - External platform failures:
-  - Cloudflare, DNS, Google, Bing, or Buttondown account changes are outside this repo
-  - those still need access to the relevant account to fully remediate
+  - the watchdog detects public availability failures independently from Cloudflare Pages
+  - Cloudflare, DNS, Google, Bing, or Buttondown account changes still require access to the relevant account to fully remediate
 
 ## Recommended dashboards to pin
 
-- GitHub Actions: `Site Ops`
+- GitHub Actions: `Uptime Watchdog` and `Site Ops`
+- GitHub Issues: label `uptime`
 - GitHub Issues: label `site-ops`
 - Google Search Console: Performance + Pages
 - Bing Webmaster Tools: Search Performance + Sitemaps

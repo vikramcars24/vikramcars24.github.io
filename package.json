@@ -11,6 +11,8 @@
     "verify:site": "node scripts/verify-site-output.mjs",
     "verify:production": "npm run build:strict && npm run verify:site && npm run seo:audit && npm run qa:visual",
     "health:live": "node scripts/live-health-check.mjs",
+    "health:uptime": "node scripts/uptime-watchdog.mjs",
+    "test:uptime": "node --test scripts/uptime-watchdog.test.mjs",
     "perf:budget": "node scripts/lighthouse-budget-check.mjs",
     "site:ops": "npm run build && npm run seo:audit && npm run health:live",
     "ops:sweep": "node scripts/morning-ops-sweep.mjs",

@@ -1,0 +1,38 @@
+name: Uptime Watchdog
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: uptime-watchdog
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Check uptime and reconcile incident state
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_REPORT_DM_USER: ${{ vars.SLACK_REPORT_DM_USER }}
+          SLACK_REPORT_DM_CHANNEL: ${{ vars.SLACK_REPORT_DM_CHANNEL }}
+        run: node scripts/uptime-watchdog.mjs
