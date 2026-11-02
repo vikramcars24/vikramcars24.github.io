@@ -74,6 +74,7 @@ async function listPostFiles(errors) {
 async function auditEnglishRoutes({ postFiles, errors }) {
   const routes = [
     { label: "home", relativeFile: "index.html", expectedLang: "en" },
+    { label: "about", relativeFile: path.join("about", "index.html"), expectedLang: "en" },
     { label: "archive", relativeFile: path.join("archive", "index.html"), expectedLang: "en" },
     { label: "subscribe", relativeFile: path.join("subscribe", "index.html"), expectedLang: "en" },
     ...postFiles.map((file) => {

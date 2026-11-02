@@ -12,7 +12,7 @@
   "xUrl": "https://x.com/vikramchopra",
   "companyUrl": "https://www.cars24.com/",
   "basePath": "",
-  "intro": "I am the founder of Cars24. These essays are the worldview underneath it: how a country learns to own cars, why trust is the real product in mobility, what a company becomes when AI collapses the cost of coordination, and how a builder stays clear-eyed while the stakes rise.",
+  "intro": "I co-founded Cars24 on the belief that the internet would transform cars. Now I’m rebuilding it around AI, with the ambition to build a $100 billion company from India and a way of working we call Flatland. I write about what we are learning along the way.",
   "about": "I write to think. I publish to be argued with.",
   "footerNote": "Built for long arguments, sharp ideas, and posts worth rereading.",
   "subscribe": {
@@ -35,6 +35,14 @@
     "finePrint": "After you submit, Buttondown may ask for a quick verification and will then send a confirmation email."
   },
   "interviews": [
+    {
+      "section": "Interviews",
+      "title": "AI Is 100x Bigger Than the Internet",
+      "host": "Shereen Bhan · CNBC-TV18",
+      "date": "2026-10-22",
+      "videoId": "Rbrbu-ubTgk",
+      "description": "On Young Turks Reloaded: the internet-to-AI shift, rebuilding Cars24, Flatland, and the ambition to build global consumer companies from India."
+    },
     {
       "section": "Interviews",
       "title": "He Built India's Biggest Car Selling & Purchasing Platform",
@@ -125,5 +133,17 @@
       "url": "https://www.cars24.com/news/inside-scoop/embracing-discomfort-for-growth/",
       "description": "A note on choosing discomfort deliberately as a condition for growth, ambition, and better judgment."
     }
-  ]
+  ],
+  "founderAbout": {
+    "title": "About Vikram Chopra",
+    "description": "Co-founder of Cars24. Building for the AI era, with founder-like ownership, Flatland, and the ambition to build from India for the world.",
+    "paragraphs": [
+      "My ambition is to build Cars24 into a $100 billion company from India, with people who think and act like founders.",
+      "I co-founded Cars24 because I believed the internet would transform every category, including cars. We began by approaching car owners at a petrol pump and finding buyers through WhatsApp. The idea was simple. Buying or selling something as important as a car should not require you to take a leap of faith.",
+      "Today, AI has made the ambition much bigger. I believe it will change what a company can do, how many people it takes, and how quickly it can grow across the world. India built software for the world. I believe we can now build consumer companies for the world, with AI making the judgment and operating capability behind them easier to scale.",
+      "I’m learning this by building AI agents myself. It has made me question habits I accumulated over a decade: how we organise work, how decisions get made, and how much time a hard problem should take to solve.",
+      "At Cars24, we are rebuilding both the ownership experience and the company behind it. We call our way of working Flatland: no traditional titles or hierarchy, with people organised around problems to solve. I want us to build a company where hundreds of people can think and act like founders, take real ownership, challenge my thinking, and build things I could never have imagined myself.",
+      "I keep building because I enjoy it. Learning a new skill, finding a better way, discovering that something I thought was beyond me is now possible. AI has given me more of that feeling than anything since the internet."
+    ]
+  }
 }

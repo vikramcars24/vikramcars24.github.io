@@ -23,6 +23,7 @@ async function main() {
 
   const pages = [
     { label: "home", file: "index.html", urlPath: "/", type: "website" },
+    { label: "about", file: path.join("about", "index.html"), urlPath: "/about/", type: "website" },
     { label: "archive", file: path.join("archive", "index.html"), urlPath: "/archive/", type: "website" },
     ...postSlugs.map((slug) => ({
       label: slug,

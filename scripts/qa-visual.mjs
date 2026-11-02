@@ -12,6 +12,7 @@ const port = 4322;
 
 const pages = [
   { slug: "home", route: "/" },
+  { slug: "about", route: "/about/" },
   { slug: "archive", route: "/archive/" },
   { slug: "why-we-are-not-selling-cars", route: "/posts/why-we-are-not-selling-cars/" }
 ];

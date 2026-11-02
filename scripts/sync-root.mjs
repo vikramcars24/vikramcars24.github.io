@@ -15,6 +15,7 @@ const managedEntries = [
   "llms.txt",
   "_redirects",
   "_headers",
+  "about",
   "archive",
   "culture",
   "hi",

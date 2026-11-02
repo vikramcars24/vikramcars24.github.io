@@ -178,6 +178,7 @@ async function main() {
   await ensureDir(path.join(distDir, "archive"));
   await ensureDir(path.join(distDir, "posts"));
   await ensureDir(path.join(distDir, "subscribe"));
+  await ensureDir(path.join(distDir, "about"));
   await ensureDir(path.join(distDir, "culture"));
   await fs.copyFile(path.join(assetsDir, "styles.css"), path.join(distDir, "styles.css"));
   await fs.copyFile(path.join(assetsDir, "favicon.svg"), path.join(distDir, "favicon.svg"));
@@ -187,6 +188,7 @@ async function main() {
   await fs.writeFile(path.join(distDir, "index.html"), renderHome(site, posts, essayCollections, cultureDocuments), "utf8");
   await fs.writeFile(path.join(distDir, "archive", "index.html"), renderArchive(site, essayCollections), "utf8");
   await fs.writeFile(path.join(distDir, "subscribe", "index.html"), renderSubscribePage(site), "utf8");
+  await fs.writeFile(path.join(distDir, "about", "index.html"), renderAboutPage(site), "utf8");
   await fs.writeFile(path.join(distDir, "404.html"), renderNotFound(site), "utf8");
 
   for (const context of languageContexts.filter((entry) => entry.language.code !== "en")) {
@@ -718,6 +720,53 @@ function renderHome(site, posts, essayCollections, cultureDocuments) {
           ${interviews.length > 0 ? renderHomeInterviewSections(interviewSections, site) : ""}
           ${elsewhere.length > 0 ? renderElsewhereSection(elsewhere, site) : ""}
           ${renderCultureDocuments(site, cultureDocuments, site.activeLanguage || DEFAULT_CULTURE_LANGUAGE)}
+        </main>
+        ${renderFooter(site)}
+      </div>
+    `
+  });
+}
+
+function renderAboutPage(site) {
+  const about = site.founderAbout;
+  return renderDocument({
+    site,
+    title: about.title,
+    description: about.description,
+    pathName: "/about/",
+    imagePath: site.socialImage,
+    imageAlt: site.socialImageAlt,
+    imageWidth: site.socialImageMeta?.width || null,
+    imageHeight: site.socialImageMeta?.height || null,
+    bodyClass: "about-page",
+    openGraphType: "website",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: about.title,
+      url: absoluteUrl(site.domain, "/about/"),
+      description: about.description,
+      mainEntity: buildPersonStructuredData(site)
+    },
+    content: `
+      <div class="page-shell">
+        ${renderHeader(site)}
+        <main class="content">
+          <section class="archive-hero">
+            <p class="eyebrow">About</p>
+            <h1>${escapeHtml(site.name)}</h1>
+          </section>
+          <div class="article-body">
+            ${about.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
+            <h2>More on what I’m building</h2>
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=Rbrbu-ubTgk">My conversation with Shereen Bhan on CNBC-TV18</a></li>
+              <li><a href="${sitePath(site, "/posts/ai-native-is-not-ai-first/")}">AI-Native Is Not AI-First</a></li>
+              <li><a href="${sitePath(site, "/posts/builder-is-the-only-role-left/")}">We Deleted Every Title Except Builder</a></li>
+              <li><a href="${sitePath(site, "/posts/ai-will-do-for-consumer-what-saas-did-for-software/")}">AI Will Let India Export Consumer Companies</a></li>
+              <li><a href="${sitePath(site, "/media/docs/flatland.pdf")}">Read Flatland</a></li>
+            </ul>
+          </div>
         </main>
         ${renderFooter(site)}
       </div>
@@ -1286,6 +1335,7 @@ function renderHeader(site) {
       </a>
       <div class="site-header-actions">
       <nav class="site-nav" aria-label="Primary">
+        <a href="${sitePath(site, "/about/")}">About</a>
         <a href="${sitePath(site, "/archive/")}">${escapeHtml(ui.navEssays)}</a>
         <a href="${sitePath(site, "/#culture-docs")}">${escapeHtml(ui.navDocs)}</a>
         <a href="${sitePath(site, "/subscribe/")}">${escapeHtml(ui.footerSubscribe)}</a>
@@ -1940,6 +1990,7 @@ function renderLlmsTxt(site, essayCollections, cultureDocuments = []) {
     "Founder of Cars24. Essays on car ownership in India, trust as the product, AI-native companies, and leadership.",
     "",
     `- [Home](${absoluteUrl(site.domain, sitePath(site, "/"))})`,
+    `- [About](${absoluteUrl(site.domain, sitePath(site, "/about/"))})`,
     `- [Essays](${absoluteUrl(site.domain, sitePath(site, "/archive/"))})`,
     ""
   ];
@@ -2056,6 +2107,7 @@ function renderSitemap(site, languageContexts, cultureDocuments = []) {
     .at(-1) || new Date().toISOString().slice(0, 10);
   const urls = [
     { url: "/", lastmod: latestPostDate },
+    { url: "/about/", lastmod: "2026-11-02" },
     { url: "/archive/", lastmod: latestPostDate },
     { url: "/subscribe/", lastmod: latestPostDate },
     ...englishContext.posts.map((post) => ({
