@@ -112,7 +112,7 @@ const DEFAULT_UI = {
   themeDark: "Dark",
   themeLight: "Light",
   themeToggleLabel: "Switch color theme",
-  homeTitle: "I write to think. I publish to be argued with.",
+  homeTitle: "Building Cars24. Rethinking what a company can be.",
   startHere: "Start here:",
   cars24Culture: "Cars24 Culture",
   cultureTitle: "Flatland and values",
