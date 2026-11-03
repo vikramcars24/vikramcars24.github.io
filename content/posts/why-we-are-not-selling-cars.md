@@ -1,11 +1,12 @@
 ---
+metaTitle: Why We Are Not Selling Cars
 title: Why We Are Not Selling Cars
 date: 2026-06-10
 description: The lasting business in mobility is not moving a vehicle once. It is making ownership more certain.
-image: /media/why-we-are-not-selling-cars-preview.jpg
-imageAlt: 1200x630 social preview for Why We Are Not Selling Cars
-articleImage: /media/why-we-are-not-selling-cars-blog.png
-articleImageAlt: Editorial visual for Why We Are Not Selling Cars
+image: /media/why-we-are-not-selling-cars-editorial-preview.jpg
+imageAlt: A protective arch of white dots surrounds an open space, representing dependable ownership beyond the sale.
+articleImage: /media/why-we-are-not-selling-cars-editorial-article.png
+articleImageAlt: A protective arch of white dots surrounds an open space, representing dependable ownership beyond the sale.
 summary: Levitt's railroads defended the object instead of the need. Mobility companies risk making the same mistake with cars. | Buyers need confidence in the car, its history, the transfer, the financing, and what happens when something goes wrong. | India's used-car market is still building the systems that make ownership easier to trust.
 featured: false
 category: Essay

@@ -1,11 +1,12 @@
 ---
+metaTitle: Companies Scale at the Speed They Learn
 title: Companies Scale at the Speed They Learn
 date: 2026-06-08
 description: Hiring can add capacity, but a company scales well when it can see reality, learn, and change as complexity grows.
-image: /media/scale-is-a-learning-problem-preview.jpg
-imageAlt: 1200x630 social preview for Companies Scale at the Speed They Learn
-articleImage: /media/scale-is-a-learning-problem-blog.png
-articleImageAlt: Editorial visual for Companies Scale at the Speed They Learn
+image: /media/scale-is-a-learning-problem-editorial-preview.jpg
+imageAlt: An expanding spiral of blue dots represents a company learning and becoming more capable as it grows.
+articleImage: /media/scale-is-a-learning-problem-editorial-article.png
+articleImageAlt: An expanding spiral of blue dots represents a company learning and becoming more capable as it grows.
 summary: Hiring adds people. Learning helps a company build capability as it grows. | The cause of a recurring problem often sits beneath the visible event, in the structure or belief that keeps producing it. | A founder cannot remain the company's only learning loop.
 featured: false
 category: Essay

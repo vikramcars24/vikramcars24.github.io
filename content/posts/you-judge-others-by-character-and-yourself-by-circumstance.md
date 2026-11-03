@@ -1,13 +1,13 @@
 ---
-title: You Had Reasons. They Had Flaws.
-metaTitle: You Had Reasons. They Had Flaws.
+title: Before You Call Someone Careless
+metaTitle: Before You Call Someone Careless
 date: 2026-06-18
 description: We often explain our own behavior with context and other people's with character. That shortcut can make us miss the pressures and conditions that shaped what happened.
 socialDescription: We give ourselves context and give other people character stories. The mistake is not compassion, it is shallow diagnosis dressed up as judgment.
-image: /media/you-judge-others-by-character-and-yourself-by-circumstance-preview.jpg
-imageAlt: 1200x630 social preview for You Had Reasons. They Had Flaws.
-articleImage: /media/you-judge-others-by-character-and-yourself-by-circumstance-blog.png
-articleImageAlt: Editorial visual for You Had Reasons. They Had Flaws.
+image: /media/you-judge-others-by-character-and-yourself-by-circumstance-editorial-preview.jpg
+imageAlt: Overlapping lenses made of white dots reveal a shared centre, representing the context behind another person’s behaviour.
+articleImage: /media/you-judge-others-by-character-and-yourself-by-circumstance-editorial-article.png
+articleImageAlt: Overlapping lenses made of white dots reveal a shared centre, representing the context behind another person’s behaviour.
 summary: You had reasons. They had flaws. That is the double standard, and it can be hard to notice while we are living it. | Context is not an excuse. It is part of the cause. Miss it and you may punish where you should redesign. | The work is to catch the sentence before it hardens.
 featured: false
 category: Essay

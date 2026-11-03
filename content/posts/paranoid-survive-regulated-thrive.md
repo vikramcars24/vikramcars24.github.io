@@ -1,11 +1,12 @@
 ---
+metaTitle: The Paranoid Survive. The Regulated Thrive.
 title: The Paranoid Survive. The Regulated Thrive.
 date: 2026-06-06
 description: Stay alert to the work and steady in yourself. Andy Grove gave us half the sentence. The other half is what helps us keep our judgment.
-image: /media/paranoid-survive-regulated-thrive-social.jpg
-imageAlt: 1200x630 social preview for The Paranoid Survive. The Regulated Thrive.
-articleImage: /media/paranoid-survive-regulated-thrive-blog.png
-articleImageAlt: Editorial visual for The Paranoid Survive. The Regulated Thrive.
+image: /media/paranoid-survive-regulated-thrive-editorial-preview.jpg
+imageAlt: White dotted waves settle into a steady rhythm, representing vigilance that leaves room for clear judgment.
+articleImage: /media/paranoid-survive-regulated-thrive-editorial-article.png
+articleImageAlt: White dotted waves settle into a steady rhythm, representing vigilance that leaves room for clear judgment.
 summary: Grove's paranoia was a stance he adopted, not a state he lived in. Vigilance can become dread, and dread can cloud judgment. | Feel the emotion, but give yourself room before you decide. Emotion is information, not an instruction. | Calm is a capacity we can practice. A steady response can help a team hear difficult news and learn from it.
 featured: true
 category: Essay

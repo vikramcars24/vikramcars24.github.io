@@ -1,12 +1,13 @@
 ---
-title: Execution Problems Begin as Trust Problems
+metaTitle: The Conversation Before the Postmortem
+title: The Conversation Before the Postmortem
 date: 2026-06-17
 description: Delay and weak accountability often show up as process problems. Some begin earlier, when people do not trust one another enough to speak plainly or commit to a decision.
 socialDescription: Many execution failures show up as process problems, but begin earlier in low trust, conflict avoidance, and false commitment inside the team.
-image: /media/execution-problems-begin-as-trust-problems-preview.jpg
-imageAlt: 1200x630 social preview for Execution Problems Begin as Trust Problems
-articleImage: /media/execution-problems-begin-as-trust-problems-blog.png
-articleImageAlt: Editorial visual for Execution Problems Begin as Trust Problems
+image: /media/execution-problems-begin-as-trust-problems-editorial-preview.jpg
+imageAlt: Two fields of white dots meet across a narrow opening, representing an honest conversation before a missed commitment.
+articleImage: /media/execution-problems-begin-as-trust-problems-editorial-article.png
+articleImageAlt: Two fields of white dots meet across a narrow opening, representing an honest conversation before a missed commitment.
 summary: The postmortem says process. The cause may sit one level deeper, in trust, conflict avoidance, or false commitment. | Lencioni's chain helps explain the pattern, but candor takes practice even among people who trust one another. | Comfort is not a precondition for honesty. It may come after we have practiced it.
 featured: false
 category: Essay

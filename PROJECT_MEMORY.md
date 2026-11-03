@@ -77,3 +77,11 @@
 - Revised all 13 existing essays for clearer language, preserving the arguments, useful examples, source links, titles, URLs and artwork.
 - Updated the relevant passages on Builder ownership, stewardship, vehicle transfers, road-safety support, battery degradation and EV tax comparisons. Older market figures remain tied to their report dates.
 - Verified the production build, SEO audit, output checks, style limits and desktop/mobile screenshots before publication.
+
+
+## Headline and cover refresh, 3 November 2026
+
+- Reviewed the complete headline set after the essay revisions. Changed six titles and retained seven; all existing essay URLs and approved body text are preserved.
+- Refreshed all 13 share thumbnails and article covers with distinct semantic dot forms, Arapey serif type, and the established blue/lavender creative system. Square versions and editable, self-contained SVG source files are included. Arapey's font licence accompanies the assets.
+- New assets use the existing slug followed by editorial-preview, editorial-article or editorial-cover. Old assets remain as history; the old visual-generation script still addresses the legacy set.
+- Verified all 13 headline/image pairs and share metadata on phone and desktop layouts, no horizontal overflow, and all 39 export dimensions and type bounds. Production build, output verification and SEO audit passed.

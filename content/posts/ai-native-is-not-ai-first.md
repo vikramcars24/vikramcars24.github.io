@@ -1,12 +1,12 @@
 ---
-title: AI-Native Is Not AI-First. The Shape of the Company Is the AI Strategy.
-metaTitle: AI-Native Is Not AI-First
+title: AI Changes the Shape of the Company
+metaTitle: AI Changes the Shape of the Company
 date: 2026-06-08
 description: Adding AI to an old workflow can make it better. The deeper change is to rebuild how a company carries context and makes decisions.
-image: /media/ai-native-is-not-ai-first-preview.jpg
-imageAlt: 1200x630 social preview for AI-Native Is Not AI-First. The Shape of the Company Is the AI Strategy.
-articleImage: /media/ai-native-is-not-ai-first-blog.png
-articleImageAlt: Editorial visual for AI-Native Is Not AI-First. The Shape of the Company Is the AI Strategy.
+image: /media/ai-native-is-not-ai-first-editorial-preview.jpg
+imageAlt: A folded lattice of white dots opens outward, representing a company redesigning how context moves and decisions are made.
+articleImage: /media/ai-native-is-not-ai-first-editorial-article.png
+articleImageAlt: A folded lattice of white dots opens outward, representing a company redesigning how context moves and decisions are made.
 summary: An AI-first company uses AI. An AI-native company changes how it works because AI changes what is possible. | Companies built layers to carry context. As that cost falls, we should ask what the company needs those layers to do. | The shape of the company is part of its AI strategy.
 featured: false
 category: Essay

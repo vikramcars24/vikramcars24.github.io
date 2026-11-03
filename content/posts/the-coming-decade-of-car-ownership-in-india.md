@@ -1,11 +1,12 @@
 ---
+metaTitle: The Second-Owner Decade
 title: The Second-Owner Decade
 date: 2026-06-05
 description: India's next ownership wave may be built through used cars, reliable transfers, and support that makes ownership easier to enter.
-image: /media/the-coming-decade-of-car-ownership-in-india-preview.jpg
-imageAlt: 1200x630 social preview for The Second-Owner Decade
-articleImage: /media/the-coming-decade-of-car-ownership-in-india-blog.jpg
-articleImageAlt: Editorial visual for The Second-Owner Decade
+image: /media/the-coming-decade-of-car-ownership-in-india-editorial-preview.jpg
+imageAlt: Two dotted arches meet at a handover point, representing ownership passing to the next person.
+articleImage: /media/the-coming-decade-of-car-ownership-in-india-editorial-article.png
+articleImageAlt: Two dotted arches meet at a handover point, representing ownership passing to the next person.
 summary: India is a first-time ownership market entering a second-owner decade. Buyers need more than a lower price. They need enough support to feel capable of owning a car. | Used cars already outsell new ones, but growth depends on transfer, finance, ownership support, and shared knowledge. | The market can grow as ownership becomes easier to understand and live with.
 featured: false
 category: Essay

@@ -1,12 +1,13 @@
 ---
-title: The Greenest Car in India Is the One Already Built
+metaTitle: The Greenest Car May Already Exist
+title: The Greenest Car May Already Exist
 date: 2026-06-06
 description: Keeping existing vehicles useful can reduce the need for new manufacturing, but reuse only works when buyers can trust the vehicle and its history.
 socialDescription: A used car can avoid some new manufacturing, but only if people can trust what they are buying.
-image: /media/the-greenest-car-in-india-is-the-one-already-built-preview.jpg
-imageAlt: 1200x630 social preview for The Greenest Car in India Is the One Already Built
-articleImage: /media/the-greenest-car-in-india-is-the-one-already-built-blog.png
-articleImageAlt: Editorial visual for The Greenest Car in India Is the One Already Built
+image: /media/the-greenest-car-in-india-is-the-one-already-built-editorial-preview.jpg
+imageAlt: A circular form of white dots continues around an open centre, representing a useful vehicle staying in circulation.
+articleImage: /media/the-greenest-car-in-india-is-the-one-already-built-editorial-article.png
+articleImageAlt: A circular form of white dots continues around an open centre, representing a useful vehicle staying in circulation.
 summary: A large share of a car's carbon is emitted during manufacture. Keeping existing vehicles useful longer can therefore be an important climate lever in Indian mobility, though the comparison depends on the vehicle and its use. | Reuse depends on trust. Used EVs show why: when battery condition is hard to compare, buyers and lenders may discount the vehicle. | Better inspection, battery records, portable warranties, fair tax, and financing can make reuse easier to assess.
 featured: false
 category: Essay

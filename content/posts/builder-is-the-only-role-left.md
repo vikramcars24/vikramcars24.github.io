@@ -1,11 +1,12 @@
 ---
+metaTitle: We Deleted Every Title Except Builder
 title: We Deleted Every Title Except Builder
 date: 2026-06-09
 description: Cars24 changed its old title system. The deeper question is how to give people closer to a problem the context and responsibility to act.
-image: /media/builder-is-the-only-role-left-preview.jpg
-imageAlt: 1200x630 social preview for We Deleted Every Title Except Builder
-articleImage: /media/builder-is-the-only-role-left-blog.png
-articleImageAlt: Editorial visual for We Deleted Every Title Except Builder
+image: /media/builder-is-the-only-role-left-editorial-preview.jpg
+imageAlt: Blue dots form a complete rounded loop, representing a Builder seeing the work through to completion.
+articleImage: /media/builder-is-the-only-role-left-editorial-article.png
+articleImageAlt: Blue dots form a complete rounded loop, representing a Builder seeing the work through to completion.
 summary: The old prestige system often rewarded distance from the work. As context gets easier to share, value comes from seeing a problem through and closing the loop. | At Cars24, Builder describes a shared way of working. Stewardship means greater responsibility for the organization, not greater rank. | Agency means carrying responsibility for what happens next.
 featured: false
 category: Essay

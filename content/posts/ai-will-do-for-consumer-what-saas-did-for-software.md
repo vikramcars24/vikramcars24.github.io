@@ -1,12 +1,13 @@
 ---
+metaTitle: AI Will Let India Export Consumer Companies
 title: AI Will Let India Export Consumer Companies
 date: 2026-06-14
 description: SaaS helped Indian companies sell software around the world. AI may make it easier for India-born consumer companies to carry operating knowledge across markets.
 socialDescription: SaaS let Indian companies export code. AI may help consumer companies carry operating context across markets, while still adapting to local needs.
-image: /media/ai-will-do-for-consumer-what-saas-did-for-software-preview.jpg
-imageAlt: 1200x630 social preview for AI Will Let India Export Consumer Companies
-articleImage: /media/ai-will-do-for-consumer-what-saas-did-for-software-blog.png
-articleImageAlt: Editorial visual for AI Will Let India Export Consumer Companies
+image: /media/ai-will-do-for-consumer-what-saas-did-for-software-editorial-preview.jpg
+imageAlt: Blue dots spread outward from a common starting point, representing Indian consumer companies carrying what they learn across markets.
+articleImage: /media/ai-will-do-for-consumer-what-saas-did-for-software-editorial-article.png
+articleImageAlt: Blue dots spread outward from a common starting point, representing Indian consumer companies carrying what they learn across markets.
 summary: SaaS traveled because code was portable. Consumer companies stayed closer to home because trust and operating knowledge were harder to carry across markets. | AI may reduce the cost of sharing that knowledge, while local teams still adapt how the business works. | SaaS let India export code. AI may help India-born companies build for consumers around the world.
 featured: false
 category: Essay

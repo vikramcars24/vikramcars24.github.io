@@ -1,12 +1,13 @@
 ---
-title: Nobody Buys a Used Car. They Buy an EMI.
+metaTitle: The EMI Comes Before the Car
+title: The EMI Comes Before the Car
 date: 2026-06-12
 description: India's used-car market grows when financing makes ownership reachable and lenders can understand the car they are backing.
 socialDescription: India's next ownership unlock is financing that understands the asset, the buyer, and the realities of used-car trust.
-image: /media/used-car-ownership-is-a-lending-problem-preview.jpg
-imageAlt: 1200x630 social preview for Nobody Buys a Used Car. They Buy an EMI.
-articleImage: /media/used-car-ownership-is-a-lending-problem-blog.jpg
-articleImageAlt: Editorial visual for Nobody Buys a Used Car. They Buy an EMI.
+image: /media/used-car-ownership-is-a-lending-problem-editorial-preview.jpg
+imageAlt: A bridge formed from blue dots spans a gap, representing the monthly payment that makes ownership reachable.
+articleImage: /media/used-car-ownership-is-a-lending-problem-editorial-article.png
+articleImageAlt: A bridge formed from blue dots spans a gap, representing the monthly payment that makes ownership reachable.
 summary: For many buyers, the monthly payment determines whether a car is within reach. Pre-eligibility can help people understand their options privately. | A used-car loan depends on three things: the buyer, the truth of the car, and the process around ownership and recovery. | Better asset information can help lending serve more buyers and support the used-car market's growth.
 featured: false
 category: Essay

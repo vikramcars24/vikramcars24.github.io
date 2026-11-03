@@ -1,12 +1,13 @@
 ---
+metaTitle: Who Taught You to Want This?
 title: Who Taught You to Want This?
 date: 2026-06-16
 description: Much of what we call ambition is shaped by peers, rivals, and status systems before we recognize their influence. Asking where a desire came from can help us choose what to pursue.
 socialDescription: Taste often feels personal. Much of it is inherited, signaled, and socially taught long before we experience it as our own desire.
-image: /media/who-taught-you-to-want-this-preview.jpg
-imageAlt: 1200x630 social preview for Who Taught You to Want This?
-articleImage: /media/who-taught-you-to-want-this-blog.png
-articleImageAlt: Editorial visual for Who Taught You to Want This?
+image: /media/who-taught-you-to-want-this-editorial-preview.jpg
+imageAlt: Offset tracks of blue dots circle an open centre, representing desires shaped by the people we compare ourselves with.
+articleImage: /media/who-taught-you-to-want-this-editorial-article.png
+articleImageAlt: Offset tracks of blue dots circle an open centre, representing desires shaped by the people we compare ourselves with.
 summary: Much of what we call desire is learned from other people. The people closest to us can shape it most. | Rivalry can pull our attention away from the thing we wanted and toward where we rank. That helps explain why achievement can feel flat. | A useful question for ambition is: who taught me to want this?
 featured: false
 category: Essay

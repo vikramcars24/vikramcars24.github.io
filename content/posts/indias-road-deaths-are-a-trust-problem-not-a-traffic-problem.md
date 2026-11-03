@@ -1,12 +1,12 @@
 ---
-title: Why India Never Learns From Its Road Deaths
-metaTitle: Why India Never Learns From Its Road Deaths
+title: What India Must Learn From Its Road Deaths
+metaTitle: What India Must Learn From Its Road Deaths
 date: 2026-06-07
 description: Drivers make mistakes. India needs road-safety systems that can see what happened, respond, and learn before the same failure kills again.
-image: /media/indias-road-deaths-trust-problem-preview.jpg
-imageAlt: 1200x630 social preview for Why India Never Learns From Its Road Deaths
-articleImage: /media/indias-road-deaths-trust-problem-blog.png
-articleImageAlt: Editorial visual for Why India Never Learns From Its Road Deaths
+image: /media/indias-road-deaths-are-a-trust-problem-not-a-traffic-problem-editorial-preview.jpg
+imageAlt: Blue dots form a road with an interrupted stretch, representing the gaps between crash records, response, and learning.
+articleImage: /media/indias-road-deaths-are-a-trust-problem-not-a-traffic-problem-editorial-article.png
+articleImageAlt: Blue dots form a road with an interrupted stretch, representing the gaps between crash records, response, and learning.
 summary: India cannot agree on how many people die on its roads. The gap is a sign that the systems meant to record, respond to, and learn from crashes remain disconnected. | From crash data and dangerous roads to emergency care and compensation, the failures meet at the same point: people cannot see or navigate the whole chain. | Safer roads begin when institutions can learn from human mistakes and make them less likely to turn fatal.
 featured: false
 category: Essay

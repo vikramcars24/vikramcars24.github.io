@@ -761,7 +761,7 @@ function renderAboutPage(site) {
             <h2>More on what I’m building</h2>
             <ul>
               <li><a href="https://www.youtube.com/watch?v=Rbrbu-ubTgk">My conversation with Shereen Bhan on CNBC-TV18</a></li>
-              <li><a href="${sitePath(site, "/posts/ai-native-is-not-ai-first/")}">AI-Native Is Not AI-First</a></li>
+              <li><a href="${sitePath(site, "/posts/ai-native-is-not-ai-first/")}">AI Changes the Shape of the Company</a></li>
               <li><a href="${sitePath(site, "/posts/builder-is-the-only-role-left/")}">We Deleted Every Title Except Builder</a></li>
               <li><a href="${sitePath(site, "/posts/ai-will-do-for-consumer-what-saas-did-for-software/")}">AI Will Let India Export Consumer Companies</a></li>
               <li><a href="${sitePath(site, "/media/docs/flatland.pdf")}">Read Flatland</a></li>
