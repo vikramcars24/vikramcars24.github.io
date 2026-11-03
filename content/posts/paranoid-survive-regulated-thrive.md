@@ -1,63 +1,67 @@
 ---
 title: The Paranoid Survive. The Regulated Thrive.
 date: 2026-06-06
-description: Paranoid about the work. Regulated in yourself. Grove gave us half the sentence; the other half is what lets you keep your judgment.
+description: Stay alert to the work and steady in yourself. Andy Grove gave us half the sentence. The other half is what helps us keep our judgment.
 image: /media/paranoid-survive-regulated-thrive-social.jpg
 imageAlt: 1200x630 social preview for The Paranoid Survive. The Regulated Thrive.
 articleImage: /media/paranoid-survive-regulated-thrive-blog.png
 articleImageAlt: Editorial visual for The Paranoid Survive. The Regulated Thrive.
-summary: Grove's paranoia was a stance he adopted, not a state he lived in. Most leaders turn vigilance into permanent dread and lose their judgment to it. | Feel the emotion. Do not decide inside it. Emotion is information, and a terrible driver. | Calm is trainable, contagious, and the highest-leverage thing a leader brings to the room when the news is worst.
+summary: Grove's paranoia was a stance he adopted, not a state he lived in. Vigilance can become dread, and dread can cloud judgment. | Feel the emotion, but give yourself room before you decide. Emotion is information, not an instruction. | Calm is a capacity we can practice. A steady response can help a team hear difficult news and learn from it.
 featured: true
 category: Essay
 slug: paranoid-survive-regulated-thrive
 ---
-Most of the worst decisions I have made in over a decade of building [Cars24](https://www.cars24.com), I made angry. Or anxious. Or stung. I only saw it later, once I had cooled down and the call was already made. The pressure that drives you is the same pressure that ruins your judgment.
+Most of the worst decisions I have made in more than a decade of building [Cars24](https://www.cars24.com) came when I was angry, anxious, or stung. I saw the mistake later, after I had cooled down and the decision was already made. The pressure that pushes us to act can also cloud our judgment.
 
-Andy Grove gave us the line we all live by: only the paranoid survive. I have lived by it. Hungry. Urgent. Raise the bar, and the day you clear it, raise it again.
+Andy Grove gave us the line many of us live by: only the paranoid survive. I have lived by it. Stay hungry. Move with urgency. Raise the bar, and raise it again once you clear it.
 
-But read Grove closely. His paranoia was never panic. He aimed it. At strategic inflection points, the moments a business is about to be remade. At specific fears worth having. It was a stance he adopted, not a state he lived in. Most leaders miss that distinction. They turn a sharp instruction about vigilance into a permanent condition of dread. Then they wonder why their best people burn out and their judgment goes.
+But read Grove closely. His paranoia was not panic. He directed it toward strategic inflection points, moments when a business is about to change, and toward specific fears worth examining. It was a stance he adopted, not a state he lived in. We can miss that distinction. We can turn an instruction to stay alert into a permanent condition of dread. Then the people around us burn out, and our own judgment suffers.
 
-Survival was never the point. Thriving is. And it was [Naina Sahni](https://workwithnaina.com), my coach of the last two years, who showed me Grove's law is only half the sentence. The paranoid survive. It is the regulated who thrive. The second half is hers. What follows is me learning to live it.
+Survival was never the whole point. We want to thrive. [Naina Sahni](https://workwithnaina.com), my coach over the last two years, helped me see that Grove's line needs another half. The paranoid survive. The regulated thrive. The second half is hers. What follows is what I am learning to do with it.
 
-**The most demanding team on earth runs cool**
+## The most demanding team on earth runs cool
 
-These sound like opposites. Push relentlessly, demand more, never be satisfied. And also stay calm, stay kind, look after the people next to you. The sharpest example I know is not a company. It is a rugby team. New Zealand's All Blacks have won more than three quarters of the matches they have played for over a century, a record few teams in any sport can match. They are merciless about standards. They are also known for a tool they drill called red head, blue head. Red head is tight, panicked, overwhelmed. Blue head is calm, clear, accurate. Under the heaviest pressure, they practice shifting from one to the other. The most demanding team on earth does not win by running hot. It wins by teaching its people to cool down on command.
+These can sound like opposing ideas: push relentlessly, demand more, and never be satisfied; stay calm, stay kind, and look after the people next to you. One example I return to is a rugby team. New Zealand's All Blacks have won more than three quarters of their matches over more than a century, a record few teams in any sport can match. They hold demanding standards and practice a tool called red head, blue head. Red head is tight, panicked, and overwhelmed. Blue head is calm, clear, and accurate. Under pressure, they practice moving from one state to the other.
 
-The body explains why. Amy Arnsten at Yale has shown that even mild, uncontrollable stress causes a rapid loss of exactly the faculties a leader is paid for. Judgment. Working memory. The ability to plan. Under chronic pressure the thinking brain goes quiet and the reflexive, fearful one grabs the wheel. Athletes know this curve cold. The one who trains hardest without rest does not peak. He breaks. Effort climbing, performance falling. A company run permanently hot does the same.
+Their example suggests that high standards do not require people to stay wound up. They can practice how to steady themselves when the pressure rises.
 
-**Feel the emotion. Do not decide inside it.**
+There is evidence that stress affects the brain systems we use to make decisions. Amy Arnsten at Yale has studied how even mild, uncontrollable stress can quickly impair prefrontal cortex function. That area supports judgment, working memory, and planning. Athletes know that effort without recovery has a cost. Training harder without rest does not keep performance rising. It can lead to exhaustion and worse results. A company that stays under pressure all the time can also lose the ability to think clearly.
 
-So regulation is not the soft sibling of ambition. It is what keeps ambition paying off. And it starts with one discipline: feel the emotion without letting it make the decision.
+## Feel the emotion. Do not decide inside it.
 
-We are human. Bad news breaks, someone disagrees, the plan slips, and we feel it. That is not a flaw to engineer away. The flaw is collapsing the feeling and the decision into one moment. Daniel Goleman called it the amygdala hijack. The brain's alarm seizes the controls a beat before the thinking mind can vote. Kahneman gave the same warning a different name, a fast system outrunning a slow one. The work of leadership is to widen the gap between them.
+Regulation is not the softer sibling of ambition. It helps ambition produce better decisions. It starts with a simple discipline: feel the emotion, but do not let it make the decision for you.
 
-But do not mistake this for going numb. Antonio Damasio studied people who lost the emotional part of the brain and kept the reasoning intact. They did not decide better. They decided worse. Many could not choose at all. The emotion is information. The skill, as James Gross's research shows, is not to bottle it up, which only drains you while the feeling stays. It is to feel it, reframe it, and act once it has passed.
+We are human. Bad news arrives, someone disagrees, or a plan slips, and we feel it. That is not a flaw we can engineer away. The risk is treating the feeling and the decision as one moment. Daniel Goleman called one version of this an amygdala hijack, when the brain's alarm response takes over before we have time to think. Daniel Kahneman described a related distinction between fast and slow thinking. The work is to create enough space to notice what we feel and consider what to do next.
 
-Some will read regulated as a softer word for slow. It is the opposite. The dangerous kind of calm is the composed face that buries the bad news and calls it maturity. That is not regulation. That is suppression, and it makes the judgment and the company worse. Regulated does not mean you feel less. It means you feel all of it and still refuse to hand the decision to the part of you that is panicking. The frantic founder and the falsely serene one make the same mistake from opposite ends. Both let the feeling drive.
+That does not mean going numb. Antonio Damasio studied people who had lost emotional processing while retaining reasoning abilities. They did not become better decision makers. Some struggled to decide at all. Emotion carries information. Research by James Gross and Oliver John also distinguishes reappraisal, changing how we interpret a situation, from suppression, pushing down the feeling. Suppression does not make the feeling disappear. A useful response is to notice the emotion, consider what it may be telling us, and choose how to act.
 
-**Compassion is what lets the standard survive**
+Some people hear regulated as a softer word for slow. It can mean the opposite. A composed face that hides bad news is not regulation. It is suppression, and it can make judgment worse. Regulation does not mean feeling less. It means feeling what is there while resisting the urge to let panic choose the next move. The frantic founder and the falsely serene one can make the same mistake. Each lets a feeling determine what the room is allowed to hear.
 
-Here is what ambitious leaders get backwards. They treat compassion as a reward you hand out after the performance. It is the thing that makes the performance possible. Google studied what made its best teams best. The top factor was not talent. Not hours. It was psychological safety. The confidence to take a risk or admit a mistake without being humiliated. Amy Edmondson, who named the idea, is blunt that it is not about being nice. It is high care and high standards, together. Kim Scott says it in four words. Care personally, challenge directly. A frightened team hides the very threats a paranoid leader needs to see first. Because fear, the same science tells us, is what takes the thinking brain offline. Compassion is not what slows us down. It is what lets a high standard survive contact with real people.
+## Compassion helps standards hold
 
-Naina names the mechanism more precisely than I can. People do not lie to a frightened leader. They calibrate. They soften the truth, time it, route it sideways. The knowledge still exists in the company. It just stops reaching the person paid to act on it. And the leader feels none of this as loss. Fewer bad surprises feels like a well-run company. It is the symptom.
+Ambitious people can treat compassion as a reward they give after good performance. I think it helps make good performance possible. Google's Project Aristotle studied what made teams effective. Its findings emphasized psychological safety, the confidence that a person can take an interpersonal risk, such as admitting a mistake, without being humiliated. Amy Edmondson, who studied psychological safety, has said this does not mean being nice at the expense of standards. It means combining care with high expectations. Kim Scott puts it this way: care personally, challenge directly.
 
-**Calm is trainable, and contagious**
+A team afraid of humiliation may hide the very risks a vigilant founder needs to understand. Compassion does not require us to lower standards. It can help people meet them while telling us what is going wrong.
 
-And all of it can be trained. That is the part I take most seriously. Calm is not a temperament you are born with. It is a capacity you build, and you build it in the body. Heart rate variability is a real, if imperfect, signal of how regulated you are underneath. It responds to practice. This is why I keep a physical trainer and mental coaches close, and why I use them. My work is no longer only the hours in meetings and reviews. The hours on my body and my mind are the work too. That is the gym where calm under fire gets built.
+Naina describes one part of this with precision. People do not always lie to a frightened person in charge. They calibrate. They soften the truth, wait for a better moment, or take it sideways. The knowledge still exists in the company, but it stops reaching the person who needs to act on it. The person in charge may experience fewer uncomfortable surprises and mistake that for a well-run company. It can be a warning sign.
 
-It does not stay private either. The Navy SEALs put it in three words. Calm is contagious. So is panic. So is chaos. A team does not catch your strategy. It catches your nervous system, and amplifies it. A dysregulated founder builds a dysregulated company. A calm founder builds a calm company. The highest-leverage thing I can do for the people I lead is not to push harder. It is to be the steadiest person in the room when the news is worst.
+## Calm is trainable, and it can spread
 
-So I want to be two things the world calls opposites. Paranoid about the work. Regulated in myself. Hungry without being frantic. Demanding without being cruel. That combination is rare, which is exactly why it wins.
+Calm is not simply a temperament we are born with. We can practice how we respond under pressure. I keep a physical trainer and mental coaches close, and use them. My work is not only the hours in meetings and reviews. The hours I spend on my body and mind matter too. That is one place I can practice responding more steadily under pressure.
 
-The paranoid survive. The regulated thrive. I am building for both.
+Our response also affects the people around us. Calm can help others think clearly, while visible panic can make that harder. A team does not simply receive a founder's strategy. It also sees how the founder responds when the news is difficult. A founder who stays open to what is happening can make it easier for others to speak plainly. That does not guarantee the company will stay calm, but it gives the room a better chance to think and act.
+
+I want to stay alert to the work and steady in myself. Hungry without being frantic. Demanding without being cruel. That takes practice. When I get it right, I can face a risk clearly and give the people around me room to tell me what they see.
+
+The paranoid survive. The regulated thrive. I am trying to build for both.
 
 ## Notes and Sources
-- [Naina Sahni](https://workwithnaina.com). The second half of the sentence comes from her, and so does much of my education in it.
+- [Naina Sahni](https://workwithnaina.com). The second half of the sentence comes from her, as does much of my education in it.
 - Andy Grove, *Only the Paranoid Survive*, 1996. Strategic inflection points; paranoia as aimed vigilance.
 - [Ceri Evans, *Perform Under Pressure*, 2019, and James Kerr, *Legacy*, 2013](https://www.allblacks.com/news/all-blacks-500-a-milestone-measured-in-moments-and-stats). The All Blacks' red head / blue head model. Win record: 500 wins in 652 tests since 1903, the first rugby nation to 500.
-- [Amy Arnsten, "Stress signalling pathways that impair prefrontal cortex structure and function," *Nature Reviews Neuroscience*, 2009](https://www.nature.com/articles/nrn2648). Even mild uncontrollable stress rapidly degrades prefrontal function.
+- [Amy Arnsten, “Stress signalling pathways that impair prefrontal cortex structure and function,” *Nature Reviews Neuroscience*, 2009](https://www.nature.com/articles/nrn2648). Research on how stress affects prefrontal function.
 - Daniel Goleman, *Emotional Intelligence*, 1995. The amygdala hijack, building on Joseph LeDoux's fear-pathway research.
 - Daniel Kahneman, *Thinking, Fast and Slow*, 2011. System 1 and System 2.
-- Antonio Damasio, *Descartes' Error*, 1994. Patients without emotional processing decide worse, not better.
-- James Gross and Oliver John, *Journal of Personality and Social Psychology*, 2003. Reappraisal outperforms suppression.
-- [Google's Project Aristotle, building on Amy Edmondson, *Administrative Science Quarterly*, 1999](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness). Psychological safety as the top factor in team effectiveness.
+- Antonio Damasio, *Descartes' Error*, 1994. Patients without emotional processing can have difficulty making decisions.
+- James Gross and Oliver John, *Journal of Personality and Social Psychology*, 2003. Reappraisal and suppression as different emotion-regulation strategies.
+- [Google's Project Aristotle, building on Amy Edmondson, *Administrative Science Quarterly*, 1999](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness). Psychological safety as a factor in team effectiveness.

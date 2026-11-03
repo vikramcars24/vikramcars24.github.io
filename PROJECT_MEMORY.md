@@ -70,3 +70,10 @@
   - verify any open alert issue is closed
   - clear stale GitHub or site-alert email generated during the incident window
   - write the lesson back into memory
+
+
+## Essay revisions, 3 November 2026
+
+- Revised all 13 existing essays for clearer language, preserving the arguments, useful examples, source links, titles, URLs and artwork.
+- Updated the relevant passages on Builder ownership, stewardship, vehicle transfers, road-safety support, battery degradation and EV tax comparisons. Older market figures remain tied to their report dates.
+- Verified the production build, SEO audit, output checks, style limits and desktop/mobile screenshots before publication.
