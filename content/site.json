@@ -78,12 +78,36 @@
   ],
   "elsewhere": [
     {
+      "type": "Interview",
+      "title": "How this Indian CEO is saving 50% time with AI use",
+      "source": "Business Today",
+      "date": "2026-09-25",
+      "url": "https://www.businesstoday.in/auto/story/how-this-indian-ceo-is-saving-50-time-with-ai-use-557772-2026-09-25",
+      "description": "A conversation on using AI agents, a second brain, and shared context to change how I work and how Cars24 operates."
+    },
+    {
+      "type": "News",
+      "title": "Cars24 scraps job titles and hierarchy in AI-era organisational overhaul",
+      "source": "The Economic Times",
+      "date": "2026-07-03",
+      "url": "https://economictimes.indiatimes.com/industry/auto/auto-news/cars24-scraps-job-titles-and-hierarchy-in-ai-era-organisational-overhaul/articleshow/132157238.cms",
+      "description": "Coverage of Flatland: removing titles and grades, calling everyone a Builder, and organising work around ownership and impact."
+    },
+    {
       "type": "Profile",
       "title": "#UNTOLD | Cars24, Vikram Chopra & The Man He Refused To Become",
       "source": "Open Magazine",
       "date": "2026-07-13",
       "url": "https://openthemagazine.com/business/untold-cars24-vikram-chopra-the-man-he-refused-to-become",
       "description": "A long profile by Rajiv Singh on the childhood promise, early failures, self-work, and operating choices behind Cars24."
+    },
+    {
+      "type": "Writing elsewhere",
+      "title": "My livelihood comes from cars. For my child’s future, I ask government to restrict cars, anything that poisons our air",
+      "source": "The Indian Express",
+      "date": "2025-11-25",
+      "url": "https://indianexpress.com/article/opinion/columns/delhi-is-choking-pollution-cars-odd-even-grap-10384706/",
+      "description": "My column on clean air, the cost to our families, and why public health must come before the interests of the car industry."
     },
     {
       "type": "Essay",
